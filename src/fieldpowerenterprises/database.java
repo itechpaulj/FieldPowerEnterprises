@@ -10,8 +10,10 @@ package fieldpowerenterprises;
  *
  * @author Javinez
  */
-import java.sql.Connection;
+//import java.sql.Connection;
 import java.sql.DriverManager;
+import com.mysql.jdbc.Connection;
+
 public class database {
 
     
@@ -20,7 +22,7 @@ public class database {
         
         
         // constant variable or unique variable
-        final String driver = "com.mysql.cj.jdbc.Driver";
+        final String driver = "com.mysql.jdbc.Driver";
         final String host = "jdbc:mysql://localhost:";
         final String port = "3306/";
         final String db = "fieldpowerenterprises";
