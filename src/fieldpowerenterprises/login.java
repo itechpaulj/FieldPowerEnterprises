@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Javinez
+ * @author Javinez pogi
  */
 public class login {
     
