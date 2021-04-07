@@ -28,11 +28,11 @@ public class database {
         final String db = "fieldpowerenterprises";
         final String userRoot = "root";
         final String passwordRoot = "";
-        final String concatAddresUrl= host+port+db;
+        final String Url= host+port+db;
         
         try{
         Class.forName(driver);
-        con=(Connection)DriverManager.getConnection(concatAddresUrl,userRoot,passwordRoot);
+        con=(Connection)DriverManager.getConnection(Url,userRoot,passwordRoot);
         
         }catch(Exception e){
             e.printStackTrace();
