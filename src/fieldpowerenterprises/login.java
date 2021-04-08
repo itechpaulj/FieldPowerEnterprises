@@ -57,14 +57,14 @@ public class login {
                }
                if(access.equals("user")){
 
-                JOptionPane.showMessageDialog(null,"This a user");   
+                JOptionPane.showMessageDialog(null,"This a user","",JOptionPane.INFORMATION_MESSAGE);   
 
                }
                 return true; 
 
             }
             else{
-                JOptionPane.showMessageDialog(null,"Error");
+                JOptionPane.showMessageDialog(null,"Error","",JOptionPane.ERROR_MESSAGE);
                 return false;
             }
         }
