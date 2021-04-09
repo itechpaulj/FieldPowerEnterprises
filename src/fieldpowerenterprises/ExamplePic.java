@@ -45,7 +45,7 @@ public class ExamplePic extends javax.swing.JFrame {
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         picture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        picture.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        picture.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204), new java.awt.Color(204, 204, 204)));
         picture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pictureMouseClicked(evt);
@@ -74,7 +74,7 @@ public class ExamplePic extends javax.swing.JFrame {
 
     private void pictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pictureMouseClicked
         byte [] person_image=null;
-        JFileChooser chooser = new JFileChooser();
+        JFileChooser chooser = new JFileChooser("C:\\Users\\ROBLES\\Desktop\\");
         chooser.showOpenDialog(null);
         File f = chooser.getSelectedFile();
         String fileName = f.getAbsolutePath();
