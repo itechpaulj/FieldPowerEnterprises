@@ -44,6 +44,7 @@ public class ExamplePic extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(255, 153, 204));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        picture.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         picture.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         picture.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -52,8 +53,8 @@ public class ExamplePic extends javax.swing.JFrame {
         });
         kGradientPanel1.add(picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 52, 152, 143));
 
-        url.setText("jLabel1");
-        kGradientPanel1.add(url, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 380, 40));
+        url.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kGradientPanel1.add(url, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 340, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,20 +64,20 @@ public class ExamplePic extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void pictureMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pictureMouseClicked
-        String fileName="";
         byte [] person_image=null;
-        
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         File f = chooser.getSelectedFile();
-        fileName = f.getAbsolutePath();
+        String fileName = f.getAbsolutePath();
         url.setText(fileName);
         
         ImageIcon icon = new ImageIcon(new ImageIcon(fileName).getImage().getScaledInstance(picture.getWidth(),picture.getHeight(),Image.SCALE_SMOOTH));
