@@ -51,7 +51,7 @@ public class ExamplePic extends javax.swing.JFrame {
                 pictureMouseClicked(evt);
             }
         });
-        kGradientPanel1.add(picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 52, 152, 143));
+        kGradientPanel1.add(picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 152, 143));
 
         url.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         kGradientPanel1.add(url, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 340, 40));
@@ -60,7 +60,9 @@ public class ExamplePic extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
