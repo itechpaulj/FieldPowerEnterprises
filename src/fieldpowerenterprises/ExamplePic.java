@@ -51,7 +51,7 @@ public class ExamplePic extends javax.swing.JFrame {
                 pictureMouseClicked(evt);
             }
         });
-        kGradientPanel1.add(picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 152, 143));
+        kGradientPanel1.add(picture, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 152, 143));
 
         url.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         kGradientPanel1.add(url, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 340, 40));
