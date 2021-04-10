@@ -37,7 +37,8 @@ public class mainpage extends javax.swing.JFrame {
         email = new javax.swing.JTextField();
         email_txt = new javax.swing.JLabel();
         password_txt = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        fpeTxtLogin = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jButton2.setText("jButton2");
 
@@ -76,10 +77,18 @@ public class mainpage extends javax.swing.JFrame {
         password_txt.setText("Password");
         kGradientPanel1.add(password_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 130, 30));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("FIELD POWER ENTERPRISES");
-        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 770, 160));
+        fpeTxtLogin.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        fpeTxtLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fpeTxtLogin.setText("FIELD POWER ENTERPRISES");
+        kGradientPanel1.add(fpeTxtLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 770, 160));
+
+        jButton1.setText("Development");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 500));
 
@@ -110,6 +119,15 @@ public class mainpage extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_login_btnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // this is testing developmennt when its done please informe me
+        // thanks me Javinez Paul
+        
+       testing test = new testing();
+       test.setVisible(true);
+       dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,8 +167,9 @@ public class mainpage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField email;
     private javax.swing.JLabel email_txt;
+    private javax.swing.JLabel fpeTxtLogin;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel2;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JButton login_btn;
     private javax.swing.JTextField password;

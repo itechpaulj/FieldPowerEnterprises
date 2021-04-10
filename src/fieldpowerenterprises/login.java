@@ -40,31 +40,19 @@ public class login {
 //    }
     /* process login */
     
-    public boolean access_levelLogin(String email, String password) throws SQLException{
+    public boolean access_levelLogin(String username, String password) throws SQLException{
         
         try{
-            String sqlaccesslevel = "Select `email`, `password`, `access_level` from `userstbl` where `email`='"+email+"' AND `password`='"+password+"' ";
+            String sqlaccesslevel = "Select `username`, `password`  from `login_tbl` where `username`='"+username+"' AND `password`='"+password+"' ";
             pst= (PreparedStatement)database.getConnection().prepareStatement(sqlaccesslevel);
             rs=pst.executeQuery();
 
             if(rs.next()==true){
-               String access = rs.getString("access_level");
-
-               if(access.equals("admin")){
-
-               JOptionPane.showMessageDialog(null,"This a admin");   
-
-               }
-               if(access.equals("user")){
-
-                JOptionPane.showMessageDialog(null,"This a user","",JOptionPane.INFORMATION_MESSAGE);   
-
-               }
+                JOptionPane.showMessageDialog(null,"Login Success!","",JOptionPane.INFORMATION_MESSAGE);
                 return true; 
-
             }
             else{
-                JOptionPane.showMessageDialog(null,"Error","",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Login Failed!","",JOptionPane.ERROR_MESSAGE);
                 return false;
             }
         }
