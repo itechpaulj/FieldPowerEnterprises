@@ -5,8 +5,6 @@
  */
 package fieldpowerenterprises;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
@@ -27,7 +25,7 @@ public class Parts extends javax.swing.JFrame {
      */
     public Parts() {
         initComponents();
-        costumer_id.setEditable(false);
+        item_id.setEditable(false);
         Costumer();
     }
 
@@ -50,15 +48,15 @@ public class Parts extends javax.swing.JFrame {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jLabel2 = new javax.swing.JLabel();
-        costumer_id = new javax.swing.JTextField();
-        costumer_fname = new javax.swing.JTextField();
+        item_id = new javax.swing.JTextField();
+        item_name = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        costumer_email_add = new javax.swing.JTextField();
+        item_brand = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        costumer_contack = new javax.swing.JTextField();
+        item_price = new javax.swing.JTextField();
         customer_dates = new datechooser.beans.DateChooserCombo();
         jScrollPane1 = new javax.swing.JScrollPane();
         Costumer_table = new javax.swing.JTable();
@@ -68,10 +66,10 @@ public class Parts extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         search = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        costumer_contack1 = new javax.swing.JTextField();
+        description = new javax.swing.JComboBox<>();
+        quantity = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        costumer_contack2 = new javax.swing.JTextField();
+        total_price = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,46 +81,46 @@ public class Parts extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("ITEM ID");
-        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 100, 30));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 100, 30));
 
-        costumer_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        costumer_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(costumer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 100, 30));
+        item_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        item_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        kGradientPanel1.add(item_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 190, 30));
 
-        costumer_fname.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        costumer_fname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(costumer_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 190, 30));
+        item_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        item_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        kGradientPanel1.add(item_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 190, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("ITEM NAME");
-        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 100, 30));
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 100, 30));
 
-        costumer_email_add.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        costumer_email_add.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(costumer_email_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 190, 30));
+        item_brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        item_brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        kGradientPanel1.add(item_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 190, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel4.setText("BRAND");
-        kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 100, 30));
+        kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 100, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("DATE");
-        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 120, 110, 30));
+        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 110, 30));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel6.setText("DESCRIPTION");
-        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 110, 30));
+        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 120, 100, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setText("PRICE");
         kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 110, 30));
 
-        costumer_contack.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        costumer_contack.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(costumer_contack, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 190, 30));
+        item_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        item_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        kGradientPanel1.add(item_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 190, 30));
 
         customer_dates.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-        kGradientPanel1.add(customer_dates, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 190, 30));
+        kGradientPanel1.add(customer_dates, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 190, 30));
 
         Costumer_table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Costumer_table.setModel(new javax.swing.table.DefaultTableModel(
@@ -187,24 +185,24 @@ public class Parts extends javax.swing.JFrame {
         });
         kGradientPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 130, 30));
 
-        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PARTS", "FILTER" }));
-        kGradientPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 190, 30));
+        description.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        description.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PARTS", "FILTER" }));
+        kGradientPanel1.add(description, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 190, 30));
 
-        costumer_contack1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        costumer_contack1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(costumer_contack1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 190, 30));
+        quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        kGradientPanel1.add(quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 190, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setText("QUANTITY");
         kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 110, 30));
 
-        costumer_contack2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        costumer_contack2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(costumer_contack2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 190, 30));
+        total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        kGradientPanel1.add(total_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 190, 30));
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel9.setText("QUANTITY");
+        jLabel9.setText("TOTAL PRICE");
         kGradientPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 110, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,32 +224,33 @@ public class Parts extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String costumer_ids ,costumers_names,costumers_emails,costumers_addresss,costumers_contacts,costumerss_dates ; 
-        //costumer_ids = costumer_id.getText();
-        costumers_names  =costumer_fname.getText();     
-        costumers_emails = costumer_email_add.getText();
-        costumers_addresss = costumer_address.getText();
-        costumers_contacts = costumer_contack.getText();
-        costumerss_dates = customer_dates.getText();
+        String item_ids ,item_names,item_brands,prices,quantitys,desc,dates;
+        item_ids = item_id.getText();
+        item_names  =item_name.getText();     
+        item_brands = item_brand.getText();
+        prices = item_price.getText();
+        quantitys = quantity.getText();
+        dates = customer_dates.getText();
+        desc = description.getSelectedItem().toString();
         
-        if(CustomerClass.AddCustomer(costumers_names, costumers_emails, costumers_addresss, costumers_contacts, costumerss_dates)){
-            JOptionPane.showMessageDialog(null, "FAILED");
-        }else{
-             JOptionPane.showMessageDialog(null, "SUCCESS ADDED"); 
-             DefaultTableModel model = (DefaultTableModel) Costumer_table.getModel();
-             model.setRowCount(0);
-             Costumer();
-        }
+//        if(Custom){
+//            JOptionPane.showMessageDialog(null, "FAILED");
+//        }else{
+//             JOptionPane.showMessageDialog(null, "SUCCESS ADDED"); 
+//             DefaultTableModel model = (DefaultTableModel) Costumer_table.getModel();
+//             model.setRowCount(0);
+//             Costumer();
+//        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        String costumer_ids ,costumers_names,costumers_emails,costumers_addresss,costumers_contacts,costumerss_dates ; 
        
-        costumer_ids = costumer_id.getText();
-        costumers_names  =costumer_fname.getText();     
-        costumers_emails = costumer_email_add.getText();
+        costumer_ids = item_id.getText();
+        costumers_names  =item_name.getText();     
+        costumers_emails = item_brand.getText();
         costumers_addresss = costumer_address.getText();
-        costumers_contacts = costumer_contack.getText();
+        costumers_contacts = item_price.getText();
         costumerss_dates = customer_dates.getText();
         if(CustomerClass.UpdateCustomer(costumer_ids, costumers_names, costumers_emails, costumers_addresss, costumers_contacts, costumerss_dates)){
             JOptionPane.showMessageDialog(null, "FAILED");
@@ -264,7 +263,7 @@ public class Parts extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        String costumer_ids ;
        
-        costumer_ids = costumer_id.getText();
+        costumer_ids = item_id.getText();
         
         if(CustomerClass.DeleteCustomer(costumer_ids)){
             JOptionPane.showMessageDialog(null, "FAILED");
@@ -277,11 +276,11 @@ public class Parts extends javax.swing.JFrame {
     private void Costumer_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Costumer_tableMouseClicked
           int i = Costumer_table.getSelectedRow();
         TableModel model = Costumer_table.getModel();
-        costumer_id.setText(model.getValueAt(i,0).toString());  
-        costumer_fname.setText(model.getValueAt(i,1).toString()); 
-        costumer_email_add.setText(model.getValueAt(i,2).toString());  
+        item_id.setText(model.getValueAt(i,0).toString());  
+        item_name.setText(model.getValueAt(i,1).toString()); 
+        item_brand.setText(model.getValueAt(i,2).toString());  
         costumer_address.setText(model.getValueAt(i,3).toString()); 
-        costumer_contack.setText(model.getValueAt(i,4).toString());  
+        item_price.setText(model.getValueAt(i,4).toString());  
         customer_dates.setText(model.getValueAt(i,5).toString()); 
     }//GEN-LAST:event_Costumer_tableMouseClicked
 
@@ -331,18 +330,16 @@ public class Parts extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Costumer_table;
-    private javax.swing.JTextField costumer_contack;
-    private javax.swing.JTextField costumer_contack1;
-    private javax.swing.JTextField costumer_contack2;
-    private javax.swing.JTextField costumer_email_add;
-    private javax.swing.JTextField costumer_fname;
-    private javax.swing.JTextField costumer_id;
     private datechooser.beans.DateChooserCombo customer_dates;
+    private javax.swing.JComboBox<String> description;
+    private javax.swing.JTextField item_brand;
+    private javax.swing.JTextField item_id;
+    private javax.swing.JTextField item_name;
+    private javax.swing.JTextField item_price;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -354,6 +351,8 @@ public class Parts extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JTextField quantity;
     private javax.swing.JTextField search;
+    private javax.swing.JTextField total_price;
     // End of variables declaration//GEN-END:variables
 }
