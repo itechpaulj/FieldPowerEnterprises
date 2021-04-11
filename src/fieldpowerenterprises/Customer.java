@@ -184,6 +184,9 @@ public class Customer extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 searchKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchKeyReleased(evt);
+            }
         });
         kGradientPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 130, 30));
 
@@ -272,6 +275,14 @@ public class Customer extends javax.swing.JFrame {
         Costumer_table.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(find));
     }//GEN-LAST:event_searchKeyPressed
+
+    private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
+        DefaultTableModel tm = (DefaultTableModel)Costumer_table.getModel();
+        String find = search.getText();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Costumer_table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_searchKeyReleased
 
     /**
      * @param args the command line arguments
