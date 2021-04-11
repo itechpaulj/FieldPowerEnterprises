@@ -104,7 +104,15 @@ public class mainpage extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             login l = new login();
-            l.access_levelLogin( email.getText(), password.getText());
+            if(l.access_levelLogin( email.getText(), password.getText())){
+               Menu men = new Menu();
+                men.setVisible(true);
+                dispose();
+                JOptionPane.showMessageDialog(null,"Login Success!","",JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Login Failed!","",JOptionPane.ERROR_MESSAGE);
+            }
             /*
             if(l.accessAdmin_level( email.getText(), password.getText()) ){
                 //JOptionPane.showMessageDialog(null,"Success");

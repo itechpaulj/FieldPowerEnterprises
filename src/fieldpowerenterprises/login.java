@@ -48,13 +48,9 @@ public class login {
             rs=pst.executeQuery();
 
             if(rs.next()==true){
-                JOptionPane.showMessageDialog(null,"Login Success!","",JOptionPane.INFORMATION_MESSAGE);
                 return true; 
             }
-            else{
-                JOptionPane.showMessageDialog(null,"Login Failed!","",JOptionPane.ERROR_MESSAGE);
-                return false;
-            }
+
         }
         catch(Exception e){
             e.printStackTrace();

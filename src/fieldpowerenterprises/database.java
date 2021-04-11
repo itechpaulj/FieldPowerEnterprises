@@ -22,17 +22,17 @@ public class database {
         
         
         // constant variable or unique variable
-        final String driver = "com.mysql.jdbc.Driver";
-        final String host = "jdbc:mysql://localhost:";
-        final String port = "3306/";
-        final String db = "fieldpowerenterprises";
-        final String userRoot = "root";
-        final String passwordRoot = "";
-        final String Url= host+port+db;
+//        final String driver = "com.mysql.jdbc.Driver";
+//        final String host = "jdbc:mysql://localhost:";
+//        final String port = "3306/";
+//        final String db = "fieldpowerenterprises";
+//        final String userRoot = "root";
+//        final String passwordRoot = "";
+//        final String Url= host+port+db;
         
         try{
-        Class.forName(driver);
-        con=(Connection)DriverManager.getConnection(Url,userRoot,passwordRoot);
+        Class.forName("com.mysql.jdbc.Driver");
+        con=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/fieldpowerenterprises","root","");
         
         }catch(Exception e){
             e.printStackTrace();
