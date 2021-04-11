@@ -10,7 +10,7 @@ public class Parts_Filter {
         public static boolean AddPartsFilter(String item_ids ,String item_names,String item_brands,String prices,String quantitys,String totals,String desc,String dates){
         PreparedStatement ps = null;
         try{
-        ps = database.getConnection().prepareStatement("INSERT INTO `parts_tbl`(`ITEM_NAME`, `BRAND`, `PRICE`, `QUANTIITY`, `TOTAL_PRICE`, `DESCRIPTION`, `DATE`) VALUES (?,?,?,?,?,?,?)");
+        ps = database.getConnection().prepareStatement("INSERT INTO `parts_tbl`(`ITEM_NAME`, `BRAND`, `PRICE`, `QUANTITY`, `TOTAL_PRICE`, `DESCRIPTION`, `DATE`) VALUES (?,?,?,?,?,?,?)");
         //ps.setString(1, costumer_id);
         ps.setString(1, item_names);
         ps.setString(2, item_brands);
@@ -31,7 +31,7 @@ public class Parts_Filter {
         public static boolean UpdatePartsFilter(String item_ids ,String item_names,String item_brands,String prices,String quantitys,String totals,String desc,String dates){
         PreparedStatement ps = null;
         try{
-        ps = database.getConnection().prepareStatement("UPDATE parts_tbl SET ITEM_NAME=?,BRAND=?,PRICE=?,QUANTIITY=?,TOTAL_PRICE=?,DESCRIPTION=?,DATE=? WHERE ITEM_ID=?");
+        ps = database.getConnection().prepareStatement("UPDATE parts_tbl SET ITEM_NAME=?,BRAND=?,PRICE=?,QUANTITY=?,TOTAL_PRICE=?,DESCRIPTION=?,DATE=? WHERE ITEM_ID=?");
         ps.setString(1, item_names);
         ps.setString(2, item_brands);
         ps.setString(3, prices);

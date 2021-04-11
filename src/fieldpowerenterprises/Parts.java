@@ -276,7 +276,7 @@ public class Parts extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
        String item_ids ;
-       
+       //s
         item_ids = item_id.getText();
         
         if(Parts_Filter.DeletePartsFilter(item_ids)){
