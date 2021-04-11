@@ -244,20 +244,20 @@ public class Parts extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String costumer_ids ,costumers_names,costumers_emails,costumers_addresss,costumers_contacts,costumerss_dates ; 
-       
-        costumer_ids = item_id.getText();
-        costumers_names  =item_name.getText();     
-        costumers_emails = item_brand.getText();
-        costumers_addresss = costumer_address.getText();
-        costumers_contacts = item_price.getText();
-        costumerss_dates = customer_dates.getText();
-        if(CustomerClass.UpdateCustomer(costumer_ids, costumers_names, costumers_emails, costumers_addresss, costumers_contacts, costumerss_dates)){
-            JOptionPane.showMessageDialog(null, "FAILED");
-        }else{
-             JOptionPane.showMessageDialog(null, "SUCCESS UPDATED");  
-             Costumer();
-        }
+//       String costumer_ids ,costumers_names,costumers_emails,costumers_addresss,costumers_contacts,costumerss_dates ; 
+//       
+//        costumer_ids = item_id.getText();
+//        costumers_names  =item_name.getText();     
+//        costumers_emails = item_brand.getText();
+//        costumers_addresss = costumer_address.getText();
+//        costumers_contacts = item_price.getText();
+//        costumerss_dates = customer_dates.getText();
+//        if(CustomerClass.UpdateCustomer(costumer_ids, costumers_names, costumers_emails, costumers_addresss, costumers_contacts, costumerss_dates)){
+//            JOptionPane.showMessageDialog(null, "FAILED");
+//        }else{
+//             JOptionPane.showMessageDialog(null, "SUCCESS UPDATED");  
+//             Costumer();
+//        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -274,14 +274,14 @@ public class Parts extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void Costumer_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Costumer_tableMouseClicked
-          int i = Costumer_table.getSelectedRow();
-        TableModel model = Costumer_table.getModel();
-        item_id.setText(model.getValueAt(i,0).toString());  
-        item_name.setText(model.getValueAt(i,1).toString()); 
-        item_brand.setText(model.getValueAt(i,2).toString());  
-        costumer_address.setText(model.getValueAt(i,3).toString()); 
-        item_price.setText(model.getValueAt(i,4).toString());  
-        customer_dates.setText(model.getValueAt(i,5).toString()); 
+//          int i = Costumer_table.getSelectedRow();
+//        TableModel model = Costumer_table.getModel();
+//        item_id.setText(model.getValueAt(i,0).toString());  
+//        item_name.setText(model.getValueAt(i,1).toString()); 
+//        item_brand.setText(model.getValueAt(i,2).toString());  
+//        costumer_address.setText(model.getValueAt(i,3).toString()); 
+//        item_price.setText(model.getValueAt(i,4).toString());  
+//        customer_dates.setText(model.getValueAt(i,5).toString()); 
     }//GEN-LAST:event_Costumer_tableMouseClicked
 
     private void searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyPressed
