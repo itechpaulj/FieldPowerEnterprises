@@ -509,7 +509,7 @@ public class supplier extends javax.swing.JFrame {
             }
             else{
          
-                String sqlqueryDelete = "DELETE FROM `supplier_tbl` WHERE `supplier_id`=?  ";
+                String sqlqueryDelete = "DELETE FROM `supplier_tbl` WHERE `ID`=?  ";
                 ps = (PreparedStatement) database.getConnection().prepareStatement(sqlqueryDelete);
                 ps.setString(1,idDisplay.getText());
                 ps.executeUpdate();
