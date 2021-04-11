@@ -537,8 +537,8 @@ public class supplier extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error!","",JOptionPane.ERROR_MESSAGE);
         }
         else{
-        jTable1.setModel(new DefaultTableModel(null, new String[]{"supplier_id","supplier_name","supplier_address","supplier_contact","supplier_email","supplier_date"}));
-        String sqlquerySearch = "SELECT `supplier_id`, `supplier_name`, `supplier_address`, `supplier_contact`, `supplier_email`, `supplier_date` FROM `supplier_tbl` WHERE `supplier_name` LIKE '%"+searchTxt.getText()+"%' ";
+        jTable1.setModel(new DefaultTableModel(null, new String[]{"ID","NAME","ADDRESS","CONTACT","EMAIL","DATE"}));
+        String sqlquerySearch = "SELECT `ID`, `NAME`, `ADDRESS`, `CONTACT`, `EMAIL`, `DATE` FROM `supplier_tbl` WHERE `NAME` LIKE '%"+searchTxt.getText()+"%' ";
             ArrayList<supplierClass> list = getfrom_supplierTbl(sqlquerySearch);
             DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
             Object[] row = new Object[6];
