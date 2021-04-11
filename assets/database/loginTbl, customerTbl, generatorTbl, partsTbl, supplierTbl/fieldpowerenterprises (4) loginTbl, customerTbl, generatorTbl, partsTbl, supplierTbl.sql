@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2021 at 10:48 AM
+-- Generation Time: Apr 11, 2021 at 10:57 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -93,7 +93,7 @@ CREATE TABLE `parts_tbl` (
   `ITEM_NAME` varchar(255) NOT NULL,
   `BRAND` varchar(255) NOT NULL,
   `PRICE` varchar(255) NOT NULL,
-  `QUANTIITY` varchar(255) NOT NULL,
+  `QUANTITY` varchar(255) NOT NULL,
   `TOTAL_PRICE` varchar(255) NOT NULL,
   `DESCRIPTION` varchar(255) NOT NULL,
   `DATE` varchar(255) NOT NULL
@@ -119,7 +119,7 @@ CREATE TABLE `supplier_tbl` (
 --
 
 INSERT INTO `supplier_tbl` (`ID`, `NAME`, `ADDRESS`, `CONTACT`, `EMAIL`, `DATE`) VALUES
-(1, 'paul javinez', 'bulacan', '095068250268', 'itechpaulj@gmail.com', '5/30/97'),
+(1, 'paul javinez123', 'bulacan', '095068250268', 'itechpaulj@gmail.com', '5/30/97'),
 (5, 'althea javinez', 'bulacan', '09287514087', 'javinezalthea@gmail.com', '4/10/21'),
 (9, 'juan dela cruz', 'cavite', '987654231', 'juandelacruz@gmail.com', '1/1/08');
 
