@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -22,6 +23,7 @@ public class generator extends javax.swing.JFrame {
      */
     public generator() {
         initComponents();
+        showTableGenerator();
     }
 
     //ArrayList
@@ -37,34 +39,69 @@ public class generator extends javax.swing.JFrame {
                 {
                     showAllData = new generatorClass
                     (
-                        rs.getInt("generator_id"),
-                        rs.getString("phasing"),
-                        rs.getString("kva"),
-                        rs.getString("vac"),
-                        rs.getString("supplier_price"),
-                        rs.getString("seller_price"),
-                        rs.getString("quantity"),
-                        rs.getString("product_brandname"),
-                        rs.getString("engine_model"),
-                        rs.getString("engine_sn"),
-                        rs.getString("alternator_sn"),
-                        rs.getString("unit_type"),
-                        rs.getString("starting_system"),
-                        rs.getString("body_type"),
-                        rs.getString("dimension"),
-                        rs.getString("fuel_tank_cap"),
-                        rs.getString("weight"),
-                        rs.getString("frame"),
-                        rs.getString("date")      
+                        rs.getInt("GENERATOR_ID"),
+                        rs.getString("PHASING"),
+                        rs.getString("KVA"),
+                        rs.getString("VAC"),
+                        rs.getString("SUPPLIER_PRICE"),
+                        rs.getString("SELLER_PRICE"),
+                        rs.getString("QUANTITY"),
+                        rs.getString("PRODUCT_BRANDNAME"),
+                        rs.getString("ENGINE_MODEL"),
+                        rs.getString("ENGINE_SN"),
+                        rs.getString("ALTERNATOR_SN"),
+                        rs.getString("UNIT_TYPE"),
+                        rs.getString("STARTING_SYSTEM"),
+                        rs.getString("BODY_TYPE"),
+                        rs.getString("DIMENSION"),
+                        rs.getString("FUEL_TANK_CAP"),
+                        rs.getString("WEIGHT"),
+                        rs.getString("FRAME"),
+                        rs.getString("DATE")      
                     );
+                    getAllData.add(showAllData);
                     
                 }
             }
             catch(Exception e){
+                e.printStackTrace();
                 JOptionPane.showMessageDialog(null, e.getMessage(),"",JOptionPane.ERROR_MESSAGE);
             }
         
         return getAllData;
+    }
+    
+    //Object
+    
+    private void showTableGenerator(){
+        ArrayList<generatorClass> list = getFrom_generatorTbl("SELECT `GENERATOR_ID`, `PHASING`, `KVA`, `VAC`, `SUPPLIER_PRICE`, `SELLER_PRICE`, `QUANTITY`, `PRODUCT_BRANDNAME`, `ENGINE_MODEL`, `ENGINE_SN`, `ALTERNATOR_SN`, `UNIT_TYPE`, `STARTING_SYSTEM`, `BODY_TYPE`, `DIMENSION`, `FUEL_TANK_CAP`, `WEIGHT`, `FRAME`, `DATE` FROM `generator_tbl`");
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        
+        Object[] row = new Object[19];
+        
+        for(int i= 0 ;i<list.size();i++){
+        row[0] = list.get(i).getGenerator_id();
+        row[1] = list.get(i).getPhasing();
+        row[2] = list.get(i).getKva();
+        row[3] = list.get(i).getVac();
+        row[4] = list.get(i).getSupplier_price();
+        row[5] = list.get(i).getSeller_price();
+        row[6] = list.get(i).getQuantity();
+        row[7] = list.get(i).getProduct_brandname();
+        row[8] = list.get(i).getEngine_model();
+        row[9] = list.get(i).getEngine_sn();
+        row[10] = list.get(i).getAlternator_sn();
+        row[11] = list.get(i).getUnit_type();
+        row[12] = list.get(i).getStarting_system();
+        row[13] = list.get(i).getBody_type();
+        row[14] = list.get(i).getDimension();
+        row[15] = list.get(i).getFuel_tank_cap();
+        row[16] = list.get(i).getWeight();
+        row[17] = list.get(i).getFrame();
+        row[18] = list.get(i).getDate();
+        model.addRow(row);
+        }
+        
     }
     
     
@@ -119,6 +156,8 @@ public class generator extends javax.swing.JFrame {
         dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
         showImg = new javax.swing.JLabel();
         upload = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -305,6 +344,44 @@ public class generator extends javax.swing.JFrame {
 
         upload.setText("Choose");
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "GENERATOR_ID", "PHASING", "KVA", "VAC", "SUPPLIER_PRICE", "SELLER_PRICE", "QUANTITY", "PRODUCT_BRANDNAME", "ENGINE_MODEL", "ENGINE_SN", "ALTERNATOR_SN", "UNIT_TYPE", "STARTING_SYSTEM", "BODY_TYPE", "DIMENSION", "FUEL_TANK_CAP", "WEIGHT", "FRAME", "DATE"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+            jTable1.getColumnModel().getColumn(5).setResizable(false);
+            jTable1.getColumnModel().getColumn(6).setResizable(false);
+            jTable1.getColumnModel().getColumn(7).setResizable(false);
+            jTable1.getColumnModel().getColumn(8).setResizable(false);
+            jTable1.getColumnModel().getColumn(9).setResizable(false);
+            jTable1.getColumnModel().getColumn(10).setResizable(false);
+            jTable1.getColumnModel().getColumn(11).setResizable(false);
+            jTable1.getColumnModel().getColumn(12).setResizable(false);
+            jTable1.getColumnModel().getColumn(13).setResizable(false);
+            jTable1.getColumnModel().getColumn(14).setResizable(false);
+            jTable1.getColumnModel().getColumn(15).setResizable(false);
+            jTable1.getColumnModel().getColumn(16).setResizable(false);
+            jTable1.getColumnModel().getColumn(17).setResizable(false);
+        }
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -390,7 +467,7 @@ public class generator extends javax.swing.JFrame {
                         .addComponent(dimensionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bodytype_input1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(showImg, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -398,6 +475,10 @@ public class generator extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(upload)
                         .addGap(95, 95, 95))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,7 +568,9 @@ public class generator extends javax.swing.JFrame {
                                 .addComponent(vac_input, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(enginemodelTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(46, 46, 46))))
-                .addGap(421, 448, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72))
         );
 
         pack();
@@ -571,6 +654,8 @@ public class generator extends javax.swing.JFrame {
     private javax.swing.JLabel generatorHeaderTxt;
     private javax.swing.JLabel generator_idDisplay;
     private javax.swing.JLabel generator_idTxt;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel kvaTxt;
     private javax.swing.JTextField kva_input;
     private javax.swing.JLabel phasingTxt;

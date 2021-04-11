@@ -56,7 +56,7 @@ public class supplier extends javax.swing.JFrame {
     }
     
     //object 
-    public void showTableSupplier(){
+    private void showTableSupplier(){
         ArrayList<supplierClass> list = getfrom_supplierTbl("SELECT `ID`, `NAME`, `ADDRESS`, `CONTACT`, `EMAIL`, `DATE` FROM `supplier_tbl` ");
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         
@@ -268,6 +268,12 @@ public class supplier extends javax.swing.JFrame {
     }
 
     reportsBtn.setText("Print");
+
+    searchTxt.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyPressed(java.awt.event.KeyEvent evt) {
+            searchTxtKeyPressed(evt);
+        }
+    });
 
     searchBtn.setText("Search");
     searchBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -570,6 +576,26 @@ public class supplier extends javax.swing.JFrame {
             supplier_email.setText(null);
             supplier_date.setText(null);
     }//GEN-LAST:event_refreshBtnActionPerformed
+
+    private void searchTxtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTxtKeyPressed
+        // TODO add your handling code here:
+
+        jTable1.setModel(new DefaultTableModel(null, new String[]{"ID","NAME","ADDRESS","CONTACT","EMAIL","DATE"}));
+        String sqlquerySearch = "SELECT `ID`, `NAME`, `ADDRESS`, `CONTACT`, `EMAIL`, `DATE` FROM `supplier_tbl` WHERE `NAME` LIKE '%"+searchTxt.getText()+"%' ";
+            ArrayList<supplierClass> list = getfrom_supplierTbl(sqlquerySearch);
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            Object[] row = new Object[6];
+                for(int i=0;i<list.size();i++){
+                    row[0] = list.get(i).getsupplierId();
+                    row[1] = list.get(i).getsupplierName();
+                    row[2] = list.get(i).getsupplierAddress();
+                    row[3] = list.get(i).getsupplierContact();
+                    row[4] = list.get(i).getsupplierEmail();
+                    row[5] = list.get(i).getsupplierDate();
+                    model.addRow(row);
+                }
+        
+    }//GEN-LAST:event_searchTxtKeyPressed
 
     /**
      * @param args the command line arguments
