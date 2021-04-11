@@ -7,6 +7,7 @@ package fieldpowerenterprises;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import static javafx.beans.binding.Bindings.and;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -26,14 +27,14 @@ public class Parts extends javax.swing.JFrame {
     public Parts() {
         initComponents();
         item_id.setEditable(false);
-        Costumer();
+        Parts();
     }
 
-    private void Costumer(){
+    private void Parts(){
         try{
-        PreparedStatement ps = database.getConnection().prepareStatement("SELECT * FROM customer_tbl ");
+        PreparedStatement ps = database.getConnection().prepareStatement("SELECT * FROM parts_tbl ");
         ResultSet rs = ps.executeQuery();
-        Costumer_table.setModel(DbUtils.resultSetToTableModel(rs));
+        Parts_Table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
               System.out.println(e);
         }
@@ -57,9 +58,9 @@ public class Parts extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         item_price = new javax.swing.JTextField();
-        customer_dates = new datechooser.beans.DateChooserCombo();
+        date = new datechooser.beans.DateChooserCombo();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Costumer_table = new javax.swing.JTable();
+        Parts_Table = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -119,11 +120,11 @@ public class Parts extends javax.swing.JFrame {
         item_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         kGradientPanel1.add(item_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 190, 30));
 
-        customer_dates.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-        kGradientPanel1.add(customer_dates, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 190, 30));
+        date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
+        kGradientPanel1.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 190, 30));
 
-        Costumer_table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Costumer_table.setModel(new javax.swing.table.DefaultTableModel(
+        Parts_Table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Parts_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -131,12 +132,12 @@ public class Parts extends javax.swing.JFrame {
 
             }
         ));
-        Costumer_table.addMouseListener(new java.awt.event.MouseAdapter() {
+        Parts_Table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Costumer_tableMouseClicked(evt);
+                Parts_TableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(Costumer_table);
+        jScrollPane1.setViewportView(Parts_Table);
 
         kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 1190, 320));
 
@@ -182,11 +183,14 @@ public class Parts extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 searchKeyPressed(evt);
             }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                searchKeyReleased(evt);
+            }
         });
         kGradientPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 130, 30));
 
         description.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        description.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PARTS", "FILTER" }));
+        description.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NONE", "PARTS", "FILTER" }));
         kGradientPanel1.add(description, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 190, 30));
 
         quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -224,73 +228,90 @@ public class Parts extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String item_ids ,item_names,item_brands,prices,quantitys,desc,dates;
+        String item_ids ,item_names,item_brands,prices,quantitys,totals,desc,dates;
         item_ids = item_id.getText();
         item_names  =item_name.getText();     
         item_brands = item_brand.getText();
         prices = item_price.getText();
         quantitys = quantity.getText();
-        dates = customer_dates.getText();
+        totals = total_price.getText();
+        dates = date.getText();
+       
         desc = description.getSelectedItem().toString();
         
-//        if(Custom){
-//            JOptionPane.showMessageDialog(null, "FAILED");
-//        }else{
-//             JOptionPane.showMessageDialog(null, "SUCCESS ADDED"); 
-//             DefaultTableModel model = (DefaultTableModel) Costumer_table.getModel();
-//             model.setRowCount(0);
-//             Costumer();
-//        }
+        if(item_names.isEmpty() || item_brands.isEmpty() || prices.isEmpty() || quantitys.isEmpty() || totals.isEmpty() || desc.contains("NONE")){
+           JOptionPane.showMessageDialog(null, "FILLED TH BLANK !!"); 
+        }else{
+        
+            if(Parts_Filter.AddPartsFilter(item_ids, item_names, item_brands, prices, quantitys, totals, desc, dates)){
+                JOptionPane.showMessageDialog(null, "FAILED");
+            }else{
+                 JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED");  
+               Parts(); item_id.setText(null);item_name.setText(null);item_brand.setText(null); item_price.setText(null);quantity.setText(null);total_price.setText(null);description.setSelectedIndex(0);date.setText(null);
+                 }
+            }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-//       String costumer_ids ,costumers_names,costumers_emails,costumers_addresss,costumers_contacts,costumerss_dates ; 
-//       
-//        costumer_ids = item_id.getText();
-//        costumers_names  =item_name.getText();     
-//        costumers_emails = item_brand.getText();
-//        costumers_addresss = costumer_address.getText();
-//        costumers_contacts = item_price.getText();
-//        costumerss_dates = customer_dates.getText();
-//        if(CustomerClass.UpdateCustomer(costumer_ids, costumers_names, costumers_emails, costumers_addresss, costumers_contacts, costumerss_dates)){
-//            JOptionPane.showMessageDialog(null, "FAILED");
-//        }else{
-//             JOptionPane.showMessageDialog(null, "SUCCESS UPDATED");  
-//             Costumer();
-//        }
+        String item_ids ,item_names,item_brands,prices,quantitys,totals,desc,dates;
+        item_ids = item_id.getText();
+        item_names  =item_name.getText();     
+        item_brands = item_brand.getText();
+        prices = item_price.getText();
+        quantitys = quantity.getText();
+        totals = total_price.getText();
+        dates = date.getText();
+       
+        desc = description.getSelectedItem().toString();
+         if(item_names.isEmpty() || item_brands.isEmpty() || prices.isEmpty() || quantitys.isEmpty() || totals.isEmpty() || desc.contains("NONE")){
+           JOptionPane.showMessageDialog(null, "FILLED TH BLANK !!"); 
+        }else{
+        if(Parts_Filter.UpdatePartsFilter(item_ids, item_names, item_brands, prices, quantitys, totals, desc, dates)){
+            JOptionPane.showMessageDialog(null, "FAILED");
+        }else{
+             JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED");  
+             Parts(); item_id.setText(null);item_name.setText(null);item_brand.setText(null); item_price.setText(null);quantity.setText(null);total_price.setText(null);description.setSelectedIndex(0);date.setText(null);
+        }}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       String costumer_ids ;
+       String item_ids ;
        
-        costumer_ids = item_id.getText();
+        item_ids = item_id.getText();
         
-        if(CustomerClass.DeleteCustomer(costumer_ids)){
+        if(Parts_Filter.DeletePartsFilter(item_ids)){
             JOptionPane.showMessageDialog(null, "FAILED");
         }else{
              JOptionPane.showMessageDialog(null, "SUCCESS DELETED");  
-             Costumer();
+             Parts(); item_id.setText(null);item_name.setText(null);item_brand.setText(null); item_price.setText(null);quantity.setText(null);total_price.setText(null);description.setSelectedIndex(0);date.setText(null);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void Costumer_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Costumer_tableMouseClicked
-//          int i = Costumer_table.getSelectedRow();
-//        TableModel model = Costumer_table.getModel();
-//        item_id.setText(model.getValueAt(i,0).toString());  
-//        item_name.setText(model.getValueAt(i,1).toString()); 
-//        item_brand.setText(model.getValueAt(i,2).toString());  
-//        costumer_address.setText(model.getValueAt(i,3).toString()); 
-//        item_price.setText(model.getValueAt(i,4).toString());  
-//        customer_dates.setText(model.getValueAt(i,5).toString()); 
-    }//GEN-LAST:event_Costumer_tableMouseClicked
+    private void Parts_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Parts_TableMouseClicked
+        int i = Parts_Table.getSelectedRow();
+        TableModel model = Parts_Table.getModel();
+        item_id.setText(model.getValueAt(i,0).toString());  
+        item_name.setText(model.getValueAt(i,1).toString()); 
+        item_brand.setText(model.getValueAt(i,2).toString());  
+        item_price.setText(model.getValueAt(i,3).toString()); 
+        quantity.setText(model.getValueAt(i,4).toString());  
+        total_price.setText(model.getValueAt(i,5).toString()); 
+        description.setSelectedItem(model.getValueAt(i,6));  
+        date.setText(model.getValueAt(i,6).toString()); 
+        
+    }//GEN-LAST:event_Parts_TableMouseClicked
 
     private void searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyPressed
-        DefaultTableModel tm = (DefaultTableModel)Costumer_table.getModel();
-        String find = search.getText().toUpperCase();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
-        Costumer_table.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(find));
+        
     }//GEN-LAST:event_searchKeyPressed
+
+    private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
+        DefaultTableModel tm = (DefaultTableModel)Parts_Table.getModel();
+        String find = search.getText();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Parts_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_searchKeyReleased
 
     /**
      * @param args the command line arguments
@@ -329,8 +350,8 @@ public class Parts extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Costumer_table;
-    private datechooser.beans.DateChooserCombo customer_dates;
+    private javax.swing.JTable Parts_Table;
+    private datechooser.beans.DateChooserCombo date;
     private javax.swing.JComboBox<String> description;
     private javax.swing.JTextField item_brand;
     private javax.swing.JTextField item_id;
