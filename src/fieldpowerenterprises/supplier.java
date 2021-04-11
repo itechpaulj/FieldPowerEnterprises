@@ -79,7 +79,7 @@ public class supplier extends javax.swing.JFrame {
     public boolean findSupplierName(String name){
         boolean isFalse = false;
         try{
-            String sqlquery_existSupplierName = "SELECT `supplier_name` FROM `supplier_tbl` WHERE `supplier_name`=? ";
+            String sqlquery_existSupplierName = "SELECT `NAME` FROM `supplier_tbl` WHERE `NAME`=? ";
             ps = (PreparedStatement) database.getConnection().prepareStatement(sqlquery_existSupplierName);
             ps.setString(1, name);
             rs = ps.executeQuery();
@@ -417,7 +417,7 @@ public class supplier extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(null, "Already Exsiting Username");
             }
             else{
-                String sqlquery_Supplier = "INSERT INTO `supplier_tbl` (`supplier_name`, `supplier_address`, `supplier_contact`, `supplier_email`, `supplier_date`) VALUES (?,?,?,?,?)";
+                String sqlquery_Supplier = "INSERT INTO `supplier_tbl` (`NAME`, `ADDRESS`, `CONTACT`, `EMAIL`, `DATE`) VALUES (?,?,?,?,?)";
                 ps = (PreparedStatement) database.getConnection().prepareStatement(sqlquery_Supplier);
                 ps.setString(1,supplier_named.getText());
                 ps.setString(2,supplier_address.getText());
@@ -470,7 +470,7 @@ public class supplier extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Error!","",JOptionPane.ERROR_MESSAGE);
             }
             else{
-                String sqlqueryUpdate = "UPDATE `supplier_tbl` SET `supplier_name`=?, `supplier_address`=?, `supplier_contact`=?, `supplier_email`=?, `supplier_date`=? WHERE `supplier_id`=?  ";
+                String sqlqueryUpdate = "UPDATE `supplier_tbl` SET `NAME`=?, `ADDRESS`=?, `CONTACT`=?, `EMAIL`=?, `DATE`=? WHERE `ID`=?  ";
                 ps = (PreparedStatement) database.getConnection().prepareStatement(sqlqueryUpdate);
 
 
