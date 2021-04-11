@@ -39,12 +39,12 @@ public class supplier extends javax.swing.JFrame {
             {
                 showAllData = new supplierClass
                 (
-                    rs.getInt("supplier_id"),
-                    rs.getString("supplier_name"),
-                    rs.getString("supplier_address"),
-                    rs.getString("supplier_contact"),
-                    rs.getString("supplier_email"),
-                    rs.getString("supplier_date")
+                    rs.getInt("ID"),
+                    rs.getString("NAME"),
+                    rs.getString("ADDRESS"),
+                    rs.getString("CONTACT"),
+                    rs.getString("EMAIL"),
+                    rs.getString("DATE")
                 );
                 getAllData.add(showAllData);
             }
@@ -57,7 +57,7 @@ public class supplier extends javax.swing.JFrame {
     
     //object 
     public void showTableSupplier(){
-        ArrayList<supplierClass> list = getfrom_supplierTbl("SELECT `supplier_id`, `supplier_name`, `supplier_address`, `supplier_contact`, `supplier_email`, `supplier_date` FROM `supplier_tbl` ");
+        ArrayList<supplierClass> list = getfrom_supplierTbl("SELECT `ID`, `NAME`, `ADDRESS`, `CONTACT`, `EMAIL`, `DATE` FROM `supplier_tbl` ");
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         
         Object[] row = new Object[6];
@@ -241,7 +241,7 @@ public class supplier extends javax.swing.JFrame {
 
         },
         new String [] {
-            "supplier_id", "supplier_name", "supplier_address", "supplier_contact", "supplire_email", "supplier_date"
+            "ID", "NAME", "ADDRESS", "CONTACT", "EMAILl", "DATE"
         }
     ) {
         boolean[] canEdit = new boolean [] {
