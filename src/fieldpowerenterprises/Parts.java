@@ -57,7 +57,6 @@ public class Parts extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        item_price = new javax.swing.JTextField();
         date = new datechooser.beans.DateChooserCombo();
         jScrollPane1 = new javax.swing.JScrollPane();
         Parts_Table = new javax.swing.JTable();
@@ -68,10 +67,11 @@ public class Parts extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         search = new javax.swing.JTextField();
         description = new javax.swing.JComboBox<>();
-        quantity = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        total_price = new javax.swing.JTextField();
+        item_price = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
+        total_price = new javax.swing.JTextField();
+        quantity = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,10 +115,6 @@ public class Parts extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setText("PRICE");
         kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, 110, 30));
-
-        item_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        item_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(item_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 190, 30));
 
         date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
         kGradientPanel1.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 190, 30));
@@ -193,21 +189,38 @@ public class Parts extends javax.swing.JFrame {
         description.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "NONE", "PARTS", "FILTER" }));
         kGradientPanel1.add(description, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 190, 30));
 
-        quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 190, 30));
-
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setText("QUANTITY");
         kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 110, 30));
+
+        item_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        item_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        item_price.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                item_priceKeyTyped(evt);
+            }
+        });
+        kGradientPanel1.add(item_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 120, 190, 30));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel9.setText("TOTAL PRICE");
+        kGradientPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 110, 30));
 
         total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         kGradientPanel1.add(total_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 200, 190, 30));
 
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel9.setText("TOTAL PRICE");
-        kGradientPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 110, 30));
+        quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                quantityKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                quantityKeyTyped(evt);
+            }
+        });
+        kGradientPanel1.add(quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, 190, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -234,7 +247,7 @@ public class Parts extends javax.swing.JFrame {
         item_brands = item_brand.getText();
         prices = item_price.getText();
         quantitys = quantity.getText();
-        totals = total_price.getText();
+        totals = item_price.getText();
         dates = date.getText();
        
         desc = description.getSelectedItem().toString();
@@ -247,7 +260,7 @@ public class Parts extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "FAILED");
             }else{
                  JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED");  
-               Parts(); item_id.setText(null);item_name.setText(null);item_brand.setText(null); item_price.setText(null);quantity.setText(null);total_price.setText(null);description.setSelectedIndex(0);date.setText(null);
+               Parts(); item_id.setText(null);item_name.setText(null);item_brand.setText(null); item_price.setText(null);quantity.setText(null);item_price.setText(null);description.setSelectedIndex(0);date.setText(null);
                  }
             }
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -259,7 +272,7 @@ public class Parts extends javax.swing.JFrame {
         item_brands = item_brand.getText();
         prices = item_price.getText();
         quantitys = quantity.getText();
-        totals = total_price.getText();
+        totals = item_price.getText();
         dates = date.getText();
        
         desc = description.getSelectedItem().toString();
@@ -270,7 +283,7 @@ public class Parts extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "FAILED");
         }else{
              JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED");  
-             Parts(); item_id.setText(null);item_name.setText(null);item_brand.setText(null); item_price.setText(null);quantity.setText(null);total_price.setText(null);description.setSelectedIndex(0);date.setText(null);
+             Parts(); item_id.setText(null);item_name.setText(null);item_brand.setText(null); item_price.setText(null);quantity.setText(null);item_price.setText(null);description.setSelectedIndex(0);date.setText(null);
         }}
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -283,7 +296,7 @@ public class Parts extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "FAILED");
         }else{
              JOptionPane.showMessageDialog(null, "SUCCESS DELETED");  
-             Parts(); item_id.setText(null);item_name.setText(null);item_brand.setText(null); item_price.setText(null);quantity.setText(null);total_price.setText(null);description.setSelectedIndex(0);date.setText(null);
+             Parts(); item_id.setText(null);item_name.setText(null);item_brand.setText(null); item_price.setText(null);quantity.setText(null);item_price.setText(null);description.setSelectedIndex(0);date.setText(null);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -295,14 +308,18 @@ public class Parts extends javax.swing.JFrame {
         item_brand.setText(model.getValueAt(i,2).toString());  
         item_price.setText(model.getValueAt(i,3).toString()); 
         quantity.setText(model.getValueAt(i,4).toString());  
-        total_price.setText(model.getValueAt(i,5).toString()); 
+        item_price.setText(model.getValueAt(i,5).toString()); 
         description.setSelectedItem(model.getValueAt(i,6));  
         date.setText(model.getValueAt(i,6).toString()); 
         
     }//GEN-LAST:event_Parts_TableMouseClicked
 
     private void searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyPressed
-        
+        DefaultTableModel tm = (DefaultTableModel)Parts_Table.getModel();
+        String find = search.getText();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Parts_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
     }//GEN-LAST:event_searchKeyPressed
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
@@ -312,6 +329,28 @@ public class Parts extends javax.swing.JFrame {
         Parts_Table.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(find));
     }//GEN-LAST:event_searchKeyReleased
+
+    private void quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quantityKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_quantityKeyTyped
+
+    private void item_priceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_item_priceKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_item_priceKeyTyped
+
+    private void quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_quantityKeyReleased
+        int p =0 , q =0,t=0;
+        p = Integer.parseInt(item_price.getText());
+        q = Integer.parseInt(quantity.getText());
+        t = p * q;
+        total_price.setText(""+t);
+    }//GEN-LAST:event_quantityKeyReleased
 
     /**
      * @param args the command line arguments

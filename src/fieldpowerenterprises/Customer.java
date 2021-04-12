@@ -33,7 +33,7 @@ public class Customer extends javax.swing.JFrame {
 
     private void Costumer(){
         try{
-        PreparedStatement ps = database.getConnection().prepareStatement("SELECT * FROM customer_tbl ");
+        PreparedStatement ps = database.getConnection().prepareStatement("SELECT * FROM `customer_tbl` ");
         ResultSet rs = ps.executeQuery();
         Costumer_table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
@@ -60,7 +60,6 @@ public class Customer extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         costumer_contack = new javax.swing.JTextField();
-        customer_dates = new datechooser.beans.DateChooserCombo();
         jScrollPane1 = new javax.swing.JScrollPane();
         Costumer_table = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -120,9 +119,6 @@ public class Customer extends javax.swing.JFrame {
         costumer_contack.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         costumer_contack.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         kGradientPanel1.add(costumer_contack, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 170, 220, 30));
-
-        customer_dates.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-        kGradientPanel1.add(customer_dates, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 210, 220, 30));
 
         Costumer_table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Costumer_table.setModel(new javax.swing.table.DefaultTableModel(
@@ -215,9 +211,9 @@ public class Customer extends javax.swing.JFrame {
         costumers_emails = costumer_email_add.getText();
         costumers_addresss = costumer_address.getText();
         costumers_contacts = costumer_contack.getText();
-        costumerss_dates = customer_dates.getText();
         
-        if(CustomerClass.AddCustomer(costumers_names, costumers_emails, costumers_addresss, costumers_contacts, costumerss_dates)){
+        
+        if(CustomerClass.AddCustomer(costumers_names, costumers_emails, costumers_addresss, costumers_contacts)){
             JOptionPane.showMessageDialog(null, "FAILED");
         }else{
              JOptionPane.showMessageDialog(null, "SUCCESS ADDED"); 
@@ -235,8 +231,8 @@ public class Customer extends javax.swing.JFrame {
         costumers_emails = costumer_email_add.getText();
         costumers_addresss = costumer_address.getText();
         costumers_contacts = costumer_contack.getText();
-        costumerss_dates = customer_dates.getText();
-        if(CustomerClass.UpdateCustomer(costumer_ids, costumers_names, costumers_emails, costumers_addresss, costumers_contacts, costumerss_dates)){
+        
+        if(CustomerClass.UpdateCustomer(costumer_ids, costumers_names, costumers_emails, costumers_addresss, costumers_contacts)){
             JOptionPane.showMessageDialog(null, "FAILED");
         }else{
              JOptionPane.showMessageDialog(null, "SUCCESS UPDATED");  
@@ -265,7 +261,7 @@ public class Customer extends javax.swing.JFrame {
         costumer_email_add.setText(model.getValueAt(i,2).toString());  
         costumer_address.setText(model.getValueAt(i,3).toString()); 
         costumer_contack.setText(model.getValueAt(i,4).toString());  
-        customer_dates.setText(model.getValueAt(i,5).toString()); 
+       
     }//GEN-LAST:event_Costumer_tableMouseClicked
 
     private void searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyPressed
@@ -326,7 +322,6 @@ public class Customer extends javax.swing.JFrame {
     private javax.swing.JTextField costumer_email_add;
     private javax.swing.JTextField costumer_fname;
     private javax.swing.JTextField costumer_id;
-    private datechooser.beans.DateChooserCombo customer_dates;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
