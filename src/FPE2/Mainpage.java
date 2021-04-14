@@ -1780,8 +1780,8 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void jLabel90MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel90MouseClicked
         // Add new Customer
-//        AddCustomer ac = new AddCustomer();
-//        ac.setVisible(true);
+        AddCustomer ac = new AddCustomer();
+        ac.setVisible(true);
     }//GEN-LAST:event_jLabel90MouseClicked
 
     private void Supplier_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Supplier_TableMouseClicked
