@@ -6,7 +6,8 @@
 package FPE2;
 
 import javafx.scene.control.TabPane;
-
+import javax.swing.JTabbedPane;
+import FPE2.Mainpage;
 /**
  *
  * @author ROBLES
@@ -90,8 +91,23 @@ public class Choose extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        int j = 5;
-        Mainpage m = new Mainpage(j);
+
+        
+       
+        
+        try{
+            new Mainpage();
+            JTabbedPane jt = new JTabbedPane();
+            jt.setSelectedIndex(4);
+  
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+       
+       
+    
         dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 

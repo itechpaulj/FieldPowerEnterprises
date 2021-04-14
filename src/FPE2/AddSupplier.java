@@ -5,6 +5,8 @@
  */
 package FPE2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ROBLES
@@ -33,14 +35,14 @@ public class AddSupplier extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        sup_contact = new javax.swing.JTextField();
+        sup_email = new javax.swing.JTextField();
+        sup_adress = new javax.swing.JTextField();
+        sup_name = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        BACK = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        ADD_SUPPLIER_BTN = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -49,43 +51,43 @@ public class AddSupplier extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel9.setText("CONTACT");
-        kGradientPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 122, 30));
+        kGradientPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 122, 30));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel10.setText("EMAIL");
-        kGradientPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 122, 30));
+        kGradientPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 122, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setText("ADDRESS");
-        kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 122, 30));
+        kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 122, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("ADD NEW SUPPLIER");
-        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 40, 390, 70));
+        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 390, 70));
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel11.setText("NAME");
-        kGradientPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 122, 30));
+        kGradientPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 122, 30));
 
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 200, 30));
+        sup_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kGradientPanel1.add(sup_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 190, 30));
 
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 200, 30));
+        sup_email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kGradientPanel1.add(sup_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 190, 30));
 
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, 200, 30));
+        sup_adress.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kGradientPanel1.add(sup_adress, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 190, 30));
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 200, 30));
+        sup_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kGradientPanel1.add(sup_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 190, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("BACK");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        BACK.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        BACK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BACK.setText("BACK");
+        BACK.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                BACKMouseClicked(evt);
             }
         });
 
@@ -93,24 +95,28 @@ public class AddSupplier extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(BACK, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(BACK, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, 150, 50));
+        kGradientPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 470, 150, 50));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("ADD");
-        jLabel3.addKeyListener(new java.awt.event.KeyAdapter() {
+        ADD_SUPPLIER_BTN.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        ADD_SUPPLIER_BTN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ADD_SUPPLIER_BTN.setText("ADD");
+        ADD_SUPPLIER_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ADD_SUPPLIER_BTNMouseClicked(evt);
+            }
+        });
+        ADD_SUPPLIER_BTN.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jLabel3KeyPressed(evt);
+                ADD_SUPPLIER_BTNKeyPressed(evt);
             }
         });
 
@@ -118,40 +124,56 @@ public class AddSupplier extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(ADD_SUPPLIER_BTN, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(ADD_SUPPLIER_BTN, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 150, 50));
+        kGradientPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 150, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel3KeyPressed
+    private void ADD_SUPPLIER_BTNKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ADD_SUPPLIER_BTNKeyPressed
 
-        this.dispose();
-    }//GEN-LAST:event_jLabel3KeyPressed
+        
+    }//GEN-LAST:event_ADD_SUPPLIER_BTNKeyPressed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void BACKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BACKMouseClicked
         this.dispose();
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_BACKMouseClicked
+
+    private void ADD_SUPPLIER_BTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ADD_SUPPLIER_BTNMouseClicked
+                String name,address,email,contact;
+        name = sup_name.getText();
+        address = sup_adress.getText();
+        email = sup_email.getText();
+        contact = sup_contact.getText();
+        
+        if(Class_Supplier.AddSupplier(name, address, contact, email)){
+            JOptionPane.showMessageDialog(null, "faild");
+        }else{
+            JOptionPane.showMessageDialog(null, "OK");
+    }
+    }//GEN-LAST:event_ADD_SUPPLIER_BTNMouseClicked
 
     /**
      * @param args the command line arguments
@@ -189,19 +211,19 @@ public class AddSupplier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ADD_SUPPLIER_BTN;
+    private javax.swing.JLabel BACK;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JTextField sup_adress;
+    private javax.swing.JTextField sup_contact;
+    private javax.swing.JTextField sup_email;
+    private javax.swing.JTextField sup_name;
     // End of variables declaration//GEN-END:variables
 }
