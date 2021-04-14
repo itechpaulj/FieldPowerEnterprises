@@ -5,14 +5,17 @@
  */
 package FPE2;
 
-import fieldpowerenterprises.database;
+
+
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.LayoutManager;
+import java.awt.RenderingHints;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.TableModel;
 import net.proteanit.sql.DbUtils;
 
@@ -23,23 +26,110 @@ import net.proteanit.sql.DbUtils;
 public class Mainpage extends javax.swing.JFrame {
 
     int js;
+    PreparedStatement ps;
+    ResultSet rs;
     public Mainpage() {
         initComponents();
-        Supplier();
+        Supplier(); // supplier table
+        Customer(); // customer table
         jTabbedPane.setSelectedIndex(js);
-        show.hide();
+        
+        
+        // hide menu in java customer menu
+        menu_viewGenset.setOpaque(false);
+        menu_viewGenset.setVisible(false);
+        
+        menu_viewFilter.setVisible(false);
+        menu_viewFilter.setOpaque(false);
+         
+        menu_viewPart.setVisible(false);
+        menu_viewPart.setOpaque(false);
+        
+        menu_closeCustomer.setVisible(false);
+        menu_closeCustomer.setOpaque(false);
+        
+        // hide menu in supplier menu
+                menu_viewGenset.setOpaque(false);
+
     }
   
 
+    // supplier table
     private void Supplier(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM supplier_table ");
-        ResultSet rs = ps.executeQuery();
+         ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM supplier_table ");
+        rs = ps.executeQuery();
         Supplier_Table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
               System.out.println(e);
         }
     }
+    // end supplier table
+    
+    
+    // customer table
+    private void Customer(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` ");
+        ResultSet rs = ps.executeQuery();
+        Customer_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(Exception e){
+              System.out.println(e);
+        }
+    }
+    // end customer table
+    
+    
+  // border Radius in JPanel
+        class RoundedPanel extends JPanel
+    {
+        private Color backgroundColor;
+        private int cornerRadius = 15;
+
+        public RoundedPanel(LayoutManager layout, int radius) {
+            super(layout);
+            cornerRadius = radius;
+        }
+
+        public RoundedPanel(LayoutManager layout, int radius, Color bgColor) {
+            super(layout);
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+
+        public RoundedPanel(int radius) {
+            super();
+            cornerRadius = radius;
+        }
+
+        public RoundedPanel(int radius, Color bgColor) {
+            super();
+            cornerRadius = radius;
+            backgroundColor = bgColor;
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Dimension arcs = new Dimension(cornerRadius, cornerRadius);
+            int width = getWidth();
+            int height = getHeight();
+            Graphics2D graphics = (Graphics2D) g;
+            graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+            //Draws the rounded panel with borders.
+            if (backgroundColor != null) {
+                graphics.setColor(backgroundColor);
+            } else {
+                graphics.setColor(getBackground());
+            }
+            graphics.fillRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint background
+            graphics.setColor(getForeground());
+            graphics.drawRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height); //paint border
+        }
+        // border Radius in JPanel
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -58,32 +148,6 @@ public class Mainpage extends javax.swing.JFrame {
         jTabbedPane = new javax.swing.JTabbedPane();
         LOGO = new keeptoo.KGradientPanel();
         show = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        STOCKS = new keeptoo.KGradientPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        CUSTOMER = new keeptoo.KGradientPanel();
-        jPanel25 = new javax.swing.JPanel();
-        jLabel88 = new javax.swing.JLabel();
-        jPanel26 = new javax.swing.JPanel();
-        jLabel89 = new javax.swing.JLabel();
-        jPanel27 = new javax.swing.JPanel();
-        jLabel90 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        Supplier_Table1 = new javax.swing.JTable();
-        REPORTS = new keeptoo.KGradientPanel();
-        VIEWGENSET = new keeptoo.KGradientPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jPanel19 = new javax.swing.JPanel();
-        jLabel51 = new javax.swing.JLabel();
-        jPanel20 = new javax.swing.JPanel();
-        jLabel52 = new javax.swing.JLabel();
-        jPanel21 = new javax.swing.JPanel();
-        jLabel53 = new javax.swing.JLabel();
-        jPanel28 = new javax.swing.JPanel();
-        jLabel60 = new javax.swing.JLabel();
         SUPPLIER = new keeptoo.KGradientPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -98,6 +162,40 @@ public class Mainpage extends javax.swing.JFrame {
         show_email = new javax.swing.JLabel();
         show_name = new javax.swing.JLabel();
         show_contact = new javax.swing.JLabel();
+        CUSTOMER = new keeptoo.KGradientPanel();
+        menu_closeCustomer = new RoundedPanel(30,new Color(0,0,153));
+        jLabel14 = new javax.swing.JLabel();
+        menu_viewGenset = new RoundedPanel(30,new Color(0,0,153));
+        jLabel7 = new javax.swing.JLabel();
+        menu_viewPart = new RoundedPanel(30,new Color(0,0,153));
+        jLabel8 = new javax.swing.JLabel();
+        menu_viewFilter = new RoundedPanel(30,new Color(0,0,153));
+        jLabel9 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel88 = new javax.swing.JLabel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel89 = new javax.swing.JLabel();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel90 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        Customer_Table = new javax.swing.JTable();
+        STOCKS = new keeptoo.KGradientPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        REPORTS = new keeptoo.KGradientPanel();
+        VIEWGENSET = new keeptoo.KGradientPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
+        jPanel20 = new javax.swing.JPanel();
+        jLabel52 = new javax.swing.JLabel();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel53 = new javax.swing.JLabel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         VIEWFILTER = new keeptoo.KGradientPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -109,6 +207,7 @@ public class Mainpage extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
         VIEWPARTS = new keeptoo.KGradientPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -120,6 +219,7 @@ public class Mainpage extends javax.swing.JFrame {
         jLabel67 = new javax.swing.JLabel();
         jPanel36 = new javax.swing.JPanel();
         jLabel68 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
         GENSET = new keeptoo.KGradientPanel();
         jTextField5 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
@@ -234,8 +334,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         kGradientPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel15.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel15.setText("  STOCKS");
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel15.setText("  SUPPLIER / STOCKS");
         jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel15MouseClicked(evt);
@@ -246,16 +346,16 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+            .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel5.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 170, 50));
+        kGradientPanel5.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 190, 50));
 
-        jLabel17.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel17.setText("  REPORTS");
         jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -267,17 +367,17 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel5.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 170, 50));
+        kGradientPanel5.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 190, 50));
 
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel16.setText("  TRANSACTION");
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel16.setText("  CUSTOMER / TRANSACTION");
         jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel16MouseClicked(evt);
@@ -288,16 +388,18 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel5.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 170, 50));
+        kGradientPanel5.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 190, 50));
 
-        jLabel18.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel18.setText("  HOME");
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -309,14 +411,14 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel5.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 170, 50));
+        kGradientPanel5.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 190, 50));
 
         getContentPane().add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 660));
 
@@ -327,20 +429,315 @@ public class Mainpage extends javax.swing.JFrame {
         show.setText("FIELD POWER ENTERPRISES");
         LOGO.add(show, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 135, 932, 256));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        LOGO.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 390, -1, -1));
-
         jTabbedPane.addTab("HOME", LOGO);
+
+        SUPPLIER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("BACK");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        SUPPLIER.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 190, 60));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("NEW STOCK");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        SUPPLIER.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 190, 60));
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("ADD NEW SUPPLIER");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        SUPPLIER.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 190, 60));
+
+        Supplier_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        Supplier_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Supplier_TableMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Supplier_Table);
+
+        SUPPLIER.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 800, 450));
+
+        show_add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SUPPLIER.add(show_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 70, 30));
+
+        show_id.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SUPPLIER.add(show_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 70, 30));
+
+        show_email.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SUPPLIER.add(show_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 70, 30));
+
+        show_name.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SUPPLIER.add(show_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 70, 30));
+
+        show_contact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        SUPPLIER.add(show_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 70, 30));
+
+        jTabbedPane.addTab("SUPPLIER", SUPPLIER);
+
+        CUSTOMER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        menu_closeCustomer.setBackground(new java.awt.Color(0, 0, 153));
+
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("  CLOSE");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menu_closeCustomerLayout = new javax.swing.GroupLayout(menu_closeCustomer);
+        menu_closeCustomer.setLayout(menu_closeCustomerLayout);
+        menu_closeCustomerLayout.setHorizontalGroup(
+            menu_closeCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+        );
+        menu_closeCustomerLayout.setVerticalGroup(
+            menu_closeCustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        CUSTOMER.add(menu_closeCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 100, 40));
+
+        menu_viewGenset.setBackground(new java.awt.Color(0, 0, 153));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("  VIEW GENSET");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menu_viewGensetLayout = new javax.swing.GroupLayout(menu_viewGenset);
+        menu_viewGenset.setLayout(menu_viewGensetLayout);
+        menu_viewGensetLayout.setHorizontalGroup(
+            menu_viewGensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menu_viewGensetLayout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        menu_viewGensetLayout.setVerticalGroup(
+            menu_viewGensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        CUSTOMER.add(menu_viewGenset, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 100, 40));
+
+        menu_viewPart.setBackground(new java.awt.Color(0, 0, 153));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("  VIEW PARTS");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menu_viewPartLayout = new javax.swing.GroupLayout(menu_viewPart);
+        menu_viewPart.setLayout(menu_viewPartLayout);
+        menu_viewPartLayout.setHorizontalGroup(
+            menu_viewPartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menu_viewPartLayout.createSequentialGroup()
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        menu_viewPartLayout.setVerticalGroup(
+            menu_viewPartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        CUSTOMER.add(menu_viewPart, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, 40));
+
+        menu_viewFilter.setBackground(new java.awt.Color(0, 0, 153));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("  VIEW FILTER");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menu_viewFilterLayout = new javax.swing.GroupLayout(menu_viewFilter);
+        menu_viewFilter.setLayout(menu_viewFilterLayout);
+        menu_viewFilterLayout.setHorizontalGroup(
+            menu_viewFilterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menu_viewFilterLayout.createSequentialGroup()
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+        menu_viewFilterLayout.setVerticalGroup(
+            menu_viewFilterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        CUSTOMER.add(menu_viewFilter, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, -1, 40));
+
+        jLabel88.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel88.setText("BACK");
+        jLabel88.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel88MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addComponent(jLabel88, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addGap(114, 114, 114))
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel88, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        CUSTOMER.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 160, 60));
+
+        jLabel89.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel89.setText("SELECT PRODUCT ");
+        jLabel89.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel89MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addComponent(jLabel89, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 3, Short.MAX_VALUE))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        CUSTOMER.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 160, 60));
+
+        jLabel90.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel90.setText("ADD NEW CUSTOMER");
+        jLabel90.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel90MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        CUSTOMER.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 160, 60));
+
+        Customer_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "ADDRESS", "EMAIL", "CONTACT"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(Customer_Table);
+        if (Customer_Table.getColumnModel().getColumnCount() > 0) {
+            Customer_Table.getColumnModel().getColumn(0).setResizable(false);
+            Customer_Table.getColumnModel().getColumn(1).setResizable(false);
+            Customer_Table.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        CUSTOMER.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 800, 450));
+
+        jTabbedPane.addTab("CUSTOMER", CUSTOMER);
 
         STOCKS.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -378,91 +775,6 @@ public class Mainpage extends javax.swing.JFrame {
         STOCKS.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 280, 250));
 
         jTabbedPane.addTab("VIEW", STOCKS);
-
-        CUSTOMER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel88.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel88.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel88.setText("BACK");
-        jLabel88.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel88MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
-        jPanel25.setLayout(jPanel25Layout);
-        jPanel25Layout.setHorizontalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel88, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        jPanel25Layout.setVerticalGroup(
-            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel88, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        CUSTOMER.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 190, 60));
-
-        jLabel89.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel89.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel89.setText("SELECT CUSTOMER");
-        jLabel89.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel89MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
-        jPanel26.setLayout(jPanel26Layout);
-        jPanel26Layout.setHorizontalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        jPanel26Layout.setVerticalGroup(
-            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        CUSTOMER.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 190, 60));
-
-        jLabel90.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel90.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel90.setText("ADD NEW CUSTOMER");
-        jLabel90.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel90MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
-        jPanel27.setLayout(jPanel27Layout);
-        jPanel27Layout.setHorizontalGroup(
-            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        jPanel27Layout.setVerticalGroup(
-            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel90, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        CUSTOMER.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 190, 60));
-
-        Supplier_Table1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane6.setViewportView(Supplier_Table1);
-
-        CUSTOMER.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 800, 450));
-
-        jTabbedPane.addTab("SUPPLIER", CUSTOMER);
 
         javax.swing.GroupLayout REPORTSLayout = new javax.swing.GroupLayout(REPORTS);
         REPORTS.setLayout(REPORTSLayout);
@@ -582,112 +894,10 @@ public class Mainpage extends javax.swing.JFrame {
 
         VIEWGENSET.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, 170, 50));
 
+        jLabel10.setText("GENSET");
+        VIEWGENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 200, -1));
+
         jTabbedPane.addTab("TBLGENSET", VIEWGENSET);
-
-        SUPPLIER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("BACK");
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        SUPPLIER.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 190, 60));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("SELECT SUPPLIER");
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        SUPPLIER.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 190, 60));
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("ADD NEW SUPPLIER");
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel13MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        SUPPLIER.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 190, 60));
-
-        Supplier_Table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        Supplier_Table.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Supplier_TableMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(Supplier_Table);
-
-        SUPPLIER.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 800, 450));
-
-        show_add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        SUPPLIER.add(show_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 510, 70, 30));
-
-        show_id.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        SUPPLIER.add(show_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 470, 70, 30));
-
-        show_email.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        SUPPLIER.add(show_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 70, 30));
-
-        show_name.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        SUPPLIER.add(show_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 70, 30));
-
-        show_contact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        SUPPLIER.add(show_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, 70, 30));
-
-        jTabbedPane.addTab("SUPPLIER", SUPPLIER);
 
         VIEWFILTER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -793,6 +1003,9 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         VIEWFILTER.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, 170, 50));
+
+        jLabel41.setText("FILTER");
+        VIEWFILTER.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 120, -1));
 
         jTabbedPane.addTab("TBLFILTER", VIEWFILTER);
 
@@ -900,6 +1113,9 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         VIEWPARTS.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 460, 170, 50));
+
+        jLabel50.setText("PARTS");
+        VIEWPARTS.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, -1, 20));
 
         jTabbedPane.addTab("TBLPARTS", VIEWPARTS);
 
@@ -1411,7 +1627,7 @@ public class Mainpage extends javax.swing.JFrame {
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         // INVENTORY / STOCK PAGE
        jTabbedPane.setSelectedIndex(1);
-       jLabel33.setText("INVENTORY / STOCKS");
+       jLabel33.setText("STOCKS");
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
@@ -1519,7 +1735,7 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-       
+          jTabbedPane.setSelectedIndex(3);
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
@@ -1555,10 +1771,17 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void jLabel89MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel89MouseClicked
         // TODO add your handling code here:
+        // show menu in customer view product list
+        menu_viewGenset.setVisible(true);
+        menu_viewFilter.setVisible(true);
+        menu_viewPart.setVisible(true);
+        menu_closeCustomer.setVisible(true);
     }//GEN-LAST:event_jLabel89MouseClicked
 
     private void jLabel90MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel90MouseClicked
-        // TODO add your handling code here:
+        // Add new Customer
+//        AddCustomer ac = new AddCustomer();
+//        ac.setVisible(true);
     }//GEN-LAST:event_jLabel90MouseClicked
 
     private void Supplier_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Supplier_TableMouseClicked
@@ -1570,6 +1793,39 @@ public class Mainpage extends javax.swing.JFrame {
         show_email.setText(model.getValueAt(i,3).toString());
         show_contact.setText(model.getValueAt(i,4).toString());
     }//GEN-LAST:event_Supplier_TableMouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // View Genset
+        jTabbedPane.setSelectedIndex(5);
+        menu_viewGenset.setVisible(false);
+        menu_viewFilter.setVisible(false);
+        menu_viewPart.setVisible(false);
+        menu_closeCustomer.setVisible(false);
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        // TODO add your handling code here:
+        menu_viewGenset.setVisible(false);
+        menu_viewFilter.setVisible(false);
+        menu_viewPart.setVisible(false);
+        menu_closeCustomer.setVisible(false);
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        jTabbedPane.setSelectedIndex(6);
+        menu_viewGenset.setVisible(false);
+        menu_viewFilter.setVisible(false);
+        menu_viewPart.setVisible(false);
+        menu_closeCustomer.setVisible(false);
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        jTabbedPane.setSelectedIndex(7);
+        menu_viewGenset.setVisible(false);
+        menu_viewFilter.setVisible(false);
+        menu_viewPart.setVisible(false);
+        menu_closeCustomer.setVisible(false);
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1606,8 +1862,12 @@ public class Mainpage extends javax.swing.JFrame {
         });
     }
 
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private keeptoo.KGradientPanel CUSTOMER;
+    private javax.swing.JTable Customer_Table;
     private keeptoo.KGradientPanel FILTER;
     public static keeptoo.KGradientPanel GENSET;
     private keeptoo.KGradientPanel LOGO;
@@ -1616,7 +1876,6 @@ public class Mainpage extends javax.swing.JFrame {
     private keeptoo.KGradientPanel STOCKS;
     private keeptoo.KGradientPanel SUPPLIER;
     private javax.swing.JTable Supplier_Table;
-    private javax.swing.JTable Supplier_Table1;
     private keeptoo.KGradientPanel VIEWFILTER;
     public static keeptoo.KGradientPanel VIEWGENSET;
     private keeptoo.KGradientPanel VIEWPARTS;
@@ -1627,9 +1886,11 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -1659,6 +1920,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
@@ -1668,6 +1930,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
@@ -1688,6 +1951,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
@@ -1698,18 +1962,18 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabel90;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -1721,7 +1985,6 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
@@ -1777,6 +2040,10 @@ public class Mainpage extends javax.swing.JFrame {
     private keeptoo.KGradientPanel kGradientPanel2;
     private keeptoo.KGradientPanel kGradientPanel4;
     private keeptoo.KGradientPanel kGradientPanel5;
+    private javax.swing.JPanel menu_closeCustomer;
+    private javax.swing.JPanel menu_viewFilter;
+    private javax.swing.JPanel menu_viewGenset;
+    private javax.swing.JPanel menu_viewPart;
     private javax.swing.JLabel show;
     private javax.swing.JLabel show_add;
     private javax.swing.JLabel show_contact;

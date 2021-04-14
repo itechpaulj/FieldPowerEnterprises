@@ -3,6 +3,7 @@ package FPE2;
 
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
+import javax.swing.JOptionPane;
 
 
 public class FPE_DB {
@@ -15,6 +16,7 @@ public class FPE_DB {
         
         }catch(Exception e){
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null,"Error!\nNetworked Failure","",JOptionPane.ERROR_MESSAGE);
         }
         
         return con;

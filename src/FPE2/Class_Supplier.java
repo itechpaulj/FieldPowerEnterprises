@@ -11,7 +11,6 @@ public class Class_Supplier {
         PreparedStatement ps = null;
         try{
         ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `supplier_table`(`NAME`, `ADDRESS`, `EMAIL`, `CONTACT`) VALUES (?,?,?,?)");
-        //ps.setString(1, costumer_id);
         ps.setString(1, name);
         ps.setString(2, address);
         ps.setString(3, email);
