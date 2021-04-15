@@ -72,9 +72,7 @@ public class Mainpage extends javax.swing.JFrame {
         HOME_PANEL.setLayout(HOME_PANELLayout);
         HOME_PANELLayout.setHorizontalGroup(
             HOME_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HOME_PANELLayout.createSequentialGroup()
-                .addComponent(HOME_LABEL, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 28, Short.MAX_VALUE))
+            .addComponent(HOME_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         HOME_PANELLayout.setVerticalGroup(
             HOME_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,7 +83,7 @@ public class Mainpage extends javax.swing.JFrame {
 
         LOGOUT_LABEL1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         LOGOUT_LABEL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LOGOUT_LABEL1.setText("HOME");
+        LOGOUT_LABEL1.setText("LOGOUT");
         LOGOUT_LABEL1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 LOGOUT_LABEL1MouseEntered(evt);
@@ -99,9 +97,7 @@ public class Mainpage extends javax.swing.JFrame {
         LOGOUT_PANEL.setLayout(LOGOUT_PANELLayout);
         LOGOUT_PANELLayout.setHorizontalGroup(
             LOGOUT_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LOGOUT_PANELLayout.createSequentialGroup()
-                .addComponent(LOGOUT_LABEL1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 28, Short.MAX_VALUE))
+            .addComponent(LOGOUT_LABEL1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         LOGOUT_PANELLayout.setVerticalGroup(
             LOGOUT_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,7 +108,7 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_LABEL.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         STOCK_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        STOCK_LABEL.setText("HOME");
+        STOCK_LABEL.setText("STOCK");
         STOCK_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 STOCK_LABELMouseEntered(evt);
@@ -126,9 +122,7 @@ public class Mainpage extends javax.swing.JFrame {
         STOCK_PANEL.setLayout(STOCK_PANELLayout);
         STOCK_PANELLayout.setHorizontalGroup(
             STOCK_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(STOCK_PANELLayout.createSequentialGroup()
-                .addComponent(STOCK_LABEL, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 28, Short.MAX_VALUE))
+            .addComponent(STOCK_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         STOCK_PANELLayout.setVerticalGroup(
             STOCK_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +133,7 @@ public class Mainpage extends javax.swing.JFrame {
 
         SHOP_LABEL.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         SHOP_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SHOP_LABEL.setText("HOME");
+        SHOP_LABEL.setText("SHOP");
         SHOP_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 SHOP_LABELMouseEntered(evt);
@@ -153,9 +147,7 @@ public class Mainpage extends javax.swing.JFrame {
         SHOP_PANEL.setLayout(SHOP_PANELLayout);
         SHOP_PANELLayout.setHorizontalGroup(
             SHOP_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SHOP_PANELLayout.createSequentialGroup()
-                .addComponent(SHOP_LABEL, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 28, Short.MAX_VALUE))
+            .addComponent(SHOP_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         SHOP_PANELLayout.setVerticalGroup(
             SHOP_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,7 +158,7 @@ public class Mainpage extends javax.swing.JFrame {
 
         REPORT_LABEL.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         REPORT_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        REPORT_LABEL.setText("HOME");
+        REPORT_LABEL.setText("REPORT");
         REPORT_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 REPORT_LABELMouseEntered(evt);
@@ -180,9 +172,7 @@ public class Mainpage extends javax.swing.JFrame {
         REPORT_PANEL.setLayout(REPORT_PANELLayout);
         REPORT_PANELLayout.setHorizontalGroup(
             REPORT_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(REPORT_PANELLayout.createSequentialGroup()
-                .addComponent(REPORT_LABEL, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 28, Short.MAX_VALUE))
+            .addComponent(REPORT_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         REPORT_PANELLayout.setVerticalGroup(
             REPORT_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -219,8 +209,8 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_HOME_LABELMouseExited
 
     private void LOGOUT_LABEL1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOGOUT_LABEL1MouseEntered
-       HOME_LABEL.setForeground(new Color(255,255,255));
-       HOME_PANEL.setBackground(new Color(0,255,153));
+       LOGOUT_LABEL1.setForeground(new Color(255,255,255));
+       LOGOUT_PANEL.setBackground(new Color(0,255,153));
     }//GEN-LAST:event_LOGOUT_LABEL1MouseEntered
 
     private void LOGOUT_LABEL1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOGOUT_LABEL1MouseExited
