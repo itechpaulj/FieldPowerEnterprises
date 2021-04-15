@@ -168,7 +168,7 @@ public class AddCustomer extends javax.swing.JFrame {
         email = sup_email.getText();
         contact = sup_contact.getText();
         
-        if(Class_Customer.AddCustomer(name, address, contact, email)){
+        if(Class_AddStock.AddCustomer(name, address, contact, email)){
             JOptionPane.showMessageDialog(null, "faild");
         }else{
             JOptionPane.showMessageDialog(null, "OK");

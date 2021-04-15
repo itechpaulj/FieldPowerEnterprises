@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Javinez
  */
-public class Class_Customer {
+public class Class_AddStock {
         public static boolean AddCustomer(String name,String address,String contact,String email ){
         PreparedStatement ps = null;
         try{
