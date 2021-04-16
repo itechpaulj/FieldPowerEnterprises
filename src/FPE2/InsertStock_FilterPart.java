@@ -31,6 +31,7 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         as_price.setEnabled(false);
         as_quantity.setEnabled(false);
         as_type.setEnabled(false);
+        attach.setEnabled(false);
     }
 
     /**
@@ -62,8 +63,8 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         DESCRIPTION = new javax.swing.JScrollPane();
         as_description = new javax.swing.JTextArea();
         jLabel22 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel28 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        attach = new javax.swing.JLabel();
         BOX = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -161,23 +162,21 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, 140, 120));
 
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("ATTACH");
+        attach.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        attach.setText("ATTACH");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(attach, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(attach, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 400, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, -1, 30));
 
         BOX.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         BOX.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ADD  ITEM", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 0, 20))); // NOI18N
@@ -326,25 +325,25 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         as_price.setEnabled(false);
         as_quantity.setEnabled(false);
         as_type.setEnabled(false);
-
+        attach.setEnabled(false);
     }//GEN-LAST:event_add_supplierActionPerformed
 
     private void add_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_itemActionPerformed
         choose = "ADD ITEM";
         // add supplier
-        ad_contact.setEnabled(true);
-        ad_email.setEnabled(true);
-        ad_name.setEnabled(true);
-        add_address.setEnabled(true);
+        ad_contact.setEnabled(false);
+        ad_email.setEnabled(false);
+        ad_name.setEnabled(false);
+        add_address.setEnabled(false);
         
         // add filter part
-        as_brand.setEnabled(false);
-        as_description.setEnabled(false);
-        as_name.setEnabled(false);
-        as_price.setEnabled(false);
-        as_quantity.setEnabled(false);
-        as_type.setEnabled(false);
-
+        as_brand.setEnabled(true);
+        as_description.setEnabled(true);
+        as_name.setEnabled(true);
+        as_price.setEnabled(true);
+        as_quantity.setEnabled(true);
+        as_type.setEnabled(true);
+        attach.setEnabled(true);
 
     }//GEN-LAST:event_add_itemActionPerformed
 
@@ -363,7 +362,7 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         as_price.setEnabled(true);
         as_quantity.setEnabled(true);
         as_type.setEnabled(true);
-
+        attach.setEnabled(true);
     }//GEN-LAST:event_add_bothActionPerformed
 
     /**
@@ -428,6 +427,7 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
     private javax.swing.JTextField as_price;
     private javax.swing.JTextField as_quantity;
     private javax.swing.JComboBox<String> as_type;
+    private javax.swing.JLabel attach;
     private javax.swing.JLabel back;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
@@ -442,10 +442,9 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }
