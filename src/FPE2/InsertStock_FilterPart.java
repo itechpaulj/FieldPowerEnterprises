@@ -18,20 +18,6 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
      */
     public InsertStock_FilterPart() {
         initComponents();
-        // add supplier
-        ad_contact.setEnabled(false);
-        ad_email.setEnabled(false);
-        ad_name.setEnabled(false);
-        add_address.setEnabled(false);
-        
-        // add filter part
-        as_brand.setEnabled(false);
-        as_description.setEnabled(false);
-        as_name.setEnabled(false);
-        as_price.setEnabled(false);
-        as_quantity.setEnabled(false);
-        as_type.setEnabled(false);
-        attach.setEnabled(false);
     }
 
     /**
@@ -45,10 +31,6 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
-        add_supplier = new javax.swing.JRadioButton();
-        add_both = new javax.swing.JRadioButton();
-        add_item = new javax.swing.JRadioButton();
-        addBox_choose = new javax.swing.JLabel();
         as_name = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         as_brand = new javax.swing.JTextField();
@@ -70,15 +52,6 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        ad_name = new javax.swing.JTextField();
-        add_address = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        ad_contact = new javax.swing.JTextField();
-        ad_email = new javax.swing.JTextField();
-        addBox_item = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         HEADER_MENU = new javax.swing.JLabel();
 
@@ -90,63 +63,31 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
         KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(0, 255, 153));
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        buttonGroup1.add(add_supplier);
-        add_supplier.setText("ADD SUPPLIER");
-        add_supplier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_supplierActionPerformed(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(add_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, 20));
-
-        buttonGroup1.add(add_both);
-        add_both.setText("BOTH");
-        add_both.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_bothActionPerformed(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(add_both, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 20, -1, -1));
-
-        buttonGroup1.add(add_item);
-        add_item.setText("ADD ITEM");
-        add_item.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_itemActionPerformed(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(add_item, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, -1, 20));
-
-        addBox_choose.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        addBox_choose.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHOOSE", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        addBox_choose.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        KG2_ADD_STOCK_GENSET.add(addBox_choose, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 410, 50));
-        KG2_ADD_STOCK_GENSET.add(as_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 340, 190, 30));
+        KG2_ADD_STOCK_GENSET.add(as_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 190, 30));
 
         jLabel23.setText("NAME");
-        KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 70, 30));
-        KG2_ADD_STOCK_GENSET.add(as_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 190, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(as_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 190, 30));
 
         jLabel24.setText("BRAND");
-        KG2_ADD_STOCK_GENSET.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 70, 30));
 
         jLabel25.setText("PRICE");
-        KG2_ADD_STOCK_GENSET.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 420, 70, 30));
-        KG2_ADD_STOCK_GENSET.add(as_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 190, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(as_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 190, 30));
 
         as_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "FILTER", "PART", "OTHER" }));
-        KG2_ADD_STOCK_GENSET.add(as_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 190, 30));
+        KG2_ADD_STOCK_GENSET.add(as_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 190, 30));
 
         jLabel26.setText("TYPE");
-        KG2_ADD_STOCK_GENSET.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 70, 30));
 
         jLabel27.setText("QUANTITY");
-        KG2_ADD_STOCK_GENSET.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 300, 70, 40));
-        KG2_ADD_STOCK_GENSET.add(as_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 190, 40));
+        KG2_ADD_STOCK_GENSET.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 70, 40));
+        KG2_ADD_STOCK_GENSET.add(as_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 190, 40));
 
         jLabel10.setText("DESCRIPTION");
-        KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, -1, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, 30));
 
         as_description.setColumns(20);
         as_description.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -154,13 +95,13 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         as_description.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         DESCRIPTION.setViewportView(as_description);
 
-        KG2_ADD_STOCK_GENSET.add(DESCRIPTION, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 260, 100));
+        KG2_ADD_STOCK_GENSET.add(DESCRIPTION, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, 260, 100));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel22.setText("PICTURE");
         jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 270, 140, 120));
+        KG2_ADD_STOCK_GENSET.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 190, 140, 120));
 
         attach.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         attach.setText("ATTACH");
@@ -169,21 +110,26 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(attach, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addComponent(attach, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(attach, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 400, -1, 30));
+        KG2_ADD_STOCK_GENSET.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 320, -1, 30));
 
         BOX.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         BOX.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ADD  ITEM", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 0, 20))); // NOI18N
         BOX.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        KG2_ADD_STOCK_GENSET.add(BOX, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 1010, 280));
+        KG2_ADD_STOCK_GENSET.add(BOX, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 1010, 280));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPanel2.setPreferredSize(new java.awt.Dimension(190, 40));
+        jPanel2.setRequestFocusEnabled(false);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADD");
 
@@ -191,19 +137,21 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        KG2_ADD_STOCK_GENSET.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 120, 40));
+        KG2_ADD_STOCK_GENSET.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 430, 180, 50));
 
-        back.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(190, 40));
+
+        back.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         back.setText("BACK");
         back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -215,57 +163,16 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 24, Short.MAX_VALUE)
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 560, -1, 40));
-
-        jLabel17.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel17.setText("NAME");
-        jLabel17.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 100, 26));
-
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel16.setText("ADDRESS");
-        jLabel16.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 100, 26));
-
-        ad_name.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        ad_name.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(ad_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 210, 31));
-
-        add_address.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        add_address.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(add_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 210, 31));
-
-        jLabel19.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel19.setText("EMAIL ");
-        jLabel19.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 100, 26));
-
-        jLabel18.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel18.setText("CONTACT");
-        jLabel18.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 100, 26));
-
-        ad_contact.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        ad_contact.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(ad_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 130, 210, 31));
-
-        ad_email.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        ad_email.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(ad_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, 210, 31));
-
-        addBox_item.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        addBox_item.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ADD SUPPLIER", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 0, 20))); // NOI18N
-        addBox_item.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        KG2_ADD_STOCK_GENSET.add(addBox_item, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 1010, 170));
+        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 430, 180, 50));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1080, 625));
 
@@ -274,7 +181,7 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
         HEADER_MENU.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         HEADER_MENU.setForeground(new java.awt.Color(255, 255, 255));
         HEADER_MENU.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        HEADER_MENU.setText("  ADD PRODUCT");
+        HEADER_MENU.setText("  ADD FILTER / PARTS");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -304,66 +211,9 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
-
-        // back ADD FILTER / PART
+     // back ADD FILTER / PART
         dispose();
     }//GEN-LAST:event_backMouseClicked
-
-    private void add_supplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_supplierActionPerformed
-        // TODO add your handling code here:
-        choose = "ADD SUPPLIER";
-        // add supplier
-        ad_contact.setEnabled(true);
-        ad_email.setEnabled(true);
-        ad_name.setEnabled(true);
-        add_address.setEnabled(true);
-        
-        // add filter part
-        as_brand.setEnabled(false);
-        as_description.setEnabled(false);
-        as_name.setEnabled(false);
-        as_price.setEnabled(false);
-        as_quantity.setEnabled(false);
-        as_type.setEnabled(false);
-        attach.setEnabled(false);
-    }//GEN-LAST:event_add_supplierActionPerformed
-
-    private void add_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_itemActionPerformed
-        choose = "ADD ITEM";
-        // add supplier
-        ad_contact.setEnabled(false);
-        ad_email.setEnabled(false);
-        ad_name.setEnabled(false);
-        add_address.setEnabled(false);
-        
-        // add filter part
-        as_brand.setEnabled(true);
-        as_description.setEnabled(true);
-        as_name.setEnabled(true);
-        as_price.setEnabled(true);
-        as_quantity.setEnabled(true);
-        as_type.setEnabled(true);
-        attach.setEnabled(true);
-
-    }//GEN-LAST:event_add_itemActionPerformed
-
-    private void add_bothActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_bothActionPerformed
-        choose = "BOTH";
-        // add supplier
-        ad_contact.setEnabled(true);
-        ad_email.setEnabled(true);
-        ad_name.setEnabled(true);
-        add_address.setEnabled(true);
-        
-        // add filter part
-        as_brand.setEnabled(true);
-        as_description.setEnabled(true);
-        as_name.setEnabled(true);
-        as_price.setEnabled(true);
-        as_quantity.setEnabled(true);
-        as_type.setEnabled(true);
-        attach.setEnabled(true);
-    }//GEN-LAST:event_add_bothActionPerformed
 
     /**
      * @param args the command line arguments
@@ -412,15 +262,6 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
     private javax.swing.JScrollPane DESCRIPTION;
     private javax.swing.JLabel HEADER_MENU;
     private keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
-    private javax.swing.JTextField ad_contact;
-    private javax.swing.JTextField ad_email;
-    private javax.swing.JTextField ad_name;
-    private javax.swing.JLabel addBox_choose;
-    private javax.swing.JLabel addBox_item;
-    private javax.swing.JTextField add_address;
-    private javax.swing.JRadioButton add_both;
-    private javax.swing.JRadioButton add_item;
-    private javax.swing.JRadioButton add_supplier;
     private javax.swing.JTextField as_brand;
     private javax.swing.JTextArea as_description;
     private javax.swing.JTextField as_name;
@@ -432,10 +273,6 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;

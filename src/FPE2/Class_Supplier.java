@@ -1,39 +1,112 @@
 
 package FPE2;
 
+import static FPE2.Mainpage.supplier_table;
 import fieldpowerenterprises.database;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 public class Class_Supplier {
-     public static boolean AddSupplier_AddGenset(String name, String address, String email, String contact , String brand , String model, String kva, String phasing, String price, String engine_sn, String alternator_sn, String fuel_tank_cap, String body_type, String date ){
-        PreparedStatement ps = null;
+    PreparedStatement ps;
+    ResultSet rs;
+     public boolean AddSupplier(String name, String address, String email, String contact ) {
+         
+        boolean status = false;
         try{
+          
         ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `supplier_table`(`NAME`, `ADDRESS`, `EMAIL`, `CONTACT`) VALUES (?,?,?,?)");
         ps.setString(1, name);
         ps.setString(2, address);
         ps.setString(3, email);
         ps.setString(4, contact);
-        ps.execute();
-        
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `genset_table`(`BRAND`, `MODEL`, `KVA`, `PHASING`, `PRICE`, `ENGINE_SN`, `ALTERNATOR_SN`, `FUEL_TANK_CAP`, `BODY_TYPE`, `DATE`) VALUES (?,?,?,?,?,?,?,?,?,?)");
-        ps.setString(1, brand);
-        ps.setString(2, model);
-        ps.setString(3, kva);
-        ps.setString(4, phasing);
-        ps.setString(5, price);
-        ps.setString(6, engine_sn);
-        ps.setString(7, alternator_sn);
-        ps.setString(8, fuel_tank_cap);
-        ps.setString(9, body_type);
-        ps.setString(10, date);
-        ps.execute();
+            if(ps.execute()== status){
+                JOptionPane.showMessageDialog(null,"Success","",JOptionPane.INFORMATION_MESSAGE);
+                DefaultTableModel model = (DefaultTableModel)supplier_table.getModel();
+                model.setRowCount(0);
+                Class_table cs = new Class_table();
+                cs.supplier();
+                return true;
+            }
         
         }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+           e.printStackTrace();
         }
         
-     return false;
+        return status;
     }
+     
+     
+    public boolean EditSupplier(String name, String address, String email, String contact,String id){
+       boolean status = false;
+        try{
+          
+        ps = FPE_DB.getConnection().prepareStatement(" UPDATE `supplier_table` SET `NAME`=?,`ADDRESS`=?,`EMAIL`=?,`CONTACT`=? WHERE `ID`=?");
+        ps.setString(1, name);
+        ps.setString(2, address);
+        ps.setString(3, email);
+        ps.setString(4, contact);
+        ps.setString(5, id);
+            if(ps.execute()== status){
+                JOptionPane.showMessageDialog(null,"EDIT SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
+                DefaultTableModel model = (DefaultTableModel)supplier_table.getModel();
+                model.setRowCount(0);
+                Class_table cs = new Class_table();
+                cs.supplier();
+                
+                return true;
+            }
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        
+        return status;
+       
+    }
+    
+    
+    public boolean DeleteSupplier(String id){
+              boolean status = false;
+        try{
+         
+        ps = FPE_DB.getConnection().prepareStatement(" DELETE FROM `supplier_table` WHERE `ID`=?");
+        ps.setString(1, id);
+            
+            if(ps.execute()== status){
+                JOptionPane.showMessageDialog(null,"DELETE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
+                DefaultTableModel model = (DefaultTableModel)supplier_table.getModel();
+                model.setRowCount(0);
+                Class_table cs = new Class_table();
+                cs.supplier();
+                return true;
+            }
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        
+        return status; 
+    }
+    
+    public boolean SearchSupplier (String search){
+                boolean status = false;
+        try{
+          
+        ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `NAME`=?");
+        ps.setString(1, search);
+        ps.executeQuery();
+
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        
+        return status;
+        
+    }
+
+
 }

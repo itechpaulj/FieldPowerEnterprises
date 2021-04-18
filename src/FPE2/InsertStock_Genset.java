@@ -18,29 +18,6 @@ public class InsertStock_Genset extends javax.swing.JFrame {
      */
     public InsertStock_Genset() {
         initComponents();
-        // add supplier input fields
-        ad_contact.setEnabled(false);
-        ad_email.setEnabled(false);
-        ad_name.setEnabled(false);
-        add_address.setEnabled(false);
-        
-        // add genset input fields
-        as_date.setEnabled(false);
-        as_alternator_sn.setEnabled(false);
-        as_body_parts.setEnabled(false);
-        as_brand.setEnabled(false);
-        as_engine_sn.setEnabled(false);
-        as_fuel_tank.setEnabled(false);
-        as_kva.setEnabled(false);
-        as_phasing.setEnabled(false);
-        as_pic.setEnabled(false);
-        as_price.setEnabled(false);
-        as_model.setEnabled(false);
-        as_unitType.setEnabled(false);
-        as_dimension.setEnabled(false);
-        eng_sn.setEnabled(false);
-        alt_sn.setEnabled(false);
-        attached_label.setEnabled(false);
     }
 
     /**
@@ -61,10 +38,6 @@ public class InsertStock_Genset extends javax.swing.JFrame {
         as_fuel_tank = new javax.swing.JTextField();
         as_body_parts = new javax.swing.JTextField();
         as_alternator_sn = new javax.swing.JTextField();
-        ad_name = new javax.swing.JTextField();
-        add_address = new javax.swing.JTextField();
-        ad_email = new javax.swing.JTextField();
-        ad_contact = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         as_unitType = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
@@ -78,15 +51,6 @@ public class InsertStock_Genset extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         as_pic = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        add_supplier = new javax.swing.JRadioButton();
-        add_item = new javax.swing.JRadioButton();
-        add_both = new javax.swing.JRadioButton();
-        addBox_choose = new javax.swing.JLabel();
-        addBox_item = new javax.swing.JLabel();
         alt_sn = new javax.swing.JComboBox<>();
         eng_sn = new javax.swing.JComboBox<>();
         as_date = new datechooser.beans.DateChooserCombo();
@@ -115,23 +79,23 @@ public class InsertStock_Genset extends javax.swing.JFrame {
 
         as_brand.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_brand.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(as_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 210, 31));
 
         as_model.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_model.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(as_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 210, 31));
 
         as_kva.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_kva.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(as_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 210, 31));
 
         as_engine_sn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_engine_sn.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_engine_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 290, 150, 31));
+        KG2_ADD_STOCK_GENSET.add(as_engine_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 190, 150, 31));
 
         as_fuel_tank.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_fuel_tank.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_fuel_tank, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, 220, 30));
+        KG2_ADD_STOCK_GENSET.add(as_fuel_tank, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, 220, 30));
 
         as_body_parts.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_body_parts.setAlignmentY(1.0F);
@@ -140,167 +104,94 @@ public class InsertStock_Genset extends javax.swing.JFrame {
                 as_body_partsActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(as_body_parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(as_body_parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 310, 220, 31));
 
         as_alternator_sn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_alternator_sn.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_alternator_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, 150, 31));
-
-        ad_name.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        ad_name.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(ad_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 210, 31));
-
-        add_address.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        add_address.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(add_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 210, 31));
-
-        ad_email.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        ad_email.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(ad_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, 210, 31));
-
-        ad_contact.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        ad_contact.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(ad_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 120, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(as_alternator_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 230, 150, 31));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel20.setText("UNIT TYPE");
         jLabel20.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 100, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 100, 26));
 
         as_unitType.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_unitType.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_unitType, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(as_unitType, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 210, 31));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel22.setText("DIMESION");
         jLabel22.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 450, 100, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 350, 100, 26));
 
         as_dimension.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_dimension.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 450, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(as_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, 220, 31));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel2.setText("BRAND");
         jLabel2.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 100, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 100, 26));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel3.setText("MODEL");
         jLabel3.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 100, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 100, 26));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel7.setText("KVA");
         jLabel7.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 100, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 100, 26));
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel11.setText("ENGINE_SN");
         jLabel11.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 120, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 120, 26));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel13.setText("FUEL TANK CAP");
         jLabel13.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 120, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 120, 30));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel14.setText("BODY TYPE");
         jLabel14.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 410, 120, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 120, 30));
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel15.setText("ALTERNATOR_SN");
         jLabel15.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 330, 130, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 130, 26));
 
         jLabel12.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel12.setText("DATE");
         jLabel12.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 100, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 100, 26));
 
         as_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         as_pic.setText("2x2");
         as_pic.setAlignmentY(1.0F);
         as_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(as_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 250, 150, 140));
-
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel16.setText("ADDRESS");
-        jLabel16.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 100, 26));
-
-        jLabel17.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel17.setText("NAME");
-        jLabel17.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 100, 26));
-
-        jLabel18.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel18.setText("CONTACT");
-        jLabel18.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 100, 26));
-
-        jLabel19.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel19.setText("EMAIL ");
-        jLabel19.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 100, 26));
-
-        buttonGroup1.add(add_supplier);
-        add_supplier.setText("ADD SUPPLIER");
-        add_supplier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_supplierActionPerformed(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(add_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, -1, 20));
-
-        buttonGroup1.add(add_item);
-        add_item.setText("ADD ITEM");
-        add_item.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_itemActionPerformed(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(add_item, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 20, -1, 20));
-
-        buttonGroup1.add(add_both);
-        add_both.setText("BOTH");
-        add_both.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                add_bothActionPerformed(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(add_both, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 20, -1, -1));
-
-        addBox_choose.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        addBox_choose.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CHOOSE", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        addBox_choose.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        KG2_ADD_STOCK_GENSET.add(addBox_choose, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 410, 50));
-
-        addBox_item.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        addBox_item.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ADD SUPPLIER", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 0, 20))); // NOI18N
-        addBox_item.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        KG2_ADD_STOCK_GENSET.add(addBox_item, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 1010, 150));
+        KG2_ADD_STOCK_GENSET.add(as_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 150, 150, 140));
 
         alt_sn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OLD", "NEW" }));
-        KG2_ADD_STOCK_GENSET.add(alt_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(alt_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 70, 30));
 
         eng_sn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OLD", "NEW" }));
-        KG2_ADD_STOCK_GENSET.add(eng_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 290, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(eng_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, 70, 30));
 
         as_date.setCalendarPreferredSize(new java.awt.Dimension(400, 200));
-        KG2_ADD_STOCK_GENSET.add(as_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 210, 30));
+        KG2_ADD_STOCK_GENSET.add(as_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 210, 30));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel29.setText("PRICE");
         jLabel29.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 100, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, 100, 26));
 
         as_price.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_price.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(as_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 220, 31));
 
         attached_label.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         attached_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -319,21 +210,23 @@ public class InsertStock_Genset extends javax.swing.JFrame {
             .addComponent(attached_label, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(choose_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 400, 110, 30));
+        KG2_ADD_STOCK_GENSET.add(choose_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 300, 110, 30));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel10.setText("PHASING");
         jLabel10.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 100, 26));
+        KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 100, 26));
 
         as_phasing.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_phasing.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(as_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 210, 31));
 
         addBox_supplier.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         addBox_supplier.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "ADD  ITEM", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Arial", 0, 20))); // NOI18N
         addBox_supplier.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        KG2_ADD_STOCK_GENSET.add(addBox_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 1010, 310));
+        KG2_ADD_STOCK_GENSET.add(addBox_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 1010, 310));
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(190, 40));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -348,14 +241,18 @@ public class InsertStock_Genset extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 80, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 140, 50));
+        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 430, 190, 50));
+
+        jPanel3.setPreferredSize(new java.awt.Dimension(190, 40));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -371,15 +268,15 @@ public class InsertStock_Genset extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2, Short.MAX_VALUE))
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 79, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 140, 50));
+        KG2_ADD_STOCK_GENSET.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 190, 50));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1080, 625));
 
@@ -388,7 +285,7 @@ public class InsertStock_Genset extends javax.swing.JFrame {
         HEADER_MENU.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         HEADER_MENU.setForeground(new java.awt.Color(255, 255, 255));
         HEADER_MENU.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        HEADER_MENU.setText("  ADD PRODUCT");
+        HEADER_MENU.setText("ADD GENSET");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -431,10 +328,6 @@ public class InsertStock_Genset extends javax.swing.JFrame {
     private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
        String name,add,email,contact,date,brand,phasing,kva,price,model,fuel_tank,body_type,engines_sn,alter_sn,newOld_engine,newOld_alter;
        
-       name = ad_name.getText();
-       add = add_address.getText();
-       contact = ad_contact.getText();
-       email = ad_email.getText();
 
        
        date= as_date.getText();
@@ -451,116 +344,11 @@ public class InsertStock_Genset extends javax.swing.JFrame {
        newOld_engine = eng_sn.getSelectedItem().toString();
         newOld_alter = alt_sn.getSelectedItem().toString();
        
-        if(add_supplier.isSelected()){
-            choose = "ADD SUPPLIER";
-            JOptionPane.showMessageDialog(null, choose);
-        }
-        else if(add_item.isSelected()){
-            choose = "ADD ITEM";
-            JOptionPane.showMessageDialog(null, choose);
-        }
-        else if(add_both.isSelected()){
-            choose = "BOTH";
-            JOptionPane.showMessageDialog(null, choose);
-        }
-        else{
-            choose = "Please Select!\nADD ITEM / ADD SUPPLIER / BOTH";
-            JOptionPane.showMessageDialog(null, choose);           
-        }
+
        
-//       Class_Supplier.AddSupplier_AddGenset(name, add, email, contact, brand, model, kva, phasing, price, engines_sn, alter_sn, fuel_tank, body_type, date);
-//       JOptionPane.showMessageDialog(null, "Success","",JOptionPane.INFORMATION_MESSAGE);
-    if(name.equals("") || add.equals("") || contact.equals("") || email.equals("") || date.equals("") || brand.equals("") || phasing.equals("") || kva.equals("") || price.equals("") || model.equals("") || fuel_tank.equals("") || body_type.equals("") ){
-     JOptionPane.showMessageDialog(null, "Can\'t Insert \nPlease Check Your Input Fields","",JOptionPane.ERROR_MESSAGE);
-    }
-    else{
-         JOptionPane.showMessageDialog(null, "Success","",JOptionPane.INFORMATION_MESSAGE);
-         Class_Supplier.AddSupplier_AddGenset(name, add, email, contact, brand, model, kva, phasing, price, engines_sn, alter_sn, fuel_tank, body_type, date);
-    }
+
        
     }//GEN-LAST:event_jLabel21MouseClicked
-
-    private void add_supplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_supplierActionPerformed
-        // TODO add your handling code here:
-        choose = "ADD SUPPLIER";
-        // add supplier input fields
-        ad_contact.setEnabled(true);
-        ad_email.setEnabled(true);
-        ad_name.setEnabled(true);
-        add_address.setEnabled(true);
-        
-        // add genset input fields
-        as_date.setEnabled(false);
-        as_alternator_sn.setEnabled(false);
-        as_body_parts.setEnabled(false);
-        as_brand.setEnabled(false);
-        as_engine_sn.setEnabled(false);
-        as_fuel_tank.setEnabled(false);
-        as_kva.setEnabled(false);
-        as_phasing.setEnabled(false);
-        as_pic.setEnabled(false);
-        as_price.setEnabled(false);
-        as_model.setEnabled(false);
-        as_unitType.setEnabled(false);
-        as_dimension.setEnabled(false);
-        eng_sn.setEnabled(false);
-        alt_sn.setEnabled(false);
-        attached_label.setEnabled(false);
-    }//GEN-LAST:event_add_supplierActionPerformed
-
-    private void add_itemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_itemActionPerformed
-       choose = "ADD ITEM";
-        // add supplier input fields
-        ad_contact.setEnabled(false);
-        ad_email.setEnabled(false);
-        ad_name.setEnabled(false);
-        add_address.setEnabled(false);
-        
-        // add genset input fields
-        as_date.setEnabled(true);
-        as_alternator_sn.setEnabled(true);
-        as_body_parts.setEnabled(true);
-        as_brand.setEnabled(true);
-        as_engine_sn.setEnabled(true);
-        as_fuel_tank.setEnabled(true);
-        as_kva.setEnabled(true);
-        as_phasing.setEnabled(true);
-        as_pic.setEnabled(true);
-        as_price.setEnabled(true);
-        as_model.setEnabled(true);
-        as_unitType.setEnabled(true);
-        as_dimension.setEnabled(true);
-        eng_sn.setEnabled(true);
-        alt_sn.setEnabled(true);
-        attached_label.setEnabled(true);
-    }//GEN-LAST:event_add_itemActionPerformed
-
-    private void add_bothActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_bothActionPerformed
-        choose = "BOTH";
-        // add supplier input fields
-        ad_contact.setEnabled(true);
-        ad_email.setEnabled(true);
-        ad_name.setEnabled(true);
-        add_address.setEnabled(true);
-        
-        // add genset input fields
-        as_date.setEnabled(true);
-        as_alternator_sn.setEnabled(true);
-        as_body_parts.setEnabled(true);
-        as_brand.setEnabled(true);
-        as_engine_sn.setEnabled(true);
-        as_fuel_tank.setEnabled(true);
-        as_kva.setEnabled(true);
-        as_phasing.setEnabled(true);
-        as_pic.setEnabled(true);
-        as_price.setEnabled(true);
-        as_model.setEnabled(true);
-        as_unitType.setEnabled(true);
-        as_dimension.setEnabled(true);
-        eng_sn.setEnabled(true);
-        alt_sn.setEnabled(true);
-        attached_label.setEnabled(true);
-    }//GEN-LAST:event_add_bothActionPerformed
 
     /**
      * @param args the command line arguments
@@ -603,16 +391,7 @@ public class InsertStock_Genset extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel HEADER_MENU;
     private keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
-    private javax.swing.JTextField ad_contact;
-    private javax.swing.JTextField ad_email;
-    private javax.swing.JTextField ad_name;
-    private javax.swing.JLabel addBox_choose;
-    private javax.swing.JLabel addBox_item;
     private javax.swing.JLabel addBox_supplier;
-    private javax.swing.JTextField add_address;
-    private javax.swing.JRadioButton add_both;
-    private javax.swing.JRadioButton add_item;
-    private javax.swing.JRadioButton add_supplier;
     private javax.swing.JComboBox<String> alt_sn;
     private javax.swing.JTextField as_alternator_sn;
     private javax.swing.JTextField as_body_parts;
@@ -637,10 +416,6 @@ public class InsertStock_Genset extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
