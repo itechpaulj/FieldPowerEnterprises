@@ -1236,7 +1236,7 @@ public class Mainpage extends javax.swing.JFrame {
          choose="UPDATE FILTER PRODUCT";
          Insert_Filter ifs  = new Insert_Filter();
         ifs.setVisible(true);
-        Insert_Filter.display.setText(choose);
+        Insert_Filter.displays.setText(choose);
     }//GEN-LAST:event_jLabel48MouseClicked
 
     private void jLabel47MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel47MouseClicked
@@ -1244,7 +1244,7 @@ public class Mainpage extends javax.swing.JFrame {
         choose="ADD FILTER PRODUCT";
          Insert_Filter ifs  = new Insert_Filter();
         ifs.setVisible(true);
-        Insert_Filter.display.setText(choose);
+        Insert_Filter.displays.setText(choose);
     }//GEN-LAST:event_jLabel47MouseClicked
 
     private void jLabel46MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel46MouseClicked

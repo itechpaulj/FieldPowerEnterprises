@@ -57,7 +57,7 @@ public class Insert_Filter extends javax.swing.JFrame {
         sup_already = new javax.swing.JCheckBox();
         types = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
-        display = new javax.swing.JLabel();
+        displays = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -204,20 +204,20 @@ public class Insert_Filter extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        display.setForeground(new java.awt.Color(255, 255, 255));
-        display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        display.setText("ADD GENSET PRODUCT");
-        display.addAncestorListener(new javax.swing.event.AncestorListener() {
+        displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        displays.setForeground(new java.awt.Color(255, 255, 255));
+        displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        displays.setText("ADD GENSET PRODUCT");
+        displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                displayAncestorAdded(evt);
+                displaysAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel4.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 700, 80));
+        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 700, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 100));
 
@@ -279,19 +279,19 @@ public class Insert_Filter extends javax.swing.JFrame {
        // display123.setText(dis1);
     }//GEN-LAST:event_formWindowOpened
 
-    private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
-        String title = display.getText();
-        choose = "ADD GENSET PRODUCT";
+    private void displaysAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displaysAncestorAdded
+        String title = displays.getText();
+        choose = "ADD FILTER PRODUCT";
         if(title.equals(choose)){
             sup_already.setVisible(true);
         }
         else {
-            choose = "UPDATE GENSET PRODUCT";
+            choose = "UPDATE FILTER PRODUCT";
                 if(title.equals(choose)){
                 sup_already.setVisible(false);
             }
         }
-    }//GEN-LAST:event_displayAncestorAdded
+    }//GEN-LAST:event_displaysAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -338,7 +338,7 @@ public class Insert_Filter extends javax.swing.JFrame {
     private javax.swing.JTextField af_quantity;
     private javax.swing.JLabel as_pic;
     private javax.swing.ButtonGroup buttonGroup1;
-    public static javax.swing.JLabel display;
+    public static javax.swing.JLabel displays;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
