@@ -335,10 +335,7 @@ public class Insert_Genset extends javax.swing.JFrame {
        
        String eng_com =  engines_sn + " - " +engine_sn;
        String alt_com = alter_sn +" - "+ alters_sn;
-       
-       
- 
-       
+          
        
        if(save_add.equals("SAVE"))
        {
