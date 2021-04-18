@@ -1345,46 +1345,53 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel45MouseClicked
 
     private void jLabel44MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel44MouseClicked
-        choose="UPDATE GENSET PRODUCT";
-        //Insert_Genset ig = new Insert_Genset(dis);
-        Insert_Genset ig = new Insert_Genset();
-        ig.setVisible(true);
-        Insert_Genset.display.setText(choose);
-        Insert_Genset.as_id.setText(edit_gen_id.getText());
-        Insert_Genset.as_brand.setText(edit_gen_brand.getText());
-        Insert_Genset.as_model.setText(edit_gen_model.getText());
-        Insert_Genset.as_kva.setText(edit_gen_kva.getText());
-        Insert_Genset.as_phasing.setText(edit_gen_phasing.getText());
-        Insert_Genset.as_unitType.setText(edit_gen_unittype.getText());
-        Insert_Genset.as_dimension.setText(edit_gen_dimension.getText());
-        Insert_Genset.as_fuel_tank.setText(edit_gen_fueltankcap.getText());
-        Insert_Genset.as_body_parts.setText(edit_gen_bodytype.getText());
-        Insert_Genset.as_price.setText(edit_gen_price.getText());
-        
-        
-        // String will trick remove serial number
-        String[] remove_eng_sn = edit_gen_enginesn.getText().split(" - ");
-        String[] remove_alt_sn = edit_gen_altersn.getText().split(" - ");
-        
-        Insert_Genset.as_engine_sn.setText(remove_eng_sn[0]);
-        Insert_Genset.as_alternator_sn.setText(remove_alt_sn[0]);
-        if(remove_eng_sn[1].equals("OLD")){
-            Insert_Genset.eng_sn.setSelectedIndex(1);
+        String getId = edit_gen_id.getText();
+        if(getId.equals("")){
+            JOptionPane.showMessageDialog(null, "Select Genset First!");
         }
         else{
-            Insert_Genset.eng_sn.setSelectedIndex(2);
+            choose="UPDATE GENSET PRODUCT";
+            //Insert_Genset ig = new Insert_Genset(dis);
+            Insert_Genset ig = new Insert_Genset();
+            ig.setVisible(true);
+            Insert_Genset.display.setText(choose);
+            Insert_Genset.as_id.setText(edit_gen_id.getText());
+            Insert_Genset.as_brand.setText(edit_gen_brand.getText());
+            Insert_Genset.as_model.setText(edit_gen_model.getText());
+            Insert_Genset.as_kva.setText(edit_gen_kva.getText());
+            Insert_Genset.as_phasing.setText(edit_gen_phasing.getText());
+            Insert_Genset.as_unitType.setText(edit_gen_unittype.getText());
+            Insert_Genset.as_dimension.setText(edit_gen_dimension.getText());
+            Insert_Genset.as_fuel_tank.setText(edit_gen_fueltankcap.getText());
+            Insert_Genset.as_body_parts.setText(edit_gen_bodytype.getText());
+            Insert_Genset.as_price.setText(edit_gen_price.getText());
+
+
+            // String will trick remove serial number
+            String[] remove_eng_sn = edit_gen_enginesn.getText().split(" - ");
+            String[] remove_alt_sn = edit_gen_altersn.getText().split(" - ");
+
+            Insert_Genset.as_engine_sn.setText(remove_eng_sn[0]);
+            Insert_Genset.as_alternator_sn.setText(remove_alt_sn[0]);
+            if(remove_eng_sn[1].equals("OLD")){
+                Insert_Genset.eng_sn.setSelectedIndex(1);
+            }
+            else{
+                Insert_Genset.eng_sn.setSelectedIndex(2);
+            }
+
+            if(remove_alt_sn[1].equals("OLD")){
+                Insert_Genset.alt_sn.setSelectedIndex(1);
+            }
+            else{
+                Insert_Genset.alt_sn.setSelectedIndex(2);
+            }
+
+            //btn
+            Insert_Genset.gensetBtn.setText("UPDATE");
+            Insert_Genset.display.setText("UPDATE GENSET PRODUCT");
         }
         
-        if(remove_alt_sn[1].equals("OLD")){
-            Insert_Genset.alt_sn.setSelectedIndex(1);
-        }
-        else{
-            Insert_Genset.alt_sn.setSelectedIndex(2);
-        }
-        
-        //btn
-        Insert_Genset.gensetBtn.setText("UPDATE");
-        Insert_Genset.display.setText("UPDATE GENSET PRODUCT");
         
     }//GEN-LAST:event_jLabel44MouseClicked
 
