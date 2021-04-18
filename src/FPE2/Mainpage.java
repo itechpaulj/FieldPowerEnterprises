@@ -22,9 +22,10 @@ public class Mainpage extends javax.swing.JFrame {
     String choose = "";
     public Mainpage() {
         initComponents();
-        showStock();
+        showStockGenset();
+        showStockFilter();
         
- 
+ //ViewFitler_table;
         
         edit_cus_id.setVisible(false);
         edit_cus_name.setVisible(false);
@@ -32,11 +33,21 @@ public class Mainpage extends javax.swing.JFrame {
         edit_cus_email.setVisible(false);
         edit_cus_contact.setVisible(false);
     }
-
-          private void showStock(){
+        private void showStockFilter(){
         try{
-      
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, UNIT_TYPE AS `UNIT TYPE`, `DIMENSION`, TANK_CAP AS `TANK CAP`, BODY_TYPE AS `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE` FROM `genset_table`");
+            //SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, UNIT_TYPE AS `UNIT TYPE`, `DIMENSION`, TANK_CAP AS `TANK CAP`, BODY_TYPE AS `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE` FROM `genset_table`
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `filter_table`");
+        ResultSet rs = ps.executeQuery();
+        ViewFitler_table.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(Exception e){
+              System.out.println(e);
+            }
+        }
+
+          private void showStockGenset(){
+        try{
+            //SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, UNIT_TYPE AS `UNIT TYPE`, `DIMENSION`, TANK_CAP AS `TANK CAP`, BODY_TYPE AS `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE` FROM `genset_table`
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`,BODY_TYPE AS `BODY TYPE` FROM `genset_table`");
         ResultSet rs = ps.executeQuery();
         ViewGenset_Table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
@@ -83,7 +94,7 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel26 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        ViewGenset_Table1 = new javax.swing.JTable();
+        ViewFitler_table = new javax.swing.JTable();
         jPanel27 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
         jPanel28 = new javax.swing.JPanel();
@@ -488,7 +499,7 @@ public class Mainpage extends javax.swing.JFrame {
 
         KG3_FILTER_PARTS.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, 160, 50));
 
-        ViewGenset_Table1.setModel(new javax.swing.table.DefaultTableModel(
+        ViewFitler_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -499,7 +510,7 @@ public class Mainpage extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane9.setViewportView(ViewGenset_Table1);
+        jScrollPane9.setViewportView(ViewFitler_table);
 
         KG3_FILTER_PARTS.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 82, 1040, 400));
 
@@ -1193,7 +1204,6 @@ public class Mainpage extends javax.swing.JFrame {
        // HEADER MENU
        HOME_MENU.setText("  HOME");
        HOME_VIEW_PRODUCT.setText(null);
-       // HOME JTAB
        jTab.setSelectedIndex(0);
     }//GEN-LAST:event_HOME_LABELMouseClicked
 
@@ -1223,12 +1233,18 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel49MouseClicked
 
     private void jLabel48MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel48MouseClicked
-        
+         choose="UPDATE FILTER PRODUCT";
+         Insert_Filter ifs  = new Insert_Filter();
+        ifs.setVisible(true);
+        Insert_Filter.display.setText(choose);
     }//GEN-LAST:event_jLabel48MouseClicked
 
     private void jLabel47MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel47MouseClicked
-        Insert_Filter ifs  = new Insert_Filter();
+       
+        choose="ADD FILTER PRODUCT";
+         Insert_Filter ifs  = new Insert_Filter();
         ifs.setVisible(true);
+        Insert_Filter.display.setText(choose);
     }//GEN-LAST:event_jLabel47MouseClicked
 
     private void jLabel46MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel46MouseClicked
@@ -1373,7 +1389,7 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void MENU_FILTER_PARTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_FILTER_PARTMouseClicked
         // STOCK MENU FILTER PARTS
-        jTab.setSelectedIndex(2);
+        jTab.setSelectedIndex(3);
         HOME_VIEW_PRODUCT.setText(MENU_FILTER_PART.getText());
     }//GEN-LAST:event_MENU_FILTER_PARTMouseClicked
 
@@ -1442,8 +1458,8 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JPanel STOCK_PANEL;
     private javax.swing.JLabel TABLE_FILTER_PART;
     private javax.swing.JLabel TABLE_GENSET;
+    private javax.swing.JTable ViewFitler_table;
     private javax.swing.JTable ViewGenset_Table;
-    private javax.swing.JTable ViewGenset_Table1;
     public static javax.swing.JLabel add_customer;
     public static javax.swing.JLabel add_customer1;
     private javax.swing.JLabel back_FilterPart;

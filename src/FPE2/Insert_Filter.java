@@ -226,8 +226,7 @@ public class Insert_Filter extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
-        // STOCK MENU
+ 
         dispose();
      
     }//GEN-LAST:event_jLabel5MouseClicked
@@ -263,14 +262,6 @@ public class Insert_Filter extends javax.swing.JFrame {
             
            }
        
-
-       
-       
- 
-       
-       
-
-
     }//GEN-LAST:event_jLabel21MouseClicked
 
     private void sup_alreadyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_alreadyMouseClicked
