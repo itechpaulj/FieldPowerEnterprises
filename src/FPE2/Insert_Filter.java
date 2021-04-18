@@ -53,7 +53,7 @@ public class Insert_Filter extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
+        filterBtn = new javax.swing.JLabel();
         sup_already = new javax.swing.JCheckBox();
         types = new javax.swing.JComboBox<>();
         jPanel4 = new javax.swing.JPanel();
@@ -160,12 +160,12 @@ public class Insert_Filter extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 210, 50));
 
-        jLabel21.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("ADD SUPPLIER");
-        jLabel21.addMouseListener(new java.awt.event.MouseAdapter() {
+        filterBtn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        filterBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        filterBtn.setText("ADD SUPPLIER");
+        filterBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel21MouseClicked(evt);
+                filterBtnMouseClicked(evt);
             }
         });
 
@@ -173,17 +173,17 @@ public class Insert_Filter extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(filterBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(filterBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         KG2_ADD_STOCK_GENSET.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 210, 50));
 
         sup_already.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        sup_already.setText("IS THIS ITEM HAVE A SUPPLIER ?");
+        sup_already.setText("HAVE A SUPPLIER? OR ADD ITEM");
         sup_already.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sup_alreadyMouseClicked(evt);
@@ -192,7 +192,7 @@ public class Insert_Filter extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(sup_already, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 260, 40));
 
         types.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        types.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT ", "FILTER", "PARTS", "OTHER" }));
+        types.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS", "OTHER" }));
         KG2_ADD_STOCK_GENSET.add(types, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 210, 30));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 720, 570));
@@ -203,7 +203,7 @@ public class Insert_Filter extends javax.swing.JFrame {
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         displays.setForeground(new java.awt.Color(255, 255, 255));
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displays.setText("ADD GENSET PRODUCT");
+        displays.setText("ADD FILTER/PARTS PRODUCT");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -227,11 +227,11 @@ public class Insert_Filter extends javax.swing.JFrame {
      
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void jLabel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel21MouseClicked
+    private void filterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_filterBtnMouseClicked
        String date,names,des,brand,type,price,quantity;
        
        
-       String save_add = jLabel21.getText();
+       String save_add = filterBtn.getText();
        
        names = af_name.getText();
        date = af_date.getText();
@@ -242,32 +242,55 @@ public class Insert_Filter extends javax.swing.JFrame {
        des = af_des.getText();
     
           
-       if(save_add.equals("SAVE"))
-       {
-
-            if(Class_Filter.AddFilter(date, names, des, brand, type, price, quantity))
-                {
-                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADsssD");
-                }
-            else
-                {
-                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD");
-                }
-       }else if(save_add.equals("ADD SUPPLIER")){
-   
-            
-           }
+//       if(save_add.equals("SAVE"))
+//       {
+//
+//            if(Class_Filter.AddFilter(date, names, des, brand, type, price, quantity))
+//                {
+//                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADsssD");
+//                }
+//            else
+//                {
+//                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD");
+//                }
+//       }else if(save_add.equals("ADD SUPPLIER")){
+//   
+//            
+//           }
+       choose = "SAVE";
+       if(save_add.equals(choose)){
+          //JOptionPane.showMessageDialog(null, "ADD FILTER/PARTS PRODUCT");
+          //note if SAVE string is true the inputs working isEmpty will be error
+          if(brand.equals("")|| names.equals("") || des.equals("") || price.equals("") || quantity.equals("") || type.equals("") ){
+              JOptionPane.showMessageDialog(null, "FILL SOME BLANKS!");
+          }
+          else if(type.equals("SELECT")){
+                JOptionPane.showMessageDialog(null, "PLEASE SELECT FILTER/PARTS/OTHER!");
+            }
+          else{
+              //JOptionPane.showMessageDialog(null, "SUCCESS");
+              if(Class_Filter.AddFilter(date, names, des, brand, type, price, quantity)){
+                  JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD");
+              }
+              
+          }
+       }
+       else{
+           choose = "ADD SUPPLIER";
+            if(save_add.equals(choose)){
+               JOptionPane.showMessageDialog(null, "ADD SUPPLIER");
+            }
+       }
        
-    }//GEN-LAST:event_jLabel21MouseClicked
+    }//GEN-LAST:event_filterBtnMouseClicked
 
     private void sup_alreadyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_alreadyMouseClicked
        if(sup_already.isSelected())
        {
-          jLabel21.setText("SAVE");
+          filterBtn.setText("SAVE");
        }
        else{
-           
-          jLabel21.setText("ADD SUPPLIER");
+          filterBtn.setText("ADD SUPPLIER");
        }
     }//GEN-LAST:event_sup_alreadyMouseClicked
 
@@ -335,11 +358,11 @@ public class Insert_Filter extends javax.swing.JFrame {
     private javax.swing.JLabel as_pic;
     private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JLabel displays;
+    private javax.swing.JLabel filterBtn;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

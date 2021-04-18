@@ -22,38 +22,50 @@ public class Mainpage extends javax.swing.JFrame {
     String choose = "";
     public Mainpage() {
         initComponents();
-        showStockGenset();
-        showStockFilter();
-        
- //ViewFitler_table;
-        
-        edit_cus_id.setVisible(false);
-        edit_cus_name.setVisible(false);
-        edit_cus_address.setVisible(false);
-        edit_cus_email.setVisible(false);
-        edit_cus_contact.setVisible(false);
-    }
-        private void showStockFilter(){
-        try{
-            //SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, UNIT_TYPE AS `UNIT TYPE`, `DIMENSION`, TANK_CAP AS `TANK CAP`, BODY_TYPE AS `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE` FROM `genset_table`
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `filter_table`");
-        ResultSet rs = ps.executeQuery();
-        ViewFitler_table.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e){
-              System.out.println(e);
-            }
-        }
+//        showStockGenset();
+//        showStockFilter();
+  
+      Class_table ct = new Class_table(); // class Table
+       //View genset table
+       ct.showGenset();
+       //View genset table
 
-          private void showStockGenset(){
-        try{
-            //SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, UNIT_TYPE AS `UNIT TYPE`, `DIMENSION`, TANK_CAP AS `TANK CAP`, BODY_TYPE AS `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE` FROM `genset_table`
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`,BODY_TYPE AS `BODY TYPE` FROM `genset_table`");
-        ResultSet rs = ps.executeQuery();
-        ViewGenset_Table.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e){
-              System.out.println(e);
-            }
-        }
+ //ViewFitler_table;
+        edit_gen_id.setVisible(false);
+        edit_gen_brand.setVisible(false);
+        edit_gen_model.setVisible(false);
+        edit_gen_kva.setVisible(false);
+        edit_gen_phasing.setVisible(false);
+        edit_gen_unittype.setVisible(false);
+        edit_gen_dimension.setVisible(false);
+        edit_gen_fueltankcap.setVisible(false);
+        edit_gen_bodytype.setVisible(false);
+        edit_gen_price.setVisible(false);
+        edit_gen_enginesn.setVisible(false);
+        edit_gen_altersn.setVisible(false);
+        edit_gen_date.setVisible(false);
+    }
+//        private void showStockFilter(){
+//        try{
+//            //SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, UNIT_TYPE AS `UNIT TYPE`, `DIMENSION`, TANK_CAP AS `TANK CAP`, BODY_TYPE AS `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE` FROM `genset_table`
+//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `filter_table`");
+//        ResultSet rs = ps.executeQuery();
+//        ViewFitler_table.setModel(DbUtils.resultSetToTableModel(rs));
+//        }catch(Exception e){
+//              System.out.println(e);
+//            }
+//        }
+//
+//        private void showStockGenset(){
+//        try{
+//            //SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, UNIT_TYPE AS `UNIT TYPE`, `DIMENSION`, TANK_CAP AS `TANK CAP`, BODY_TYPE AS `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE` FROM `genset_table`
+//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`,`BODY TYPE` FROM `genset_table`");
+//        ResultSet rs = ps.executeQuery();
+//        ViewGenset_Table.setModel(DbUtils.resultSetToTableModel(rs));
+//        }catch(Exception e){
+//              System.out.println(e);
+//            }
+//        }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -84,12 +96,26 @@ public class Mainpage extends javax.swing.JFrame {
         jLabel33 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         ViewGenset_Table = new javax.swing.JTable();
+        edit_gen_brand = new javax.swing.JLabel();
+        edit_gen_id = new javax.swing.JLabel();
+        edit_gen_model = new javax.swing.JLabel();
+        edit_gen_kva = new javax.swing.JLabel();
+        edit_gen_date = new javax.swing.JLabel();
+        edit_gen_phasing = new javax.swing.JLabel();
+        edit_gen_unittype = new javax.swing.JLabel();
+        edit_gen_dimension = new javax.swing.JLabel();
+        edit_gen_fueltankcap = new javax.swing.JLabel();
+        edit_gen_bodytype = new javax.swing.JLabel();
+        edit_gen_price = new javax.swing.JLabel();
+        edit_gen_enginesn = new javax.swing.JLabel();
+        edit_gen_altersn = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jPanel24 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
         jLabel45 = new javax.swing.JLabel();
+        edit_gen_date1 = new javax.swing.JLabel();
         KG3_FILTER_PARTS = new keeptoo.KGradientPanel();
         jPanel26 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
@@ -401,9 +427,66 @@ public class Mainpage extends javax.swing.JFrame {
 
             }
         ));
+        ViewGenset_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ViewGenset_TableMouseClicked(evt);
+            }
+        });
         jScrollPane8.setViewportView(ViewGenset_Table);
 
         KG2_GENSET.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 82, 1040, 400));
+
+        edit_gen_brand.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_brand.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 110, 26));
+
+        edit_gen_id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_id.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 110, 26));
+
+        edit_gen_model.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_model.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 110, 26));
+
+        edit_gen_kva.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_kva.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 110, 26));
+
+        edit_gen_date.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_date.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 110, 26));
+
+        edit_gen_phasing.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_phasing.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 110, 26));
+
+        edit_gen_unittype.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_unittype.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_unittype, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 110, 26));
+
+        edit_gen_dimension.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_dimension.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, 110, 26));
+
+        edit_gen_fueltankcap.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_fueltankcap.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_fueltankcap, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 120, 30));
+
+        edit_gen_bodytype.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_bodytype.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_bodytype, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 120, 30));
+
+        edit_gen_price.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_price.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 100, 26));
+
+        edit_gen_enginesn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_enginesn.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_enginesn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 120, 26));
+
+        edit_gen_altersn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_altersn.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_altersn, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 130, 26));
 
         jLabel35.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -470,6 +553,11 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         KG2_GENSET.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, 160, 50));
+
+        edit_gen_date1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        edit_gen_date1.setText("DATE");
+        edit_gen_date1.setAlignmentY(1.0F);
+        KG2_GENSET.add(edit_gen_date1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 110, 26));
 
         jTab.addTab("GENSET", KG2_GENSET);
 
@@ -1262,6 +1350,42 @@ public class Mainpage extends javax.swing.JFrame {
         Insert_Genset ig = new Insert_Genset();
         ig.setVisible(true);
         Insert_Genset.display.setText(choose);
+        Insert_Genset.as_id.setText(edit_gen_id.getText());
+        Insert_Genset.as_brand.setText(edit_gen_brand.getText());
+        Insert_Genset.as_model.setText(edit_gen_model.getText());
+        Insert_Genset.as_kva.setText(edit_gen_kva.getText());
+        Insert_Genset.as_phasing.setText(edit_gen_phasing.getText());
+        Insert_Genset.as_unitType.setText(edit_gen_unittype.getText());
+        Insert_Genset.as_dimension.setText(edit_gen_dimension.getText());
+        Insert_Genset.as_fuel_tank.setText(edit_gen_fueltankcap.getText());
+        Insert_Genset.as_body_parts.setText(edit_gen_bodytype.getText());
+        Insert_Genset.as_price.setText(edit_gen_price.getText());
+        
+        
+        // String will trick remove serial number
+        String[] remove_eng_sn = edit_gen_enginesn.getText().split(" - ");
+        String[] remove_alt_sn = edit_gen_altersn.getText().split(" - ");
+        
+        Insert_Genset.as_engine_sn.setText(remove_eng_sn[0]);
+        Insert_Genset.as_alternator_sn.setText(remove_alt_sn[0]);
+        if(remove_eng_sn[1].equals("OLD")){
+            Insert_Genset.eng_sn.setSelectedIndex(1);
+        }
+        else{
+            Insert_Genset.eng_sn.setSelectedIndex(2);
+        }
+        
+        if(remove_alt_sn[1].equals("OLD")){
+            Insert_Genset.alt_sn.setSelectedIndex(1);
+        }
+        else{
+            Insert_Genset.alt_sn.setSelectedIndex(2);
+        }
+        
+        //btn
+        Insert_Genset.gensetBtn.setText("UPDATE");
+        Insert_Genset.display.setText("UPDATE GENSET PRODUCT");
+        
     }//GEN-LAST:event_jLabel44MouseClicked
 
     private void jLabel35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel35MouseClicked
@@ -1400,6 +1524,24 @@ public class Mainpage extends javax.swing.JFrame {
         HOME_VIEW_PRODUCT.setText(MENU_GENSET.getText());
     }//GEN-LAST:event_MENU_GENSETMouseClicked
 
+    private void ViewGenset_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViewGenset_TableMouseClicked
+        int i=ViewGenset_Table.getSelectedRow();
+        TableModel model = ViewGenset_Table.getModel();
+        edit_gen_id.setText(model.getValueAt(i,0).toString());
+        edit_gen_brand.setText(model.getValueAt(i,1).toString());
+        edit_gen_model.setText(model.getValueAt(i,2).toString());
+        edit_gen_kva.setText(model.getValueAt(i,3).toString());
+        edit_gen_phasing.setText(model.getValueAt(i,4).toString());
+        edit_gen_unittype.setText(model.getValueAt(i,5).toString());
+        edit_gen_dimension.setText(model.getValueAt(i,6).toString());
+        edit_gen_fueltankcap.setText(model.getValueAt(i,7).toString());
+        edit_gen_bodytype.setText(model.getValueAt(i,8).toString());
+        edit_gen_price.setText(model.getValueAt(i,9).toString());
+        edit_gen_enginesn.setText(model.getValueAt(i,10).toString());
+        edit_gen_altersn.setText(model.getValueAt(i,11).toString());
+        edit_gen_date.setText(model.getValueAt(i,12).toString());
+    }//GEN-LAST:event_ViewGenset_TableMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1459,7 +1601,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel TABLE_FILTER_PART;
     private javax.swing.JLabel TABLE_GENSET;
     private javax.swing.JTable ViewFitler_table;
-    private javax.swing.JTable ViewGenset_Table;
+    public static javax.swing.JTable ViewGenset_Table;
     public static javax.swing.JLabel add_customer;
     public static javax.swing.JLabel add_customer1;
     private javax.swing.JLabel back_FilterPart;
@@ -1478,6 +1620,20 @@ public class Mainpage extends javax.swing.JFrame {
     public static javax.swing.JLabel edit_cus_name;
     private javax.swing.JLabel edit_customer;
     private javax.swing.JLabel edit_customer1;
+    public static javax.swing.JLabel edit_gen_altersn;
+    public static javax.swing.JLabel edit_gen_bodytype;
+    public static javax.swing.JLabel edit_gen_brand;
+    public static javax.swing.JLabel edit_gen_date;
+    public static javax.swing.JLabel edit_gen_date1;
+    public static javax.swing.JLabel edit_gen_dimension;
+    public static javax.swing.JLabel edit_gen_enginesn;
+    public static javax.swing.JLabel edit_gen_fueltankcap;
+    public static javax.swing.JLabel edit_gen_id;
+    public static javax.swing.JLabel edit_gen_kva;
+    public static javax.swing.JLabel edit_gen_model;
+    public static javax.swing.JLabel edit_gen_phasing;
+    public static javax.swing.JLabel edit_gen_price;
+    public static javax.swing.JLabel edit_gen_unittype;
     private javax.swing.JLabel fpe_home;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel32;

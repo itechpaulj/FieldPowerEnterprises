@@ -25,7 +25,9 @@ public class Class_Filter {
         ps.setString(6,date);
         ps.setString(7,type);
         
-        ps.execute();
+            if(ps.execute()==false){
+                return true;
+            }
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
