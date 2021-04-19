@@ -5,15 +5,9 @@
  */
 package FPE2;
 
-import static FPE2.Mainpage.ViewGenset_Table;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 /**
  *
@@ -328,9 +322,6 @@ public class Insert_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void gensetBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gensetBtnMouseClicked
-
-        save_add= gensetBtn.getText();
-       
        date = as_date.getText();
        brand = as_brand.getText();
        phasing = as_phasing.getText();
@@ -342,10 +333,8 @@ public class Insert_Genset extends javax.swing.JFrame {
        fuel_tank = as_fuel_tank.getText();
        body_type = as_body_parts.getText();
        idEditgenset = as_id.getText();
-       
        engines_sn = as_engine_sn.getText();
        engine_sn = eng_sn.getSelectedItem().toString();
-       
        alter_sn = as_alternator_sn.getText();
        alters_sn = alt_sn.getSelectedItem().toString();
        
@@ -355,49 +344,46 @@ public class Insert_Genset extends javax.swing.JFrame {
        int engine,alter;
        engine = eng_sn.getSelectedIndex();
        alter = alt_sn.getSelectedIndex();
-          
+        
+       save_add= gensetBtn.getText();  
 
-           choose = "SAVE";
-           if(save_add.equals(choose)){
-               // note if SAVE string is true will identify input fields as well
-                if(date.equals(null) || brand.equals(null) || phasing.equals(null) || unit_type.equals(null) || dimen.equals(null) || kva.equals(null) || price.equals(null) || model.equals(null) || fuel_tank.equals(null) || body_type.equals(null) || engine == 0 || alter ==0){
-                     JOptionPane.showMessageDialog(null, "FILL SOME BLANKS!","",JOptionPane.ERROR_MESSAGE);
+        choose = "SAVE";
+        if(save_add.equals(choose))
+        {
+            // note if SAVE string is true will identify input fields as well
+             if(date.equals("") || brand.equals("") || phasing.equals("") || unit_type.equals("") || dimen.equals("") || kva.equals("") || price.equals("") || model.equals("") || fuel_tank.equals("") || body_type.equals("") || engine == 0 || alter ==0)
+                 
+                { JOptionPane.showMessageDialog(null, "FILL SOME BLANKS!","",JOptionPane.ERROR_MESSAGE); }
+             
+             else
+                {  if(Class_Stock.AddStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com))
+                     {
+                         JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD");
+                         Class_table ct = new Class_table(); ct.showGenset(); // refresh table
+                     }
                 }
-                else{
-                        if(Class_Stock.AddStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com))
-                        {
-                          JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD");
-                          Class_table ct = new Class_table();
-                          ct.showGenset(); // refresh table
-                           
-                        }
-
-                }
-           }
-           else{
-               choose = "ADD SUPPLIER";
-               if(save_add.equals(choose)){
-                   //JOptionPane.showMessageDialog(null, "ADD SUPPLIER");
-                    InsertSupplier is = new InsertSupplier(date,brand,phasing,kva,price,model,fuel_tank,body_type,engines_sn,engine_sn,alters_sn,alter_sn);
-                    is.setVisible(true);
-                    //JOptionPane.showMessageDialog(null, "ADD SUPPLIER");
-               }else{
-                   choose = "UPDATE";
-//                   if(save_add.equals(choose)){
-//                       Class_Stock cs = new Class_Stock();
-//                       if(Class_Stock.EditStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com,idEditgenset))
-//                       {
-//                          JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULY");
-//                          Class_table ct = new Class_table();
-//                          ct.showGenset(); // refresh table
-//                       }
-                       JOptionPane.showMessageDialog(null, "UPDATE");
-                  // }
-               }
-           }
-           
-
-
+        }
+        else
+        {
+         
+         if(save_add.equals("ADD SUPPLIER"))
+            {
+              InsertSupplier is = new InsertSupplier(date,brand,phasing,kva,price,model,fuel_tank,body_type,engines_sn,engine_sn,alters_sn,alter_sn);
+              is.setVisible(true);
+              InsertSupplier.dis2.setText("1");
+            }
+         else if(save_add.equals("UPDATE"))
+            {
+                Class_Stock cs = new Class_Stock();
+                     if(Class_Stock.EditStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com,idEditgenset))
+                         {
+                            JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULY");
+                            Class_table ct = new Class_table(); ct.showGenset(); // refresh table
+                         }
+                 JOptionPane.showMessageDialog(null, "UPDATE");
+            }
+        }
+      
     }//GEN-LAST:event_gensetBtnMouseClicked
 
     private void sup_alreadyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_alreadyMouseClicked
@@ -447,11 +433,11 @@ public class Insert_Genset extends javax.swing.JFrame {
                     as_model.setText(rs.getString("MODEL"));
                     as_kva.setText(rs.getString("KVA"));
                     as_phasing.setText(rs.getString("PHASING"));
-                    as_unitType.setText("UNIT_TYPE");
-                    as_dimension.setText("DIMENSION");
-                    as_fuel_tank.setText("TANK_CAP");
-                    as_body_parts.setText("BODY TYPE");
-                    as_price.setText("PRICE");
+                    as_unitType.setText(rs.getString("UNIT_TYPE"));
+                    as_dimension.setText(rs.getString("DIMENSION"));
+                    as_fuel_tank.setText(rs.getString("TANK_CAP"));
+                    as_body_parts.setText(rs.getString("BODY TYPE"));
+                    as_price.setText(rs.getString("PRICE"));
                     
                     String[] remove_eng_sn = rs.getString("ENGINE_SERIAL_NO").split(" - ");
                     String[] remove_alt_sn = rs.getString("ALTERNATOR_SERIAL_NO").split(" - ");

@@ -6,6 +6,7 @@
 package FPE2;
 
 import static FPE2.Mainpage.ViewGenset_Table;
+import static FPE2.Mainpage.ViewFitler_table;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import net.proteanit.sql.DbUtils;
@@ -17,7 +18,7 @@ import net.proteanit.sql.DbUtils;
 public class Class_table {
     public boolean showGenset(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `genset_table`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`,`BODY TYPE` FROM `genset_table`");
         ResultSet rs = ps.executeQuery();
         ViewGenset_Table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
@@ -25,4 +26,17 @@ public class Class_table {
             }
         return false;
     }
+    
+    public boolean showFilter(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `NAME`, `DESCRIPTION`, `PRICE` FROM `filter_table`");
+        ResultSet rs = ps.executeQuery();
+        ViewFitler_table.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(Exception e){
+              System.out.println(e);
+            }
+        return false;
+    }
 }
+
+

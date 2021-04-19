@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class InsertSupplier extends javax.swing.JFrame {
 
     String date1,brand1,phasing1,kva1,price1,model1,fuel_tank1,body_type1,engines_sn1,alter_sn1,alters1_sn,engine1;
-    
+    String quantity1,type1,des1,id1,names1;
     public InsertSupplier() {
         initComponents();
     }
@@ -28,14 +28,27 @@ public class InsertSupplier extends javax.swing.JFrame {
       model1 = model;
       fuel_tank1 = fuel_tank;
       body_type1 = body_type;
-      
-       engine1 = engine_sn;
+      engine1 = engine_sn;
       engines_sn1 = engines_sn;
-       alters1_sn = alters_sn;
+      alters1_sn = alters_sn;
       alter_sn1 = alter_sn;
-           initComponents();
+      
+      
+      initComponents();
      
         
+    }
+
+    public InsertSupplier(String date, String names, String des, String brand, String type, String price, String quantity, String ids) {
+        id1 = ids;
+        date1 = date ;
+        names1 = names;
+        brand1 = brand;
+        des1 = des;
+        price1 = price;
+        quantity1 = quantity;
+        type1 = type;
+        initComponents(); 
     }
 
 
@@ -66,6 +79,7 @@ public class InsertSupplier extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         dis1 = new javax.swing.JLabel();
+        dis2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -181,7 +195,10 @@ public class InsertSupplier extends javax.swing.JFrame {
         kGradientPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 160, 50));
 
         dis1.setText("jLabel3");
-        kGradientPanel5.add(dis1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 110, 40));
+        kGradientPanel5.add(dis1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 110, 40));
+
+        dis2.setText("jLabel3");
+        kGradientPanel5.add(dis2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 110, 40));
 
         getContentPane().add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 530, 420));
 
@@ -194,24 +211,28 @@ public class InsertSupplier extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-       String name,address,email,contact;
-               name= sup_name.getText();
+       String s_name,address,email,contact;
+               s_name= sup_name.getText();
                address = sup_address.getText();
                email = sup_email.getText();
                contact = sup_contact.getText();
                String eng_com = engines_sn1+engine1;
                String alt_com = alters1_sn+ alter_sn1;
                
-               if(Class_Supplier_1.AddSupplier(name, address, contact, email) && Class_Stock.AddStock(date1, brand1, phasing1, body_type1, name, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alter_sn1)){
-                JOptionPane.showMessageDialog(null, "");
-                    }
-                else{
-                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD");
-                    }
+               int d2 = Integer.parseInt(dis2.getText());
                
+               if(d2 == 1)
+               {
+                  if(!Class_Supplier_1.AddSupplier(s_name, address, contact, email) && Class_Stock.AddStock(date1, brand1, phasing1, body_type1, names1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alter_sn1))
+                    { JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD"); Class_table ct = new Class_table(); ct.showGenset(); } 
+               }
+               else if(d2 ==2)
+               {
+                  if(!Class_Supplier_1.AddSupplier(s_name, address, contact, email) && Class_Filter.AddFilter(date1, names1, des1, brand1, type1, price1, quantity1))
+                    { JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD"); Class_table ct = new Class_table(); ct.showGenset(); } 
                
-       
-        
+               }
+
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -257,6 +278,7 @@ public class InsertSupplier extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel CUSTOMER_MENU;
     private javax.swing.JLabel dis1;
+    public static javax.swing.JLabel dis2;
     public static javax.swing.JLabel id;
     public static javax.swing.JLabel id_customer;
     private javax.swing.JLabel jLabel1;

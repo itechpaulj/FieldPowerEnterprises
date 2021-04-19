@@ -76,5 +76,20 @@ public class Class_Stock {
 
         
      return false;
-    }        
+    }   
+        
+        public static boolean DeleteGenset(String id){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("DELETE  FROM genset_table WHERE ID = ?");
+        ps.setString(1,id);
+        ps.execute();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        
+     return false;
+    }
 }
