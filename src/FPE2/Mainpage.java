@@ -576,8 +576,6 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         KG3_FILTER_PARTS.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, 160, 50));
-
-        update_filter_id.setText("jLabel1");
         KG3_FILTER_PARTS.add(update_filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 130, 30));
 
         jTab.addTab("FILTER_PARTS", KG3_FILTER_PARTS);
@@ -1230,8 +1228,14 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void DeleteFilterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteFilterBtnMouseClicked
         String id = update_filter_id.getText();
+        if(id.equals("")){
+            JOptionPane.showMessageDialog(null, "Please Select Filter!","",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
         if(!Class_Filter.DeleteFilter(id))
-        { JOptionPane.showMessageDialog(null, " DELETED ","",JOptionPane.INFORMATION_MESSAGE); Class_table ct = new Class_table(); ct.showFilter(); }
+        { JOptionPane.showMessageDialog(null, " DELETED ","",JOptionPane.INFORMATION_MESSAGE); Class_table ct = new Class_table(); ct.showFilter(); }            
+        }
+        
     }//GEN-LAST:event_DeleteFilterBtnMouseClicked
 
     private void UpdateFilterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateFilterBtnMouseClicked
@@ -1239,6 +1243,8 @@ public class Mainpage extends javax.swing.JFrame {
         Insert_Filter ifs  = new Insert_Filter();
         ifs.setVisible(true);
         Insert_Filter.displays.setText(choose);
+        Insert_Filter.filterBtn.setText("UPDATE"); // update btn in INSERT_FILTER.java
+        Insert_Filter.id.setText(update_filter_id.getText());
     }//GEN-LAST:event_UpdateFilterBtnMouseClicked
 
     private void AddFilterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddFilterBtnMouseClicked
@@ -1257,8 +1263,14 @@ public class Mainpage extends javax.swing.JFrame {
     private void DeleteGensetBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteGensetBtnMouseClicked
         // TODO add your handling code here:
         String id = edit_gen_id.getText();
-        if(!Class_Stock.DeleteGenset(id))
-        { JOptionPane.showMessageDialog(null, " DELETED "); Class_table ct = new Class_table(); ct.showGenset(); }
+        if(id.equals("")){
+            JOptionPane.showMessageDialog(null, "Please Select Genset!","",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            if(!Class_Stock.DeleteGenset(id))
+            { JOptionPane.showMessageDialog(null, " DELETED "); Class_table ct = new Class_table(); ct.showGenset(); }
+        }
+
     }//GEN-LAST:event_DeleteGensetBtnMouseClicked
 
     private void UpdateGensetBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateGensetBtnMouseClicked
@@ -1569,6 +1581,6 @@ public class Mainpage extends javax.swing.JFrame {
     private keeptoo.KGradientPanel kG2_SHOP;
     private keeptoo.KGradientPanel kG3_TABLE_GENSET;
     private keeptoo.KGradientPanel kG4_TABLE_FilterPart;
-    private javax.swing.JLabel update_filter_id;
+    public static javax.swing.JLabel update_filter_id;
     // End of variables declaration//GEN-END:variables
 }

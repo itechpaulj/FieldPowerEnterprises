@@ -5,6 +5,8 @@
  */
 package FPE2;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,6 +16,7 @@ import javax.swing.JOptionPane;
 public class Insert_Filter extends javax.swing.JFrame {
     
     String choose;
+    String date,names,des,brand,type,price,quantity,ids;
     public Insert_Filter() {
         initComponents();
   
@@ -117,7 +120,7 @@ public class Insert_Filter extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 110, 26));
 
         id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        id.setText("DATE");
+        id.setText("NONE");
         id.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 110, 26));
 
@@ -234,13 +237,13 @@ public class Insert_Filter extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
- 
+        Mainpage.update_filter_id.setText("");
         dispose();
      
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void filterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_filterBtnMouseClicked
-       String date,names,des,brand,type,price,quantity,ids;
+       
        
        String save_add = filterBtn.getText();
        ids = jLabel20.getText();
@@ -252,27 +255,68 @@ public class Insert_Filter extends javax.swing.JFrame {
        int type1 = types.getSelectedIndex();
        quantity= af_quantity.getText();
        des = af_des.getText();
-    
-       if(names.equals("") || date.equals("") || brand.equals("") || price.equals("") || type1 == 0 || quantity.equals("") || des.equals("")) 
-        
-            { JOptionPane.showMessageDialog(null, " FILL SOME FIELDS !!","",JOptionPane.ERROR_MESSAGE); }
        
-       else if(save_add.equals("SAVE"))
-       {
-           if(!Class_Filter.AddFilter(date, names, des, brand, type, price, quantity))
-               { JOptionPane.showMessageDialog(null, " SUCCESSFULY ADDED !!","",JOptionPane.INFORMATION_MESSAGE); }
+       // getText in filterBtn will identify if add supplier as well
+       if(save_add.equals("ADD SUPPLIER")){
+        //new supplier
+           // JOptionPane.showMessageDialog(null, " new supplier","",JOptionPane.INFORMATION_MESSAGE);
+            InsertSupplier is = new InsertSupplier(date,names,des,brand,type,price,quantity,ids);
+            is.setVisible(true);
+            InsertSupplier.dis2.setText("2");
        }
-       else if(save_add.equals("ADD SUPPLIER"))
-       {
-           InsertSupplier is = new InsertSupplier(date,names,des,brand,type,price,quantity,ids);
-           is.setVisible(true);
-           InsertSupplier.dis2.setText("2");
+       else{
+           // else insert new item filter / parts or update the item
+            if(names.equals("") || date.equals("") || brand.equals("") || price.equals("") || type1 == 0 || quantity.equals("") || des.equals("")){
+                JOptionPane.showMessageDialog(null, " FILL SOME FIELDS !!","",JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                //JOptionPane.showMessageDialog(null, " SUCCESS","",JOptionPane.INFORMATION_MESSAGE);
+                if(save_add.equals("SAVE")){
+                  //JOptionPane.showMessageDialog(null, " SAVE","",JOptionPane.INFORMATION_MESSAGE);
+                  if(Class_Filter.AddFilter(date, names, des, brand, type, price, quantity))
+                    { 
+                        JOptionPane.showMessageDialog(null, " SUCCESSFULY ADDED !!","",JOptionPane.INFORMATION_MESSAGE); 
+                        Class_table ct  = new Class_table();
+                        ct.showFilter(); // refreshtable
+                    }
+                }
+                else{
+                    if(save_add.equals("UPDATE")){
+                        
+                        //JOptionPane.showMessageDialog(null, "UPDATE","",JOptionPane.INFORMATION_MESSAGE);
+                           if(Class_Filter.UpdateFilter(date, names, des, brand, type, price, quantity, id.getText()))
+                            { 
+                            JOptionPane.showMessageDialog(null, " SUCCESSFULY UPDATED !!","",JOptionPane.INFORMATION_MESSAGE);
+                            Class_table ct  = new Class_table();
+                            ct.showFilter(); // refreshtable                            
+                            }
+                    }
+                }
+            }
        }
-       else if((save_add.equals("UPDATE")))
-       {
-           if(!Class_Filter.UpdateFilter(date, names, des, brand, type, price, quantity, ids))
-                { JOptionPane.showMessageDialog(null, " SUCCESSFULY UPDATED !!","",JOptionPane.INFORMATION_MESSAGE); }
-       }
+       
+       
+    
+//       if(names.equals("") || date.equals("") || brand.equals("") || price.equals("") || type1 == 0 || quantity.equals("") || des.equals("")) 
+//        
+//            { JOptionPane.showMessageDialog(null, " FILL SOME FIELDS !!","",JOptionPane.ERROR_MESSAGE); }
+//       
+//       else if(save_add.equals("SAVE"))
+//       {
+//           if(!Class_Filter.AddFilter(date, names, des, brand, type, price, quantity))
+//               { JOptionPane.showMessageDialog(null, " SUCCESSFULY ADDED !!","",JOptionPane.INFORMATION_MESSAGE); }
+//       }
+//       else if(save_add.equals("ADD SUPPLIER"))
+//       {
+//           InsertSupplier is = new InsertSupplier(date,names,des,brand,type,price,quantity,ids);
+//           is.setVisible(true);
+//           InsertSupplier.dis2.setText("2");
+//       }
+//       else if((save_add.equals("UPDATE")))
+//       {
+//           if(!Class_Filter.UpdateFilter(date, names, des, brand, type, price, quantity, ids))
+//                { JOptionPane.showMessageDialog(null, " SUCCESSFULY UPDATED !!","",JOptionPane.INFORMATION_MESSAGE); }
+//       }
 //       
     }//GEN-LAST:event_filterBtnMouseClicked
 
@@ -297,6 +341,41 @@ public class Insert_Filter extends javax.swing.JFrame {
             choose = "UPDATE FILTER PRODUCT";
                 if(title.equals(choose)){
                 sup_already.setVisible(false);
+                
+                    try{
+                        PreparedStatement ps;
+                        ResultSet rs;
+                        ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `filter_table` WHERE `ID`='"+id.getText()+"'");
+                        rs = ps.executeQuery();
+                         while(rs.next()){
+                             af_brand.setText(rs.getString("BRAND"));
+                             af_name.setText(rs.getString("NAME"));
+                             af_des.setText(rs.getString("DESCRIPTION"));
+                             af_quantity.setText(rs.getString("QUANTITY"));
+                             af_price.setText(rs.getString("PRICE"));
+                             af_date.setText(rs.getString("DATE"));
+                             
+                             String dbType = rs.getString("TYPE");
+                             //String getType = types.getSelectedItem().toString() ;
+                             if(dbType.equals("FILTER")){
+                                 types.setSelectedIndex(1);
+                             }
+                             else if(dbType.equals("PARTS")){
+                                 types.setSelectedIndex(2);
+                             }
+                             else if(dbType.equals("PARTS")){
+                                 types.setSelectedIndex(3);
+                             }
+ 
+                    
+                         }
+                    }
+                    catch(Exception e){
+
+                    }                
+                
+                
+                
             }
         }
     }//GEN-LAST:event_displaysAncestorAdded
@@ -347,8 +426,8 @@ public class Insert_Filter extends javax.swing.JFrame {
     private javax.swing.JLabel as_pic;
     private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JLabel displays;
-    private javax.swing.JLabel filterBtn;
-    private javax.swing.JLabel id;
+    public static javax.swing.JLabel filterBtn;
+    public static javax.swing.JLabel id;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

@@ -24,7 +24,8 @@ public class Insert_Genset extends javax.swing.JFrame {
         initComponents();
         //edit
         sup_already.setVisible(false);
-        
+        as_id.setVisible(false);
+        id.setVisible(false);
         
     }
 
@@ -373,14 +374,15 @@ public class Insert_Genset extends javax.swing.JFrame {
               InsertSupplier.dis2.setText("1");
             }
          else if(save_add.equals("UPDATE"))
-            {
-                Class_Stock cs = new Class_Stock();
+            {       
+                    
+                    Class_Stock cs = new Class_Stock();
                      if(Class_Stock.EditStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com,idEditgenset))
                          {
                             JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULY");
                             Class_table ct = new Class_table(); ct.showGenset(); // refresh table
                          }
-                 JOptionPane.showMessageDialog(null, "UPDATE");
+                 //JOptionPane.showMessageDialog(null, "UPDATE");
             }
         }
       
@@ -420,6 +422,8 @@ public class Insert_Genset extends javax.swing.JFrame {
             choose = "UPDATE GENSET PRODUCT";
                 if(title.equals(choose)){
                 sup_already.setVisible(false);
+                as_id.setVisible(true);
+                id.setVisible(true);
                     //as_id
                     try{
                         PreparedStatement ps;
@@ -428,7 +432,6 @@ public class Insert_Genset extends javax.swing.JFrame {
                         rs = ps.executeQuery();
                     while(rs.next()){
 
-            //as_id.setText();
                     as_brand.setText(rs.getString("BRAND"));
                     as_model.setText(rs.getString("MODEL"));
                     as_kva.setText(rs.getString("KVA"));
