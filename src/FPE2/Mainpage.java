@@ -139,25 +139,25 @@ public class Mainpage extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        HEADER.setBackground(new java.awt.Color(51, 51, 51));
+        HEADER.setBackground(new java.awt.Color(3, 33, 73));
         HEADER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        HOME_MENU.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        HOME_MENU.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         HOME_MENU.setForeground(new java.awt.Color(255, 255, 255));
-        HOME_MENU.setText("  HOME");
         HEADER.add(HOME_MENU, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 130, 70));
 
-        HOME_VIEW_PRODUCT.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        HOME_VIEW_PRODUCT.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         HOME_VIEW_PRODUCT.setForeground(new java.awt.Color(255, 255, 255));
         HEADER.add(HOME_VIEW_PRODUCT, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 330, 70));
 
         getContentPane().add(HEADER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 102));
 
-        DRAWER.setBackground(new java.awt.Color(51, 51, 51));
+        DRAWER.setBackground(new java.awt.Color(3, 33, 73));
         DRAWER.setPreferredSize(new java.awt.Dimension(230, 775));
         DRAWER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        HOME_LABEL.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        HOME_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        HOME_LABEL.setForeground(new java.awt.Color(3, 33, 73));
         HOME_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HOME_LABEL.setText("HOME");
         HOME_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -185,7 +185,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         DRAWER.add(HOME_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 190, 70));
 
-        LOGOUT_LABEL1.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        LOGOUT_LABEL1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        LOGOUT_LABEL1.setForeground(new java.awt.Color(3, 33, 73));
         LOGOUT_LABEL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LOGOUT_LABEL1.setText("LOGOUT");
         LOGOUT_LABEL1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -210,7 +211,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         DRAWER.add(LOGOUT_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 190, 70));
 
-        STOCK_LABEL.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        STOCK_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        STOCK_LABEL.setForeground(new java.awt.Color(3, 33, 73));
         STOCK_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         STOCK_LABEL.setText("STOCK");
         STOCK_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -238,7 +240,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         DRAWER.add(STOCK_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 190, 70));
 
-        SHOP_LABEL.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        SHOP_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        SHOP_LABEL.setForeground(new java.awt.Color(3, 33, 73));
         SHOP_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SHOP_LABEL.setText("SHOP");
         SHOP_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -266,7 +269,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         DRAWER.add(SHOP_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 190, 70));
 
-        REPORT_LABEL.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        REPORT_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        REPORT_LABEL.setForeground(new java.awt.Color(3, 33, 73));
         REPORT_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         REPORT_LABEL.setText("REPORT");
         REPORT_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
