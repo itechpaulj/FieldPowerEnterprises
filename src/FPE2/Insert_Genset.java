@@ -6,6 +6,11 @@
 package FPE2;
 
 import static FPE2.Mainpage.ViewGenset_Table;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -378,16 +383,16 @@ public class Insert_Genset extends javax.swing.JFrame {
                     //JOptionPane.showMessageDialog(null, "ADD SUPPLIER");
                }else{
                    choose = "UPDATE";
-                   if(save_add.equals(choose)){
-                       Class_Stock cs = new Class_Stock();
-                       if(Class_Stock.EditStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com,idEditgenset))
-                       {
-                          JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULY");
-                          Class_table ct = new Class_table();
-                          ct.showGenset(); // refresh table
-                       }
-                       //JOptionPane.showMessageDialog(null, "UPDATE");
-                   }
+//                   if(save_add.equals(choose)){
+//                       Class_Stock cs = new Class_Stock();
+//                       if(Class_Stock.EditStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com,idEditgenset))
+//                       {
+//                          JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULY");
+//                          Class_table ct = new Class_table();
+//                          ct.showGenset(); // refresh table
+//                       }
+                       JOptionPane.showMessageDialog(null, "UPDATE");
+                  // }
                }
            }
            
@@ -429,7 +434,49 @@ public class Insert_Genset extends javax.swing.JFrame {
             choose = "UPDATE GENSET PRODUCT";
                 if(title.equals(choose)){
                 sup_already.setVisible(false);
-            }
+                    //as_id
+                    try{
+                        PreparedStatement ps;
+                        ResultSet rs;
+                        ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `genset_table` WHERE `ID`='"+as_id.getText()+"'");
+                        rs = ps.executeQuery();
+                    while(rs.next()){
+
+            //as_id.setText();
+                    as_brand.setText(rs.getString("BRAND"));
+                    as_model.setText(rs.getString("MODEL"));
+                    as_kva.setText(rs.getString("KVA"));
+                    as_phasing.setText(rs.getString("PHASING"));
+                    as_unitType.setText("UNIT_TYPE");
+                    as_dimension.setText("DIMENSION");
+                    as_fuel_tank.setText("TANK_CAP");
+                    as_body_parts.setText("BODY TYPE");
+                    as_price.setText("PRICE");
+                    
+                    String[] remove_eng_sn = rs.getString("ENGINE_SERIAL_NO").split(" - ");
+                    String[] remove_alt_sn = rs.getString("ALTERNATOR_SERIAL_NO").split(" - ");
+                    as_engine_sn.setText(remove_eng_sn[0]);
+                    as_alternator_sn.setText(remove_alt_sn[0]);
+                    if(remove_eng_sn[1].equals("OLD")){
+                    eng_sn.setSelectedIndex(1);
+                    }
+                    else{
+                    eng_sn.setSelectedIndex(2);
+                    }
+                    
+                    if(remove_alt_sn[1].equals("OLD")){
+                    alt_sn.setSelectedIndex(1);
+                    }
+                    else{
+                    alt_sn.setSelectedIndex(2);
+                    }
+                    }
+    }
+        catch(Exception e){
+            
+        }
+                }
+
         }
     }//GEN-LAST:event_displayAncestorAdded
 
