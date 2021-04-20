@@ -301,7 +301,7 @@ public class Insert_Genset extends javax.swing.JFrame {
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 820, 610));
 
-        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setBackground(new java.awt.Color(3, 33, 73));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -447,42 +447,42 @@ public class Insert_Genset extends javax.swing.JFrame {
                         rs = ps.executeQuery();
                     while(rs.next()){
 
-                    as_brand.setText(rs.getString("BRAND"));
-                    as_model.setText(rs.getString("MODEL"));
-                    as_kva.setText(rs.getString("KVA"));
-                    as_phasing.setText(rs.getString("PHASING"));
-                    as_unitType.setText(rs.getString("UNIT_TYPE"));
-                    as_dimension.setText(rs.getString("DIMENSION"));
-                    as_fuel_tank.setText(rs.getString("TANK_CAP"));
-                    as_body_parts.setText(rs.getString("BODY TYPE"));
-                    as_price.setText(rs.getString("PRICE"));
-                    as_pic.setText(null);
-                ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(as_pic.getWidth(), as_pic.getHeight(),Image.SCALE_SMOOTH) );
-                as_pic.setIcon(imageicon);
+                            as_brand.setText(rs.getString("BRAND"));
+                            as_model.setText(rs.getString("MODEL"));
+                            as_kva.setText(rs.getString("KVA"));
+                            as_phasing.setText(rs.getString("PHASING"));
+                            as_unitType.setText(rs.getString("UNIT_TYPE"));
+                            as_dimension.setText(rs.getString("DIMENSION"));
+                            as_fuel_tank.setText(rs.getString("TANK_CAP"));
+                            as_body_parts.setText(rs.getString("BODY TYPE"));
+                            as_price.setText(rs.getString("PRICE"));
+                            as_pic.setText(null);
+                            ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(as_pic.getWidth(), as_pic.getHeight(),Image.SCALE_SMOOTH) );
+                            as_pic.setIcon(imageicon);
                     
                     
-                    String[] remove_eng_sn = rs.getString("ENGINE_SERIAL_NO").split(" - ");
-                    String[] remove_alt_sn = rs.getString("ALTERNATOR_SERIAL_NO").split(" - ");
-                    as_engine_sn.setText(remove_eng_sn[0]);
-                    as_alternator_sn.setText(remove_alt_sn[0]);
-                    if(remove_eng_sn[1].equals("OLD")){
-                    eng_sn.setSelectedIndex(1);
+                            String[] remove_eng_sn = rs.getString("ENGINE_SERIAL_NO").split(" - ");
+                            String[] remove_alt_sn = rs.getString("ALTERNATOR_SERIAL_NO").split(" - ");
+                            as_engine_sn.setText(remove_eng_sn[0]);
+                            as_alternator_sn.setText(remove_alt_sn[0]);
+                            if(remove_eng_sn[1].equals("OLD")){
+                                eng_sn.setSelectedIndex(1);
+                            }
+                            else{
+                                eng_sn.setSelectedIndex(2);
+                            }
+
+                            if(remove_alt_sn[1].equals("OLD")){
+                                alt_sn.setSelectedIndex(1);
+                            }
+                            else{
+                                alt_sn.setSelectedIndex(2);
+                            }
+                        }
                     }
-                    else{
-                    eng_sn.setSelectedIndex(2);
+                    catch(Exception e){
+                        e.printStackTrace();
                     }
-                    
-                    if(remove_alt_sn[1].equals("OLD")){
-                    alt_sn.setSelectedIndex(1);
-                    }
-                    else{
-                    alt_sn.setSelectedIndex(2);
-                    }
-                    }
-    }
-        catch(Exception e){
-            
-        }
                 }
 
         }

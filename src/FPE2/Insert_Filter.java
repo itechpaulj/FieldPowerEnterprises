@@ -213,7 +213,7 @@ public class Insert_Filter extends javax.swing.JFrame {
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 720, 570));
 
-        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel4.setBackground(new java.awt.Color(3, 33, 73));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -371,7 +371,7 @@ public class Insert_Filter extends javax.swing.JFrame {
                          }
                     }
                     catch(Exception e){
-
+                        e.printStackTrace();
                     }                
                 
                 

@@ -78,7 +78,7 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/logo.png"))); // NOI18N
-        jLabel5.setText(" Field Power Interprises");
+        jLabel5.setText(" Field Power Enterprises");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 590, 110));
 
         jPanel2.setBackground(new java.awt.Color(255, 51, 51));
