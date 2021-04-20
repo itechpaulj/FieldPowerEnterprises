@@ -13,13 +13,14 @@ import javax.swing.JOptionPane;
  */
 public class InsertSupplier extends javax.swing.JFrame {
 
-    String date1,brand1,phasing1,kva1,price1,model1,fuel_tank1,body_type1,engines_sn1,alter_sn1,alters1_sn,engine1;
-    String quantity1,type1,des1,id1,names1;
+    String date1,brand1,phasing1,unit_type1,kva1,price1,model1,fuel_tank1,body_type1,engines_sn1,alter_sn1,alters1_sn,engine1;
+    String quantity1,type1,des1,id1,names1,url1;
+    byte [] images1 ;
     public InsertSupplier() {
         initComponents();
     }
 
-    public InsertSupplier(String date, String brand, String phasing, String kva, String price, String model, String fuel_tank, String body_type, String engines_sn,String engine_sn,String alters_sn, String alter_sn) {
+    public InsertSupplier(String date, String brand, String phasing,String unit_type, String kva, String price, String model, String fuel_tank, String body_type, String engines_sn,String engine_sn,String alters_sn, String alter_sn,String url,byte[] images) {
       date1 = date ;
       brand1 = brand;
       phasing1 = phasing;
@@ -32,8 +33,9 @@ public class InsertSupplier extends javax.swing.JFrame {
       engines_sn1 = engines_sn;
       alters1_sn = alters_sn;
       alter_sn1 = alter_sn;
-      
-      
+      url1 = url;
+      images1 = images;
+      unit_type1 = unit_type;
       initComponents();
      
         
@@ -211,7 +213,7 @@ public class InsertSupplier extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-       String s_name,address,email,contact;
+               String s_name,address,email,contact;
                s_name= sup_name.getText();
                address = sup_address.getText();
                email = sup_email.getText();
@@ -219,16 +221,18 @@ public class InsertSupplier extends javax.swing.JFrame {
                String eng_com = engines_sn1+engine1;
                String alt_com = alters1_sn+ alter_sn1;
                
+                                                                                                                
+               
                int d2 = Integer.parseInt(dis2.getText());
                
                if(d2 == 1)
                {
-                  if(!Class_Supplier_1.AddSupplier(s_name, address, contact, email) && Class_Stock.AddStock(date1, brand1, phasing1, body_type1, names1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alter_sn1))
+                  if(!Class_Supplier_1.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, body_type1, unit_type1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alter_sn1, url1, images1));
                     { JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD"); Class_table ct = new Class_table(); ct.showGenset(); } 
                }
                else if(d2 ==2)
                {
-                  if(!Class_Supplier_1.AddSupplier(s_name, address, contact, email) && Class_Filter.AddFilter(date1, names1, des1, brand1, type1, price1, quantity1))
+                  if(!Class_Supplier_1.AddSupplier(s_name, address, contact, email) && !Class_Filter.AddFilter(date1, names1, des1, brand1, type1, price1, quantity1))
                     { JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD"); Class_table ct = new Class_table(); ct.showGenset(); } 
                
                }

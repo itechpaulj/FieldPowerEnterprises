@@ -35,7 +35,7 @@ public class Class_Filter {
         return false;
     }
     
-        public static boolean UpdateFilter(String date,String names,String des,String brand,String type,String price,String quantity,String id){
+        public static boolean UpdateFilter(String date,String names,String des,String brand,String type,String price,String quantity,String ids,String url,byte[] image){
         PreparedStatement ps = null;
         try{
         ps = FPE_DB.getConnection().prepareStatement("UPDATE `filter_table` SET `BRAND`=?,`NAME`=?,`DESCRIPTION`=?,`QUANTITY`=?,`PRICE`=?,`DATE`=?,`TYPE`=? WHERE ID=?");
@@ -46,11 +46,9 @@ public class Class_Filter {
         ps.setString(5, price);
         ps.setString(6, date);
         ps.setString(7, type);
-        ps.setString(8, id);       
         
-            if(ps.execute()==false){
-                return true;
-            }
+        ps.setString(8, ids);
+        ps.execute();
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -71,5 +69,9 @@ public class Class_Filter {
 
         
      return false;
+    }
+
+    static boolean UpdateFilter(String date, String names, String des, String brand, String type, String price, String quantity, String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

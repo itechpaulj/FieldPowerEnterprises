@@ -17,6 +17,7 @@ public class Insert_Filter extends javax.swing.JFrame {
     
     String choose;
     String date,names,des,brand,type,price,quantity,ids;
+    Class_table ct  = new Class_table();
     public Insert_Filter() {
         initComponents();
   
@@ -276,7 +277,7 @@ public class Insert_Filter extends javax.swing.JFrame {
                   if(Class_Filter.AddFilter(date, names, des, brand, type, price, quantity))
                     { 
                         JOptionPane.showMessageDialog(null, " SUCCESSFULY ADDED !!","",JOptionPane.INFORMATION_MESSAGE); 
-                        Class_table ct  = new Class_table();
+        
                         ct.showFilter(); // refreshtable
                     }
                 }
@@ -287,7 +288,6 @@ public class Insert_Filter extends javax.swing.JFrame {
                            if(Class_Filter.UpdateFilter(date, names, des, brand, type, price, quantity, id.getText()))
                             { 
                             JOptionPane.showMessageDialog(null, " SUCCESSFULY UPDATED !!","",JOptionPane.INFORMATION_MESSAGE);
-                            Class_table ct  = new Class_table();
                             ct.showFilter(); // refreshtable                            
                             }
                     }

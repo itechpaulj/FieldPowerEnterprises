@@ -17,10 +17,10 @@ import javax.swing.table.DefaultTableModel;
  * @author Javinez
  */
 public class Class_Stock {
-        public static boolean AddStock(String date, String brand, String phasing,String unit_type,String dimen, String kva, String price, String model, String fuel_tank, String body_type, String engines_sn, String alter_sn){
+        public static boolean AddStock(String date, String brand, String phasing,String unit_type,String dimen, String kva, String price, String model, String fuel_tank, String body_type, String engines_sn, String alter_sn,String url,byte[] images){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `genset_table`(`BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`, `TANK_CAP`, `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `genset_table`(`BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`, `TANK_CAP`, `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`,`URL`,`IMAGE`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1,brand);
         ps.setString(2,model);
         ps.setString(3,phasing);
@@ -33,10 +33,10 @@ public class Class_Stock {
         ps.setString(10,engines_sn);
         ps.setString(11,alter_sn);
         ps.setString(12,date);
-        
-            if(ps.execute()==false){
-                return true;
-            }
+        ps.setString(13, url); 
+        ps.setBytes(14, images); 
+        ps.execute();
+
 
         }
         catch(Exception e){
@@ -92,4 +92,8 @@ public class Class_Stock {
         
      return false;
     }
+
+   
+
+  
 }

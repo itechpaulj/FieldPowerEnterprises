@@ -5,8 +5,14 @@
  */
 package FPE2;
 
+import java.awt.Image;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.imageio.stream.FileImageInputStream;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +26,10 @@ public class Insert_Genset extends javax.swing.JFrame {
     String engine_sn;
     String alters_sn; 
     String save_add; 
+    
+    String filename = null;
+    byte[] person_image = null;
+    
     public Insert_Genset() {
         initComponents();
         //edit
@@ -182,6 +192,11 @@ public class Insert_Genset extends javax.swing.JFrame {
         as_pic.setText("2x2");
         as_pic.setAlignmentY(1.0F);
         as_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        as_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                as_picMouseClicked(evt);
+            }
+        });
         KG2_ADD_STOCK_GENSET.add(as_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 350, 200));
 
         alt_sn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "OLD", "NEW" }));
@@ -357,7 +372,7 @@ public class Insert_Genset extends javax.swing.JFrame {
                 { JOptionPane.showMessageDialog(null, "FILL SOME BLANKS!","",JOptionPane.ERROR_MESSAGE); }
              
              else
-                {  if(Class_Stock.AddStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com))
+                {  if(!Class_Stock.AddStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com,filename,person_image))
                      {
                          JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD");
                          Class_table ct = new Class_table(); ct.showGenset(); // refresh table
@@ -369,7 +384,7 @@ public class Insert_Genset extends javax.swing.JFrame {
          
          if(save_add.equals("ADD SUPPLIER"))
             {
-              InsertSupplier is = new InsertSupplier(date,brand,phasing,kva,price,model,fuel_tank,body_type,engines_sn,engine_sn,alters_sn,alter_sn);
+              InsertSupplier is = new InsertSupplier(date,brand,phasing,unit_type,kva,price,model,fuel_tank,body_type,engines_sn,engine_sn,alters_sn,alter_sn,filename,person_image);
               is.setVisible(true);
               InsertSupplier.dis2.setText("1");
             }
@@ -441,6 +456,10 @@ public class Insert_Genset extends javax.swing.JFrame {
                     as_fuel_tank.setText(rs.getString("TANK_CAP"));
                     as_body_parts.setText(rs.getString("BODY TYPE"));
                     as_price.setText(rs.getString("PRICE"));
+                    as_pic.setText(null);
+                ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(as_pic.getWidth(), as_pic.getHeight(),Image.SCALE_SMOOTH) );
+                as_pic.setIcon(imageicon);
+                    
                     
                     String[] remove_eng_sn = rs.getString("ENGINE_SERIAL_NO").split(" - ");
                     String[] remove_alt_sn = rs.getString("ALTERNATOR_SERIAL_NO").split(" - ");
@@ -468,6 +487,35 @@ public class Insert_Genset extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_displayAncestorAdded
+
+    private void as_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_as_picMouseClicked
+        as_pic.setText(null);
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        filename = f.getAbsolutePath();
+        as_pic.setText(filename);
+        
+                //Image getAbsolutePath = null;
+        //ImageIcon icon = new ImageIcon(filename);
+        ImageIcon imageicon = new ImageIcon (new ImageIcon(filename).getImage().getScaledInstance(as_pic.getWidth(), as_pic.getHeight(),Image.SCALE_SMOOTH) );
+        as_pic.setIcon(imageicon);
+
+        try{
+            File image = new File(filename);
+            FileImageInputStream fis = new FileImageInputStream(image);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            byte[] buf = new byte[1024];
+            
+            for(int readNum;(readNum=fis.read(buf)) !=-1;){
+                bos.write(buf,0,readNum);
+            }
+            person_image=bos.toByteArray();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_as_picMouseClicked
 
     /**
      * @param args the command line arguments
