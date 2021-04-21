@@ -391,6 +391,7 @@ public class Insert_Genset extends javax.swing.JFrame {
             InsertSupplier is = new InsertSupplier();
             is.setVisible(true);
             InsertSupplier.SUPPLIER_MENU.setText(choose);
+            InsertSupplier.sup_add.setText("SAVE");
             }
          else if(save_add.equals("UPDATE"))
             {       

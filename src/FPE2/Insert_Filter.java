@@ -5,8 +5,10 @@
  */
 package FPE2;
 
+import java.awt.Image;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -268,6 +270,7 @@ public class Insert_Filter extends javax.swing.JFrame {
             InsertSupplier is = new InsertSupplier();
             is.setVisible(true);
             InsertSupplier.SUPPLIER_MENU.setText(choose);
+            InsertSupplier.sup_add.setText("SAVE");
        }
        else{
            // else insert new item filter / parts or update the item
@@ -358,7 +361,7 @@ public class Insert_Filter extends javax.swing.JFrame {
                              af_quantity.setText(rs.getString("QUANTITY"));
                              af_price.setText(rs.getString("PRICE"));
                              af_date.setText(rs.getString("DATE"));
-                             
+                                                       
                              String dbType = rs.getString("TYPE");
                              //String getType = types.getSelectedItem().toString() ;
                              if(dbType.equals("FILTER")){

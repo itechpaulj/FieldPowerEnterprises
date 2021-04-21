@@ -27,6 +27,7 @@ public class Mainpage extends javax.swing.JFrame {
         ct.Stocksupplier();
         edit_gen_id.setVisible(false);
         shop_genset_id.setVisible(false);
+        stock_supplier_id.setVisible(false);
     }
        
 
@@ -64,7 +65,7 @@ public class Mainpage extends javax.swing.JFrame {
         KG1_STOCK = new keeptoo.KGradientPanel();
         MENU_GENSET = new javax.swing.JLabel();
         MENU_SUPPLIER = new javax.swing.JLabel();
-        MENU_FILTER_PART2 = new javax.swing.JLabel();
+        MENU_FILTER_PART = new javax.swing.JLabel();
         KG2_GENSET = new keeptoo.KGradientPanel();
         jPanel22 = new javax.swing.JPanel();
         BackGensetBtn = new javax.swing.JLabel();
@@ -126,7 +127,7 @@ public class Mainpage extends javax.swing.JFrame {
         jScrollPane15 = new javax.swing.JScrollPane();
         Shop_filter_table3 = new javax.swing.JTable();
         jPanel38 = new javax.swing.JPanel();
-        BackShopFilter3 = new javax.swing.JLabel();
+        del_supplier = new javax.swing.JLabel();
         jPanel39 = new javax.swing.JPanel();
         BackFilterBtn7 = new javax.swing.JLabel();
         stock_supplier_id = new javax.swing.JLabel();
@@ -497,16 +498,16 @@ public class Mainpage extends javax.swing.JFrame {
         });
         KG1_STOCK.add(MENU_SUPPLIER, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, 340, 201));
 
-        MENU_FILTER_PART2.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
-        MENU_FILTER_PART2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        MENU_FILTER_PART2.setText("FILTER / PART");
-        MENU_FILTER_PART2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        MENU_FILTER_PART2.addMouseListener(new java.awt.event.MouseAdapter() {
+        MENU_FILTER_PART.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        MENU_FILTER_PART.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MENU_FILTER_PART.setText("FILTER / PART");
+        MENU_FILTER_PART.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        MENU_FILTER_PART.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MENU_FILTER_PART2MouseClicked(evt);
+                MENU_FILTER_PARTMouseClicked(evt);
             }
         });
-        KG1_STOCK.add(MENU_FILTER_PART2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 340, 201));
+        KG1_STOCK.add(MENU_FILTER_PART, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 340, 201));
 
         jTab.addTab("MENU_STOCK", KG1_STOCK);
 
@@ -1065,12 +1066,12 @@ public class Mainpage extends javax.swing.JFrame {
 
         KG6_SHOP_FILTER3.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 1040, 400));
 
-        BackShopFilter3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        BackShopFilter3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BackShopFilter3.setText("DELETE");
-        BackShopFilter3.addMouseListener(new java.awt.event.MouseAdapter() {
+        del_supplier.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        del_supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        del_supplier.setText("DELETE");
+        del_supplier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BackShopFilter3MouseClicked(evt);
+                del_supplierMouseClicked(evt);
             }
         });
 
@@ -1079,12 +1080,12 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel38Layout.setHorizontalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel38Layout.createSequentialGroup()
-                .addComponent(BackShopFilter3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(del_supplier, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 56, Short.MAX_VALUE))
         );
         jPanel38Layout.setVerticalGroup(
             jPanel38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BackShopFilter3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(del_supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         KG6_SHOP_FILTER3.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 150, 50));
@@ -1818,10 +1819,18 @@ public class Mainpage extends javax.swing.JFrame {
         String id = update_filter_id.getText();
         if(id.equals("")){
             JOptionPane.showMessageDialog(null, "Please Select Filter!","",JOptionPane.ERROR_MESSAGE);
+            Class_table ct = new Class_table();
+            ct.shopGenset();
         }
         else{
-        if(!Class_Filter.DeleteFilter(id))
-        { JOptionPane.showMessageDialog(null, " DELETED ","",JOptionPane.INFORMATION_MESSAGE); Class_table ct = new Class_table(); ct.showFilter(); }            
+            
+                int option = JOptionPane.showConfirmDialog(null, "Are you sure to delete?","",JOptionPane.YES_NO_CANCEL_OPTION);
+                
+                if(option==0){
+                    if(!Class_Filter.DeleteFilter(id))
+                   { JOptionPane.showMessageDialog(null, " DELETED ","",JOptionPane.INFORMATION_MESSAGE); Class_table ct = new Class_table(); ct.showFilter(); }                     
+                }            
+        
         }
         
     }//GEN-LAST:event_DeleteFilterBtnMouseClicked
@@ -1853,10 +1862,17 @@ public class Mainpage extends javax.swing.JFrame {
         String id = edit_gen_id.getText();
         if(id.equals("")){
             JOptionPane.showMessageDialog(null, "Please Select Genset!","",JOptionPane.ERROR_MESSAGE);
+            Class_table ct = new Class_table();
+            ct.shopGenset();
         }
         else{
-            if(!Class_Stock.DeleteGenset(id))
-            { JOptionPane.showMessageDialog(null, " DELETED "); Class_table ct = new Class_table(); ct.showGenset(); }
+            
+                int option = JOptionPane.showConfirmDialog(null, "Are you sure to delete?","",JOptionPane.YES_NO_CANCEL_OPTION);
+                
+                if(option==0){
+                    if(!Class_Stock.DeleteGenset(id))
+                   { JOptionPane.showMessageDialog(null, " DELETED "); Class_table ct = new Class_table(); ct.showGenset(); }                   
+                }            
         }
 
     }//GEN-LAST:event_DeleteGensetBtnMouseClicked
@@ -1864,7 +1880,7 @@ public class Mainpage extends javax.swing.JFrame {
     private void UpdateGensetBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateGensetBtnMouseClicked
         String getId = edit_gen_id.getText();
         if(getId.equals("")){
-            JOptionPane.showMessageDialog(null, "Select Genset First!");
+            JOptionPane.showMessageDialog(null, "Select Genset First!","",JOptionPane.ERROR_MESSAGE);
         }
         else{
             choose="UPDATE GENSET PRODUCT";
@@ -2035,9 +2051,10 @@ public class Mainpage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_back_shop2InputMethodTextChanged
 
-    private void MENU_FILTER_PART2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_FILTER_PART2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MENU_FILTER_PART2MouseClicked
+    private void MENU_FILTER_PARTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_FILTER_PARTMouseClicked
+       HOME_VIEW_PRODUCT.setText(MENU_FILTER_PART.getText());
+        jTab.setSelectedIndex(3);
+    }//GEN-LAST:event_MENU_FILTER_PARTMouseClicked
 
     private void Shop_filter_table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_filter_table1MouseClicked
         // TODO add your handling code here:
@@ -2064,19 +2081,47 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void stock_supplier_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stock_supplier_editMouseClicked
        
-        InsertSupplier is = new InsertSupplier();
-        is.setVisible(true);
-        InsertSupplier.id.setText(stock_supplier_id.getText());
-        InsertSupplier.SUPPLIER_MENU.setText("UPDATE SUPPLIER");
+        String getId = stock_supplier_id.getText();
+        if(getId.equals("")){
+            Class_table ct = new Class_table();
+            ct.Stocksupplier();
+            JOptionPane.showMessageDialog(null, "Please Select Supplier!","",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            InsertSupplier is = new InsertSupplier();
+            is.setVisible(true);
+            InsertSupplier.id.setText(stock_supplier_id.getText());
+            InsertSupplier.SUPPLIER_MENU.setText("UPDATE SUPPLIER");
+            InsertSupplier.sup_add.setText("UPDATE");
+        }
+
     }//GEN-LAST:event_stock_supplier_editMouseClicked
 
     private void Shop_filter_table3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_filter_table3MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_Shop_filter_table3MouseClicked
 
-    private void BackShopFilter3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackShopFilter3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BackShopFilter3MouseClicked
+    private void del_supplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_del_supplierMouseClicked
+        String del_getId = stock_supplier_id.getText();
+        Class_table ct = new Class_table();
+            if(del_getId.equals("")){
+                JOptionPane.showMessageDialog(null, "Please Select Supplier!","",JOptionPane.ERROR_MESSAGE);
+                ct.Stocksupplier();
+            }
+            else{
+                
+                int option = JOptionPane.showConfirmDialog(null, "Are you sure to delete?","",JOptionPane.YES_NO_CANCEL_OPTION);
+                
+                if(option==0){
+                    if(!Class_Supplier.DeleteSupplier(del_getId)){
+                    ct.Stocksupplier();
+                    JOptionPane.showMessageDialog(null, "DELETE SUCCESSFULLY!","",JOptionPane.INFORMATION_MESSAGE);
+                    }
+                }
+                    
+
+            }
+    }//GEN-LAST:event_del_supplierMouseClicked
 
     private void BackFilterBtn7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackFilterBtn7MouseClicked
         // TODO add your handling code here:
@@ -2128,7 +2173,6 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel BackGensetBtn;
     private javax.swing.JLabel BackShopFilter;
     private javax.swing.JLabel BackShopFilter1;
-    private javax.swing.JLabel BackShopFilter3;
     private javax.swing.JLabel BackShopGenset;
     private javax.swing.JLabel BackSupplier;
     private javax.swing.JPanel DRAWER;
@@ -2151,8 +2195,8 @@ public class Mainpage extends javax.swing.JFrame {
     private keeptoo.KGradientPanel KG7_STOCK_SUPPLIER;
     private javax.swing.JLabel LOGOUT_LABEL1;
     private javax.swing.JPanel LOGOUT_PANEL;
+    private javax.swing.JLabel MENU_FILTER_PART;
     private javax.swing.JLabel MENU_FILTER_PART1;
-    private javax.swing.JLabel MENU_FILTER_PART2;
     private javax.swing.JLabel MENU_GENSET;
     private javax.swing.JLabel MENU_GENSET1;
     private javax.swing.JLabel MENU_SUPPLIER;
@@ -2179,6 +2223,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel back_shop2;
     public static javax.swing.JTable customer_table1;
     private javax.swing.JLabel del_customer1;
+    private javax.swing.JLabel del_supplier;
     private javax.swing.JLabel edit_customer1;
     public static javax.swing.JLabel edit_gen_date1;
     public static javax.swing.JLabel edit_gen_id;
