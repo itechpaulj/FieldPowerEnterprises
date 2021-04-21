@@ -399,7 +399,8 @@ public class Insert_Genset extends javax.swing.JFrame {
                      if(Class_Stock.EditStock(date, brand, phasing, unit_type, dimen, kva, price, model, fuel_tank, body_type, eng_com, alt_com,idEditgenset))
                          {
                             JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULY");
-                            Class_table ct = new Class_table(); ct.showGenset(); // refresh table
+                            Class_table ct = new Class_table();
+                            ct.showGenset(); // refresh table
                          }
                  //JOptionPane.showMessageDialog(null, "UPDATE");
             }
