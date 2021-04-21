@@ -70,6 +70,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
         display = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(153, 204, 255));
@@ -312,6 +313,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 100));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void vg_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vg_picMouseClicked

@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 
-public class Class_Supplier_1 {
+public class Class_Supplier {
      
         public static boolean AddSupplier(String name,String address,String contact,String email ){
         PreparedStatement ps = null;

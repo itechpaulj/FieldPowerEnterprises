@@ -384,9 +384,13 @@ public class Insert_Genset extends javax.swing.JFrame {
          
          if(save_add.equals("ADD SUPPLIER"))
             {
-              InsertSupplier is = new InsertSupplier(date,brand,phasing,unit_type,kva,price,model,fuel_tank,body_type,engines_sn,engine_sn,alters_sn,alter_sn,filename,person_image);
-              is.setVisible(true);
-              InsertSupplier.dis2.setText("1");
+//              InsertSupplier is = new InsertSupplier(date,brand,phasing,unit_type,kva,price,model,fuel_tank,body_type,engines_sn,engine_sn,alters_sn,alter_sn,filename,person_image);
+//              is.setVisible(true);
+//              InsertSupplier.dis2.setText("1");
+            choose = "ADD SUPPLIER";
+            InsertSupplier is = new InsertSupplier();
+            is.setVisible(true);
+            InsertSupplier.SUPPLIER_MENU.setText(choose);
             }
          else if(save_add.equals("UPDATE"))
             {       

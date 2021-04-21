@@ -9,6 +9,7 @@ import static FPE2.Mainpage.ViewGenset_Table;
 import static FPE2.Mainpage.ViewFitler_table;
 import static FPE2.Mainpage.Shop_genset_table;
 import static FPE2.Mainpage.Shop_filter_table;
+import static FPE2.Mainpage.Stock_supplier;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import net.proteanit.sql.DbUtils;
@@ -51,11 +52,22 @@ public class Class_table {
         return false;
     }
     
-        public boolean shopFilter(){
+    public boolean shopFilter(){
         try{
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `NAME`, `QUANTITY`, `PRICE`,(`QUANTITY`*`PRICE`) AS `TOTAL PRICE`, `TYPE` FROM `filter_table` ORDER BY `ID` DESC");
         ResultSet rs = ps.executeQuery();
         Shop_filter_table.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(Exception e){
+              System.out.println(e);
+            }
+        return false;
+    }
+    
+    public boolean Stocksupplier(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table`");
+        ResultSet rs = ps.executeQuery();
+        Stock_supplier.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
               System.out.println(e);
             }
