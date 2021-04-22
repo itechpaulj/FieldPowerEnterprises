@@ -314,9 +314,9 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="SUPPLIER">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="SUPPLIER"/>
-          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+          </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="130" y="10" width="110" height="40"/>
@@ -324,9 +324,6 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="customer">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="CUSTOMER"/>
-          </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>

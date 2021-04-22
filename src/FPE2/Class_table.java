@@ -9,7 +9,7 @@ import static FPE2.Mainpage.ViewGenset_Table;
 import static FPE2.Mainpage.ViewFitler_table;
 import static FPE2.Mainpage.Shop_genset_table;
 import static FPE2.Mainpage.Shop_Customer_Table;
-import static FPE2.Mainpage.Stock_supplier;
+import static FPE2.Table_Supplier.Supplier_table;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import net.proteanit.sql.DbUtils;
@@ -68,7 +68,7 @@ public class Class_table {
         try{
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table`");
         ResultSet rs = ps.executeQuery();
-        Stock_supplier.setModel(DbUtils.resultSetToTableModel(rs));
+        Supplier_table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
               System.out.println(e);
             }

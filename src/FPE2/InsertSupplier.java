@@ -23,38 +23,7 @@ public class InsertSupplier extends javax.swing.JFrame {
         id.setVisible(false);
     }
 
-//    public InsertSupplier(String date, String brand, String phasing,String unit_type, String kva, String price, String model, String fuel_tank, String body_type, String engines_sn,String engine_sn,String alters_sn, String alter_sn,String url,byte[] images) {
-//      date1 = date ;
-//      brand1 = brand;
-//      phasing1 = phasing;
-//      kva1 = kva;
-//      price1 = price;
-//      model1 = model;
-//      fuel_tank1 = fuel_tank;
-//      body_type1 = body_type;
-//      engine1 = engine_sn;
-//      engines_sn1 = engines_sn;
-//      alters1_sn = alters_sn;
-//      alter_sn1 = alter_sn;
-//      url1 = url;
-//      images1 = images;
-//      unit_type1 = unit_type;
-//      initComponents();
-//     
-//        
-//    }
 
-//    public InsertSupplier(String date, String names, String des, String brand, String type, String price, String quantity, String ids) {
-//        id1 = ids;
-//        date1 = date ;
-//        names1 = names;
-//        brand1 = brand;
-//        des1 = des;
-//        price1 = price;
-//        quantity1 = quantity;
-//        type1 = type;
-//        initComponents(); 
-//    }
 
 
     /**
@@ -207,11 +176,7 @@ public class InsertSupplier extends javax.swing.JFrame {
         );
 
         kGradientPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 160, 50));
-
-        SUPPLIER.setText("SUPPLIER");
         kGradientPanel5.add(SUPPLIER, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 110, 40));
-
-        customer.setText("CUSTOMER");
         kGradientPanel5.add(customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 110, 40));
 
         getContentPane().add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 530, 420));
@@ -250,7 +215,10 @@ public class InsertSupplier extends javax.swing.JFrame {
                      Class_table ct = new Class_table(); ct.showGenset(); 
                  }    
             }
+         
         }
+        
+        
         else if(confirmSupplierCustomer.equals("SAVE") && cus_sup_title.equals("ADD CUSTOMER")){
                if(!Class_customers.AddCustomer(s_name, address, contact, email))
                  { 
@@ -258,6 +226,10 @@ public class InsertSupplier extends javax.swing.JFrame {
                      Class_table ct = new Class_table(); ct.showCustomer_Table(); 
                  } 
         }
+        
+        
+        
+        
         else{
                 if(confirmSupplierCustomer.equals("UPDATE") && cus_sup_title.equals("ADD SUPPLIER")){
                     
@@ -370,7 +342,7 @@ public class InsertSupplier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel SUPPLIER;
+    public static javax.swing.JLabel SUPPLIER;
     public static javax.swing.JLabel SUPPLIER_MENU;
     public static javax.swing.JLabel customer;
     public static javax.swing.JLabel id;

@@ -33,7 +33,7 @@ public class Insert_Genset extends javax.swing.JFrame {
     public Insert_Genset() {
         initComponents();
         //edit
-        sup_already.setVisible(false);
+        //sup_already.setVisible(false);
         as_id.setVisible(false);
         id.setVisible(false);
         
@@ -76,7 +76,6 @@ public class Insert_Genset extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         gensetBtn = new javax.swing.JLabel();
-        sup_already = new javax.swing.JCheckBox();
         jLabel16 = new javax.swing.JLabel();
         as_id = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -260,7 +259,7 @@ public class Insert_Genset extends javax.swing.JFrame {
 
         gensetBtn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         gensetBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        gensetBtn.setText("ADD SUPPLIER");
+        gensetBtn.setText("NEXT");
         gensetBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 gensetBtnMouseClicked(evt);
@@ -279,15 +278,6 @@ public class Insert_Genset extends javax.swing.JFrame {
         );
 
         KG2_ADD_STOCK_GENSET.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, 210, 50));
-
-        sup_already.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        sup_already.setText("HAVE A SUPPLIER? OR ADD ITEM");
-        sup_already.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sup_alreadyMouseClicked(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(sup_already, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 260, 40));
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel16.setText("DATE");
@@ -409,17 +399,6 @@ public class Insert_Genset extends javax.swing.JFrame {
       
     }//GEN-LAST:event_gensetBtnMouseClicked
 
-    private void sup_alreadyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_alreadyMouseClicked
-       if(sup_already.isSelected())
-       {
-          gensetBtn.setText("SAVE");
-       }
-       else{
-           
-          gensetBtn.setText("ADD SUPPLIER");
-       }
-    }//GEN-LAST:event_sup_alreadyMouseClicked
-
     private void eng_snMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eng_snMouseClicked
        
        
@@ -435,14 +414,10 @@ public class Insert_Genset extends javax.swing.JFrame {
 
     private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
         String title = display.getText();
-        choose = "ADD GENSET PRODUCT";
-        if(title.equals(choose)){
-            sup_already.setVisible(true);
-        }
-        else {
-            choose = "UPDATE GENSET PRODUCT";
-                if(title.equals(choose)){
-                sup_already.setVisible(false);
+       
+        
+     
+              
                 as_id.setVisible(true);
                 id.setVisible(true);
                     //as_id
@@ -489,9 +464,9 @@ public class Insert_Genset extends javax.swing.JFrame {
                     catch(Exception e){
                         e.printStackTrace();
                     }
-                }
+                
 
-        }
+                
     }//GEN-LAST:event_displayAncestorAdded
 
     private void as_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_as_picMouseClicked
@@ -597,6 +572,5 @@ public class Insert_Genset extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JCheckBox sup_already;
     // End of variables declaration//GEN-END:variables
 }
