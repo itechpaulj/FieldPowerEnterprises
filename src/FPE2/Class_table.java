@@ -8,14 +8,15 @@ package FPE2;
 import static FPE2.Mainpage.ViewGenset_Table;
 import static FPE2.Mainpage.ViewFitler_table;
 import static FPE2.Mainpage.Shop_genset_table;
-import static FPE2.Mainpage.Shop_filter_table;
+import static FPE2.Mainpage.Shop_Customer_Table;
 import static FPE2.Mainpage.Stock_supplier;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import net.proteanit.sql.DbUtils;
+import static FPE2.Mainpage.KG7_TABLE_FILTER;
 
 /**
- *
+ * 
  * @author Javinez
  */
 public class Class_table {
@@ -56,7 +57,7 @@ public class Class_table {
         try{
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `NAME`, `QUANTITY`, `PRICE`,(`QUANTITY`*`PRICE`) AS `TOTAL PRICE`, `TYPE` FROM `filter_table` ORDER BY `ID` DESC");
         ResultSet rs = ps.executeQuery();
-        Shop_filter_table.setModel(DbUtils.resultSetToTableModel(rs));
+        KG7_TABLE_FILTER.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
               System.out.println(e);
             }
@@ -68,6 +69,17 @@ public class Class_table {
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table`");
         ResultSet rs = ps.executeQuery();
         Stock_supplier.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(Exception e){
+              System.out.println(e);
+            }
+        return false;
+    }
+    
+    public boolean showCustomer_Table(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table`");
+        ResultSet rs = ps.executeQuery();
+        Shop_Customer_Table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
               System.out.println(e);
             }
