@@ -1,19 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package FPE2;
 
 import static FPE2.Mainpage.ViewGenset_Table;
 import static FPE2.Mainpage.ViewFitler_table;
 import static FPE2.Mainpage.Shop_genset_table;
-import static FPE2.Mainpage.Shop_Customer_Table;
-import static FPE2.Mainpage.Stock_supplier;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import net.proteanit.sql.DbUtils;
 import static FPE2.Mainpage.KG7_TABLE_FILTER;
+import static FPE2.Table_Supplier.supplier;
+import static FPE2.Table_Customer.customer;
 
 /**
  * 
@@ -63,28 +59,28 @@ public class Class_table {
             }
         return false;
     }
-    
-    public boolean Stocksupplier(){
+    public boolean showSupplier(){
         try{
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table`");
         ResultSet rs = ps.executeQuery();
-        Stock_supplier.setModel(DbUtils.resultSetToTableModel(rs));
+        supplier.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
               System.out.println(e);
             }
         return false;
     }
-    
-    public boolean showCustomer_Table(){
+
+    public boolean showCustomer(){
         try{
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table`");
         ResultSet rs = ps.executeQuery();
-        Shop_Customer_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        customer.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
               System.out.println(e);
             }
         return false;
     }
+
 }
 
 
