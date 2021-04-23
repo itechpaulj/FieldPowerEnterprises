@@ -176,7 +176,7 @@ public class InsertStock_FilterPart extends javax.swing.JFrame {
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1080, 625));
 
-        jPanel4.setBackground(new java.awt.Color(3, 33, 73));
+        jPanel4.setBackground(new java.awt.Color(51, 51, 51));
 
         HEADER_MENU.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
         HEADER_MENU.setForeground(new java.awt.Color(255, 255, 255));

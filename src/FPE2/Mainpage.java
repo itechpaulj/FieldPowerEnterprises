@@ -24,8 +24,8 @@ public class Mainpage extends javax.swing.JFrame {
         ct.showFilter();
         ct.shopGenset();
         ct.shopFilter();
-      //  ct.showCustomer_Table();
-        //ct.Stocksupplier();
+        ct.showCustomer_Table();
+        ct.Stocksupplier();
         edit_gen_id.setVisible(false);
         shop_genset_id.setVisible(false);
         stock_supplier_id.setVisible(false);
@@ -57,6 +57,7 @@ public class Mainpage extends javax.swing.JFrame {
         fpe_home = new javax.swing.JLabel();
         KG1_STOCK = new keeptoo.KGradientPanel();
         MENU_GENSET = new javax.swing.JLabel();
+        MENU_SUPPLIER = new javax.swing.JLabel();
         MENU_FILTER_PART = new javax.swing.JLabel();
         KG2_GENSET = new keeptoo.KGradientPanel();
         jPanel22 = new javax.swing.JPanel();
@@ -71,8 +72,6 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel25 = new javax.swing.JPanel();
         DeleteGensetBtn = new javax.swing.JLabel();
         edit_gen_date1 = new javax.swing.JLabel();
-        jPanel34 = new javax.swing.JPanel();
-        BackGensetBtn1 = new javax.swing.JLabel();
         KG3_FILTER_PARTS = new keeptoo.KGradientPanel();
         jPanel26 = new javax.swing.JPanel();
         BackFilterBtn = new javax.swing.JLabel();
@@ -327,7 +326,7 @@ public class Mainpage extends javax.swing.JFrame {
         fpe_home.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         fpe_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         fpe_home.setText("FIELD POWER ENTERPRISES");
-        KG0_HOME.add(fpe_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 1000, 120));
+        KG0_HOME.add(fpe_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1070, 120));
 
         jTab.addTab("HOME", KG0_HOME);
 
@@ -344,7 +343,18 @@ public class Mainpage extends javax.swing.JFrame {
                 MENU_GENSETMouseClicked(evt);
             }
         });
-        KG1_STOCK.add(MENU_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 410, 201));
+        KG1_STOCK.add(MENU_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 340, 201));
+
+        MENU_SUPPLIER.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+        MENU_SUPPLIER.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MENU_SUPPLIER.setText("SUPPLIER");
+        MENU_SUPPLIER.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        MENU_SUPPLIER.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MENU_SUPPLIERMouseClicked(evt);
+            }
+        });
+        KG1_STOCK.add(MENU_SUPPLIER, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 150, 340, 201));
 
         MENU_FILTER_PART.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         MENU_FILTER_PART.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -355,7 +365,7 @@ public class Mainpage extends javax.swing.JFrame {
                 MENU_FILTER_PARTMouseClicked(evt);
             }
         });
-        KG1_STOCK.add(MENU_FILTER_PART, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 260, 410, 201));
+        KG1_STOCK.add(MENU_FILTER_PART, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 340, 201));
 
         jTab.addTab("MENU_STOCK", KG1_STOCK);
 
@@ -383,7 +393,7 @@ public class Mainpage extends javax.swing.JFrame {
             .addComponent(BackGensetBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        KG2_GENSET.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 520, 160, 50));
+        KG2_GENSET.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, 160, 50));
 
         ViewGenset_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -479,28 +489,6 @@ public class Mainpage extends javax.swing.JFrame {
         edit_gen_date1.setText("DATE");
         edit_gen_date1.setAlignmentY(1.0F);
         KG2_GENSET.add(edit_gen_date1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 110, 26));
-
-        BackGensetBtn1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        BackGensetBtn1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BackGensetBtn1.setText("SUPPLIER");
-        BackGensetBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BackGensetBtn1MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
-        jPanel34.setLayout(jPanel34Layout);
-        jPanel34Layout.setHorizontalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BackGensetBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        jPanel34Layout.setVerticalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BackGensetBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        KG2_GENSET.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, 160, 50));
 
         jTab.addTab("GENSET", KG2_GENSET);
 
@@ -1374,6 +1362,11 @@ public class Mainpage extends javax.swing.JFrame {
         jTab.setSelectedIndex(2);
     }//GEN-LAST:event_back_gensetMouseClicked
 
+    private void MENU_SUPPLIERMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_SUPPLIERMouseClicked
+        // STOCK MENU SUPPLIER
+        jTab.setSelectedIndex(4);
+    }//GEN-LAST:event_MENU_SUPPLIERMouseClicked
+
     private void MENU_GENSETMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_GENSETMouseClicked
         // TODO add your handling code here:
         // ADD ITEM STOCK GENSET
@@ -1457,15 +1450,15 @@ public class Mainpage extends javax.swing.JFrame {
         String getId = stock_supplier_id.getText();
         if(getId.equals("")){
             Class_table ct = new Class_table();
-//            ct.Stocksupplier();
+            ct.Stocksupplier();
             JOptionPane.showMessageDialog(null, "Please Select Supplier!","",JOptionPane.ERROR_MESSAGE);
         }
         else{
-////            InsertSupplier is = new InsertSupplier();
-//            is.setVisible(true);
-//            InsertSupplier.id.setText(stock_supplier_id.getText());
-//            InsertSupplier.Supplier_Text_display.setText("UPDATE SUPPLIER");
-//            InsertSupplier.sup_add.setText("UPDATE");
+            InsertSupplier is = new InsertSupplier();
+            is.setVisible(true);
+            InsertSupplier.id.setText(stock_supplier_id.getText());
+            InsertSupplier.SUPPLIER_MENU.setText("UPDATE SUPPLIER");
+            InsertSupplier.sup_add.setText("UPDATE");
         }
 
     }//GEN-LAST:event_stock_supplier_editMouseClicked
@@ -1479,10 +1472,10 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void shop_customer_editMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shop_customer_editMouseClicked
 
-        //InsertSupplier is = new InsertSupplier();
-//        is.setVisible(true);
+        InsertSupplier is = new InsertSupplier();
+        is.setVisible(true);
         String cus_id = customer_id.getText();
-        InsertSupplier.Supplier_Text_display.setText("EDIT CUSTOMER");
+        InsertSupplier.SUPPLIER_MENU.setText("EDIT CUSTOMER");
         InsertSupplier.id.setText(cus_id);
         InsertSupplier.sup_add.setText("UPDATE");
 
@@ -1491,11 +1484,6 @@ public class Mainpage extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         jTab.setSelectedIndex(8);
     }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void BackGensetBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackGensetBtn1MouseClicked
-        Table_Supplier tsf = new Table_Supplier();
-        tsf.setVisible(true);
-    }//GEN-LAST:event_BackGensetBtn1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1539,7 +1527,6 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel BackFilterBtn2;
     private javax.swing.JLabel BackFilterBtn4;
     private javax.swing.JLabel BackGensetBtn;
-    private javax.swing.JLabel BackGensetBtn1;
     private javax.swing.JLabel BackShopFilter;
     private javax.swing.JLabel BackShopGenset;
     private javax.swing.JPanel DRAWER;
@@ -1565,6 +1552,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel MENU_FILTER_PART1;
     private javax.swing.JLabel MENU_GENSET;
     private javax.swing.JLabel MENU_GENSET1;
+    private javax.swing.JLabel MENU_SUPPLIER;
     private javax.swing.JLabel REPORT_LABEL;
     private javax.swing.JPanel REPORT_PANEL;
     private keeptoo.KGradientPanel SHOP_CUSTOMER;
@@ -1612,7 +1600,6 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
-    private javax.swing.JPanel jPanel34;
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel8;
