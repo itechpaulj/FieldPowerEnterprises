@@ -4,11 +4,6 @@ package FPE2;
 import static FPE2.Mainpage.ViewGenset_Table;
 import static FPE2.Mainpage.ViewFitler_table;
 import static FPE2.Mainpage.Shop_genset_table;
-<<<<<<< HEAD
-=======
-import static FPE2.Mainpage.Shop_Customer_Table;
-import static FPE2.Table_Supplier.Supplier_table;
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import net.proteanit.sql.DbUtils;
@@ -68,11 +63,7 @@ public class Class_table {
         try{
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table`");
         ResultSet rs = ps.executeQuery();
-<<<<<<< HEAD
         supplier.setModel(DbUtils.resultSetToTableModel(rs));
-=======
-        Supplier_table.setModel(DbUtils.resultSetToTableModel(rs));
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
         }catch(Exception e){
               System.out.println(e);
             }

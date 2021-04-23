@@ -5,34 +5,19 @@
  */
 package FPE2;
 
-<<<<<<< HEAD
 /**
  *
  * @author ROBLES
-=======
-import javax.swing.table.TableModel;
-
-/**
- *
- * @author Javinez
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
  */
 public class Table_Customer extends javax.swing.JFrame {
 
     /**
-<<<<<<< HEAD
      * Creates new form Table_Supplier
      */
     public Table_Customer() {
         initComponents();
         Class_table ct= new Class_table();
         ct.showCustomer();
-=======
-     * Creates new form Table_Customer
-     */
-    public Table_Customer() {
-        initComponents();
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
     }
 
     /**
@@ -44,7 +29,6 @@ public class Table_Customer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
         jPanel4 = new javax.swing.JPanel();
         display = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
@@ -101,34 +85,11 @@ public class Table_Customer extends javax.swing.JFrame {
         jScrollPane1.setViewportView(customer);
 
         kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 68, 870, 370));
-=======
-        kGradientPanel5 = new keeptoo.KGradientPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane15 = new javax.swing.JScrollPane();
-        Customer_table = new javax.swing.JTable();
-        Customer_id = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        display = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        kGradientPanel5.setkEndColor(new java.awt.Color(153, 204, 255));
-        kGradientPanel5.setkStartColor(new java.awt.Color(0, 255, 153));
-        kGradientPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("UPDATE");
 
-<<<<<<< HEAD
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -146,13 +107,10 @@ public class Table_Customer extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADD");
 
-=======
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -165,31 +123,11 @@ public class Table_Customer extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("DELETE");
-=======
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        kGradientPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 160, 50));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ADD");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
@@ -207,20 +145,6 @@ public class Table_Customer extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-=======
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        kGradientPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 160, 50));
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("CLOSE");
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -230,7 +154,6 @@ public class Table_Customer extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
@@ -250,115 +173,6 @@ public class Table_Customer extends javax.swing.JFrame {
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
        dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
-=======
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        kGradientPanel5.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, 160, 50));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("DELETE");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        kGradientPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 160, 50));
-
-        Customer_table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Customer_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        Customer_table.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Customer_tableMouseClicked(evt);
-            }
-        });
-        jScrollPane15.setViewportView(Customer_table);
-
-        kGradientPanel5.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 760, 310));
-
-        Customer_id.setText("jLabel5");
-        kGradientPanel5.add(Customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
-
-        jPanel4.setBackground(new java.awt.Color(3, 33, 73));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        display.setForeground(new java.awt.Color(255, 255, 255));
-        display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        display.setText("ADD GENSET PRODUCT");
-        display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                displayAncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jPanel4.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 470, 80));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 820, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(kGradientPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        String id = Customer_id.getText();
-        InsertSupplier is = new InsertSupplier();
-
-    }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void Customer_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Customer_tableMouseClicked
-        int i=Customer_table.getSelectedRow();
-        TableModel model = Customer_table.getModel();
-        Customer_id.setText(model.getValueAt(i,0).toString());
-    }//GEN-LAST:event_Customer_tableMouseClicked
-
-    private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
-
-    }//GEN-LAST:event_displayAncestorAdded
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
     /**
      * @param args the command line arguments
@@ -386,10 +200,7 @@ public class Table_Customer extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Table_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-<<<<<<< HEAD
         //</editor-fold>
-=======
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -400,32 +211,18 @@ public class Table_Customer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
     public static javax.swing.JTable customer;
-=======
-    private javax.swing.JLabel Customer_id;
-    public static javax.swing.JTable Customer_table;
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
     public static javax.swing.JLabel display;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
-=======
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-<<<<<<< HEAD
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
-=======
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane15;
-    private keeptoo.KGradientPanel kGradientPanel5;
->>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
     // End of variables declaration//GEN-END:variables
 }
