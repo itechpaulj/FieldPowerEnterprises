@@ -38,7 +38,10 @@ public class InsertSupplier extends javax.swing.JFrame {
        
     
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
 
 
@@ -188,6 +191,7 @@ public class InsertSupplier extends javax.swing.JFrame {
         );
 
         kGradientPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 160, 50));
+<<<<<<< HEAD
 
         option.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         kGradientPanel5.add(option, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 50, 30));
@@ -213,6 +217,10 @@ public class InsertSupplier extends javax.swing.JFrame {
         );
 
         kGradientPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 280, 30));
+=======
+        kGradientPanel5.add(SUPPLIER, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 110, 40));
+        kGradientPanel5.add(customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 110, 40));
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         getContentPane().add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 530, 420));
 
@@ -236,12 +244,53 @@ public class InsertSupplier extends javax.swing.JFrame {
         String choose = "ADD SUPPLIER";
         
         
+<<<<<<< HEAD
         if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(dates1, brand1, phasing1, unit_type, dimen1, kva, price1, model, fuel_tank, body_type, engines_sn, alter_sn,person_image1, dates1))
         {
             JOptionPane.showMessageDialog(null, "OK");
         }  else
         {
             
+=======
+        if(confirmSupplierCustomer.equals("SAVE") && cus_sup_title.equals("ADD SUPPLIER") ){
+            if(s_name.equals("")|| address.equals("") || contact.equals("") || email.equals("")){
+                JOptionPane.showMessageDialog(null, "EMPTY FIELDS!","",JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+               if(!Class_Supplier.AddSupplier(s_name, address, contact, email))
+                 { 
+                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD","",JOptionPane.INFORMATION_MESSAGE);
+                     Class_table ct = new Class_table(); ct.showGenset(); 
+                 }    
+            }
+         
+        }
+        
+        
+        else if(confirmSupplierCustomer.equals("SAVE") && cus_sup_title.equals("ADD CUSTOMER")){
+               if(!Class_customers.AddCustomer(s_name, address, contact, email))
+                 { 
+                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD","",JOptionPane.INFORMATION_MESSAGE);
+                     Class_table ct = new Class_table(); ct.showCustomer_Table(); 
+                 } 
+        }
+        
+        
+        
+        
+        else{
+                if(confirmSupplierCustomer.equals("UPDATE") && cus_sup_title.equals("ADD SUPPLIER")){
+                    
+                    Class_Supplier cs = new Class_Supplier();
+                    
+                    if(!cs.EditSupplier(s_name, address, contact, email, getId )){
+                        Class_table ct = new Class_table();
+                        ct.Stocksupplier();
+                        JOptionPane.showMessageDialog(null, "UPDATE");
+                    }
+                }
+
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
         }
   
             
@@ -394,7 +443,13 @@ public class InsertSupplier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     public static javax.swing.JLabel Supplier_Text_display;
+=======
+    public static javax.swing.JLabel SUPPLIER;
+    public static javax.swing.JLabel SUPPLIER_MENU;
+    public static javax.swing.JLabel customer;
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
     public static javax.swing.JLabel id;
     public static javax.swing.JLabel id_supplier;
     private javax.swing.JLabel jLabel1;

@@ -361,6 +361,7 @@ public class Insert_Genset extends javax.swing.JFrame {
 
     private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
         String title = display.getText();
+<<<<<<< HEAD
         choose = "ADD GENSET PRODUCT";
         if(title.equals(choose)){
            // sup_already.setVisible(true);
@@ -369,6 +370,12 @@ public class Insert_Genset extends javax.swing.JFrame {
             choose = "UPDATE GENSET PRODUCT";
                 if(title.equals(choose)){
                // sup_already.setVisible(false);
+=======
+       
+        
+     
+              
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
                 as_id.setVisible(true);
                 id.setVisible(true);
                     //as_id
@@ -415,9 +422,9 @@ public class Insert_Genset extends javax.swing.JFrame {
                     catch(Exception e){
                         e.printStackTrace();
                     }
-                }
+                
 
-        }
+                
     }//GEN-LAST:event_displayAncestorAdded
 
     private void as_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_as_picMouseClicked

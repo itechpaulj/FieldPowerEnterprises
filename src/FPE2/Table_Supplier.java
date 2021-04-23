@@ -5,13 +5,20 @@
  */
 package FPE2;
 
+<<<<<<< HEAD
 import static FPE2.Mainpage.ViewGenset_Table;
 import static FPE2.Mainpage.edit_gen_id;
+=======
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 import javax.swing.table.TableModel;
 
 /**
  *
+<<<<<<< HEAD
  * @author ROBLES
+=======
+ * @author Javinez
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
  */
 public class Table_Supplier extends javax.swing.JFrame {
 
@@ -20,8 +27,14 @@ public class Table_Supplier extends javax.swing.JFrame {
      */
     public Table_Supplier() {
         initComponents();
+<<<<<<< HEAD
         Class_table ct= new Class_table();
         ct.showSupplier();
+=======
+        Class_table ct = new Class_table();
+        ct.showCustomer_Table();
+        ct.Stocksupplier();
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
     }
 
     /**
@@ -35,6 +48,7 @@ public class Table_Supplier extends javax.swing.JFrame {
 
         jPanel4 = new javax.swing.JPanel();
         display = new javax.swing.JLabel();
+<<<<<<< HEAD
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         supplier = new javax.swing.JTable();
@@ -47,6 +61,20 @@ public class Table_Supplier extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
+=======
+        kGradientPanel5 = new keeptoo.KGradientPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        Supplier_table = new javax.swing.JTable();
+        Supplier_id = new javax.swing.JLabel();
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -58,7 +86,11 @@ public class Table_Supplier extends javax.swing.JFrame {
         display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         display.setForeground(new java.awt.Color(255, 255, 255));
         display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+<<<<<<< HEAD
         display.setText("SUPPLIER TABLE");
+=======
+        display.setText("ADD GENSET PRODUCT");
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
         display.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -68,6 +100,7 @@ public class Table_Supplier extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+<<<<<<< HEAD
         jPanel4.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 600, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 100));
@@ -95,11 +128,21 @@ public class Table_Supplier extends javax.swing.JFrame {
         jScrollPane1.setViewportView(supplier);
 
         kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 68, 870, 370));
+=======
+        jPanel4.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 470, 80));
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 100));
+
+        kGradientPanel5.setkEndColor(new java.awt.Color(153, 204, 255));
+        kGradientPanel5.setkStartColor(new java.awt.Color(0, 255, 153));
+        kGradientPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("UPDATE");
 
+<<<<<<< HEAD
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -117,10 +160,13 @@ public class Table_Supplier extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADD");
 
+=======
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -133,11 +179,31 @@ public class Table_Supplier extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("DELETE");
+=======
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        kGradientPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 160, 50));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("ADD");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
@@ -155,6 +221,20 @@ public class Table_Supplier extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
+=======
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        kGradientPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 160, 50));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("CLOSE");
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -164,6 +244,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
@@ -173,12 +254,62 @@ public class Table_Supplier extends javax.swing.JFrame {
         kGradientPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 80, 30));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 930, 560));
+=======
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        kGradientPanel5.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 390, 160, 50));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("DELETE");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        kGradientPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, 160, 50));
+
+        Supplier_table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Supplier_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        Supplier_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Supplier_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane15.setViewportView(Supplier_table);
+
+        kGradientPanel5.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 760, 310));
+
+        Supplier_id.setText("jLabel5");
+        kGradientPanel5.add(Supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        getContentPane().add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 820, 460));
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
+<<<<<<< HEAD
        
             
     }//GEN-LAST:event_displayAncestorAdded
@@ -192,6 +323,25 @@ public class Table_Supplier extends javax.swing.JFrame {
         TableModel model = ViewGenset_Table.getModel();
         id.setText(model.getValueAt(i,0).toString());
     }//GEN-LAST:event_supplierMouseClicked
+=======
+      
+    }//GEN-LAST:event_displayAncestorAdded
+
+    private void Supplier_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Supplier_tableMouseClicked
+        int i=Supplier_table.getSelectedRow();
+        TableModel model = Supplier_table.getModel();
+        Supplier_id.setText(model.getValueAt(i,0).toString());
+
+    }//GEN-LAST:event_Supplier_tableMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        String id = Supplier_id.getText();
+        InsertSupplier is = new InsertSupplier();
+        InsertSupplier.SUPPLIER_MENU.setText("UPDATE SUPPLIER");
+        InsertSupplier.SUPPLIER.setText("SUPPLIER");
+        
+    }//GEN-LAST:event_jLabel1MouseClicked
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
 
     /**
      * @param args the command line arguments
@@ -229,19 +379,34 @@ public class Table_Supplier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     public static javax.swing.JLabel display;
     private javax.swing.JLabel id;
+=======
+    private javax.swing.JLabel Supplier_id;
+    public static javax.swing.JTable Supplier_table;
+    public static javax.swing.JLabel display;
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+<<<<<<< HEAD
     private javax.swing.JPanel jPanel1;
+=======
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+<<<<<<< HEAD
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
     public static javax.swing.JTable supplier;
+=======
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane15;
+    private keeptoo.KGradientPanel kGradientPanel5;
+>>>>>>> b3e4ce9fce2ed3584d9376e853ff3edab2b4881c
     // End of variables declaration//GEN-END:variables
 }
