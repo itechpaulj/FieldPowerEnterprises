@@ -5,15 +5,16 @@
  */
 package FPE2;
 
-import static FPE2.InsertSupplier.sup_address;
-import static FPE2.InsertSupplier.sup_contact;
-import static FPE2.InsertSupplier.sup_email;
-import static FPE2.InsertSupplier.sup_name;
+import static FPE2.InsertSupplier2.sup_address;
+import static FPE2.InsertSupplier2.sup_contact;
+import static FPE2.InsertSupplier2.sup_email;
+import static FPE2.InsertSupplier2.sup_name;
 
 import java.sql.ResultSet;
 import javax.swing.table.TableModel;
-import static FPE2.InsertSupplier.sup_id;
+import static FPE2.InsertSupplier2.sup_id;
 import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,16 +45,16 @@ public class Table_Supplier extends javax.swing.JFrame {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Supplier_table = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
+        add_panel_supplier = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        update_panel_supplier = new javax.swing.JPanel();
+        sup_listUpdate = new javax.swing.JLabel();
+        delete_panel_supplier = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        back_panel_supplier = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         supplier_id = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        sup_list = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -65,7 +66,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         displays.setForeground(new java.awt.Color(255, 255, 255));
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displays.setText("ADD FILTER/PARTS PRODUCT");
+        displays.setText("SUPPLIER LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -79,6 +80,8 @@ public class Table_Supplier extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 100));
 
+        kGradientPanel1.setkEndColor(new java.awt.Color(153, 204, 255));
+        kGradientPanel1.setkStartColor(new java.awt.Color(0, 255, 153));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Supplier_table.setModel(new javax.swing.table.DefaultTableModel(
@@ -110,57 +113,57 @@ public class Table_Supplier extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout add_panel_supplierLayout = new javax.swing.GroupLayout(add_panel_supplier);
+        add_panel_supplier.setLayout(add_panel_supplierLayout);
+        add_panel_supplierLayout.setHorizontalGroup(
+            add_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        add_panel_supplierLayout.setVerticalGroup(
+            add_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 200, 50));
+        kGradientPanel1.add(add_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 200, 50));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("UPDATE");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        sup_listUpdate.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        sup_listUpdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sup_listUpdate.setText("UPDATE");
+        sup_listUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                sup_listUpdateMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+        javax.swing.GroupLayout update_panel_supplierLayout = new javax.swing.GroupLayout(update_panel_supplier);
+        update_panel_supplier.setLayout(update_panel_supplierLayout);
+        update_panel_supplierLayout.setHorizontalGroup(
+            update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sup_listUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        update_panel_supplierLayout.setVerticalGroup(
+            update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(sup_listUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, -1, -1));
+        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 520, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("DELETE");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout delete_panel_supplierLayout = new javax.swing.GroupLayout(delete_panel_supplier);
+        delete_panel_supplier.setLayout(delete_panel_supplierLayout);
+        delete_panel_supplierLayout.setHorizontalGroup(
+            delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        delete_panel_supplierLayout.setVerticalGroup(
+            delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, -1, -1));
+        kGradientPanel1.add(delete_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -171,22 +174,22 @@ public class Table_Supplier extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout back_panel_supplierLayout = new javax.swing.GroupLayout(back_panel_supplier);
+        back_panel_supplier.setLayout(back_panel_supplierLayout);
+        back_panel_supplierLayout.setHorizontalGroup(
+            back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        back_panel_supplierLayout.setVerticalGroup(
+            back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, -1, -1));
+        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, -1, -1));
         kGradientPanel1.add(supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 90, 30));
 
-        jLabel5.setText("jLabel5");
-        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+        sup_list.setText("1");
+        kGradientPanel1.add(sup_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 50, -1));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 620));
 
@@ -202,37 +205,80 @@ public class Table_Supplier extends javax.swing.JFrame {
         int i=Supplier_table.getSelectedRow();
         TableModel model = Supplier_table.getModel();
         supplier_id.setText(model.getValueAt(i,0).toString());
+         String comparedTo = sup_list.getText();
+        /*
+          comparedTo variable
+            1 - no effect but we UPDATE supplier
+            2 - Exist Supplier but new genset Product can't add new Supplier
+        */
         
-        String id = supplier_id.getText();
-        try{   
-                      PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID`='"+id+"'");
-                      ResultSet rs = ps.executeQuery();
-                       while(rs.next()){
-                           InsertSupplier.sup_id.setText(rs.getString("ID"));
-                           InsertSupplier.sup_name.setText(rs.getString("NAME"));
-                           InsertSupplier.sup_address.setText(rs.getString("ADDRESS"));
-                           InsertSupplier.sup_email.setText(rs.getString("EMAIL"));
-                           InsertSupplier.sup_contact.setText(rs.getString("CONTACT"));
-                       }
-                  }
-                  catch(Exception e){
-                      e.printStackTrace();
-                  } 
+        if(comparedTo.equals("2")){
+            InsertSupplier is = new InsertSupplier();
+            is.sup_id.setText(supplier_id.getText());
+            is.display.setText("EXIST SUPPLIER");
+            is.setVisible(true);
+            is.AddSup.setText("4"); //exist supplier
+            dispose();
+        }
+
+        
+//        String id = supplier_id.getText();
+//        try{   
+//                      PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID`='"+id+"'");
+//                      ResultSet rs = ps.executeQuery();
+//                       while(rs.next()){
+//                           InsertSupplier2.sup_id.setText(rs.getString("ID"));
+//                           InsertSupplier2.sup_name.setText(rs.getString("NAME"));
+//                           InsertSupplier2.sup_address.setText(rs.getString("ADDRESS"));
+//                           InsertSupplier2.sup_email.setText(rs.getString("EMAIL"));
+//                           InsertSupplier2.sup_contact.setText(rs.getString("CONTACT"));
+//                       }
+//                  }
+//                  catch(Exception e){
+//                      e.printStackTrace();
+//                  } 
     }//GEN-LAST:event_Supplier_tableMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-
-            dispose();
+        // New supplier
         
+        InsertSupplier is = new InsertSupplier();
+        is.setVisible(true);
+        InsertSupplier.AddSup.setText("1"); // add supplier
+        InsertSupplier.supplier_list.setVisible(false);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-       
-    }//GEN-LAST:event_jLabel2MouseClicked
+    private void sup_listUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseClicked
+      String comparedTo = sup_list.getText();
+      /*
+        comparedTo variables
+        1 - normal no effect supplier Table but we allowed to UPDATE supplier
+        2 - exist supplier
+      */
+      
+      if(comparedTo.equals("1")){
+          //JOptionPane.showMessageDialog(null, "UPDATE supplier");
+          InsertSupplier is = new InsertSupplier();
+          is.sup_id.setText(supplier_id.getText());
+          is.display.setText("UPDATE SUPPLIER");
+          is.AddSup.setText("5"); // update supplier
+          is.supplier_list.setVisible(false);
+          is.setVisible(true);
+
+      }
+      else if(comparedTo.equals("2")){
+           JOptionPane.showMessageDialog(null, "Exist supplier");
+          InsertSupplier is = new InsertSupplier();
+          is.sup_id.setText(supplier_id.getText());
+          is.supplier_list.setVisible(false);
+          is.display.setText("EXIST SUPPLIER");
+          is.setVisible(true);
+      }
+    }//GEN-LAST:event_sup_listUpdateMouseClicked
 
     /**
      * @param args the command line arguments
@@ -271,19 +317,19 @@ public class Table_Supplier extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTable Supplier_table;
+    public static javax.swing.JPanel add_panel_supplier;
+    public static javax.swing.JPanel back_panel_supplier;
+    public static javax.swing.JPanel delete_panel_supplier;
     public static javax.swing.JLabel displays;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    public static javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
-    private javax.swing.JLabel supplier_id;
+    public static javax.swing.JLabel sup_list;
+    private javax.swing.JLabel sup_listUpdate;
+    public static javax.swing.JLabel supplier_id;
+    public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables
 }

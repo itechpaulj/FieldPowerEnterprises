@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import java.sql.ResultSet;
 
 
 
@@ -61,5 +62,24 @@ public class Class_Supplier {
         }   
      return false;
     }   
+  
+    public static boolean ExistSupplier(String name){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        boolean Sup_name = false;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `NAME`=?");
+        ps.setString(1,name);
+        rs = ps.executeQuery();
+            if(!rs.next()){
+                Sup_name = true;
+            } 
+ 
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }   
+     return Sup_name;
+    }      
     
 }

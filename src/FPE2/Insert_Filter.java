@@ -240,7 +240,7 @@ public class Insert_Filter extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        Mainpage.update_filter_id.setText("");
+        //Mainpage.update_filter_id.setText("");
         dispose();
      
     }//GEN-LAST:event_jLabel5MouseClicked
@@ -284,8 +284,8 @@ public class Insert_Filter extends javax.swing.JFrame {
                   if(Class_Filter.AddFilter(date, names, des, brand, type, price, quantity))
                     { 
                         JOptionPane.showMessageDialog(null, " SUCCESSFULY ADDED !!","",JOptionPane.INFORMATION_MESSAGE); 
-        
-                        ct.showFilter(); // refreshtable
+                        Class_table ct = new Class_table();
+                        ct.Show_Stock_Filter_Table(); // refreshtable
                     }
                 }
                 else{
@@ -295,7 +295,7 @@ public class Insert_Filter extends javax.swing.JFrame {
                            if(Class_Filter.UpdateFilter(date, names, des, brand, type, price, quantity, id.getText()))
                             { 
                             JOptionPane.showMessageDialog(null, " SUCCESSFULY UPDATED !!","",JOptionPane.INFORMATION_MESSAGE);
-                            ct.showFilter(); // refreshtable                            
+                            ct.Show_Stock_Filter_Table(); // refreshtable                            
                             }
                     }
                 }

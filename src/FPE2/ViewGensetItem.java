@@ -20,11 +20,11 @@ import static FPE2.Insert_Genset.as_pic;
 import static FPE2.Insert_Genset.as_price;
 import static FPE2.Insert_Genset.as_unitType;
 import static FPE2.Insert_Genset.display;
-import static FPE2.Insert_Genset.supplier;
 import java.awt.Image;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.ImageIcon;
+import static FPE2.Insert_Genset.as_supplierNone;
 
 /**
  *

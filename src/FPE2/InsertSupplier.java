@@ -5,42 +5,29 @@
  */
 package FPE2;
 
-import static FPE2.Insert_Genset.as_pic;
-import java.awt.Image;
-import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
- * @author ROBLES
+ * @author Javinez
  */
 public class InsertSupplier extends javax.swing.JFrame {
 
-    String date1 = Insert_Genset.as_date.getText().toUpperCase(); 
-    String brand1 = Insert_Genset.as_brand.getText().toUpperCase(); 
-    String phasing1 = Insert_Genset.as_phasing.getText().toUpperCase(); 
-    String unit_type1 = Insert_Genset.as_unitType.getText().toUpperCase(); 
-    String dimen1 = Insert_Genset.as_dimension.getText().toUpperCase();
-    String kva1 = Insert_Genset.as_kva.getText().toUpperCase();
-    String price1 = Insert_Genset.as_price.getText().toUpperCase(); 
-    String model1 = Insert_Genset.as_model.getText().toUpperCase(); 
-    String fuel_tank1 = Insert_Genset.as_fuel_tank.getText().toUpperCase(); 
-    String body_type1 = Insert_Genset.as_body_parts.getText().toUpperCase();
-    String a = Insert_Genset.eng_sn.getSelectedItem().toString(); 
-    String b = Insert_Genset.alt_sn.getSelectedItem().toString(); 
-    String engines_sn1 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" "+ a; 
-    String alters1_sn = Insert_Genset.as_alternator_sn.getText().toUpperCase() +" " + b; 
+
     byte [] person_images1 = null;
+    public InsertSupplier() {
+        initComponents();
+        id_supplier.setVisible(false);
+        sup_id.setVisible(false);
+    }
     
     public InsertSupplier(byte [] person_images) {
-        initComponents();
+        initComponents();  
         person_images1 = person_images;
     }
-    String id1 = Insert_Genset.as_id.getText().toUpperCase(); 
-
-
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,8 +37,6 @@ public class InsertSupplier extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        display = new javax.swing.JLabel();
         kGradientPanel5 = new keeptoo.KGradientPanel();
         sup_name = new javax.swing.JTextField();
         sup_id = new javax.swing.JLabel();
@@ -65,41 +50,18 @@ public class InsertSupplier extends javax.swing.JFrame {
         sup_contact = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        save_supplier = new javax.swing.JPanel();
         Save_Btn = new javax.swing.JLabel();
         AddSup = new javax.swing.JLabel();
         customer = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        supplier_list = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        display = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowOpened(java.awt.event.WindowEvent evt) {
-                formWindowOpened(evt);
-            }
-        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        display.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        display.setForeground(new java.awt.Color(255, 255, 255));
-        display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        display.setText("ADD SUPPLIER");
-        display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                displayAncestorAdded(evt);
-            }
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-        });
-        jPanel1.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 11, 450, 70));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 100));
 
         kGradientPanel5.setkEndColor(new java.awt.Color(153, 204, 255));
         kGradientPanel5.setkStartColor(new java.awt.Color(0, 255, 153));
@@ -107,6 +69,11 @@ public class InsertSupplier extends javax.swing.JFrame {
 
         sup_name.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         sup_name.setAlignmentY(1.0F);
+        sup_name.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                sup_nameKeyReleased(evt);
+            }
+        });
         kGradientPanel5.add(sup_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 280, 31));
 
         sup_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -181,20 +148,20 @@ public class InsertSupplier extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout save_supplierLayout = new javax.swing.GroupLayout(save_supplier);
+        save_supplier.setLayout(save_supplierLayout);
+        save_supplierLayout.setHorizontalGroup(
+            save_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Save_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        save_supplierLayout.setVerticalGroup(
+            save_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Save_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 160, 50));
+        kGradientPanel5.add(save_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 160, 50));
 
-        AddSup.setText("2");
+        AddSup.setText("1");
         kGradientPanel5.add(AddSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 110, 40));
 
         customer.setText("CUSTOMER");
@@ -210,26 +177,46 @@ public class InsertSupplier extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout supplier_listLayout = new javax.swing.GroupLayout(supplier_list);
+        supplier_list.setLayout(supplier_listLayout);
+        supplier_listLayout.setHorizontalGroup(
+            supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 280, Short.MAX_VALUE)
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        supplier_listLayout.setVerticalGroup(
+            supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGroup(supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(supplier_listLayout.createSequentialGroup()
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 1, Short.MAX_VALUE)))
         );
 
-        kGradientPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 280, 30));
+        kGradientPanel5.add(supplier_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 280, 30));
 
         getContentPane().add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 630, 420));
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        display.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        display.setForeground(new java.awt.Color(255, 255, 255));
+        display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        display.setText("ADD SUPPLIER");
+        display.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                displayAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jPanel1.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 11, 450, 70));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 100));
 
         pack();
         setLocationRelativeTo(null);
@@ -237,75 +224,211 @@ public class InsertSupplier extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
 
-       dispose();
+        dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void Save_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Save_BtnMouseClicked
-        String s_name,address,email,contact;
-        s_name= sup_name.getText();
-        address = sup_address.getText();
-        email = sup_email.getText();
-        contact = sup_contact.getText();
-        String ids = sup_id.getText();
+              
+        // Insert Supplier
+        String s_name,address,email,contact,id;
+        s_name= sup_name.getText().toUpperCase();
+        address = sup_address.getText().toUpperCase();
+        email = sup_email.getText().toUpperCase();
+        contact = sup_contact.getText().toUpperCase();
+        id = sup_id.getText(); // update id in supplier table
+        // Insert Supplier
+
+        String comparedTo = AddSup.getText();
         String Banner = display.getText();
-        String add_sup = AddSup.getText();
-        if(Banner.equals("ADD SUPPLIER") && add_sup.equals("1")){
-            if(!Class_Supplier.AddSupplier(s_name, address, contact, email))
-            {
-                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
-            }      
-        }else if(Banner.equals("ADD SUPPLIER")){
-             if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name))
-            {
-                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
+        /*  comparedTo variable 
+            1 - ADD supplier
+            2 - ADD supplier / Genset
+            3 - ADD supplier / Filter Parts
+            4 - Only add Genset Product but Can't add new Supplier because Exist Supplier
+            5 - Update supplier
+        */
+
+        if(comparedTo.equals("1") && Banner.equals("ADD SUPPLIER")){
+            // Add supplier
+            sup_id.setVisible(false);
+            id_supplier.setVisible(false);
+            if(!Class_Supplier.ExistSupplier(s_name)){
+                JOptionPane.showMessageDialog(null, "Already Exist Supplier!\nPlease Select Supplier List!","",JOptionPane.WARNING_MESSAGE);
             }
-        }else if(Banner.equals("UPDATE SUPPLIER")){
-             if(!Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name, id1))
-            {
-                JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATED");
+            else{
+                if(!Class_Supplier.AddSupplier(s_name, address, contact, email)){
+                JOptionPane.showMessageDialog(null, "ADD supplier","",JOptionPane.INFORMATION_MESSAGE);
+                }
             }
         }
-       
-        
-        
-    }//GEN-LAST:event_Save_BtnMouseClicked
+        else if(comparedTo.equals("2") && Banner.equals("ADD SUPPLIER")){
+                // ADD supplier and ADD genset
+                /*
+                basically if global varible result Java null error because already get the value
+                */
+            // insert genset
+            String date1 = Insert_Genset.as_date.getText().toUpperCase(); 
+            String brand1 = Insert_Genset.as_brand.getText().toUpperCase(); 
+            String phasing1 = Insert_Genset.as_phasing.getText().toUpperCase(); 
+            String unit_type1 = Insert_Genset.as_unitType.getText().toUpperCase(); 
+            String dimen1 = Insert_Genset.as_dimension.getText().toUpperCase();
+            String kva1 = Insert_Genset.as_kva.getText().toUpperCase();
+            String price1 = Insert_Genset.as_price.getText().toUpperCase(); 
+            String model1 = Insert_Genset.as_model.getText().toUpperCase(); 
+            String fuel_tank1 = Insert_Genset.as_fuel_tank.getText().toUpperCase(); 
+            String body_type1 = Insert_Genset.as_body_parts.getText().toUpperCase();
+            String a = Insert_Genset.eng_sn.getSelectedItem().toString(); 
+            String b = Insert_Genset.alt_sn.getSelectedItem().toString(); 
+            String engines_sn1 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" "+ a; 
+            String alters1_sn = Insert_Genset.as_alternator_sn.getText().toUpperCase() +" " + b;
+            String id1 = Insert_Genset.as_id.getText().toUpperCase();
+            // insert genset
+            
+            if(!Class_Supplier.ExistSupplier(s_name)){
+                JOptionPane.showMessageDialog(null, "Already Exist Supplier!\nPlease Select Supplier List!","",JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name))
+               {
+                   JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
+               }                
+            }
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-//        dis1.setText(date1);
-//        id.setText(Mainpage.stock_supplier_id.getText());
-    }//GEN-LAST:event_formWindowOpened
+        }
+        else if(comparedTo.equals("3") && Banner.equals("ADD SUPPLIER")){
+            JOptionPane.showMessageDialog(null, "ADD SUPPLIER / FILTER AND PARTS","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(comparedTo.equals("4") && Banner.equals("EXIST SUPPLIER")){
+            // exist supplier but can add only genset
+                /*
+                basically if global varible result Java null error because already get the value
+                */
+            // insert genset
 
-    private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
-        String Banner = display.getText();
-        
-        
-        if(Banner.equals("UPDATE SUPPLIER"))
-        {
-            String supplier_id = Insert_Genset.supplier.getText();
-            try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE 'NAME' = "+supplier_id+"");
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                sup_id.setText(rs.getString("ID"));
-                sup_name.setText(rs.getString("NAME"));
-                sup_address.setText(rs.getString("ADDRESS"));
-                sup_email.setText(rs.getString("EMAIL"));
-                sup_contact.setText(rs.getString("CONTACT"));
+
+            String date1 = Insert_Genset.as_date.getText().toUpperCase(); 
+            String brand1 = Insert_Genset.as_brand.getText().toUpperCase(); 
+            String phasing1 = Insert_Genset.as_phasing.getText().toUpperCase(); 
+            String unit_type1 = Insert_Genset.as_unitType.getText().toUpperCase(); 
+            String dimen1 = Insert_Genset.as_dimension.getText().toUpperCase();
+            String kva1 = Insert_Genset.as_kva.getText().toUpperCase();
+            String price1 = Insert_Genset.as_price.getText().toUpperCase(); 
+            String model1 = Insert_Genset.as_model.getText().toUpperCase(); 
+            String fuel_tank1 = Insert_Genset.as_fuel_tank.getText().toUpperCase(); 
+            String body_type1 = Insert_Genset.as_body_parts.getText().toUpperCase();
+            String a = Insert_Genset.eng_sn.getSelectedItem().toString(); 
+            String b = Insert_Genset.alt_sn.getSelectedItem().toString(); 
+            String engines_sn1 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" "+ a; 
+            String alters1_sn = Insert_Genset.as_alternator_sn.getText().toUpperCase() +" " + b;
+            String id1 = Insert_Genset.as_id.getText().toUpperCase();
+            // insert genset
+            //JOptionPane.showMessageDialog(null, "Only new insert genset but supplier is Exist1","",JOptionPane.INFORMATION_MESSAGE);
+                if(!Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, Insert_Genset.person_image, s_name))
+               {
+                   JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
+               }   
+                
+        }
+        else {
+            //UPDATE supplier
+            if(comparedTo.equals("5") && Banner.equals("UPDATE SUPPLIER")){
+                //
+                if(!Class_Supplier.UpdateSupplier(s_name, address, contact, email, id)){
+                    Class_table ct = new Class_table();
+                    ct.Supplier();
+                    JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY!","",JOptionPane.INFORMATION_MESSAGE);
+                }
+                    
              }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-        }
+        }            
+ 
+           
 
-    }//GEN-LAST:event_displayAncestorAdded
+        
+//        if(Banner.equals("ADD SUPPLIER") && add_sup.equals("1")){
+//            if(!Class_Supplier.AddSupplier(s_name, address, contact, email))
+//            {
+//                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
+//            }
+//        }else if(Banner.equals("ADD SUPPLIER")){
+//            if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name))
+//            {
+//                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
+//            }
+//        }else if(Banner.equals("UPDATE SUPPLIER")){
+//            if(!Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name, id1))
+//            {
+//                JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATED");
+//            }
+//        }
+
+    }//GEN-LAST:event_Save_BtnMouseClicked
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
         Table_Supplier tbs = new Table_Supplier();
-        
-        Table_Supplier.jLabel5.setText("2");
+
+        Table_Supplier.sup_list.setText("2"); // exist supplier
+        tbs.add_panel_supplier.setVisible(false);
+        tbs.update_panel_supplier.setVisible(false);
+        tbs.delete_panel_supplier.setVisible(false);
+        tbs.displays.setText("EXIST SUPPLIER LIST");
         tbs.setVisible(true);
+        dispose();
+        
+        
     }//GEN-LAST:event_jLabel20MouseClicked
+
+    private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
+        String Banner = display.getText();
+
+        if(Banner.equals("EXIST SUPPLIER"))
+        {
+            String supplier_id = Table_Supplier.supplier_id.getText();
+            try{
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = "+supplier_id+"");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                    sup_id.setText(supplier_id);
+                    sup_name.setText(rs.getString("NAME"));
+                    sup_address.setText(rs.getString("ADDRESS"));
+                    sup_email.setText(rs.getString("EMAIL"));
+                    sup_contact.setText(rs.getString("CONTACT"));
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+            sup_id.setEnabled(false);
+            sup_name.setEnabled(false);
+            sup_address.setEnabled(false);
+            sup_email.setEnabled(false);
+            sup_contact.setEnabled(false);
+        }
+        
+        if(Banner.equals("UPDATE SUPPLIER"))
+        {
+            String supplier_id = Table_Supplier.supplier_id.getText();
+            try{
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = "+supplier_id+"");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                    sup_id.setText(supplier_id);
+                    sup_name.setText(rs.getString("NAME"));
+                    sup_address.setText(rs.getString("ADDRESS"));
+                    sup_email.setText(rs.getString("EMAIL"));
+                    sup_contact.setText(rs.getString("CONTACT"));
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+
+        }
+    }//GEN-LAST:event_displayAncestorAdded
+
+    private void sup_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sup_nameKeyReleased
+
+    }//GEN-LAST:event_sup_nameKeyReleased
 
     /**
      * @param args the command line arguments
@@ -336,7 +459,9 @@ public class InsertSupplier extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
+        java.awt.EventQueue.invokeLater(() -> {
+            new InsertSupplier().setVisible(true);
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -353,13 +478,13 @@ public class InsertSupplier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private keeptoo.KGradientPanel kGradientPanel5;
+    public static javax.swing.JPanel save_supplier;
     public static javax.swing.JTextField sup_address;
     public static javax.swing.JTextField sup_contact;
     public static javax.swing.JTextField sup_email;
     public static javax.swing.JLabel sup_id;
     public static javax.swing.JTextField sup_name;
+    public static javax.swing.JPanel supplier_list;
     // End of variables declaration//GEN-END:variables
 }

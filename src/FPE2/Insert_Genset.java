@@ -28,13 +28,28 @@ public class Insert_Genset extends javax.swing.JFrame {
     String save_add; 
     
     String filename = null;
-    byte[] person_image = null;
+    public static byte[] person_image = null;
     
 
     
     public Insert_Genset() {
-        initComponents();    
+        initComponents();
+        id.setVisible(false);
+        as_id.setVisible(false);
+        as_supplierNone.setVisible(false);
+        supplierTxt.setVisible(false);
     }
+    
+    public Insert_Genset(byte [] person_images1) {
+        initComponents();  
+        person_image = person_images1;
+        id.setVisible(false);
+        as_id.setVisible(false);
+        as_supplierNone.setVisible(false);
+        supplierTxt.setVisible(false);
+    }    
+
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -75,8 +90,8 @@ public class Insert_Genset extends javax.swing.JFrame {
         gensetBtn = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         as_id = new javax.swing.JLabel();
-        supplier = new javax.swing.JLabel();
-        id1 = new javax.swing.JLabel();
+        as_supplierNone = new javax.swing.JLabel();
+        supplierTxt = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         display = new javax.swing.JLabel();
 
@@ -293,15 +308,15 @@ public class Insert_Genset extends javax.swing.JFrame {
         as_id.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(as_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 110, 26));
 
-        supplier.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        supplier.setText("NONE");
-        supplier.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, 110, 26));
+        as_supplierNone.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        as_supplierNone.setText("NONE");
+        as_supplierNone.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(as_supplierNone, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, 110, 26));
 
-        id1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        id1.setText("SUPPLIER");
-        id1.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 110, 26));
+        supplierTxt.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        supplierTxt.setText("SUPPLIER");
+        supplierTxt.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(supplierTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, 110, 26));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 820, 610));
 
@@ -334,24 +349,63 @@ public class Insert_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_as_body_partsActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-  
+        dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void gensetBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gensetBtnMouseClicked
         
+    String date1 = as_date.getText().toUpperCase(); 
+    String brand1 = as_brand.getText().toUpperCase(); 
+    String phasing1 = as_phasing.getText().toUpperCase(); 
+    String unit_type1 = Insert_Genset.as_unitType.getText().toUpperCase(); 
+    String dimen1 = as_dimension.getText().toUpperCase();
+    String kva1 = as_kva.getText().toUpperCase();
+    String price1 = as_price.getText().toUpperCase(); 
+    String model1 = as_model.getText().toUpperCase(); 
+    String fuel_tank1 = as_fuel_tank.getText().toUpperCase(); 
+    String body_type1 = as_body_parts.getText().toUpperCase();
+    String a = eng_sn.getSelectedItem().toString(); 
+    String b = alt_sn.getSelectedItem().toString(); 
+    String engines_sn1 = as_engine_sn.getText().toUpperCase() +" "+ a; 
+    String alters1_sn = as_alternator_sn.getText().toUpperCase() +" " + b; 
+    
+    String sup_name = as_supplierNone.getText();
+    String as_idGenset = as_id.getText();
+        
+        //Class_Stock.AddStock(date1,brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_image, price1);
+//        String Banner = display.getText();
+//        InsertSupplier is = new InsertSupplier(person_image);
+//        
+//        is.setVisible(true);
+//        if(Banner.equals("ADD GENSET PRODUCT"))
+//        {
+//            InsertSupplier.display.setText("ADD SUPPLIER");
+//        }
+//        else if(Banner.equals("UPDATE GENSET PRODUCT"))
+//        {
+//            InsertSupplier.display.setText("UPDATE SUPPLIER");
+//        }
+        
+        /*
+            #ADD SUPPLIER AND ADD GENSET
+        */      
+        
+        Class_table ct = new Class_table();
         String Banner = display.getText();
-        InsertSupplier is = new InsertSupplier(person_image);
-        
-        is.setVisible(true);
-        if(Banner.equals("ADD GENSET PRODUCT"))
-        {
-            InsertSupplier.display.setText("ADD SUPPLIER");
+        String genset = gensetBtn.getText();
+        if(Banner.equals("ADD GENSET PRODUCT") && genset.equals("NEXT")){
+            InsertSupplier is = new InsertSupplier(person_image);
+            is.setVisible(true);
+            InsertSupplier.AddSup.setText("2"); // add genset and add supplier
+            
+        }else{
+            if(Banner.equals("UPDATE GENSET PRODUCT") && genset.equals("UPDATE") ){
+                
+                Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_image, sup_name, as_idGenset);
+                ct.Show_Stock_Genset_Table();
+                JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
+            }
         }
-        else if(Banner.equals("UPDATE GENSET PRODUCT"))
-        {
-            InsertSupplier.display.setText("UPDATE SUPPLIER");
-        }
-        
         
       
     }//GEN-LAST:event_gensetBtnMouseClicked
@@ -372,39 +426,67 @@ public class Insert_Genset extends javax.swing.JFrame {
     private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
         String Banner = display.getText();
         
- 
-        
         if(Banner.equals("UPDATE GENSET PRODUCT"))
         {
+            id.setVisible(true);
+            as_id.setVisible(true);
+            as_supplierNone.setVisible(true);
+            supplierTxt.setVisible(true);
             String id = Mainpage.Genset_id.getText();
             try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `genset_table` WHERE `ID`='"+id+"'");
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                as_id.setText(rs.getString("ID"));
-                as_brand.setText(rs.getString("BRAND"));
-                as_model.setText(rs.getString("MODEL"));
-                as_kva.setText(rs.getString("KVA"));
-                as_phasing.setText(rs.getString("PHASING"));
-                as_unitType.setText(rs.getString("UNIT_TYPE"));
-                as_dimension.setText(rs.getString("DIMENSION"));
-                as_fuel_tank.setText(rs.getString("TANK_CAP"));
-                as_body_parts.setText(rs.getString("BODY TYPE"));
-                as_price.setText(rs.getString("PRICE"));
-                supplier.setText(rs.getString("SUPPLIER"));
-                
-                as_engine_sn.setText(rs.getString("ENGINE_SERIAL_NO"));
-                as_alternator_sn.setText(rs.getString("ALTERNATOR_SERIAL_NO"));
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `genset_table` WHERE `ID`='"+id+"'");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                    as_id.setText(rs.getString("ID"));
+                    as_brand.setText(rs.getString("BRAND"));
+                    as_model.setText(rs.getString("MODEL"));
+                    as_kva.setText(rs.getString("KVA"));
+                    as_phasing.setText(rs.getString("PHASING"));
+                    as_unitType.setText(rs.getString("UNIT_TYPE"));
+                    as_dimension.setText(rs.getString("DIMENSION"));
+                    as_fuel_tank.setText(rs.getString("TANK_CAP"));
+                    as_body_parts.setText(rs.getString("BODY TYPE"));
+                    as_price.setText(rs.getString("PRICE"));
+                    as_supplierNone.setText(rs.getString("SUPPLIER"));
 
-                Insert_Genset.as_pic.setText(null);
-                ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(as_pic.getWidth(), as_pic.getHeight(),Image.SCALE_SMOOTH) );
-                as_pic.setIcon(imageicon);
-                person_image = rs.getBytes("IMAGE");
-             }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+//                    as_engine_sn.setText(rs.getString("ENGINE_SERIAL_NO"));
+//                    as_alternator_sn.setText(rs.getString("ALTERNATOR_SERIAL_NO"));
+                    // split operation whitespace
+                    
+                    String[] split_en = rs.getString("ENGINE_SERIAL_NO").split(" ");
+                    String[] split_alter = rs.getString("ALTERNATOR_SERIAL_NO").split(" ");
+                    as_engine_sn.setText(split_en[0]);
+                    as_alternator_sn.setText(split_alter[0]);                    
+                    
+                    if(split_en[1].equals("OLD")){
+                     eng_sn.setSelectedIndex(1);
+                    }else{
+                        if(split_en[1].equals("NEW")){
+                        eng_sn.setSelectedIndex(2);
+                        }     
+                    }
+                    
+
+                    
+                    if(split_alter[1].equals("OLD")){
+                     alt_sn.setSelectedIndex(1);
+                    }else{
+                        if(split_alter[1].equals("NEW")){
+                        alt_sn.setSelectedIndex(2);
+                        }
+                    }
+                    
+                    
+
+                    Insert_Genset.as_pic.setText(null);
+                    ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(as_pic.getWidth(), as_pic.getHeight(),Image.SCALE_SMOOTH) );
+                    as_pic.setIcon(imageicon);
+                    person_image = rs.getBytes("IMAGE");
+                 }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
         }
     }//GEN-LAST:event_displayAncestorAdded
 
@@ -431,6 +513,7 @@ public class Insert_Genset extends javax.swing.JFrame {
                 bos.write(buf,0,readNum);
             }
             person_image=bos.toByteArray();
+            
         }
         catch(Exception e){
             e.printStackTrace();
@@ -493,13 +576,13 @@ public class Insert_Genset extends javax.swing.JFrame {
     public static javax.swing.JTextField as_phasing;
     public static javax.swing.JLabel as_pic;
     public static javax.swing.JTextField as_price;
+    public static javax.swing.JLabel as_supplierNone;
     public static javax.swing.JTextField as_unitType;
     private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JLabel display;
     public static javax.swing.JComboBox<String> eng_sn;
     public static javax.swing.JLabel gensetBtn;
     public static javax.swing.JLabel id;
-    public static javax.swing.JLabel id1;
     public static javax.swing.JLabel jLabel10;
     public static javax.swing.JLabel jLabel11;
     public static javax.swing.JLabel jLabel13;
@@ -516,6 +599,6 @@ public class Insert_Genset extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    public static javax.swing.JLabel supplier;
+    public static javax.swing.JLabel supplierTxt;
     // End of variables declaration//GEN-END:variables
 }

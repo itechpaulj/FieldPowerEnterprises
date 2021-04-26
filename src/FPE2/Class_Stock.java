@@ -17,6 +17,8 @@ import javax.swing.table.DefaultTableModel;
  * @author Javinez
  */
 public class Class_Stock {
+    
+
         public static boolean AddStock(String date, String brand, String phasing,String unit_type,String dimen, String kva, String price, String model, String fuel_tank, String body_type, String engines_sn, String alter_sn,byte[] images,String supplier){
         PreparedStatement ps = null;
         try{
