@@ -263,14 +263,14 @@ public class Insert_Filter extends javax.swing.JFrame {
        if(save_add.equals("ADD SUPPLIER")){
         //new supplier
            // JOptionPane.showMessageDialog(null, " new supplier","",JOptionPane.INFORMATION_MESSAGE);
-//            InsertSupplier is = new InsertSupplier(date,names,des,brand,type,price,quantity,ids);
+////            InsertSupplier is = new InsertSupplier(date,names,des,brand,type,price,quantity,ids);
+////            is.setVisible(true);
+////            InsertSupplier.dis2.setText("2");
+//            choose = "ADD SUPPLIER";
+//            InsertSupplier is = new InsertSupplier();
 //            is.setVisible(true);
-//            InsertSupplier.dis2.setText("2");
-            choose = "ADD SUPPLIER";
-            InsertSupplier is = new InsertSupplier();
-            is.setVisible(true);
-            InsertSupplier.SUPPLIER_MENU.setText(choose);
-            InsertSupplier.sup_add.setText("SAVE");
+//            InsertSupplier.display.setText(choose);
+//            InsertSupplier.Save_Btn.setText("SAVE");
        }
        else{
            // else insert new item filter / parts or update the item

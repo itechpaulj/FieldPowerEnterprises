@@ -1,11 +1,19 @@
 
 package FPE2;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
+
 
 
 public class Class_Supplier {
+    
+ 
      
         public static boolean AddSupplier(String name,String address,String contact,String email ){
         PreparedStatement ps = null;
@@ -19,14 +27,12 @@ public class Class_Supplier {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-        }
-
-        
+        }   
      return false;
     }
         
         
-    public static boolean EditSupplier(String name,String address,String contact,String email, String id ){
+    public static boolean UpdateSupplier(String name,String address,String contact,String email, String id ){
         PreparedStatement ps = null;
         try{
         ps = FPE_DB.getConnection().prepareStatement("UPDATE `supplier_table` SET `NAME`=?,`ADDRESS`=?,`EMAIL`=?,`CONTACT`=? WHERE `ID`=?");

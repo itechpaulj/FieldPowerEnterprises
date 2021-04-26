@@ -5,56 +5,40 @@
  */
 package FPE2;
 
+import static FPE2.Insert_Genset.as_pic;
+import java.awt.Image;
 import javax.swing.JOptionPane;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 /**
  *
  * @author ROBLES
  */
 public class InsertSupplier extends javax.swing.JFrame {
 
-    String date1,brand1,phasing1,unit_type1,kva1,price1,model1,fuel_tank1,body_type1,engines_sn1,alter_sn1,alters1_sn,engine1;
-    String quantity1,type1,des1,id1,names1,url1;
-    byte [] images1 ;
-    public InsertSupplier() {
+    String date1 = Insert_Genset.as_date.getText().toUpperCase(); 
+    String brand1 = Insert_Genset.as_brand.getText().toUpperCase(); 
+    String phasing1 = Insert_Genset.as_phasing.getText().toUpperCase(); 
+    String unit_type1 = Insert_Genset.as_unitType.getText().toUpperCase(); 
+    String dimen1 = Insert_Genset.as_dimension.getText().toUpperCase();
+    String kva1 = Insert_Genset.as_kva.getText().toUpperCase();
+    String price1 = Insert_Genset.as_price.getText().toUpperCase(); 
+    String model1 = Insert_Genset.as_model.getText().toUpperCase(); 
+    String fuel_tank1 = Insert_Genset.as_fuel_tank.getText().toUpperCase(); 
+    String body_type1 = Insert_Genset.as_body_parts.getText().toUpperCase();
+    String a = Insert_Genset.eng_sn.getSelectedItem().toString(); 
+    String b = Insert_Genset.alt_sn.getSelectedItem().toString(); 
+    String engines_sn1 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" "+ a; 
+    String alters1_sn = Insert_Genset.as_alternator_sn.getText().toUpperCase() +" " + b; 
+    byte [] person_images1 = null;
+    
+    public InsertSupplier(byte [] person_images) {
         initComponents();
-        id_supplier.setVisible(false);
-        id.setVisible(false);
+        person_images1 = person_images;
     }
+    String id1 = Insert_Genset.as_id.getText().toUpperCase(); 
 
-//    public InsertSupplier(String date, String brand, String phasing,String unit_type, String kva, String price, String model, String fuel_tank, String body_type, String engines_sn,String engine_sn,String alters_sn, String alter_sn,String url,byte[] images) {
-//      date1 = date ;
-//      brand1 = brand;
-//      phasing1 = phasing;
-//      kva1 = kva;
-//      price1 = price;
-//      model1 = model;
-//      fuel_tank1 = fuel_tank;
-//      body_type1 = body_type;
-//      engine1 = engine_sn;
-//      engines_sn1 = engines_sn;
-//      alters1_sn = alters_sn;
-//      alter_sn1 = alter_sn;
-//      url1 = url;
-//      images1 = images;
-//      unit_type1 = unit_type;
-//      initComponents();
-//     
-//        
-//    }
-
-//    public InsertSupplier(String date, String names, String des, String brand, String type, String price, String quantity, String ids) {
-//        id1 = ids;
-//        date1 = date ;
-//        names1 = names;
-//        brand1 = brand;
-//        des1 = des;
-//        price1 = price;
-//        quantity1 = quantity;
-//        type1 = type;
-//        initComponents(); 
-//    }
 
 
     /**
@@ -67,10 +51,10 @@ public class InsertSupplier extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        SUPPLIER_MENU = new javax.swing.JLabel();
+        display = new javax.swing.JLabel();
         kGradientPanel5 = new keeptoo.KGradientPanel();
         sup_name = new javax.swing.JTextField();
-        id = new javax.swing.JLabel();
+        sup_id = new javax.swing.JLabel();
         id_supplier = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -82,9 +66,11 @@ public class InsertSupplier extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        sup_add = new javax.swing.JLabel();
-        SUPPLIER = new javax.swing.JLabel();
+        Save_Btn = new javax.swing.JLabel();
+        AddSup = new javax.swing.JLabel();
         customer = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -98,22 +84,22 @@ public class InsertSupplier extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        SUPPLIER_MENU.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
-        SUPPLIER_MENU.setForeground(new java.awt.Color(255, 255, 255));
-        SUPPLIER_MENU.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SUPPLIER_MENU.setText("ADD SUPPLIER");
-        SUPPLIER_MENU.addAncestorListener(new javax.swing.event.AncestorListener() {
+        display.setFont(new java.awt.Font("Arial", 1, 26)); // NOI18N
+        display.setForeground(new java.awt.Color(255, 255, 255));
+        display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        display.setText("ADD SUPPLIER");
+        display.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                SUPPLIER_MENUAncestorAdded(evt);
+                displayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel1.add(SUPPLIER_MENU, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 11, 365, 70));
+        jPanel1.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 11, 450, 70));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 100));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 100));
 
         kGradientPanel5.setkEndColor(new java.awt.Color(153, 204, 255));
         kGradientPanel5.setkStartColor(new java.awt.Color(0, 255, 153));
@@ -121,48 +107,48 @@ public class InsertSupplier extends javax.swing.JFrame {
 
         sup_name.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         sup_name.setAlignmentY(1.0F);
-        kGradientPanel5.add(sup_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 280, 31));
+        kGradientPanel5.add(sup_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 280, 31));
 
-        id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        id.setText("NONE");
-        kGradientPanel5.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 280, 30));
+        sup_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        sup_id.setText("NONE");
+        kGradientPanel5.add(sup_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 280, 30));
 
         id_supplier.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         id_supplier.setText("ID");
         id_supplier.setAlignmentY(1.0F);
-        kGradientPanel5.add(id_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 100, 26));
+        kGradientPanel5.add(id_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 100, 26));
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel17.setText("NAME");
         jLabel17.setAlignmentY(1.0F);
-        kGradientPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 100, 26));
+        kGradientPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 100, 26));
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel16.setText("ADDRESS");
         jLabel16.setAlignmentY(1.0F);
-        kGradientPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 100, 26));
+        kGradientPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 100, 26));
 
         sup_address.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         sup_address.setAlignmentY(1.0F);
-        kGradientPanel5.add(sup_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 280, 31));
+        kGradientPanel5.add(sup_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 280, 31));
 
         sup_email.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         sup_email.setAlignmentY(1.0F);
-        kGradientPanel5.add(sup_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 280, 31));
+        kGradientPanel5.add(sup_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 280, 31));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel19.setText("EMAIL ");
         jLabel19.setAlignmentY(1.0F);
-        kGradientPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 100, 26));
+        kGradientPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 100, 26));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel18.setText("CONTACT");
         jLabel18.setAlignmentY(1.0F);
-        kGradientPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 100, 26));
+        kGradientPanel5.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 100, 26));
 
         sup_contact.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         sup_contact.setAlignmentY(1.0F);
-        kGradientPanel5.add(sup_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 280, 31));
+        kGradientPanel5.add(sup_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 280, 31));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -184,14 +170,14 @@ public class InsertSupplier extends javax.swing.JFrame {
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 160, 50));
+        kGradientPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 160, 50));
 
-        sup_add.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        sup_add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sup_add.setText("SAVE");
-        sup_add.addMouseListener(new java.awt.event.MouseAdapter() {
+        Save_Btn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Save_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Save_Btn.setText("SAVE");
+        Save_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sup_addMouseClicked(evt);
+                Save_BtnMouseClicked(evt);
             }
         });
 
@@ -199,139 +185,127 @@ public class InsertSupplier extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sup_add, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(Save_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sup_add, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Save_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 160, 50));
+        kGradientPanel5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 160, 50));
 
-        SUPPLIER.setText("SUPPLIER");
-        kGradientPanel5.add(SUPPLIER, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 110, 40));
+        AddSup.setText("2");
+        kGradientPanel5.add(AddSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 110, 40));
 
         customer.setText("CUSTOMER");
-        kGradientPanel5.add(customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 110, 40));
+        kGradientPanel5.add(customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 110, 40));
 
-        getContentPane().add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 530, 420));
+        jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("SUPPLIER LIST");
+        jLabel20.setAlignmentY(1.0F);
+        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel20MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 1, Short.MAX_VALUE)))
+        );
+
+        kGradientPanel5.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 280, 30));
+
+        getContentPane().add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 630, 420));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Mainpage.stock_supplier_id.setText("");
-        dispose();
+
+       dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void sup_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_addMouseClicked
+    private void Save_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Save_BtnMouseClicked
         String s_name,address,email,contact;
         s_name= sup_name.getText();
         address = sup_address.getText();
         email = sup_email.getText();
         contact = sup_contact.getText();
-        String getId= id.getText();
-//        String eng_com = engines_sn1+engine1;
-//        String alt_com = alters1_sn+ alter_sn1;
-               
-        
-        String confirmSupplierCustomer = sup_add.getText();
-        String cus_sup_title = SUPPLIER_MENU.getText();
-        
-        if(confirmSupplierCustomer.equals("SAVE") && cus_sup_title.equals("ADD SUPPLIER") ){
-            if(s_name.equals("")|| address.equals("") || contact.equals("") || email.equals("")){
-                JOptionPane.showMessageDialog(null, "EMPTY FIELDS!","",JOptionPane.ERROR_MESSAGE);
+        String ids = sup_id.getText();
+        String Banner = display.getText();
+        String add_sup = AddSup.getText();
+        if(Banner.equals("ADD SUPPLIER") && add_sup.equals("1")){
+            if(!Class_Supplier.AddSupplier(s_name, address, contact, email))
+            {
+                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
+            }      
+        }else if(Banner.equals("ADD SUPPLIER")){
+             if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name))
+            {
+                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
             }
-            else{
-               if(!Class_Supplier.AddSupplier(s_name, address, contact, email))
-                 { 
-                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD","",JOptionPane.INFORMATION_MESSAGE);
-                     Class_table ct = new Class_table(); ct.showGenset(); 
-                 }    
+        }else if(Banner.equals("UPDATE SUPPLIER")){
+             if(!Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name, id1))
+            {
+                JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATED");
             }
         }
-        else if(confirmSupplierCustomer.equals("SAVE") && cus_sup_title.equals("ADD CUSTOMER")){
-               if(!Class_customers.AddCustomer(s_name, address, contact, email))
-                 { 
-                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD","",JOptionPane.INFORMATION_MESSAGE);
-                     Class_table ct = new Class_table(); ct.showCustomer_Table(); 
-                 } 
-        }
-        else{
-                if(confirmSupplierCustomer.equals("UPDATE") && cus_sup_title.equals("ADD SUPPLIER")){
-                    
-                    Class_Supplier cs = new Class_Supplier();
-                    
-                    if(!cs.EditSupplier(s_name, address, contact, email, getId )){
-                        Class_table ct = new Class_table();
-                        ct.Stocksupplier();
-                        JOptionPane.showMessageDialog(null, "UPDATE");
-                    }
-                }
-
-        }
-
-               
-                                                                                                                
-               
-//               int d2 = Integer.parseInt(dis2.getText());
-//               
-//               if(d2 == 1)
-//               {
-//                  if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, body_type1, unit_type1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alter_sn1, url1, images1));
-//                    { JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD"); Class_table ct = new Class_table(); ct.showGenset(); } 
-//               }
-//               else if(d2 ==2)
-//               {
-//                  if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Filter.AddFilter(date1, names1, des1, brand1, type1, price1, quantity1))
-//                    { JOptionPane.showMessageDialog(null, "SUCCESSFULY ADD"); Class_table ct = new Class_table(); ct.showGenset(); } 
-//               
-//               }
-
-    }//GEN-LAST:event_sup_addMouseClicked
+       
+        
+        
+    }//GEN-LAST:event_Save_BtnMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 //        dis1.setText(date1);
 //        id.setText(Mainpage.stock_supplier_id.getText());
     }//GEN-LAST:event_formWindowOpened
 
-    private void SUPPLIER_MENUAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_SUPPLIER_MENUAncestorAdded
-       //String choose = "UPDATE SUPPLIER";
-       String update_supplier = SUPPLIER_MENU.getText();
-       
-       if(update_supplier.equals("ADD SUPPLIER")){
-            id_supplier.setVisible(false);
-            id.setVisible(false);
-       }
-       else{
-            if(update_supplier.equals("UPDATE SUPPLIER")){
-                    id_supplier.setVisible(true);
-                    id.setVisible(true);
-                  try{
-                      PreparedStatement ps;
-                      ResultSet rs;
-                      ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID`='"+id.getText()+"'");
-                      rs = ps.executeQuery();
-                       while(rs.next()){
-                           sup_name.setText(rs.getString("NAME"));
-                           sup_address.setText(rs.getString("ADDRESS"));
-                           sup_email.setText(rs.getString("EMAIL"));
-                           sup_contact.setText(rs.getString("CONTACT"));
-                       }
-                  }
-                  catch(Exception e){
-                      e.printStackTrace();
-                  }         
-            }
-            else{
-                if(update_supplier.equals("ADD CUSTOMER")){
-                    //JOptionPane.showMessageDialog(null, "ADD CUSTOMER");
-                }
-            }
-       }
+    private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
+        String Banner = display.getText();
+        
+        
+        if(Banner.equals("UPDATE SUPPLIER"))
+        {
+            String supplier_id = Insert_Genset.supplier.getText();
+            try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE 'NAME' = "+supplier_id+"");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                sup_id.setText(rs.getString("ID"));
+                sup_name.setText(rs.getString("NAME"));
+                sup_address.setText(rs.getString("ADDRESS"));
+                sup_email.setText(rs.getString("EMAIL"));
+                sup_contact.setText(rs.getString("CONTACT"));
+             }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        }
 
-    }//GEN-LAST:event_SUPPLIER_MENUAncestorAdded
+    }//GEN-LAST:event_displayAncestorAdded
+
+    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+        Table_Supplier tbs = new Table_Supplier();
+        
+        Table_Supplier.jLabel5.setText("2");
+        tbs.setVisible(true);
+    }//GEN-LAST:event_jLabel20MouseClicked
 
     /**
      * @param args the command line arguments
@@ -362,32 +336,30 @@ public class InsertSupplier extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InsertSupplier().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel SUPPLIER;
-    public static javax.swing.JLabel SUPPLIER_MENU;
+    public static javax.swing.JLabel AddSup;
+    public static javax.swing.JLabel Save_Btn;
     public static javax.swing.JLabel customer;
-    public static javax.swing.JLabel id;
+    public static javax.swing.JLabel display;
     public static javax.swing.JLabel id_supplier;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private keeptoo.KGradientPanel kGradientPanel5;
-    public static javax.swing.JLabel sup_add;
     public static javax.swing.JTextField sup_address;
     public static javax.swing.JTextField sup_contact;
     public static javax.swing.JTextField sup_email;
+    public static javax.swing.JLabel sup_id;
     public static javax.swing.JTextField sup_name;
     // End of variables declaration//GEN-END:variables
 }
