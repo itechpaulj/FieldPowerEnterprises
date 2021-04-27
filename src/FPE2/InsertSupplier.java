@@ -261,6 +261,8 @@ public class InsertSupplier extends javax.swing.JFrame {
             }
             else{
                 if(!Class_Supplier.AddSupplier(s_name, address, contact, email)){
+                    Class_table ct = new Class_table();
+                    ct.Supplier();
                 JOptionPane.showMessageDialog(null, "ADD supplier","",JOptionPane.INFORMATION_MESSAGE);
                 }
             }
@@ -305,6 +307,8 @@ public class InsertSupplier extends javax.swing.JFrame {
             else{
                 if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name))
                {
+                   Class_table ct = new Class_table();
+                    ct.Show_Stock_Genset_Table();
                    JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
                }                
             }
