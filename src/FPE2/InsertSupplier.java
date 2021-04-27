@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 public class InsertSupplier extends javax.swing.JFrame {
 
 
-    byte [] person_images1 = null;
+    public static byte [] person_images1 = null;
     public InsertSupplier() {
         initComponents();
         id_supplier.setVisible(false);
@@ -164,7 +164,7 @@ public class InsertSupplier extends javax.swing.JFrame {
         AddSup.setText("1");
         kGradientPanel5.add(AddSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 110, 40));
 
-        customer.setText("CUSTOMER");
+        customer.setText("1");
         kGradientPanel5.add(customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 110, 40));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
@@ -252,7 +252,11 @@ public class InsertSupplier extends javax.swing.JFrame {
             // Add supplier
             sup_id.setVisible(false);
             id_supplier.setVisible(false);
-            if(!Class_Supplier.ExistSupplier(s_name)){
+            
+            if(s_name.equals("") || address.equals("") || email.equals("") || contact.equals("") ){
+                JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input!","",JOptionPane.ERROR_MESSAGE);
+            }
+            else if(!Class_Supplier.ExistSupplier(s_name)){
                 JOptionPane.showMessageDialog(null, "Already Exist Supplier!\nPlease Select Supplier List!","",JOptionPane.WARNING_MESSAGE);
             }
             else{
@@ -284,7 +288,18 @@ public class InsertSupplier extends javax.swing.JFrame {
             String id1 = Insert_Genset.as_id.getText().toUpperCase();
             // insert genset
             
-            if(!Class_Supplier.ExistSupplier(s_name)){
+            String imgValidate = Insert_Genset.as_pic.getText();
+
+            if(date1.equals("") || brand1.equals("") || phasing1.equals("") || unit_type1.equals("") || dimen1.equals("") || kva1.equals("") || price1.equals("") || model1.equals("") || fuel_tank1.equals("") || a.equals("SELECT") || b.equals("SELECT") || engines_sn1.equals("") || alters1_sn.equals("")  ){
+                JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input! (GENSET)","",JOptionPane.ERROR_MESSAGE);
+            }
+            else if(imgValidate.equals(null) || imgValidate.equals("2x2")){
+            JOptionPane.showMessageDialog(null, "Empty Image!","",JOptionPane.ERROR_MESSAGE);
+            }
+            else if(s_name.equals("") || address.equals("") || email.equals("") || contact.equals("") ){
+                JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input! (SUPPLIER)","",JOptionPane.ERROR_MESSAGE);
+            }
+            else if(!Class_Supplier.ExistSupplier(s_name)){
                 JOptionPane.showMessageDialog(null, "Already Exist Supplier!\nPlease Select Supplier List!","",JOptionPane.WARNING_MESSAGE);
             }
             else{
@@ -296,7 +311,38 @@ public class InsertSupplier extends javax.swing.JFrame {
 
         }
         else if(comparedTo.equals("3") && Banner.equals("ADD SUPPLIER")){
-            JOptionPane.showMessageDialog(null, "ADD SUPPLIER / FILTER AND PARTS","",JOptionPane.INFORMATION_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "ADD SUPPLIER / FILTER AND PARTS","",JOptionPane.INFORMATION_MESSAGE);
+            String date2 = Insert_Filter.af_date.getText().toUpperCase();
+            String brand2 = Insert_Filter.af_brand.getText().toUpperCase();
+            String name2 = Insert_Filter.af_name.getText().toUpperCase();
+            String des2 = Insert_Filter.af_des.getText().toUpperCase();
+            String quantity2 = Insert_Filter.af_quantity.getText().toUpperCase();
+            String price2 = Insert_Filter.af_price.getText().toUpperCase();
+            String types2 = Insert_Filter.types.getSelectedItem().toString();
+            
+            String imgValidate = Insert_Filter.af_pic.getText();
+            if(date2.equals("")|| brand2.equals("") || name2.equals("") || des2.equals("") || quantity2.equals("") || price2.equals("") || types2.equals("SELECT") ){
+             JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input!(FILTER / PART / OTHER)","",JOptionPane.ERROR_MESSAGE);   
+            }
+            else if(s_name.equals("") || address.equals("") || email.equals("") || contact.equals("") ){
+                JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input! (SUPPLIER)","",JOptionPane.ERROR_MESSAGE);
+            }
+            else if(imgValidate.equals(null) || imgValidate.equals("2x2")){
+            JOptionPane.showMessageDialog(null, "Empty Image!","",JOptionPane.ERROR_MESSAGE);
+            }
+            else if(!Class_Supplier.ExistSupplier(s_name)){
+                JOptionPane.showMessageDialog(null, "Already Exist Supplier!\nPlease Select Supplier List!","",JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Filter.AddFilter(date2, name2, des2, brand2, types2, price2, quantity2, Insert_Filter.person_imageFilter,s_name)){
+                    Class_table ct = new Class_table();
+                    ct.Show_Stock_Filter_Table();
+                    JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+            
+            
+            
         }
         else if(comparedTo.equals("4") && Banner.equals("EXIST SUPPLIER")){
             // exist supplier but can add only genset
@@ -322,12 +368,19 @@ public class InsertSupplier extends javax.swing.JFrame {
             String alters1_sn = Insert_Genset.as_alternator_sn.getText().toUpperCase() +" " + b;
             String id1 = Insert_Genset.as_id.getText().toUpperCase();
             // insert genset
+            String imgValidate = Insert_Genset.as_pic.getText();
             //JOptionPane.showMessageDialog(null, "Only new insert genset but supplier is Exist1","",JOptionPane.INFORMATION_MESSAGE);
-                if(!Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, Insert_Genset.person_image, s_name))
-               {
-                   JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
-               }   
-                
+            if(date1.equals("") || brand1.equals("") || phasing1.equals("") || unit_type1.equals("") || dimen1.equals("") || kva1.equals("") || price1.equals("") || model1.equals("") || fuel_tank1.equals("") || a.equals("SELECT") || b.equals("SELECT") || engines_sn1.equals("") || alters1_sn.equals("")  ){
+                JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input! (GENSET)","",JOptionPane.ERROR_MESSAGE);
+            }            
+            else if(imgValidate.equals(null) || imgValidate.equals("2x2")){
+            JOptionPane.showMessageDialog(null, "Empty Image!","",JOptionPane.ERROR_MESSAGE);
+            }else{
+                    if(!Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, Insert_Genset.person_image, s_name))
+                   {
+                       JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
+                   }   
+            }
         }
         else {
             //UPDATE supplier
@@ -345,22 +398,7 @@ public class InsertSupplier extends javax.swing.JFrame {
            
 
         
-//        if(Banner.equals("ADD SUPPLIER") && add_sup.equals("1")){
-//            if(!Class_Supplier.AddSupplier(s_name, address, contact, email))
-//            {
-//                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
-//            }
-//        }else if(Banner.equals("ADD SUPPLIER")){
-//            if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name))
-//            {
-//                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
-//            }
-//        }else if(Banner.equals("UPDATE SUPPLIER")){
-//            if(!Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name, id1))
-//            {
-//                JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATED");
-//            }
-//        }
+
 
     }//GEN-LAST:event_Save_BtnMouseClicked
 

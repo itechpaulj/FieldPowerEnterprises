@@ -35,6 +35,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
     /**
      * Creates new form ViewGensetItem
      */
+    byte[] person_image = null;
     public ViewGensetItem() {
         initComponents();
         
@@ -362,33 +363,32 @@ public class ViewGensetItem extends javax.swing.JFrame {
         {
             String id = Mainpage.Shop_genset_id.getText();
             try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `genset_table` WHERE `ID`='"+id+"'");
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                vg_id.setText(rs.getString("ID"));
-                vg_brand.setText(rs.getString("BRAND"));
-                vg_model.setText(rs.getString("MODEL"));
-                vg_kva.setText(rs.getString("KVA"));
-                vg_phasing.setText(rs.getString("PHASING"));
-                vg_unit_type.setText(rs.getString("UNIT_TYPE"));
-                vg_dimension.setText(rs.getString("DIMENSION"));
-                vg_fuel.setText(rs.getString("TANK_CAP"));
-                vg_body_type.setText(rs.getString("BODY TYPE"));
-                vg_price.setText(rs.getString("PRICE"));
-                vg_supplier.setText(rs.getString("SUPPLIER"));
-                vg_date.setText(rs.getString("DATE"));
-                as_engine_sn.setText(rs.getString("ENGINE_SERIAL_NO"));
-                as_alternator_sn.setText(rs.getString("ALTERNATOR_SERIAL_NO"));
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `genset_table` WHERE `ID`='"+id+"'");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                    vg_id.setText(rs.getString("ID"));
+                    vg_brand.setText(rs.getString("BRAND"));
+                    vg_model.setText(rs.getString("MODEL"));
+                    vg_kva.setText(rs.getString("KVA"));
+                    vg_phasing.setText(rs.getString("PHASING"));
+                    vg_unit_type.setText(rs.getString("UNIT_TYPE"));
+                    vg_dimension.setText(rs.getString("DIMENSION"));
+                    vg_fuel.setText(rs.getString("TANK_CAP"));
+                    vg_body_type.setText(rs.getString("BODY TYPE"));
+                    vg_price.setText(rs.getString("PRICE"));
+                    vg_supplier.setText(rs.getString("SUPPLIER"));
+                    vg_date.setText(rs.getString("DATE"));
+                    vg_engine.setText(rs.getString("ENGINE_SERIAL_NO"));
+                    vg_alternator.setText(rs.getString("ALTERNATOR_SERIAL_NO"));
 
-                Insert_Genset.as_pic.setText(null);
-                ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(vg_pic.getWidth(), vg_pic.getHeight(),Image.SCALE_SMOOTH) );
-                vg_pic.setIcon(imageicon);
-                byte[] person_image = rs.getBytes("IMAGE");
-             }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+                    ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(vg_pic.getWidth(), vg_pic.getHeight(),Image.SCALE_SMOOTH) );
+                    vg_pic.setIcon(imageicon);
+                    person_image = rs.getBytes("IMAGE");
+                 }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
         }     
     }//GEN-LAST:event_displayAncestorAdded
 

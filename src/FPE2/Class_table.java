@@ -9,6 +9,7 @@ import static FPE2.Mainpage.Stock_Genset_Table;
 import static FPE2.Mainpage.Stock_Filter_Table;
 import static FPE2.Mainpage.Shop_Genset_Table;
 import static FPE2.Mainpage.Shop_Filter_Table;
+import static FPE2.Table_Customer.Customer_table;
 import static FPE2.Table_Supplier.Supplier_table;
 
 import java.sql.PreparedStatement;
@@ -70,6 +71,16 @@ public class Class_table {
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table`");
         ResultSet rs = ps.executeQuery();
         Supplier_table.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(Exception e){
+              System.out.println(e);
+            }
+        return false;
+    }
+        public boolean Customer(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table`");
+        ResultSet rs = ps.executeQuery();
+        Customer_table.setModel(DbUtils.resultSetToTableModel(rs));
         }catch(Exception e){
               System.out.println(e);
             }

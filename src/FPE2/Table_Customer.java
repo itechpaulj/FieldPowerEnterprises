@@ -10,19 +10,16 @@ package FPE2;
 import javax.swing.table.TableModel;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author ROBLES
- */
-public class Table_Supplier extends javax.swing.JFrame {
+
+public class Table_Customer extends javax.swing.JFrame {
 
     /**
      * Creates new form Table_Supplier
      */
-    public Table_Supplier() {
+    public Table_Customer() {
         initComponents();
-        Class_table ct = new Class_table(); 
-        ct.Supplier();
+        Class_table ct = new Class_table();
+        ct.Customer();
     }
 
     /**
@@ -38,7 +35,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         displays = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Supplier_table = new javax.swing.JTable();
+        Customer_table = new javax.swing.JTable();
         add_panel_supplier = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         update_panel_supplier = new javax.swing.JPanel();
@@ -47,7 +44,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         sup_del = new javax.swing.JLabel();
         back_panel_supplier = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        supplier_id = new javax.swing.JLabel();
+        customer_id = new javax.swing.JLabel();
         sup_list = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,7 +57,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         displays.setForeground(new java.awt.Color(255, 255, 255));
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displays.setText("SUPPLIER LIST");
+        displays.setText("CUSTOMER LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -78,7 +75,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 255, 153));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Supplier_table.setModel(new javax.swing.table.DefaultTableModel(
+        Customer_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -89,12 +86,12 @@ public class Table_Supplier extends javax.swing.JFrame {
 
             }
         ));
-        Supplier_table.addMouseListener(new java.awt.event.MouseAdapter() {
+        Customer_table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Supplier_tableMouseClicked(evt);
+                Customer_tableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(Supplier_table);
+        jScrollPane1.setViewportView(Customer_table);
 
         kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 68, 880, 400));
 
@@ -185,7 +182,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         );
 
         kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, -1, -1));
-        kGradientPanel1.add(supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 90, 30));
+        kGradientPanel1.add(customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 90, 30));
 
         sup_list.setText("1");
         kGradientPanel1.add(sup_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 50, -1));
@@ -200,51 +197,13 @@ public class Table_Supplier extends javax.swing.JFrame {
 
     }//GEN-LAST:event_displaysAncestorAdded
 
-    private void Supplier_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Supplier_tableMouseClicked
-        int i=Supplier_table.getSelectedRow();
-        TableModel model = Supplier_table.getModel();
-        supplier_id.setText(model.getValueAt(i,0).toString());
-         String comparedTo = sup_list.getText();
-        /*
-          comparedTo variable
-            1 - no effect but we UPDATE supplier
-            2 - Exist Supplier but new genset Product can't add new Supplier
-        */
-        
-        if(comparedTo.equals("2")){
-            InsertSupplier is = new InsertSupplier();
-            is.sup_id.setText(supplier_id.getText());
-            is.display.setText("EXIST SUPPLIER");
-            is.setVisible(true);
-            is.AddSup.setText("4"); //exist supplier
-            dispose();
-        }
+    private void Customer_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Customer_tableMouseClicked
 
-        
-//        String id = supplier_id.getText();
-//        try{   
-//                      PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID`='"+id+"'");
-//                      ResultSet rs = ps.executeQuery();
-//                       while(rs.next()){
-//                           InsertSupplier2.sup_id.setText(rs.getString("ID"));
-//                           InsertSupplier2.sup_name.setText(rs.getString("NAME"));
-//                           InsertSupplier2.sup_address.setText(rs.getString("ADDRESS"));
-//                           InsertSupplier2.sup_email.setText(rs.getString("EMAIL"));
-//                           InsertSupplier2.sup_contact.setText(rs.getString("CONTACT"));
-//                       }
-//                  }
-//                  catch(Exception e){
-//                      e.printStackTrace();
-//                  } 
-    }//GEN-LAST:event_Supplier_tableMouseClicked
+    }//GEN-LAST:event_Customer_tableMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // New supplier
-        
-        InsertSupplier is = new InsertSupplier();
-        is.setVisible(true);
-        InsertSupplier.AddSup.setText("1"); // add supplier
-        InsertSupplier.supplier_list.setVisible(false);
+        InsertCustomer ic = new InsertCustomer();
+        ic.setVisible(true);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -252,44 +211,13 @@ public class Table_Supplier extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void sup_listUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseClicked
-      String comparedTo = sup_list.getText();
-      /*
-        comparedTo variables
-        1 - normal no effect supplier Table but we allowed to UPDATE supplier
-        2 - exist supplier
-      */
-      
-      if(comparedTo.equals("1")){
-          //JOptionPane.showMessageDialog(null, "UPDATE supplier");
-          InsertSupplier is = new InsertSupplier();
-          is.sup_id.setText(supplier_id.getText());
-          is.display.setText("UPDATE SUPPLIER");
-          is.AddSup.setText("5"); // update supplier
-          is.supplier_list.setVisible(false);
-          is.setVisible(true);
-
-      }
-      else if(comparedTo.equals("2")){
-           JOptionPane.showMessageDialog(null, "Exist supplier");
-          InsertSupplier is = new InsertSupplier();
-          is.sup_id.setText(supplier_id.getText());
-          is.supplier_list.setVisible(false);
-          is.display.setText("EXIST SUPPLIER");
-          is.setVisible(true);
-      }
+        InsertCustomer ic = new InsertCustomer();
+        ic.customer_list.setVisible(false);
+        ic.setVisible(true);
     }//GEN-LAST:event_sup_listUpdateMouseClicked
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
-        String id = supplier_id.getText();
 
-            int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
-            if(opt==0){
-                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Supplier.DeleteSupplier(id) ){
-                Class_table ct = new Class_table();
-                ct.Supplier();
-                JOptionPane.showMessageDialog(null, " SUPPLIER DELETED ","",JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
     }//GEN-LAST:event_sup_delMouseClicked
 
     /**
@@ -309,28 +237,30 @@ public class Table_Supplier extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Table_Supplier().setVisible(true);
+                new Table_Customer().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JTable Supplier_table;
+    public static javax.swing.JTable Customer_table;
     public static javax.swing.JPanel add_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier;
+    public static javax.swing.JLabel customer_id;
     public static javax.swing.JPanel delete_panel_supplier;
     public static javax.swing.JLabel displays;
     private javax.swing.JLabel jLabel1;
@@ -341,7 +271,6 @@ public class Table_Supplier extends javax.swing.JFrame {
     private javax.swing.JLabel sup_del;
     public static javax.swing.JLabel sup_list;
     private javax.swing.JLabel sup_listUpdate;
-    public static javax.swing.JLabel supplier_id;
     public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables
 }

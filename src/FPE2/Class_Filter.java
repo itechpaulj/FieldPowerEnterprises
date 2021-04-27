@@ -13,10 +13,10 @@ import javax.swing.JOptionPane;
  * @author ROBLES
  */
 public class Class_Filter {
-    public static boolean AddFilter(String date,String names,String des,String brand,String type,String price,String quantity){
+    public static boolean AddFilter(String date,String names,String des,String brand,String type,String price,String quantity, byte[] image,String supplier){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `filter_table`(`BRAND`, `NAME`, `DESCRIPTION`, `QUANTIITY`, `PRICE`, `DATE`, `TYPE`) VALUES (?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `filter_table`(`BRAND`, `NAME`, `DESCRIPTION`, `QUANTITY`, `PRICE`, `DATE`, `TYPE`, `IMAGE`, `SUPPLIER`) VALUES (?,?,?,?,?,?,?,?,?)");
         ps.setString(1,brand);
         ps.setString(2,names);
         ps.setString(3,des);
@@ -24,10 +24,10 @@ public class Class_Filter {
         ps.setString(5,price);
         ps.setString(6,date);
         ps.setString(7,type);
-        
-            if(ps.execute()==false){
-                return true;
-            }
+        ps.setBytes(8,image);
+        ps.setString(9,supplier);
+        ps.execute();
+
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
@@ -35,10 +35,10 @@ public class Class_Filter {
         return false;
     }
     
-        public static boolean UpdateFilter(String date,String names,String des,String brand,String type,String price,String quantity,String ids,String url,byte[] image){
+        public static boolean UpdateFilter(String date,String names,String des,String brand,String type,String price,String quantity,byte[] image,String ids){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `filter_table` SET `BRAND`=?,`NAME`=?,`DESCRIPTION`=?,`QUANTITY`=?,`PRICE`=?,`DATE`=?,`TYPE`=? WHERE ID=?");
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `filter_table` SET `BRAND`=?,`NAME`=?,`DESCRIPTION`=?,`QUANTITY`=?,`PRICE`=?,`DATE`=?,`TYPE`=?, `IMAGE`=? WHERE `ID`=?");
         ps.setString(1, brand);
         ps.setString(2, names);
         ps.setString(3, des);
@@ -46,8 +46,8 @@ public class Class_Filter {
         ps.setString(5, price);
         ps.setString(6, date);
         ps.setString(7, type);
-        
-        ps.setString(8, ids);
+        ps.setBytes(8, image);
+        ps.setString(9, ids);
         ps.execute();
         }
         catch(Exception e){
@@ -71,7 +71,5 @@ public class Class_Filter {
      return false;
     }
 
-    static boolean UpdateFilter(String date, String names, String des, String brand, String type, String price, String quantity, String text) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }

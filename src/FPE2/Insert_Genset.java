@@ -516,7 +516,7 @@ public class Insert_Genset extends javax.swing.JFrame {
             
         }
         catch(Exception e){
-            e.printStackTrace();
+           // e.printStackTrace();
         }
     }//GEN-LAST:event_as_picMouseClicked
 
