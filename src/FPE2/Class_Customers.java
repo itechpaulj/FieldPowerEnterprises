@@ -2,6 +2,7 @@
 package FPE2;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 
@@ -53,5 +54,24 @@ public class Class_Customers {
             JOptionPane.showMessageDialog(null, e);
         }   
      return false;
+    }
+    
+    public static boolean ExistCustomer(String email){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        boolean Sup_name = false;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` WHERE `EMAIL`=?");
+        ps.setString(1,email);
+        rs = ps.executeQuery();
+            if(!rs.next()){
+                Sup_name = true;
+            } 
+ 
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }   
+     return Sup_name;
     }
 }

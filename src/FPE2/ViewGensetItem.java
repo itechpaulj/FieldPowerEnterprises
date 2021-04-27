@@ -393,7 +393,8 @@ public class ViewGensetItem extends javax.swing.JFrame {
     }//GEN-LAST:event_displayAncestorAdded
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        // TODO add your handling code here:
+        Proceed_Genset pg = new Proceed_Genset();
+        pg.setVisible(true);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**

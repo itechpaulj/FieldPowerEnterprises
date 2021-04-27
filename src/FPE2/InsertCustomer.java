@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package FPE2;
+
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +15,8 @@ public class InsertCustomer extends javax.swing.JFrame {
 
     public InsertCustomer() {
         initComponents();
-
+        id_customer.setVisible(false);
+        cus_id.setVisible(false);
     }
     
 
@@ -48,9 +45,6 @@ public class InsertCustomer extends javax.swing.JFrame {
         save_supplier = new javax.swing.JPanel();
         Save_Btn = new javax.swing.JLabel();
         AddCus = new javax.swing.JLabel();
-        customer = new javax.swing.JLabel();
-        customer_list = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         display = new javax.swing.JLabel();
 
@@ -159,38 +153,6 @@ public class InsertCustomer extends javax.swing.JFrame {
         AddCus.setText("1");
         kGradientPanel5.add(AddCus, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 110, 40));
 
-        customer.setText("1");
-        kGradientPanel5.add(customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 110, 40));
-
-        jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("CUSTOMER LIST");
-        jLabel20.setAlignmentY(1.0F);
-        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel20MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout customer_listLayout = new javax.swing.GroupLayout(customer_list);
-        customer_list.setLayout(customer_listLayout);
-        customer_listLayout.setHorizontalGroup(
-            customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
-            .addGroup(customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
-        );
-        customer_listLayout.setVerticalGroup(
-            customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-            .addGroup(customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(customer_listLayout.createSequentialGroup()
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1, Short.MAX_VALUE)))
-        );
-
-        kGradientPanel5.add(customer_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 280, 30));
-
         getContentPane().add(kGradientPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 630, 420));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
@@ -218,23 +180,56 @@ public class InsertCustomer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-
-        dispose();
+    dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void Save_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Save_BtnMouseClicked
-              
-        // Insert Supplier
+
+        String comparedTo = AddCus.getText();
+        String Banner = display.getText();
+        /*
+            comparedTo
+            1 - Add Customer
+            2 - Update Supplier
+        */
+        
+        // Insert Customer
         String s_name,address,email,contact,id;
         s_name= cus_name.getText().toUpperCase();
         address = cus_address.getText().toUpperCase();
         email = cus_email.getText().toUpperCase();
         contact = cus_contact.getText().toUpperCase();
         id = cus_id.getText(); // update id in supplier table
-        // Insert Supplier
+        // Insert Customer
 
-        String comparedTo = AddCus.getText();
-        String Banner = display.getText();
+        
+        if(comparedTo.equals("1") && Banner.equals("ADD CUSTOMER")){
+            // Add Customer
+            if(s_name.equals("") || address.equals("") || email.equals("") || contact.equals("") ){
+                JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input!","",JOptionPane.ERROR_MESSAGE);
+            }
+            else if(!Class_Customers.ExistCustomer(email)){
+                JOptionPane.showMessageDialog(null, "Already Exist Email Customer!!","",JOptionPane.WARNING_MESSAGE);
+            }
+            else if(!Class_Customers.AddCustomer(s_name, address, contact, email)){
+                Class_table ct = new Class_table();
+                ct.Customer();
+                JOptionPane.showMessageDialog(null, "SUCCESFULLY ADDED","",JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+        else{
+            if(comparedTo.equals("2") && Banner.equals("UPDATE CUSTOMER")){
+                //JOptionPane.showMessageDialog(null, "UPDATE","",JOptionPane.INFORMATION_MESSAGE);
+                if(!Class_Customers.EditCustomer(s_name, address, contact, email, id)){
+                    Class_table ct = new Class_table();
+                    ct.Customer();
+                    JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY!","",JOptionPane.INFORMATION_MESSAGE);
+                }
+            }
+        }
+
+        
+
            
  
            
@@ -244,13 +239,28 @@ public class InsertCustomer extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Save_BtnMouseClicked
 
-    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
-        Table_Customer tc = new Table_Customer();
-        tc.setVisible(true);
-    }//GEN-LAST:event_jLabel20MouseClicked
-
     private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
-
+        
+        String update = display.getText();
+        String id = cus_id.getText();
+        if(update.equals("UPDATE CUSTOMER")){
+            id_customer.setVisible(true);
+            cus_id.setVisible(true);
+             try{
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` WHERE `ID`='"+id+"'");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                    cus_name.setText(rs.getString("NAME"));
+                    cus_address.setText(rs.getString("ADDRESS"));
+                    cus_email.setText(rs.getString("EMAIL"));
+                    cus_contact.setText(rs.getString("CONTACT"));
+                 }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }           
+        }
+        
     }//GEN-LAST:event_displayAncestorAdded
 
     private void cus_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cus_nameKeyReleased
@@ -301,8 +311,6 @@ public class InsertCustomer extends javax.swing.JFrame {
     public static javax.swing.JTextField cus_email;
     public static javax.swing.JLabel cus_id;
     public static javax.swing.JTextField cus_name;
-    public static javax.swing.JLabel customer;
-    public static javax.swing.JPanel customer_list;
     public static javax.swing.JLabel display;
     public static javax.swing.JLabel id_customer;
     private javax.swing.JLabel jLabel16;
@@ -310,7 +318,6 @@ public class InsertCustomer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private keeptoo.KGradientPanel kGradientPanel5;

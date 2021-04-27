@@ -371,25 +371,7 @@ public class Insert_Genset extends javax.swing.JFrame {
     
     String sup_name = as_supplierNone.getText();
     String as_idGenset = as_id.getText();
-        
-        //Class_Stock.AddStock(date1,brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_image, price1);
-//        String Banner = display.getText();
-//        InsertSupplier is = new InsertSupplier(person_image);
-//        
-//        is.setVisible(true);
-//        if(Banner.equals("ADD GENSET PRODUCT"))
-//        {
-//            InsertSupplier.display.setText("ADD SUPPLIER");
-//        }
-//        else if(Banner.equals("UPDATE GENSET PRODUCT"))
-//        {
-//            InsertSupplier.display.setText("UPDATE SUPPLIER");
-//        }
-        
-        /*
-            #ADD SUPPLIER AND ADD GENSET
-        */      
-        
+                      
         Class_table ct = new Class_table();
         String Banner = display.getText();
         String genset = gensetBtn.getText();

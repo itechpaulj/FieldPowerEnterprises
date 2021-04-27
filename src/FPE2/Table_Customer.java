@@ -45,7 +45,6 @@ public class Table_Customer extends javax.swing.JFrame {
         back_panel_supplier = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         customer_id = new javax.swing.JLabel();
-        sup_list = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -184,9 +183,6 @@ public class Table_Customer extends javax.swing.JFrame {
         kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, -1, -1));
         kGradientPanel1.add(customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 90, 30));
 
-        sup_list.setText("1");
-        kGradientPanel1.add(sup_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 50, -1));
-
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 620));
 
         pack();
@@ -198,7 +194,9 @@ public class Table_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_displaysAncestorAdded
 
     private void Customer_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Customer_tableMouseClicked
-
+        int i=Customer_table.getSelectedRow();
+        TableModel model = Customer_table.getModel();
+        customer_id.setText(model.getValueAt(i,0).toString());
     }//GEN-LAST:event_Customer_tableMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -211,13 +209,32 @@ public class Table_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void sup_listUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseClicked
-        InsertCustomer ic = new InsertCustomer();
-        ic.customer_list.setVisible(false);
-        ic.setVisible(true);
+
+        String id = customer_id.getText();
+        if(id.equals("")){
+            JOptionPane.showMessageDialog(null, "PLEASE SELECT CUSTOMER!","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            InsertCustomer ic = new InsertCustomer();
+            ic.display.setText("UPDATE CUSTOMER");
+            ic.AddCus.setText("2");
+            ic.cus_id.setText(customer_id.getText());
+            ic.setVisible(true);
+        }
+
     }//GEN-LAST:event_sup_listUpdateMouseClicked
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
+        String id = customer_id.getText();
 
+            int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS CUSTOMER ? ","",JOptionPane.YES_NO_OPTION);
+            if(opt==0){
+                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Customers.DeleteCustomer(id) ){
+                Class_table ct = new Class_table();
+                ct.Customer();
+                JOptionPane.showMessageDialog(null, " CUSTOMER DELETED ","",JOptionPane.INFORMATION_MESSAGE);
+                }
+            }        
     }//GEN-LAST:event_sup_delMouseClicked
 
     /**
@@ -269,7 +286,6 @@ public class Table_Customer extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel sup_del;
-    public static javax.swing.JLabel sup_list;
     private javax.swing.JLabel sup_listUpdate;
     public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables
