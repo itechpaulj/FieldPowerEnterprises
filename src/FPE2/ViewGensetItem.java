@@ -127,7 +127,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 120, 26));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel13.setText("FUEL TANK CAP");
+        jLabel13.setText("TANK CAPACITY");
         jLabel13.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 120, 30));
 
@@ -219,100 +219,86 @@ public class ViewGensetItem extends javax.swing.JFrame {
 
         vg_id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_id.setText("NONE");
         vg_id.setAlignmentY(1.0F);
-        vg_id.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 180, 26));
 
         vg_model.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_model.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_model.setText("NONE");
         vg_model.setAlignmentY(1.0F);
-        vg_model.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_model.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 180, 26));
 
         vg_price.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_price.setText("NONE");
         vg_price.setAlignmentY(1.0F);
-        vg_price.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 180, 26));
 
         vg_brand.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_brand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_brand.setText("NONE");
         vg_brand.setAlignmentY(1.0F);
-        vg_brand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_brand.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 180, 26));
 
         vg_unit_type.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_unit_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_unit_type.setText("NONE");
         vg_unit_type.setAlignmentY(1.0F);
-        vg_unit_type.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_unit_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_unit_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 180, 26));
 
         vg_phasing.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_phasing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_phasing.setText("NONE");
         vg_phasing.setAlignmentY(1.0F);
-        vg_phasing.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_phasing.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 180, 26));
 
         vg_kva.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_kva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_kva.setText("NONE");
         vg_kva.setAlignmentY(1.0F);
-        vg_kva.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_kva.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 180, 26));
 
         vg_body_type.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_body_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_body_type.setText("NONE");
         vg_body_type.setAlignmentY(1.0F);
-        vg_body_type.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_body_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_body_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 180, 26));
 
         vg_fuel.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_fuel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_fuel.setText("NONE");
         vg_fuel.setAlignmentY(1.0F);
-        vg_fuel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_fuel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_fuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 180, 26));
 
         vg_dimension.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_dimension.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_dimension.setText("NONE");
         vg_dimension.setAlignmentY(1.0F);
-        vg_dimension.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_dimension.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 180, 26));
 
         vg_date.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_date.setText("NONE");
         vg_date.setAlignmentY(1.0F);
-        vg_date.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_date.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 180, 26));
 
         vg_alternator.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_alternator.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_alternator.setText("NONE");
         vg_alternator.setAlignmentY(1.0F);
-        vg_alternator.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_alternator.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 180, 26));
 
         vg_engine.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_engine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_engine.setText("NONE");
         vg_engine.setAlignmentY(1.0F);
-        vg_engine.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_engine.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 180, 26));
 
         vg_supplier.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_supplier.setText("NONE");
         vg_supplier.setAlignmentY(1.0F);
-        vg_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vg_supplier.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 180, 26));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
@@ -380,7 +366,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
                     vg_date.setText(rs.getString("DATE"));
                     vg_engine.setText(rs.getString("ENGINE_SERIAL_NO"));
                     vg_alternator.setText(rs.getString("ALTERNATOR_SERIAL_NO"));
-
+                    vg_alternator.setText(null);
                     ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(vg_pic.getWidth(), vg_pic.getHeight(),Image.SCALE_SMOOTH) );
                     vg_pic.setIcon(imageicon);
                     person_image = rs.getBytes("IMAGE");

@@ -67,6 +67,8 @@ public class Mainpage extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         Stock_Genset_Table = new javax.swing.JTable();
         Genset_id = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
         STOCK_FILTER = new keeptoo.KGradientPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         Stock_Filter_Table = new javax.swing.JTable();
@@ -81,6 +83,8 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel22 = new javax.swing.JPanel();
         add_filter = new javax.swing.JLabel();
         filter_id = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
         SHOP = new keeptoo.KGradientPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -94,6 +98,8 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel27 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         Shop_genset_id = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         SHOP_FILTER = new keeptoo.KGradientPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         Shop_Filter_Table = new javax.swing.JTable();
@@ -104,6 +110,9 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel32 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         Shop_filter_id = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        REPORT = new keeptoo.KGradientPanel();
 
         stock_supplier_id.setText("jLabel2");
 
@@ -451,7 +460,15 @@ public class Mainpage extends javax.swing.JFrame {
         jScrollPane5.setViewportView(Stock_Genset_Table);
 
         STOCK_GENSET.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1050, 420));
-        STOCK_GENSET.add(Genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 150, 30));
+        STOCK_GENSET.add(Genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 150, 30));
+
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/search_icon.png"))); // NOI18N
+        STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+
+        jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
         JTab.addTab("STOCK_GENSET", STOCK_GENSET);
 
@@ -480,6 +497,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_FILTER.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1050, 420));
 
+        jPanel18.setBackground(new java.awt.Color(255, 148, 77));
+
         backfilter.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         backfilter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         backfilter.setText("BACK");
@@ -498,7 +517,9 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(backfilter, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addComponent(backfilter, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 36, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -507,6 +528,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_FILTER.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 530, 190, 50));
 
+        jPanel19.setBackground(new java.awt.Color(166, 77, 255));
+
+        view_supplier.setBackground(new java.awt.Color(166, 77, 255));
         view_supplier.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         view_supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         view_supplier.setText("SUPPLIER");
@@ -525,7 +549,9 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(view_supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addComponent(view_supplier, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 56, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -533,6 +559,8 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         STOCK_FILTER.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 190, 50));
+
+        jPanel20.setBackground(new java.awt.Color(255, 77, 77));
 
         delete_filter.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         delete_filter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -561,6 +589,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_FILTER.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 190, 50));
 
+        jPanel21.setBackground(new java.awt.Color(77, 77, 255));
+
         update_filter.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         update_filter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         update_filter.setText("UPDATE");
@@ -579,7 +609,9 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel21.setLayout(jPanel21Layout);
         jPanel21Layout.setHorizontalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(update_filter, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addComponent(update_filter, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 37, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -587,6 +619,8 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         STOCK_FILTER.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 190, 50));
+
+        jPanel22.setBackground(new java.awt.Color(77, 255, 77));
 
         add_filter.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         add_filter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -606,7 +640,9 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(add_filter, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addComponent(add_filter, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 51, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -614,7 +650,15 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         STOCK_FILTER.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 190, 50));
-        STOCK_FILTER.add(filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 70, 20));
+        STOCK_FILTER.add(filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 70, 20));
+
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/search_icon.png"))); // NOI18N
+        STOCK_FILTER.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+
+        jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        STOCK_FILTER.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
         JTab.addTab("STOCK_FILTER", STOCK_FILTER);
 
@@ -737,7 +781,15 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         SHOP_GENSET.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 190, 50));
-        SHOP_GENSET.add(Shop_genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 80, 20));
+        SHOP_GENSET.add(Shop_genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 30, 80, 20));
+
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/search_icon.png"))); // NOI18N
+        SHOP_GENSET.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+
+        jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        SHOP_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
         JTab.addTab("SHOP_GENSET", SHOP_GENSET);
 
@@ -821,9 +873,33 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         SHOP_FILTER.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 190, 50));
-        SHOP_FILTER.add(Shop_filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 80, 20));
+        SHOP_FILTER.add(Shop_filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 80, 20));
+
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        SHOP_FILTER.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/search_icon.png"))); // NOI18N
+        SHOP_FILTER.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
         JTab.addTab("SHOP_FILTER", SHOP_FILTER);
+
+        REPORT.setkEndColor(new java.awt.Color(153, 204, 255));
+        REPORT.setkStartColor(new java.awt.Color(0, 255, 153));
+
+        javax.swing.GroupLayout REPORTLayout = new javax.swing.GroupLayout(REPORT);
+        REPORT.setLayout(REPORTLayout);
+        REPORTLayout.setHorizontalGroup(
+            REPORTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1125, Short.MAX_VALUE)
+        );
+        REPORTLayout.setVerticalGroup(
+            REPORTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 622, Short.MAX_VALUE)
+        );
+
+        JTab.addTab("REPORTS", REPORT);
 
         getContentPane().add(JTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 1130, 650));
 
@@ -1138,6 +1214,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JTabbedPane JTab;
     private javax.swing.JLabel LOGOUT_LABEL1;
     private javax.swing.JPanel LOGOUT_PANEL;
+    private keeptoo.KGradientPanel REPORT;
     private javax.swing.JLabel REPORT_LABEL;
     private javax.swing.JPanel REPORT_PANEL;
     private keeptoo.KGradientPanel SHOP;
@@ -1171,10 +1248,14 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1193,6 +1274,10 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     public static javax.swing.JLabel stock_supplier_id;
     public static javax.swing.JPanel suppliergenset;
     public static javax.swing.JLabel update_filter;

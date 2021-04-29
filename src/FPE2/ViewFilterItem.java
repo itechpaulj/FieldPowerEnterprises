@@ -30,10 +30,6 @@ public class ViewFilterItem extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
         jPanel5 = new javax.swing.JPanel();
         display = new javax.swing.JLabel();
-        af_brand = new javax.swing.JTextField();
-        af_name = new javax.swing.JTextField();
-        af_des = new javax.swing.JTextField();
-        af_quantity = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -41,16 +37,20 @@ public class ViewFilterItem extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
         af_pic = new javax.swing.JLabel();
-        af_date = new datechooser.beans.DateChooserCombo();
         jLabel10 = new javax.swing.JLabel();
-        af_price = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         filterBtn = new javax.swing.JLabel();
-        types = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        id1 = new javax.swing.JLabel();
+        id2 = new javax.swing.JLabel();
+        id3 = new javax.swing.JLabel();
+        id4 = new javax.swing.JLabel();
+        id5 = new javax.swing.JLabel();
+        id6 = new javax.swing.JLabel();
+        id7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -82,22 +82,6 @@ public class ViewFilterItem extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 100));
 
-        af_brand.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        af_brand.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(af_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 290, 31));
-
-        af_name.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        af_name.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(af_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 290, 31));
-
-        af_des.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        af_des.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(af_des, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 290, 31));
-
-        af_quantity.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        af_quantity.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(af_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 290, 31));
-
         jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel20.setText("QUANTITY");
         jLabel20.setAlignmentY(1.0F);
@@ -124,9 +108,9 @@ public class ViewFilterItem extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 120, 26));
 
         id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        id.setText("NONE");
         id.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 290, 26));
+        id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 230, 26));
 
         af_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         af_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -138,19 +122,12 @@ public class ViewFilterItem extends javax.swing.JFrame {
                 af_picMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(af_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 220, 200));
-
-        af_date.setCalendarPreferredSize(new java.awt.Dimension(400, 200));
-        KG2_ADD_STOCK_GENSET.add(af_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 290, 30));
+        KG2_ADD_STOCK_GENSET.add(af_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 240, 220, 200));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel10.setText("PRICE");
         jLabel10.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 120, 26));
-
-        af_price.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        af_price.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(af_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 290, 31));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -176,7 +153,7 @@ public class ViewFilterItem extends javax.swing.JFrame {
 
         filterBtn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         filterBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        filterBtn.setText("NEXT");
+        filterBtn.setText("ADD TO CART");
         filterBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 filterBtnMouseClicked(evt);
@@ -196,10 +173,6 @@ public class ViewFilterItem extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 600, 210, 50));
 
-        types.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        types.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS", "OTHER" }));
-        KG2_ADD_STOCK_GENSET.add(types, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 290, 30));
-
         jLabel13.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel13.setText("DATE");
         jLabel13.setAlignmentY(1.0F);
@@ -209,6 +182,41 @@ public class ViewFilterItem extends javax.swing.JFrame {
         jLabel14.setText("ID");
         jLabel14.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 120, 26));
+
+        id1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        id1.setAlignmentY(1.0F);
+        id1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 230, 26));
+
+        id2.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        id2.setAlignmentY(1.0F);
+        id2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(id2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 230, 26));
+
+        id3.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        id3.setAlignmentY(1.0F);
+        id3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(id3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 230, 26));
+
+        id4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        id4.setAlignmentY(1.0F);
+        id4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(id4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 230, 26));
+
+        id5.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        id5.setAlignmentY(1.0F);
+        id5.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(id5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 500, 230, 26));
+
+        id6.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        id6.setAlignmentY(1.0F);
+        id6.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(id6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 230, 26));
+
+        id7.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        id7.setAlignmentY(1.0F);
+        id7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(id7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 230, 26));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 710));
 
@@ -287,16 +295,17 @@ public class ViewFilterItem extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
-    private javax.swing.JTextField af_brand;
-    private datechooser.beans.DateChooserCombo af_date;
-    private javax.swing.JTextField af_des;
-    private javax.swing.JTextField af_name;
     public static javax.swing.JLabel af_pic;
-    private javax.swing.JTextField af_price;
-    private javax.swing.JTextField af_quantity;
     public static javax.swing.JLabel display;
     public static javax.swing.JLabel filterBtn;
     public static javax.swing.JLabel id;
+    public static javax.swing.JLabel id1;
+    public static javax.swing.JLabel id2;
+    public static javax.swing.JLabel id3;
+    public static javax.swing.JLabel id4;
+    public static javax.swing.JLabel id5;
+    public static javax.swing.JLabel id6;
+    public static javax.swing.JLabel id7;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -309,6 +318,5 @@ public class ViewFilterItem extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JComboBox<String> types;
     // End of variables declaration//GEN-END:variables
 }

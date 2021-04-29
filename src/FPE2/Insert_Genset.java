@@ -459,7 +459,7 @@ public class Insert_Genset extends javax.swing.JFrame {
                     }
                     
                     
-
+                    as_pic.setText(null);
                     Insert_Genset.as_pic.setText(null);
                     ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(as_pic.getWidth(), as_pic.getHeight(),Image.SCALE_SMOOTH) );
                     as_pic.setIcon(imageicon);
