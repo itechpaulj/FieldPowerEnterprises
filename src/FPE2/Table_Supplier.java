@@ -208,7 +208,8 @@ public class Table_Supplier extends javax.swing.JFrame {
         /*
           comparedTo variable
             1 - no effect but we UPDATE supplier
-            2 - Exist Supplier but new genset Product can't add new Supplier
+            2 - Exist Supplier but new genset Product can't add new Supplier in GENSET
+            3 - Exist Supplier but new genset Product can't add new Supplier in FILTER
         */
         
         if(comparedTo.equals("2")){
@@ -216,7 +217,15 @@ public class Table_Supplier extends javax.swing.JFrame {
             is.sup_id.setText(supplier_id.getText());
             is.display.setText("EXIST SUPPLIER");
             is.setVisible(true);
-            is.AddSup.setText("4"); //exist supplier
+            is.AddSup.setText("4"); //exist supplier GENSET
+            dispose();
+        }
+        else if(comparedTo.equals("3")){
+            InsertSupplier is = new InsertSupplier();
+            is.sup_id.setText(supplier_id.getText());
+            is.display.setText("EXIST SUPPLIER");
+            is.setVisible(true);
+            is.AddSup.setText("5"); //exist supplier FILTER
             dispose();
         }
 
@@ -264,7 +273,7 @@ public class Table_Supplier extends javax.swing.JFrame {
           InsertSupplier is = new InsertSupplier();
           is.sup_id.setText(supplier_id.getText());
           is.display.setText("UPDATE SUPPLIER");
-          is.AddSup.setText("5"); // update supplier
+          is.AddSup.setText("6"); // update supplier
           is.supplier_list.setVisible(false);
           is.setVisible(true);
 

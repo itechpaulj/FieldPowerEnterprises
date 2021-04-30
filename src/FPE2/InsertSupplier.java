@@ -53,9 +53,9 @@ public class InsertSupplier extends javax.swing.JFrame {
         save_supplier = new javax.swing.JPanel();
         Save_Btn = new javax.swing.JLabel();
         AddSup = new javax.swing.JLabel();
-        customer = new javax.swing.JLabel();
+        sup_gen_fil = new javax.swing.JLabel();
         supplier_list = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
+        sup_listed = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         display = new javax.swing.JLabel();
 
@@ -164,16 +164,16 @@ public class InsertSupplier extends javax.swing.JFrame {
         AddSup.setText("1");
         kGradientPanel5.add(AddSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 110, 40));
 
-        customer.setText("1");
-        kGradientPanel5.add(customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 110, 40));
+        sup_gen_fil.setText("1");
+        kGradientPanel5.add(sup_gen_fil, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 110, 40));
 
-        jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("SUPPLIER LIST");
-        jLabel20.setAlignmentY(1.0F);
-        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+        sup_listed.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        sup_listed.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sup_listed.setText("SUPPLIER LIST");
+        sup_listed.setAlignmentY(1.0F);
+        sup_listed.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel20MouseClicked(evt);
+                sup_listedMouseClicked(evt);
             }
         });
 
@@ -183,14 +183,14 @@ public class InsertSupplier extends javax.swing.JFrame {
             supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 280, Short.MAX_VALUE)
             .addGroup(supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
+                .addComponent(sup_listed, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
         );
         supplier_listLayout.setVerticalGroup(
             supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 30, Short.MAX_VALUE)
             .addGroup(supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(supplier_listLayout.createSequentialGroup()
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sup_listed, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 1, Short.MAX_VALUE)))
         );
 
@@ -206,12 +206,12 @@ public class InsertSupplier extends javax.swing.JFrame {
         display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         display.setText("ADD SUPPLIER");
         display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 displayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel1.add(display, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 11, 450, 70));
@@ -244,8 +244,9 @@ public class InsertSupplier extends javax.swing.JFrame {
             1 - ADD supplier
             2 - ADD supplier / Genset
             3 - ADD supplier / Filter Parts
-            4 - Only add Genset Product but Can't add new Supplier because Exist Supplier
-            5 - Update supplier
+            4 - Only add Genset Product but Can't add new Supplier because Exist Supplier (GENSET)
+            5 - Only add Genset Product but Can't add new Supplier because Exist Supplier (FILTER/ PART / OTHER)
+            6 - Update supplier
         */
 
         if(comparedTo.equals("1") && Banner.equals("ADD SUPPLIER")){
@@ -350,45 +351,80 @@ public class InsertSupplier extends javax.swing.JFrame {
         }
         else if(comparedTo.equals("4") && Banner.equals("EXIST SUPPLIER")){
             // exist supplier but can add only genset
+            // this genset exist supplier
                 /*
                 basically if global varible result Java null error because already get the value
                 */
             // insert genset
 
 
-            String date1 = Insert_Genset.as_date.getText().toUpperCase(); 
-            String brand1 = Insert_Genset.as_brand.getText().toUpperCase(); 
-            String phasing1 = Insert_Genset.as_phasing.getText().toUpperCase(); 
-            String unit_type1 = Insert_Genset.as_unitType.getText().toUpperCase(); 
-            String dimen1 = Insert_Genset.as_dimension.getText().toUpperCase();
-            String kva1 = Insert_Genset.as_kva.getText().toUpperCase();
-            String price1 = Insert_Genset.as_price.getText().toUpperCase(); 
-            String model1 = Insert_Genset.as_model.getText().toUpperCase(); 
-            String fuel_tank1 = Insert_Genset.as_fuel_tank.getText().toUpperCase(); 
-            String body_type1 = Insert_Genset.as_body_parts.getText().toUpperCase();
+            String date2 = Insert_Genset.as_date.getText().toUpperCase(); 
+            String brand2 = Insert_Genset.as_brand.getText().toUpperCase(); 
+            String phasing2 = Insert_Genset.as_phasing.getText().toUpperCase(); 
+            String unit_type2 = Insert_Genset.as_unitType.getText().toUpperCase(); 
+            String dimen2 = Insert_Genset.as_dimension.getText().toUpperCase();
+            String kva2 = Insert_Genset.as_kva.getText().toUpperCase();
+            String price2 = Insert_Genset.as_price.getText().toUpperCase(); 
+            String model2 = Insert_Genset.as_model.getText().toUpperCase(); 
+            String fuel_tank2 = Insert_Genset.as_fuel_tank.getText().toUpperCase(); 
+            String body_type2 = Insert_Genset.as_body_parts.getText().toUpperCase();
             String a = Insert_Genset.eng_sn.getSelectedItem().toString(); 
             String b = Insert_Genset.alt_sn.getSelectedItem().toString(); 
-            String engines_sn1 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" "+ a; 
-            String alters1_sn = Insert_Genset.as_alternator_sn.getText().toUpperCase() +" " + b;
+            String engines_sn2 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" "+ a; 
+            String alters2_sn = Insert_Genset.as_alternator_sn.getText().toUpperCase() +" " + b;
             String id1 = Insert_Genset.as_id.getText().toUpperCase();
             // insert genset
             String imgValidate = Insert_Genset.as_pic.getText();
             //JOptionPane.showMessageDialog(null, "Only new insert genset but supplier is Exist1","",JOptionPane.INFORMATION_MESSAGE);
-            if(date1.equals("") || brand1.equals("") || phasing1.equals("") || unit_type1.equals("") || dimen1.equals("") || kva1.equals("") || price1.equals("") || model1.equals("") || fuel_tank1.equals("") || a.equals("SELECT") || b.equals("SELECT") || engines_sn1.equals("") || alters1_sn.equals("")  ){
+            if(date2.equals("") || brand2.equals("") || phasing2.equals("") || unit_type2.equals("") || dimen2.equals("") || kva2.equals("") || price2.equals("") || model2.equals("") || fuel_tank2.equals("") || a.equals("SELECT") || b.equals("SELECT") || engines_sn2.equals("") || alters2_sn.equals("")  ){
                 JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input! (GENSET)","",JOptionPane.ERROR_MESSAGE);
             }            
             else if(imgValidate.equals(null) || imgValidate.equals("2x2")){
             JOptionPane.showMessageDialog(null, "Empty Image!","",JOptionPane.ERROR_MESSAGE);
             }else{
-                    if(!Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, Insert_Genset.person_image, s_name))
+                    if(!Class_Stock.AddStock(date2, brand2, phasing2, unit_type2, dimen2, kva2, price2, model2, fuel_tank2, body_type2, engines_sn2, alters2_sn, Insert_Genset.person_image, s_name))
                    {
                        JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
                    }   
             }
         }
+        else if(comparedTo.equals("5") && Banner.equals("EXIST SUPPLIER")){
+            // exist supplier but can add only genset
+            // this filter part exist supplier
+                /*
+                basically if global varible result Java null error because already get the value
+                */
+            // insert filter
+            String date2 = Insert_Filter.af_date.getText().toUpperCase();
+            String brand2 = Insert_Filter.af_brand.getText().toUpperCase();
+            String name2 = Insert_Filter.af_name.getText().toUpperCase();
+            String des2 = Insert_Filter.af_des.getText().toUpperCase();
+            String quantity2 = Insert_Filter.af_quantity.getText().toUpperCase();
+            String price2 = Insert_Filter.af_price.getText().toUpperCase();
+            String types2 = Insert_Filter.types.getSelectedItem().toString();
+
+            String imgValidate = Insert_Filter.af_pic.getText();
+            if(date2.equals("")|| brand2.equals("") || name2.equals("") || des2.equals("") || quantity2.equals("") || price2.equals("") || types2.equals("SELECT") ){
+             JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input!(FILTER / PART / OTHER)","",JOptionPane.ERROR_MESSAGE);   
+            }
+            else if(s_name.equals("") || address.equals("") || email.equals("") || contact.equals("") ){
+                JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input! (SUPPLIER)","",JOptionPane.ERROR_MESSAGE);
+            }
+            else if(imgValidate.equals(null) || imgValidate.equals("2x2")){
+            JOptionPane.showMessageDialog(null, "Empty Image!","",JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                if(!Class_Filter.AddFilter(date2, name2, des2, brand2, types2, price2, quantity2, Insert_Filter.person_imageFilter,s_name)){
+                    Class_table ct = new Class_table();
+                    ct.Show_Stock_Filter_Table();
+                    JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
+                }
+            }            
+ 
+        }
         else {
             //UPDATE supplier
-            if(comparedTo.equals("5") && Banner.equals("UPDATE SUPPLIER")){
+            if(comparedTo.equals("6") && Banner.equals("UPDATE SUPPLIER")){
                 //
                 if(!Class_Supplier.UpdateSupplier(s_name, address, contact, email, id)){
                     Class_table ct = new Class_table();
@@ -406,10 +442,12 @@ public class InsertSupplier extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Save_BtnMouseClicked
 
-    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+    private void sup_listedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listedMouseClicked
         Table_Supplier tbs = new Table_Supplier();
-
-        Table_Supplier.sup_list.setText("2"); // exist supplier
+        
+        String comparedTo = AddSup.getText();
+        if(comparedTo.equals("2")){
+        Table_Supplier.sup_list.setText("2"); // exist supplier in genset
         tbs.add_panel_supplier.setVisible(false);
         tbs.update_panel_supplier.setVisible(false);
         tbs.delete_panel_supplier.setVisible(false);
@@ -417,8 +455,21 @@ public class InsertSupplier extends javax.swing.JFrame {
         tbs.setVisible(true);
         dispose();
         
+        }
         
-    }//GEN-LAST:event_jLabel20MouseClicked
+        else if(comparedTo.equals("3")){
+        Table_Supplier.sup_list.setText("3"); // exist supplier in filter
+        tbs.add_panel_supplier.setVisible(false);
+        tbs.update_panel_supplier.setVisible(false);
+        tbs.delete_panel_supplier.setVisible(false);
+        tbs.displays.setText("EXIST SUPPLIER LIST");
+        tbs.setVisible(true);
+        dispose();
+        
+        }
+        
+        
+    }//GEN-LAST:event_sup_listedMouseClicked
 
     private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
         String Banner = display.getText();
@@ -509,7 +560,6 @@ public class InsertSupplier extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel AddSup;
     public static javax.swing.JLabel Save_Btn;
-    public static javax.swing.JLabel customer;
     public static javax.swing.JLabel display;
     public static javax.swing.JLabel id_supplier;
     private javax.swing.JLabel jLabel16;
@@ -517,7 +567,6 @@ public class InsertSupplier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private keeptoo.KGradientPanel kGradientPanel5;
@@ -525,7 +574,9 @@ public class InsertSupplier extends javax.swing.JFrame {
     public static javax.swing.JTextField sup_address;
     public static javax.swing.JTextField sup_contact;
     public static javax.swing.JTextField sup_email;
+    public static javax.swing.JLabel sup_gen_fil;
     public static javax.swing.JLabel sup_id;
+    private javax.swing.JLabel sup_listed;
     public static javax.swing.JTextField sup_name;
     public static javax.swing.JPanel supplier_list;
     // End of variables declaration//GEN-END:variables
