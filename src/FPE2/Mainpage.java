@@ -124,7 +124,7 @@ public class Mainpage extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/logos1.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 190, 190));
 
-        HEADER.setBackground(new java.awt.Color(3, 33, 73));
+        HEADER.setBackground(new java.awt.Color(2, 71, 94));
         HEADER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HOME_MENU.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -135,14 +135,18 @@ public class Mainpage extends javax.swing.JFrame {
         HOME_VIEW_PRODUCT.setForeground(new java.awt.Color(255, 255, 255));
         HEADER.add(HOME_VIEW_PRODUCT, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 330, 70));
 
-        getContentPane().add(HEADER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 110));
+        getContentPane().add(HEADER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 120));
 
-        DRAWER.setBackground(new java.awt.Color(3, 33, 73));
+        DRAWER.setBackground(new java.awt.Color(2, 71, 94));
         DRAWER.setPreferredSize(new java.awt.Dimension(230, 775));
         DRAWER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        HOME_PANEL.setBackground(new java.awt.Color(0, 117, 128));
+        HOME_PANEL.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(243, 246, 26)));
+
+        HOME_LABEL.setBackground(new java.awt.Color(253, 254, 255));
         HOME_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        HOME_LABEL.setForeground(new java.awt.Color(3, 33, 73));
+        HOME_LABEL.setForeground(new java.awt.Color(255, 255, 255));
         HOME_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HOME_LABEL.setText("HOME");
         HOME_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,17 +165,21 @@ public class Mainpage extends javax.swing.JFrame {
         HOME_PANEL.setLayout(HOME_PANELLayout);
         HOME_PANELLayout.setHorizontalGroup(
             HOME_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HOME_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(HOME_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         HOME_PANELLayout.setVerticalGroup(
             HOME_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(HOME_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addComponent(HOME_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
 
         DRAWER.add(HOME_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 190, 70));
 
+        LOGOUT_PANEL.setBackground(new java.awt.Color(0, 117, 128));
+        LOGOUT_PANEL.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(243, 246, 26)));
+
+        LOGOUT_LABEL1.setBackground(new java.awt.Color(253, 254, 255));
         LOGOUT_LABEL1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        LOGOUT_LABEL1.setForeground(new java.awt.Color(3, 33, 73));
+        LOGOUT_LABEL1.setForeground(new java.awt.Color(255, 255, 255));
         LOGOUT_LABEL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LOGOUT_LABEL1.setText("LOGOUT");
         LOGOUT_LABEL1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -187,17 +195,21 @@ public class Mainpage extends javax.swing.JFrame {
         LOGOUT_PANEL.setLayout(LOGOUT_PANELLayout);
         LOGOUT_PANELLayout.setHorizontalGroup(
             LOGOUT_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LOGOUT_LABEL1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(LOGOUT_LABEL1, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         LOGOUT_PANELLayout.setVerticalGroup(
             LOGOUT_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LOGOUT_LABEL1, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addComponent(LOGOUT_LABEL1, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
 
         DRAWER.add(LOGOUT_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 190, 70));
 
+        STOCK_PANEL.setBackground(new java.awt.Color(0, 117, 128));
+        STOCK_PANEL.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(243, 246, 26)));
+
+        STOCK_LABEL.setBackground(new java.awt.Color(253, 254, 255));
         STOCK_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        STOCK_LABEL.setForeground(new java.awt.Color(3, 33, 73));
+        STOCK_LABEL.setForeground(new java.awt.Color(255, 255, 255));
         STOCK_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         STOCK_LABEL.setText("STOCK");
         STOCK_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -216,17 +228,21 @@ public class Mainpage extends javax.swing.JFrame {
         STOCK_PANEL.setLayout(STOCK_PANELLayout);
         STOCK_PANELLayout.setHorizontalGroup(
             STOCK_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(STOCK_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(STOCK_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         STOCK_PANELLayout.setVerticalGroup(
             STOCK_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(STOCK_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addComponent(STOCK_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
 
         DRAWER.add(STOCK_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 190, 70));
 
+        SHOP_PANEL.setBackground(new java.awt.Color(0, 117, 128));
+        SHOP_PANEL.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(243, 246, 26)));
+
+        SHOP_LABEL.setBackground(new java.awt.Color(253, 254, 255));
         SHOP_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        SHOP_LABEL.setForeground(new java.awt.Color(3, 33, 73));
+        SHOP_LABEL.setForeground(new java.awt.Color(255, 255, 255));
         SHOP_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SHOP_LABEL.setText("SHOP");
         SHOP_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -245,17 +261,21 @@ public class Mainpage extends javax.swing.JFrame {
         SHOP_PANEL.setLayout(SHOP_PANELLayout);
         SHOP_PANELLayout.setHorizontalGroup(
             SHOP_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SHOP_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(SHOP_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         SHOP_PANELLayout.setVerticalGroup(
             SHOP_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SHOP_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addComponent(SHOP_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
 
         DRAWER.add(SHOP_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 190, 70));
 
+        REPORT_PANEL.setBackground(new java.awt.Color(0, 117, 128));
+        REPORT_PANEL.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(243, 246, 26)));
+
+        REPORT_LABEL.setBackground(new java.awt.Color(253, 254, 255));
         REPORT_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        REPORT_LABEL.setForeground(new java.awt.Color(3, 33, 73));
+        REPORT_LABEL.setForeground(new java.awt.Color(255, 255, 255));
         REPORT_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         REPORT_LABEL.setText("REPORT");
         REPORT_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -274,20 +294,21 @@ public class Mainpage extends javax.swing.JFrame {
         REPORT_PANEL.setLayout(REPORT_PANELLayout);
         REPORT_PANELLayout.setHorizontalGroup(
             REPORT_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(REPORT_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(REPORT_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         REPORT_PANELLayout.setVerticalGroup(
             REPORT_PANELLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(REPORT_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+            .addComponent(REPORT_LABEL, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
 
         DRAWER.add(REPORT_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 190, 70));
 
         getContentPane().add(DRAWER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 725));
 
-        HOME.setkEndColor(new java.awt.Color(153, 204, 255));
+        HOME.setBackground(new java.awt.Color(0, 79, 153));
+        HOME.setkEndColor(new java.awt.Color(0, 230, 184));
         HOME.setkGradientFocus(700);
-        HOME.setkStartColor(new java.awt.Color(0, 255, 153));
+        HOME.setkStartColor(new java.awt.Color(0, 230, 184));
         HOME.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         fpe_home.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
@@ -297,9 +318,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("HOME", HOME);
 
-        STOCK.setkEndColor(new java.awt.Color(153, 204, 255));
+        STOCK.setkEndColor(new java.awt.Color(0, 230, 184));
         STOCK.setkGradientFocus(700);
-        STOCK.setkStartColor(new java.awt.Color(0, 255, 153));
+        STOCK.setkStartColor(new java.awt.Color(0, 230, 184));
         STOCK.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
@@ -326,12 +347,15 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("STOCK", STOCK);
 
-        STOCK_GENSET.setkEndColor(new java.awt.Color(153, 204, 255));
+        STOCK_GENSET.setkEndColor(new java.awt.Color(0, 230, 184));
         STOCK_GENSET.setkGradientFocus(700);
-        STOCK_GENSET.setkStartColor(new java.awt.Color(0, 255, 153));
+        STOCK_GENSET.setkStartColor(new java.awt.Color(0, 230, 184));
         STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Add.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        add_genset.setBackground(new java.awt.Color(51, 204, 51));
+
+        Add.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        Add.setForeground(new java.awt.Color(13, 13, 13));
         Add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Add.setText("ADD");
         Add.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -344,7 +368,9 @@ public class Mainpage extends javax.swing.JFrame {
         add_genset.setLayout(add_gensetLayout);
         add_gensetLayout.setHorizontalGroup(
             add_gensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Add, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(add_gensetLayout.createSequentialGroup()
+                .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 54, Short.MAX_VALUE))
         );
         add_gensetLayout.setVerticalGroup(
             add_gensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -353,7 +379,10 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_GENSET.add(add_genset, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 190, 50));
 
-        Update.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        update_genset.setBackground(new java.awt.Color(0, 153, 255));
+
+        Update.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        Update.setForeground(new java.awt.Color(13, 13, 13));
         Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Update.setText("UPDATE");
         Update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -366,7 +395,9 @@ public class Mainpage extends javax.swing.JFrame {
         update_genset.setLayout(update_gensetLayout);
         update_gensetLayout.setHorizontalGroup(
             update_gensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Update, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(update_gensetLayout.createSequentialGroup()
+                .addComponent(Update, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 88, Short.MAX_VALUE))
         );
         update_gensetLayout.setVerticalGroup(
             update_gensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,7 +406,10 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_GENSET.add(update_genset, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 190, 50));
 
-        Delete.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        delete_genset.setBackground(new java.awt.Color(255, 77, 77));
+
+        Delete.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        Delete.setForeground(new java.awt.Color(13, 13, 13));
         Delete.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Delete.setText("DELETE");
         Delete.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -388,7 +422,9 @@ public class Mainpage extends javax.swing.JFrame {
         delete_genset.setLayout(delete_gensetLayout);
         delete_gensetLayout.setHorizontalGroup(
             delete_gensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(delete_gensetLayout.createSequentialGroup()
+                .addComponent(Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 32, Short.MAX_VALUE))
         );
         delete_gensetLayout.setVerticalGroup(
             delete_gensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,7 +433,10 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_GENSET.add(delete_genset, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 190, 50));
 
-        Supplier.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        suppliergenset.setBackground(new java.awt.Color(116, 139, 116));
+
+        Supplier.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        Supplier.setForeground(new java.awt.Color(13, 13, 13));
         Supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Supplier.setText("SUPPLIER");
         Supplier.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -410,7 +449,9 @@ public class Mainpage extends javax.swing.JFrame {
         suppliergenset.setLayout(suppliergensetLayout);
         suppliergensetLayout.setHorizontalGroup(
             suppliergensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(suppliergensetLayout.createSequentialGroup()
+                .addComponent(Supplier, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 34, Short.MAX_VALUE))
         );
         suppliergensetLayout.setVerticalGroup(
             suppliergensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -419,7 +460,10 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_GENSET.add(suppliergenset, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 190, 50));
 
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        back_genset.setBackground(new java.awt.Color(0, 117, 128));
+
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(13, 13, 13));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("BACK");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -432,7 +476,9 @@ public class Mainpage extends javax.swing.JFrame {
         back_genset.setLayout(back_gensetLayout);
         back_gensetLayout.setHorizontalGroup(
             back_gensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, back_gensetLayout.createSequentialGroup()
+                .addGap(0, 63, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         back_gensetLayout.setVerticalGroup(
             back_gensetLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,7 +505,7 @@ public class Mainpage extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(Stock_Genset_Table);
 
-        STOCK_GENSET.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1050, 420));
+        STOCK_GENSET.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 1060, 420));
         STOCK_GENSET.add(Genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 150, 30));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -472,9 +518,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("STOCK_GENSET", STOCK_GENSET);
 
-        STOCK_FILTER.setkEndColor(new java.awt.Color(153, 204, 255));
+        STOCK_FILTER.setkEndColor(new java.awt.Color(0, 230, 184));
         STOCK_FILTER.setkGradientFocus(700);
-        STOCK_FILTER.setkStartColor(new java.awt.Color(0, 255, 153));
+        STOCK_FILTER.setkStartColor(new java.awt.Color(0, 230, 184));
         STOCK_FILTER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Stock_Filter_Table.setModel(new javax.swing.table.DefaultTableModel(
@@ -497,9 +543,10 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_FILTER.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1050, 420));
 
-        jPanel18.setBackground(new java.awt.Color(255, 148, 77));
+        jPanel18.setBackground(new java.awt.Color(0, 117, 128));
+        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
 
-        backfilter.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        backfilter.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         backfilter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         backfilter.setText("BACK");
         backfilter.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -519,19 +566,20 @@ public class Mainpage extends javax.swing.JFrame {
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addComponent(backfilter, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 36, Short.MAX_VALUE))
+                .addGap(0, 34, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(backfilter, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(backfilter, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         STOCK_FILTER.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 530, 190, 50));
 
-        jPanel19.setBackground(new java.awt.Color(166, 77, 255));
+        jPanel19.setBackground(new java.awt.Color(116, 139, 116));
+        jPanel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
 
         view_supplier.setBackground(new java.awt.Color(166, 77, 255));
-        view_supplier.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        view_supplier.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         view_supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         view_supplier.setText("SUPPLIER");
         view_supplier.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -551,18 +599,19 @@ public class Mainpage extends javax.swing.JFrame {
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addComponent(view_supplier, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 56, Short.MAX_VALUE))
+                .addGap(0, 54, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(view_supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(view_supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         STOCK_FILTER.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 190, 50));
 
         jPanel20.setBackground(new java.awt.Color(255, 77, 77));
+        jPanel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
 
-        delete_filter.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        delete_filter.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         delete_filter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         delete_filter.setText("DELETE");
         delete_filter.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -580,18 +629,21 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(delete_filter, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addComponent(delete_filter, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(delete_filter, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(delete_filter, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         STOCK_FILTER.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 190, 50));
 
-        jPanel21.setBackground(new java.awt.Color(77, 77, 255));
+        jPanel21.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
 
-        update_filter.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        update_filter.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         update_filter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         update_filter.setText("UPDATE");
         update_filter.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -611,18 +663,19 @@ public class Mainpage extends javax.swing.JFrame {
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addComponent(update_filter, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 37, Short.MAX_VALUE))
+                .addGap(0, 35, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(update_filter, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(update_filter, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         STOCK_FILTER.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 190, 50));
 
-        jPanel22.setBackground(new java.awt.Color(77, 255, 77));
+        jPanel22.setBackground(new java.awt.Color(51, 204, 51));
+        jPanel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
 
-        add_filter.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        add_filter.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         add_filter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         add_filter.setText("ADD");
         add_filter.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -642,11 +695,11 @@ public class Mainpage extends javax.swing.JFrame {
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addComponent(add_filter, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 51, Short.MAX_VALUE))
+                .addGap(0, 49, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(add_filter, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(add_filter, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         STOCK_FILTER.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 190, 50));
@@ -662,9 +715,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("STOCK_FILTER", STOCK_FILTER);
 
-        SHOP.setkEndColor(new java.awt.Color(153, 204, 255));
+        SHOP.setkEndColor(new java.awt.Color(0, 230, 184));
         SHOP.setkGradientFocus(700);
-        SHOP.setkStartColor(new java.awt.Color(0, 255, 153));
+        SHOP.setkStartColor(new java.awt.Color(0, 230, 184));
         SHOP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
@@ -691,9 +744,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("SHOP", SHOP);
 
-        SHOP_GENSET.setkEndColor(new java.awt.Color(153, 204, 255));
+        SHOP_GENSET.setkEndColor(new java.awt.Color(0, 230, 184));
         SHOP_GENSET.setkGradientFocus(700);
-        SHOP_GENSET.setkStartColor(new java.awt.Color(0, 255, 153));
+        SHOP_GENSET.setkStartColor(new java.awt.Color(0, 230, 184));
         SHOP_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Shop_Genset_Table.setModel(new javax.swing.table.DefaultTableModel(
@@ -716,7 +769,10 @@ public class Mainpage extends javax.swing.JFrame {
 
         SHOP_GENSET.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1050, 420));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel25.setBackground(new java.awt.Color(0, 117, 128));
+        jPanel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
+
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("BACK");
         jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -729,16 +785,19 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel25.setLayout(jPanel25Layout);
         jPanel25Layout.setHorizontalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         SHOP_GENSET.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 190, 50));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel26.setBackground(new java.awt.Color(251, 173, 55));
+        jPanel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
+
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("VIEW");
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -751,16 +810,19 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         SHOP_GENSET.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 190, 50));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel27.setBackground(new java.awt.Color(255, 153, 187));
+        jPanel27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
+
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("CUSTOMER");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -773,11 +835,11 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel27.setLayout(jPanel27Layout);
         jPanel27Layout.setHorizontalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         jPanel27Layout.setVerticalGroup(
             jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         SHOP_GENSET.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 190, 50));
@@ -793,9 +855,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("SHOP_GENSET", SHOP_GENSET);
 
-        SHOP_FILTER.setkEndColor(new java.awt.Color(153, 204, 255));
+        SHOP_FILTER.setkEndColor(new java.awt.Color(0, 230, 184));
         SHOP_FILTER.setkGradientFocus(700);
-        SHOP_FILTER.setkStartColor(new java.awt.Color(0, 255, 153));
+        SHOP_FILTER.setkStartColor(new java.awt.Color(0, 230, 184));
         SHOP_FILTER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Shop_Filter_Table.setModel(new javax.swing.table.DefaultTableModel(
@@ -813,7 +875,10 @@ public class Mainpage extends javax.swing.JFrame {
 
         SHOP_FILTER.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1050, 420));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel30.setBackground(new java.awt.Color(0, 117, 128));
+        jPanel30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
+
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("BACK");
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -826,16 +891,19 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         SHOP_FILTER.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 190, 50));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel31.setBackground(new java.awt.Color(251, 173, 55));
+        jPanel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
+
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("VIEW");
 
@@ -843,16 +911,19 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel31.setLayout(jPanel31Layout);
         jPanel31Layout.setHorizontalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         jPanel31Layout.setVerticalGroup(
             jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         SHOP_FILTER.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 190, 50));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jPanel32.setBackground(new java.awt.Color(255, 153, 187));
+        jPanel32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(242, 246, 26)));
+
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("CUSTOMER");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -865,11 +936,11 @@ public class Mainpage extends javax.swing.JFrame {
         jPanel32.setLayout(jPanel32Layout);
         jPanel32Layout.setHorizontalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
         );
         jPanel32Layout.setVerticalGroup(
             jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         SHOP_FILTER.add(jPanel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 190, 50));
@@ -885,8 +956,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("SHOP_FILTER", SHOP_FILTER);
 
-        REPORT.setkEndColor(new java.awt.Color(153, 204, 255));
-        REPORT.setkStartColor(new java.awt.Color(0, 255, 153));
+        REPORT.setkEndColor(new java.awt.Color(0, 230, 184));
+        REPORT.setkStartColor(new java.awt.Color(0, 230, 184));
 
         javax.swing.GroupLayout REPORTLayout = new javax.swing.GroupLayout(REPORT);
         REPORT.setLayout(REPORTLayout);
@@ -896,12 +967,12 @@ public class Mainpage extends javax.swing.JFrame {
         );
         REPORTLayout.setVerticalGroup(
             REPORTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 622, Short.MAX_VALUE)
+            .addGap(0, 607, Short.MAX_VALUE)
         );
 
         JTab.addTab("REPORTS", REPORT);
 
-        getContentPane().add(JTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 1130, 650));
+        getContentPane().add(JTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 1130, 635));
 
         pack();
         setLocationRelativeTo(null);
@@ -909,54 +980,54 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void HOME_LABELMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_LABELMouseEntered
        HOME_LABEL.setForeground(new Color(255,255,255));
-       HOME_PANEL.setBackground(new Color(0,255,153));
+       HOME_PANEL.setBackground(new Color(26, 144, 255));
     }//GEN-LAST:event_HOME_LABELMouseEntered
 
     private void HOME_LABELMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_LABELMouseExited
         // TODO add your handling code here:
-        HOME_LABEL.setForeground(new Color(3,33,73));
-       HOME_PANEL.setBackground(new Color(240,240,240));
+        HOME_LABEL.setForeground(new Color(255,255,255));
+       HOME_PANEL.setBackground(new Color(0, 117, 128));
     }//GEN-LAST:event_HOME_LABELMouseExited
 
     private void LOGOUT_LABEL1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOGOUT_LABEL1MouseEntered
        LOGOUT_LABEL1.setForeground(new Color(255,255,255));
-       LOGOUT_PANEL.setBackground(new Color(0,255,153));
+       LOGOUT_PANEL.setBackground(new Color(26, 144, 255));
     }//GEN-LAST:event_LOGOUT_LABEL1MouseEntered
 
     private void LOGOUT_LABEL1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOGOUT_LABEL1MouseExited
-        LOGOUT_LABEL1.setForeground(new Color(3,33,73));
-       LOGOUT_PANEL.setBackground(new Color(240,240,240));
+        LOGOUT_LABEL1.setForeground(new Color(255,255,255));
+       LOGOUT_PANEL.setBackground(new Color(0, 117, 128));
     }//GEN-LAST:event_LOGOUT_LABEL1MouseExited
 
     private void STOCK_LABELMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_STOCK_LABELMouseEntered
        STOCK_LABEL.setForeground(new Color(255,255,255));
-       STOCK_PANEL.setBackground(new Color(0,255,153));
+       STOCK_PANEL.setBackground(new Color(26, 144, 255));
     }//GEN-LAST:event_STOCK_LABELMouseEntered
 
     private void STOCK_LABELMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_STOCK_LABELMouseExited
-        STOCK_LABEL.setForeground(new Color(3,33,73));
-       STOCK_PANEL.setBackground(new Color(240,240,240));
+        STOCK_LABEL.setForeground(new Color(255,255,255));
+       STOCK_PANEL.setBackground(new Color(0, 117, 128));
     }//GEN-LAST:event_STOCK_LABELMouseExited
 
     private void SHOP_LABELMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHOP_LABELMouseEntered
         SHOP_LABEL.setForeground(new Color(255,255,255));
-       SHOP_PANEL.setBackground(new Color(0,255,153));
+       SHOP_PANEL.setBackground(new Color(26, 144, 255));
         
     }//GEN-LAST:event_SHOP_LABELMouseEntered
 
     private void SHOP_LABELMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHOP_LABELMouseExited
-     SHOP_LABEL.setForeground(new Color(3,33,73));
-       SHOP_PANEL.setBackground(new Color(240,240,240));
+       SHOP_LABEL.setForeground(new Color(255,255,255));
+       SHOP_PANEL.setBackground(new Color(0, 117, 128));
     }//GEN-LAST:event_SHOP_LABELMouseExited
 
     private void REPORT_LABELMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_REPORT_LABELMouseEntered
        REPORT_LABEL.setForeground(new Color(255,255,255));
-       REPORT_PANEL.setBackground(new Color(0,255,153));
+       REPORT_PANEL.setBackground(new Color(26, 144, 255));
     }//GEN-LAST:event_REPORT_LABELMouseEntered
 
     private void REPORT_LABELMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_REPORT_LABELMouseExited
-        REPORT_LABEL.setForeground(new Color(3,33,73));
-       REPORT_PANEL.setBackground(new Color(240,240,240));
+        REPORT_LABEL.setForeground(new Color(255,255,255));
+       REPORT_PANEL.setBackground(new Color(0, 117, 128));
     }//GEN-LAST:event_REPORT_LABELMouseExited
 
     private void HOME_LABELMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOME_LABELMouseClicked
@@ -985,6 +1056,7 @@ public class Mainpage extends javax.swing.JFrame {
       // HEADER MENU
         HOME_MENU.setText("  REPORT");
         HOME_VIEW_PRODUCT.setText(null);
+        JTab.setSelectedIndex(7);
     }//GEN-LAST:event_REPORT_LABELMouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked

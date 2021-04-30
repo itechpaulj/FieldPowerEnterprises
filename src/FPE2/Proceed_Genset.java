@@ -88,7 +88,7 @@ public class Proceed_Genset extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(3, 33, 73));
+        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -104,25 +104,25 @@ public class Proceed_Genset extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 930, 80));
+        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 520, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(153, 204, 255));
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 255, 153));
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 255, 153));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         id.setText("ID");
         id.setAlignmentY(1.0F);
-        kGradientPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 135, 30));
+        kGradientPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 135, 30));
 
         vg_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_id.setToolTipText("");
         vg_id.setAlignmentY(1.0F);
         vg_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 210, 30));
+        kGradientPanel1.add(vg_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 210, 30));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel6.setText("BRAND");
@@ -141,179 +141,179 @@ public class Proceed_Genset extends javax.swing.JFrame {
         vg_model.setToolTipText("");
         vg_model.setAlignmentY(1.0F);
         vg_model.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, 30));
+        kGradientPanel1.add(vg_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 210, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel7.setText("MODEL");
         jLabel7.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 135, 30));
+        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 135, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel8.setText("KVA");
         jLabel8.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 135, 30));
+        kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 135, 30));
 
         vg_kva.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_kva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_kva.setToolTipText("");
         vg_kva.setAlignmentY(1.0F);
         vg_kva.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 210, 30));
+        kGradientPanel1.add(vg_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 210, 30));
 
         vg_phasing.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_phasing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_phasing.setToolTipText("");
         vg_phasing.setAlignmentY(1.0F);
         vg_phasing.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 210, 30));
+        kGradientPanel1.add(vg_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 30));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel10.setText("PHASING");
         jLabel10.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 135, 30));
+        kGradientPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 135, 30));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel20.setText("UNIT TYPE");
         jLabel20.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 135, 30));
+        kGradientPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 135, 30));
 
         vg_unit_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_unit_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_unit_type.setToolTipText("");
         vg_unit_type.setAlignmentY(1.0F);
         vg_unit_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_unit_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 210, 30));
+        kGradientPanel1.add(vg_unit_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 210, 30));
 
         vg_dimension.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_dimension.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_dimension.setToolTipText("");
         vg_dimension.setAlignmentY(1.0F);
         vg_dimension.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 210, 30));
+        kGradientPanel1.add(vg_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 210, 30));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel22.setText("DIMENSION");
         jLabel22.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 135, 30));
+        kGradientPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 135, 30));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel13.setText("TANK CAPACITY");
         jLabel13.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 135, 30));
+        kGradientPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 135, 30));
 
         vg_fuel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_fuel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_fuel.setToolTipText("");
         vg_fuel.setAlignmentY(1.0F);
         vg_fuel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_fuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 210, 30));
+        kGradientPanel1.add(vg_fuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 210, 30));
 
         vg_body_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_body_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_body_type.setToolTipText("");
         vg_body_type.setAlignmentY(1.0F);
         vg_body_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_body_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 210, 30));
+        kGradientPanel1.add(vg_body_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 210, 30));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel14.setText("BODY TYPE");
         jLabel14.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 135, 30));
+        kGradientPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 135, 30));
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel9.setText("SUPPLIER");
         jLabel9.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 135, 30));
+        kGradientPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 135, 30));
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel16.setText("DATE");
         jLabel16.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 135, 30));
+        kGradientPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 135, 30));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel29.setText("PRICE");
         jLabel29.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 135, 30));
+        kGradientPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 135, 30));
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel11.setText("ENGINE_SN");
         jLabel11.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 135, 30));
+        kGradientPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 135, 30));
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel15.setText("ALTERNATOR_SN");
         jLabel15.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 570, 135, 30));
+        kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 135, 30));
 
         vg_alternator.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_alternator.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_alternator.setToolTipText("");
         vg_alternator.setAlignmentY(1.0F);
         vg_alternator.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 570, 210, 30));
+        kGradientPanel1.add(vg_alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 210, 30));
 
         vg_engine.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_engine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_engine.setToolTipText("");
         vg_engine.setAlignmentY(1.0F);
         vg_engine.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 210, 30));
+        kGradientPanel1.add(vg_engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 210, 30));
 
         vg_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_price.setToolTipText("");
         vg_price.setAlignmentY(1.0F);
         vg_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 210, 30));
+        kGradientPanel1.add(vg_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 210, 30));
 
         vg_date.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_date.setToolTipText("");
         vg_date.setAlignmentY(1.0F);
         vg_date.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, 210, 30));
+        kGradientPanel1.add(vg_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 210, 30));
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel17.setText("DATE OF PURCHASE");
         jLabel17.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 160, 30));
+        kGradientPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 160, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel18.setText("CONTACT NO.");
         jLabel18.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 160, 30));
+        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 160, 30));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel19.setText("EMAIL ");
         jLabel19.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 160, 30));
+        kGradientPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 160, 30));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel21.setText("ADDRESS");
         jLabel21.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 160, 30));
+        kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 160, 30));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel23.setText("KVA");
         jLabel23.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 160, 30));
+        kGradientPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 160, 30));
 
         id1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         id1.setText("NAME");
         id1.setAlignmentY(1.0F);
-        kGradientPanel1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, 160, 30));
+        kGradientPanel1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 160, 30));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel26.setText("KVA");
+        jLabel26.setText("AGENT NAME :");
         jLabel26.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 440, 160, 30));
+        kGradientPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 140, 30));
 
         vg_supplier.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         vg_supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_supplier.setToolTipText("");
         vg_supplier.setAlignmentY(1.0F);
         vg_supplier.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 210, 30));
+        kGradientPanel1.add(vg_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 210, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -376,69 +376,78 @@ public class Proceed_Genset extends javax.swing.JFrame {
         back_panel_supplier1.setLayout(back_panel_supplier1Layout);
         back_panel_supplier1Layout.setHorizontalGroup(
             back_panel_supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, back_panel_supplier1Layout.createSequentialGroup()
+                .addGap(0, 24, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         back_panel_supplier1Layout.setVerticalGroup(
             back_panel_supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(back_panel_supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 220, 30));
+        kGradientPanel1.add(back_panel_supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 220, 30));
 
         jTextField8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 220, 30));
+        kGradientPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 460, 220, 30));
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 130, 220, 30));
+        jTextField1.setBorder(null);
+        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 220, 30));
 
         jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 220, 30));
+        jTextField2.setBorder(null);
+        kGradientPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 220, 30));
 
         jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 210, 220, 30));
+        jTextField3.setBorder(null);
+        kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, 220, 30));
 
         jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, 220, 30));
+        jTextField4.setBorder(null);
+        kGradientPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, 220, 30));
 
         jTextField5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 290, 220, 30));
+        jTextField5.setBorder(null);
+        kGradientPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 220, 30));
 
         jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 250, 220, 30));
+        jTextField6.setBorder(null);
+        kGradientPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 220, 30));
 
         jTextField7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 50, 220, 30));
+        jTextField7.setBorder(null);
+        kGradientPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 220, 30));
 
         id2.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         id2.setText("PURCHASE NO.");
         id2.setAlignmentY(1.0F);
-        kGradientPanel1.add(id2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, 160, 30));
+        kGradientPanel1.add(id2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 160, 30));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel12.setToolTipText("");
-        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "GENSET PRODUCT", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 24))); // NOI18N
-        kGradientPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 460, 600));
+        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "GENSET PRODUCT", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
+        kGradientPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 440, 540));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setToolTipText("");
-        jLabel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CUSTOMER INFO", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 24))); // NOI18N
-        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 450, 370));
+        jLabel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CUSTOMER INFO", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 450, 380));
 
         jLabel25.setBackground(new java.awt.Color(255, 255, 255));
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setToolTipText("");
-        jLabel25.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "AGENT SELLER", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 24))); // NOI18N
-        kGradientPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 450, 140));
+        jLabel25.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "AGENT", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
+        kGradientPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, 450, 100));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 620));
 

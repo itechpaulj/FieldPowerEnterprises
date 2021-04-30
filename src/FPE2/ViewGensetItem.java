@@ -91,7 +91,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(153, 204, 255));
+        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(0, 255, 153));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
         KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(0, 255, 153));
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -308,7 +308,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 820, 610));
 
-        jPanel4.setBackground(new java.awt.Color(3, 33, 73));
+        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -380,6 +380,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         Proceed_Genset pg = new Proceed_Genset();
+        Proceed_Genset.displays.setText("");
         pg.setVisible(true);
     }//GEN-LAST:event_jLabel6MouseClicked
 

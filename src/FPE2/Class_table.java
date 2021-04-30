@@ -27,7 +27,10 @@ public class Class_table {
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`,`BODY TYPE` FROM `genset_table`");
         ResultSet rs = ps.executeQuery();
         Stock_Genset_Table.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e){
+        Stock_Genset_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+      
+
+                }catch(Exception e){
               System.out.println(e);
             }
         return false;
@@ -38,6 +41,7 @@ public class Class_table {
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `NAME`, `DESCRIPTION`, `PRICE` FROM `filter_table`");
         ResultSet rs = ps.executeQuery();
         Stock_Filter_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        Stock_Filter_Table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
               System.out.println(e);
             }
@@ -49,6 +53,7 @@ public class Class_table {
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE` FROM `genset_table`");
         ResultSet rs = ps.executeQuery();
         Shop_Genset_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        Shop_Genset_Table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
               System.out.println(e);
             }
@@ -60,6 +65,7 @@ public class Class_table {
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `NAME`, `QUANTITY`, `PRICE`,(`QUANTITY`*`PRICE`) AS `TOTAL PRICE`, `TYPE` FROM `filter_table` ORDER BY `ID` DESC");
         ResultSet rs = ps.executeQuery();
         Shop_Filter_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        Shop_Filter_Table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
               System.out.println(e);
             }
@@ -71,6 +77,7 @@ public class Class_table {
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table`");
         ResultSet rs = ps.executeQuery();
         Supplier_table.setModel(DbUtils.resultSetToTableModel(rs));
+        Supplier_table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
               System.out.println(e);
             }
@@ -81,6 +88,7 @@ public class Class_table {
         PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table`");
         ResultSet rs = ps.executeQuery();
         Customer_table.setModel(DbUtils.resultSetToTableModel(rs));
+        Customer_table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
               System.out.println(e);
             }
