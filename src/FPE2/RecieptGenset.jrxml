@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d5d5bd40-4fd1-4dc2-8171-452891fb1c16">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="07d3642d-3948-4e4a-8654-22ff1113b9e6"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM `bin_genset`]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BRAND" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MODEL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KVA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHASING" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="UNIT_TYPE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DIMENSION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TANK_CAP" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BODY TYPE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PRICE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ENGINE_SERIAL_NO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ALTERNATOR" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IMAGE" class="java.lang.Object">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="QUOTATION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CUSTOMER_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CUSTOMER_ADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CUSTOMER_EMAIL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CUSTOMER_CONTACT" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AGENT_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AGENT_CONTACT" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image vAlign="Middle">
+				<reportElement x="109" y="10" width="99" height="63" uuid="c5f69a85-94f7-4122-897c-c46c877c3375"/>
+				<imageExpression><![CDATA["C:\\Users\\ROBLES\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE2\\logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="220" y="10" width="290" height="30" uuid="a1b205f0-11fc-40a7-9be7-c8832a53d4ca"/>
+				<textElement>
+					<font fontName="Century Schoolbook" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIELD POWER ENTERPRISES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="30" width="161" height="10" uuid="ae327d50-d91f-4c09-8e5f-a93797c084ff"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1467 , ABAD SANTOS, METRO MANILA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="40" width="161" height="11" uuid="53123761-85be-4752-89f2-19f93a279eeb"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[T : 02-734-4318, 0956-1845577]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="51" width="161" height="11" uuid="9eba1b7a-2570-455e-a494-75b26829be79"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E : fieldpowergen@gmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="62" width="161" height="11" uuid="b4fd4f24-f265-45ce-985d-ebd5f2007a2f"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[www.fieldpowerenterprises.com]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="10" y="10" width="535" height="1" uuid="c36d56d1-7997-47a5-a665-ba9c540815de"/>
+			</line>
+			<staticText>
+				<reportElement x="17" y="33" width="65" height="15" uuid="c4633213-0b6f-48a0-8f92-7311235aa59f"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ATTENTION :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="109" y="33" width="139" height="15" uuid="98984740-0259-47aa-9043-e288dc692ec0"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CUSTOMER_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="48" width="247" height="13" uuid="ec2c26ca-5962-42d7-a1d8-a0aaacf30b90"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CUSTOMER_ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="11" width="83" height="13" uuid="a3fbff10-5c2e-4d6c-ad67-c28ced52a976"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{QUOTATION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="401" y="11" width="49" height="13" uuid="dd62c9db-4087-4010-b74e-e8029eac1de5"/>
+				<text><![CDATA[Quotation :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="401" y="23" width="49" height="13" uuid="21fceb4b-bde2-4b50-801f-84e55b7b880f"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="24" width="83" height="14" uuid="33c5c12f-a972-425f-832b-2d7097b8e001"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="12" width="65" height="15" uuid="480ac217-ce6e-4109-a502-222a93ba26ec"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBJECT :]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="301" splitType="Stretch"/>
+	</summary>
+</jasperReport>

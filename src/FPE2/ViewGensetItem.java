@@ -5,26 +5,12 @@
  */
 package FPE2;
 
-import static FPE2.Insert_Filter.id;
-import static FPE2.Insert_Genset.as_alternator_sn;
-import static FPE2.Insert_Genset.as_body_parts;
-import static FPE2.Insert_Genset.as_brand;
-import static FPE2.Insert_Genset.as_dimension;
-import static FPE2.Insert_Genset.as_engine_sn;
-import static FPE2.Insert_Genset.as_fuel_tank;
-import static FPE2.Insert_Genset.as_id;
-import static FPE2.Insert_Genset.as_kva;
-import static FPE2.Insert_Genset.as_model;
-import static FPE2.Insert_Genset.as_phasing;
-import static FPE2.Insert_Genset.as_pic;
-import static FPE2.Insert_Genset.as_price;
-import static FPE2.Insert_Genset.as_unitType;
-import static FPE2.Insert_Genset.display;
+
 import java.awt.Image;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.ImageIcon;
-import static FPE2.Insert_Genset.as_supplierNone;
+
 
 /**
  *
@@ -35,7 +21,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
     /**
      * Creates new form ViewGensetItem
      */
-    byte[] person_image = null;
+    public static byte[] person_image = null;
     public ViewGensetItem() {
         initComponents();
         
@@ -344,6 +330,7 @@ public class ViewGensetItem extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
+
         String Banner = display.getText();
         if(Banner.equals("VIEW GENSET PRODUCT"))
         {
@@ -366,7 +353,8 @@ public class ViewGensetItem extends javax.swing.JFrame {
                     vg_date.setText(rs.getString("DATE"));
                     vg_engine.setText(rs.getString("ENGINE_SERIAL_NO"));
                     vg_alternator.setText(rs.getString("ALTERNATOR_SERIAL_NO"));
-                    vg_alternator.setText(null);
+                    
+                    vg_pic.setText(null);
                     ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(vg_pic.getWidth(), vg_pic.getHeight(),Image.SCALE_SMOOTH) );
                     vg_pic.setIcon(imageicon);
                     person_image = rs.getBytes("IMAGE");
@@ -380,8 +368,22 @@ public class ViewGensetItem extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         Proceed_Genset pg = new Proceed_Genset();
-        Proceed_Genset.displays.setText("");
+        Proceed_Genset.displays.setText("PROCESS OF GENSET");
+        Proceed_Genset.process_genset_id.setText(vg_id.getText());
+        Proceed_Genset.process_genset_body_type.setText(vg_body_type.getText());
+        Proceed_Genset.process_genset_brand.setText(vg_brand.getText());
+        Proceed_Genset.process_genset_model.setText(vg_model.getText());
+        Proceed_Genset.process_genset_kva.setText(vg_kva.getText());
+        Proceed_Genset.process_genset_phasing.setText(vg_phasing.getText());
+        Proceed_Genset.process_genset_unit_type.setText(vg_unit_type.getText());
+        Proceed_Genset.process_genset_dimension.setText(vg_dimension.getText());
+        Proceed_Genset.process_genset_fuel.setText(vg_fuel.getText());
+        Proceed_Genset.process_genset_engine.setText(vg_engine.getText());
+        Proceed_Genset.process_genset_alternator.setText(vg_alternator.getText());
+        Proceed_Genset.process_genset_price.setText(vg_price.getText());
         pg.setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_jLabel6MouseClicked
 
     /**

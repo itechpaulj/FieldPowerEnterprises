@@ -5,6 +5,8 @@
  */
 package FPE2;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Javinez
@@ -31,58 +33,56 @@ public class Proceed_Genset extends javax.swing.JFrame {
         displays = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
         id = new javax.swing.JLabel();
-        vg_id = new javax.swing.JLabel();
+        process_genset_id = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        vg_brand = new javax.swing.JLabel();
-        vg_model = new javax.swing.JLabel();
+        process_genset_brand = new javax.swing.JLabel();
+        process_genset_model = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        vg_kva = new javax.swing.JLabel();
-        vg_phasing = new javax.swing.JLabel();
+        process_genset_kva = new javax.swing.JLabel();
+        process_genset_phasing = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        vg_unit_type = new javax.swing.JLabel();
-        vg_dimension = new javax.swing.JLabel();
+        process_genset_unit_type = new javax.swing.JLabel();
+        process_genset_dimension = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        vg_fuel = new javax.swing.JLabel();
-        vg_body_type = new javax.swing.JLabel();
+        process_genset_fuel = new javax.swing.JLabel();
+        process_genset_body_type = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        vg_alternator = new javax.swing.JLabel();
-        vg_engine = new javax.swing.JLabel();
-        vg_price = new javax.swing.JLabel();
-        vg_date = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        process_genset_alternator = new javax.swing.JLabel();
+        process_genset_engine = new javax.swing.JLabel();
+        process_genset_price = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        process_genset_contact = new javax.swing.JLabel();
+        process_genset_name = new javax.swing.JLabel();
+        process_genset_address = new javax.swing.JLabel();
+        process_genset_email = new javax.swing.JLabel();
+        process_genset_date = new datechooser.beans.DateChooserCombo();
         id1 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        vg_supplier = new javax.swing.JLabel();
         back_panel_supplier = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         back_panel_supplier2 = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         back_panel_supplier1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        process_genset_agent = new javax.swing.JTextField();
+        process_genset_quotation = new javax.swing.JTextField();
+        process_genset_agent_contact = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
         id2 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        back_panel_supplier3 = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -94,7 +94,7 @@ public class Proceed_Genset extends javax.swing.JFrame {
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         displays.setForeground(new java.awt.Color(255, 255, 255));
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displays.setText("GENSET");
+        displays.setText("PROCESS OF GENSET");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -117,203 +117,192 @@ public class Proceed_Genset extends javax.swing.JFrame {
         id.setAlignmentY(1.0F);
         kGradientPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 135, 30));
 
-        vg_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_id.setToolTipText("");
-        vg_id.setAlignmentY(1.0F);
-        vg_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 210, 30));
+        process_genset_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_id.setToolTipText("");
+        process_genset_id.setAlignmentY(1.0F);
+        process_genset_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 210, 30));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel6.setText("BRAND");
         jLabel6.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 135, 30));
+        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 135, 30));
 
-        vg_brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_brand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_brand.setToolTipText("");
-        vg_brand.setAlignmentY(1.0F);
-        vg_brand.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 210, 30));
+        process_genset_brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_brand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_brand.setToolTipText("");
+        process_genset_brand.setAlignmentY(1.0F);
+        process_genset_brand.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 210, 30));
 
-        vg_model.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_model.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_model.setToolTipText("");
-        vg_model.setAlignmentY(1.0F);
-        vg_model.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 210, 30));
+        process_genset_model.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_model.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_model.setToolTipText("");
+        process_genset_model.setAlignmentY(1.0F);
+        process_genset_model.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel7.setText("MODEL");
         jLabel7.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 135, 30));
+        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 135, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel8.setText("KVA");
         jLabel8.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 135, 30));
+        kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 135, 30));
 
-        vg_kva.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_kva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_kva.setToolTipText("");
-        vg_kva.setAlignmentY(1.0F);
-        vg_kva.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 210, 30));
+        process_genset_kva.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_kva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_kva.setToolTipText("");
+        process_genset_kva.setAlignmentY(1.0F);
+        process_genset_kva.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 210, 30));
 
-        vg_phasing.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_phasing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_phasing.setToolTipText("");
-        vg_phasing.setAlignmentY(1.0F);
-        vg_phasing.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 30));
+        process_genset_phasing.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_phasing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_phasing.setToolTipText("");
+        process_genset_phasing.setAlignmentY(1.0F);
+        process_genset_phasing.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 230, 210, 30));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel10.setText("PHASING");
         jLabel10.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 135, 30));
+        kGradientPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 135, 30));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel20.setText("UNIT TYPE");
         jLabel20.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 135, 30));
+        kGradientPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 135, 30));
 
-        vg_unit_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_unit_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_unit_type.setToolTipText("");
-        vg_unit_type.setAlignmentY(1.0F);
-        vg_unit_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_unit_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 210, 30));
+        process_genset_unit_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_unit_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_unit_type.setToolTipText("");
+        process_genset_unit_type.setAlignmentY(1.0F);
+        process_genset_unit_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_unit_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 210, 30));
 
-        vg_dimension.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_dimension.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_dimension.setToolTipText("");
-        vg_dimension.setAlignmentY(1.0F);
-        vg_dimension.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 210, 30));
+        process_genset_dimension.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_dimension.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_dimension.setToolTipText("");
+        process_genset_dimension.setAlignmentY(1.0F);
+        process_genset_dimension.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 210, 30));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel22.setText("DIMENSION");
         jLabel22.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 135, 30));
+        kGradientPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 135, 30));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel13.setText("TANK CAPACITY");
         jLabel13.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 135, 30));
+        kGradientPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 135, 30));
 
-        vg_fuel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_fuel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_fuel.setToolTipText("");
-        vg_fuel.setAlignmentY(1.0F);
-        vg_fuel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_fuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 210, 30));
+        process_genset_fuel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_fuel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_fuel.setToolTipText("");
+        process_genset_fuel.setAlignmentY(1.0F);
+        process_genset_fuel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_fuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 210, 30));
 
-        vg_body_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_body_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_body_type.setToolTipText("");
-        vg_body_type.setAlignmentY(1.0F);
-        vg_body_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_body_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 210, 30));
+        process_genset_body_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_body_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_body_type.setToolTipText("");
+        process_genset_body_type.setAlignmentY(1.0F);
+        process_genset_body_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_body_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 210, 30));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel14.setText("BODY TYPE");
         jLabel14.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 135, 30));
-
-        jLabel9.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel9.setText("SUPPLIER");
-        jLabel9.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 135, 30));
-
-        jLabel16.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel16.setText("DATE");
-        jLabel16.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 135, 30));
+        kGradientPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 135, 30));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel29.setText("PRICE");
         jLabel29.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 135, 30));
+        kGradientPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 135, 30));
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel11.setText("ENGINE_SN");
         jLabel11.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 135, 30));
+        kGradientPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 135, 30));
 
-        jLabel15.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel15.setText("ALTERNATOR_SN");
-        jLabel15.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 135, 30));
+        process_genset_alternator.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_alternator.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_alternator.setToolTipText("");
+        process_genset_alternator.setAlignmentY(1.0F);
+        process_genset_alternator.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 210, 30));
 
-        vg_alternator.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_alternator.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_alternator.setToolTipText("");
-        vg_alternator.setAlignmentY(1.0F);
-        vg_alternator.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 460, 210, 30));
+        process_genset_engine.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_engine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_engine.setToolTipText("");
+        process_genset_engine.setAlignmentY(1.0F);
+        process_genset_engine.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 210, 30));
 
-        vg_engine.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_engine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_engine.setToolTipText("");
-        vg_engine.setAlignmentY(1.0F);
-        vg_engine.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 210, 30));
-
-        vg_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_price.setToolTipText("");
-        vg_price.setAlignmentY(1.0F);
-        vg_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 210, 30));
-
-        vg_date.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_date.setToolTipText("");
-        vg_date.setAlignmentY(1.0F);
-        vg_date.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 210, 30));
-
-        jLabel17.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel17.setText("DATE OF PURCHASE");
-        jLabel17.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 160, 30));
+        process_genset_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_price.setToolTipText("");
+        process_genset_price.setAlignmentY(1.0F);
+        process_genset_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 210, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel18.setText("CONTACT NO.");
         jLabel18.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 160, 30));
+        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 160, 30));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel19.setText("EMAIL ");
         jLabel19.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 160, 30));
+        kGradientPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 160, 30));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel21.setText("ADDRESS");
         jLabel21.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 160, 30));
+        kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 160, 30));
 
-        jLabel23.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel23.setText("KVA");
-        jLabel23.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 310, 160, 30));
+        jLabel28.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jLabel28.setText("DATE ");
+        jLabel28.setAlignmentY(1.0F);
+        kGradientPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 140, 30));
+
+        process_genset_contact.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        process_genset_contact.setAlignmentY(1.0F);
+        process_genset_contact.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 220, 30));
+
+        process_genset_name.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        process_genset_name.setAlignmentY(1.0F);
+        process_genset_name.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 220, 30));
+
+        process_genset_address.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        process_genset_address.setAlignmentY(1.0F);
+        process_genset_address.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, 220, 30));
+
+        process_genset_email.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        process_genset_email.setAlignmentY(1.0F);
+        process_genset_email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(process_genset_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, 220, 30));
+
+        process_genset_date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 13));
+        kGradientPanel1.add(process_genset_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 220, 30));
 
         id1.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         id1.setText("NAME");
         id1.setAlignmentY(1.0F);
-        kGradientPanel1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 160, 30));
+        kGradientPanel1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 160, 30));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel26.setText("AGENT NAME :");
+        jLabel26.setText("AGENT NAME ");
         jLabel26.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 460, 140, 30));
-
-        vg_supplier.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        vg_supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_supplier.setToolTipText("");
-        vg_supplier.setAlignmentY(1.0F);
-        vg_supplier.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(vg_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 210, 30));
+        kGradientPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 430, 140, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -328,16 +317,14 @@ public class Proceed_Genset extends javax.swing.JFrame {
         back_panel_supplier.setLayout(back_panel_supplierLayout);
         back_panel_supplierLayout.setHorizontalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(back_panel_supplierLayout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 29, Short.MAX_VALUE))
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         back_panel_supplierLayout.setVerticalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 540, -1, 50));
+        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 550, -1, 50));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -352,18 +339,16 @@ public class Proceed_Genset extends javax.swing.JFrame {
         back_panel_supplier2.setLayout(back_panel_supplier2Layout);
         back_panel_supplier2Layout.setHorizontalGroup(
             back_panel_supplier2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(back_panel_supplier2Layout.createSequentialGroup()
-                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 29, Short.MAX_VALUE))
+            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         back_panel_supplier2Layout.setVerticalGroup(
             back_panel_supplier2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(back_panel_supplier2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 540, -1, -1));
+        kGradientPanel1.add(back_panel_supplier2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("CUSTOMER LIST");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -376,58 +361,35 @@ public class Proceed_Genset extends javax.swing.JFrame {
         back_panel_supplier1.setLayout(back_panel_supplier1Layout);
         back_panel_supplier1Layout.setHorizontalGroup(
             back_panel_supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, back_panel_supplier1Layout.createSequentialGroup()
-                .addGap(0, 24, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
         );
         back_panel_supplier1Layout.setVerticalGroup(
             back_panel_supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(back_panel_supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 220, 30));
+        kGradientPanel1.add(back_panel_supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, 220, 30));
 
-        jTextField8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 460, 220, 30));
+        process_genset_agent.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_agent.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        kGradientPanel1.add(process_genset_agent, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 430, 220, 30));
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setBorder(null);
-        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 220, 30));
+        process_genset_quotation.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_quotation.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        process_genset_quotation.setBorder(null);
+        kGradientPanel1.add(process_genset_quotation, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 220, 30));
 
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setBorder(null);
-        kGradientPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 220, 30));
+        process_genset_agent_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        process_genset_agent_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        kGradientPanel1.add(process_genset_agent_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 470, 220, 30));
 
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setBorder(null);
-        kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 230, 220, 30));
-
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setBorder(null);
-        kGradientPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, 220, 30));
-
-        jTextField5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setBorder(null);
-        kGradientPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 310, 220, 30));
-
-        jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField6.setBorder(null);
-        kGradientPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 270, 220, 30));
-
-        jTextField7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField7.setBorder(null);
-        kGradientPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 220, 30));
+        jLabel30.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jLabel30.setText("CONTACT NO");
+        jLabel30.setAlignmentY(1.0F);
+        kGradientPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 140, 30));
 
         id2.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        id2.setText("PURCHASE NO.");
+        id2.setText("QUOTATION");
         id2.setAlignmentY(1.0F);
         kGradientPanel1.add(id2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 160, 30));
 
@@ -435,19 +397,46 @@ public class Proceed_Genset extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel12.setToolTipText("");
         jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "GENSET PRODUCT", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
-        kGradientPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 440, 540));
+        kGradientPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 440, 430));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setToolTipText("");
         jLabel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CUSTOMER INFO", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
-        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 450, 380));
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 450, 360));
 
         jLabel25.setBackground(new java.awt.Color(255, 255, 255));
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setToolTipText("");
         jLabel25.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "AGENT", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 20))); // NOI18N
-        kGradientPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 420, 450, 100));
+        kGradientPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, 450, 120));
+
+        jLabel27.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel27.setText("CHANGE ITEM");
+        jLabel27.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel27MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout back_panel_supplier3Layout = new javax.swing.GroupLayout(back_panel_supplier3);
+        back_panel_supplier3.setLayout(back_panel_supplier3Layout);
+        back_panel_supplier3Layout.setHorizontalGroup(
+            back_panel_supplier3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+        );
+        back_panel_supplier3Layout.setVerticalGroup(
+            back_panel_supplier3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        kGradientPanel1.add(back_panel_supplier3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 550, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jLabel16.setText("ALTERNATOR_SN");
+        jLabel16.setAlignmentY(1.0F);
+        kGradientPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 135, 30));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 620));
 
@@ -464,12 +453,54 @@ public class Proceed_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        // TODO add your handling code here:
+       Table_Customer tbc = new Table_Customer();
+       tbc.setVisible(true);
+       Table_Customer.Add_Option.setText("3");
+       
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
-        // TODO add your handling code here:
+    
+    String body_type3   =   process_genset_body_type.getText();
+    String brand3       =   process_genset_brand.getText();
+    String model3       =   process_genset_model.getText();
+    String kva3         =   process_genset_kva.getText();
+    String phasing3     =   process_genset_phasing.getText();
+    String unit_type3   =   process_genset_unit_type.getText();
+    String dimen3       =   process_genset_dimension.getText();
+    String fuel_tank3   =   process_genset_fuel.getText();
+    String price3       =   process_genset_price.getText();
+    String engines_sn3  =   process_genset_engine.getText();
+    String alters_sn3   =   process_genset_alternator.getText();
+    
+     byte [] images1 = null;
+        images1 = ViewGensetItem.person_image;
+    
+    String date3        = process_genset_date.getText().toUpperCase(); 
+    String quotation    = process_genset_quotation.getText().toUpperCase();
+    String c_name       = process_genset_name.getText().toUpperCase();
+    String c_address    = process_genset_address.getText().toUpperCase();
+    String c_email      = process_genset_email.getText().toUpperCase();
+    String c_contact    = process_genset_contact.getText().toUpperCase();
+    
+    String agent_name        = process_genset_agent.getText().toUpperCase();
+    String agent_contact        = process_genset_agent_contact.getText().toUpperCase();
+    
+    if(!Class_Process.Process(body_type3, brand3, model3, kva3, phasing3, unit_type3, dimen3, fuel_tank3, price3, engines_sn3, alters_sn3, ViewGensetItem.person_image, date3, quotation, c_name, c_address, c_email, c_contact, agent_name, agent_contact)){
+        JOptionPane.showMessageDialog(null, "SUCK");
+    }
+    
+    //
+    //String body_type3,String brand3,String model3,String kva3,String phasing3,String unit_type3,String dimen3,String fuel_tank3,String price3,String engines_sn3,String alters_sn3,byte [] images1 = null,String date3,String quotation,String c_name,String c_address,String c_email,String c_contact,String agent_name,String agent_contact;
+
     }//GEN-LAST:event_jLabel24MouseClicked
+
+    private void jLabel27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseClicked
+      Mainpage mp = new Mainpage();
+      mp.setVisible(true);
+      mp.JTab.setSelectedIndex(5);
+      dispose();
+    }//GEN-LAST:event_jLabel27MouseClicked
 
     /**
      * @param args the command line arguments
@@ -510,6 +541,7 @@ public class Proceed_Genset extends javax.swing.JFrame {
     public static javax.swing.JPanel back_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier1;
     public static javax.swing.JPanel back_panel_supplier2;
+    public static javax.swing.JPanel back_panel_supplier3;
     public static javax.swing.JLabel displays;
     private javax.swing.JLabel id;
     private javax.swing.JLabel id1;
@@ -519,49 +551,46 @@ public class Proceed_Genset extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private keeptoo.KGradientPanel kGradientPanel1;
-    public static javax.swing.JLabel vg_alternator;
-    public static javax.swing.JLabel vg_body_type;
-    public static javax.swing.JLabel vg_brand;
-    public static javax.swing.JLabel vg_date;
-    public static javax.swing.JLabel vg_dimension;
-    public static javax.swing.JLabel vg_engine;
-    public static javax.swing.JLabel vg_fuel;
-    public static javax.swing.JLabel vg_id;
-    public static javax.swing.JLabel vg_kva;
-    public static javax.swing.JLabel vg_model;
-    public static javax.swing.JLabel vg_phasing;
-    public static javax.swing.JLabel vg_price;
-    public static javax.swing.JLabel vg_supplier;
-    public static javax.swing.JLabel vg_unit_type;
+    public static javax.swing.JLabel process_genset_address;
+    private javax.swing.JTextField process_genset_agent;
+    private javax.swing.JTextField process_genset_agent_contact;
+    public static javax.swing.JLabel process_genset_alternator;
+    public static javax.swing.JLabel process_genset_body_type;
+    public static javax.swing.JLabel process_genset_brand;
+    public static javax.swing.JLabel process_genset_contact;
+    private datechooser.beans.DateChooserCombo process_genset_date;
+    public static javax.swing.JLabel process_genset_dimension;
+    public static javax.swing.JLabel process_genset_email;
+    public static javax.swing.JLabel process_genset_engine;
+    public static javax.swing.JLabel process_genset_fuel;
+    public static javax.swing.JLabel process_genset_id;
+    public static javax.swing.JLabel process_genset_kva;
+    public static javax.swing.JLabel process_genset_model;
+    public static javax.swing.JLabel process_genset_name;
+    public static javax.swing.JLabel process_genset_phasing;
+    public static javax.swing.JLabel process_genset_price;
+    private javax.swing.JTextField process_genset_quotation;
+    public static javax.swing.JLabel process_genset_unit_type;
     // End of variables declaration//GEN-END:variables
 }

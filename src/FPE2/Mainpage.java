@@ -1283,7 +1283,7 @@ public class Mainpage extends javax.swing.JFrame {
     public static javax.swing.JLabel HOME_MENU;
     private javax.swing.JPanel HOME_PANEL;
     public static javax.swing.JLabel HOME_VIEW_PRODUCT;
-    private javax.swing.JTabbedPane JTab;
+    public static javax.swing.JTabbedPane JTab;
     private javax.swing.JLabel LOGOUT_LABEL1;
     private javax.swing.JPanel LOGOUT_PANEL;
     private keeptoo.KGradientPanel REPORT;

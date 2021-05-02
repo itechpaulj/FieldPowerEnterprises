@@ -7,6 +7,24 @@ package FPE2;
 
 
 
+import static FPE2.ViewGensetItem.vg_alternator;
+import static FPE2.ViewGensetItem.vg_body_type;
+import static FPE2.ViewGensetItem.vg_brand;
+import static FPE2.ViewGensetItem.vg_date;
+import static FPE2.ViewGensetItem.vg_dimension;
+import static FPE2.ViewGensetItem.vg_engine;
+import static FPE2.ViewGensetItem.vg_fuel;
+import static FPE2.ViewGensetItem.vg_id;
+import static FPE2.ViewGensetItem.vg_kva;
+import static FPE2.ViewGensetItem.vg_model;
+import static FPE2.ViewGensetItem.vg_phasing;
+import static FPE2.ViewGensetItem.vg_price;
+import static FPE2.ViewGensetItem.vg_supplier;
+import static FPE2.ViewGensetItem.vg_unit_type;
+import java.awt.Image;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.ImageIcon;
 import javax.swing.table.TableModel;
 import javax.swing.JOptionPane;
 
@@ -45,6 +63,7 @@ public class Table_Customer extends javax.swing.JFrame {
         back_panel_supplier = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         customer_id = new javax.swing.JLabel();
+        Add_Option = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -92,7 +111,7 @@ public class Table_Customer extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Customer_table);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 68, 880, 400));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 880, 400));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -182,6 +201,7 @@ public class Table_Customer extends javax.swing.JFrame {
 
         kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, -1, -1));
         kGradientPanel1.add(customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 90, 30));
+        kGradientPanel1.add(Add_Option, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 70, 20));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 620));
 
@@ -197,11 +217,44 @@ public class Table_Customer extends javax.swing.JFrame {
         int i=Customer_table.getSelectedRow();
         TableModel model = Customer_table.getModel();
         customer_id.setText(model.getValueAt(i,0).toString());
+        
+        String add_op = Add_Option.getText();
+        if(add_op.equals("3")){
+        
+      
+           
+            String c_id = customer_id.getText();
+            try{
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` WHERE `ID`='"+c_id+"'");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                        Proceed_Genset.process_genset_name.setText(rs.getString("NAME"));
+                        Proceed_Genset.process_genset_address.setText(rs.getString("ADDRESS"));        
+                     Proceed_Genset.process_genset_email.setText(rs.getString("EMAIL"));
+                    Proceed_Genset.process_genset_contact.setText(rs.getString("CONTACT"));
+                  
+                     dispose();
+                 }
+            
+                
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            
+        }
     }//GEN-LAST:event_Customer_tableMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+//        String option = Add_Option.getText();
+//        if(Add_Option.equals(3)){
+//            
+//        }else {
+//      
         InsertCustomer ic = new InsertCustomer();
         ic.setVisible(true);
+//        }
+
+        
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -274,6 +327,7 @@ public class Table_Customer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel Add_Option;
     public static javax.swing.JTable Customer_table;
     public static javax.swing.JPanel add_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier;
