@@ -5,7 +5,22 @@
  */
 package FPE2;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.net.URL;
+import java.sql.Connection;
+import java.util.HashMap;
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -16,8 +31,10 @@ public class Proceed_Genset extends javax.swing.JFrame {
     /**
      * Creates new form Proceed_Genset
      */
+    Connection con;
     public Proceed_Genset() {
         initComponents();
+        con = FPE_DB.getConnection();
     }
 
     /**
@@ -118,7 +135,7 @@ public class Proceed_Genset extends javax.swing.JFrame {
         kGradientPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 135, 30));
 
         process_genset_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_id.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_id.setToolTipText("");
         process_genset_id.setAlignmentY(1.0F);
         process_genset_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -130,14 +147,14 @@ public class Proceed_Genset extends javax.swing.JFrame {
         kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 135, 30));
 
         process_genset_brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_brand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_brand.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_brand.setToolTipText("");
         process_genset_brand.setAlignmentY(1.0F);
         process_genset_brand.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         kGradientPanel1.add(process_genset_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 210, 30));
 
         process_genset_model.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_model.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_model.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_model.setToolTipText("");
         process_genset_model.setAlignmentY(1.0F);
         process_genset_model.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -154,14 +171,14 @@ public class Proceed_Genset extends javax.swing.JFrame {
         kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 135, 30));
 
         process_genset_kva.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_kva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_kva.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_kva.setToolTipText("");
         process_genset_kva.setAlignmentY(1.0F);
         process_genset_kva.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         kGradientPanel1.add(process_genset_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 210, 30));
 
         process_genset_phasing.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_phasing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_phasing.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_phasing.setToolTipText("");
         process_genset_phasing.setAlignmentY(1.0F);
         process_genset_phasing.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -178,14 +195,14 @@ public class Proceed_Genset extends javax.swing.JFrame {
         kGradientPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 135, 30));
 
         process_genset_unit_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_unit_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_unit_type.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_unit_type.setToolTipText("");
         process_genset_unit_type.setAlignmentY(1.0F);
         process_genset_unit_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         kGradientPanel1.add(process_genset_unit_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 210, 30));
 
         process_genset_dimension.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_dimension.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_dimension.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_dimension.setToolTipText("");
         process_genset_dimension.setAlignmentY(1.0F);
         process_genset_dimension.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -202,14 +219,14 @@ public class Proceed_Genset extends javax.swing.JFrame {
         kGradientPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 135, 30));
 
         process_genset_fuel.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_fuel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_fuel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_fuel.setToolTipText("");
         process_genset_fuel.setAlignmentY(1.0F);
         process_genset_fuel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         kGradientPanel1.add(process_genset_fuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 210, 30));
 
         process_genset_body_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_body_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_body_type.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_body_type.setToolTipText("");
         process_genset_body_type.setAlignmentY(1.0F);
         process_genset_body_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -231,21 +248,21 @@ public class Proceed_Genset extends javax.swing.JFrame {
         kGradientPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 135, 30));
 
         process_genset_alternator.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_alternator.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_alternator.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_alternator.setToolTipText("");
         process_genset_alternator.setAlignmentY(1.0F);
         process_genset_alternator.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         kGradientPanel1.add(process_genset_alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 210, 30));
 
         process_genset_engine.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_engine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_engine.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_engine.setToolTipText("");
         process_genset_engine.setAlignmentY(1.0F);
         process_genset_engine.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         kGradientPanel1.add(process_genset_engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 210, 30));
 
         process_genset_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        process_genset_price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process_genset_price.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         process_genset_price.setToolTipText("");
         process_genset_price.setAlignmentY(1.0F);
         process_genset_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -487,7 +504,31 @@ public class Proceed_Genset extends javax.swing.JFrame {
     String agent_contact        = process_genset_agent_contact.getText().toUpperCase();
     
     if(!Class_Process.Process(body_type3, brand3, model3, kva3, phasing3, unit_type3, dimen3, fuel_tank3, price3, engines_sn3, alters_sn3, ViewGensetItem.person_image, date3, quotation, c_name, c_address, c_email, c_contact, agent_name, agent_contact)){
-        JOptionPane.showMessageDialog(null, "SUCK");
+//        JOptionPane.showMessageDialog(null, "SUCCESS");        
+            try{
+                JasperDesign jasperdesign =JRXmlLoader.load("src/FPE2/RecieptGenset.jrxml");
+                String sql = "SELECT * FROM `bin_genset` ORDER BY `ID` DESC LIMIT 1";
+                JRDesignQuery jrdesignquery = new JRDesignQuery();
+                jrdesignquery.setText(sql);
+                jasperdesign.setQuery(jrdesignquery);
+                JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+
+            HashMap<String, Object> params = new HashMap<String, Object>();
+            String subject = "Quotation for Brand "+process_genset_kva.getText()+" "+"kva "+ process_genset_brand.getText()+" "+process_genset_brand.getText();
+            String title = process_genset_kva.getText()+ "kva "+process_genset_brand.getText()+" "+ process_genset_model.getText();
+            BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+            params.put("logo", image );
+            params.put("subject",subject);
+            params.put("title",title);
+            params.put("agent_name", process_genset_agent.getText());
+            params.put("agent_contact", process_genset_agent_contact.getText());
+            JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+            JasperViewer.viewReport(jasperprint);
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(null, e);
+            }        
     }
     
     //
