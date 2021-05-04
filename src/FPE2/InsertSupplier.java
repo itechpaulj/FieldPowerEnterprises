@@ -245,7 +245,7 @@ public class InsertSupplier extends javax.swing.JFrame {
             2 - ADD supplier / Genset
             3 - ADD supplier / Filter Parts
             4 - Only add Genset Product but Can't add new Supplier because Exist Supplier (GENSET)
-            5 - Only add Genset Product but Can't add new Supplier because Exist Supplier (FILTER/ PART / OTHER)
+            5 - Only add filter Product but Can't add new Supplier because Exist Supplier (FILTER/ PART / OTHER)
             6 - Update supplier
         */
 
@@ -284,8 +284,8 @@ public class InsertSupplier extends javax.swing.JFrame {
             String model1 = Insert_Genset.as_model.getText().toUpperCase(); 
             String a = Insert_Genset.eng_sn.getSelectedItem().toString(); 
             String b = Insert_Genset.alt_sn.getSelectedItem().toString(); 
-            String engines_sn1 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" "+ a; 
-            String alters1_sn = Insert_Genset.as_alternator_sn.getText().toUpperCase() +" " + b;
+            String engines_sn1 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" - "+ a; 
+            String alters1_sn = Insert_Genset.as_alternator_sn.getText().toUpperCase() +" - " + b;
             String id1 = Insert_Genset.as_id.getText().toUpperCase();
             // insert genset
             
@@ -381,6 +381,8 @@ public class InsertSupplier extends javax.swing.JFrame {
             }else{
                     if(!Class_Stock.AddStock(date2, brand2, phasing2, unit_type2, dimen2, kva2, price2, model2, engines_sn2, alters2_sn, Insert_Genset.person_image, s_name))
                    {
+                      Class_table ct = new Class_table();
+                      ct.Show_Stock_Genset_Table();
                        JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
                    }   
             }

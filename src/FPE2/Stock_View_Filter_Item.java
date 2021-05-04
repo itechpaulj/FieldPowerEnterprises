@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author ROBLES
  */
-public class Stock_View_Genset_Item extends javax.swing.JFrame {
+public class Stock_View_Filter_Item extends javax.swing.JFrame {
 
     /**
      * Creates new form Stock_View_Genset_Item
@@ -27,7 +27,7 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
     byte[] person_image = null;
 
     
-    public Stock_View_Genset_Item() {
+    public Stock_View_Filter_Item() {
         initComponents();
     }
 
@@ -48,34 +48,26 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
-        svgt_pic = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
+        svft_pic = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        svgt_id = new javax.swing.JLabel();
-        svgt_supplier = new javax.swing.JLabel();
+        svft_id = new javax.swing.JLabel();
+        svft_supplier = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        svgt_brand = new javax.swing.JTextField();
-        svgt_model = new javax.swing.JTextField();
-        svgt_kva = new javax.swing.JTextField();
-        svgt_phasing = new javax.swing.JTextField();
-        svgt_unit_type = new javax.swing.JTextField();
-        svgt_dimen = new javax.swing.JTextField();
-        svgt_price = new javax.swing.JTextField();
-        svgt_eng_sn = new javax.swing.JTextField();
-        svgt_alter_sn = new javax.swing.JTextField();
+        svft_brand = new javax.swing.JTextField();
+        svft_name = new javax.swing.JTextField();
+        svft_des = new javax.swing.JTextField();
+        svft_price = new javax.swing.JTextField();
+        svft_quantity = new javax.swing.JTextField();
         Stock_Genset_Panel_Delete = new javax.swing.JPanel();
         Stock_Genset_Delete = new javax.swing.JLabel();
         Stock_Genset_Panel_Update = new javax.swing.JPanel();
         Stock_Genset_Update = new javax.swing.JLabel();
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
         Stock_Genset_Back = new javax.swing.JLabel();
-        svgt_date = new datechooser.beans.DateChooserCombo();
-        svgt_engine_sn = new javax.swing.JComboBox<>();
-        svgt_alternator_sn = new javax.swing.JComboBox<>();
+        svft_date = new datechooser.beans.DateChooserCombo();
+        svft_types = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -87,7 +79,7 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
         display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         display.setForeground(new java.awt.Color(255, 255, 255));
         display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        display.setText("STOCK VIEW GENSET ITEM");
+        display.setText("STOCK VIEW FILTER ITEM");
         display.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -107,7 +99,7 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel20.setText("UNIT TYPE");
+        jLabel20.setText("QUANTITY");
         jLabel20.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 110, 26));
 
@@ -122,49 +114,34 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 110, 26));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel3.setText("MODEL");
+        jLabel3.setText("NAME");
         jLabel3.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 110, 26));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel7.setText("KVA");
+        jLabel7.setText("DESCRIPTION");
         jLabel7.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 110, 26));
-
-        jLabel11.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel11.setText("ENGINE_SN");
-        jLabel11.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 120, 26));
-
-        jLabel15.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel15.setText("ALTERNATOR_SN");
-        jLabel15.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 130, 26));
 
         id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         id.setText("ID");
         id.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 110, 26));
 
-        svgt_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        svgt_pic.setText("2x2");
-        svgt_pic.setAlignmentY(1.0F);
-        svgt_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        svgt_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+        svft_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        svft_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        svft_pic.setText("2x2");
+        svft_pic.setAlignmentY(1.0F);
+        svft_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        svft_pic.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                svgt_picMouseClicked(evt);
+                svft_picMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(svgt_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 330, 140));
-
-        jLabel29.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel29.setText("PRICE");
-        jLabel29.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 100, 26));
+        KG2_ADD_STOCK_GENSET.add(svft_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 150, 330, 140));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel10.setText("PHASING");
+        jLabel10.setText("PRICE");
         jLabel10.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 110, 26));
 
@@ -173,103 +150,67 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
         jLabel16.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 110, 26));
 
-        svgt_id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_id.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        svgt_id.setAlignmentY(1.0F);
-        svgt_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(svgt_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 220, 26));
+        svft_id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        svft_id.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        svft_id.setAlignmentY(1.0F);
+        svft_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(svft_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 220, 26));
 
-        svgt_supplier.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_supplier.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        svgt_supplier.setAlignmentY(1.0F);
-        svgt_supplier.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(svgt_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 280, 26));
+        svft_supplier.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        svft_supplier.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        svft_supplier.setAlignmentY(1.0F);
+        svft_supplier.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        KG2_ADD_STOCK_GENSET.add(svft_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 70, 280, 26));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel4.setText("SUPPLIER");
         jLabel4.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 110, 26));
 
-        svgt_brand.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_brand.setAlignmentY(1.0F);
-        svgt_brand.addKeyListener(new java.awt.event.KeyAdapter() {
+        svft_brand.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        svft_brand.setAlignmentY(1.0F);
+        svft_brand.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                svgt_brandKeyReleased(evt);
+                svft_brandKeyReleased(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(svgt_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(svft_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 220, 31));
 
-        svgt_model.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_model.setAlignmentY(1.0F);
-        svgt_model.addKeyListener(new java.awt.event.KeyAdapter() {
+        svft_name.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        svft_name.setAlignmentY(1.0F);
+        svft_name.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                svgt_modelKeyReleased(evt);
+                svft_nameKeyReleased(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(svgt_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(svft_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 220, 31));
 
-        svgt_kva.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_kva.setAlignmentY(1.0F);
-        svgt_kva.addKeyListener(new java.awt.event.KeyAdapter() {
+        svft_des.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        svft_des.setAlignmentY(1.0F);
+        svft_des.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                svgt_kvaKeyReleased(evt);
+                svft_desKeyReleased(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(svgt_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(svft_des, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 220, 31));
 
-        svgt_phasing.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_phasing.setAlignmentY(1.0F);
-        svgt_phasing.addKeyListener(new java.awt.event.KeyAdapter() {
+        svft_price.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        svft_price.setAlignmentY(1.0F);
+        svft_price.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                svgt_phasingKeyReleased(evt);
+                svft_priceKeyReleased(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(svgt_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(svft_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 220, 31));
 
-        svgt_unit_type.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_unit_type.setAlignmentY(1.0F);
-        svgt_unit_type.addKeyListener(new java.awt.event.KeyAdapter() {
+        svft_quantity.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        svft_quantity.setAlignmentY(1.0F);
+        svft_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                svgt_unit_typeKeyReleased(evt);
+                svft_quantityKeyReleased(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(svgt_unit_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 220, 31));
-
-        svgt_dimen.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_dimen.setAlignmentY(1.0F);
-        svgt_dimen.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                svgt_dimenKeyReleased(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(svgt_dimen, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 220, 31));
-
-        svgt_price.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_price.setAlignmentY(1.0F);
-        svgt_price.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                svgt_priceKeyReleased(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(svgt_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 280, 31));
-
-        svgt_eng_sn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_eng_sn.setAlignmentY(1.0F);
-        svgt_eng_sn.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                svgt_eng_snKeyReleased(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(svgt_eng_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 180, 31));
-
-        svgt_alter_sn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        svgt_alter_sn.setAlignmentY(1.0F);
-        svgt_alter_sn.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                svgt_alter_snKeyReleased(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(svgt_alter_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 230, 180, 31));
+        KG2_ADD_STOCK_GENSET.add(svft_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 220, 31));
 
         Stock_Genset_Panel_Delete.setBackground(new java.awt.Color(255, 77, 77));
 
@@ -367,29 +308,12 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 530, 190, 50));
 
-        svgt_date.setCalendarPreferredSize(new java.awt.Dimension(400, 500));
-        KG2_ADD_STOCK_GENSET.add(svgt_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 280, 30));
+        svft_date.setCalendarPreferredSize(new java.awt.Dimension(400, 500));
+        KG2_ADD_STOCK_GENSET.add(svft_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 280, 30));
 
-        svgt_engine_sn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ENGINE OLD", "ENGINE NEW" }));
-        svgt_engine_sn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                svgt_engine_snMouseClicked(evt);
-            }
-        });
-        svgt_engine_sn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                svgt_engine_snActionPerformed(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(svgt_engine_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 190, 90, 30));
-
-        svgt_alternator_sn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ALTER OLD", "ALTER NEW" }));
-        svgt_alternator_sn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                svgt_alternator_snMouseClicked(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(svgt_alternator_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, 90, 30));
+        svft_types.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        svft_types.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS", "OTHER" }));
+        KG2_ADD_STOCK_GENSET.add(svft_types, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 220, 30));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
@@ -399,73 +323,61 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
 
     private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
         String Banner = display.getText();
-        if(Banner.equals("STOCK VIEW GENSET ITEM"))
+        if(Banner.equals("STOCK VIEW FILTER ITEM"))
         {
-            String id = Mainpage.Genset_id.getText();
-            try{
-                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER` FROM `genset_table`  WHERE `ID`='"+id+"'");
-                ResultSet rs = ps.executeQuery();
-                while(rs.next()){
-                    svgt_id.setText(rs.getString("ID"));
-                    svgt_brand.setText(rs.getString("BRAND"));
-                    svgt_model.setText(rs.getString("MODEL"));
-                    svgt_kva.setText(rs.getString("KVA"));
-                    svgt_phasing.setText(rs.getString("PHASING"));
-                    svgt_unit_type.setText(rs.getString("UNIT_TYPE"));
-                    svgt_dimen.setText(rs.getString("DIMENSION"));
-                    svgt_price.setText(rs.getString("PRICE"));
-                    svgt_supplier.setText(rs.getString("SUPPLIER"));
-                    svgt_date.setText(rs.getString("DATE"));
-                    
-                    String[] split_en = rs.getString("ENGINE_SERIAL_NO").split(" - ");
-                    String[] split_alter = rs.getString("ALTERNATOR_SERIAL_NO").split(" - ");
-                    svgt_eng_sn.setText(split_en[0]);
-                    svgt_alter_sn.setText(split_alter[0]);                    
-                    
-                    if(split_en[1].equals("ENGINE OLD")){
-                     svgt_engine_sn.setSelectedIndex(1);
-                    }else{
-                        if(split_en[1].equals("ENGINE NEW")){
-                        svgt_engine_sn.setSelectedIndex(2);
-                        }     
-                    }
-                    
+            String id1 = svft_id.getText();
 
                     
-                    if(split_alter[1].equals("ALTER OLD")){
-                     svgt_alternator_sn.setSelectedIndex(1);
-                    }else{
-                        if(split_alter[1].equals("ALTER NEW")){
-                        svgt_alternator_sn.setSelectedIndex(2);
-                        }
-                    }                    
+           try{
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `filter_table` WHERE `ID`='"+id1+"'");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                    svft_brand.setText(rs.getString("BRAND"));
+                    svft_name.setText(rs.getString("NAME"));
+                    svft_des.setText(rs.getString("DESCRIPTION"));
+                    svft_price.setText(rs.getString("PRICE"));
+                    svft_quantity.setText(rs.getString("QUANTITY"));
+
+                    svft_supplier.setText(rs.getString("SUPPLIER"));
+                    svft_date.setText(rs.getString("DATE"));
                     
+                    String types = rs.getString("TYPE");
                     
-                    svgt_pic.setText(null);
-                    ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(svgt_pic.getWidth(), svgt_pic.getHeight(),Image.SCALE_SMOOTH) );
-                    svgt_pic.setIcon(imageicon);
+                    if(types.equals("FILTER")){
+                        svft_types.setSelectedIndex(1);
+                    }
+                    
+                    if(types.equals("PARTS")){
+                        svft_types.setSelectedIndex(2);
+                    }
+                    
+                     if(types.equals("OTHER")){
+                        svft_types.setSelectedIndex(3);
+                    }
+                     
+                    svft_pic.setText(null);
+                    ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(svft_pic.getWidth(), svft_pic.getHeight(),Image.SCALE_SMOOTH) );
+                    svft_pic.setIcon(imageicon);
                     person_image = rs.getBytes("IMAGE");
-                 }
-            }
-            catch(Exception e){
+                }
+            }catch(Exception e){
                 e.printStackTrace();
-            
-            }
+            }          
         }
     }//GEN-LAST:event_displayAncestorAdded
 
-    private void svgt_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_svgt_picMouseClicked
-        svgt_pic.setText(null);
+    private void svft_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_svft_picMouseClicked
+        svft_pic.setText(null);
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         File f = chooser.getSelectedFile();
         filename = f.getAbsolutePath();
-        svgt_pic.setText(filename);
+        svft_pic.setText(filename);
         
                 //Image getAbsolutePath = null;
         //ImageIcon icon = new ImageIcon(filename);
-        ImageIcon imageicon = new ImageIcon (new ImageIcon(filename).getImage().getScaledInstance(svgt_pic.getWidth(), svgt_pic.getHeight(),Image.SCALE_SMOOTH) );
-        svgt_pic.setIcon(imageicon);
+        ImageIcon imageicon = new ImageIcon (new ImageIcon(filename).getImage().getScaledInstance(svft_pic.getWidth(), svft_pic.getHeight(),Image.SCALE_SMOOTH) );
+        svft_pic.setIcon(imageicon);
 
         try{
             File image = new File(filename);
@@ -483,15 +395,16 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
            // e.printStackTrace();
         }
         
-    }//GEN-LAST:event_svgt_picMouseClicked
+    }//GEN-LAST:event_svft_picMouseClicked
 
     private void Stock_Genset_DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseClicked
-        String id = svgt_id.getText();
+        String id1 = svft_id.getText();
+
             int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
-                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Stock.DeleteGenset(id) ){
+                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Filter.DeleteFilter(id1) ){
                 Class_table ct = new Class_table();
-                ct.Show_Stock_Genset_Table();
+                ct.Show_Stock_Filter_Table();
                 JOptionPane.showMessageDialog(null, " PRODUCT DELETED ","",JOptionPane.INFORMATION_MESSAGE);
                 }
             }
@@ -506,27 +419,23 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_DeleteMouseExited
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
-            String date = svgt_date.getText().toUpperCase(); 
-            String brand = svgt_brand.getText().toUpperCase(); 
-            String phasing = svgt_phasing.getText().toUpperCase(); 
-            String unit_type = svgt_unit_type.getText().toUpperCase(); 
-            String dimen = svgt_dimen.getText().toUpperCase();
-            String kva = svgt_kva.getText().toUpperCase();
-            String price = svgt_price.getText().toUpperCase(); 
-            String model = svgt_model.getText().toUpperCase();
-            String supplier = svgt_supplier.getText().toUpperCase();
-            String a = svgt_engine_sn.getSelectedItem().toString(); 
-            String b = svgt_alternator_sn.getSelectedItem().toString(); 
-            String engine_sn = svgt_eng_sn.getText().toUpperCase() +" - "+ a; 
-            String alter_sn = svgt_alter_sn.getText().toUpperCase() +" - " + b;
-            String id = svgt_id.getText().toUpperCase();
+            String date = svft_date.getText().toUpperCase(); 
+            String brand = svft_brand.getText().toUpperCase(); 
+            String price = svft_price.getText().toUpperCase(); 
+            String quantity = svft_quantity.getText().toUpperCase(); 
+            String des = svft_des.getText().toUpperCase();
+            String type = svft_types.getSelectedItem().toString();
+            String names = svft_name.getText().toUpperCase();
+            String supplier = svft_supplier.getText().toUpperCase();
+            String id = svft_id.getText().toUpperCase();
         
         
-        if(!Class_Stock.UpdateStock(date, brand, phasing, unit_type, dimen, kva, price, model, engine_sn, alter_sn, person_image, supplier, id)){
-            Class_table ct = new Class_table();
-            ct.Show_Stock_Genset_Table();
-            JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
-        }
+                if(!Class_Filter.UpdateFilter(date, names, des, brand, type, price, quantity, person_image, id)){
+                    Class_table ct = new Class_table();
+                    ct.Show_Stock_Filter_Table();
+                            
+                    JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
+                }
 
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
@@ -550,53 +459,29 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Stock_Genset_BackMouseExited
 
-    private void svgt_brandKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svgt_brandKeyReleased
+    private void svft_brandKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svft_brandKeyReleased
 
-    }//GEN-LAST:event_svgt_brandKeyReleased
+    }//GEN-LAST:event_svft_brandKeyReleased
 
-    private void svgt_modelKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svgt_modelKeyReleased
+    private void svft_nameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svft_nameKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_svgt_modelKeyReleased
+    }//GEN-LAST:event_svft_nameKeyReleased
 
-    private void svgt_kvaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svgt_kvaKeyReleased
+    private void svft_desKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svft_desKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_svgt_kvaKeyReleased
+    }//GEN-LAST:event_svft_desKeyReleased
 
-    private void svgt_phasingKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svgt_phasingKeyReleased
+    private void svft_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svft_priceKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_svgt_phasingKeyReleased
+    }//GEN-LAST:event_svft_priceKeyReleased
 
-    private void svgt_unit_typeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svgt_unit_typeKeyReleased
+    private void svft_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svft_quantityKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_svgt_unit_typeKeyReleased
+    }//GEN-LAST:event_svft_quantityKeyReleased
 
-    private void svgt_dimenKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svgt_dimenKeyReleased
+    private void svgt_kvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_svgt_kvaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_svgt_dimenKeyReleased
-
-    private void svgt_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svgt_priceKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_svgt_priceKeyReleased
-
-    private void svgt_eng_snKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svgt_eng_snKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_svgt_eng_snKeyReleased
-
-    private void svgt_alter_snKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_svgt_alter_snKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_svgt_alter_snKeyReleased
-
-    private void svgt_engine_snMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_svgt_engine_snMouseClicked
-
-    }//GEN-LAST:event_svgt_engine_snMouseClicked
-
-    private void svgt_alternator_snMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_svgt_alternator_snMouseClicked
-
-    }//GEN-LAST:event_svgt_alternator_snMouseClicked
-
-    private void svgt_engine_snActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_svgt_engine_snActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_svgt_engine_snActionPerformed
+    }//GEN-LAST:event_svgt_kvaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -615,20 +500,21 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Stock_View_Genset_Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Stock_View_Filter_Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Stock_View_Genset_Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Stock_View_Filter_Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Stock_View_Genset_Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Stock_View_Filter_Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Stock_View_Genset_Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Stock_View_Filter_Item.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Stock_View_Genset_Item().setVisible(true);
+                new Stock_View_Filter_Item().setVisible(true);
             }
         });
     }
@@ -644,31 +530,23 @@ public class Stock_View_Genset_Item extends javax.swing.JFrame {
     public static javax.swing.JLabel display;
     private javax.swing.JLabel id;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel4;
-    public static javax.swing.JTextField svgt_alter_sn;
-    public static javax.swing.JComboBox<String> svgt_alternator_sn;
-    public static javax.swing.JTextField svgt_brand;
-    private datechooser.beans.DateChooserCombo svgt_date;
-    public static javax.swing.JTextField svgt_dimen;
-    public static javax.swing.JTextField svgt_eng_sn;
-    public static javax.swing.JComboBox<String> svgt_engine_sn;
-    public static javax.swing.JLabel svgt_id;
-    public static javax.swing.JTextField svgt_kva;
-    public static javax.swing.JTextField svgt_model;
-    public static javax.swing.JTextField svgt_phasing;
-    private javax.swing.JLabel svgt_pic;
-    public static javax.swing.JTextField svgt_price;
-    public static javax.swing.JLabel svgt_supplier;
-    public static javax.swing.JTextField svgt_unit_type;
+    public static javax.swing.JTextField svft_brand;
+    private datechooser.beans.DateChooserCombo svft_date;
+    public static javax.swing.JTextField svft_des;
+    public static javax.swing.JLabel svft_id;
+    public static javax.swing.JTextField svft_name;
+    private javax.swing.JLabel svft_pic;
+    public static javax.swing.JTextField svft_price;
+    public static javax.swing.JTextField svft_quantity;
+    public static javax.swing.JLabel svft_supplier;
+    public static javax.swing.JComboBox<String> svft_types;
     // End of variables declaration//GEN-END:variables
 }

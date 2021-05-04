@@ -62,7 +62,7 @@ public class Class_table {
     
     public boolean shopFilter(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`BRAND`,`NAME`,`DESCRIPTION`,`QUANTITY`,`PRICE`,`DATE`,`TYPE`, FORMAT(`QUANTITY`*`PRICE` ,'#,###,##0.###\\,### ') AS `TOTAL PRICE`FROM `filter_table` ORDER BY `ID` DESC");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`BRAND`,`NAME`,`DESCRIPTION`,`QUANTITY`,`PRICE`,`DATE`,`TYPE`, FORMAT(`QUANTITY`*`PRICE` ,'#,###,##0.###\\,### ') AS `TOTAL PRICE` FROM `filter_table` ORDER BY `ID` DESC");
         ResultSet rs = ps.executeQuery();
         Shop_Filter_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Shop_Filter_Table.getColumnModel().getColumn(0).setMaxWidth(100);

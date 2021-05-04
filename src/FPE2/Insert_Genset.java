@@ -119,11 +119,11 @@ public class Insert_Genset extends javax.swing.JFrame {
 
         as_engine_sn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_engine_sn.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_engine_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(as_engine_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 140, 31));
 
         as_alternator_sn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_alternator_sn.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_alternator_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(as_alternator_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 140, 31));
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel20.setText("UNIT TYPE");
@@ -185,21 +185,21 @@ public class Insert_Genset extends javax.swing.JFrame {
         });
         KG2_ADD_STOCK_GENSET.add(as_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 350, 200));
 
-        alt_sn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "OLD", "NEW" }));
+        alt_sn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ALTER OLD", "ALTER NEW" }));
         alt_sn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 alt_snMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(alt_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(alt_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, 90, 30));
 
-        eng_sn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "OLD", "NEW" }));
+        eng_sn.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ENGINE OLD", "ENGINE NEW" }));
         eng_sn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 eng_snMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(eng_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(eng_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, 90, 30));
 
         as_date.setCalendarPreferredSize(new java.awt.Dimension(400, 200));
         KG2_ADD_STOCK_GENSET.add(as_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 210, 30));
@@ -347,15 +347,16 @@ public class Insert_Genset extends javax.swing.JFrame {
             is.setVisible(true);
             InsertSupplier.AddSup.setText("2"); // add genset and add supplier
             
-        }else{
-            if(Banner.equals("UPDATE GENSET PRODUCT") && genset.equals("UPDATE") ){
-                
-                //Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, engines_sn1, alters1_sn, person_image, sup_name, as_idGenset);
-                Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, engines_sn1, alters1_sn, person_image, sup_name, as_idGenset);
-                ct.Show_Stock_Genset_Table();
-                JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
-            }
         }
+//        else{
+//            if(Banner.equals("UPDATE GENSET PRODUCT") && genset.equals("UPDATE") ){
+//                
+//                //Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, engines_sn1, alters1_sn, person_image, sup_name, as_idGenset);
+//                Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, engines_sn1, alters1_sn, person_image, sup_name, as_idGenset);
+//                ct.Show_Stock_Genset_Table();
+//                JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
+//            }
+//        }
         
       
     }//GEN-LAST:event_gensetBtnMouseClicked
@@ -374,68 +375,7 @@ public class Insert_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displayAncestorAdded
-        String Banner = display.getText();
-        
-        if(Banner.equals("UPDATE GENSET PRODUCT"))
-        {
-            id.setVisible(true);
-            as_id.setVisible(true);
-            as_supplierNone.setVisible(true);
-            supplierTxt.setVisible(true);
-            String id = Mainpage.Genset_id.getText();
-            try{
-                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `genset_table` WHERE `ID`='"+id+"'");
-                ResultSet rs = ps.executeQuery();
-                while(rs.next()){
-                    as_id.setText(rs.getString("ID"));
-                    as_brand.setText(rs.getString("BRAND"));
-                    as_model.setText(rs.getString("MODEL"));
-                    as_kva.setText(rs.getString("KVA"));
-                    as_phasing.setText(rs.getString("PHASING"));
-                    as_unitType.setText(rs.getString("UNIT_TYPE"));
-                    as_dimension.setText(rs.getString("DIMENSION"));
-                    as_price.setText(rs.getString("PRICE"));
-                    as_supplierNone.setText(rs.getString("SUPPLIER"));
 
-//                    as_engine_sn.setText(rs.getString("ENGINE_SERIAL_NO"));
-//                    as_alternator_sn.setText(rs.getString("ALTERNATOR_SERIAL_NO"));
-                    // split operation whitespace
-                    
-                    String[] split_en = rs.getString("ENGINE_SERIAL_NO").split(" ");
-                    String[] split_alter = rs.getString("ALTERNATOR_SERIAL_NO").split(" ");
-                    as_engine_sn.setText(split_en[0]);
-                    as_alternator_sn.setText(split_alter[0]);                    
-                    
-                    if(split_en[1].equals("OLD")){
-                     eng_sn.setSelectedIndex(1);
-                    }else{
-                        if(split_en[1].equals("NEW")){
-                        eng_sn.setSelectedIndex(2);
-                        }     
-                    }
-                    
-
-                    
-                    if(split_alter[1].equals("OLD")){
-                     alt_sn.setSelectedIndex(1);
-                    }else{
-                        if(split_alter[1].equals("NEW")){
-                        alt_sn.setSelectedIndex(2);
-                        }
-                    }
-                    
-                    
-                    as_pic.setText(null);
-                    Insert_Genset.as_pic.setText(null);
-                    ImageIcon imageicon = new ImageIcon (new ImageIcon(rs.getBytes("IMAGE")).getImage().getScaledInstance(as_pic.getWidth(), as_pic.getHeight(),Image.SCALE_SMOOTH) );
-                    as_pic.setIcon(imageicon);
-                    person_image = rs.getBytes("IMAGE");
-                 }
-            }
-            catch(Exception e){
-                e.printStackTrace();
-            }
-        }
     }//GEN-LAST:event_displayAncestorAdded
 
     private void as_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_as_picMouseClicked

@@ -277,19 +277,19 @@ public class Insert_Filter extends javax.swing.JFrame {
         is.setVisible(true);
         is.AddSup.setText("3"); // add supplier and filter
         }
-        else{
-            if(Banner.equals("UPDATE FILTER / PARTS / OTHER PRODUCT") && filter.equals("UPDATE") ){
-                //JOptionPane.showMessageDialog(null, "UPDATE FILTER","",JOptionPane.INFORMATION_MESSAGE);
-                
-                
-                if(!Class_Filter.UpdateFilter(date, names, des, brand, type, price, quantity, person_imageFilter, ids)){
-                    Class_table ct = new Class_table();
-                    ct.Show_Stock_Filter_Table();
-                            
-                    JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-        }
+//        else{
+//            if(Banner.equals("UPDATE FILTER / PARTS / OTHER PRODUCT") && filter.equals("UPDATE") ){
+//                //JOptionPane.showMessageDialog(null, "UPDATE FILTER","",JOptionPane.INFORMATION_MESSAGE);
+//                
+//                
+//                if(!Class_Filter.UpdateFilter(date, names, des, brand, type, price, quantity, person_imageFilter, ids)){
+//                    Class_table ct = new Class_table();
+//                    ct.Show_Stock_Filter_Table();
+//                            
+//                    JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
+//                }
+//            }
+//        }
               
     }//GEN-LAST:event_filterBtnMouseClicked
 

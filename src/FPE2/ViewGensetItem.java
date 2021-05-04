@@ -43,8 +43,6 @@ public class ViewGensetItem extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
         vg_pic = new javax.swing.JLabel();
@@ -62,8 +60,6 @@ public class ViewGensetItem extends javax.swing.JFrame {
         vg_unit_type = new javax.swing.JLabel();
         vg_phasing = new javax.swing.JLabel();
         vg_kva = new javax.swing.JLabel();
-        vg_body_type = new javax.swing.JLabel();
-        vg_fuel = new javax.swing.JLabel();
         vg_dimension = new javax.swing.JLabel();
         vg_date = new javax.swing.JLabel();
         vg_alternator = new javax.swing.JLabel();
@@ -111,16 +107,6 @@ public class ViewGensetItem extends javax.swing.JFrame {
         jLabel11.setText("ENGINE_SN");
         jLabel11.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 120, 26));
-
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel13.setText("TANK CAPACITY");
-        jLabel13.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 120, 30));
-
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel14.setText("BODY TYPE");
-        jLabel14.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 120, 30));
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel15.setText("ALTERNATOR_SN");
@@ -245,18 +231,6 @@ public class ViewGensetItem extends javax.swing.JFrame {
         vg_kva.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(vg_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 180, 26));
 
-        vg_body_type.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        vg_body_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_body_type.setAlignmentY(1.0F);
-        vg_body_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(vg_body_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 180, 26));
-
-        vg_fuel.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        vg_fuel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vg_fuel.setAlignmentY(1.0F);
-        vg_fuel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(vg_fuel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 180, 26));
-
         vg_dimension.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         vg_dimension.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vg_dimension.setAlignmentY(1.0F);
@@ -346,8 +320,6 @@ public class ViewGensetItem extends javax.swing.JFrame {
                     vg_phasing.setText(rs.getString("PHASING"));
                     vg_unit_type.setText(rs.getString("UNIT_TYPE"));
                     vg_dimension.setText(rs.getString("DIMENSION"));
-                    vg_fuel.setText(rs.getString("TANK_CAP"));
-                    vg_body_type.setText(rs.getString("BODY TYPE"));
                     vg_price.setText(rs.getString("PRICE"));
                     vg_supplier.setText(rs.getString("SUPPLIER"));
                     vg_date.setText(rs.getString("DATE"));
@@ -370,14 +342,12 @@ public class ViewGensetItem extends javax.swing.JFrame {
         Proceed_Genset pg = new Proceed_Genset();
         Proceed_Genset.displays.setText("PROCESS OF GENSET");
         Proceed_Genset.process_genset_id.setText(vg_id.getText());
-        Proceed_Genset.process_genset_body_type.setText(vg_body_type.getText());
         Proceed_Genset.process_genset_brand.setText(vg_brand.getText());
         Proceed_Genset.process_genset_model.setText(vg_model.getText());
         Proceed_Genset.process_genset_kva.setText(vg_kva.getText());
         Proceed_Genset.process_genset_phasing.setText(vg_phasing.getText());
         Proceed_Genset.process_genset_unit_type.setText(vg_unit_type.getText());
         Proceed_Genset.process_genset_dimension.setText(vg_dimension.getText());
-        Proceed_Genset.process_genset_fuel.setText(vg_fuel.getText());
         Proceed_Genset.process_genset_engine.setText(vg_engine.getText());
         Proceed_Genset.process_genset_alternator.setText(vg_alternator.getText());
         Proceed_Genset.process_genset_price.setText(vg_price.getText());
@@ -427,8 +397,6 @@ public class ViewGensetItem extends javax.swing.JFrame {
     private javax.swing.JLabel id;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
@@ -444,12 +412,10 @@ public class ViewGensetItem extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     public static javax.swing.JLabel vg_alternator;
-    public static javax.swing.JLabel vg_body_type;
     public static javax.swing.JLabel vg_brand;
     public static javax.swing.JLabel vg_date;
     public static javax.swing.JLabel vg_dimension;
     public static javax.swing.JLabel vg_engine;
-    public static javax.swing.JLabel vg_fuel;
     public static javax.swing.JLabel vg_id;
     public static javax.swing.JLabel vg_kva;
     public static javax.swing.JLabel vg_model;
