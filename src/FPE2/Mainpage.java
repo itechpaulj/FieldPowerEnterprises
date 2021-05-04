@@ -56,13 +56,13 @@ public class Mainpage extends javax.swing.JFrame {
         STOCK = new keeptoo.KGradientPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        HOME_PANEL1 = new javax.swing.JPanel();
+        Filter_Parts_Btn = new javax.swing.JLabel();
+        HOME_PANEL2 = new javax.swing.JPanel();
+        Genset_Btn = new javax.swing.JLabel();
         STOCK_GENSET = new keeptoo.KGradientPanel();
         Stock_Genset_Panel_Add = new javax.swing.JPanel();
         Stock_Genset_Add = new javax.swing.JLabel();
-        Stock_Genset_Panel_Update = new javax.swing.JPanel();
-        Stock_Genset_Update = new javax.swing.JLabel();
-        Stock_Genset_Panel_Delete = new javax.swing.JPanel();
-        Stock_Genset_Delete = new javax.swing.JLabel();
         Stock_Genset_Panel_Supplier = new javax.swing.JPanel();
         Stock_Genset_Supplier = new javax.swing.JLabel();
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
@@ -333,25 +333,91 @@ public class Mainpage extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("FILTER  PARTS");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/Filter.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
             }
         });
-        STOCK.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, 370, 320));
+        STOCK.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 450, 400));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("GENSET ");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/Gensets.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
-        STOCK.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 370, 320));
+        STOCK.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 450, 400));
+
+        HOME_PANEL1.setBackground(new java.awt.Color(0, 117, 128));
+
+        Filter_Parts_Btn.setBackground(new java.awt.Color(253, 254, 255));
+        Filter_Parts_Btn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Filter_Parts_Btn.setForeground(new java.awt.Color(255, 255, 255));
+        Filter_Parts_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Filter_Parts_Btn.setText("GENSET");
+        Filter_Parts_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Filter_Parts_BtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Filter_Parts_BtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Filter_Parts_BtnMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout HOME_PANEL1Layout = new javax.swing.GroupLayout(HOME_PANEL1);
+        HOME_PANEL1.setLayout(HOME_PANEL1Layout);
+        HOME_PANEL1Layout.setHorizontalGroup(
+            HOME_PANEL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HOME_PANEL1Layout.createSequentialGroup()
+                .addComponent(Filter_Parts_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
+        );
+        HOME_PANEL1Layout.setVerticalGroup(
+            HOME_PANEL1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Filter_Parts_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        STOCK.add(HOME_PANEL1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 500, 450, 45));
+
+        HOME_PANEL2.setBackground(new java.awt.Color(0, 117, 128));
+
+        Genset_Btn.setBackground(new java.awt.Color(253, 254, 255));
+        Genset_Btn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Genset_Btn.setForeground(new java.awt.Color(255, 255, 255));
+        Genset_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Genset_Btn.setText("GENSET");
+        Genset_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Genset_BtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Genset_BtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Genset_BtnMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout HOME_PANEL2Layout = new javax.swing.GroupLayout(HOME_PANEL2);
+        HOME_PANEL2.setLayout(HOME_PANEL2Layout);
+        HOME_PANEL2Layout.setHorizontalGroup(
+            HOME_PANEL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HOME_PANEL2Layout.createSequentialGroup()
+                .addComponent(Genset_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        HOME_PANEL2Layout.setVerticalGroup(
+            HOME_PANEL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Genset_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        STOCK.add(HOME_PANEL2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 450, 45));
 
         JTab.addTab("STOCK", STOCK);
 
@@ -392,77 +458,13 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_GENSET.add(Stock_Genset_Panel_Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 190, 50));
 
-        Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
-
-        Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
-        Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/Edit_Btn.png"))); // NOI18N
-        Stock_Genset_Update.setText(" UPDATE ITEM    ");
-        Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Stock_Genset_UpdateMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Stock_Genset_UpdateMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Stock_Genset_UpdateMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Stock_Genset_Panel_UpdateLayout = new javax.swing.GroupLayout(Stock_Genset_Panel_Update);
-        Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
-        Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
-            Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
-            Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 530, 190, 50));
-
-        Stock_Genset_Panel_Delete.setBackground(new java.awt.Color(255, 77, 77));
-
-        Stock_Genset_Delete.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        Stock_Genset_Delete.setForeground(new java.awt.Color(255, 255, 255));
-        Stock_Genset_Delete.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Stock_Genset_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/Cancel_Btn.png"))); // NOI18N
-        Stock_Genset_Delete.setText(" DELETE ITEM      ");
-        Stock_Genset_Delete.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Stock_Genset_DeleteMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Stock_Genset_DeleteMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Stock_Genset_DeleteMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Stock_Genset_Panel_DeleteLayout = new javax.swing.GroupLayout(Stock_Genset_Panel_Delete);
-        Stock_Genset_Panel_Delete.setLayout(Stock_Genset_Panel_DeleteLayout);
-        Stock_Genset_Panel_DeleteLayout.setHorizontalGroup(
-            Stock_Genset_Panel_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        Stock_Genset_Panel_DeleteLayout.setVerticalGroup(
-            Stock_Genset_Panel_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        STOCK_GENSET.add(Stock_Genset_Panel_Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, 190, 50));
-
         Stock_Genset_Panel_Supplier.setBackground(new java.awt.Color(133, 173, 173));
 
         Stock_Genset_Supplier.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Supplier.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Supplier.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         Stock_Genset_Supplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/Supplier_Btn.png"))); // NOI18N
-        Stock_Genset_Supplier.setText(" VIEW SUPPLIER   ");
+        Stock_Genset_Supplier.setText(" VIEW ITEM         ");
         Stock_Genset_Supplier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_SupplierMouseClicked(evt);
@@ -511,7 +513,9 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Stock_Genset_Panel_BackLayout.createSequentialGroup()
+                .addGap(0, 44, Short.MAX_VALUE)
+                .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1135,46 +1139,11 @@ public class Mainpage extends javax.swing.JFrame {
       
     }//GEN-LAST:event_Stock_Genset_TableMouseClicked
 
-    private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
-        
-        String gen_id = Genset_id.getText();
-        
-        if(gen_id.equals("")){
-            JOptionPane.showMessageDialog(null, "SELECT GENSET!","",JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
-            Insert_Genset ig = new Insert_Genset();
-            ig.setVisible(true);
-            Insert_Genset.display.setText("UPDATE GENSET PRODUCT");
-            Insert_Genset.gensetBtn.setText("UPDATE");
-
-            Insert_Genset.as_supplierNone.setVisible(true);
-            Insert_Genset.supplierTxt.setVisible(true);
-            Insert_Genset.id.setVisible(true);
-            Insert_Genset.as_id.setVisible(true);           
-        }
-
-
-    }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
-
     private void Stock_Genset_AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_AddMouseClicked
         Insert_Genset ig = new Insert_Genset();
         ig.setVisible(true);
         Insert_Genset.display.setText("ADD GENSET PRODUCT");
     }//GEN-LAST:event_Stock_Genset_AddMouseClicked
-
-    private void Stock_Genset_DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseClicked
-        String id = Genset_id.getText();
-
-            int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
-            if(opt==0){
-                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Stock.DeleteGenset(id) ){
-                Class_table ct = new Class_table();
-                ct.Show_Stock_Genset_Table();
-                JOptionPane.showMessageDialog(null, " PRODUCT DELETED ","",JOptionPane.INFORMATION_MESSAGE);
-                }
-            }
-    }//GEN-LAST:event_Stock_Genset_DeleteMouseClicked
 
     private void Stock_Genset_SupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseClicked
         Table_Supplier tbs = new Table_Supplier();
@@ -1300,27 +1269,7 @@ public class Mainpage extends javax.swing.JFrame {
       Stock_Genset_Add.setForeground(new Color(255,255,255));
       Stock_Genset_Panel_Add.setBackground(new Color(51, 255, 119)); 
     }//GEN-LAST:event_Stock_Genset_AddMouseExited
-
-    private void Stock_Genset_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseEntered
-      Stock_Genset_Update.setForeground(new Color(41, 61, 61));
-      Stock_Genset_Panel_Update.setBackground(new Color(51, 187, 255)); 
-    }//GEN-LAST:event_Stock_Genset_UpdateMouseEntered
-
-    private void Stock_Genset_UpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseExited
-      Stock_Genset_Update.setForeground(new Color(255,255,255));
-      Stock_Genset_Panel_Update.setBackground(new Color(51, 187, 255)); 
-    }//GEN-LAST:event_Stock_Genset_UpdateMouseExited
-
-    private void Stock_Genset_DeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseEntered
-      Stock_Genset_Delete.setForeground(new Color(41, 61, 61));
-      Stock_Genset_Panel_Delete.setBackground(new Color(255, 77, 77));   
-    }//GEN-LAST:event_Stock_Genset_DeleteMouseEntered
       
-    private void Stock_Genset_DeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseExited
-      Stock_Genset_Delete.setForeground(new Color(255,255,255));
-      Stock_Genset_Panel_Delete.setBackground(new Color(255, 77, 77));   
-    }//GEN-LAST:event_Stock_Genset_DeleteMouseExited
-
     private void Stock_Genset_SupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseEntered
       Stock_Genset_Supplier.setForeground(new Color(41, 61, 61));
       Stock_Genset_Panel_Supplier.setBackground(new Color(133, 173, 173));    
@@ -1373,6 +1322,30 @@ public class Mainpage extends javax.swing.JFrame {
         tr.setRowFilter(RowFilter.regexFilter(find));
     }//GEN-LAST:event_jTextField1KeyPressed
 
+    private void Filter_Parts_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Filter_Parts_BtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Filter_Parts_BtnMouseClicked
+
+    private void Filter_Parts_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Filter_Parts_BtnMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Filter_Parts_BtnMouseEntered
+
+    private void Filter_Parts_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Filter_Parts_BtnMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Filter_Parts_BtnMouseExited
+
+    private void Genset_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Genset_BtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Genset_BtnMouseClicked
+
+    private void Genset_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Genset_BtnMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Genset_BtnMouseEntered
+
+    private void Genset_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Genset_BtnMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Genset_BtnMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -1410,12 +1383,16 @@ public class Mainpage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DRAWER;
+    private javax.swing.JLabel Filter_Parts_Btn;
+    private javax.swing.JLabel Genset_Btn;
     public static javax.swing.JLabel Genset_id;
     private javax.swing.JPanel HEADER;
     private keeptoo.KGradientPanel HOME;
     private javax.swing.JLabel HOME_LABEL;
     public static javax.swing.JLabel HOME_MENU;
     private javax.swing.JPanel HOME_PANEL;
+    private javax.swing.JPanel HOME_PANEL1;
+    private javax.swing.JPanel HOME_PANEL2;
     public static javax.swing.JLabel HOME_VIEW_PRODUCT;
     public static javax.swing.JTabbedPane JTab;
     private javax.swing.JLabel LOGOUT_LABEL1;
@@ -1450,15 +1427,11 @@ public class Mainpage extends javax.swing.JFrame {
     public static javax.swing.JLabel Stock_Filter_Update;
     private javax.swing.JLabel Stock_Genset_Add;
     private javax.swing.JLabel Stock_Genset_Back;
-    private javax.swing.JLabel Stock_Genset_Delete;
     public static javax.swing.JPanel Stock_Genset_Panel_Add;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
-    public static javax.swing.JPanel Stock_Genset_Panel_Delete;
     public static javax.swing.JPanel Stock_Genset_Panel_Supplier;
-    public static javax.swing.JPanel Stock_Genset_Panel_Update;
     private javax.swing.JLabel Stock_Genset_Supplier;
     public static javax.swing.JTable Stock_Genset_Table;
-    private javax.swing.JLabel Stock_Genset_Update;
     public static javax.swing.JLabel filter_id;
     private javax.swing.JLabel fpe_home;
     private javax.swing.JLabel jLabel1;
