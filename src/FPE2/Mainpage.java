@@ -1151,9 +1151,18 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_AddMouseClicked
 
     private void Stock_Genset_SupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseClicked
+
+        
+        String id = Genset_id.getText();
+        
+        if(id.equals("")){
+            JOptionPane.showMessageDialog(null, "PLEASE SELECT GENSET!!","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
         Stock_View_Genset_Item svgt = new Stock_View_Genset_Item();
         svgt.svgt_id.setText(Genset_id.getText());
         svgt.setVisible(true);
+        }        
     }//GEN-LAST:event_Stock_Genset_SupplierMouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
@@ -1321,9 +1330,18 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Filter_Supplier1KeyPressed
 
     private void Stock_Genset_Supplier1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_Supplier1MouseClicked
-        Stock_View_Filter_Item svft = new Stock_View_Filter_Item();
-        svft.svft_id.setText(filter_id.getText());
-        svft.setVisible(true);
+        
+        String id = filter_id.getText();
+        
+        if(id.equals("")){
+            JOptionPane.showMessageDialog(null, "PLEASE SELECT FILTER!!","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            Stock_View_Filter_Item svft = new Stock_View_Filter_Item();
+            svft.svft_id.setText(id);
+            svft.setVisible(true);
+        }
+
     }//GEN-LAST:event_Stock_Genset_Supplier1MouseClicked
 
     private void Stock_Genset_Supplier1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_Supplier1MouseEntered

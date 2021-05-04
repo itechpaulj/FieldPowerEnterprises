@@ -448,6 +448,7 @@ public class Stock_View_Filter_Item extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_UpdateMouseExited
 
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
+       Mainpage.filter_id.setText("");
         dispose();
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
 
