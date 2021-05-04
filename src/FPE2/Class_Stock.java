@@ -50,7 +50,7 @@ public class Class_Stock {
         public static boolean UpdateStock(String date, String brand, String phasing,String unit_type,String dimen, String kva, String price, String model, String engines_sn, String alter_sn,byte[] images,String supplier,String ids){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `genset_table` SET `BRAND`=?,`MODEL`=?,`KVA`=?,`PHASING`=?,`UNIT_TYPE`=?,`DIMENSION`=?, `PRICE`=?,`ENGINE_SERIAL_NO`=?,`ALTERNATOR_SERIAL_NO`=?,`DATE`=?,`IMAGE`=?,`SUPPLIER`=? WHERE `ID`= ?");       
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `genset_table` SET `BRAND`=?,`MODEL`=?,`KVA`=?,`PHASING`=?,`UNIT_TYPE`=?,`DIMENSION`=?, `PRICE`=?,`ENGINE_SERIAL_NO`=?,`ALTERNATOR_SERIAL_NO`=?,`DATE`=?,`IMAGE`=?,`SUPPLIER`=? WHERE `ID`= ?");              
         ps.setString(1,brand);
         ps.setString(2,model);
         ps.setString(3,kva);
@@ -62,7 +62,7 @@ public class Class_Stock {
         ps.setString(9,alter_sn);
         ps.setString(10,date);
         ps.setBytes(11, images); 
-        ps.setString(12, supplier);
+        ps.setString(12, supplier);         
         ps.setString(13, ids);
         ps.execute();
         
