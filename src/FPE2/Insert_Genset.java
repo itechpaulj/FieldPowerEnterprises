@@ -61,8 +61,6 @@ public class Insert_Genset extends javax.swing.JFrame {
         as_model = new javax.swing.JTextField();
         as_kva = new javax.swing.JTextField();
         as_engine_sn = new javax.swing.JTextField();
-        as_fuel_tank = new javax.swing.JTextField();
-        as_body_parts = new javax.swing.JTextField();
         as_alternator_sn = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         as_unitType = new javax.swing.JTextField();
@@ -72,8 +70,6 @@ public class Insert_Genset extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
         as_pic = new javax.swing.JLabel();
@@ -125,19 +121,6 @@ public class Insert_Genset extends javax.swing.JFrame {
         as_engine_sn.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(as_engine_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 160, 31));
 
-        as_fuel_tank.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        as_fuel_tank.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(as_fuel_tank, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 210, 30));
-
-        as_body_parts.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        as_body_parts.setAlignmentY(1.0F);
-        as_body_parts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                as_body_partsActionPerformed(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(as_body_parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, 210, 31));
-
         as_alternator_sn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         as_alternator_sn.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(as_alternator_sn, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 160, 31));
@@ -179,16 +162,6 @@ public class Insert_Genset extends javax.swing.JFrame {
         jLabel11.setText("ENGINE_SN");
         jLabel11.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 120, 26));
-
-        jLabel13.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel13.setText("FUEL TANK CAP");
-        jLabel13.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 120, 30));
-
-        jLabel14.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        jLabel14.setText("BODY TYPE");
-        jLabel14.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 120, 30));
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel15.setText("ALTERNATOR_SN");
@@ -344,10 +317,6 @@ public class Insert_Genset extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void as_body_partsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_as_body_partsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_as_body_partsActionPerformed
-
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
@@ -362,8 +331,6 @@ public class Insert_Genset extends javax.swing.JFrame {
     String kva1 = as_kva.getText().toUpperCase();
     String price1 = as_price.getText().toUpperCase(); 
     String model1 = as_model.getText().toUpperCase(); 
-    String fuel_tank1 = as_fuel_tank.getText().toUpperCase(); 
-    String body_type1 = as_body_parts.getText().toUpperCase();
     String a = eng_sn.getSelectedItem().toString(); 
     String b = alt_sn.getSelectedItem().toString(); 
     String engines_sn1 = as_engine_sn.getText().toUpperCase() +" "+ a; 
@@ -383,7 +350,8 @@ public class Insert_Genset extends javax.swing.JFrame {
         }else{
             if(Banner.equals("UPDATE GENSET PRODUCT") && genset.equals("UPDATE") ){
                 
-                Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_image, sup_name, as_idGenset);
+                //Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, engines_sn1, alters1_sn, person_image, sup_name, as_idGenset);
+                Class_Stock.UpdateStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, engines_sn1, alters1_sn, person_image, sup_name, as_idGenset);
                 ct.Show_Stock_Genset_Table();
                 JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
             }
@@ -426,8 +394,6 @@ public class Insert_Genset extends javax.swing.JFrame {
                     as_phasing.setText(rs.getString("PHASING"));
                     as_unitType.setText(rs.getString("UNIT_TYPE"));
                     as_dimension.setText(rs.getString("DIMENSION"));
-                    as_fuel_tank.setText(rs.getString("TANK_CAP"));
-                    as_body_parts.setText(rs.getString("BODY TYPE"));
                     as_price.setText(rs.getString("PRICE"));
                     as_supplierNone.setText(rs.getString("SUPPLIER"));
 
@@ -546,12 +512,10 @@ public class Insert_Genset extends javax.swing.JFrame {
     private keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     public static javax.swing.JComboBox<String> alt_sn;
     public static javax.swing.JTextField as_alternator_sn;
-    public static javax.swing.JTextField as_body_parts;
     public static javax.swing.JTextField as_brand;
     public static datechooser.beans.DateChooserCombo as_date;
     public static javax.swing.JTextField as_dimension;
     public static javax.swing.JTextField as_engine_sn;
-    public static javax.swing.JTextField as_fuel_tank;
     public static javax.swing.JLabel as_id;
     public static javax.swing.JTextField as_kva;
     public static javax.swing.JTextField as_model;
@@ -567,8 +531,6 @@ public class Insert_Genset extends javax.swing.JFrame {
     public static javax.swing.JLabel id;
     public static javax.swing.JLabel jLabel10;
     public static javax.swing.JLabel jLabel11;
-    public static javax.swing.JLabel jLabel13;
-    public static javax.swing.JLabel jLabel14;
     public static javax.swing.JLabel jLabel15;
     public static javax.swing.JLabel jLabel16;
     public static javax.swing.JLabel jLabel2;

@@ -282,8 +282,6 @@ public class InsertSupplier extends javax.swing.JFrame {
             String kva1 = Insert_Genset.as_kva.getText().toUpperCase();
             String price1 = Insert_Genset.as_price.getText().toUpperCase(); 
             String model1 = Insert_Genset.as_model.getText().toUpperCase(); 
-            String fuel_tank1 = Insert_Genset.as_fuel_tank.getText().toUpperCase(); 
-            String body_type1 = Insert_Genset.as_body_parts.getText().toUpperCase();
             String a = Insert_Genset.eng_sn.getSelectedItem().toString(); 
             String b = Insert_Genset.alt_sn.getSelectedItem().toString(); 
             String engines_sn1 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" "+ a; 
@@ -293,7 +291,7 @@ public class InsertSupplier extends javax.swing.JFrame {
             
             String imgValidate = Insert_Genset.as_pic.getText();
 
-            if(date1.equals("") || brand1.equals("") || phasing1.equals("") || unit_type1.equals("") || dimen1.equals("") || kva1.equals("") || price1.equals("") || model1.equals("") || fuel_tank1.equals("") || a.equals("SELECT") || b.equals("SELECT") || engines_sn1.equals("") || alters1_sn.equals("")  ){
+            if(date1.equals("") || brand1.equals("") || phasing1.equals("") || unit_type1.equals("") || dimen1.equals("") || kva1.equals("") || price1.equals("") || model1.equals("") || a.equals("SELECT") || b.equals("SELECT") || engines_sn1.equals("") || alters1_sn.equals("")  ){
                 JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input! (GENSET)","",JOptionPane.ERROR_MESSAGE);
             }
             else if(imgValidate.equals(null) || imgValidate.equals("2x2")){
@@ -306,10 +304,11 @@ public class InsertSupplier extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Already Exist Supplier!\nPlease Select Supplier List!","",JOptionPane.WARNING_MESSAGE);
             }
             else{
-                if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, fuel_tank1, body_type1, engines_sn1, alters1_sn, person_images1, s_name))
+                if(!Class_Supplier.AddSupplier(s_name, address, contact, email) && !Class_Stock.AddStock(date1, brand1, phasing1, unit_type1, dimen1, kva1, price1, model1, engines_sn1, alters1_sn, person_images1, s_name))
                {
                    Class_table ct = new Class_table();
-                    ct.Show_Stock_Genset_Table();
+                   ct.Show_Stock_Genset_Table();
+                   ct.Supplier();
                    JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
                }                
             }
@@ -366,8 +365,6 @@ public class InsertSupplier extends javax.swing.JFrame {
             String kva2 = Insert_Genset.as_kva.getText().toUpperCase();
             String price2 = Insert_Genset.as_price.getText().toUpperCase(); 
             String model2 = Insert_Genset.as_model.getText().toUpperCase(); 
-            String fuel_tank2 = Insert_Genset.as_fuel_tank.getText().toUpperCase(); 
-            String body_type2 = Insert_Genset.as_body_parts.getText().toUpperCase();
             String a = Insert_Genset.eng_sn.getSelectedItem().toString(); 
             String b = Insert_Genset.alt_sn.getSelectedItem().toString(); 
             String engines_sn2 = Insert_Genset.as_engine_sn.getText().toUpperCase() +" "+ a; 
@@ -376,13 +373,13 @@ public class InsertSupplier extends javax.swing.JFrame {
             // insert genset
             String imgValidate = Insert_Genset.as_pic.getText();
             //JOptionPane.showMessageDialog(null, "Only new insert genset but supplier is Exist1","",JOptionPane.INFORMATION_MESSAGE);
-            if(date2.equals("") || brand2.equals("") || phasing2.equals("") || unit_type2.equals("") || dimen2.equals("") || kva2.equals("") || price2.equals("") || model2.equals("") || fuel_tank2.equals("") || a.equals("SELECT") || b.equals("SELECT") || engines_sn2.equals("") || alters2_sn.equals("")  ){
+            if(date2.equals("") || brand2.equals("") || phasing2.equals("") || unit_type2.equals("") || dimen2.equals("") || kva2.equals("") || price2.equals("") || model2.equals("") || a.equals("SELECT") || b.equals("SELECT") || engines_sn2.equals("") || alters2_sn.equals("")  ){
                 JOptionPane.showMessageDialog(null, "Fill Blanks!\nPlease Check your input! (GENSET)","",JOptionPane.ERROR_MESSAGE);
             }            
             else if(imgValidate.equals(null) || imgValidate.equals("2x2")){
             JOptionPane.showMessageDialog(null, "Empty Image!","",JOptionPane.ERROR_MESSAGE);
             }else{
-                    if(!Class_Stock.AddStock(date2, brand2, phasing2, unit_type2, dimen2, kva2, price2, model2, fuel_tank2, body_type2, engines_sn2, alters2_sn, Insert_Genset.person_image, s_name))
+                    if(!Class_Stock.AddStock(date2, brand2, phasing2, unit_type2, dimen2, kva2, price2, model2, engines_sn2, alters2_sn, Insert_Genset.person_image, s_name))
                    {
                        JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
                    }   

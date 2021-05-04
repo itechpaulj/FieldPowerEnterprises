@@ -19,24 +19,22 @@ import javax.swing.table.DefaultTableModel;
 public class Class_Stock {
     
 
-        public static boolean AddStock(String date, String brand, String phasing,String unit_type,String dimen, String kva, String price, String model, String fuel_tank, String body_type, String engines_sn, String alter_sn,byte[] images,String supplier){
+        public static boolean AddStock(String date, String brand, String phasing,String unit_type,String dimen, String kva, String price, String model, String engines_sn, String alter_sn,byte[] images,String supplier){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `genset_table`( `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`, `TANK_CAP`, `BODY TYPE`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `genset_table`( `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`, `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1,brand);
         ps.setString(2,model);
-        ps.setString(3,phasing);
-        ps.setString(4,unit_type);
-        ps.setString(5,dimen);
-        ps.setString(6,kva);
+        ps.setString(3,kva);
+        ps.setString(4,phasing);
+        ps.setString(5,unit_type);
+        ps.setString(6,dimen);
         ps.setString(7,price);
-        ps.setString(8,fuel_tank);
-        ps.setString(9,body_type);
-        ps.setString(10,engines_sn);
-        ps.setString(11,alter_sn);
-        ps.setString(12,date);
-        ps.setBytes(13, images); 
-        ps.setString(14, supplier); 
+        ps.setString(8,engines_sn);
+        ps.setString(9,alter_sn);
+        ps.setString(10,date);
+        ps.setBytes(11, images); 
+        ps.setString(12, supplier); 
         ps.execute();
 
 
@@ -49,25 +47,23 @@ public class Class_Stock {
      return false;
     }
         
-        public static boolean UpdateStock(String date, String brand, String phasing,String unit_type,String dimen, String kva, String price, String model, String fuel_tank, String body_type, String engines_sn, String alter_sn,byte[] images,String supplier,String ids){
+        public static boolean UpdateStock(String date, String brand, String phasing,String unit_type,String dimen, String kva, String price, String model, String engines_sn, String alter_sn,byte[] images,String supplier,String ids){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `genset_table` SET `BRAND`=?,`MODEL`=?,`KVA`=?,`PHASING`=?,`UNIT_TYPE`=?,`DIMENSION`=?,`TANK_CAP`=?,`BODY TYPE`=?,`PRICE`=?,`ENGINE_SERIAL_NO`=?,`ALTERNATOR_SERIAL_NO`=?,`DATE`=?,`IMAGE`=?,`SUPPLIER`=? WHERE `ID`= ?");
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `genset_table` SET `BRAND`=?,`MODEL`=?,`KVA`=?,`PHASING`=?,`UNIT_TYPE`=?,`DIMENSION`=?, `PRICE`=?,`ENGINE_SERIAL_NO`=?,`ALTERNATOR_SERIAL_NO`=?,`DATE`=?,`IMAGE`=?,`SUPPLIER`=? WHERE `ID`= ?");       
         ps.setString(1,brand);
         ps.setString(2,model);
         ps.setString(3,kva);
         ps.setString(4,phasing);
         ps.setString(5,unit_type);
         ps.setString(6,dimen);
-        ps.setString(7,fuel_tank);
-        ps.setString(8,body_type);
-        ps.setString(9,price);
-        ps.setString(10,engines_sn);
-        ps.setString(11,alter_sn);
-        ps.setString(12,date);
-        ps.setBytes(13, images); 
-        ps.setString(14, supplier); 
-        ps.setString(15, ids); 
+        ps.setString(7,price);
+        ps.setString(8,engines_sn);
+        ps.setString(9,alter_sn);
+        ps.setString(10,date);
+        ps.setBytes(11, images); 
+        ps.setString(12, supplier);
+        ps.setString(13, ids);
         ps.execute();
         
             }
