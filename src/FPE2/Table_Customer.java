@@ -7,26 +7,14 @@ package FPE2;
 
 
 
-import static FPE2.ViewGensetItem.vg_alternator;
-import static FPE2.ViewGensetItem.vg_body_type;
-import static FPE2.ViewGensetItem.vg_brand;
-import static FPE2.ViewGensetItem.vg_date;
-import static FPE2.ViewGensetItem.vg_dimension;
-import static FPE2.ViewGensetItem.vg_engine;
-import static FPE2.ViewGensetItem.vg_fuel;
-import static FPE2.ViewGensetItem.vg_id;
-import static FPE2.ViewGensetItem.vg_kva;
-import static FPE2.ViewGensetItem.vg_model;
-import static FPE2.ViewGensetItem.vg_phasing;
-import static FPE2.ViewGensetItem.vg_price;
-import static FPE2.ViewGensetItem.vg_supplier;
-import static FPE2.ViewGensetItem.vg_unit_type;
-import java.awt.Image;
+import static FPE2.Mainpage.Shop_Filter_Table;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.swing.ImageIcon;
 import javax.swing.table.TableModel;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 
 public class Table_Customer extends javax.swing.JFrame {
@@ -64,6 +52,8 @@ public class Table_Customer extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         customer_id = new javax.swing.JLabel();
         Add_Option = new javax.swing.JLabel();
+        Customer_Search = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -200,8 +190,21 @@ public class Table_Customer extends javax.swing.JFrame {
         );
 
         kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, -1, -1));
-        kGradientPanel1.add(customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 90, 30));
-        kGradientPanel1.add(Add_Option, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 70, 20));
+        kGradientPanel1.add(customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 90, 30));
+        kGradientPanel1.add(Add_Option, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 70, 20));
+
+        Customer_Search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Customer_Search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Customer_Search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Customer_SearchKeyPressed(evt);
+            }
+        });
+        kGradientPanel1.add(Customer_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/search_icon.png"))); // NOI18N
+        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 620));
 
@@ -290,6 +293,14 @@ public class Table_Customer extends javax.swing.JFrame {
             }        
     }//GEN-LAST:event_sup_delMouseClicked
 
+    private void Customer_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Customer_SearchKeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Customer_table.getModel();
+        String find = Customer_Search.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Customer_table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_Customer_SearchKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -328,6 +339,7 @@ public class Table_Customer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel Add_Option;
+    private javax.swing.JTextField Customer_Search;
     public static javax.swing.JTable Customer_table;
     public static javax.swing.JPanel add_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier;
@@ -336,6 +348,7 @@ public class Table_Customer extends javax.swing.JFrame {
     public static javax.swing.JLabel displays;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;

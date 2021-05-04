@@ -7,8 +7,12 @@ package FPE2;
 
 
 
+import static FPE2.Table_Customer.Customer_table;
 import javax.swing.table.TableModel;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -49,6 +53,8 @@ public class Table_Supplier extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         supplier_id = new javax.swing.JLabel();
         sup_list = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        Supplier_Search = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -96,7 +102,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Supplier_table);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 68, 880, 400));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 880, 390));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -188,7 +194,20 @@ public class Table_Supplier extends javax.swing.JFrame {
         kGradientPanel1.add(supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 90, 30));
 
         sup_list.setText("1");
-        kGradientPanel1.add(sup_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 50, -1));
+        kGradientPanel1.add(sup_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 50, 30));
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/search_icon.png"))); // NOI18N
+        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+
+        Supplier_Search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Supplier_Search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Supplier_Search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Supplier_SearchKeyPressed(evt);
+            }
+        });
+        kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 620));
 
@@ -301,6 +320,14 @@ public class Table_Supplier extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_sup_delMouseClicked
 
+    private void Supplier_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Supplier_SearchKeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Supplier_table.getModel();
+        String find = Supplier_Search.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Supplier_table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_Supplier_SearchKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -337,6 +364,7 @@ public class Table_Supplier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Supplier_Search;
     public static javax.swing.JTable Supplier_table;
     public static javax.swing.JPanel add_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier;
@@ -344,6 +372,7 @@ public class Table_Supplier extends javax.swing.JFrame {
     public static javax.swing.JLabel displays;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;

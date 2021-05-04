@@ -8,7 +8,10 @@ package FPE2;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 
 
@@ -122,7 +125,7 @@ public class Mainpage extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE2/logos1.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 190, 190));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 190, 140));
 
         HEADER.setBackground(new java.awt.Color(2, 71, 94));
         HEADER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -535,7 +538,7 @@ public class Mainpage extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(Stock_Genset_Table);
 
-        STOCK_GENSET.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 1060, 420));
+        STOCK_GENSET.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1070, 420));
         STOCK_GENSET.add(Genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 150, 30));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -544,6 +547,11 @@ public class Mainpage extends javax.swing.JFrame {
 
         jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField3KeyPressed(evt);
+            }
+        });
         STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
         JTab.addTab("STOCK_GENSET", STOCK_GENSET);
@@ -741,6 +749,11 @@ public class Mainpage extends javax.swing.JFrame {
 
         jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField4KeyPressed(evt);
+            }
+        });
         STOCK_FILTER.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
         JTab.addTab("STOCK_FILTER", STOCK_FILTER);
@@ -881,6 +894,11 @@ public class Mainpage extends javax.swing.JFrame {
 
         jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
+            }
+        });
         SHOP_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
         JTab.addTab("SHOP_GENSET", SHOP_GENSET);
@@ -978,6 +996,11 @@ public class Mainpage extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
         SHOP_FILTER.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1168,6 +1191,7 @@ public class Mainpage extends javax.swing.JFrame {
         int i=Shop_Genset_Table.getSelectedRow();
         TableModel model = Shop_Genset_Table.getModel();
         Shop_genset_id.setText(model.getValueAt(i,0).toString()); 
+        
            
         
     }//GEN-LAST:event_Shop_Genset_TableMouseClicked
@@ -1316,6 +1340,38 @@ public class Mainpage extends javax.swing.JFrame {
       Stock_Genset_Back.setForeground(new Color(255,255,255));
       Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));   
     }//GEN-LAST:event_Stock_Genset_BackMouseExited
+
+    private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Stock_Genset_Table.getModel();
+        String find = jTextField3.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Stock_Genset_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_jTextField3KeyPressed
+
+    private void jTextField4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Stock_Filter_Table.getModel();
+        String find = jTextField4.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Stock_Filter_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_jTextField4KeyPressed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Shop_Genset_Table.getModel();
+        String find = jTextField2.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Shop_Genset_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_jTextField2KeyPressed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Shop_Filter_Table.getModel();
+        String find = jTextField1.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Shop_Filter_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_jTextField1KeyPressed
 
     /**
      * @param args the command line arguments
