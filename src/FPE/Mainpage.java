@@ -573,7 +573,7 @@ public static byte[] images = null;
         Stock_Genset_View.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_View.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_View.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_View.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Add_Btn.png"))); // NOI18N
+        Stock_Genset_View.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_view_icon.png"))); // NOI18N
         Stock_Genset_View.setText("  VIEW ITEM  ");
         Stock_Genset_View.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
