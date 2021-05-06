@@ -101,12 +101,15 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="Supplier_List_Btn2" alignment="1" pref="250" max="32767" attributes="0"/>
+                  <Component id="Supplier_List_Btn3" alignment="1" pref="250" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="Supplier_List_Btn2" min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Supplier_List_Btn3" min="-2" pref="30" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -120,7 +123,20 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Exist.png"/>
+                  <Image iconType="3" name="/Picture/Images_Exist.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=" SUPPLIER LIST   "/>
+                <Property name="alignmentY" type="float" value="1.0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="Supplier_List_Btn3">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="14" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/Picture/Images_Customer_Exist_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" SUPPLIER LIST   "/>
                 <Property name="alignmentY" type="float" value="1.0"/>
@@ -278,7 +294,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Images_Back_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Images_Images_Back_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" BACK     "/>
               </Properties>
@@ -328,7 +344,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Save_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Images_Save_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" SAVE"/>
               </Properties>

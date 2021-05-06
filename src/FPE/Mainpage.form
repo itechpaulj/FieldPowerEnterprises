@@ -100,7 +100,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Hom_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Hom_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" HOME     "/>
               </Properties>
@@ -157,7 +157,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_logout_Btn.png"/>
+                  <Image iconType="3" name="/Picture/logout_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" LOGOUT  "/>
               </Properties>
@@ -214,7 +214,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Stock_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Stock_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" STOCK    "/>
               </Properties>
@@ -271,7 +271,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Shop_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Shop_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" SHOP      "/>
               </Properties>
@@ -328,7 +328,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Reports_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Reports_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" REPORT  "/>
               </Properties>
@@ -344,7 +344,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/FPE/All Picture/Images_logos.png"/>
+              <Image iconType="3" name="/Picture/Images_logos.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -491,7 +491,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Filters.png"/>
+                  <Image iconType="3" name="/Picture/Images_Filters.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -512,7 +512,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Gensets.png"/>
+                  <Image iconType="3" name="/Picture/Images_Genset.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -685,7 +685,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Add.png"/>
+                      <Image iconType="3" name="/Picture/Add_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="  ADD ITEM   "/>
                   </Properties>
@@ -735,7 +735,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_Supplier_Btn.png"/>
+                      <Image iconType="3" name="/Picture/Images_Supplier_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="SUPPLIER LIST "/>
                   </Properties>
@@ -785,7 +785,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_Images_Back_Btn.png"/>
+                      <Image iconType="3" name="/Picture/Back_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="   BACK       "/>
                   </Properties>
@@ -840,9 +840,6 @@
             <Component class="javax.swing.JLabel" name="jLabel15">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Search_Btn.png"/>
-                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -904,7 +901,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_view_icon.png"/>
+                      <Image iconType="3" name="/Picture/Add_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="  VIEW ITEM  "/>
                   </Properties>
@@ -1034,7 +1031,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_Supplier_Btn.png"/>
+                      <Image iconType="3" name="/Picture/Images_Supplier_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="SUPPLIER LIST  "/>
                   </Properties>
@@ -1084,7 +1081,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Add.png"/>
+                      <Image iconType="3" name="/Picture/Add_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="ADD ITEM"/>
                   </Properties>
@@ -1114,7 +1111,7 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Stock_Filter_view" alignment="1" pref="190" max="32767" attributes="0"/>
+                      <Component id="Stock_Filter_view" alignment="0" pref="190" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -1134,7 +1131,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_view_icon.png"/>
+                      <Image iconType="3" name="/Picture/Images_view_icon.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="  VIEW ITEM   "/>
                   </Properties>
@@ -1184,7 +1181,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_Images_Back_Btn.png"/>
+                      <Image iconType="3" name="/Picture/Back_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="   BACK   "/>
                   </Properties>
@@ -1199,9 +1196,6 @@
             <Component class="javax.swing.JLabel" name="jLabel17">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Search_Btn.png"/>
-                </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -1240,7 +1234,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_shop_Genset.png"/>
+                  <Image iconType="3" name="/Picture/Images_Genset.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -1261,7 +1255,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_shop_Filter.png"/>
+                  <Image iconType="3" name="/Picture/Images_Filters.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -1490,7 +1484,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_Images_Back_Btn.png"/>
+                      <Image iconType="3" name="/Picture/Back_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="   BACK   "/>
                   </Properties>
@@ -1543,7 +1537,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_view_icon.png"/>
+                      <Image iconType="3" name="/Picture/Images_view_icon.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="  VIEW ITEM   "/>
                   </Properties>
@@ -1596,7 +1590,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_Supplier_Btn.png"/>
+                      <Image iconType="3" name="/Picture/Images_Customer_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value=" CUSTOMER LIST"/>
                   </Properties>
@@ -1612,7 +1606,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Search_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Search_Btn.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -1651,7 +1645,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="40" y="80" width="1050" height="420"/>
+                  <AbsoluteConstraints x="30" y="80" width="1050" height="420"/>
                 </Constraint>
               </Constraints>
 
@@ -1736,7 +1730,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_Images_Back_Btn.png"/>
+                      <Image iconType="3" name="/Picture/Back_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="   BACK   "/>
                   </Properties>
@@ -1789,7 +1783,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_view_icon.png"/>
+                      <Image iconType="3" name="/Picture/Images_view_icon.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="  VIEW ITEM   "/>
                   </Properties>
@@ -1839,7 +1833,7 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/FPE/All Picture/Images_Supplier_Btn.png"/>
+                      <Image iconType="3" name="/Picture/Images_Customer_Btn.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value=" CUSTOMER LIST"/>
                   </Properties>
@@ -1855,7 +1849,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Search_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Search_Btn.png"/>
                 </Property>
               </Properties>
               <Constraints>

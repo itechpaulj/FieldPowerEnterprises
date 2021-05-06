@@ -83,7 +83,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
 
         Supplier_List_Btn2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_List_Btn2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Supplier_List_Btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Exist.png"))); // NOI18N
+        Supplier_List_Btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Exist.png"))); // NOI18N
         Supplier_List_Btn2.setText(" SUPPLIER LIST   ");
         Supplier_List_Btn2.setAlignmentY(1.0F);
         Supplier_List_Btn2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -153,7 +153,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
         Stock_Genset_Back.setText(" BACK     ");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -185,7 +185,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Stock_Genset_Save.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Save.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Save_Btn.png"))); // NOI18N
+        Stock_Genset_Save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Save_Btn.png"))); // NOI18N
         Stock_Genset_Save.setText(" SAVE");
         Stock_Genset_Save.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

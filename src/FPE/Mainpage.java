@@ -134,7 +134,7 @@ public static byte[] images = null;
         HOME_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         HOME_LABEL.setForeground(new java.awt.Color(255, 255, 255));
         HOME_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        HOME_LABEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Hom_Btn.png"))); // NOI18N
+        HOME_LABEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Hom_Btn.png"))); // NOI18N
         HOME_LABEL.setText(" HOME     ");
         HOME_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -168,7 +168,7 @@ public static byte[] images = null;
         LOGOUT_LABEL1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         LOGOUT_LABEL1.setForeground(new java.awt.Color(255, 255, 255));
         LOGOUT_LABEL1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LOGOUT_LABEL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_logout_Btn.png"))); // NOI18N
+        LOGOUT_LABEL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/logout_Btn.png"))); // NOI18N
         LOGOUT_LABEL1.setText(" LOGOUT  ");
         LOGOUT_LABEL1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -202,7 +202,7 @@ public static byte[] images = null;
         STOCK_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         STOCK_LABEL.setForeground(new java.awt.Color(255, 255, 255));
         STOCK_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        STOCK_LABEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Stock_Btn.png"))); // NOI18N
+        STOCK_LABEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Stock_Btn.png"))); // NOI18N
         STOCK_LABEL.setText(" STOCK    ");
         STOCK_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -236,7 +236,7 @@ public static byte[] images = null;
         SHOP_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         SHOP_LABEL.setForeground(new java.awt.Color(255, 255, 255));
         SHOP_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        SHOP_LABEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Shop_Btn.png"))); // NOI18N
+        SHOP_LABEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Shop_Btn.png"))); // NOI18N
         SHOP_LABEL.setText(" SHOP      ");
         SHOP_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -270,7 +270,7 @@ public static byte[] images = null;
         REPORT_LABEL.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         REPORT_LABEL.setForeground(new java.awt.Color(255, 255, 255));
         REPORT_LABEL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        REPORT_LABEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Reports_Btn.png"))); // NOI18N
+        REPORT_LABEL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Reports_Btn.png"))); // NOI18N
         REPORT_LABEL.setText(" REPORT  ");
         REPORT_LABEL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -298,7 +298,7 @@ public static byte[] images = null;
         DRAWER.add(REPORT_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 190, 70));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_logos.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_logos.png"))); // NOI18N
         DRAWER.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 190, 160));
 
         getContentPane().add(DRAWER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 725));
@@ -336,7 +336,7 @@ public static byte[] images = null;
 
         Stock_Filter.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         Stock_Filter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Filter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Filters.png"))); // NOI18N
+        Stock_Filter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Filters.png"))); // NOI18N
         Stock_Filter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_FilterMouseClicked(evt);
@@ -352,7 +352,7 @@ public static byte[] images = null;
 
         Stock_Genset.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         Stock_Genset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Gensets.png"))); // NOI18N
+        Stock_Genset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Genset.png"))); // NOI18N
         Stock_Genset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_GensetMouseClicked(evt);
@@ -444,7 +444,7 @@ public static byte[] images = null;
         Stock_Genset_Add.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Add.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Add.png"))); // NOI18N
+        Stock_Genset_Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Add_Btn.png"))); // NOI18N
         Stock_Genset_Add.setText("  ADD ITEM   ");
         Stock_Genset_Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -476,7 +476,7 @@ public static byte[] images = null;
         Stock_Genset_Supplier.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Supplier.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Supplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Supplier_Btn.png"))); // NOI18N
+        Stock_Genset_Supplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Supplier_Btn.png"))); // NOI18N
         Stock_Genset_Supplier.setText("SUPPLIER LIST ");
         Stock_Genset_Supplier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -508,7 +508,7 @@ public static byte[] images = null;
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back_Btn.png"))); // NOI18N
         Stock_Genset_Back.setText("   BACK       ");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -557,7 +557,6 @@ public static byte[] images = null;
         STOCK_GENSET.add(Genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 150, 30));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Search_Btn.png"))); // NOI18N
         STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
         jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -574,7 +573,7 @@ public static byte[] images = null;
         Stock_Genset_View.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_View.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_View.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_View.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_view_icon.png"))); // NOI18N
+        Stock_Genset_View.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Add_Btn.png"))); // NOI18N
         Stock_Genset_View.setText("  VIEW ITEM  ");
         Stock_Genset_View.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -643,7 +642,7 @@ public static byte[] images = null;
         Stock_Filter_supplier_list.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Filter_supplier_list.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Filter_supplier_list.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Filter_supplier_list.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Supplier_Btn.png"))); // NOI18N
+        Stock_Filter_supplier_list.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Supplier_Btn.png"))); // NOI18N
         Stock_Filter_supplier_list.setText("SUPPLIER LIST  ");
         Stock_Filter_supplier_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -675,7 +674,7 @@ public static byte[] images = null;
         Stock_Filter_Add.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Filter_Add.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Filter_Add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Filter_Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Add.png"))); // NOI18N
+        Stock_Filter_Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Add_Btn.png"))); // NOI18N
         Stock_Filter_Add.setText("ADD ITEM");
         Stock_Filter_Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -707,7 +706,7 @@ public static byte[] images = null;
         Stock_Filter_view.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Filter_view.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Filter_view.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Filter_view.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_view_icon.png"))); // NOI18N
+        Stock_Filter_view.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_view_icon.png"))); // NOI18N
         Stock_Filter_view.setText("  VIEW ITEM   ");
         Stock_Filter_view.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -725,7 +724,7 @@ public static byte[] images = null;
         Stock_Filter_Panel_view.setLayout(Stock_Filter_Panel_viewLayout);
         Stock_Filter_Panel_viewLayout.setHorizontalGroup(
             Stock_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_view, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
         );
         Stock_Filter_Panel_viewLayout.setVerticalGroup(
             Stock_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -739,7 +738,7 @@ public static byte[] images = null;
         Stock_Filter_back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Filter_back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Filter_back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Filter_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Stock_Filter_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back_Btn.png"))); // NOI18N
         Stock_Filter_back.setText("   BACK   ");
         Stock_Filter_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -767,7 +766,6 @@ public static byte[] images = null;
         STOCK_FILTER.add(Stock_Filter_Panel_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, 190, 50));
 
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Search_Btn.png"))); // NOI18N
         STOCK_FILTER.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
         JTab.addTab("STOCK_FILTER", STOCK_FILTER);
@@ -779,7 +777,7 @@ public static byte[] images = null;
 
         Shop_Genset.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         Shop_Genset.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Genset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_shop_Genset.png"))); // NOI18N
+        Shop_Genset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Genset.png"))); // NOI18N
         Shop_Genset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Shop_GensetMouseClicked(evt);
@@ -795,7 +793,7 @@ public static byte[] images = null;
 
         Shop_Filter.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
         Shop_Filter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Filter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_shop_Filter.png"))); // NOI18N
+        Shop_Filter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Filters.png"))); // NOI18N
         Shop_Filter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Shop_FilterMouseClicked(evt);
@@ -917,7 +915,7 @@ public static byte[] images = null;
         Shop_Genset_Panel_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Panel_Back.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Genset_Panel_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Genset_Panel_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Shop_Genset_Panel_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back_Btn.png"))); // NOI18N
         Shop_Genset_Panel_Back.setText("   BACK   ");
         Shop_Genset_Panel_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -949,7 +947,7 @@ public static byte[] images = null;
         Shop_Gensetr_view.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Gensetr_view.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Gensetr_view.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Gensetr_view.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_view_icon.png"))); // NOI18N
+        Shop_Gensetr_view.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_view_icon.png"))); // NOI18N
         Shop_Gensetr_view.setText("  VIEW ITEM   ");
         Shop_Gensetr_view.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -983,7 +981,7 @@ public static byte[] images = null;
         Shop_Filter_Customer_list.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Filter_Customer_list.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Filter_Customer_list.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Filter_Customer_list.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Supplier_Btn.png"))); // NOI18N
+        Shop_Filter_Customer_list.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
         Shop_Filter_Customer_list.setText(" CUSTOMER LIST");
         Shop_Filter_Customer_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1013,7 +1011,7 @@ public static byte[] images = null;
         SHOP_GENSET.add(Shop_Genset_Panel_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, 200, 50));
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Search_Btn.png"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
         SHOP_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
         JTab.addTab("SHOP_GENSET", SHOP_GENSET);
@@ -1036,7 +1034,7 @@ public static byte[] images = null;
         ));
         jScrollPane8.setViewportView(Shop_Filter_Table);
 
-        SHOP_FILTER.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1050, 420));
+        SHOP_FILTER.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1050, 420));
         SHOP_FILTER.add(Shop_filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 80, 20));
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -1053,7 +1051,7 @@ public static byte[] images = null;
         Shop_Filter_back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Filter_back.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Filter_back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Filter_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Shop_Filter_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back_Btn.png"))); // NOI18N
         Shop_Filter_back.setText("   BACK   ");
         Shop_Filter_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1085,7 +1083,7 @@ public static byte[] images = null;
         Shop_Filter_view.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Filter_view.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Filter_view.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Filter_view.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_view_icon.png"))); // NOI18N
+        Shop_Filter_view.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_view_icon.png"))); // NOI18N
         Shop_Filter_view.setText("  VIEW ITEM   ");
         Shop_Filter_view.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1119,7 +1117,7 @@ public static byte[] images = null;
         Shop_Filter_customer.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Filter_customer.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Filter_customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Filter_customer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Supplier_Btn.png"))); // NOI18N
+        Shop_Filter_customer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
         Shop_Filter_customer.setText(" CUSTOMER LIST");
         Shop_Filter_customer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1147,7 +1145,7 @@ public static byte[] images = null;
         SHOP_FILTER.add(Shop_Filter_Panel_Customer_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, 200, 50));
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Search_Btn.png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
         SHOP_FILTER.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
         JTab.addTab("SHOP_FILTER", SHOP_FILTER);

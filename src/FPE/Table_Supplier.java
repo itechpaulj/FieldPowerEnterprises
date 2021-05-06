@@ -112,7 +112,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         Add.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Add.setForeground(new java.awt.Color(255, 255, 255));
         Add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Add.png"))); // NOI18N
+        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Add_Btn.png"))); // NOI18N
         Add.setText(" ADD SUPPLIER ");
         Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -144,7 +144,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         sup_listUpdate.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         sup_listUpdate.setForeground(new java.awt.Color(255, 255, 255));
         sup_listUpdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sup_listUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Edit_Btn.png"))); // NOI18N
+        sup_listUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
         sup_listUpdate.setText(" UPDATE ");
         sup_listUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -176,7 +176,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         sup_del.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         sup_del.setForeground(new java.awt.Color(255, 255, 255));
         sup_del.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sup_del.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Delete_Btn.png"))); // NOI18N
+        sup_del.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Delete_Btn.png"))); // NOI18N
         sup_del.setText(" DELETE");
         sup_del.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -208,7 +208,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         Back.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Back.setForeground(new java.awt.Color(255, 255, 255));
         Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back_Btn.png"))); // NOI18N
         Back.setText(" BACK  ");
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -245,7 +245,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Search_Btn.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Search_Btn.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 570));

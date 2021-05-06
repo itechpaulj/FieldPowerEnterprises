@@ -128,7 +128,7 @@ public class View_Stock_Filter extends javax.swing.JFrame {
         View_stock_Filter_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_stock_Filter_pic.setForeground(new java.awt.Color(20, 31, 31));
         View_stock_Filter_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_stock_Filter_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Image.png"))); // NOI18N
+        View_stock_Filter_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image_Btn.png"))); // NOI18N
         View_stock_Filter_pic.setAlignmentY(1.0F);
         View_stock_Filter_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         View_stock_Filter_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -210,6 +210,7 @@ public class View_Stock_Filter extends javax.swing.JFrame {
         View_stock_supplier_address.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_stock_supplier_address.setForeground(new java.awt.Color(20, 31, 31));
         View_stock_supplier_address.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        View_stock_supplier_address.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image_Btn.png"))); // NOI18N
         View_stock_supplier_address.setAlignmentY(1.0F);
         View_stock_supplier_address.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(View_stock_supplier_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 200, 180, 120));
@@ -302,7 +303,7 @@ public class View_Stock_Filter extends javax.swing.JFrame {
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
         Stock_Genset_Back.setText("  BACK               ");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -334,7 +335,7 @@ public class View_Stock_Filter extends javax.swing.JFrame {
         Stock_Genset_Delete.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Delete.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Delete.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Stock_Genset_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Delete_Btn.png"))); // NOI18N
+        Stock_Genset_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Delete_Btn.png"))); // NOI18N
         Stock_Genset_Delete.setText(" DELETE ITEM      ");
         Stock_Genset_Delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -366,7 +367,7 @@ public class View_Stock_Filter extends javax.swing.JFrame {
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Edit_Btn.png"))); // NOI18N
+        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
         Stock_Genset_Update.setText(" UPDATE ITEM    ");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

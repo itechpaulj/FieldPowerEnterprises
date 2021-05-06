@@ -20,6 +20,7 @@ public class Insert_Customer extends javax.swing.JFrame {
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jPanel3 = new javax.swing.JPanel();
         Supplier_List_Btn2 = new javax.swing.JLabel();
+        Supplier_List_Btn3 = new javax.swing.JLabel();
         Insert_Customer_contact = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -65,20 +66,29 @@ public class Insert_Customer extends javax.swing.JFrame {
 
         Supplier_List_Btn2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_List_Btn2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Supplier_List_Btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Exist.png"))); // NOI18N
+        Supplier_List_Btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Exist.png"))); // NOI18N
         Supplier_List_Btn2.setText(" SUPPLIER LIST   ");
         Supplier_List_Btn2.setAlignmentY(1.0F);
+
+        Supplier_List_Btn3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Supplier_List_Btn3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Supplier_List_Btn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Exist_Btn.png"))); // NOI18N
+        Supplier_List_Btn3.setText(" SUPPLIER LIST   ");
+        Supplier_List_Btn3.setAlignmentY(1.0F);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Supplier_List_Btn2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+            .addComponent(Supplier_List_Btn3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(Supplier_List_Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Supplier_List_Btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -124,7 +134,7 @@ public class Insert_Customer extends javax.swing.JFrame {
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
         Stock_Genset_Back.setText(" BACK     ");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -156,7 +166,7 @@ public class Insert_Customer extends javax.swing.JFrame {
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Save_Btn.png"))); // NOI18N
+        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Save_Btn.png"))); // NOI18N
         Stock_Genset_Update.setText(" SAVE");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -283,6 +293,7 @@ public class Insert_Customer extends javax.swing.JFrame {
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
     private javax.swing.JLabel Stock_Genset_Update;
     private javax.swing.JLabel Supplier_List_Btn2;
+    private javax.swing.JLabel Supplier_List_Btn3;
     private javax.swing.JLabel id1;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;

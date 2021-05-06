@@ -151,7 +151,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/FPE/All Picture/Image.png"/>
+              <Image iconType="3" name="/Picture/Images_Image_Btn.png"/>
             </Property>
             <Property name="alignmentY" type="float" value="1.0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -595,7 +595,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Exist.png"/>
+                  <Image iconType="3" name="/Picture/Images_Exist.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" SUPPLIER LIST   "/>
                 <Property name="alignmentY" type="float" value="1.0"/>
@@ -644,7 +644,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Save_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Images_Save_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" SAVE RECORD "/>
               </Properties>
@@ -694,7 +694,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/FPE/All Picture/Images_Images_Back_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Images_Images_Back_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" CANCEL "/>
               </Properties>

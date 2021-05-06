@@ -127,7 +127,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
         Insert_Invetory_Filter_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         Insert_Invetory_Filter_pic.setForeground(new java.awt.Color(20, 31, 31));
         Insert_Invetory_Filter_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Insert_Invetory_Filter_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Image.png"))); // NOI18N
+        Insert_Invetory_Filter_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image_Btn.png"))); // NOI18N
         Insert_Invetory_Filter_pic.setAlignmentY(1.0F);
         Insert_Invetory_Filter_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         Insert_Invetory_Filter_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -261,7 +261,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
 
         Supplier_List_Btn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_List_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Supplier_List_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Exist.png"))); // NOI18N
+        Supplier_List_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Exist.png"))); // NOI18N
         Supplier_List_Btn.setText(" SUPPLIER LIST   ");
         Supplier_List_Btn.setAlignmentY(1.0F);
         Supplier_List_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -290,7 +290,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Save_Btn.png"))); // NOI18N
+        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Save_Btn.png"))); // NOI18N
         Stock_Genset_Update.setText(" SAVE RECORD ");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -322,7 +322,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FPE/All Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
         Stock_Genset_Back.setText(" CANCEL ");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
