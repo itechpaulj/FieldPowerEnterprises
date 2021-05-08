@@ -90,12 +90,12 @@ public class View_Stock_Filter extends javax.swing.JFrame {
         View_Filter_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Filter_Display.setText("VIEW FILTER PRODUCT");
         View_Filter_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_Filter_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_Filter_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 80));
@@ -128,7 +128,7 @@ public class View_Stock_Filter extends javax.swing.JFrame {
         View_stock_Filter_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_stock_Filter_pic.setForeground(new java.awt.Color(20, 31, 31));
         View_stock_Filter_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_stock_Filter_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image_Btn.png"))); // NOI18N
+        View_stock_Filter_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
         View_stock_Filter_pic.setAlignmentY(1.0F);
         View_stock_Filter_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         View_stock_Filter_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -210,7 +210,6 @@ public class View_Stock_Filter extends javax.swing.JFrame {
         View_stock_supplier_address.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_stock_supplier_address.setForeground(new java.awt.Color(20, 31, 31));
         View_stock_supplier_address.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_stock_supplier_address.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image_Btn.png"))); // NOI18N
         View_stock_supplier_address.setAlignmentY(1.0F);
         View_stock_supplier_address.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(View_stock_supplier_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 200, 180, 120));

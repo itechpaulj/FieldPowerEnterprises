@@ -19,15 +19,35 @@ import javax.swing.JOptionPane;
  * @author ROBLES
  */
 public class Insert_Inventory_Genset extends javax.swing.JFrame {
+    
     String filename = null;
+    public static File resoucesDirectory ;
+  
     public static byte[] images = null;
     
+
     public Insert_Inventory_Genset() {
         initComponents();
-        
-        
+        imgisNull();
     }
 
+ public void imgisNull(){
+        try{
+            if(images == null) {
+                FileImageInputStream fis1 = new FileImageInputStream(new File("src/Picture/Images_Image.png"));
+                ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
+                byte[] buf1 = new byte[1024];
+                    for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
+                        bos1.write(buf1,0,readNum);
+                    }
+                images=bos1.toByteArray(); 
+            }
+        }
+        catch(Exception e){
+//            e.printStackTrace();
+        }
+ }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,7 +82,6 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Genset_id = new javax.swing.JTextField();
         Insert_Invetory_Genset_brand = new javax.swing.JTextField();
         Insert_Invetory_Genset_Alter_Serial = new javax.swing.JTextField();
-        Insert_Invetory_Genset_date = new javax.swing.JTextField();
         Insert_Invetory_Genset_dimension = new javax.swing.JTextField();
         Insert_Invetory_Genset_seller_price = new javax.swing.JTextField();
         Insert_Invetory_Genset_Engine_Serial = new javax.swing.JTextField();
@@ -72,6 +91,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Supplier_contact = new javax.swing.JTextField();
         Insert_Invetory_Supplier_email = new javax.swing.JTextField();
         Insert_Invetory_Supplier_name = new javax.swing.JTextField();
+        Insert_Invetory_Genset_date = new datechooser.beans.DateChooserCombo();
         engine = new javax.swing.JComboBox<>();
         alter = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -84,6 +104,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Stock_Genset_Back = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        Path = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Inventory_Display = new javax.swing.JLabel();
 
@@ -141,7 +162,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         Insert_Invetory_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
         Insert_Invetory_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Insert_Invetory_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image_Btn.png"))); // NOI18N
+        Insert_Invetory_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
         Insert_Invetory_Genset_pic.setAlignmentY(1.0F);
         Insert_Invetory_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         Insert_Invetory_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -236,11 +257,6 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Genset_Alter_Serial.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_Alter_Serial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, 190, 30));
 
-        Insert_Invetory_Genset_date.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Invetory_Genset_date.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Insert_Invetory_Genset_date.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 190, 30));
-
         Insert_Invetory_Genset_dimension.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Invetory_Genset_dimension.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Invetory_Genset_dimension.setBorder(null);
@@ -286,13 +302,16 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Supplier_name.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Supplier_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 180, 30));
 
+        Insert_Invetory_Genset_date.setCalendarPreferredSize(new java.awt.Dimension(400, 500));
+        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 190, 30));
+
         engine.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        engine.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ENGINE NEW", "ENGINE OLD ", " " }));
+        engine.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ENGINE NEW", "ENGINE OLD" }));
         engine.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 190, 30));
 
         alter.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        alter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ALTERNATOR NEW", "ALTERNATOR OLD ", " " }));
+        alter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ALTERNATOR NEW", "ALTERNATOR OLD" }));
         alter.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(alter, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 190, 30));
 
@@ -416,6 +435,9 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "SUPPLIER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 60, 330, 450));
 
+        Path.setText("1");
+        KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, 100, 40));
+
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
         jPanel4.setBackground(new java.awt.Color(2, 71, 94));
@@ -454,6 +476,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Genset_pic.setIcon(imageicon);
 
         try{
+       
             File image = new File(filename);
             FileImageInputStream fis = new FileImageInputStream(image);
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -462,7 +485,10 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
             for(int readNum;(readNum=fis.read(buf)) !=-1;){
                 bos.write(buf,0,readNum);
             }
-            images=bos.toByteArray();
+            
+            images=bos.toByteArray(); 
+
+
        
         }
         catch(Exception e){
@@ -486,9 +512,10 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     String s_price    = Insert_Invetory_Genset_seller_price.getText().toUpperCase(); 
    
     String engine_sn     = Insert_Invetory_Genset_Engine_Serial.getText().toUpperCase();
-    String engines       = engine.getSelectedItem().toString() +" " + engine_sn;
+    String engines       = engine.getSelectedItem().toString() +" - " + engine_sn;
+    
     String alters1_sn    = Insert_Invetory_Genset_Alter_Serial.getText().toUpperCase();
-    String alters        = alter.getSelectedItem().toString() + " " + alters1_sn;
+    String alters        = alter.getSelectedItem().toString() + " - " + alters1_sn;
     
     String ids  = Insert_Invetory_Supplier_id.getText().toUpperCase();
     String  name       = Insert_Invetory_Supplier_name.getText().toUpperCase();
@@ -496,18 +523,36 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     String  email      = Insert_Invetory_Supplier_email.getText().toUpperCase();
     String  contact    = Insert_Invetory_Supplier_contact.getText().toUpperCase();
     
+    
+
     if(brand.equals("") || mode.equals("") || kva.equals("") || date.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || price.equals("") || s_price.equals("") || name.equals("") || address.equals("") || email.equals("") || contact.equals("")){
        
             JOptionPane.showMessageDialog(null,"FILLED SOME BLANKS !!! ","",JOptionPane.ERROR_MESSAGE); 
     }
-    else if(Banner.equals("ADD GENSET PRODUCT"))
+    else if(Banner.equals("ADD GENSET PRODUCT") && Path.getText().equals("1"))
     {
-        if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name) && !Class_Supplier.AddSupplier(name, address, contact, email))
+        if(!Class_Supplier.ExistSupplier(email)){
+            JOptionPane.showMessageDialog(null, " EXIST SUPPLIER\nPLEASE SELECT SUPPLIER LIST!","",JOptionPane.WARNING_MESSAGE);
+            //Path.setText("2"); // exist supplier
+        }
+        else{
+            if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name) && !Class_Supplier.AddSupplier(name, address, contact, email))
+            {
+                JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
+                Class_tables ct = new Class_tables(); ct.Genset(); ct.Supplier();
+                dispose();
+            }   
+        }
+    }
+    else if(Banner.equals("ADD GENSET PRODUCT") && Path.getText().equals("2")){
+        // exist supplier but new genset product
+        if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name))
         {
             JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
             Class_tables ct = new Class_tables(); ct.Genset(); ct.Supplier();
             dispose();
         }
+
     }
     else if(Banner.equals("UPDATE GENSET PRODUCT"))
     {
@@ -553,7 +598,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Table_Supplier ts = new Table_Supplier();
         ts.setVisible(true);
         Table_Supplier.Add.setText("SELECT");
-        Table_Supplier.Path.setText("1");
+        Table_Supplier.Path.setText("2");
        
     }//GEN-LAST:event_Supplier_List_BtnMouseClicked
 
@@ -596,7 +641,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     public static javax.swing.JTextField Insert_Invetory_Genset_Alter_Serial;
     public static javax.swing.JTextField Insert_Invetory_Genset_Engine_Serial;
     public static javax.swing.JTextField Insert_Invetory_Genset_brand;
-    public static javax.swing.JTextField Insert_Invetory_Genset_date;
+    public static datechooser.beans.DateChooserCombo Insert_Invetory_Genset_date;
     public static javax.swing.JTextField Insert_Invetory_Genset_dimension;
     public static javax.swing.JTextField Insert_Invetory_Genset_id;
     public static javax.swing.JTextField Insert_Invetory_Genset_kva;
@@ -613,21 +658,22 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     public static javax.swing.JTextField Insert_Invetory_Supplier_name;
     public static javax.swing.JLabel Inventory_Display;
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
+    public static javax.swing.JLabel Path;
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
     private javax.swing.JLabel Stock_Genset_Update;
     private javax.swing.JLabel Supplier_List_Btn;
-    private javax.swing.JLabel a;
-    private javax.swing.JComboBox<String> alter;
-    private javax.swing.JComboBox<String> engine;
+    public static javax.swing.JLabel a;
+    public static javax.swing.JComboBox<String> alter;
+    public static javax.swing.JComboBox<String> engine;
     private javax.swing.JLabel id1;
-    private javax.swing.JLabel id2;
+    public static javax.swing.JLabel id2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
+    public javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;

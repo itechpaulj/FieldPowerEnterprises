@@ -325,8 +325,8 @@ public class Insert_Supplier extends javax.swing.JFrame {
 
     private void Supplier_List_Btn2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Supplier_List_Btn2MouseClicked
 
-        Table_Supplier.Add.setText("SELECT");
-        Table_Supplier.Path.setText("2");
+        Table_Customer.Add.setText("SELECT");
+        Table_Customer.Path.setText("1");
         dispose();
     }//GEN-LAST:event_Supplier_List_Btn2MouseClicked
 

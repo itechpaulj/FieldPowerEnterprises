@@ -63,7 +63,7 @@ public class Class_Supplier {
         ResultSet rs = null;
         boolean Sup_name = false;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `NAME`=?");
+        ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `EMAIL`=?");
         ps.setString(1,name);
         rs = ps.executeQuery();
             if(!rs.next()){
@@ -77,4 +77,5 @@ public class Class_Supplier {
      return Sup_name;
     }      
     
+
 }

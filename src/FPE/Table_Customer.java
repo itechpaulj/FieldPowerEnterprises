@@ -21,15 +21,15 @@ import javax.swing.table.TableRowSorter;
  *
  * @author ROBLES
  */
-public class Table_Supplier extends javax.swing.JFrame {
+public class Table_Customer extends javax.swing.JFrame {
 
     /**
      * Creates new form Table_Supplier
      */
-    public Table_Supplier() {
+    public Table_Customer() {
         initComponents();
         Class_tables ct = new Class_tables();
-        ct.Supplier();
+        ct.Customer();
     }
 
     /**
@@ -41,13 +41,11 @@ public class Table_Supplier extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        supplier_id = new javax.swing.JLabel();
-        Path = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         displays = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Supplier_table = new javax.swing.JTable();
+        Customer_Table = new javax.swing.JTable();
         add_panel_supplier = new javax.swing.JPanel();
         Add = new javax.swing.JLabel();
         update_panel_supplier = new javax.swing.JPanel();
@@ -57,8 +55,9 @@ public class Table_Supplier extends javax.swing.JFrame {
         back_panel_supplier = new javax.swing.JPanel();
         Back = new javax.swing.JLabel();
         Supplier_Search = new javax.swing.JTextField();
+        Customer_id = new javax.swing.JLabel();
+        Path = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -70,7 +69,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         displays.setForeground(new java.awt.Color(255, 255, 255));
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displays.setText("SUPPLIER LIST");
+        displays.setText("CUSTOMER LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -88,7 +87,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Supplier_table.setModel(new javax.swing.table.DefaultTableModel(
+        Customer_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -99,12 +98,12 @@ public class Table_Supplier extends javax.swing.JFrame {
 
             }
         ));
-        Supplier_table.addMouseListener(new java.awt.event.MouseAdapter() {
+        Customer_Table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Supplier_tableMouseClicked(evt);
+                Customer_TableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(Supplier_table);
+        jScrollPane1.setViewportView(Customer_Table);
 
         kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 880, 350));
 
@@ -114,7 +113,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         Add.setForeground(new java.awt.Color(255, 255, 255));
         Add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Add_Btn.png"))); // NOI18N
-        Add.setText(" ADD SUPPLIER ");
+        Add.setText(" ADD CUSTOMER");
         Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AddMouseClicked(evt);
@@ -244,18 +243,12 @@ public class Table_Supplier extends javax.swing.JFrame {
             }
         });
         kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
+        kGradientPanel1.add(Customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 30, 60, 30));
+        kGradientPanel1.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 60, 30));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Search_Btn.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        kGradientPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 530, -1, -1));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 570));
 
@@ -267,64 +260,53 @@ public class Table_Supplier extends javax.swing.JFrame {
 
     }//GEN-LAST:event_displaysAncestorAdded
 
-    private void Supplier_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Supplier_tableMouseClicked
-        int i=Supplier_table.getSelectedRow();
-        TableModel model = Supplier_table.getModel();
-        supplier_id.setText(model.getValueAt(i,0).toString());
+    private void Customer_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Customer_TableMouseClicked
+        int i=Customer_Table.getSelectedRow();
+        TableModel model = Customer_Table.getModel();
+        Customer_id.setText(model.getValueAt(i,0).toString());
         
 
-    }//GEN-LAST:event_Supplier_tableMouseClicked
+    }//GEN-LAST:event_Customer_TableMouseClicked
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
         String Action = Add.getText();
-        String id = supplier_id.getText();
+        String id = Customer_id.getText();
         String way = Path.getText();
         
-        if(Action.equals(" ADD SUPPLIER ")){
-            Insert_Supplier is = new Insert_Supplier();
-            is.setVisible(true);
-            Insert_Supplier.Display_Supplier.setText("ADD SUPPLIER");
+        if(Action.equals("ADD CUSTOMER")){
+            Insert_Customer ic = new Insert_Customer();
+            ic.setVisible(true);
+            Insert_Customer.Display_Customer.setText("ADD CUSTOMER");
             Path.setText("");
-            Insert_Supplier.Insert_Supplier_id.setEditable(false);
+            
     
         }
         else if(Action.equals("SELECT") && way.equals("1")){
-             // ADDING SUPPLIER ONLY !!
             if(id.equals("")){
-            JOptionPane.showMessageDialog(null, " SELECT SUPPLIER !!","",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, " SELECT CUSTOMER !!","",JOptionPane.ERROR_MESSAGE);
             }else{
-            Insert_Supplier is = new Insert_Supplier();
+            Insert_Customer is = new Insert_Customer();
             is.setVisible(true);       
-            Insert_Supplier.Display_Supplier.setText("SUPPLIER SELECTED");
-            Insert_Inventory_Genset.Path.setText("");
+            Insert_Customer.Display_Customer.setText("CUSTOMER SELECTED");
              Path.setText("");
-                 
+                                               
             }
         }
         else if(Action.equals("SELECT") && way.equals("2")){
-             // ADDING SUPPLIER IN GENSET FORM
             if(id.equals(""))
             {
-                JOptionPane.showMessageDialog(null, " SELECT SUPPLIER !!","",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, " SELECT CUSTOMER !!","",JOptionPane.ERROR_MESSAGE);
             }
             else{      
             try{
-                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = "+id+"");
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` WHERE `ID` = "+id+"");
                 ResultSet rs = ps.executeQuery();
                 while(rs.next()){
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_id.setText(rs.getString("ID"));
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_name.setText(rs.getString("NAME"));
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_address.setText(rs.getString("ADDRESS"));
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_email.setText(rs.getString("EMAIL"));
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_contact.setText(rs.getString("CONTACT"));
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_id.setEditable(false);
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_name.setEditable(false);
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_address.setEditable(false);
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_email.setEditable(false);
-                Insert_Inventory_Genset.Insert_Invetory_Supplier_contact.setEditable(false);
-                Insert_Inventory_Genset.Path.setText("2");
-                
-                
+                //Insert_Inventory_Genset.Insert_Invetory_Supplier_id.setText(rs.getString("ID"));
+                Process_Genset.Process_Genset_Customer_name.setText(rs.getString("NAME"));
+                Process_Genset.Process_Genset_Customer_address.setText(rs.getString("ADDRESS"));
+                Process_Genset.Process_Genset_Customer_email.setText(rs.getString("EMAIL"));
+                Process_Genset.Process_Genset_Customer_contact.setText(rs.getString("CONTACT"));
                 }
             }
             catch(Exception e){
@@ -335,26 +317,23 @@ public class Table_Supplier extends javax.swing.JFrame {
             
             }
         }
-        else if(Action.equals("SELECT") && way.equals("3")){ 
-                
-                // ADDING SUPPLIER IN FILTER FORM
-                
+        else if(Action.equals("SELECT") && way.equals("3")){
                 if(id.equals(""))
                 {
-                    JOptionPane.showMessageDialog(null, " SELECT SUPPLIER !!","",JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, " SELECT CUSTOMER !!","",JOptionPane.ERROR_MESSAGE);
                 }
                 else{      
                 try{
-                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = "+id+"");
+                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` WHERE `ID` = "+id+"");
                     ResultSet rs = ps.executeQuery();
                     while(rs.next()){
                         
-                    Insert_Inventory_Filter.Insert_Filter_Supplier_id.setText(rs.getString("ID"));
-                    Insert_Inventory_Filter.Insert_Filter_Supplier_id.setEditable(false);
-                    Insert_Inventory_Filter.Insert_Filter_Supplier_name.setText(rs.getString("NAME"));
-                    Insert_Inventory_Filter.Insert_Filter_Supplier_address.setText(rs.getString("ADDRESS"));
-                    Insert_Inventory_Filter.Insert_Filter_Supplier_email.setText(rs.getString("EMAIL"));
-                    Insert_Inventory_Filter.Insert_Filter_Supplier_contact.setText(rs.getString("CONTACT"));
+                    //Insert_Inventory_Filter.Insert_Filter_Supplier_id.setText(rs.getString("ID"));
+                    //Insert_Inventory_Filter.Insert_Filter_Supplier_id.setEditable(false);
+                    Process_Filter.Process_Filter_Customer_name.setText(rs.getString("NAME"));
+                    Process_Filter.Process_Filter_Customer_address.setText(rs.getString("ADDRESS"));
+                    Process_Filter.Process_Filter_Customer_email.setText(rs.getString("EMAIL"));
+                    Process_Filter.Process_Filter_Customer_contact.setText(rs.getString("CONTACT"));
         
                     }
                 }
@@ -373,7 +352,7 @@ public class Table_Supplier extends javax.swing.JFrame {
     }//GEN-LAST:event_BackMouseClicked
 
     private void sup_listUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseClicked
-        String id = supplier_id.getText();
+        String id = Customer_id.getText();
         if(id.equals("")){
             JOptionPane.showMessageDialog(null, " SELECT SUPPLIER !!","",JOptionPane.ERROR_MESSAGE);
         }else{
@@ -388,7 +367,7 @@ public class Table_Supplier extends javax.swing.JFrame {
     }//GEN-LAST:event_sup_listUpdateMouseClicked
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
-        String id = supplier_id.getText();
+        String id = Customer_id.getText();
 
             int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
@@ -401,10 +380,10 @@ public class Table_Supplier extends javax.swing.JFrame {
     }//GEN-LAST:event_sup_delMouseClicked
 
     private void Supplier_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Supplier_SearchKeyPressed
-        DefaultTableModel tm = (DefaultTableModel)Supplier_table.getModel();
+        DefaultTableModel tm = (DefaultTableModel)Customer_Table.getModel();
         String find = Supplier_Search.getText().toUpperCase();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
-        Supplier_table.setRowSorter(tr);
+        Customer_Table.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(find));
     }//GEN-LAST:event_Supplier_SearchKeyPressed
 
@@ -440,14 +419,6 @@ public class Table_Supplier extends javax.swing.JFrame {
        Back.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_BackMouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       try{
-           Supplier_table.print();
-       }catch(Exception e){
-           
-       }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -465,21 +436,23 @@ public class Table_Supplier extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Customer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Table_Supplier().setVisible(true);
+                new Table_Customer().setVisible(true);
             }
         });
     }
@@ -487,21 +460,20 @@ public class Table_Supplier extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel Add;
     public static javax.swing.JLabel Back;
+    public static javax.swing.JTable Customer_Table;
+    public static javax.swing.JLabel Customer_id;
     public static javax.swing.JLabel Path;
     private javax.swing.JTextField Supplier_Search;
-    public static javax.swing.JTable Supplier_table;
     public static javax.swing.JPanel add_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier;
     public static javax.swing.JPanel delete_panel_supplier;
     public static javax.swing.JLabel displays;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
     public static javax.swing.JLabel sup_del;
     public static javax.swing.JLabel sup_listUpdate;
-    public static javax.swing.JLabel supplier_id;
     public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables
 }

@@ -328,7 +328,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Reports_Btn.png"/>
+                  <Image iconType="3" name="/Picture/System.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" REPORT  "/>
               </Properties>
@@ -512,7 +512,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Genset.png"/>
+                  <Image iconType="3" name="/Picture/Images_Gensets.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -1234,7 +1234,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Genset.png"/>
+                  <Image iconType="3" name="/Picture/Images_shop_Genset.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -1255,7 +1255,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Filters.png"/>
+                  <Image iconType="3" name="/Picture/Images_shop_Filter.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -1660,6 +1660,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Shop_Filter_TableMouseClicked"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
                   </AuxValues>

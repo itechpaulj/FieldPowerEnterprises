@@ -89,12 +89,12 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         Wiew_Genset_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Wiew_Genset_Display.setText("VIEW GENSET PRODUCT");
         Wiew_Genset_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Wiew_Genset_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Wiew_Genset_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 80));
@@ -207,7 +207,7 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         View_stock_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_stock_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
         View_stock_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_stock_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image_Btn.png"))); // NOI18N
+        View_stock_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
         View_stock_Genset_pic.setAlignmentY(1.0F);
         View_stock_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         View_stock_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -485,8 +485,16 @@ public class View_Stock_Genset extends javax.swing.JFrame {
             View_stock_Genset_dimension.setText(rs.getString("DIMENSION"));
             View_stock_Genset_supplier_price.setText(rs.getString("PRICE"));
             View_stock_Genset_seller_price.setText(rs.getString("SELLER_PRICE"));
-            View_stock_Genset_engine_sn.setText(rs.getString("ENGINE_SERIAL_NO"));
-            View_stock_Genset_alter_sn.setText(rs.getString("ALTERNATOR_SERIAL_NO"));
+
+            String[] eng_sn = rs.getString("ENGINE_SERIAL_NO").split(" - ");
+            String[] filter_sn = rs.getString("ALTERNATOR_SERIAL_NO").split(" - ");
+            // qwe123 - old
+            View_stock_Genset_engine_sn.setText(eng_sn[1]);
+            View_stock_Genset_alter_sn.setText(filter_sn[1]);
+            
+            View_stock_Genset_engine.setText(eng_sn[0]);
+            View_stock_Genset_alter.setText(filter_sn[0]);
+            
             View_stock_supplier_name.setText(rs.getString("SUPPLIER"));
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_stock_Genset_pic.getWidth(), View_stock_Genset_pic.getHeight(),Image.SCALE_SMOOTH) );
@@ -564,6 +572,28 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         Insert_Inventory_Genset.Insert_Invetory_Supplier_address.setText(View_stock_supplier_address.getText());
         Insert_Inventory_Genset.Insert_Invetory_Supplier_email.setText(View_stock_supplier_email.getText());
         Insert_Inventory_Genset.Insert_Invetory_Supplier_contact.setText(View_stock_supplier_contact.getText());
+        
+        if(View_stock_Genset_engine.getText().equals("ENGINE NEW")){
+            Insert_Inventory_Genset.engine.setSelectedIndex(1);
+        }
+        else{
+            if(View_stock_Genset_engine.getText().equals("ENGINE OLD")){
+            Insert_Inventory_Genset.engine.setSelectedIndex(2);
+            }
+            
+        }
+        
+        
+        if(View_stock_Genset_alter.getText().equals("ALTERNATOR NEW")){
+            Insert_Inventory_Genset.alter.setSelectedIndex(1);
+        }
+        else{
+            if(View_stock_Genset_alter.getText().equals("ALTERNATOR OLD")){
+            Insert_Inventory_Genset.alter.setSelectedIndex(2);
+            }
+            
+        }
+
         
         ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Insert_Inventory_Genset.Insert_Invetory_Genset_pic.getWidth(), Insert_Inventory_Genset.Insert_Invetory_Genset_pic.getHeight(),Image.SCALE_SMOOTH) );
         Insert_Inventory_Genset.Insert_Invetory_Genset_pic.setIcon(imageicon);
