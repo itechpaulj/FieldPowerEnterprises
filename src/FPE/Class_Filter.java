@@ -35,10 +35,10 @@ public class Class_Filter {
         return false;
     }
     
-        public static boolean UpdateFilter(String date,String brand,String des,String type,String supplier_price,String seller_price,String quantity, byte[] image,String supplier,String id){
+    public static boolean UpdateFilter(String date,String brand,String des,String type,String supplier_price,String seller_price,String quantity, byte[] image,String supplier,String id){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `filter_table` SET `DATE`=?,`BRAND`=?,`DESCRIPTION`=?,`TYPE`=?,`SUPPLIER PRICE`=?,`SELLER PRICE`=?,`QUANTITY`=?,`IMAGE`=?,`SUPPLIER`=? WHERE `ID`=?;");
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `filter_table` SET `DATE`=?,`BRAND`=?,`DESCRIPTION`=?,`TYPE`=?,`SUPPLIER PRICE`=?,`SELLER PRICE`=?,`QUANTITY`=?,`IMAGE`=?,`SUPPLIER`=? WHERE `ID`=?");
         ps.setString(1,date);
         ps.setString(2,brand);
         ps.setString(3,des);
@@ -57,10 +57,10 @@ public class Class_Filter {
         return false;
     }
         
-         public static boolean DeleteFilter(String id){
+    public static boolean DeleteFilter(String id){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM filter_table WHERE ID = ?");
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM filter_table WHERE `ID` = ?");
         ps.setString(1,id);
         ps.execute();
         }

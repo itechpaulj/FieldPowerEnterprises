@@ -600,12 +600,10 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     }
     else if(Banner.equals("UPDATE GENSET PRODUCT"))
     {
-        
-     
-  
+
        if(!Class_Stock.UpdateGenset(id,date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name,DateTime) && !Class_Supplier.UpdateSupplier(name, address, contact, email, ids));
         {
-            JOptionPane.showMessageDialog(null, " SUCCESFULL UPDATED ","",JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, " SUCCESFULLY UPDATED ","",JOptionPane.INFORMATION_MESSAGE);
              ct.Genset(); ct.Supplier();
              dispose();
         } 

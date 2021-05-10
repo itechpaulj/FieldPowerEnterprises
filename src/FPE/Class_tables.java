@@ -22,7 +22,7 @@ public class Class_tables {
         Stock_Genset_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Stock_Genset_Table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
-              System.out.println(e);
+              //System.out.println(e);
             }
         return false;
     }
@@ -34,7 +34,7 @@ public class Class_tables {
         Stock_Filter_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Stock_Filter_Table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
-              System.out.println(e);
+             // System.out.println(e);
             }
         return false;
     }
@@ -47,7 +47,7 @@ public class Class_tables {
         Supplier_table.setModel(DbUtils.resultSetToTableModel(rs));
         Supplier_table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
-              System.out.println(e);
+              //System.out.println(e);
             }
         return false;
     }
@@ -59,7 +59,7 @@ public class Class_tables {
         Customer_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Customer_Table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
-              System.out.println(e);
+             // System.out.println(e);
             }
         return false;
     }
@@ -71,7 +71,7 @@ public class Class_tables {
         Shop_Genset_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Shop_Genset_Table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
-              System.out.println(e);
+             // System.out.println(e);
             }
         return false;
     }

@@ -517,10 +517,28 @@ public class View_Stock_Filter extends javax.swing.JFrame {
 
         Insert_Inventory_Filter.Inventory_Display.setText("UPDATE FILTER PRODUCT");
         Insert_Inventory_Filter.Insert_Invetory_Filter_date.setText(View_stock_Filter_date.getText());
+        Insert_Inventory_Filter.Insert_Invetory_Filter_id.setEditable(false);
         Insert_Inventory_Filter.Insert_Invetory_Filter_id.setText(View_stock_Filter_id.getText());
         Insert_Inventory_Filter.Insert_Invetory_Filter_brand_name.setText(View_stock_Filter_brand_name.getText());
         Insert_Inventory_Filter.Insert_Invetory_Filter_description.setText(View_stock_Filter_description.getText());
-        Insert_Inventory_Filter.Insert_Invetory_Filter_type.setSelectedItem(View_stock_Filter_type.getText());
+        
+        if(View_stock_Filter_type.getText().equals("FILTER")){
+            Insert_Inventory_Filter.Insert_Invetory_Filter_type.setSelectedIndex(1);
+        }
+        else if(View_stock_Filter_type.getText().equals("PARTS")){
+            Insert_Inventory_Filter.Insert_Invetory_Filter_type.setSelectedIndex(2);
+        }
+        else{
+         if(View_stock_Filter_type.getText().equals("OTHER")){
+            Insert_Inventory_Filter.Insert_Invetory_Filter_type.setSelectedIndex(3);
+            }           
+        }
+            
+                
+        
+        //Insert_Inventory_Filter.Insert_Invetory_Filter_type.setSelectedItem(View_stock_Filter_type.getText());
+        
+        
         Insert_Inventory_Filter.Insert_Invetory_Filter_seller_price.setText(View_stock_Filter_seller_price.getText());
         Insert_Inventory_Filter.Insert_Invetory_Filter_supplier_price.setText(View_stock_Filter_supplier_price.getText());
         Insert_Inventory_Filter.Insert_Invetory_Filter_quantity.setText(View_stock_Filter_quantity.getText());
@@ -531,7 +549,7 @@ public class View_Stock_Filter extends javax.swing.JFrame {
         Insert_Inventory_Filter.Insert_Filter_Supplier_address.setText(View_stock_supplier_address.getText());
         Insert_Inventory_Filter.Insert_Filter_Supplier_email.setText(View_stock_supplier_email.getText());
         Insert_Inventory_Filter.Insert_Filter_Supplier_contact.setText(View_stock_supplier_contact.getText());
-
+        Insert_Inventory_Filter.Path.setText("");
         ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Insert_Inventory_Filter.Insert_Invetory_Filter_pic.getWidth(), Insert_Inventory_Filter.Insert_Invetory_Filter_pic.getHeight(),Image.SCALE_SMOOTH) );
         Insert_Inventory_Filter.Insert_Invetory_Filter_pic.setIcon(imageicon);
         Insert_Inventory_Filter.images = images;

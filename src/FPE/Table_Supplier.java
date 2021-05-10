@@ -42,10 +42,10 @@ public class Table_Supplier extends javax.swing.JFrame {
     private void initComponents() {
 
         supplier_id = new javax.swing.JLabel();
-        Path = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         displays = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
+        Path = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Supplier_table = new javax.swing.JTable();
         add_panel_supplier = new javax.swing.JPanel();
@@ -58,7 +58,6 @@ public class Table_Supplier extends javax.swing.JFrame {
         Back = new javax.swing.JLabel();
         Supplier_Search = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -87,6 +86,9 @@ public class Table_Supplier extends javax.swing.JFrame {
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Path.setText("1");
+        kGradientPanel1.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 30, 20));
 
         Supplier_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -249,14 +251,6 @@ public class Table_Supplier extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Search_Btn.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        kGradientPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 530, -1, -1));
-
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 570));
 
         pack();
@@ -355,7 +349,7 @@ public class Table_Supplier extends javax.swing.JFrame {
                     Insert_Inventory_Filter.Insert_Filter_Supplier_address.setText(rs.getString("ADDRESS"));
                     Insert_Inventory_Filter.Insert_Filter_Supplier_email.setText(rs.getString("EMAIL"));
                     Insert_Inventory_Filter.Insert_Filter_Supplier_contact.setText(rs.getString("CONTACT"));
-        
+                    Insert_Inventory_Filter.Path.setText("3");
                     }
                 }
                 catch(Exception e){
@@ -440,14 +434,6 @@ public class Table_Supplier extends javax.swing.JFrame {
        Back.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_BackMouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       try{
-           Supplier_table.print();
-       }catch(Exception e){
-           
-       }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -494,7 +480,6 @@ public class Table_Supplier extends javax.swing.JFrame {
     public static javax.swing.JPanel back_panel_supplier;
     public static javax.swing.JPanel delete_panel_supplier;
     public static javax.swing.JLabel displays;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;

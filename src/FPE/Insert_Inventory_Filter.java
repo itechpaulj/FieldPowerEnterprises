@@ -86,6 +86,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
         Insert_Invetory_Filter_type = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        Path = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -284,13 +285,13 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 410, 180, 30));
@@ -379,6 +380,9 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
         jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "SUPPIER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 60, 330, 450));
 
+        Path.setText("1");
+        KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 30, -1));
+
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
         pack();
@@ -415,6 +419,8 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
     
+    Class_tables ct = new Class_tables();
+        
     String Banner = Inventory_Display.getText();
     
     String date         = Insert_Invetory_Filter_date.getText().toUpperCase();
@@ -422,36 +428,57 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
     String brand        = Insert_Invetory_Filter_brand_name.getText().toUpperCase(); 
     String description  = Insert_Invetory_Filter_description.getText().toUpperCase();
     String type         = Insert_Invetory_Filter_type.getSelectedItem().toString();
-    String price        = Insert_Invetory_Filter_seller_price.getText().toUpperCase();
-    String s_price      = Insert_Invetory_Filter_quantity.getText().toUpperCase(); 
+    String supplier_price      = Insert_Invetory_Filter_supplier_price.getText().toUpperCase();
+    String seller_price      = Insert_Invetory_Filter_seller_price.getText().toUpperCase(); 
     String quantity      = Insert_Invetory_Filter_quantity.getText().toUpperCase(); 
     
     
-    String ids         = Insert_Filter_Supplier_id.getText().toUpperCase();
+    String  ids        = Insert_Filter_Supplier_id.getText().toUpperCase();
     String  name       = Insert_Filter_Supplier_name.getText().toUpperCase();
     String  address    = Insert_Filter_Supplier_address.getText().toUpperCase();
     String  email      = Insert_Filter_Supplier_email.getText().toUpperCase();
     String  contact    = Insert_Filter_Supplier_contact.getText().toUpperCase();
     
-    if(date.equals("") || brand.equals("") || description.equals("") || type.contains("SELECT") || price.equals("") || s_price.equals("") || quantity.equals("") || name.equals("") || address.equals("") || email.equals("") || contact.equals("")){
+    if(date.equals("") || brand.equals("") || description.equals("") || type.equals("SELECT") || supplier_price.equals("") || seller_price.equals("") || quantity.equals("") || name.equals("") || address.equals("") || email.equals("") || contact.equals("")){
         JOptionPane.showMessageDialog(null,"FILLED SOME BLANKS !!! ","",JOptionPane.ERROR_MESSAGE);
     }
-    else if(Banner.equals("ADD FILTER PRODUCT"))
+    else if(Banner.equals("ADD FILTER PRODUCT") && Path.getText().equals("1"))
     {
-        if(!Class_Filter.AddFilter(date, brand, description, type, price, s_price, quantity, images, name)&& !Class_Supplier.AddSupplier(name, address, contact, email))
-        {
-            JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
-            Class_tables ct = new Class_tables(); ct.Filter(); ct.Supplier();
-            dispose();
-            
+        //new supplier and new new filter
+        if(!Class_Supplier.ExistSupplier(email)){
+            JOptionPane.showMessageDialog(null, " EXIST SUPPLIER\nPLEASE SELECT SUPPLIER LIST!","",JOptionPane.WARNING_MESSAGE);
+            //Path.setText("2"); // exist supplier
+            ct.Filter(); ct.Supplier();
+        }
+        else{        
+        
+            if(!Class_Filter.AddFilter(date, brand, description, type, supplier_price, seller_price, quantity, images, name)&& !Class_Supplier.AddSupplier(name, address, contact, email))
+            {
+                JOptionPane.showMessageDialog(null, " SUCCESFULLY ADDED ","",JOptionPane.INFORMATION_MESSAGE);
+               ct.Filter(); ct.Supplier();
+                dispose();
+
+            }
         }
     }
+    else if(Banner.equals("ADD FILTER PRODUCT") && Path.getText().equals("3"))
+    {
+        //exist supplier but new new filter
+        if(!Class_Filter.AddFilter(date, brand, description, type, supplier_price, seller_price, quantity, images, name))
+        {
+            JOptionPane.showMessageDialog(null, " SUCCESFULLY ADDED ","",JOptionPane.INFORMATION_MESSAGE);
+           ct.Filter(); ct.Supplier();
+            dispose();
+
+        }
+        
+    } 
     else if(Banner.equals("UPDATE FILTER PRODUCT"))
     {
-       if(!Class_Filter.UpdateFilter(date, brand, description, type, s_price, s_price, quantity, images, name, id) || !Class_Supplier.UpdateSupplier(name, address, contact, email, ids) )
+       if(!Class_Filter.UpdateFilter(date, brand, description, type, supplier_price, seller_price, quantity, images, name, id) && !Class_Supplier.UpdateSupplier(name, address, contact, email, ids) )
         {
-            JOptionPane.showMessageDialog(null, " SUCCESFULL UPDATED ","",JOptionPane.INFORMATION_MESSAGE);
-             Class_tables ct = new Class_tables(); ct.Filter(); ct.Supplier();
+            JOptionPane.showMessageDialog(null, " SUCCESFULLY UPDATED ","",JOptionPane.INFORMATION_MESSAGE);
+             ct.Filter(); ct.Supplier();
              dispose();
         } 
     }
@@ -547,6 +574,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
     public static javax.swing.JComboBox<String> Insert_Invetory_Filter_type;
     public static javax.swing.JLabel Inventory_Display;
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
+    public static javax.swing.JLabel Path;
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;

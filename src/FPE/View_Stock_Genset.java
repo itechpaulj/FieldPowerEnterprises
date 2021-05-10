@@ -623,7 +623,7 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         Insert_Inventory_Genset.Insert_Invetory_Supplier_address.setText(View_stock_supplier_address.getText());
         Insert_Inventory_Genset.Insert_Invetory_Supplier_email.setText(View_stock_supplier_email.getText());
         Insert_Inventory_Genset.Insert_Invetory_Supplier_contact.setText(View_stock_supplier_contact.getText());
-        
+        Insert_Inventory_Genset.Path.setText("");
         if(View_stock_Genset_engine.getText().equals("ENGINE NEW")){
             Insert_Inventory_Genset.engine.setSelectedIndex(1);
         }
