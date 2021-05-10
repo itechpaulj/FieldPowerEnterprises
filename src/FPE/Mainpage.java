@@ -1455,7 +1455,7 @@ public class Mainpage extends javax.swing.JFrame {
     private void Stock_Genset_ViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_ViewMouseClicked
        String id = Genset_id.getText();
         if(id.equals("")){
-            JOptionPane.showMessageDialog(null, " SELCET FILTER !! ","",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, " SELECT FILTER !! ","",JOptionPane.ERROR_MESSAGE);
         }
         else{
          View_Stock_Genset vsg = new View_Stock_Genset();

@@ -635,11 +635,11 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         }
         
         
-        if(View_stock_Genset_alter.getText().equals("ALTERNATOR NEW")){
+        if(View_stock_Genset_alter.getText().equals("NEW SERIAL NO")){
             Insert_Inventory_Genset.alter.setSelectedIndex(1);
         }
         else{
-            if(View_stock_Genset_alter.getText().equals("ALTERNATOR OLD")){
+            if(View_stock_Genset_alter.getText().equals("OLD SERIAL NO")){
             Insert_Inventory_Genset.alter.setSelectedIndex(2);
             }
             

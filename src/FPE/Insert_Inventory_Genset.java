@@ -535,6 +535,9 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
     
+    Class_tables ct = new Class_tables();
+    
+        
     String Banner = Inventory_Display.getText();
     
     String id       = Insert_Invetory_Genset_id.getText().toUpperCase();
@@ -560,9 +563,12 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     String  email      = Insert_Invetory_Supplier_email.getText().toUpperCase();
     String  contact    = Insert_Invetory_Supplier_contact.getText().toUpperCase();
     
+    //if default select item combo box
+    String sel_engine = engine.getSelectedItem().toString();
+    String sel_alter = alter.getSelectedItem().toString();
     
 
-    if(brand.equals("") || mode.equals("") || kva.equals("") || date.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || price.equals("") || s_price.equals("") || name.equals("") || address.equals("") || email.equals("") || contact.equals("")){
+    if(brand.equals("") || mode.equals("") || kva.equals("") || date.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || price.equals("") || s_price.equals("") || name.equals("") || address.equals("") || email.equals("") || contact.equals("") || sel_engine.equals("SELECT") || sel_alter.equals("SELECT")){
        
             JOptionPane.showMessageDialog(null,"FILLED SOME BLANKS !!! ","",JOptionPane.ERROR_MESSAGE); 
     }
@@ -571,12 +577,13 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         if(!Class_Supplier.ExistSupplier(email)){
             JOptionPane.showMessageDialog(null, " EXIST SUPPLIER\nPLEASE SELECT SUPPLIER LIST!","",JOptionPane.WARNING_MESSAGE);
             //Path.setText("2"); // exist supplier
+            ct.Genset(); ct.Supplier();
         }
         else{
             if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name) && !Class_Supplier.AddSupplier(name, address, contact, email))
             {
                 JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
-                Class_tables ct = new Class_tables(); ct.Genset(); ct.Supplier();
+                ct.Genset(); ct.Supplier();
                 dispose();
             }   
         }
@@ -586,7 +593,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name))
         {
             JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
-            Class_tables ct = new Class_tables(); ct.Genset(); ct.Supplier();
+            ct.Genset(); ct.Supplier();
             dispose();
         }
 
@@ -599,7 +606,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
        if(!Class_Stock.UpdateGenset(id,date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name,DateTime) && !Class_Supplier.UpdateSupplier(name, address, contact, email, ids));
         {
             JOptionPane.showMessageDialog(null, " SUCCESFULL UPDATED ","",JOptionPane.INFORMATION_MESSAGE);
-             Class_tables ct = new Class_tables(); ct.Genset(); ct.Supplier();
+             ct.Genset(); ct.Supplier();
              dispose();
         } 
     }

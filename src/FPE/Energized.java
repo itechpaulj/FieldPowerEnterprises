@@ -191,14 +191,14 @@ public class Energized extends javax.swing.JFrame {
             
         try{   
             String id = Insert_Inventory_Genset.Insert_Invetory_Genset_id.getText();
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `genset_table` WHERE ID ='"+id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `ENERGIZED DATE`, `OIL USAGE`,`TECHNICIAN`,`TANK CAPACITY` FROM `genset_table` WHERE ID ='"+id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             
             Energized_date.setText(rs.getString("ENERGIZED DATE"));
             Energized_oil_usage.setText(rs.getString("OIL USAGE"));
             Energized_technician.setText(rs.getString("TECHNICIAN"));
-          
+            Energized_tank_capacity.setText(rs.getString("TANK CAPACITY"));
             }
         }catch(Exception e ){
                     e.printStackTrace();
@@ -222,11 +222,13 @@ public class Energized extends javax.swing.JFrame {
 
     private void Energized_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseClicked
         String id = Insert_Inventory_Genset.Insert_Invetory_Genset_id.getText();
+        String tank_cap = Energized_tank_capacity.getText().toUpperCase();
         String date_energized = Energized_date.getText().toUpperCase();
         String oil = Energized_oil_usage.getText().toUpperCase();
         String tech = Energized_technician.getText().toUpperCase();
         
-        if(!Class_Stock.UpdateEnergized(date_energized, oil, tech, id)){
+        
+        if(!Class_Stock.UpdateEnergized(date_energized,tank_cap, oil, tech, id)){
             JOptionPane.showMessageDialog(null, "ENERGIZED UPDATED ");
             dispose();
         }
