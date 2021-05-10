@@ -5,13 +5,11 @@
  */
 package FPE;
 
-import static FPE.Mainpage.images;
 import java.awt.Color;
 import java.awt.Image;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +18,17 @@ import javax.swing.JOptionPane;
 public class View_Shop_Genset extends javax.swing.JFrame {
 
     public static byte[] images  = null;
+    
+    public static String date_recieved = null;
+    public static String supplier_price = null;
+    public static String supplier_name = null;
+    public static String energized = null;
+    public static String tank_cap = null;
+    public static String oil_usage = null;
+    public static String tech = null;
+    public static String updated_at = null;
+ 
+    
     public View_Shop_Genset() {
         initComponents();
     }
@@ -318,11 +327,20 @@ public class View_Shop_Genset extends javax.swing.JFrame {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             
+            date_recieved = rs.getString("DATE");
+            supplier_price = rs.getString("PRICE");
+            supplier_name = rs.getString("SUPPLIER");
+            energized = rs.getString("ENERGIZED DATE");
+            tank_cap = rs.getString("TANK CAPACITY");
+            oil_usage = rs.getString("OIL USAGE");
+            tech = rs.getString("TECHNICIAN");
+            updated_at = rs.getString("UPDATED AT");
+   
+                
             View_Genset_id.setText(rs.getString("ID"));
             View_Genset_brand.setText(rs.getString("bRAND"));
             View_Genset_model.setText(rs.getString("MODEL"));
             View_Genset_kva.setText(rs.getString("KVA"));
-//            View_Genset_date.setText(rs.getString("DATE"));
             View_Genset_phasing.setText(rs.getString("PHASING"));
             View_Genset_type.setText(rs.getString("UNIT_TYPE"));
             View_Genset_dimension.setText(rs.getString("DIMENSION"));

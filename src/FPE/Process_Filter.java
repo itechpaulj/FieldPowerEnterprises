@@ -157,31 +157,37 @@ public class Process_Filter extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 120, 30));
 
         id1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        id1.setForeground(new java.awt.Color(20, 31, 31));
         id1.setText("NAME");
         id1.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, 100, 30));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(20, 31, 31));
         jLabel21.setText("ADDRESS");
         jLabel21.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 100, 30));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(20, 31, 31));
         jLabel19.setText("EMAIL ");
         jLabel19.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, 100, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(20, 31, 31));
         jLabel18.setText("CONTACT NO.");
         jLabel18.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 220, 100, 30));
 
         id3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        id3.setText("NAME");
+        id3.setForeground(new java.awt.Color(20, 31, 31));
+        id3.setText("AGENT NAME");
         id3.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(id3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 400, 100, 30));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(20, 31, 31));
         jLabel24.setText("ADDRESS");
         jLabel24.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 440, 100, 30));
@@ -193,61 +199,73 @@ public class Process_Filter extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, 120, 30));
 
         Process_Filter_total.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_total.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_total.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_total.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 190, 30));
 
         Process_Filter_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_price.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_price.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 190, 30));
 
         Process_Filter_brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_brand.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_brand.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 190, 30));
 
         Process_Filter_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_quantity.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_quantity.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 190, 30));
 
         Process_Filter_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_type.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_type.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 190, 30));
 
         Process_Filter_Customer_email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_Customer_email.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_Customer_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_Customer_email.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 180, 180, 30));
 
         Process_Filter_Customer_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_Customer_contact.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_Customer_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_Customer_contact.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 180, 30));
 
         Process_Filter_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_id.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_id.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 190, 30));
 
         Process_Filter_Agent_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_Agent_name.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_Agent_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_Agent_name.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_Agent_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 400, 180, 30));
 
         Process_Filter_Agent_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_Agent_contact.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_Agent_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_Agent_contact.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_Agent_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 440, 180, 30));
 
         Process_Filter_description.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_description.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_description.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_description.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_description, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 190, 30));
 
         Process_Filter_Customer_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_Customer_name.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_Customer_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_Customer_name.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 100, 180, 30));
@@ -256,6 +274,7 @@ public class Process_Filter extends javax.swing.JFrame {
 
         Process_Filter_Customer_address.setColumns(10);
         Process_Filter_Customer_address.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_Customer_address.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_Customer_address.setRows(5);
         Process_Filter_Customer_address.setTabSize(5);
         Process_Filter_Customer_address.setAlignmentX(3.0F);
@@ -368,13 +387,13 @@ public class Process_Filter extends javax.swing.JFrame {
         jLabel23.setBackground(new java.awt.Color(255, 255, 255));
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setToolTipText("");
-        jLabel23.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "SUPPLIER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
+        jLabel23.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "CUSTOMER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, 330, 290));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel17.setToolTipText("");
-        jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "SUPPLIER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
+        jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "AGENT NFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 350, 330, 160));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));

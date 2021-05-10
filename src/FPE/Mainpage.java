@@ -7,6 +7,8 @@ package FPE;
 
 
 import java.awt.Color;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -16,7 +18,15 @@ import javax.swing.table.TableRowSorter;
 
 
 public class Mainpage extends javax.swing.JFrame {
-public static byte[] images = null;
+
+       public static SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
+       public static SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
+     
+   
+
+
+    
+    public static byte[] images = null;
     
     public Mainpage() {
        initComponents();
@@ -25,8 +35,21 @@ public static byte[] images = null;
        ct.Filter();
        ct.ShopGenset();
        ct.ShopFilter();
+       Home_Dates.setText(""+date);
+       Home_Time.setText(""+time);   
+        showDate();
     }
        
+ void showDate(){
+     
+     Date today = new Date();
+     SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
+     SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
+     
+     Home_Dates.setText(date.format(today));
+     Home_Time.setText(time.format(today));
+ }
+ 
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -48,6 +71,10 @@ public static byte[] images = null;
         HEADER = new javax.swing.JPanel();
         Dashboard_Display_1 = new javax.swing.JLabel();
         Dashboard_Display_2 = new javax.swing.JLabel();
+        Home_Dates = new javax.swing.JLabel();
+        Home_Time = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         JTab = new javax.swing.JTabbedPane();
         HOME = new keeptoo.KGradientPanel();
         fpe_home = new javax.swing.JLabel();
@@ -315,6 +342,24 @@ public static byte[] images = null;
         Dashboard_Display_2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         Dashboard_Display_2.setForeground(new java.awt.Color(255, 255, 255));
         HEADER.add(Dashboard_Display_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 350, 70));
+
+        Home_Dates.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        Home_Dates.setForeground(new java.awt.Color(255, 255, 255));
+        HEADER.add(Home_Dates, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 20, 100, 30));
+
+        Home_Time.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        Home_Time.setForeground(new java.awt.Color(255, 255, 255));
+        HEADER.add(Home_Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 60, 100, 30));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("TIME   :");
+        HEADER.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 60, 70, 30));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("DATE  :");
+        HEADER.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, 70, 30));
 
         getContentPane().add(HEADER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 120));
 
@@ -1301,6 +1346,8 @@ public static byte[] images = null;
         Insert_Inventory_Genset.Inventory_Display.setText("ADD GENSET PRODUCT");
         Insert_Inventory_Genset.Insert_Invetory_Genset_id.setEditable(false);
         Insert_Inventory_Genset.Insert_Invetory_Supplier_id.setEditable(false);
+        Insert_Inventory_Genset.Energized.setVisible(false);
+        Insert_Inventory_Genset.Panel_Energized.setVisible(false);
 
         
     }//GEN-LAST:event_Stock_Genset_AddMouseClicked
@@ -1705,6 +1752,8 @@ public static byte[] images = null;
     private javax.swing.JPanel HOME_PANEL2;
     private javax.swing.JPanel HOME_PANEL3;
     private javax.swing.JPanel HOME_PANEL4;
+    private javax.swing.JLabel Home_Dates;
+    private javax.swing.JLabel Home_Time;
     public static javax.swing.JTabbedPane JTab;
     private javax.swing.JLabel LOGOUT_LABEL1;
     private javax.swing.JPanel LOGOUT_PANEL;
@@ -1770,6 +1819,8 @@ public static byte[] images = null;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
