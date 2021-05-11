@@ -6,6 +6,7 @@
 package FPE;
 
 
+import fieldpowerenterprises.Customer;
 import java.awt.Color;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -130,7 +131,7 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_view = new javax.swing.JPanel();
         Shop_Gensetr_view = new javax.swing.JLabel();
         Shop_Genset_Panel_Customer = new javax.swing.JPanel();
-        Shop_Filter_Customer_list = new javax.swing.JLabel();
+        Shop_Genset_Customer_list = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         SHOP_FILTER = new keeptoo.KGradientPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
@@ -1025,20 +1026,20 @@ public class Mainpage extends javax.swing.JFrame {
 
         Shop_Genset_Panel_Customer.setBackground(new java.awt.Color(133, 173, 173));
 
-        Shop_Filter_Customer_list.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        Shop_Filter_Customer_list.setForeground(new java.awt.Color(255, 255, 255));
-        Shop_Filter_Customer_list.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Filter_Customer_list.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
-        Shop_Filter_Customer_list.setText(" CUSTOMER LIST");
-        Shop_Filter_Customer_list.addMouseListener(new java.awt.event.MouseAdapter() {
+        Shop_Genset_Customer_list.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list.setText(" CUSTOMER LIST");
+        Shop_Genset_Customer_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Shop_Filter_Customer_listMouseClicked(evt);
+                Shop_Genset_Customer_listMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Shop_Filter_Customer_listMouseEntered(evt);
+                Shop_Genset_Customer_listMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Shop_Filter_Customer_listMouseExited(evt);
+                Shop_Genset_Customer_listMouseExited(evt);
             }
         });
 
@@ -1048,11 +1049,11 @@ public class Mainpage extends javax.swing.JFrame {
             Shop_Genset_Panel_CustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Shop_Genset_Panel_CustomerLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Shop_Filter_Customer_list, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Shop_Genset_Customer_list, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         Shop_Genset_Panel_CustomerLayout.setVerticalGroup(
             Shop_Genset_Panel_CustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Filter_Customer_list, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         SHOP_GENSET.add(Shop_Genset_Panel_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, 200, 50));
@@ -1364,6 +1365,9 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void Stock_Genset_SupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseClicked
         Table_Supplier tbs = new Table_Supplier();
+        Table_Supplier.Add.setText("ADD SUPPLIER");
+        Table_Supplier.Path.setText("1");
+        Table_Supplier.supplier_id.setText("");        
         tbs.setVisible(true);
 
     }//GEN-LAST:event_Stock_Genset_SupplierMouseClicked
@@ -1461,9 +1465,7 @@ public class Mainpage extends javax.swing.JFrame {
          View_Stock_Genset vsg = new View_Stock_Genset();
          vsg.setVisible(true); 
         }
-        
-        
-        
+  
     }//GEN-LAST:event_Stock_Genset_ViewMouseClicked
 
     private void Stock_Genset_ViewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_ViewMouseEntered
@@ -1477,8 +1479,11 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_ViewMouseExited
 
     private void Stock_Filter_supplier_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_supplier_listMouseClicked
-            Table_Supplier tbs = new Table_Supplier();
-            tbs.setVisible(true);
+        Table_Supplier tbs = new Table_Supplier();
+        Table_Supplier.Add.setText("ADD SUPPLIER");
+        Table_Supplier.Path.setText("1");
+        Table_Supplier.supplier_id.setText("");                 
+        tbs.setVisible(true);
 
     }//GEN-LAST:event_Stock_Filter_supplier_listMouseClicked
 
@@ -1641,7 +1646,10 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Shop_Filter_viewMouseExited
 
     private void Shop_Filter_customerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_customerMouseClicked
-        // TODO add your handling code here:
+      Table_Customer cus = new Table_Customer();
+      Table_Customer.Add.setText("ADD CUSTOMER");
+      Table_Customer.Path.setText("1");
+      cus.setVisible(true);
     }//GEN-LAST:event_Shop_Filter_customerMouseClicked
 
     private void Shop_Filter_customerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_customerMouseEntered
@@ -1652,17 +1660,20 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Gensetr_view.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_Shop_Filter_customerMouseExited
 
-    private void Shop_Filter_Customer_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_Customer_listMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Filter_Customer_listMouseClicked
+    private void Shop_Genset_Customer_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_listMouseClicked
+      Table_Customer cus = new Table_Customer();
+      Table_Customer.Add.setText("ADD CUSTOMER");
+      Table_Customer.Path.setText("1");
+      cus.setVisible(true);
+    }//GEN-LAST:event_Shop_Genset_Customer_listMouseClicked
 
-    private void Shop_Filter_Customer_listMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_Customer_listMouseEntered
+    private void Shop_Genset_Customer_listMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_listMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Filter_Customer_listMouseEntered
+    }//GEN-LAST:event_Shop_Genset_Customer_listMouseEntered
 
-    private void Shop_Filter_Customer_listMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_Customer_listMouseExited
-       Shop_Filter_Customer_list.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_Filter_Customer_listMouseExited
+    private void Shop_Genset_Customer_listMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_listMouseExited
+       Shop_Genset_Customer_list.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Shop_Genset_Customer_listMouseExited
 
     private void Stock_GensetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_GensetMouseEntered
          Stock_Genset_Btn.setForeground(new Color(41, 61, 61));
@@ -1772,7 +1783,6 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JPanel STOCK_PANEL;
     private javax.swing.JLabel ShopFilter_Parts_Btn;
     private javax.swing.JLabel Shop_Filter;
-    private javax.swing.JLabel Shop_Filter_Customer_list;
     public static javax.swing.JPanel Shop_Filter_Panel_Back;
     public static javax.swing.JPanel Shop_Filter_Panel_Customer_list;
     public static javax.swing.JPanel Shop_Filter_Panel_view;
@@ -1782,6 +1792,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel Shop_Filter_view;
     private javax.swing.JLabel Shop_Genset;
     private javax.swing.JLabel Shop_Genset_Btn;
+    private javax.swing.JLabel Shop_Genset_Customer_list;
     private javax.swing.JLabel Shop_Genset_Panel_Back;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer;
     public static javax.swing.JPanel Shop_Genset_Panel_back;

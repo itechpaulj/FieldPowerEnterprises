@@ -56,8 +56,8 @@ public class Table_Customer extends javax.swing.JFrame {
         Back = new javax.swing.JLabel();
         Supplier_Search = new javax.swing.JTextField();
         Customer_id = new javax.swing.JLabel();
-        Path = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        Path = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -243,12 +243,12 @@ public class Table_Customer extends javax.swing.JFrame {
             }
         });
         kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
-        kGradientPanel1.add(Customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 30, 60, 30));
-        kGradientPanel1.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 60, 30));
+        kGradientPanel1.add(Customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 60, 30));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Search_Btn.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+        kGradientPanel1.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 60, 30));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 570));
 
@@ -273,13 +273,12 @@ public class Table_Customer extends javax.swing.JFrame {
         String id = Customer_id.getText();
         String way = Path.getText();
         
-        if(Action.equals("ADD CUSTOMER")){
+        if(Action.equals("ADD CUSTOMER") && way.equals("1")){ 
             Insert_Customer ic = new Insert_Customer();
-            ic.setVisible(true);
             Insert_Customer.Display_Customer.setText("ADD CUSTOMER");
-            Path.setText("");
-            
-    
+            Insert_Customer.panel_customer_list.setVisible(false);
+            Insert_Customer.Insert_customer_id.setEditable(false);
+            ic.setVisible(true);
         }
         else if(Action.equals("SELECT") && way.equals("1")){
             if(id.equals("")){
@@ -356,9 +355,9 @@ public class Table_Customer extends javax.swing.JFrame {
         if(id.equals("")){
             JOptionPane.showMessageDialog(null, " SELECT SUPPLIER !!","",JOptionPane.ERROR_MESSAGE);
         }else{
-            Insert_Supplier is = new Insert_Supplier();
-            Insert_Supplier.Insert_Supplier_id.setText(id);
-            Insert_Supplier.Display_Supplier.setText("UPDATE SUPPLIER");
+            Insert_Customer is = new Insert_Customer();
+            //Insert_Customer.Insert_Customer_id.setText(id);
+            Insert_Customer.Display_Customer.setText("UPDATE CUSTOMER");
             is.setVisible(true);
         
         }
@@ -371,9 +370,9 @@ public class Table_Customer extends javax.swing.JFrame {
 
             int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
-                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Supplier.DeleteSupplier(id) ){
+                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Customers.DeleteCustomer(id) ){
                 Class_tables ct = new Class_tables();
-                ct.Supplier();
+                ct.Customer();
                 JOptionPane.showMessageDialog(null, " SUPPLIER DELETED ","",JOptionPane.INFORMATION_MESSAGE);
                 }
             }

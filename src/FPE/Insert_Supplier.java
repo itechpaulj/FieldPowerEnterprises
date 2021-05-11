@@ -33,7 +33,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         Display_Supplier = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        jPanel3 = new javax.swing.JPanel();
+        panel_supplier_list = new javax.swing.JPanel();
         Supplier_List_Btn2 = new javax.swing.JLabel();
         Insert_Supplier_contact = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
@@ -79,7 +79,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 179));
+        panel_supplier_list.setBackground(new java.awt.Color(255, 255, 179));
 
         Supplier_List_Btn2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_List_Btn2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -92,20 +92,20 @@ public class Insert_Supplier extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panel_supplier_listLayout = new javax.swing.GroupLayout(panel_supplier_list);
+        panel_supplier_list.setLayout(panel_supplier_listLayout);
+        panel_supplier_listLayout.setHorizontalGroup(
+            panel_supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Supplier_List_Btn2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        panel_supplier_listLayout.setVerticalGroup(
+            panel_supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_supplier_listLayout.createSequentialGroup()
                 .addComponent(Supplier_List_Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        kGradientPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 250, 30));
+        kGradientPanel1.add(panel_supplier_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 250, 30));
 
         Insert_Supplier_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Supplier_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -248,26 +248,25 @@ public class Insert_Supplier extends javax.swing.JFrame {
             }
             }else if(Banner.equals("UPDATE SUPPLIER")){
                 try{
-                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = "+id+"");
-                ResultSet rs = ps.executeQuery();
-                while(rs.next()){
-                Insert_Supplier_id.setText(rs.getString("ID"));
-                Insert_Supplier_name.setText(rs.getString("NAME"));
-                Insert_Supplier_address.setText(rs.getString("ADDRESS"));
-                Insert_Supplier_email.setText(rs.getString("EMAIL"));
-                Insert_Supplier_contact.setText(rs.getString("CONTACT"));
+                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = "+id+"");
+                    ResultSet rs = ps.executeQuery();
+                    while(rs.next()){
+                    Insert_Supplier_id.setText(rs.getString("ID"));
+                    Insert_Supplier_name.setText(rs.getString("NAME"));
+                    Insert_Supplier_address.setText(rs.getString("ADDRESS"));
+                    Insert_Supplier_email.setText(rs.getString("EMAIL"));
+                    Insert_Supplier_contact.setText(rs.getString("CONTACT"));
+                    }
+                }
+                catch(Exception e){
+                    e.printStackTrace();
                 }
             }
-            catch(Exception e){
-                e.printStackTrace();
-            }
-            }
-            
-        
     }//GEN-LAST:event_Display_SupplierAncestorAdded
 
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
-        Table_Supplier.Add.setText("ADD");
+        Table_Supplier.Add.setText("ADD SUPPLIER");
+        Table_Supplier.Path.setText("1");
         Table_Supplier.supplier_id.setText("");
         dispose();
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
@@ -289,16 +288,16 @@ public class Insert_Supplier extends javax.swing.JFrame {
         String address = Insert_Supplier_address.getText().toUpperCase();
         String email = Insert_Supplier_email.getText().toUpperCase();
         String contact = Insert_Supplier_contact.getText().toUpperCase();
-        
+        Class_tables ts = new Class_tables(); 
         if(name.equals("") || address.equals("") || email.equals("") || contact.equals("")){
            JOptionPane.showMessageDialog(null, " INPUT SOME FIELDS !!","",JOptionPane.ERROR_MESSAGE); 
         }
-        else if(Banner.equals("ADD SUPPLIER") || Banner.equals("SUPPLIER SELECTED")){
+        else if(Banner.equals("ADD SUPPLIER")){
            if(!Class_Supplier.AddSupplier(name, address, contact, email))
            {
                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
                dispose();
-               Class_tables ts = new Class_tables();
+              
                ts.Supplier();
            }
         }
@@ -307,7 +306,6 @@ public class Insert_Supplier extends javax.swing.JFrame {
             {
                JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATED");
                dispose();
-               Class_tables ts = new Class_tables();
                ts.Supplier();
             }
         }
@@ -382,9 +380,9 @@ public class Insert_Supplier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
+    public static javax.swing.JPanel panel_supplier_list;
     // End of variables declaration//GEN-END:variables
 }

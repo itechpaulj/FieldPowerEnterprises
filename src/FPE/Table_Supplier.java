@@ -274,10 +274,11 @@ public class Table_Supplier extends javax.swing.JFrame {
         String id = supplier_id.getText();
         String way = Path.getText();
         
-        if(Action.equals(" ADD SUPPLIER ")){
+        if(Action.equals("ADD SUPPLIER")){
             Insert_Supplier is = new Insert_Supplier();
             is.setVisible(true);
             Insert_Supplier.Display_Supplier.setText("ADD SUPPLIER");
+            Insert_Supplier.panel_supplier_list.setVisible(false);
             Path.setText("");
             Insert_Supplier.Insert_Supplier_id.setEditable(false);
     
