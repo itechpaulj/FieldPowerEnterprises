@@ -41,10 +41,10 @@ public class Table_Supplier extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        supplier_id = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         displays = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
+        supplier_id = new javax.swing.JLabel();
         Path = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Supplier_table = new javax.swing.JTable();
@@ -86,6 +86,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        kGradientPanel1.add(supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 40, 20));
 
         Path.setText("1");
         kGradientPanel1.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 30, 20));
@@ -385,14 +386,21 @@ public class Table_Supplier extends javax.swing.JFrame {
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
         String id = supplier_id.getText();
 
-            int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
-            if(opt==0){
-                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Supplier.DeleteSupplier(id) ){
-                Class_tables ct = new Class_tables();
-                ct.Supplier();
-                JOptionPane.showMessageDialog(null, " SUPPLIER DELETED ","",JOptionPane.INFORMATION_MESSAGE);
-                }
+
+            if(id.equals("")){
+                JOptionPane.showMessageDialog(null, "PLEASE SELECT SUPPLIER!","",JOptionPane.INFORMATION_MESSAGE);
             }
+            else{
+                int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
+                if(opt==0){
+                    if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Supplier.DeleteSupplier(id) ){
+                    Class_tables ct = new Class_tables();
+                    ct.Supplier();
+                    JOptionPane.showMessageDialog(null, " SUPPLIER DELETED ","",JOptionPane.INFORMATION_MESSAGE);
+                    }
+                }   
+            }
+
     }//GEN-LAST:event_sup_delMouseClicked
 
     private void Supplier_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Supplier_SearchKeyPressed

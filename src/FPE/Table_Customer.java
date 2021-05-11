@@ -368,6 +368,11 @@ public class Table_Customer extends javax.swing.JFrame {
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
         String id = Customer_id.getText();
 
+        
+        if(id.equals("")){
+            JOptionPane.showMessageDialog(null, "PLEASE SELECT CUSTOMER!","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
             int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
                 if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Customers.DeleteCustomer(id) ){
@@ -375,7 +380,9 @@ public class Table_Customer extends javax.swing.JFrame {
                 ct.Customer();
                 JOptionPane.showMessageDialog(null, " SUPPLIER DELETED ","",JOptionPane.INFORMATION_MESSAGE);
                 }
-            }
+            }            
+        }
+
     }//GEN-LAST:event_sup_delMouseClicked
 
     private void Supplier_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Supplier_SearchKeyPressed
