@@ -34,7 +34,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     }
         void showDate(){
        Date today = new Date();
-        DateTime = Mainpage.date.format(today) +" " + Mainpage.time.format(today);
+        DateTime = Mainpage.date.format(today) +" - " + Mainpage.time.format(today);
  }
 
  public void imgisNull(){
@@ -524,9 +524,6 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
             }
             
             images=bos.toByteArray(); 
-
-
-       
         }
         catch(Exception e){
            // e.printStackTrace();

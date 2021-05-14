@@ -548,7 +548,7 @@ public class View_Stock_Genset extends javax.swing.JFrame {
             
             View_Enegized_oil.setText(rs.getString("OIL USAGE"));
             View_Enegized_tech.setText(rs.getString("TECHNICIAN"));
-            View_Enegized_date.setText(rs.getString("UPDATED AT"));
+            View_Enegized_date.setText(rs.getString("ENERGIZED DATE"));
             }
         }catch(Exception e){
             e.printStackTrace();
