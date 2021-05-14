@@ -13,9 +13,17 @@ import javax.swing.JOptionPane;
  * @author ROBLES
  */
 public class Process_Genset extends javax.swing.JFrame {
-    String filename = null;
+
     public static byte[] images = null;
     
+    public static String sup_rice = null;
+    public static String date_recieved= null;
+    public static String sup_name = null;
+    public static String energized_date = null;
+    public static String tank_cap = null;
+    public static String oil_usage = null;
+    public static String tech = null;
+    public static String updated_at = null;
     
     
     public Process_Genset() {
@@ -449,36 +457,47 @@ public class Process_Genset extends javax.swing.JFrame {
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
  
     
-    String Banner = Process_Genset_Display.getText();
-    
-    String id       = Process_Genset_id.getText().toUpperCase();
-    String brand    = Process_Genset_brand.getText().toUpperCase(); 
-    String model     = Process_Genset_model.getText().toUpperCase();
-    String kva      = Process_Genset_kva.getText().toUpperCase();
-    String phasing  = Process_Genset_phasing.getText().toUpperCase(); 
-    String type     = Process_Genset_type.getText().toUpperCase(); 
-    String dimen    = Process_Genset_dimension.getText().toUpperCase();
-    String seller_price    = Process_Genset_price.getText().toUpperCase(); 
-    String engine_sn     = Process_Genset_Engine_Serial.getText().toUpperCase();
-    String alters1_sn    = Process_Genset_Alter_Serial.getText().toUpperCase();
-    
+    String Banner           = Process_Genset_Display.getText();
+    String id               = Process_Genset_id.getText().toUpperCase();
+    String brand            = Process_Genset_brand.getText().toUpperCase(); 
+    String model            = Process_Genset_model.getText().toUpperCase();
+    String kva              = Process_Genset_kva.getText().toUpperCase();
+    String phasing          = Process_Genset_phasing.getText().toUpperCase(); 
+    String type             = Process_Genset_type.getText().toUpperCase(); 
+    String dimen            = Process_Genset_dimension.getText().toUpperCase();
+    String seller_price     = Process_Genset_price.getText().toUpperCase(); 
+    String engine_sn        = Process_Genset_Engine_Serial.getText().toUpperCase();
+    String alters1_sn       = Process_Genset_Alter_Serial.getText().toUpperCase();
     
     
-    String  c_name       = Process_Genset_Customer_name.getText().toUpperCase();
-    String  c_add    = Process_Genset_Customer_address.getText().toUpperCase();
-    String  c_email      = Process_Genset_Customer_email.getText().toUpperCase();
-    String  c_contact    = Process_Genset_Customer_contact.getText().toUpperCase();
     
-    String c_deal = Process_Genset_Dealing_Info.getText();
-    String agent_name = Process_Genset_Agent_name.getText();
-    String agent_contact = Process_Genset_Agent_contact.getText();
-    String quotation = quotations.getText();
+    String  c_name          = Process_Genset_Customer_name.getText().toUpperCase();
+    String  c_add           = Process_Genset_Customer_address.getText().toUpperCase();
+    String  c_email         = Process_Genset_Customer_email.getText().toUpperCase();
+    String  c_contact       = Process_Genset_Customer_contact.getText().toUpperCase();
+    
+    String c_deal           = Process_Genset_Dealing_Info.getText();
+    String agent_name       = Process_Genset_Agent_name.getText();
+    String agent_contact    = Process_Genset_Agent_contact.getText();
+    String quotation        = quotations.getText();
 
+    sup_rice       = View_Shop_Genset.supplier_price;
+    date_recieved  = View_Shop_Genset.date_recieved ;
+    sup_name       = View_Shop_Genset.supplier_name;
+    energized_date = View_Shop_Genset.energized;
+    tank_cap       = View_Shop_Genset.tank_cap;
+    oil_usage      = View_Shop_Genset.oil_usage;
+    tech           = View_Shop_Genset.tech;
+    updated_at     = View_Shop_Genset.updated_at;
     
-    if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, View_Shop_Genset.supplier_price,  seller_price, engine_sn, alters1_sn, View_Shop_Genset.date_recieved , images, View_Shop_Genset.supplier_name, View_Shop_Genset.energized, View_Shop_Genset.tank_cap, View_Shop_Genset.oil_usage, View_Shop_Genset.tech, View_Shop_Genset.updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
-    {
-       JOptionPane.showMessageDialog(null, "");
-    }
+    Reciept.Recieipt_c_name.setText(c_name);
+    Reciept.Recieipt_c_address.setText(c_add);
+    Reciept.Receipt_Cooments.setText("");
+    
+//   if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, View_Shop_Genset.supplier_price,  seller_price, engine_sn, alters1_sn, View_Shop_Genset.date_recieved , images, View_Shop_Genset.supplier_name, View_Shop_Genset.energized, View_Shop_Genset.tank_cap, View_Shop_Genset.oil_usage, View_Shop_Genset.tech, View_Shop_Genset.updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
+////    {
+////       JOptionPane.showMessageDialog(null, "");
+////    }
 
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package FPE2;
+package FPE;
 
+import FPE2.*;
 import javax.swing.JPanel;
 
 /**
@@ -38,15 +39,24 @@ public class Reciept extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        Recieipt_unit = new javax.swing.JLabel();
+        Recieipt_c_name = new javax.swing.JLabel();
         Recieipt_c_address = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        Reciept_price = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Receipt_Comments = new javax.swing.JTextArea();
+        Receipt_Cooments = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         Receipt_subject = new javax.swing.JTextArea();
         Reciept_Intent = new javax.swing.JTextField();
@@ -61,15 +71,6 @@ public class Reciept extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
-        Recieipt_c_name1 = new javax.swing.JLabel();
-        Recieipt_models = new javax.swing.JLabel();
-        Recieipt_body_type = new javax.swing.JLabel();
-        Recieipt_starting = new javax.swing.JLabel();
-        Recieipt_frame = new javax.swing.JLabel();
-        Receipt_fuel_tank = new javax.swing.JLabel();
-        Receipt_dimension = new javax.swing.JLabel();
-        Receipt_kva = new javax.swing.JLabel();
-        Recieipt_weigth = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -132,9 +133,9 @@ public class Reciept extends javax.swing.JFrame {
         jLabel15.setText("Dear Maa'm");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 100, 30));
 
-        Recieipt_unit.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Recieipt_unit.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Recieipt_unit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 660, 230, 30));
+        Recieipt_c_name.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        Recieipt_c_name.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(Recieipt_c_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 400, 30));
 
         Recieipt_c_address.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         Recieipt_c_address.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -144,21 +145,48 @@ public class Reciept extends javax.swing.JFrame {
         jLabel19.setText("ATTENTION :");
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 100, 30));
 
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel22.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 630, 220, 31));
+
         jLabel25.setText("PRODUCT SPECIFICATION :");
         jLabel25.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel2.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 630, 290, 270));
+
+        jLabel28.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 660, 220, 31));
+
+        jLabel30.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 720, 220, 31));
+
+        jLabel32.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 690, 220, 31));
+
+        jLabel34.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 810, 220, 31));
+
+        jLabel36.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 870, 220, 31));
+
+        jLabel37.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 780, 220, 31));
+
+        jLabel38.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 750, 220, 31));
 
         jLabel42.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel42.setText(" PRODUCT SPECIFICATION :");
         jPanel2.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 600, 210, 30));
 
+        jLabel44.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 840, 220, 31));
+
+        jLabel45.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        jPanel2.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 920, 200, 30));
+
         jLabel46.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         jLabel46.setText("UNIT PRICE");
         jPanel2.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 920, 130, 30));
-
-        Reciept_price.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
-        jPanel2.add(Reciept_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 920, 200, 30));
 
         jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setBorder(null);
@@ -166,12 +194,12 @@ public class Reciept extends javax.swing.JFrame {
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane2.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
 
-        Receipt_Comments.setColumns(20);
-        Receipt_Comments.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        Receipt_Comments.setRows(5);
-        Receipt_Comments.setTabSize(5);
-        Receipt_Comments.setAlignmentX(5.0F);
-        jScrollPane2.setViewportView(Receipt_Comments);
+        Receipt_Cooments.setColumns(20);
+        Receipt_Cooments.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        Receipt_Cooments.setRows(5);
+        Receipt_Cooments.setTabSize(5);
+        Receipt_Cooments.setAlignmentX(5.0F);
+        jScrollPane2.setViewportView(Receipt_Cooments);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 690, 60));
 
@@ -184,7 +212,6 @@ public class Reciept extends javax.swing.JFrame {
         Receipt_subject.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         Receipt_subject.setRows(5);
         Receipt_subject.setTabSize(5);
-        Receipt_subject.setText("\tQoutation fo brand new 12kva");
         jScrollPane3.setViewportView(Receipt_subject);
 
         jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 580, 60));
@@ -276,42 +303,6 @@ public class Reciept extends javax.swing.JFrame {
         jTextField9.setCaretColor(new java.awt.Color(102, 102, 102));
         jPanel2.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 840, 180, 31));
 
-        Recieipt_c_name1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Recieipt_c_name1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Recieipt_c_name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 400, 30));
-
-        Recieipt_models.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Recieipt_models.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Recieipt_models, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 630, 230, 30));
-
-        Recieipt_body_type.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Recieipt_body_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Recieipt_body_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 720, 230, 30));
-
-        Recieipt_starting.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Recieipt_starting.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Recieipt_starting, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 690, 230, 30));
-
-        Recieipt_frame.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Recieipt_frame.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Recieipt_frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 870, 230, 30));
-
-        Receipt_fuel_tank.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Receipt_fuel_tank.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Receipt_fuel_tank, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 810, 230, 30));
-
-        Receipt_dimension.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Receipt_dimension.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Receipt_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 780, 230, 30));
-
-        Receipt_kva.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Receipt_kva.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Receipt_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 750, 230, 30));
-
-        Recieipt_weigth.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        Recieipt_weigth.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
-        jPanel2.add(Recieipt_weigth, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 840, 230, 30));
-
         jScrollPane1.setViewportView(jPanel2);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 590));
@@ -390,6 +381,7 @@ public class Reciept extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Reciept.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -400,33 +392,33 @@ public class Reciept extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JTextArea Receipt_Comments;
-    public static javax.swing.JLabel Receipt_dimension;
-    public static javax.swing.JLabel Receipt_fuel_tank;
-    public static javax.swing.JLabel Receipt_kva;
+    public static javax.swing.JTextArea Receipt_Cooments;
     public static javax.swing.JTextArea Receipt_subject;
-    public static javax.swing.JLabel Recieipt_body_type;
     public static javax.swing.JLabel Recieipt_c_address;
-    public static javax.swing.JLabel Recieipt_c_name1;
-    public static javax.swing.JLabel Recieipt_frame;
-    public static javax.swing.JLabel Recieipt_models;
-    public static javax.swing.JLabel Recieipt_starting;
-    public static javax.swing.JLabel Recieipt_unit;
-    public static javax.swing.JLabel Recieipt_weigth;
+    public static javax.swing.JLabel Recieipt_c_name;
     public static javax.swing.JTextField Reciept_Count;
     public static javax.swing.JTextField Reciept_Intent;
     public static javax.swing.JTextField Reciept_Spect;
-    public static javax.swing.JLabel Reciept_price;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    public static javax.swing.JLabel jLabel22;
     public static javax.swing.JLabel jLabel25;
+    public static javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
+    public static javax.swing.JLabel jLabel30;
+    public static javax.swing.JLabel jLabel32;
+    public static javax.swing.JLabel jLabel34;
+    public static javax.swing.JLabel jLabel36;
+    public static javax.swing.JLabel jLabel37;
+    public static javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel41;
     public static javax.swing.JLabel jLabel42;
+    public static javax.swing.JLabel jLabel44;
+    public static javax.swing.JLabel jLabel45;
     public static javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
