@@ -114,6 +114,7 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         Process_Genset_Weight = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        quotation_display = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
 
@@ -244,22 +245,22 @@ public class Process_Genset extends javax.swing.JFrame {
         id1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id1.setText("NAME");
         id1.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 80, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 50, 100, 30));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel21.setText("ADDRESS");
         jLabel21.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 120, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, 100, 30));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setText("EMAIL ");
         jLabel19.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 160, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, 100, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setText("CONTACT NO.");
         jLabel18.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, 100, 30));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(20, 31, 31));
@@ -270,42 +271,42 @@ public class Process_Genset extends javax.swing.JFrame {
         id3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id3.setText("AGENT NAME");
         id3.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(id3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 380, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(id3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 100, 30));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setText("ADDRESS");
         jLabel24.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 420, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 370, 100, 30));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setText("DEALING INFO");
         jLabel25.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 240, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 210, 100, 30));
 
         jLabel26.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel26.setText("QUOTATION");
         jLabel26.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 460, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 410, 100, 30));
 
         quotations.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         quotations.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         quotations.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(quotations, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 460, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(quotations, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 410, 180, 30));
 
         Process_Genset_Dealing_Info.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Genset_Dealing_Info.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Genset_Dealing_Info.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Process_Genset_Dealing_Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 240, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(Process_Genset_Dealing_Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 210, 180, 30));
 
         Process_Genset_Agent_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Genset_Agent_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Genset_Agent_name.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Process_Genset_Agent_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 380, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(Process_Genset_Agent_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 330, 180, 30));
 
         Process_Genset_Customer_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Genset_Customer_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Genset_Customer_contact.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Process_Genset_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 200, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(Process_Genset_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 170, 180, 30));
 
         Process_Genset_model.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Genset_model.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -360,17 +361,17 @@ public class Process_Genset extends javax.swing.JFrame {
         Process_Genset_Agent_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Genset_Agent_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Genset_Agent_contact.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Process_Genset_Agent_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 420, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(Process_Genset_Agent_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 370, 180, 30));
 
         Process_Genset_Customer_email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Genset_Customer_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Genset_Customer_email.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Process_Genset_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(Process_Genset_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 130, 180, 30));
 
         Process_Genset_Customer_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Genset_Customer_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Genset_Customer_name.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Process_Genset_Customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 80, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(Process_Genset_Customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 50, 180, 30));
 
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
@@ -384,7 +385,7 @@ public class Process_Genset extends javax.swing.JFrame {
         Process_Genset_Customer_address.setMargin(new java.awt.Insets(8, 8, 8, 8));
         jScrollPane1.setViewportView(Process_Genset_Customer_address);
 
-        KG2_ADD_STOCK_GENSET.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 90, 180, 30));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 179));
 
@@ -403,7 +404,7 @@ public class Process_Genset extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,7 +413,7 @@ public class Process_Genset extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 280, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 250, 180, 30));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
 
@@ -518,17 +519,21 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "GENSET INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 670, 490));
 
+        quotation_display.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quotation_display.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(quotation_display, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 450, 180, 30));
+
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel17.setToolTipText("");
         jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "AGENT INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, 330, 170));
+        KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 330, 210));
 
         jLabel23.setBackground(new java.awt.Color(255, 255, 255));
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setToolTipText("");
         jLabel23.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "CUSTOMER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, 330, 310));
+        KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, 330, 270));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
@@ -646,13 +651,14 @@ public class Process_Genset extends javax.swing.JFrame {
 
     private void Process_Genset_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Process_Genset_DisplayAncestorAdded
         String Banner = Process_Genset_Display.getText();
-        
+         Date today = new Date();
         if(Banner.equals("GENSET PROCESSING")){
             try{
             String id = Process_Genset_id.getText();
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE` FROM `genset_table` WHERE `ID` = '"+id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION`,`IMAGE` FROM `genset_table` WHERE `ID` = '"+id+"'");
             ResultSet rs = ps.executeQuery();
                 while(rs.next()){
+  
                 images = rs.getBytes("IMAGE");
                 ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Process_Genset_pic.getWidth(), Process_Genset_pic.getHeight(),Image.SCALE_SMOOTH) );
                 Process_Genset_pic.setIcon(imageicon); 
@@ -661,6 +667,31 @@ public class Process_Genset extends javax.swing.JFrame {
             catch(Exception e){
                 e.printStackTrace();
             }
+            
+            try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `bin_genset` ORDER BY `ID` DESC LIMIT 1");
+            ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                    
+                    if(rs.getString("QUOTATION").equals("")){
+               
+                      SimpleDateFormat quot_date = new SimpleDateFormat("yyyy");             
+                        quotation_display.setText(quot_date.format(today)+" - 1");
+                        quotations.setEditable(false);
+                        quotations.setText(quotation_display.getText());
+                    }
+                    else{
+                    String[] quot = rs.getString("QUOTATION").split(" - ");
+                    int getRead = Integer.parseInt(quot[1].toString());
+                    int output = getRead + 1;
+                    quotation_display.setText(quot[0]+" - "+output);                        
+                    }
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }            
+            
         }
     }//GEN-LAST:event_Process_Genset_DisplayAncestorAdded
 
@@ -771,6 +802,7 @@ public class Process_Genset extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel quotation_display;
     public static javax.swing.JTextField quotations;
     // End of variables declaration//GEN-END:variables
 }
