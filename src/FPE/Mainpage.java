@@ -6,12 +6,14 @@
 package FPE;
 
 
-import fieldpowerenterprises.Customer;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
+import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
@@ -39,16 +41,31 @@ public class Mainpage extends javax.swing.JFrame {
        Home_Dates.setText(""+date);
        Home_Time.setText(""+time);   
         showDate();
+
     }
-       
+               
+//     Date today = new Date();
+//     SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
+//     SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
+//     
+//     Home_Dates.setText(date.format(today));
+//     Home_Time.setText(time.format(today));
  void showDate(){
-     
-     Date today = new Date();
-     SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
-     SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
-     
-     Home_Dates.setText(date.format(today));
-     Home_Time.setText(time.format(today));
+
+            new Timer(0, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                Date today = new Date();
+                
+                SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
+                Home_Dates.setText(date.format(today));
+                
+                SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
+                Home_Time.setText(s.format(today));
+            }
+            
+        }).start();
  }
  
 
@@ -113,7 +130,7 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Filter_view = new javax.swing.JLabel();
         Stock_Filter_Panel_back = new javax.swing.JPanel();
         Stock_Filter_back = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         SHOP = new keeptoo.KGradientPanel();
         Shop_Genset = new javax.swing.JLabel();
         Shop_Filter = new javax.swing.JLabel();
@@ -605,6 +622,7 @@ public class Mainpage extends javax.swing.JFrame {
         STOCK_GENSET.add(Genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 150, 30));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
         STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
         jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -813,8 +831,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         STOCK_FILTER.add(Stock_Filter_Panel_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, 190, 50));
 
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        STOCK_FILTER.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
+        STOCK_FILTER.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
         JTab.addTab("STOCK_FILTER", STOCK_FILTER);
 
@@ -1828,8 +1847,8 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane5;
