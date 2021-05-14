@@ -379,9 +379,9 @@ public class View_Shop_Genset extends javax.swing.JFrame {
            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Process_Genset.Process_Genset_pic.getWidth(), Process_Genset.Process_Genset_pic.getHeight(),Image.SCALE_SMOOTH) );
            Process_Genset.Process_Genset_pic.setIcon(imageicon);
            
-           
-            p.setVisible(true);
-            dispose();
+           Process_Genset.Process_Genset_id.setEditable(false);
+           p.setVisible(true);
+           dispose();
         
     }//GEN-LAST:event_View_Genset__BtnMouseClicked
 

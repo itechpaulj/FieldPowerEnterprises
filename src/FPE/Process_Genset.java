@@ -456,7 +456,7 @@ public class Process_Genset extends javax.swing.JFrame {
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
  
-    
+    Reciept r = new Reciept();
     String Banner           = Process_Genset_Display.getText();
     String id               = Process_Genset_id.getText().toUpperCase();
     String brand            = Process_Genset_brand.getText().toUpperCase(); 
@@ -494,10 +494,19 @@ public class Process_Genset extends javax.swing.JFrame {
     Reciept.Recieipt_c_address.setText(c_add);
     Reciept.Receipt_Cooments.setText("");
     
+    
+    r.setVisible(true);
 //   if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, View_Shop_Genset.supplier_price,  seller_price, engine_sn, alters1_sn, View_Shop_Genset.date_recieved , images, View_Shop_Genset.supplier_name, View_Shop_Genset.energized, View_Shop_Genset.tank_cap, View_Shop_Genset.oil_usage, View_Shop_Genset.tech, View_Shop_Genset.updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
 ////    {
 ////       JOptionPane.showMessageDialog(null, "");
 ////    }
+
+
+    
+
+
+
+
 
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 

@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d5d5bd40-4fd1-4dc2-8171-452891fb1c16">
 	<property name="ireport.zoom" value="1.0245201830476065"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="176"/>
+	<property name="ireport.y" value="382"/>
 	<import value="javax.swing.ImageIcon"/>
 	<style name="table">
 		<box>
@@ -101,7 +101,7 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="220" y="10" width="290" height="30" uuid="a1b205f0-11fc-40a7-9be7-c8832a53d4ca"/>
+				<reportElement x="220" y="10" width="290" height="20" uuid="a1b205f0-11fc-40a7-9be7-c8832a53d4ca"/>
 				<textElement>
 					<font fontName="Century Schoolbook" size="14" isBold="true"/>
 				</textElement>
@@ -363,6 +363,13 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{PRICE}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="-195" y="49" width="75" height="15" uuid="2eff31fb-ab33-424b-aa95-b462d14033ef"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ATTENTION :]]></text>
+			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
