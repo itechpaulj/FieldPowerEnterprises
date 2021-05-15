@@ -609,8 +609,9 @@ public class Process_Genset extends javax.swing.JFrame {
 //    Reciept.Recieipt_c_name.setText(c_name);
 //    Reciept.Recieipt_c_address.setText(c_add);
 //    Reciept.Receipt_Cooments.setText("");
-    String getValidQuot = quotation_display_year.getText()+ " - "+quotation_display_number.getText(); 
-    if(!getValidQuot.equals(quotations.getText())){
+    String[] getValidQuot = quotation_display_year.getText().split(" - ");
+    
+    if(getValidQuot[0].equals("0000")){
         JOptionPane.showMessageDialog(null, "Please Check Quotation");
     }else{
         if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, sup_rice,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
@@ -699,15 +700,14 @@ public class Process_Genset extends javax.swing.JFrame {
             ResultSet rs = ps.executeQuery();
                 while(rs.next()){
                     SimpleDateFormat quot_date = new SimpleDateFormat("yyyy");             
-                    quotation_display_year.setText(quot_date.format(today));
-                    quotation_display_year.setText("1");
+                   // quotation_display_year.setText("0000");
                     if(rs.getString("QUOTATION").equals("") ){
 //                        quotations.setEditable(false);
-                          quotations.setText("No Quotation");
+                          quotations.setText("0000 - 1");
 
-                           if(quotations.getText().equals("No Quotation")){
-                           quotation_display_year.setText("No ");
-                           quotation_display_number.setText("Quotation");      
+                           if(quotations.getText().equals("0000" + " - 1")){
+                           quotation_display_year.setText("0000");
+                           quotation_display_number.setText("1");      
                            }
                            try{
                                quotations.setText(year.yr.getSelectedItem().toString()+" - "+year.quot_number.getText());

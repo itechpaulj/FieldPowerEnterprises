@@ -217,10 +217,13 @@ public class year extends javax.swing.JFrame {
     }//GEN-LAST:event_Energized_BackMouseExited
 
     private void Energized_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseClicked
-        Process_Genset pg = new Process_Genset();
-        String[] quot = pg.quotation_display_year.getText().split(" - ");
-        pg.setVisible(true);
-        pg.quotation_display_year.setText(yr_select.getText());
+
+        String[] quot = Process_Genset.quotation_display_year.getText().split(" - ");
+        Process_Genset.quotation_display_year.setText(yr_select.getText());
+        
+        Process_Genset.quotations.setText(yr_select.getText() +" - "+ quot_number.getText());
+        Process_Genset.quotation_display_number.setText(quot_number.getText());
+        
     }//GEN-LAST:event_Energized_UpdateMouseClicked
 
     private void Energized_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseEntered
