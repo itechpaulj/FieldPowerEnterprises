@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="35b4df5a-4220-43fa-acdf-d34d50c2d4cb">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="271"/>
 	<import value="javax.swing.ImageIcon"/>
 	<parameter name="logo" class="java.lang.Object" isForPrompting="false"/>
 	<parameter name="subject" class="java.lang.String"/>
@@ -265,7 +265,7 @@
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true" isUnderline="false" isStrikeThrough="false"/>
 				</textElement>
-				<text><![CDATA[MODEL]]></text>
+				<text><![CDATA[ MODEL]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="352" width="120" height="20" uuid="98385b7a-7393-4348-add1-d663e4779ec1"/>
@@ -278,7 +278,7 @@
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[UNIT TYPE]]></text>
+				<text><![CDATA[ UNIT TYPE]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="372" width="120" height="20" uuid="c8305e20-ceed-4ef5-b2f8-0b9d52cab1a5"/>
@@ -291,7 +291,7 @@
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[STARTING SYSTEM]]></text>
+				<text><![CDATA[ STARTING SYSTEM]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="392" width="120" height="20" uuid="0c39d3d0-16e7-4333-b372-91ef3eb72a2f"/>
@@ -304,7 +304,7 @@
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[VAC]]></text>
+				<text><![CDATA[ VAC]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="452" width="120" height="20" uuid="5320205e-3954-4b01-98ad-7d3612220cff"/>
@@ -317,7 +317,7 @@
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[WEIGHT]]></text>
+				<text><![CDATA[ WEIGHT]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="412" width="120" height="20" uuid="139f7a02-af99-48b4-a4f4-e0891d1d6014"/>
@@ -330,7 +330,7 @@
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[DIMENSION]]></text>
+				<text><![CDATA[ DIMENSION]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="432" width="120" height="20" uuid="b4aab773-c6f8-4c43-bf18-22f522bba78c"/>
@@ -343,7 +343,7 @@
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[FUEL TANK]]></text>
+				<text><![CDATA[ FUEL TANK]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="472" width="120" height="20" uuid="2dcabb18-9e52-4375-8344-b1bc896e9fc0"/>
@@ -356,63 +356,63 @@
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[FRAME]]></text>
+				<text><![CDATA[ FRAME]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="120" y="332" width="184" height="20" backcolor="#FFFFFF" uuid="b42ff61f-15e9-4f42-aa77-277bfb49e5e8"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{MODEL}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{MODEL}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="352" width="184" height="20" uuid="14f5feea-f439-4807-9770-2e1856fafdc2"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{UNIT_TYPE}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{UNIT_TYPE}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="372" width="184" height="20" uuid="4284ba78-4cc6-49fa-8324-43b60278fa29"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{start_system}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $P{start_system}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="392" width="184" height="20" uuid="6a455760-d449-4039-8cd4-a08ebc2e87c4"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{KVA}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{KVA}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="412" width="184" height="20" backcolor="#66D9FF" uuid="af784bb0-59c4-4957-aa55-738a8e3bb72a"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{DIMENSION}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{DIMENSION}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="432" width="184" height="20" uuid="a09b12f8-3069-495d-95a8-1c024d64cdd5"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{TANK CAPACITY}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{TANK CAPACITY}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="452" width="184" height="20" uuid="752af64f-ccdc-4713-bf93-c64d29a0f3be"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{weight}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $P{weight}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="120" y="472" width="184" height="20" uuid="aa205ed6-d3ee-4ecf-96cb-32c7d440034d"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{frame}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $P{frame}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="120" y="506" width="100" height="20" uuid="7231126e-18a5-4940-88b7-1da5a7598a4c"/>

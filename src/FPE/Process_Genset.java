@@ -525,12 +525,13 @@ public class Process_Genset extends javax.swing.JFrame {
         quotation_display_year.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         quotation_display_year.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         quotation_display_year.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(quotation_display_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 450, 60, 30));
+        KG2_ADD_STOCK_GENSET.add(quotation_display_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 450, 60, 30));
 
         quotation_display_hypen.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quotation_display_hypen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         quotation_display_hypen.setText("-");
         quotation_display_hypen.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(quotation_display_hypen, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 450, 10, 30));
+        KG2_ADD_STOCK_GENSET.add(quotation_display_hypen, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 450, 20, 30));
 
         quotation_display_number.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         quotation_display_number.setAlignmentY(1.0F);
@@ -680,6 +681,7 @@ public class Process_Genset extends javax.swing.JFrame {
         String Banner = Process_Genset_Display.getText();
          Date today = new Date();
         if(Banner.equals("GENSET PROCESSING")){
+            quotations.setEditable(false);
             try{
             String id = Process_Genset_id.getText();
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE` FROM `genset_table` WHERE `ID` = '"+id+"'");
@@ -698,24 +700,27 @@ public class Process_Genset extends javax.swing.JFrame {
             try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `bin_genset` ORDER BY `ID` DESC LIMIT 1");
             ResultSet rs = ps.executeQuery();
+            quotations.setText("0000 - 1");
+            quotation_display_year.setText("0000");
+            quotation_display_number.setText("1"); 
                 while(rs.next()){
                     SimpleDateFormat quot_date = new SimpleDateFormat("yyyy");             
-                   // quotation_display_year.setText("0000");
-                    if(rs.getString("QUOTATION").equals("") ){
+                    
+                    if(rs.getString("QUOTATION").equals("")){
 //                        quotations.setEditable(false);
-                          quotations.setText("0000 - 1");
-
-                           if(quotations.getText().equals("0000" + " - 1")){
-                           quotation_display_year.setText("0000");
-                           quotation_display_number.setText("1");      
-                           }
+                          quotation_display_year.setText("0000");
+                          quotation_display_number.setText("1"); 
+//                           if(quotations.getText().equals("0000" + " - 1")){
+//                           quotation_display_year.setText("0000");
+//                           quotation_display_number.setText("1");      
+//                           }
                            try{
                                quotations.setText(year.yr.getSelectedItem().toString()+" - "+year.quot_number.getText());
                                quotation_display_year.setText(year.yr.getSelectedItem().toString());
                                quotation_display_number.setText(year.quot_number.getText());  
 
                            }catch(Exception e ){
-                           
+                              // e.printStackTrace();
                            }
                     }
                     else{
@@ -734,7 +739,7 @@ public class Process_Genset extends javax.swing.JFrame {
                                 quotations.setText(year.yr_select.getText()+" - "+year.quot_number.getText());
                             } 
                             catch(Exception e){
-                                
+                                 //e.printStackTrace();
                             }
                     }
                 }
