@@ -114,7 +114,10 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         Process_Genset_Weight = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        quotation_display = new javax.swing.JLabel();
+        quotation_display_year = new javax.swing.JLabel();
+        quotation_display_hypen = new javax.swing.JLabel();
+        quotation_display_number = new javax.swing.JLabel();
+        yr = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
 
@@ -519,9 +522,27 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "GENSET INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 670, 490));
 
-        quotation_display.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        quotation_display.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(quotation_display, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 450, 180, 30));
+        quotation_display_year.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quotation_display_year.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        quotation_display_year.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(quotation_display_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 450, 60, 30));
+
+        quotation_display_hypen.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quotation_display_hypen.setText("-");
+        quotation_display_hypen.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(quotation_display_hypen, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 450, 10, 30));
+
+        quotation_display_number.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quotation_display_number.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(quotation_display_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 450, 90, 30));
+
+        yr.setText("Year");
+        yr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                yrActionPerformed(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 453, 80, 30));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -588,8 +609,8 @@ public class Process_Genset extends javax.swing.JFrame {
 //    Reciept.Recieipt_c_name.setText(c_name);
 //    Reciept.Recieipt_c_address.setText(c_add);
 //    Reciept.Receipt_Cooments.setText("");
-
-    if(!quotation_display.getText().equals(quotations.getText())){
+    String getValidQuot = quotation_display_year.getText()+ " - "+quotation_display_number.getText(); 
+    if(!getValidQuot.equals(quotations.getText())){
         JOptionPane.showMessageDialog(null, "Please Check Quotation");
     }else{
         if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, sup_rice,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
@@ -660,7 +681,7 @@ public class Process_Genset extends javax.swing.JFrame {
         if(Banner.equals("GENSET PROCESSING")){
             try{
             String id = Process_Genset_id.getText();
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION`,`IMAGE` FROM `genset_table` WHERE `ID` = '"+id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE` FROM `genset_table` WHERE `ID` = '"+id+"'");
             ResultSet rs = ps.executeQuery();
                 while(rs.next()){
   
@@ -677,19 +698,44 @@ public class Process_Genset extends javax.swing.JFrame {
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `bin_genset` ORDER BY `ID` DESC LIMIT 1");
             ResultSet rs = ps.executeQuery();
                 while(rs.next()){
-                    
-                    if(rs.getString("QUOTATION").equals("")){
-               
-                      SimpleDateFormat quot_date = new SimpleDateFormat("yyyy");             
-                        quotation_display.setText(quot_date.format(today)+" - 1");
-                        quotations.setEditable(false);
-                        quotations.setText(quotation_display.getText());
+                    SimpleDateFormat quot_date = new SimpleDateFormat("yyyy");             
+                    quotation_display_year.setText(quot_date.format(today));
+                    quotation_display_year.setText("1");
+                    if(rs.getString("QUOTATION").equals("") ){
+//                        quotations.setEditable(false);
+                          quotations.setText("No Quotation");
+
+                           if(quotations.getText().equals("No Quotation")){
+                           quotation_display_year.setText("No ");
+                           quotation_display_number.setText("Quotation");      
+                           }
+                           try{
+                               quotations.setText(year.yr.getSelectedItem().toString()+" - "+year.quot_number.getText());
+                               quotation_display_year.setText(year.yr.getSelectedItem().toString());
+                               quotation_display_number.setText(year.quot_number.getText());  
+
+                           }catch(Exception e ){
+                           
+                           }
                     }
                     else{
-                    String[] quot = rs.getString("QUOTATION").split(" - ");
-                    int getRead = Integer.parseInt(quot[1].toString());
-                    int output = getRead + 1;
-                    quotation_display.setText(quot[0]+" - "+output);                        
+                        String[] quot = rs.getString("QUOTATION").split(" - ");
+                        int getRead = Integer.parseInt(quot[1].toString());
+                        int output = getRead + 1;
+                        if(quot[1].equals( rs.getString("QUOTATION").split(" - ")[1] ) && quot[0].equals( rs.getString("QUOTATION").split(" - ")[0] )){
+                            
+                            quotation_display_year.setText(""+quot[0]);
+                            quotation_display_number.setText(""+output);
+                            quotations.setText(quot[0]+" - "+output);
+                        }
+                            try{
+                                quotation_display_year.setText(""+year.yr_select.getText());
+                                quotation_display_number.setText(""+year.quot_number.getText());
+                                quotations.setText(year.yr_select.getText()+" - "+year.quot_number.getText());
+                            } 
+                            catch(Exception e){
+                                
+                            }
                     }
                 }
             }
@@ -707,6 +753,11 @@ public class Process_Genset extends javax.swing.JFrame {
         Table_Customer.Path.setText("2");
        
     }//GEN-LAST:event_Supplier_List_BtnMouseClicked
+
+    private void yrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yrActionPerformed
+        year yr = new year();
+        yr.setVisible(true);
+    }//GEN-LAST:event_yrActionPerformed
 
     /**
      * @param args the command line arguments
@@ -807,7 +858,10 @@ public class Process_Genset extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel quotation_display;
+    public static javax.swing.JLabel quotation_display_hypen;
+    public static javax.swing.JLabel quotation_display_number;
+    public static javax.swing.JLabel quotation_display_year;
     public static javax.swing.JTextField quotations;
+    private javax.swing.JButton yr;
     // End of variables declaration//GEN-END:variables
 }
