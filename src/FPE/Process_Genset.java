@@ -277,7 +277,7 @@ public class Process_Genset extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(id3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 100, 30));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel24.setText("ADDRESS");
+        jLabel24.setText("CONTACT");
         jLabel24.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 370, 100, 30));
 
