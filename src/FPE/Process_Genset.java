@@ -615,38 +615,44 @@ public class Process_Genset extends javax.swing.JFrame {
     if(getValidQuot[0].equals("0000")){
         JOptionPane.showMessageDialog(null, "Please Check Quotation");
     }else{
-        if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, sup_rice,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
-         {
+        int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO PRINT THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
+        if(opt==0){
+            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION){
+                    if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, sup_rice,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
+                     {
 
-              JOptionPane.showMessageDialog(null, "SUCCESS");
-             try{
+                          JOptionPane.showMessageDialog(null, "SUCCESS");
+                         try{
 
-                     JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
-                     String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT` FROM `bin_genset` ORDER BY `ID` DESC LIMIT 1";
-                     JRDesignQuery jrdesignquery = new JRDesignQuery();
-                     jrdesignquery.setText(sql);
-                     jasperdesign.setQuery(jrdesignquery);
-                     JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+                                 JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
+                                 String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT` FROM `bin_genset` ORDER BY `ID` DESC LIMIT 1";
+                                 JRDesignQuery jrdesignquery = new JRDesignQuery();
+                                 jrdesignquery.setText(sql);
+                                 jasperdesign.setQuery(jrdesignquery);
+                                 JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
 
-                 HashMap<String, Object> params = new HashMap<String, Object>();
-                 String subject = "Quotation for Brand "+kva+" "+" "+ brand +" "+model;
-                 String title = kva+ " "+brand+" "+ model;
-                 BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
-                 params.put("logo", image );
-                 params.put("subject",subject);
-                 params.put("title",title);
-                 params.put("start_system",Process_Genset_StartingSystem.getText());
-                 params.put("weight",Process_Genset_Weight.getText());
-                 params.put("frame",Process_Genset_Frame.getText());
-                 JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
-                 JasperViewer.viewReport(jasperprint);
-                 }
-                 catch(Exception e){
-                     System.out.println(e.getMessage());
-                    JOptionPane.showMessageDialog(null, e);
-                 }        
+                             HashMap<String, Object> params = new HashMap<String, Object>();
+                             String subject = "Quotation for Brand "+kva+" "+" "+ brand +" "+model;
+                             String title = kva+ " "+brand+" "+ model;
+                             BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+                             params.put("logo", image );
+                             params.put("subject",subject);
+                             params.put("title",title);
+                             params.put("start_system",Process_Genset_StartingSystem.getText());
+                             params.put("weight",Process_Genset_Weight.getText());
+                             params.put("frame",Process_Genset_Frame.getText());
+                             JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+                             JasperViewer.viewReport(jasperprint);
+                             }
+                             catch(Exception e){
+                                 System.out.println(e.getMessage());
+                                JOptionPane.showMessageDialog(null, e);
+                             }        
 
-         }         
+                     }
+            }
+        }
+         
     }
  
 
