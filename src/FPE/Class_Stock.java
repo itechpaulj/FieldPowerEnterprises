@@ -99,10 +99,10 @@ public class Class_Stock {
      return false;
     }
 
-   public static boolean UpdateEnergized(String date_energized,String tank_cap,String oil,String tech,String esystem, String weight , String frame,String id){
+   public static boolean UpdateEnergized(String date_energized,String tank_cap,String oil,String tech,String esystem, String weight , String frame, String updated_at,String id){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `genset_table` SET `ENERGIZED DATE`=?, `TANK CAPACITY`=?, `OIL USAGE`=?,`TECHNICIAN`=?, `STARTING SYSTEM`=?, `WEIGHT` = ?, `FRAME` = ? WHERE `ID` = ? ");
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `genset_table` SET `ENERGIZED DATE`=?, `TANK CAPACITY`=?, `OIL USAGE`=?,`TECHNICIAN`=?, `STARTING SYSTEM`=?, `WEIGHT` = ?, `FRAME` = ? , `UPDATED AT`=? WHERE `ID` = ? ");
         ps.setString(1,date_energized);
         ps.setString(2,tank_cap);
         ps.setString(3,oil);
@@ -110,7 +110,8 @@ public class Class_Stock {
         ps.setString(5,esystem);
         ps.setString(6,weight);
         ps.setString(7,frame);
-        ps.setString(8,id);
+        ps.setString(8,updated_at);
+        ps.setString(9,id);
 
         ps.executeUpdate();
         

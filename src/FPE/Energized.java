@@ -1,10 +1,11 @@
 package FPE;
 
 
-import FPE.Insert_Inventory_Genset;
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /*
@@ -87,7 +88,7 @@ public class Energized extends javax.swing.JFrame {
 
         Energized_technician.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_technician.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Energized_technician, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 220, 35));
+        kGradientPanel1.add(Energized_technician, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 220, 35));
 
         Energized_oil_usage.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_oil_usage.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -106,16 +107,16 @@ public class Energized extends javax.swing.JFrame {
 
         Energized_oil_weight.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_oil_weight.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Energized_oil_weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 220, 35));
+        kGradientPanel1.add(Energized_oil_weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 220, 35));
 
         Energized_oil_frame.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_oil_frame.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Energized_oil_frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 220, 35));
+        kGradientPanel1.add(Energized_oil_frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 220, 35));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setText("TECHNICIAN");
         jLabel18.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 100, 35));
+        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 100, 35));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setText("ENERGIZED DATE");
@@ -135,12 +136,12 @@ public class Energized extends javax.swing.JFrame {
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setText("WEIGHT");
         jLabel24.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 100, 35));
+        kGradientPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 100, 35));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setText("FRAME");
         jLabel25.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 100, 35));
+        kGradientPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 100, 35));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setText("TANK CAPACITY");
@@ -224,13 +225,16 @@ public class Energized extends javax.swing.JFrame {
             
         try{   
             String id = Insert_Inventory_Genset.Insert_Invetory_Genset_id.getText();
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `ENERGIZED DATE`, `OIL USAGE`,`TECHNICIAN`,`TANK CAPACITY` FROM `genset_table` WHERE ID ='"+id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `ENERGIZED DATE`, `OIL USAGE`,`TECHNICIAN`, `STARTING SYSTEM`,`WEIGHT`,`FRAME`,`TANK CAPACITY` FROM `genset_table` WHERE `ID` ='"+id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             
             Energized_date.setText(rs.getString("ENERGIZED DATE"));
             Energized_oil_usage.setText(rs.getString("OIL USAGE"));
             Energized_technician.setText(rs.getString("TECHNICIAN"));
+            Energized_oil_esystem.setText(rs.getString("STARTING SYSTEM"));
+            Energized_oil_weight.setText(rs.getString("WEIGHT"));
+            Energized_oil_frame.setText("FRAME");
             Energized_tank_capacity.setText(rs.getString("TANK CAPACITY"));
             }
         }catch(Exception e ){
@@ -262,9 +266,16 @@ public class Energized extends javax.swing.JFrame {
         String esystem = Energized_oil_esystem.getText().toUpperCase();
         String weight = Energized_oil_weight.getText().toUpperCase();
         String frame = Energized_oil_frame.getText().toUpperCase();
+        Date today = new Date();
+
+        SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
+       
+        SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
+ 
+       
+       String updated_at = date.format(today) + " - " + s.format(today);
         
-        
-        if(!Class_Stock.UpdateEnergized(date_energized,tank_cap, oil, tech,esystem,weight,frame, id)){
+        if(!Class_Stock.UpdateEnergized(date_energized,tank_cap, oil, tech,esystem,weight,frame, updated_at ,id)){
             JOptionPane.showMessageDialog(null, "ENERGIZED UPDATED ");
             dispose();
         }
