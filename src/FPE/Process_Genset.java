@@ -63,6 +63,8 @@ public class Process_Genset extends javax.swing.JFrame {
         quotation_display_number = new javax.swing.JLabel();
         quotation_display_hypen = new javax.swing.JLabel();
         quotation_display_year = new javax.swing.JLabel();
+        Genset_engineNEWOLD = new javax.swing.JLabel();
+        Genset_alterNEWOLD = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Process_Genset_Display = new javax.swing.JLabel();
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
@@ -120,6 +122,7 @@ public class Process_Genset extends javax.swing.JFrame {
         yr = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        process = new javax.swing.JLabel();
 
         Process_Genset_energized.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Genset_energized.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -160,6 +163,10 @@ public class Process_Genset extends javax.swing.JFrame {
         quotation_display_year.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         quotation_display_year.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         quotation_display_year.setAlignmentY(1.0F);
+
+        Genset_engineNEWOLD.setText("jLabel1");
+
+        Genset_alterNEWOLD.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -534,7 +541,7 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "GENSET INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 670, 490));
 
-        yr.setText("QUO - YR");
+        yr.setText("YEAR - QUOTATION");
         yr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yrActionPerformed(evt);
@@ -553,6 +560,9 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel23.setToolTipText("");
         jLabel23.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "CUSTOMER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 20, 330, 270));
+
+        process.setText("1");
+        KG2_ADD_STOCK_GENSET.add(process, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 10, 40, -1));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
@@ -580,8 +590,11 @@ public class Process_Genset extends javax.swing.JFrame {
     String type             = Process_Genset_type.getText().toUpperCase(); 
     String dimen            = Process_Genset_dimension.getText().toUpperCase();
     String seller_price     = Process_Genset_price.getText().toUpperCase(); 
-    String engine_sn        = Process_Genset_Engine_Serial.getText().toUpperCase();
-    String alters1_sn       = Process_Genset_Alter_Serial.getText().toUpperCase();
+    String engine_sn        = Genset_engineNEWOLD.getText().toUpperCase() +" - "+ Process_Genset_Engine_Serial.getText().toUpperCase();
+    String alters1_sn       = Genset_alterNEWOLD.getText().toUpperCase() +" - "+ Process_Genset_Alter_Serial.getText().toUpperCase();
+    
+    
+    
      
     String  c_name          = Process_Genset_Customer_name.getText().toUpperCase();
     String  c_add           = Process_Genset_Customer_address.getText().toUpperCase();
@@ -600,9 +613,13 @@ public class Process_Genset extends javax.swing.JFrame {
     String tank_cap       = Process_Genset_tank_cap.getText();
     String oil_usage      = Process_Genset_Oil_Usage.getText();
     String tech           = Process_Genset_Technician.getText();
+    String esystem = Process_Genset_StartingSystem.getText();
+    String weight = Process_Genset_Weight.getText();
+    String frame = Process_Genset_Frame.getText();
     String updated_at = Process_Genset_Updated_At.getText();
 
     
+    String processed = process.getText();
     
 //    Reciept.Recieipt_c_name.setText(c_name);
 //    Reciept.Recieipt_c_address.setText(c_add);
@@ -617,15 +634,19 @@ public class Process_Genset extends javax.swing.JFrame {
     }else{
         int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO PRINT THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
         if(opt==0){
-            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION){
-                    if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
+            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION)
+            {
+                if(processed.equals("1")){
+                    //insert histoty_genset_table
+                    //insert bin_genset
+                    // delete insert_genset
+                    if(!Class_Bin.Historygenset(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGenset(id,brand, model, kva, phasing, type, dimen, frame, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
                      {
-
                           JOptionPane.showMessageDialog(null, "SUCCESS");
                          try{
 
                                  JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
-                                 String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT` FROM `bin_genset` ORDER BY `ID` DESC LIMIT 1";
+                                 String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
                                  JRDesignQuery jrdesignquery = new JRDesignQuery();
                                  jrdesignquery.setText(sql);
                                  jasperdesign.setQuery(jrdesignquery);
@@ -638,18 +659,62 @@ public class Process_Genset extends javax.swing.JFrame {
                              params.put("logo", image );
                              params.put("subject",subject);
                              params.put("title",title);
-                             params.put("start_system",Process_Genset_StartingSystem.getText());
-                             params.put("weight",Process_Genset_Weight.getText());
-                             params.put("frame",Process_Genset_Frame.getText());
+                             params.put("start_system",esystem);
+                             params.put("weight",weight);
+                             params.put("frame",frame);
                              JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
                              JasperViewer.viewReport(jasperprint, false);
+
+
                              }
                              catch(Exception e){
                                  System.out.println(e.getMessage());
                                 JOptionPane.showMessageDialog(null, e);
                              }        
 
-                     }
+                     }                    
+                    //JOptionPane.showMessageDialog(null, "1");
+                    process.setText("2");//update
+                }else{
+                    if(processed.equals("2")){
+                       // JOptionPane.showMessageDialog(null, "2");
+                       // update class
+                    if(!Class_Bin.HistorygensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGensetUpdate(id,brand, model, kva, phasing, type, dimen, frame, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
+                     {
+                          JOptionPane.showMessageDialog(null, "SUCCESS");
+                         try{
+
+                                 JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
+                                 String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
+                                 JRDesignQuery jrdesignquery = new JRDesignQuery();
+                                 jrdesignquery.setText(sql);
+                                 jasperdesign.setQuery(jrdesignquery);
+                                 JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+
+                             HashMap<String, Object> params = new HashMap<String, Object>();
+                             String subject = "Quotation for Brand "+kva+" "+" "+ brand +" "+model;
+                             String title = kva+ " "+brand+" "+ model;
+                             BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+                             params.put("logo", image );
+                             params.put("subject",subject);
+                             params.put("title",title);
+                             params.put("start_system",esystem);
+                             params.put("weight",weight);
+                             params.put("frame",frame);
+                             JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+                             JasperViewer.viewReport(jasperprint, false);
+
+
+                             }
+                             catch(Exception e){
+                                 System.out.println(e.getMessage());
+                                JOptionPane.showMessageDialog(null, e);
+                             }                         
+                     }                
+                    }
+                }
+                
+                
             }
         }
          
@@ -704,7 +769,7 @@ public class Process_Genset extends javax.swing.JFrame {
             }
             
             try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `bin_genset` ORDER BY `ID` DESC LIMIT 1");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1");
             ResultSet rs = ps.executeQuery();
             quotations.setText("0000 - 1");
             quotation_display_year.setText("0000");
@@ -807,6 +872,8 @@ public class Process_Genset extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel Genset_alterNEWOLD;
+    public static javax.swing.JLabel Genset_engineNEWOLD;
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     public static javax.swing.JTextField Process_Genset_Agent_contact;
     public static javax.swing.JTextField Process_Genset_Agent_name;
@@ -869,6 +936,7 @@ public class Process_Genset extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel process;
     public static javax.swing.JLabel quotation_display_hypen;
     public static javax.swing.JLabel quotation_display_number;
     public static javax.swing.JLabel quotation_display_year;
