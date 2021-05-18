@@ -60,6 +60,9 @@ public class Process_Genset extends javax.swing.JFrame {
         Process_Genset_Oil_Usage = new javax.swing.JTextField();
         Process_Genset_Technician = new javax.swing.JTextField();
         Process_Genset_Updated_At = new javax.swing.JTextField();
+        quotation_display_number = new javax.swing.JLabel();
+        quotation_display_hypen = new javax.swing.JLabel();
+        quotation_display_year = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Process_Genset_Display = new javax.swing.JLabel();
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
@@ -68,10 +71,10 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         a = new javax.swing.JLabel();
         Process_Genset_pic = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         id1 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -114,9 +117,6 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         Process_Genset_Weight = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        quotation_display_year = new javax.swing.JLabel();
-        quotation_display_hypen = new javax.swing.JLabel();
-        quotation_display_number = new javax.swing.JLabel();
         yr = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -148,6 +148,18 @@ public class Process_Genset extends javax.swing.JFrame {
         Process_Genset_Updated_At.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Genset_Updated_At.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Genset_Updated_At.setBorder(null);
+
+        quotation_display_number.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quotation_display_number.setAlignmentY(1.0F);
+
+        quotation_display_hypen.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quotation_display_hypen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        quotation_display_hypen.setText("-");
+        quotation_display_hypen.setAlignmentY(1.0F);
+
+        quotation_display_year.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        quotation_display_year.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        quotation_display_year.setAlignmentY(1.0F);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -208,12 +220,6 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel11.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 120, 30));
 
-        jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(20, 31, 31));
-        jLabel15.setText("ALTERNATOR_SN");
-        jLabel15.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 130, 30));
-
         a.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         a.setForeground(new java.awt.Color(20, 31, 31));
         a.setText("ID");
@@ -238,6 +244,12 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel29.setText("PRICE");
         jLabel29.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 120, 30));
+
+        jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(20, 31, 31));
+        jLabel15.setText("ALTERNATOR_SN");
+        jLabel15.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 130, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(20, 31, 31));
@@ -522,28 +534,13 @@ public class Process_Genset extends javax.swing.JFrame {
         jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "GENSET INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 670, 490));
 
-        quotation_display_year.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        quotation_display_year.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        quotation_display_year.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(quotation_display_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 450, 70, 30));
-
-        quotation_display_hypen.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        quotation_display_hypen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        quotation_display_hypen.setText("-");
-        quotation_display_hypen.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(quotation_display_hypen, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 450, 20, 30));
-
-        quotation_display_number.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        quotation_display_number.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(quotation_display_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 450, 90, 30));
-
         yr.setText("QUO - YR");
         yr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yrActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 450, 110, 30));
+        KG2_ADD_STOCK_GENSET.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 450, 180, 30));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
