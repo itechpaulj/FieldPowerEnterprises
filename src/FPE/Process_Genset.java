@@ -525,7 +525,7 @@ public class Process_Genset extends javax.swing.JFrame {
         quotation_display_year.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         quotation_display_year.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         quotation_display_year.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(quotation_display_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 450, 60, 30));
+        KG2_ADD_STOCK_GENSET.add(quotation_display_year, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 450, 70, 30));
 
         quotation_display_hypen.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         quotation_display_hypen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -537,13 +537,13 @@ public class Process_Genset extends javax.swing.JFrame {
         quotation_display_number.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(quotation_display_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 450, 90, 30));
 
-        yr.setText("Year");
+        yr.setText("QUO - YR");
         yr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yrActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 453, 80, 30));
+        KG2_ADD_STOCK_GENSET.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 450, 110, 30));
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -596,7 +596,7 @@ public class Process_Genset extends javax.swing.JFrame {
     String agent_contact    = Process_Genset_Agent_contact.getText();
     String quotation        = quotations.getText();
 
-    String sup_rice       = Process_Genset_Supplier_Price.getText();
+    String sup_price       = Process_Genset_Supplier_Price.getText();
     String date_recieved  = getdate ;
     String sup_name       = Process_Genset_Suppiler_name.getText();
     String energized_date = Process_Genset_energized.getText();
@@ -614,11 +614,14 @@ public class Process_Genset extends javax.swing.JFrame {
     
     if(getValidQuot[0].equals("0000")){
         JOptionPane.showMessageDialog(null, "Please Check Quotation");
+    }
+    else if (id.equals("") || brand.equals("") || model.equals("") || kva.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || seller_price.equals("") || engine_sn.equals("") || alters1_sn.equals("") || c_name.equals("") || c_add.equals("") || c_email.equals("") || c_contact.equals("") || c_deal.equals("") || agent_name.equals("") || agent_contact.equals("") || quotation.equals("") || sup_price.equals("") || date_recieved.equals("") || sup_name.equals("") || energized_date.equals("") || tank_cap.equals("") || oil_usage.equals("") || tech.equals("") || updated_at.equals("")){
+     JOptionPane.showMessageDialog(null, "EMPTY SOME FIELDS!!","",JOptionPane.INFORMATION_MESSAGE);
     }else{
         int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO PRINT THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
         if(opt==0){
             if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION){
-                    if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, sup_rice,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
+                    if(!Class_Bin.BinGenset(brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact))
                      {
 
                           JOptionPane.showMessageDialog(null, "SUCCESS");
@@ -642,7 +645,7 @@ public class Process_Genset extends javax.swing.JFrame {
                              params.put("weight",Process_Genset_Weight.getText());
                              params.put("frame",Process_Genset_Frame.getText());
                              JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
-                             JasperViewer.viewReport(jasperprint);
+                             JasperViewer.viewReport(jasperprint, false);
                              }
                              catch(Exception e){
                                  System.out.println(e.getMessage());

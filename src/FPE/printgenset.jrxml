@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="35b4df5a-4220-43fa-acdf-d34d50c2d4cb">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="272"/>
+	<property name="ireport.y" value="32"/>
 	<import value="javax.swing.ImageIcon"/>
 	<parameter name="logo" class="java.lang.Object" isForPrompting="false"/>
 	<parameter name="subject" class="java.lang.String"/>
@@ -102,35 +102,35 @@
 			<staticText>
 				<reportElement x="220" y="65" width="161" height="11" uuid="e2d8b726-4528-41a9-bb32-335e08845c31"/>
 				<textElement>
-					<font fontName="Arial" size="7" isBold="true"/>
+					<font fontName="Arial" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[www.fieldpowerenterprises.com]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="220" y="13" width="290" height="20" uuid="34a1a907-ea7a-415d-a901-2fbdfd98ffa9"/>
 				<textElement>
-					<font fontName="Century Schoolbook" size="14" isBold="true"/>
+					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FIELD POWER ENTERPRISES]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="220" y="54" width="161" height="11" uuid="18ffbc8b-5efc-41d3-82bc-f5fcbea9245c"/>
 				<textElement>
-					<font fontName="Arial" size="7" isBold="true"/>
+					<font fontName="Arial" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[E : fieldpowergen@gmail.com]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="220" y="43" width="161" height="11" uuid="867a9a8f-cb98-4660-818a-f4507df5d09f"/>
 				<textElement>
-					<font fontName="Arial" size="7" isBold="true"/>
+					<font fontName="Arial" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[T : 02-734-4318, 0956-1845577]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="220" y="33" width="161" height="10" uuid="c59fa83c-7e89-49e2-b812-7809e99a306a"/>
 				<textElement>
-					<font size="7" isBold="true"/>
+					<font fontName="Arial" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[1467 , ABAD SANTOS, METRO MANILA]]></text>
 			</staticText>

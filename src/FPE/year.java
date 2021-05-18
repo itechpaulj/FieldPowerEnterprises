@@ -53,7 +53,7 @@ public class year extends javax.swing.JFrame {
         Display_Engine.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         Display_Engine.setForeground(new java.awt.Color(255, 255, 255));
         Display_Engine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Display_Engine.setText("YEAR");
+        Display_Engine.setText("YEAR - QUOTATION # ");
         Display_Engine.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }

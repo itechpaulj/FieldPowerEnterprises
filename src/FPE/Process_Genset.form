@@ -1167,7 +1167,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="860" y="450" width="60" height="30"/>
+              <AbsoluteConstraints x="850" y="450" width="70" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -1207,14 +1207,14 @@
         </Component>
         <Component class="javax.swing.JButton" name="yr">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Year"/>
+            <Property name="text" type="java.lang.String" value="QUO - YR"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="yrActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="740" y="453" width="80" height="30"/>
+              <AbsoluteConstraints x="730" y="450" width="110" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
