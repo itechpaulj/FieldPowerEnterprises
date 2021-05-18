@@ -640,7 +640,7 @@ public class Process_Genset extends javax.swing.JFrame {
                     //insert histoty_genset_table
                     //insert bin_genset
                     // delete insert_genset
-                    if(!Class_Bin.Historygenset(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGenset(id,brand, model, kva, phasing, type, dimen, frame, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
+                    if(!Class_Bin.Historygenset(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGenset(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
                      {
                           JOptionPane.showMessageDialog(null, "SUCCESS");
                          try{
@@ -679,7 +679,7 @@ public class Process_Genset extends javax.swing.JFrame {
                     if(processed.equals("2")){
                        // JOptionPane.showMessageDialog(null, "2");
                        // update class
-                    if(!Class_Bin.HistorygensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGensetUpdate(id,brand, model, kva, phasing, type, dimen, frame, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
+                    if(!Class_Bin.HistorygensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
                      {
                           JOptionPane.showMessageDialog(null, "SUCCESS");
                          try{
