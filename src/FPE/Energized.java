@@ -234,7 +234,7 @@ public class Energized extends javax.swing.JFrame {
             Energized_technician.setText(rs.getString("TECHNICIAN"));
             Energized_oil_esystem.setText(rs.getString("STARTING SYSTEM"));
             Energized_oil_weight.setText(rs.getString("WEIGHT"));
-            Energized_oil_frame.setText("FRAME");
+            Energized_oil_frame.setText(rs.getString("FRAME"));
             Energized_tank_capacity.setText(rs.getString("TANK CAPACITY"));
             }
         }catch(Exception e ){

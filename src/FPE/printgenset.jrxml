@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="35b4df5a-4220-43fa-acdf-d34d50c2d4cb">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="128"/>
 	<import value="javax.swing.ImageIcon"/>
 	<parameter name="logo" class="java.lang.Object" isForPrompting="false"/>
 	<parameter name="subject" class="java.lang.String"/>
@@ -11,7 +11,7 @@
 	<parameter name="weight" class="java.lang.String"/>
 	<parameter name="frame" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`, `PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1]]>
+		<![CDATA[SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`, `PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT`, `ID_GENSET` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1]]>
 	</queryString>
 	<field name="ID" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -244,6 +244,9 @@
 			</staticText>
 			<textField>
 				<reportElement x="105" y="270" width="450" height="20" uuid="6b1ac557-574b-4e68-9228-8d23fc6f74e2"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
 			</textField>
 			<staticText>

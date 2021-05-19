@@ -574,13 +574,13 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         if(!Class_Supplier.ExistSupplier(email)){
             JOptionPane.showMessageDialog(null, " EXIST SUPPLIER\nPLEASE SELECT SUPPLIER LIST!","",JOptionPane.WARNING_MESSAGE);
             //Path.setText("2"); // exist supplier
-            ct.Genset(); ct.Supplier();
+            ct.Genset(); ct.Supplier();ct.ShopGenset();
         }
         else{
             if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name) && !Class_Supplier.AddSupplier(name, address, contact, email))
             {
                 JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
-                ct.Genset(); ct.Supplier();
+                ct.Genset(); ct.Supplier();ct.ShopGenset();
                 dispose();
             }   
         }
@@ -590,7 +590,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name))
         {
             JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
-            ct.Genset(); ct.Supplier();
+            ct.Genset(); ct.Supplier();ct.ShopGenset();
             dispose();
         }
 
@@ -601,7 +601,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
        if(!Class_Stock.UpdateGenset(id,date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name,DateTime) && !Class_Supplier.UpdateSupplier(name, address, contact, email, ids));
         {
             JOptionPane.showMessageDialog(null, " SUCCESFULLY UPDATED ","",JOptionPane.INFORMATION_MESSAGE);
-             ct.Genset(); ct.Supplier();
+             ct.Genset(); ct.Supplier();ct.ShopGenset();
              dispose();
         } 
     }

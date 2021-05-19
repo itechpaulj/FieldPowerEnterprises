@@ -12,6 +12,8 @@ import static FPE.Mainpage.Stock_Filter_Table;
 import static FPE.Mainpage.Shop_Genset_Table;
 import static FPE.Mainpage.Shop_Filter_Table;
 
+import static FPE.AddCart.Cart_table;
+import static FPE.Process_Filter.Order_Table;
 
 public class Class_tables {
   
@@ -78,7 +80,7 @@ public class Class_tables {
 
         public boolean ShopFilter(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DESCRIPTION`, `TYPE`, `SELLER PRICE`, `QUANTITY` FROM `filter_table` ORDER BY `ID` DESC");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DESCRIPTION`, `TYPE`, `SELLER PRICE`, `QUANTITY` FROM `filter_table` ORDER BY `ID` DESC ");
         ResultSet rs = ps.executeQuery();
         Shop_Filter_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Shop_Filter_Table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -87,4 +89,29 @@ public class Class_tables {
             }
         return false;
     }
-}
+        
+        
+        public boolean ShowCart(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,  `DESCRIPTION`, `PRICE`, `QUANTITY`,  `TOTAL PRICE` FROM `add_cart`");
+        ResultSet rs = ps.executeQuery();
+        Cart_table.setModel(DbUtils.resultSetToTableModel(rs));
+        Cart_table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              System.out.println(e);
+            }
+        return false;
+    }
+        
+         public boolean ShowOrder(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,  `DESCRIPTION`, `PRICE`, `QUANTITY`,  `TOTAL PRICE` FROM `add_cart`");
+        ResultSet rs = ps.executeQuery();
+        Order_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        Order_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              System.out.println(e);
+        }
+        return false;
+    }
+  }

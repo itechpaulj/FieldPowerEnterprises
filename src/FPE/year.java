@@ -6,6 +6,8 @@
 package FPE;
 
 import java.awt.Color;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,6 +33,7 @@ public class year extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        yr_select = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Display_Engine = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
@@ -40,12 +43,16 @@ public class year extends javax.swing.JFrame {
         Energized_Update = new javax.swing.JLabel();
         yr = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        yr_select = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         quot_number = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        prev_quo = new javax.swing.JLabel();
+
+        yr_select.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -65,8 +72,10 @@ public class year extends javax.swing.JFrame {
         });
         jPanel4.add(Display_Engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 440, 50));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 255, 153));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 255, 153));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 74));
+
+        kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
+        kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Panel_Energized_Energized_Back.setBackground(new java.awt.Color(255, 194, 102));
@@ -92,9 +101,7 @@ public class year extends javax.swing.JFrame {
         Panel_Energized_Energized_Back.setLayout(Panel_Energized_Energized_BackLayout);
         Panel_Energized_Energized_BackLayout.setHorizontalGroup(
             Panel_Energized_Energized_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_Energized_Energized_BackLayout.createSequentialGroup()
-                .addComponent(Energized_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 30, Short.MAX_VALUE))
+            .addComponent(Energized_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         Panel_Energized_Energized_BackLayout.setVerticalGroup(
             Panel_Energized_Energized_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,9 +133,7 @@ public class year extends javax.swing.JFrame {
         Pane_Energized_Update.setLayout(Pane_Energized_UpdateLayout);
         Pane_Energized_UpdateLayout.setHorizontalGroup(
             Pane_Energized_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pane_Energized_UpdateLayout.createSequentialGroup()
-                .addComponent(Energized_Update, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 22, Short.MAX_VALUE))
+            .addComponent(Energized_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         Pane_Energized_UpdateLayout.setVerticalGroup(
             Pane_Energized_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,16 +147,13 @@ public class year extends javax.swing.JFrame {
                 yrActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 320, -1));
+        kGradientPanel1.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, 30));
 
-        jLabel1.setText("SELECTED YEAR:");
-        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 120, 20));
-
-        yr_select.setText("Choose Year");
-        kGradientPanel1.add(yr_select, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 200, 20));
+        jLabel1.setText("PREVIOUS QUOTATION :");
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 150, 30));
 
         jLabel2.setText("QUOTATION # :");
-        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 150, 30));
 
         quot_number.setText("1");
         quot_number.addActionListener(new java.awt.event.ActionListener() {
@@ -159,33 +161,13 @@ public class year extends javax.swing.JFrame {
                 quot_numberActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(quot_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 210, 30));
+        kGradientPanel1.add(quot_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 150, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 285, Short.MAX_VALUE)))
-        );
+        jLabel3.setText("SELECTED YEAR:");
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 150, 30));
+        kGradientPanel1.add(prev_quo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 150, 30));
+
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 480, 290));
 
         pack();
         setLocationRelativeTo(null);
@@ -199,6 +181,17 @@ public class year extends javax.swing.JFrame {
          int setDate = Integer.parseInt(getNowYr.toString());
         for(start=2013;start<=setDate;start++){
              yr.addItem(""+start); 
+        }
+        
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1");
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                prev_quo.setText(rs.getString("QUOTATION"));
+            }
+        }
+        catch(Exception e){
+            
         }
     }//GEN-LAST:event_Display_EngineAncestorAdded
 
@@ -223,7 +216,7 @@ public class year extends javax.swing.JFrame {
         
         Process_Genset.quotations.setText(yr_select.getText() +" - "+ quot_number.getText());
         Process_Genset.quotation_display_number.setText(quot_number.getText());
-        
+        dispose();
     }//GEN-LAST:event_Energized_UpdateMouseClicked
 
     private void Energized_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseEntered
@@ -245,6 +238,7 @@ public class year extends javax.swing.JFrame {
          }
          else{
              yr_select.setText(yr.getSelectedItem().toString());
+            // quot_number.setText(""+yr+" - ");
          }
     }//GEN-LAST:event_yrActionPerformed
 
@@ -296,8 +290,10 @@ public class year extends javax.swing.JFrame {
     public static javax.swing.JPanel Panel_Energized_Energized_Back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel4;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel prev_quo;
     public static javax.swing.JTextField quot_number;
     public static javax.swing.JComboBox<String> yr;
     public static javax.swing.JLabel yr_select;

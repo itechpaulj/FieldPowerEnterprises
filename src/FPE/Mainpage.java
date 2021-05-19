@@ -27,7 +27,6 @@ public class Mainpage extends javax.swing.JFrame {
      
    
 
-
     
     public static byte[] images = null;
     
@@ -1651,7 +1650,7 @@ public class Mainpage extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, " SELECT ITEM !!","",JOptionPane.ERROR_MESSAGE);
         }else{
-        View_Shop_Firter vsf = new View_Shop_Firter();
+        View_Shop_Filter vsf = new View_Shop_Filter();
         vsf.setVisible(true);
         }
     }//GEN-LAST:event_Shop_Filter_viewMouseClicked

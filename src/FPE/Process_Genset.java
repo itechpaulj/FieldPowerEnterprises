@@ -632,10 +632,10 @@ public class Process_Genset extends javax.swing.JFrame {
     else if (id.equals("") || brand.equals("") || model.equals("") || kva.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || seller_price.equals("") || engine_sn.equals("") || alters1_sn.equals("") || c_name.equals("") || c_add.equals("") || c_email.equals("") || c_contact.equals("") || c_deal.equals("") || agent_name.equals("") || agent_contact.equals("") || quotation.equals("") || sup_price.equals("") || date_recieved.equals("") || sup_name.equals("") || energized_date.equals("") || tank_cap.equals("") || oil_usage.equals("") || tech.equals("") || updated_at.equals("")){
      JOptionPane.showMessageDialog(null, "EMPTY SOME FIELDS!!","",JOptionPane.INFORMATION_MESSAGE);
     }else{
-        int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO PRINT THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
-        if(opt==0){
-            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION)
-            {
+//        int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO PRINT THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
+//        if(opt==0){
+//            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION)
+//            {
                 if(processed.equals("1")){
                     //insert histoty_genset_table
                     //insert bin_genset
@@ -646,7 +646,7 @@ public class Process_Genset extends javax.swing.JFrame {
                          try{
 
                                  JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
-                                 String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
+                                 String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT`, `ID_GENSET` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
                                  JRDesignQuery jrdesignquery = new JRDesignQuery();
                                  jrdesignquery.setText(sql);
                                  jasperdesign.setQuery(jrdesignquery);
@@ -685,7 +685,7 @@ public class Process_Genset extends javax.swing.JFrame {
                          try{
 
                                  JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
-                                 String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
+                                 String sql = "SELECT ID,`BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT`, `ID_GENSET` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
                                  JRDesignQuery jrdesignquery = new JRDesignQuery();
                                  jrdesignquery.setText(sql);
                                  jasperdesign.setQuery(jrdesignquery);
@@ -715,8 +715,8 @@ public class Process_Genset extends javax.swing.JFrame {
                 }
                 
                 
-            }
-        }
+           // }
+        //}
          
     }
  
@@ -752,7 +752,7 @@ public class Process_Genset extends javax.swing.JFrame {
         String Banner = Process_Genset_Display.getText();
          Date today = new Date();
         if(Banner.equals("GENSET PROCESSING")){
-            quotations.setEditable(false);
+            //quotations.setEditable(false);
             try{
             String id = Process_Genset_id.getText();
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE` FROM `genset_table` WHERE `ID` = '"+id+"'");
@@ -771,7 +771,7 @@ public class Process_Genset extends javax.swing.JFrame {
             try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1");
             ResultSet rs = ps.executeQuery();
-            quotations.setText("0000 - 1");
+            //quotations.setText("0000 - 1");
             quotation_display_year.setText("0000");
             quotation_display_number.setText("1"); 
                 while(rs.next()){
@@ -798,12 +798,12 @@ public class Process_Genset extends javax.swing.JFrame {
                         String[] quot = rs.getString("QUOTATION").split(" - ");
                         int getRead = Integer.parseInt(quot[1].toString());
                         int output = getRead + 1;
-                        if(quot[1].equals( rs.getString("QUOTATION").split(" - ")[1] ) && quot[0].equals( rs.getString("QUOTATION").split(" - ")[0] )){
-                            
-                            quotation_display_year.setText(""+quot[0]);
-                            quotation_display_number.setText(""+output);
-                            quotations.setText(quot[0]+" - "+output);
-                        }
+//                        if(quot[1].equals( rs.getString("QUOTATION").split(" - ")[1] ) && quot[0].equals( rs.getString("QUOTATION").split(" - ")[0] )){
+//                            
+//                            quotation_display_year.setText(""+quot[0]);
+//                            quotation_display_number.setText(""+output);
+//                            quotations.setText(quot[0]+" - "+output);
+//                        }
                             try{
                                 quotation_display_year.setText(""+year.yr_select.getText());
                                 quotation_display_number.setText(""+year.quot_number.getText());
