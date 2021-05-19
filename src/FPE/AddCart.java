@@ -60,7 +60,7 @@ public class AddCart extends javax.swing.JFrame {
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         displays.setForeground(new java.awt.Color(255, 255, 255));
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displays.setText("SUPPLIER LIST");
+        displays.setText("CART LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -90,7 +90,7 @@ public class AddCart extends javax.swing.JFrame {
         });
         jPanel4.add(sup_listUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 580, 200, 50));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 100));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
         kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
@@ -118,7 +118,7 @@ public class AddCart extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Cart_table);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 880, 350));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 980, 420));
 
         update_panel_supplier.setBackground(new java.awt.Color(51, 187, 255));
 
@@ -143,14 +143,16 @@ public class AddCart extends javax.swing.JFrame {
         update_panel_supplier.setLayout(update_panel_supplierLayout);
         update_panel_supplierLayout.setHorizontalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addGroup(update_panel_supplierLayout.createSequentialGroup()
+                .addComponent(Back1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 34, Short.MAX_VALUE))
         );
         update_panel_supplierLayout.setVerticalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 470, 200, 50));
+        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 540, 200, 50));
 
         delete_panel_supplier.setBackground(new java.awt.Color(255, 77, 77));
 
@@ -175,14 +177,16 @@ public class AddCart extends javax.swing.JFrame {
         delete_panel_supplier.setLayout(delete_panel_supplierLayout);
         delete_panel_supplierLayout.setHorizontalGroup(
             delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sup_del, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addGroup(delete_panel_supplierLayout.createSequentialGroup()
+                .addComponent(sup_del, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
         );
         delete_panel_supplierLayout.setVerticalGroup(
             delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sup_del, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(delete_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, 200, 50));
+        kGradientPanel1.add(delete_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 540, 200, 50));
 
         back_panel_supplier.setBackground(new java.awt.Color(255, 194, 102));
 
@@ -207,14 +211,16 @@ public class AddCart extends javax.swing.JFrame {
         back_panel_supplier.setLayout(back_panel_supplierLayout);
         back_panel_supplierLayout.setHorizontalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addGroup(back_panel_supplierLayout.createSequentialGroup()
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 32, Short.MAX_VALUE))
         );
         back_panel_supplierLayout.setVerticalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 470, 200, 50));
+        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, 200, 50));
 
         Supplier_Search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_Search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -229,7 +235,7 @@ public class AddCart extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Search_Btn.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 570));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1060, 630));
 
         pack();
         setLocationRelativeTo(null);
@@ -262,7 +268,7 @@ public class AddCart extends javax.swing.JFrame {
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
         String id = Cart_id.getText();
         
-        if(!Class_Cart.AddODelete(id)){
+        if(!Class_Cart.Cart_Item_Delete(id)){
             JOptionPane.showMessageDialog(null, "SUCEESSFULY REMOVED");
         }
 
@@ -297,7 +303,10 @@ public class AddCart extends javax.swing.JFrame {
     }//GEN-LAST:event_Supplier_SearchKeyPressed
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
+        String unique = "1";
+        
         Process_Filter pf = new Process_Filter();
+        
         pf.setVisible(true);
         dispose();
     }//GEN-LAST:event_Back1MouseClicked

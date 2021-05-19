@@ -37,6 +37,7 @@ public class Mainpage extends javax.swing.JFrame {
        ct.Filter();
        ct.ShopGenset();
        ct.ShopFilter();
+       
        Home_Dates.setText(""+date);
        Home_Time.setText(""+time);   
         showDate();
@@ -161,6 +162,8 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Filter_Panel_Customer_list = new javax.swing.JPanel();
         Shop_Filter_customer = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        update_panel_supplier = new javax.swing.JPanel();
+        Back1 = new javax.swing.JLabel();
         REPORT = new keeptoo.KGradientPanel();
 
         stock_supplier_id.setText("jLabel2");
@@ -1140,14 +1143,14 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Filter_Panel_Back.setLayout(Shop_Filter_Panel_BackLayout);
         Shop_Filter_Panel_BackLayout.setHorizontalGroup(
             Shop_Filter_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Filter_back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(Shop_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         Shop_Filter_Panel_BackLayout.setVerticalGroup(
             Shop_Filter_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Shop_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        SHOP_FILTER.add(Shop_Filter_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 530, 200, 50));
+        SHOP_FILTER.add(Shop_Filter_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, 200, 50));
 
         Shop_Filter_Panel_view.setBackground(new java.awt.Color(255, 153, 153));
 
@@ -1172,16 +1175,14 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Filter_Panel_view.setLayout(Shop_Filter_Panel_viewLayout);
         Shop_Filter_Panel_viewLayout.setHorizontalGroup(
             Shop_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Shop_Filter_Panel_viewLayout.createSequentialGroup()
-                .addComponent(Shop_Filter_view, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Shop_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         Shop_Filter_Panel_viewLayout.setVerticalGroup(
             Shop_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Shop_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        SHOP_FILTER.add(Shop_Filter_Panel_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 530, 200, 50));
+        SHOP_FILTER.add(Shop_Filter_Panel_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 200, 50));
 
         Shop_Filter_Panel_Customer_list.setBackground(new java.awt.Color(133, 173, 173));
 
@@ -1206,18 +1207,52 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Filter_Panel_Customer_list.setLayout(Shop_Filter_Panel_Customer_listLayout);
         Shop_Filter_Panel_Customer_listLayout.setHorizontalGroup(
             Shop_Filter_Panel_Customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Filter_customer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(Shop_Filter_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         Shop_Filter_Panel_Customer_listLayout.setVerticalGroup(
             Shop_Filter_Panel_Customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Shop_Filter_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        SHOP_FILTER.add(Shop_Filter_Panel_Customer_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, 200, 50));
+        SHOP_FILTER.add(Shop_Filter_Panel_Customer_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 530, 200, 50));
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
         SHOP_FILTER.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+
+        update_panel_supplier.setBackground(new java.awt.Color(51, 187, 255));
+
+        Back1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Back1.setForeground(new java.awt.Color(255, 255, 255));
+        Back1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Back1.setText(" PROCESS");
+        Back1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Back1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Back1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Back1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout update_panel_supplierLayout = new javax.swing.GroupLayout(update_panel_supplier);
+        update_panel_supplier.setLayout(update_panel_supplierLayout);
+        update_panel_supplierLayout.setHorizontalGroup(
+            update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(update_panel_supplierLayout.createSequentialGroup()
+                .addComponent(Back1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        update_panel_supplierLayout.setVerticalGroup(
+            update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        SHOP_FILTER.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 180, 50));
 
         JTab.addTab("SHOP_FILTER", SHOP_FILTER);
 
@@ -1731,6 +1766,20 @@ public class Mainpage extends javax.swing.JFrame {
         TableModel model = Shop_Filter_Table.getModel();
         Shop_filter_id.setText(model.getValueAt(i,0).toString());
     }//GEN-LAST:event_Shop_Filter_TableMouseClicked
+
+    private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
+        AddCart pf = new AddCart();
+        pf.setVisible(true);
+       
+    }//GEN-LAST:event_Back1MouseClicked
+
+    private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Back1MouseEntered
+
+    private void Back1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Back1MouseExited
       
     /**
      * @param args the command line arguments
@@ -1769,6 +1818,7 @@ public class Mainpage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel Back1;
     private javax.swing.JPanel DRAWER;
     public static javax.swing.JLabel Dashboard_Display_1;
     public static javax.swing.JLabel Dashboard_Display_2;
@@ -1859,5 +1909,6 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     public static javax.swing.JLabel stock_supplier_id;
+    public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables
 }

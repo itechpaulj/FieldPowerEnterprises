@@ -448,14 +448,14 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
         if(!Class_Supplier.ExistSupplier(email)){
             JOptionPane.showMessageDialog(null, " EXIST SUPPLIER\nPLEASE SELECT SUPPLIER LIST!","",JOptionPane.WARNING_MESSAGE);
             //Path.setText("2"); // exist supplier
-            ct.Filter(); ct.Supplier();
+            ct.Filter(); ct.Supplier(); ct.ShopFilter();
         }
         else{        
         
             if(!Class_Filter.AddFilter(date, brand, description, type, supplier_price, seller_price, quantity, images, name)&& !Class_Supplier.AddSupplier(name, address, contact, email))
             {
                 JOptionPane.showMessageDialog(null, " SUCCESFULLY ADDED ","",JOptionPane.INFORMATION_MESSAGE);
-               ct.Filter(); ct.Supplier();
+               ct.Filter(); ct.Supplier(); ct.ShopFilter();
                 dispose();
 
             }
@@ -467,7 +467,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
         if(!Class_Filter.AddFilter(date, brand, description, type, supplier_price, seller_price, quantity, images, name))
         {
             JOptionPane.showMessageDialog(null, " SUCCESFULLY ADDED ","",JOptionPane.INFORMATION_MESSAGE);
-           ct.Filter(); ct.Supplier();
+           ct.Filter(); ct.Supplier(); ct.ShopFilter();
             dispose();
 
         }
@@ -478,7 +478,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
        if(!Class_Filter.UpdateFilter(date, brand, description, type, supplier_price, seller_price, quantity, images, name, id) && !Class_Supplier.UpdateSupplier(name, address, contact, email, ids) )
         {
             JOptionPane.showMessageDialog(null, " SUCCESFULLY UPDATED ","",JOptionPane.INFORMATION_MESSAGE);
-             ct.Filter(); ct.Supplier();
+             ct.Filter(); ct.Supplier(); ct.ShopFilter();
              dispose();
         } 
     }

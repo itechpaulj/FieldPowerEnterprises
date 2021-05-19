@@ -20,6 +20,8 @@ import javax.swing.JOptionPane;
 public class View_Shop_Filter extends javax.swing.JFrame {
 
     public static byte[] images  = null;
+    Class_tables ct = new Class_tables();
+    
     public View_Shop_Filter() {
         initComponents();
     }
@@ -57,6 +59,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         GoToCart = new javax.swing.JLabel();
         ViewAdd1 = new javax.swing.JPanel();
         OTHERS = new javax.swing.JLabel();
+        count_process = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -68,7 +71,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         Wiew_Genset_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         Wiew_Genset_Display.setForeground(new java.awt.Color(255, 255, 255));
         Wiew_Genset_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Wiew_Genset_Display.setText("VIEW FILTER PRODUCT");
+        Wiew_Genset_Display.setText("VIEW FILTER / PART PRODUCT");
         Wiew_Genset_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -142,7 +145,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         View_Shop_Filter_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 170, 30));
 
-        ViewAdd.setBackground(new java.awt.Color(102, 255, 102));
+        ViewAdd.setBackground(new java.awt.Color(0, 204, 68));
 
         AddToCart.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         AddToCart.setForeground(new java.awt.Color(255, 255, 255));
@@ -282,7 +285,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 51, 0));
         jLabel12.setToolTipText("");
-        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "GENSET INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
+        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "FILTER / PART INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1000, 470));
 
         ViewCart.setBackground(new java.awt.Color(102, 204, 255));
@@ -349,6 +352,9 @@ public class View_Shop_Filter extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(ViewAdd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 190, 50));
 
+        count_process.setText("1");
+        KG2_ADD_STOCK_GENSET.add(count_process, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, 20));
+
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
         pack();
@@ -358,17 +364,13 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     private void Wiew_Genset_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Wiew_Genset_DisplayAncestorAdded
         String Banner = Wiew_Genset_Display.getText();
         
-        if(Banner.equals("VIEW FILTER PRODUCT")){
+        if(Banner.equals("VIEW FILTER / PART PRODUCT")){
             
         try{   
             String id = Mainpage.Shop_filter_id.getText();
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `filter_table` WHERE `ID`='"+id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-            
-            
-            
-            
             View_Shop_Filter_id.setText(rs.getString("ID"));
             View_Shop_Filter_brand.setText(rs.getString("BRAND"));
             View_Shop_Filter_description.setText(rs.getString("DESCRIPTION"));
@@ -383,20 +385,50 @@ public class View_Shop_Filter extends javax.swing.JFrame {
             }
         }catch(Exception e){
             e.printStackTrace();
-        } }
+        }
+        
+        try{
+            String count_processed = count_process.getText();
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `COUNT_PROCESS` FROM `history_filter` ORDER BY `ID` DESC LIMIT 1");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                if(count_processed.equals(rs.getString("COUNT_PROCESS"))){    
+                    int output = Integer.parseInt(rs.getString("COUNT_PROCESS")) + 1;
+                    count_process.setText(""+output);
+                }
+                else{
+                    count_process.setText("1");
+                }
+          
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }         
+        
+        }
     }//GEN-LAST:event_Wiew_Genset_DisplayAncestorAdded
 
     private void AddToCartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddToCartMouseClicked
-        String brand = View_Shop_Filter_brand.getText();
         String date = View_Shop_Filter_date.getText();
+        String brand = View_Shop_Filter_brand.getText();
         String desc = View_Shop_Filter_description.getText();
         String type = View_Shop_Filter_type.getText();
         String price = View_Shop_Filter_seller_price.getText();
         String quantity = View_Shop_Filter_quantity.getText();
         String total = View_Shop_Filter_total.getText();
+        String qoutation = "";
+        String c_name = "";
+        String c_address = "";
+        String c_email = "";
+        String c_contact = "";
+        String agent_name = "";
+        String agent_contact = "";
+        String filter_id =View_Shop_Filter_id.getText();
+        String count_processed = count_process.getText();
         
-        if(!Class_Cart.AddCart(brand, date, desc, type, price, quantity, total)){
-            JOptionPane.showMessageDialog(null, "ADDED");
+        if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, filter_id, count_processed)){
+            JOptionPane.showMessageDialog(null, "ADDED"); ct.ShowCart(); ct.ShowOrder();
+        
         }
                 
     }//GEN-LAST:event_AddToCartMouseClicked
@@ -436,13 +468,17 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_View_Shop_Filter_quantityKeyTyped
 
     private void View_Shop_Filter_quantityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Shop_Filter_quantityKeyPressed
-      
+        try{
         String quantitys=View_Shop_Filter_quantity.getText();
         int sum=0,quantity = 0 ;
         int price = Integer.parseInt(View_Shop_Filter_seller_price.getText());
         quantity = Integer.parseInt(View_Shop_Filter_quantity.getText().toString());
         sum = price * quantity;
         View_Shop_Filter_total.setText(""+sum);
+        }
+        catch(Exception e){
+            
+        }
     }//GEN-LAST:event_View_Shop_Filter_quantityKeyPressed
 
     private void View_Shop_Filter_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Shop_Filter_quantityKeyReleased
@@ -568,6 +604,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     public static javax.swing.JLabel View_Shop_Filter_type;
     public static javax.swing.JLabel Wiew_Genset_Display;
     private javax.swing.JLabel a1;
+    private javax.swing.JLabel count_process;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel29;

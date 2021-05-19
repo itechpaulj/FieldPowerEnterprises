@@ -12,10 +12,11 @@ import java.sql.PreparedStatement;
  * @author Javinez
  */
 public class Class_Cart {
-    public static boolean AddCart(String brand,String date,String desc,String type,String price,String quantity,String total){
+    public static boolean AddCart(String id,String brand,String date,String desc,String type,String price,String quantity,String total){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `add_cart`(`BRAND`, `DATE`, `DESCRIPTION`, `TYPE`, `QUANTITY`, `PRICE`, `TOTAL PRICE`) VALUES (?,?,?,?,?,?,?)");
+       
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `add_cart`(`BRAND`, `DATE`, `DESCRIPTION`, `TYPE`, `PRICE`,`QUANTITY`,`TOTAL PRICE`) VALUES (?,?,?,?,?,?,?)");
         ps.setString(1,brand);
         ps.setString(2,date);
         ps.setString(3,desc);
@@ -23,6 +24,7 @@ public class Class_Cart {
         ps.setString(5,price);
         ps.setString(6,quantity);
         ps.setString(7,total);
+ 
         
         ps.execute();
         
@@ -50,7 +52,7 @@ public class Class_Cart {
      return false;
     }
     
-    public static boolean AddODelete(String id){
+    public static boolean Cart_Item_Delete(String id){
         PreparedStatement ps = null;
         try{
         ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `add_cart` WHERE ID = ?");
@@ -64,4 +66,21 @@ public class Class_Cart {
         
      return false;
     }
+    
+          
+        public static boolean DeleteCart(){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `add_cart`");
+
+        ps.execute();
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        
+     return false;
+    } 
+    
+    
 }
