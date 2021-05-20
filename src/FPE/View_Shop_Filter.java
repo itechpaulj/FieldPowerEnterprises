@@ -10,6 +10,8 @@ import java.awt.Color;
 import java.awt.Image;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -21,10 +23,16 @@ public class View_Shop_Filter extends javax.swing.JFrame {
 
     public static byte[] images  = null;
     Class_tables ct = new Class_tables();
-    
+    Date today = new Date();
+    //quotaion
+    SimpleDateFormat dateQuotation = new SimpleDateFormat("yyyy");
+    String todayQuot = dateQuotation.format(today) + " - " + "1";  
+    String[] countQuotation = todayQuot.split(" - ");
     public View_Shop_Filter() {
         initComponents();
     }
+    
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -54,12 +62,15 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         View_Shop_Filter_type = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        stock_quantity = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         ViewCart = new javax.swing.JPanel();
         GoToCart = new javax.swing.JLabel();
         ViewAdd1 = new javax.swing.JPanel();
         OTHERS = new javax.swing.JLabel();
         count_process = new javax.swing.JLabel();
+        count_quotation = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -281,6 +292,18 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         View_Shop_Filter_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, 200, 30));
 
+        jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(20, 31, 31));
+        jLabel18.setText("AVAILABLE STOCK:");
+        jLabel18.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, 140, 30));
+
+        stock_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        stock_quantity.setForeground(new java.awt.Color(20, 31, 31));
+        stock_quantity.setText("0");
+        stock_quantity.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(stock_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 120, 30));
+
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 51, 0));
@@ -352,8 +375,11 @@ public class View_Shop_Filter extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(ViewAdd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 190, 50));
 
-        count_process.setText("1");
+        count_process.setText("NO COUNT PROCESS");
         KG2_ADD_STOCK_GENSET.add(count_process, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, 20));
+
+        count_quotation.setText("NO QUOTATION");
+        KG2_ADD_STOCK_GENSET.add(count_quotation, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, -1));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
@@ -363,13 +389,16 @@ public class View_Shop_Filter extends javax.swing.JFrame {
 
     private void Wiew_Genset_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Wiew_Genset_DisplayAncestorAdded
         String Banner = Wiew_Genset_Display.getText();
-        
+        String count_processed = count_process.getText();
+        String count_quotationed = count_quotation.getText();
+        PreparedStatement ps;
+        ResultSet rs;
         if(Banner.equals("VIEW FILTER / PART PRODUCT")){
             
         try{   
             String id = Mainpage.Shop_filter_id.getText();
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `filter_table` WHERE `ID`='"+id+"'");
-            ResultSet rs = ps.executeQuery();
+            ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `filter_table` WHERE `ID`='"+id+"'");
+            rs = ps.executeQuery();
             while(rs.next()){
             View_Shop_Filter_id.setText(rs.getString("ID"));
             View_Shop_Filter_brand.setText(rs.getString("BRAND"));
@@ -377,7 +406,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
             View_Shop_Filter_date.setText(rs.getString("DATE"));
             View_Shop_Filter_type.setText(rs.getString("TYPE"));
             View_Shop_Filter_seller_price.setText(rs.getString("SELLER PRICE"));
-
+            stock_quantity.setText(rs.getString("QUANTITY"));
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Shop_Filter_pic.getWidth(), View_Shop_Filter_pic.getHeight(),Image.SCALE_SMOOTH) );
             View_Shop_Filter_pic.setIcon(imageicon);
@@ -386,24 +415,60 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         }catch(Exception e){
             e.printStackTrace();
         }
+       
         
-        try{
-            String count_processed = count_process.getText();
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `COUNT_PROCESS` FROM `history_filter` ORDER BY `ID` DESC LIMIT 1");
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                if(count_processed.equals(rs.getString("COUNT_PROCESS"))){    
-                    int output = Integer.parseInt(rs.getString("COUNT_PROCESS")) + 1;
-                    count_process.setText(""+output);
-                }
-                else{
-                    count_process.setText("1");
-                }
-          
+       // Quotatation empty or not SQL QUERY
+       try{
+            ps=FPE_DB.getConnection().prepareStatement("SELECT `COUNT_PROCESS` FROM `history_filter` ORDER BY `ID` DESC LIMIT 1");
+            rs = ps.executeQuery();
+            if(rs.next()){
+            //count_quotation.setText(rs.getString("QUOTATION"));
+            
+               if(count_processed.equals("NO COUNT PROCESS")){
+                   //count_process.setText("1");
+                   if(rs.getString("COUNT_PROCESS").equals(count_processed)){
+                       //count_process.setText("1"); bypass if empty database maybe absolutely null
+                   }
+                   else{
+                       
+                       int counted = Integer.parseInt(rs.getString("COUNT_PROCESS"));
+                       count_process.setText(""+counted); //important by getting data in database use else statement other than else will result true
+                       
+                             ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `history_filter` ORDER BY `ID` DESC LIMIT 1");
+                             rs = ps.executeQuery();
+                             
+                             if(rs.next()){
+                                 if(count_quotationed.equals("NO QUOTATION")){
+                                     
+                                    if(rs.getString("QUOTATION").equals(count_quotationed)){
+                                       //count_process.setText("1"); bypass if empty database maybe absolutely null
+                                     }else{
+                                            // note debugging code by itself depends result query desc limit 1
+                                            if(rs.getString("QUOTATION").equals("")){
+                                                count_quotation.setText(rs.getString("QUOTATION"));
+                                                int counted1 = Integer.parseInt(count_process.getText()) + 1 - 1;
+                                                count_process.setText(""+counted1); 
+                                            }
+                                            else{
+                                                int counted1 = Integer.parseInt(count_process.getText()) - 1 + 2;
+                                                count_process.setText(""+counted1); 
+                                            }
+                                    }
+                                 
+                                 }
+                             }
+                   }
+               }
+           
+            }else{
+                count_process.setText("1");
+                count_quotation.setText("0");
             }
+
+            
         }catch(Exception e){
             e.printStackTrace();
-        }         
+        } 
         
         }
     }//GEN-LAST:event_Wiew_Genset_DisplayAncestorAdded
@@ -543,37 +608,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(View_Shop_Filter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -605,8 +640,10 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     public static javax.swing.JLabel Wiew_Genset_Display;
     private javax.swing.JLabel a1;
     private javax.swing.JLabel count_process;
+    private javax.swing.JLabel count_quotation;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -614,5 +651,6 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel stock_quantity;
     // End of variables declaration//GEN-END:variables
 }
