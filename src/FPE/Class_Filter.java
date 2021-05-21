@@ -71,6 +71,24 @@ public class Class_Filter {
         
      return false;
     }
+    
+    //update quantity
+        public static boolean updateQuantity(String id, String quantity){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `filter_table` SET `QUANTITY`=? WHERE `ID` = ?");
+        ps.setString(1,quantity);
+        ps.setString(2,id);
+        ps.execute();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        
+     return false;
+    }
+    
 
 
 }

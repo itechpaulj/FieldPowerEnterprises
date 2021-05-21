@@ -795,9 +795,9 @@ public class Process_Genset extends javax.swing.JFrame {
                            }
                     }
                     else{
-                        String[] quot = rs.getString("QUOTATION").split(" - ");
-                        int getRead = Integer.parseInt(quot[1].toString());
-                        int output = getRead + 1;
+//                        String[] quot = rs.getString("QUOTATION").split(" - ");
+//                        int getRead = Integer.parseInt(quot[1].toString());
+//                        int output = getRead + 1;
 //                        if(quot[1].equals( rs.getString("QUOTATION").split(" - ")[1] ) && quot[0].equals( rs.getString("QUOTATION").split(" - ")[0] )){
 //                            
 //                            quotation_display_year.setText(""+quot[0]);
@@ -832,6 +832,7 @@ public class Process_Genset extends javax.swing.JFrame {
 
     private void yrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yrActionPerformed
         year yr = new year();
+        yr.yearCompared.setText("1");
         yr.setVisible(true);
     }//GEN-LAST:event_yrActionPerformed
 

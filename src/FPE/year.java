@@ -47,6 +47,7 @@ public class year extends javax.swing.JFrame {
         quot_number = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         prev_quo = new javax.swing.JLabel();
+        yearCompared = new javax.swing.JLabel();
 
         yr_select.setText("jLabel4");
 
@@ -155,7 +156,6 @@ public class year extends javax.swing.JFrame {
         jLabel2.setText("QUOTATION # :");
         kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 150, 30));
 
-        quot_number.setText("1");
         quot_number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quot_numberActionPerformed(evt);
@@ -167,6 +167,11 @@ public class year extends javax.swing.JFrame {
         kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 150, 30));
         kGradientPanel1.add(prev_quo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 150, 30));
 
+        yearCompared.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        yearCompared.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        yearCompared.setText("2");
+        kGradientPanel1.add(yearCompared, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 70, 30));
+
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 480, 290));
 
         pack();
@@ -174,24 +179,76 @@ public class year extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Display_EngineAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Display_EngineAncestorAdded
+        PreparedStatement ps;
+        ResultSet rs;
         int start = Integer.parseInt("2013".toString());
         Date today = new Date();
          SimpleDateFormat date = new SimpleDateFormat("yyyy");
          String getNowYr = date.format(today);
-         int setDate = Integer.parseInt(getNowYr.toString());
-        for(start=2013;start<=setDate;start++){
-             yr.addItem(""+start); 
-        }
-        
-        try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1");
-            ResultSet rs = ps.executeQuery();
-            if(rs.next()){
-                prev_quo.setText(rs.getString("QUOTATION"));
+         
+         
+        if(yearCompared.getText().equals("1")){
+            int setDate = Integer.parseInt(getNowYr.toString());
+            for(start=2013;start<=setDate;start++){
+                 yr.addItem(""+start); 
+            }
+            try{
+                ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1");
+                rs = ps.executeQuery();
+                if(rs.next()){
+                    prev_quo.setText(rs.getString("QUOTATION"));
+                }
+            }
+            catch(Exception e){
+
             }
         }
-        catch(Exception e){
-            
+        else{
+            if(yearCompared.getText().equals("2")){
+                int setDate = Integer.parseInt(getNowYr.toString());
+                for(start=2013;start<=setDate;start++){
+                     yr.addItem(""+start); 
+                }
+                try{
+                    ps=FPE_DB.getConnection().prepareStatement("SELECT `COUNT_PROCESS`, `QUOTATION` FROM `history_filter` ORDER BY `ID` DESC LIMIT 1");
+                    rs = ps.executeQuery();
+                    if(rs.next()){
+                        int pre_qoutation = Integer.parseInt(rs.getString("COUNT_PROCESS")) - 1;       
+                           // prev_quo.setText(""+pre_qoutation);
+                                ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `history_filter` WHERE `COUNT_PROCESS`='"+pre_qoutation+"'");
+                                rs = ps.executeQuery();
+                                
+                                if(rs.next()){
+                                    prev_quo.setText(rs.getString("QUOTATION"));
+                                    if(rs.getString("QUOTATION").equals(prev_quo.getText())){
+                                        String[] splitQuot = rs.getString("QUOTATION").split(" - ");
+                                        int plusOne = Integer.parseInt(splitQuot[1]) + 1;
+                                        //prev_quo.setText(splitQuot[0] + " - "+plusOne);
+                                        String originalQuotation = splitQuot[0] + " - "+plusOne;
+                                        ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION` FROM `history_filter` WHERE `QUOTATION`='"+originalQuotation+"'");
+                                        rs = ps.executeQuery();
+                                        if(rs.next()){
+                                            int newQuotation = plusOne;
+                                            prev_quo.setText(splitQuot[0] + " - "+newQuotation);
+                                        }                                     
+                                        
+                                    }
+                                    
+                                   
+                                }else{
+                                    ps=FPE_DB.getConnection().prepareStatement("SELECT `QUOTATION`, `QUOTATION` FROM `history_filter` ORDER BY `ID` DESC LIMIT 1");
+                                    rs = ps.executeQuery();
+                                    if(rs.next()){
+                                        prev_quo.setText(rs.getString("QUOTATION"));
+                                    }
+                                }   
+
+                    }
+                }
+                catch(Exception e){
+
+                } 
+            }
         }
     }//GEN-LAST:event_Display_EngineAncestorAdded
 
@@ -211,12 +268,19 @@ public class year extends javax.swing.JFrame {
 
     private void Energized_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseClicked
 
-        String[] quot = Process_Genset.quotation_display_year.getText().split(" - ");
-        Process_Genset.quotation_display_year.setText(yr_select.getText());
-        
-        Process_Genset.quotations.setText(yr_select.getText() +" - "+ quot_number.getText());
-        Process_Genset.quotation_display_number.setText(quot_number.getText());
-        dispose();
+        if(yearCompared.getText().equals("1")){
+            String[] quot = Process_Genset.quotation_display_year.getText().split(" - ");
+            Process_Genset.quotation_display_year.setText(yr_select.getText());
+
+            Process_Genset.quotations.setText(yr_select.getText() +" - "+ quot_number.getText());
+            Process_Genset.quotation_display_number.setText(quot_number.getText());
+            dispose();            
+        }else{
+            if(yearCompared.getText().equals("2")){
+                Process_Filter.quotation.setText(yr.getSelectedItem().toString()+" - "+quot_number.getText());
+            }
+        }
+
     }//GEN-LAST:event_Energized_UpdateMouseClicked
 
     private void Energized_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseEntered
@@ -295,6 +359,7 @@ public class year extends javax.swing.JFrame {
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel prev_quo;
     public static javax.swing.JTextField quot_number;
+    public static javax.swing.JLabel yearCompared;
     public static javax.swing.JComboBox<String> yr;
     public static javax.swing.JLabel yr_select;
     // End of variables declaration//GEN-END:variables

@@ -9,6 +9,8 @@ package FPE;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -37,11 +39,11 @@ public class Mainpage extends javax.swing.JFrame {
        ct.Filter();
        ct.ShopGenset();
        ct.ShopFilter();
-       
+       cartIfEmpty.setVisible(false);
        Home_Dates.setText(""+date);
        Home_Time.setText(""+time);   
         showDate();
-
+        cartifEmpty();
     }
                
 //     Date today = new Date();
@@ -50,23 +52,43 @@ public class Mainpage extends javax.swing.JFrame {
 //     
 //     Home_Dates.setText(date.format(today));
 //     Home_Time.setText(time.format(today));
- void showDate(){
+    void showDate(){
 
-            new Timer(0, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                
-                Date today = new Date();
-                
-                SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
-                Home_Dates.setText(date.format(today));
-                
-                SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
-                Home_Time.setText(s.format(today));
+               new Timer(0, new ActionListener() {
+               @Override
+               public void actionPerformed(ActionEvent e) {
+
+                   Date today = new Date();
+
+                   SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
+                   Home_Dates.setText(date.format(today));
+
+                   SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
+                   Home_Time.setText(s.format(today));
+               }
+
+           }).start();
+    }
+ 
+    private void cartifEmpty (){
+        PreparedStatement ps;
+        ResultSet rs;
+        try{
+        ps=FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DATE`, `DESCRIPTION`, `TYPE`, `QUANTITY`, `PRICE`, `TOTAL PRICE` FROM `add_cart`");
+        rs = ps.executeQuery();
+            if(rs.next() == true){
+                // Database is not empty
+               cartIfEmpty.setText("2");
             }
+            else{
+                //empty database
+               cartIfEmpty.setText("1");
+            }
+        }
+        catch(Exception e){
             
-        }).start();
- }
+        }
+    }
  
 
     @SuppressWarnings("unchecked")
@@ -164,6 +186,7 @@ public class Mainpage extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         update_panel_supplier = new javax.swing.JPanel();
         Back1 = new javax.swing.JLabel();
+        cartIfEmpty = new javax.swing.JLabel();
         REPORT = new keeptoo.KGradientPanel();
 
         stock_supplier_id.setText("jLabel2");
@@ -1254,6 +1277,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         SHOP_FILTER.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 180, 50));
 
+        cartIfEmpty.setText("1");
+        SHOP_FILTER.add(cartIfEmpty, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 60, 40, -1));
+
         JTab.addTab("SHOP_FILTER", SHOP_FILTER);
 
         REPORT.setkEndColor(new java.awt.Color(0, 230, 184));
@@ -1512,7 +1538,7 @@ public class Mainpage extends javax.swing.JFrame {
     private void Stock_Genset_ViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_ViewMouseClicked
        String id = Genset_id.getText();
         if(id.equals("")){
-            JOptionPane.showMessageDialog(null, " SELECT FILTER !! ","",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, " SELECT GENSET !! ","",JOptionPane.ERROR_MESSAGE);
         }
         else{
          View_Stock_Genset vsg = new View_Stock_Genset();
@@ -1768,9 +1794,17 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Shop_Filter_TableMouseClicked
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
-        AddCart pf = new AddCart();
-        pf.setVisible(true);
-       
+
+       if(cartIfEmpty.getText().equals("1")){
+           // empty cart
+           JOptionPane.showMessageDialog(null, "PLEASE ADD CART ITEM BEFORE PROCESSED!","",JOptionPane.WARNING_MESSAGE);
+       }
+       else{
+           if(cartIfEmpty.getText().equals("2")){
+             AddCart pf = new AddCart();
+             pf.setVisible(true);
+           } 
+       }
     }//GEN-LAST:event_Back1MouseClicked
 
     private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered
@@ -1891,6 +1925,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel Stock_Genset_Supplier;
     public static javax.swing.JTable Stock_Genset_Table;
     private javax.swing.JLabel Stock_Genset_View;
+    public static javax.swing.JLabel cartIfEmpty;
     public static javax.swing.JLabel filter_id;
     private javax.swing.JLabel fpe_home;
     private javax.swing.JLabel jLabel1;

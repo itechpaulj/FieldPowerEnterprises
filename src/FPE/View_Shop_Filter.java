@@ -41,6 +41,9 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         Wiew_Genset_Display = new javax.swing.JLabel();
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
+        result = new javax.swing.JLabel();
+        count_process = new javax.swing.JLabel();
+        count_quotation = new javax.swing.JLabel();
         View_Shop_Filter_description = new javax.swing.JLabel();
         View_Shop_Filter_total = new javax.swing.JLabel();
         View_Shop_Filter_date = new javax.swing.JLabel();
@@ -63,14 +66,12 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         View_Shop_Filter_type = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        stock_quantity = new javax.swing.JLabel();
+        display_stock_quantity = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         ViewCart = new javax.swing.JPanel();
         GoToCart = new javax.swing.JLabel();
         ViewAdd1 = new javax.swing.JPanel();
         OTHERS = new javax.swing.JLabel();
-        count_process = new javax.swing.JLabel();
-        count_quotation = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -100,6 +101,15 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
         KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(0, 230, 184));
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        result.setText("0");
+        KG2_ADD_STOCK_GENSET.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 30, -1));
+
+        count_process.setText("NO COUNT PROCESS");
+        KG2_ADD_STOCK_GENSET.add(count_process, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
+
+        count_quotation.setText("NO QUOTATION");
+        KG2_ADD_STOCK_GENSET.add(count_quotation, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
         View_Shop_Filter_description.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Shop_Filter_description.setForeground(new java.awt.Color(20, 31, 31));
@@ -298,11 +308,11 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         jLabel18.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, 140, 30));
 
-        stock_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        stock_quantity.setForeground(new java.awt.Color(20, 31, 31));
-        stock_quantity.setText("0");
-        stock_quantity.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(stock_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 120, 30));
+        display_stock_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        display_stock_quantity.setForeground(new java.awt.Color(20, 31, 31));
+        display_stock_quantity.setText("0");
+        display_stock_quantity.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(display_stock_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 120, 30));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -375,12 +385,6 @@ public class View_Shop_Filter extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(ViewAdd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 190, 50));
 
-        count_process.setText("NO COUNT PROCESS");
-        KG2_ADD_STOCK_GENSET.add(count_process, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 170, 20));
-
-        count_quotation.setText("NO QUOTATION");
-        KG2_ADD_STOCK_GENSET.add(count_quotation, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 150, -1));
-
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
         pack();
@@ -406,7 +410,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
             View_Shop_Filter_date.setText(rs.getString("DATE"));
             View_Shop_Filter_type.setText(rs.getString("TYPE"));
             View_Shop_Filter_seller_price.setText(rs.getString("SELLER PRICE"));
-            stock_quantity.setText(rs.getString("QUANTITY"));
+            display_stock_quantity.setText(rs.getString("QUANTITY"));
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Shop_Filter_pic.getWidth(), View_Shop_Filter_pic.getHeight(),Image.SCALE_SMOOTH) );
             View_Shop_Filter_pic.setIcon(imageicon);
@@ -474,6 +478,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_Wiew_Genset_DisplayAncestorAdded
 
     private void AddToCartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddToCartMouseClicked
+        String id = View_Shop_Filter_id.getText();
         String date = View_Shop_Filter_date.getText();
         String brand = View_Shop_Filter_brand.getText();
         String desc = View_Shop_Filter_description.getText();
@@ -490,10 +495,30 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         String agent_contact = "";
         String filter_id =View_Shop_Filter_id.getText();
         String count_processed = count_process.getText();
+        int quanResult = 0;
         
-        if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, filter_id, count_processed)){
-            JOptionPane.showMessageDialog(null, "ADDED"); ct.ShowCart(); ct.ShowOrder();
-        
+        quanResult = Integer.parseInt(result.getText().toString()) ;
+        String strQuantity = Integer.toString(quanResult);
+
+        if(quantity.equals("")){
+            JOptionPane.showMessageDialog(null, "ENTER QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            if(display_stock_quantity .getText().equals("0")){
+                JOptionPane.showMessageDialog(null, "NO STACK AVAILABLE!","",JOptionPane.INFORMATION_MESSAGE);
+                ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+            }
+            else if(quanResult < 0){
+                JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+                ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+            }        
+            else{
+                if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
+                    JOptionPane.showMessageDialog(null, "ADDED"); ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+                    Mainpage.cartIfEmpty.setText("2");
+                    display_stock_quantity.setText(result.getText());
+                }
+            }
         }
                 
     }//GEN-LAST:event_AddToCartMouseClicked
@@ -547,11 +572,24 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_View_Shop_Filter_quantityKeyPressed
 
     private void View_Shop_Filter_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Shop_Filter_quantityKeyReleased
+        
+        try{
         int sum=0,quantity = 0 ;
         int price = Integer.parseInt(View_Shop_Filter_seller_price.getText());
         quantity = Integer.parseInt(View_Shop_Filter_quantity.getText().toString());
         sum = price * quantity;
         View_Shop_Filter_total.setText(""+sum);
+        
+        int stock_quantity = 0,stock_sum_quantity = 0, result_stock_quantity = 0;
+        stock_quantity = Integer.parseInt(View_Shop_Filter_quantity.getText().toString());
+        stock_sum_quantity = Integer.parseInt(display_stock_quantity.getText().toString());
+        result_stock_quantity =  stock_sum_quantity - stock_quantity;
+        result.setText(""+result_stock_quantity);
+        }
+        catch(Exception e){
+            
+        }
+        
     }//GEN-LAST:event_View_Shop_Filter_quantityKeyReleased
 
     private void GoToCartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToCartMouseClicked
@@ -641,6 +679,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     private javax.swing.JLabel a1;
     private javax.swing.JLabel count_process;
     private javax.swing.JLabel count_quotation;
+    private javax.swing.JLabel display_stock_quantity;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
@@ -651,6 +690,6 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel stock_quantity;
+    public static javax.swing.JLabel result;
     // End of variables declaration//GEN-END:variables
 }
