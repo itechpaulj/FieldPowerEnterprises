@@ -39,6 +39,10 @@ public class Mainpage extends javax.swing.JFrame {
        ct.Filter();
        ct.ShopGenset();
        ct.ShopFilter();
+       ct.History_Genset();
+       ct.History_Fitler();
+       ct.Bin_Genset();
+       ct.Bin_Filter();
        cartIfEmpty.setVisible(false);
        Home_Dates.setText(""+date);
        Home_Time.setText(""+time);   
@@ -175,7 +179,6 @@ public class Mainpage extends javax.swing.JFrame {
         SHOP_FILTER = new keeptoo.KGradientPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         Shop_Filter_Table = new javax.swing.JTable();
-        Shop_filter_id = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         Shop_Filter_Panel_Back = new javax.swing.JPanel();
         Shop_Filter_back = new javax.swing.JLabel();
@@ -187,7 +190,45 @@ public class Mainpage extends javax.swing.JFrame {
         update_panel_supplier = new javax.swing.JPanel();
         Back1 = new javax.swing.JLabel();
         cartIfEmpty = new javax.swing.JLabel();
+        Shop_filter_id = new javax.swing.JLabel();
         REPORT = new keeptoo.KGradientPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        HISTORY = new keeptoo.KGradientPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        HISTORY_GENSET = new keeptoo.KGradientPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        history_genset_table = new javax.swing.JTable();
+        Shop_Genset_Panel_Customer5 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list5 = new javax.swing.JLabel();
+        Shop_Genset_Panel_Customer6 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list6 = new javax.swing.JLabel();
+        HISTORY_FILTER = new keeptoo.KGradientPanel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        history_filter_table = new javax.swing.JTable();
+        Shop_Genset_Panel_Customer3 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list3 = new javax.swing.JLabel();
+        Shop_Genset_Panel_Customer4 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list4 = new javax.swing.JLabel();
+        BIN = new keeptoo.KGradientPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        BIN_GENSET = new keeptoo.KGradientPanel();
+        Shop_Genset_Panel_Customer7 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list7 = new javax.swing.JLabel();
+        Shop_Genset_Panel_Customer8 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list8 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        Bin_Genset_Table = new javax.swing.JTable();
+        BIN_FILTER = new keeptoo.KGradientPanel();
+        Shop_Genset_Panel_Customer9 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list9 = new javax.swing.JLabel();
+        Shop_Genset_Panel_Customer10 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list10 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        Bin_Filter_Table = new javax.swing.JTable();
 
         stock_supplier_id.setText("jLabel2");
 
@@ -1132,7 +1173,6 @@ public class Mainpage extends javax.swing.JFrame {
         jScrollPane8.setViewportView(Shop_Filter_Table);
 
         SHOP_FILTER.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1050, 420));
-        SHOP_FILTER.add(Shop_filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, 80, 20));
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -1278,25 +1318,465 @@ public class Mainpage extends javax.swing.JFrame {
         SHOP_FILTER.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 180, 50));
 
         cartIfEmpty.setText("1");
-        SHOP_FILTER.add(cartIfEmpty, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 60, 40, -1));
+        SHOP_FILTER.add(cartIfEmpty, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 54, 150, 20));
+        SHOP_FILTER.add(Shop_filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 80, 40));
 
         JTab.addTab("SHOP_FILTER", SHOP_FILTER);
 
         REPORT.setkEndColor(new java.awt.Color(0, 230, 184));
         REPORT.setkStartColor(new java.awt.Color(0, 230, 184));
+        REPORT.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout REPORTLayout = new javax.swing.GroupLayout(REPORT);
-        REPORT.setLayout(REPORTLayout);
-        REPORTLayout.setHorizontalGroup(
-            REPORTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1125, Short.MAX_VALUE)
-        );
-        REPORTLayout.setVerticalGroup(
-            REPORTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 607, Short.MAX_VALUE)
-        );
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("SALES OF STOCK");
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+        REPORT.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 140, 330, 330));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("PURCHASE HISTORY");
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        REPORT.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 330, 330));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("BIN HISTORY");
+        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
+        REPORT.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 330, 330));
 
         JTab.addTab("REPORTS", REPORT);
+
+        HISTORY.setkEndColor(new java.awt.Color(0, 230, 184));
+        HISTORY.setkStartColor(new java.awt.Color(0, 230, 184));
+        HISTORY.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("FILTER");
+        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        HISTORY.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, 450, 350));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText(" GENSET");
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        HISTORY.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 450, 350));
+
+        JTab.addTab("REPORTS", HISTORY);
+
+        HISTORY_GENSET.setkEndColor(new java.awt.Color(0, 230, 184));
+        HISTORY_GENSET.setkStartColor(new java.awt.Color(0, 230, 184));
+        HISTORY_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        history_genset_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        history_genset_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                history_genset_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(history_genset_table);
+
+        HISTORY_GENSET.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1070, 420));
+
+        Shop_Genset_Panel_Customer5.setBackground(new java.awt.Color(133, 173, 173));
+
+        Shop_Genset_Customer_list5.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list5.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list5.setText(" BACK");
+        Shop_Genset_Customer_list5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list5MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer5Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer5);
+        Shop_Genset_Panel_Customer5.setLayout(Shop_Genset_Panel_Customer5Layout);
+        Shop_Genset_Panel_Customer5Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list5, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer5Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        HISTORY_GENSET.add(Shop_Genset_Panel_Customer5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 210, 50));
+
+        Shop_Genset_Panel_Customer6.setBackground(new java.awt.Color(133, 173, 173));
+
+        Shop_Genset_Customer_list6.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list6.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list6.setText("VIEW ITEM");
+        Shop_Genset_Customer_list6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list6MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list6MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer6Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer6);
+        Shop_Genset_Panel_Customer6.setLayout(Shop_Genset_Panel_Customer6Layout);
+        Shop_Genset_Panel_Customer6Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list6, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer6Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list6, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        HISTORY_GENSET.add(Shop_Genset_Panel_Customer6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 210, 50));
+
+        JTab.addTab("ORDERED", HISTORY_GENSET);
+
+        HISTORY_FILTER.setkEndColor(new java.awt.Color(0, 230, 184));
+        HISTORY_FILTER.setkStartColor(new java.awt.Color(0, 230, 184));
+        HISTORY_FILTER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        history_filter_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        history_filter_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                history_filter_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane10.setViewportView(history_filter_table);
+
+        HISTORY_FILTER.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1070, 420));
+
+        Shop_Genset_Panel_Customer3.setBackground(new java.awt.Color(133, 173, 173));
+
+        Shop_Genset_Customer_list3.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list3.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list3.setText(" BACK");
+        Shop_Genset_Customer_list3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list3MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer3Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer3);
+        Shop_Genset_Panel_Customer3.setLayout(Shop_Genset_Panel_Customer3Layout);
+        Shop_Genset_Panel_Customer3Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list3, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer3Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        HISTORY_FILTER.add(Shop_Genset_Panel_Customer3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 210, 50));
+
+        Shop_Genset_Panel_Customer4.setBackground(new java.awt.Color(133, 173, 173));
+
+        Shop_Genset_Customer_list4.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list4.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list4.setText(" CUSTOMER LIST");
+        Shop_Genset_Customer_list4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list4MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer4Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer4);
+        Shop_Genset_Panel_Customer4.setLayout(Shop_Genset_Panel_Customer4Layout);
+        Shop_Genset_Panel_Customer4Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list4, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer4Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        HISTORY_FILTER.add(Shop_Genset_Panel_Customer4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 210, 50));
+
+        JTab.addTab("ORDERED", HISTORY_FILTER);
+
+        BIN.setkEndColor(new java.awt.Color(0, 230, 184));
+        BIN.setkStartColor(new java.awt.Color(0, 230, 184));
+        BIN.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("FILTER");
+        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        BIN.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, 450, 350));
+
+        jLabel11.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText(" GENSET");
+        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+        BIN.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 450, 350));
+
+        JTab.addTab("REPORTS", BIN);
+
+        BIN_GENSET.setkEndColor(new java.awt.Color(0, 230, 184));
+        BIN_GENSET.setkStartColor(new java.awt.Color(0, 230, 184));
+        BIN_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Shop_Genset_Panel_Customer7.setBackground(new java.awt.Color(133, 173, 173));
+
+        Shop_Genset_Customer_list7.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list7.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list7.setText("VIEW ITEM");
+        Shop_Genset_Customer_list7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list7MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list7MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list7MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer7Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer7);
+        Shop_Genset_Panel_Customer7.setLayout(Shop_Genset_Panel_Customer7Layout);
+        Shop_Genset_Panel_Customer7Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list7, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer7Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        BIN_GENSET.add(Shop_Genset_Panel_Customer7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 210, 50));
+
+        Shop_Genset_Panel_Customer8.setBackground(new java.awt.Color(133, 173, 173));
+
+        Shop_Genset_Customer_list8.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list8.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list8.setText(" BACK");
+        Shop_Genset_Customer_list8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list8MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list8MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list8MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer8Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer8);
+        Shop_Genset_Panel_Customer8.setLayout(Shop_Genset_Panel_Customer8Layout);
+        Shop_Genset_Panel_Customer8Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list8, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer8Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list8, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        BIN_GENSET.add(Shop_Genset_Panel_Customer8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 210, 50));
+
+        Bin_Genset_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        Bin_Genset_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bin_Genset_TableMouseClicked(evt);
+            }
+        });
+        jScrollPane11.setViewportView(Bin_Genset_Table);
+
+        BIN_GENSET.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1060, 420));
+
+        JTab.addTab("REPORTS", BIN_GENSET);
+
+        BIN_FILTER.setkEndColor(new java.awt.Color(0, 230, 184));
+        BIN_FILTER.setkStartColor(new java.awt.Color(0, 230, 184));
+        BIN_FILTER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Shop_Genset_Panel_Customer9.setBackground(new java.awt.Color(133, 173, 173));
+
+        Shop_Genset_Customer_list9.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list9.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list9.setText("VIEW ITEM");
+        Shop_Genset_Customer_list9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list9MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list9MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list9MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer9Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer9);
+        Shop_Genset_Panel_Customer9.setLayout(Shop_Genset_Panel_Customer9Layout);
+        Shop_Genset_Panel_Customer9Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list9, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer9Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list9, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        BIN_FILTER.add(Shop_Genset_Panel_Customer9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 210, 50));
+
+        Shop_Genset_Panel_Customer10.setBackground(new java.awt.Color(133, 173, 173));
+
+        Shop_Genset_Customer_list10.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list10.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list10.setText(" BACK");
+        Shop_Genset_Customer_list10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list10MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list10MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list10MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer10Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer10);
+        Shop_Genset_Panel_Customer10.setLayout(Shop_Genset_Panel_Customer10Layout);
+        Shop_Genset_Panel_Customer10Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list10, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer10Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        BIN_FILTER.add(Shop_Genset_Panel_Customer10, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 210, 50));
+
+        Bin_Filter_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        Bin_Filter_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bin_Filter_TableMouseClicked(evt);
+            }
+        });
+        jScrollPane12.setViewportView(Bin_Filter_Table);
+
+        BIN_FILTER.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1070, 420));
+
+        JTab.addTab("REPORTS", BIN_FILTER);
 
         getContentPane().add(JTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 1130, 635));
 
@@ -1385,40 +1865,369 @@ public class Mainpage extends javax.swing.JFrame {
         REPORT_PANEL.setBackground(new Color(0, 117, 128));
     }//GEN-LAST:event_REPORT_LABELMouseExited
 
-    private void Stock_FilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_FilterMouseClicked
-         Stock_Genset_Supplier.setForeground(new Color(41, 61, 61));
-        JTab.setSelectedIndex(3);
-    }//GEN-LAST:event_Stock_FilterMouseClicked
+    private void LOGOUT_LABEL1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOGOUT_LABEL1MouseClicked
+        Login l = new Login();
+        l.setVisible(true);
+    }//GEN-LAST:event_LOGOUT_LABEL1MouseClicked
 
-    private void Stock_GensetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_GensetMouseClicked
-        JTab.setSelectedIndex(2);
-        Stock_Genset_Btn.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Stock_GensetMouseClicked
-
-    private void Stock_Filter_Parts_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_Parts_BtnMouseClicked
+    private void Back1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_Stock_Filter_Parts_BtnMouseClicked
+    }//GEN-LAST:event_Back1MouseExited
 
-    private void Stock_Filter_Parts_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_Parts_BtnMouseEntered
+    private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered
         // TODO add your handling code here:
-         Stock_Filter_Parts_Btn.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Stock_Filter_Parts_BtnMouseEntered
+    }//GEN-LAST:event_Back1MouseEntered
 
-    private void Stock_Filter_Parts_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_Parts_BtnMouseExited
-        Stock_Filter_Parts_Btn.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Stock_Filter_Parts_BtnMouseExited
+    private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
 
-    private void Stock_Genset_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BtnMouseClicked
-       
-    }//GEN-LAST:event_Stock_Genset_BtnMouseClicked
+        if(cartIfEmpty.getText().equals("1")){
+            // empty cart
+            JOptionPane.showMessageDialog(null, "PLEASE ADD CART ITEM BEFORE PROCESSED!","",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            if(cartIfEmpty.getText().equals("2")){
+                AddCart pf = new AddCart();
+                pf.setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_Back1MouseClicked
 
-    private void Stock_Genset_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BtnMouseEntered
-        Stock_Genset_Btn.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Stock_Genset_BtnMouseEntered
+    private void Shop_Filter_customerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_customerMouseExited
+        Shop_Gensetr_view.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Shop_Filter_customerMouseExited
 
-    private void Stock_Genset_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BtnMouseExited
-        Stock_Genset_Btn.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Stock_Genset_BtnMouseExited
+    private void Shop_Filter_customerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_customerMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Filter_customerMouseEntered
+
+    private void Shop_Filter_customerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_customerMouseClicked
+        Table_Customer cus = new Table_Customer();
+        Table_Customer.Add.setText("ADD CUSTOMER");
+        Table_Customer.Path.setText("1");
+        cus.setVisible(true);
+    }//GEN-LAST:event_Shop_Filter_customerMouseClicked
+
+    private void Shop_Filter_viewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_viewMouseExited
+        Shop_Gensetr_view.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Shop_Filter_viewMouseExited
+
+    private void Shop_Filter_viewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_viewMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Filter_viewMouseEntered
+
+    private void Shop_Filter_viewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_viewMouseClicked
+        String id = Shop_filter_id.getText();
+        if(id.equals(""))
+        {
+            JOptionPane.showMessageDialog(null, " SELECT ITEM !!","",JOptionPane.ERROR_MESSAGE);
+        }else{
+            View_Shop_Filter vsf = new View_Shop_Filter();
+            vsf.setVisible(true);
+        }
+    }//GEN-LAST:event_Shop_Filter_viewMouseClicked
+
+    private void Shop_Filter_backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_backMouseExited
+        Shop_Gensetr_view.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Shop_Filter_backMouseExited
+
+    private void Shop_Filter_backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_backMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Filter_backMouseEntered
+
+    private void Shop_Filter_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_backMouseClicked
+        JTab.setSelectedIndex(4);
+    }//GEN-LAST:event_Shop_Filter_backMouseClicked
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Shop_Filter_Table.getModel();
+        String find = jTextField1.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Shop_Filter_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void Shop_Filter_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_TableMouseClicked
+        int i=Shop_Filter_Table.getSelectedRow();
+        TableModel model = Shop_Filter_Table.getModel();
+        Shop_filter_id.setText(model.getValueAt(i,0).toString());
+    }//GEN-LAST:event_Shop_Filter_TableMouseClicked
+
+    private void Shop_Genset_Customer_listMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_listMouseExited
+        Shop_Genset_Customer_list.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Shop_Genset_Customer_listMouseExited
+
+    private void Shop_Genset_Customer_listMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_listMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_listMouseEntered
+
+    private void Shop_Genset_Customer_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_listMouseClicked
+        Table_Customer cus = new Table_Customer();
+        Table_Customer.Add.setText("ADD CUSTOMER");
+        Table_Customer.Path.setText("1");
+        cus.setVisible(true);
+    }//GEN-LAST:event_Shop_Genset_Customer_listMouseClicked
+
+    private void Shop_Gensetr_viewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Gensetr_viewMouseExited
+        Shop_Gensetr_view.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Shop_Gensetr_viewMouseExited
+
+    private void Shop_Gensetr_viewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Gensetr_viewMouseEntered
+        Shop_Gensetr_view.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Shop_Gensetr_viewMouseEntered
+
+    private void Shop_Gensetr_viewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Gensetr_viewMouseClicked
+        String id = Shop_genset_id.getText();
+        if(id.equals(""))
+        {
+            JOptionPane.showMessageDialog(null, " SELECT ITEM !!","",JOptionPane.ERROR_MESSAGE);
+        }else{
+            View_Shop_Genset vsg = new View_Shop_Genset();
+            vsg.setVisible(true);
+        }
+
+    }//GEN-LAST:event_Shop_Gensetr_viewMouseClicked
+
+    private void Shop_Genset_Panel_BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Panel_BackMouseExited
+        Shop_Genset_Panel_Back.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Shop_Genset_Panel_BackMouseExited
+
+    private void Shop_Genset_Panel_BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Panel_BackMouseEntered
+        Shop_Genset_Panel_Back.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Shop_Genset_Panel_BackMouseEntered
+
+    private void Shop_Genset_Panel_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Panel_BackMouseClicked
+        JTab.setSelectedIndex(4);
+    }//GEN-LAST:event_Shop_Genset_Panel_BackMouseClicked
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Shop_Genset_Table.getModel();
+        String find = jTextField2.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Shop_Genset_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_jTextField2KeyPressed
+
+    private void Shop_Genset_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_TableMouseClicked
+        int i=Shop_Genset_Table.getSelectedRow();
+        TableModel model = Shop_Genset_Table.getModel();
+        Shop_genset_id.setText(model.getValueAt(i,0).toString());
+    }//GEN-LAST:event_Shop_Genset_TableMouseClicked
+
+    private void Shop_Genset_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_BtnMouseExited
+        Shop_Genset_Btn.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Shop_Genset_BtnMouseExited
+
+    private void Shop_Genset_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_BtnMouseEntered
+        Shop_Genset_Btn.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Shop_Genset_BtnMouseEntered
+
+    private void Shop_Genset_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_BtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_BtnMouseClicked
+
+    private void ShopFilter_Parts_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShopFilter_Parts_BtnMouseExited
+        ShopFilter_Parts_Btn.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_ShopFilter_Parts_BtnMouseExited
+
+    private void ShopFilter_Parts_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShopFilter_Parts_BtnMouseEntered
+        ShopFilter_Parts_Btn.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_ShopFilter_Parts_BtnMouseEntered
+
+    private void ShopFilter_Parts_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShopFilter_Parts_BtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ShopFilter_Parts_BtnMouseClicked
+
+    private void Shop_FilterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_FilterMouseExited
+        ShopFilter_Parts_Btn.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Shop_FilterMouseExited
+
+    private void Shop_FilterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_FilterMouseEntered
+        ShopFilter_Parts_Btn.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Shop_FilterMouseEntered
+
+    private void Shop_FilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_FilterMouseClicked
+        JTab.setSelectedIndex(6);
+    }//GEN-LAST:event_Shop_FilterMouseClicked
+
+    private void Shop_GensetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_GensetMouseExited
+        Shop_Genset_Btn.setForeground(new Color(255,255,255));
+
+    }//GEN-LAST:event_Shop_GensetMouseExited
+
+    private void Shop_GensetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_GensetMouseEntered
+        Shop_Genset_Btn.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Shop_GensetMouseEntered
+
+    private void Shop_GensetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_GensetMouseClicked
+        JTab.setSelectedIndex(5);
+    }//GEN-LAST:event_Shop_GensetMouseClicked
+
+    private void Stock_Filter_backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_backMouseExited
+        // TODO add your handling code here:
+        Stock_Filter_back.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Stock_Filter_backMouseExited
+
+    private void Stock_Filter_backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_backMouseEntered
+        // TODO add your handling code here:
+        Stock_Filter_back.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Stock_Filter_backMouseEntered
+
+    private void Stock_Filter_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_backMouseClicked
+        // TODO add your handling code here:
+        JTab.setSelectedIndex(1);
+    }//GEN-LAST:event_Stock_Filter_backMouseClicked
+
+    private void Stock_Filter_viewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_viewMouseExited
+        // TODO add your handling code here:
+        Stock_Filter_view.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Stock_Filter_viewMouseExited
+
+    private void Stock_Filter_viewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_viewMouseEntered
+        // TODO add your handling code here:
+        Stock_Filter_view.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Stock_Filter_viewMouseEntered
+
+    private void Stock_Filter_viewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_viewMouseClicked
+        // TODO add your handling code here:
+        String id = filter_id.getText();
+        if(id.equals("")){
+            JOptionPane.showMessageDialog(null, " SELCET FILTER !! ","",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            View_Stock_Filter vsf = new View_Stock_Filter();
+            vsf.setVisible(true);
+        }
+
+    }//GEN-LAST:event_Stock_Filter_viewMouseClicked
+
+    private void Stock_Filter_AddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_AddMouseExited
+        // TODO add your handling code here:
+        Stock_Filter_Add.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Stock_Filter_AddMouseExited
+
+    private void Stock_Filter_AddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_AddMouseEntered
+        // TODO add your handling code here:
+        Stock_Filter_Add.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Stock_Filter_AddMouseEntered
+
+    private void Stock_Filter_AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_AddMouseClicked
+        Insert_Inventory_Filter iig = new Insert_Inventory_Filter();
+        iig.setVisible(true);
+        Insert_Inventory_Filter.Inventory_Display.setText("ADD FILTER PRODUCT");
+        Insert_Inventory_Filter.Insert_Invetory_Filter_id.setEditable(false);
+        Insert_Inventory_Filter.Insert_Filter_Supplier_id.setEditable(false);
+    }//GEN-LAST:event_Stock_Filter_AddMouseClicked
+
+    private void Stock_Filter_supplier_listMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_supplier_listMouseExited
+        // TODO add your handling code here:
+        Stock_Filter_supplier_list.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Stock_Filter_supplier_listMouseExited
+
+    private void Stock_Filter_supplier_listMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_supplier_listMouseEntered
+        // TODO add your handling code here:
+        Stock_Filter_supplier_list.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Stock_Filter_supplier_listMouseEntered
+
+    private void Stock_Filter_supplier_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_supplier_listMouseClicked
+        Table_Supplier tbs = new Table_Supplier();
+        Table_Supplier.Add.setText("ADD SUPPLIER");
+        Table_Supplier.Path.setText("1");
+        Table_Supplier.supplier_id.setText("");
+        tbs.setVisible(true);
+    }//GEN-LAST:event_Stock_Filter_supplier_listMouseClicked
+
+    private void jTextField4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Stock_Filter_Table.getModel();
+        String find = jTextField4.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Stock_Filter_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_jTextField4KeyPressed
+
+    private void Stock_Filter_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_TableMouseClicked
+        int i=Stock_Filter_Table.getSelectedRow();
+        TableModel model = Stock_Filter_Table.getModel();
+        filter_id.setText(model.getValueAt(i,0).toString());
+    }//GEN-LAST:event_Stock_Filter_TableMouseClicked
+
+    private void Stock_Genset_ViewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_ViewMouseExited
+        Stock_Genset_View.setForeground(new Color(255,255,255));
+        //        Stock_Genset_Panel_View.setBackground(new Color(255,153,153));
+    }//GEN-LAST:event_Stock_Genset_ViewMouseExited
+
+    private void Stock_Genset_ViewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_ViewMouseEntered
+        Stock_Genset_View.setForeground(new Color(41, 61, 61));
+        //        Stock_Genset_Panel_View.setBackground(new Color(133, 173, 173));
+    }//GEN-LAST:event_Stock_Genset_ViewMouseEntered
+
+    private void Stock_Genset_ViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_ViewMouseClicked
+        String id = Genset_id.getText();
+        if(id.equals("")){
+            JOptionPane.showMessageDialog(null, " SELECT GENSET !! ","",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            View_Stock_Genset vsg = new View_Stock_Genset();
+            vsg.setVisible(true);
+        }
+
+    }//GEN-LAST:event_Stock_Genset_ViewMouseClicked
+
+    private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
+        DefaultTableModel tm = (DefaultTableModel)Stock_Genset_Table.getModel();
+        String find = jTextField3.getText().toUpperCase();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
+        Stock_Genset_Table.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(find));
+    }//GEN-LAST:event_jTextField3KeyPressed
+
+    private void Stock_Genset_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_TableMouseClicked
+        int i=Stock_Genset_Table.getSelectedRow();
+        TableModel model = Stock_Genset_Table.getModel();
+        Genset_id.setText(model.getValueAt(i,0).toString());
+
+    }//GEN-LAST:event_Stock_Genset_TableMouseClicked
+
+    private void Stock_Genset_BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseExited
+        Stock_Genset_Back.setForeground(new Color(255,255,255));
+        //        Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
+    }//GEN-LAST:event_Stock_Genset_BackMouseExited
+
+    private void Stock_Genset_BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseEntered
+        Stock_Genset_Back.setForeground(new Color(41, 61, 61));
+        //        Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
+    }//GEN-LAST:event_Stock_Genset_BackMouseEntered
+
+    private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
+        JTab.setSelectedIndex(1);
+    }//GEN-LAST:event_Stock_Genset_BackMouseClicked
+
+    private void Stock_Genset_SupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseExited
+        Stock_Genset_Supplier.setForeground(new Color(255,255,255));
+        //        Stock_Genset_Panel_Supplier.setBackground(new Color(133, 173, 173));
+    }//GEN-LAST:event_Stock_Genset_SupplierMouseExited
+
+    private void Stock_Genset_SupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseEntered
+        Stock_Genset_Supplier.setForeground(new Color(41, 61, 61));
+        //        Stock_Genset_Panel_Supplier.setBackground(new Color(133, 173, 173));
+    }//GEN-LAST:event_Stock_Genset_SupplierMouseEntered
+
+    private void Stock_Genset_SupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseClicked
+        Table_Supplier tbs = new Table_Supplier();
+        Table_Supplier.Add.setText("ADD SUPPLIER");
+        Table_Supplier.Path.setText("1");
+        Table_Supplier.supplier_id.setText("");
+        tbs.setVisible(true);
+    }//GEN-LAST:event_Stock_Genset_SupplierMouseClicked
+
+    private void Stock_Genset_AddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_AddMouseExited
+        Stock_Genset_Add.setForeground(new Color(255,255,255));
+        //        Stock_Genset_Panel_Add.setBackground(new Color(51, 255, 119));
+    }//GEN-LAST:event_Stock_Genset_AddMouseExited
+
+    private void Stock_Genset_AddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_AddMouseEntered
+        Stock_Genset_Add.setForeground(new Color(41, 61, 61));
+        //        Stock_Genset_Panel_Add.setBackground(new Color(51, 255, 119));
+    }//GEN-LAST:event_Stock_Genset_AddMouseEntered
 
     private void Stock_Genset_AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_AddMouseClicked
         Insert_Inventory_Genset iig = new Insert_Inventory_Genset();
@@ -1429,391 +2238,202 @@ public class Mainpage extends javax.swing.JFrame {
         Insert_Inventory_Genset.Energized.setVisible(false);
         Insert_Inventory_Genset.Panel_Energized.setVisible(false);
 
-        
     }//GEN-LAST:event_Stock_Genset_AddMouseClicked
 
-    private void Stock_Genset_AddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_AddMouseEntered
-        Stock_Genset_Add.setForeground(new Color(41, 61, 61));
-//        Stock_Genset_Panel_Add.setBackground(new Color(51, 255, 119));
-    }//GEN-LAST:event_Stock_Genset_AddMouseEntered
+    private void Stock_Genset_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BtnMouseExited
+        Stock_Genset_Btn.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Stock_Genset_BtnMouseExited
 
-    private void Stock_Genset_AddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_AddMouseExited
-        Stock_Genset_Add.setForeground(new Color(255,255,255));
-//        Stock_Genset_Panel_Add.setBackground(new Color(51, 255, 119));
-    }//GEN-LAST:event_Stock_Genset_AddMouseExited
+    private void Stock_Genset_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BtnMouseEntered
+        Stock_Genset_Btn.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Stock_Genset_BtnMouseEntered
 
-    private void Stock_Genset_SupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseClicked
-        Table_Supplier tbs = new Table_Supplier();
-        Table_Supplier.Add.setText("ADD SUPPLIER");
-        Table_Supplier.Path.setText("1");
-        Table_Supplier.supplier_id.setText("");        
-        tbs.setVisible(true);
+    private void Stock_Genset_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BtnMouseClicked
 
-    }//GEN-LAST:event_Stock_Genset_SupplierMouseClicked
+    }//GEN-LAST:event_Stock_Genset_BtnMouseClicked
 
-    private void Stock_Genset_SupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseEntered
-        Stock_Genset_Supplier.setForeground(new Color(41, 61, 61));
-//        Stock_Genset_Panel_Supplier.setBackground(new Color(133, 173, 173));
-    }//GEN-LAST:event_Stock_Genset_SupplierMouseEntered
+    private void Stock_Filter_Parts_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_Parts_BtnMouseExited
+        Stock_Filter_Parts_Btn.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_Stock_Filter_Parts_BtnMouseExited
 
-    private void Stock_Genset_SupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseExited
-        Stock_Genset_Supplier.setForeground(new Color(255,255,255));
-//        Stock_Genset_Panel_Supplier.setBackground(new Color(133, 173, 173));
-    }//GEN-LAST:event_Stock_Genset_SupplierMouseExited
-
-    private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
-        JTab.setSelectedIndex(1);
-    }//GEN-LAST:event_Stock_Genset_BackMouseClicked
-
-    private void Stock_Genset_BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseEntered
-        Stock_Genset_Back.setForeground(new Color(41, 61, 61));
-//        Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
-    }//GEN-LAST:event_Stock_Genset_BackMouseEntered
-
-    private void Stock_Genset_BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseExited
-        Stock_Genset_Back.setForeground(new Color(255,255,255));
-//        Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
-    }//GEN-LAST:event_Stock_Genset_BackMouseExited
-
-    private void Stock_Genset_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_TableMouseClicked
-        int i=Stock_Genset_Table.getSelectedRow();
-        TableModel model = Stock_Genset_Table.getModel();
-        Genset_id.setText(model.getValueAt(i,0).toString());
-        
-    }//GEN-LAST:event_Stock_Genset_TableMouseClicked
-
-    private void jTextField3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyPressed
-        DefaultTableModel tm = (DefaultTableModel)Stock_Genset_Table.getModel();
-        String find = jTextField3.getText().toUpperCase();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
-        Stock_Genset_Table.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(find));
-    }//GEN-LAST:event_jTextField3KeyPressed
-
-    private void Stock_Filter_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_TableMouseClicked
-        int i=Stock_Filter_Table.getSelectedRow();
-        TableModel model = Stock_Filter_Table.getModel();
-        filter_id.setText(model.getValueAt(i,0).toString());
-    }//GEN-LAST:event_Stock_Filter_TableMouseClicked
-
-    private void jTextField4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyPressed
-        DefaultTableModel tm = (DefaultTableModel)Stock_Filter_Table.getModel();
-        String find = jTextField4.getText().toUpperCase();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
-        Stock_Filter_Table.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(find));
-    }//GEN-LAST:event_jTextField4KeyPressed
-
-    private void Shop_GensetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_GensetMouseClicked
-        JTab.setSelectedIndex(5);
-    }//GEN-LAST:event_Shop_GensetMouseClicked
-
-    private void Shop_FilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_FilterMouseClicked
-        JTab.setSelectedIndex(6);
-    }//GEN-LAST:event_Shop_FilterMouseClicked
-
-    private void Shop_Genset_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_TableMouseClicked
-        int i=Shop_Genset_Table.getSelectedRow();
-        TableModel model = Shop_Genset_Table.getModel();
-        Shop_genset_id.setText(model.getValueAt(i,0).toString());
-
-    }//GEN-LAST:event_Shop_Genset_TableMouseClicked
-
-    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
-        DefaultTableModel tm = (DefaultTableModel)Shop_Genset_Table.getModel();
-        String find = jTextField2.getText().toUpperCase();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
-        Shop_Genset_Table.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(find));
-    }//GEN-LAST:event_jTextField2KeyPressed
-
-    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
-        DefaultTableModel tm = (DefaultTableModel)Shop_Filter_Table.getModel();
-        String find = jTextField1.getText().toUpperCase();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
-        Shop_Filter_Table.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(find));
-    }//GEN-LAST:event_jTextField1KeyPressed
-
-    private void Stock_Genset_ViewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_ViewMouseClicked
-       String id = Genset_id.getText();
-        if(id.equals("")){
-            JOptionPane.showMessageDialog(null, " SELECT GENSET !! ","",JOptionPane.ERROR_MESSAGE);
-        }
-        else{
-         View_Stock_Genset vsg = new View_Stock_Genset();
-         vsg.setVisible(true); 
-        }
-  
-    }//GEN-LAST:event_Stock_Genset_ViewMouseClicked
-
-    private void Stock_Genset_ViewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_ViewMouseEntered
-        Stock_Genset_View.setForeground(new Color(41, 61, 61));
-//        Stock_Genset_Panel_View.setBackground(new Color(133, 173, 173));
-    }//GEN-LAST:event_Stock_Genset_ViewMouseEntered
-
-    private void Stock_Genset_ViewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_ViewMouseExited
-        Stock_Genset_View.setForeground(new Color(255,255,255));
-//        Stock_Genset_Panel_View.setBackground(new Color(255,153,153));
-    }//GEN-LAST:event_Stock_Genset_ViewMouseExited
-
-    private void Stock_Filter_supplier_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_supplier_listMouseClicked
-        Table_Supplier tbs = new Table_Supplier();
-        Table_Supplier.Add.setText("ADD SUPPLIER");
-        Table_Supplier.Path.setText("1");
-        Table_Supplier.supplier_id.setText("");                 
-        tbs.setVisible(true);
-
-    }//GEN-LAST:event_Stock_Filter_supplier_listMouseClicked
-
-    private void Stock_Filter_supplier_listMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_supplier_listMouseEntered
+    private void Stock_Filter_Parts_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_Parts_BtnMouseEntered
         // TODO add your handling code here:
-        Stock_Filter_supplier_list.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Stock_Filter_supplier_listMouseEntered
+        Stock_Filter_Parts_Btn.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Stock_Filter_Parts_BtnMouseEntered
 
-    private void Stock_Filter_supplier_listMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_supplier_listMouseExited
+    private void Stock_Filter_Parts_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_Parts_BtnMouseClicked
         // TODO add your handling code here:
-        Stock_Filter_supplier_list.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Stock_Filter_supplier_listMouseExited
-
-    private void Stock_Filter_AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_AddMouseClicked
-        Insert_Inventory_Filter iig = new Insert_Inventory_Filter();
-        iig.setVisible(true);
-        Insert_Inventory_Filter.Inventory_Display.setText("ADD FILTER PRODUCT");
-        Insert_Inventory_Filter.Insert_Invetory_Filter_id.setEditable(false);
-        Insert_Inventory_Filter.Insert_Filter_Supplier_id.setEditable(false);
-    }//GEN-LAST:event_Stock_Filter_AddMouseClicked
-
-    private void Stock_Filter_AddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_AddMouseEntered
-        // TODO add your handling code here:
-        Stock_Filter_Add.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Stock_Filter_AddMouseEntered
-
-    private void Stock_Filter_AddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_AddMouseExited
-        // TODO add your handling code here:
-        Stock_Filter_Add.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Stock_Filter_AddMouseExited
-
-    private void Stock_Filter_viewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_viewMouseClicked
-        // TODO add your handling code here:
-        String id = filter_id.getText();
-        if(id.equals("")){
-            JOptionPane.showMessageDialog(null, " SELCET FILTER !! ","",JOptionPane.ERROR_MESSAGE);
-        }
-        else{  
-           View_Stock_Filter vsf = new View_Stock_Filter();
-           vsf.setVisible(true);  
-        }
-        
-    }//GEN-LAST:event_Stock_Filter_viewMouseClicked
-
-    private void Stock_Filter_viewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_viewMouseEntered
-        // TODO add your handling code here:
-        Stock_Filter_view.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Stock_Filter_viewMouseEntered
-
-    private void Stock_Filter_viewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_viewMouseExited
-        // TODO add your handling code here:
-        Stock_Filter_view.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Stock_Filter_viewMouseExited
-
-    private void Stock_Filter_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_backMouseClicked
-        // TODO add your handling code here:
-        JTab.setSelectedIndex(1);
-    }//GEN-LAST:event_Stock_Filter_backMouseClicked
-
-    private void Stock_Filter_backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_backMouseEntered
-        // TODO add your handling code here:
-        Stock_Filter_back.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Stock_Filter_backMouseEntered
-
-    private void Stock_Filter_backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_backMouseExited
-        // TODO add your handling code here:
-        Stock_Filter_back.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Stock_Filter_backMouseExited
-
-    private void LOGOUT_LABEL1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOGOUT_LABEL1MouseClicked
-        Login l = new Login();
-        l.setVisible(true);
-    }//GEN-LAST:event_LOGOUT_LABEL1MouseClicked
-
-    private void ShopFilter_Parts_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShopFilter_Parts_BtnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ShopFilter_Parts_BtnMouseClicked
-
-    private void ShopFilter_Parts_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShopFilter_Parts_BtnMouseEntered
-        ShopFilter_Parts_Btn.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_ShopFilter_Parts_BtnMouseEntered
-
-    private void ShopFilter_Parts_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShopFilter_Parts_BtnMouseExited
-       ShopFilter_Parts_Btn.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_ShopFilter_Parts_BtnMouseExited
-
-    private void Shop_Genset_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_BtnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Genset_BtnMouseClicked
-
-    private void Shop_Genset_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_BtnMouseEntered
-       Shop_Genset_Btn.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Shop_Genset_BtnMouseEntered
-
-    private void Shop_Genset_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_BtnMouseExited
-        Shop_Genset_Btn.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_Genset_BtnMouseExited
-
-    private void Shop_Genset_Panel_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Panel_BackMouseClicked
-        JTab.setSelectedIndex(4);
-    }//GEN-LAST:event_Shop_Genset_Panel_BackMouseClicked
-
-    private void Shop_Genset_Panel_BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Panel_BackMouseEntered
-        Shop_Genset_Panel_Back.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Shop_Genset_Panel_BackMouseEntered
-
-    private void Shop_Genset_Panel_BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Panel_BackMouseExited
-        Shop_Genset_Panel_Back.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_Genset_Panel_BackMouseExited
-
-    private void Shop_Gensetr_viewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Gensetr_viewMouseClicked
-        String id = Shop_genset_id.getText();
-        if(id.equals(""))
-        {
-            JOptionPane.showMessageDialog(null, " SELECT ITEM !!","",JOptionPane.ERROR_MESSAGE);
-        }else{
-        View_Shop_Genset vsg = new View_Shop_Genset();
-        vsg.setVisible(true);  
-        }
-        
-    }//GEN-LAST:event_Shop_Gensetr_viewMouseClicked
-
-    private void Shop_Gensetr_viewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Gensetr_viewMouseEntered
-        Shop_Gensetr_view.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Shop_Gensetr_viewMouseEntered
-
-    private void Shop_Gensetr_viewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Gensetr_viewMouseExited
-       Shop_Gensetr_view.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_Gensetr_viewMouseExited
-
-    private void Shop_Filter_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_backMouseClicked
-       JTab.setSelectedIndex(4);
-    }//GEN-LAST:event_Shop_Filter_backMouseClicked
-
-    private void Shop_Filter_backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_backMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Filter_backMouseEntered
-
-    private void Shop_Filter_backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_backMouseExited
-        Shop_Gensetr_view.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_Filter_backMouseExited
-
-    private void Shop_Filter_viewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_viewMouseClicked
-        String id = Shop_filter_id.getText();
-        if(id.equals(""))
-        {
-            JOptionPane.showMessageDialog(null, " SELECT ITEM !!","",JOptionPane.ERROR_MESSAGE);
-        }else{
-        View_Shop_Filter vsf = new View_Shop_Filter();
-        vsf.setVisible(true);
-        }
-    }//GEN-LAST:event_Shop_Filter_viewMouseClicked
-
-    private void Shop_Filter_viewMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_viewMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Filter_viewMouseEntered
-
-    private void Shop_Filter_viewMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_viewMouseExited
-        Shop_Gensetr_view.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_Filter_viewMouseExited
-
-    private void Shop_Filter_customerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_customerMouseClicked
-      Table_Customer cus = new Table_Customer();
-      Table_Customer.Add.setText("ADD CUSTOMER");
-      Table_Customer.Path.setText("1");
-      cus.setVisible(true);
-    }//GEN-LAST:event_Shop_Filter_customerMouseClicked
-
-    private void Shop_Filter_customerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_customerMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Filter_customerMouseEntered
-
-    private void Shop_Filter_customerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_customerMouseExited
-        Shop_Gensetr_view.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_Filter_customerMouseExited
-
-    private void Shop_Genset_Customer_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_listMouseClicked
-      Table_Customer cus = new Table_Customer();
-      Table_Customer.Add.setText("ADD CUSTOMER");
-      Table_Customer.Path.setText("1");
-      cus.setVisible(true);
-    }//GEN-LAST:event_Shop_Genset_Customer_listMouseClicked
-
-    private void Shop_Genset_Customer_listMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_listMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Genset_Customer_listMouseEntered
-
-    private void Shop_Genset_Customer_listMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_listMouseExited
-       Shop_Genset_Customer_list.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_Genset_Customer_listMouseExited
-
-    private void Stock_GensetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_GensetMouseEntered
-         Stock_Genset_Btn.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Stock_GensetMouseEntered
+    }//GEN-LAST:event_Stock_Filter_Parts_BtnMouseClicked
 
     private void Stock_GensetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_GensetMouseExited
         Stock_Genset_Btn.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_Stock_GensetMouseExited
 
-    private void Stock_FilterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_FilterMouseEntered
-        Stock_Filter_Parts_Btn.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Stock_FilterMouseEntered
+    private void Stock_GensetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_GensetMouseEntered
+        Stock_Genset_Btn.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Stock_GensetMouseEntered
+
+    private void Stock_GensetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_GensetMouseClicked
+        JTab.setSelectedIndex(2);
+        Stock_Genset_Btn.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Stock_GensetMouseClicked
 
     private void Stock_FilterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_FilterMouseExited
         Stock_Filter_Parts_Btn.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_Stock_FilterMouseExited
 
-    private void Shop_GensetMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_GensetMouseEntered
-        Shop_Genset_Btn.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Shop_GensetMouseEntered
+    private void Stock_FilterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_FilterMouseEntered
+        Stock_Filter_Parts_Btn.setForeground(new Color(41, 61, 61));
+    }//GEN-LAST:event_Stock_FilterMouseEntered
 
-    private void Shop_FilterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_FilterMouseEntered
-         ShopFilter_Parts_Btn.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_Shop_FilterMouseEntered
+    private void Stock_FilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_FilterMouseClicked
+        Stock_Genset_Supplier.setForeground(new Color(41, 61, 61));
+        JTab.setSelectedIndex(3);
+    }//GEN-LAST:event_Stock_FilterMouseClicked
 
-    private void Shop_FilterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_FilterMouseExited
-         ShopFilter_Parts_Btn.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_FilterMouseExited
+    private void history_genset_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_tableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_history_genset_tableMouseClicked
 
-    private void Shop_GensetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_GensetMouseExited
-        Shop_Genset_Btn.setForeground(new Color(255,255,255));
+    private void history_filter_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_filter_tableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_history_filter_tableMouseClicked
+
+    private void Shop_Genset_Customer_list3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list3MouseClicked
+        JTab.setSelectedIndex(8);
+    }//GEN-LAST:event_Shop_Genset_Customer_list3MouseClicked
+
+    private void Shop_Genset_Customer_list3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list3MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list3MouseEntered
+
+    private void Shop_Genset_Customer_list3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list3MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list3MouseExited
+
+    private void Shop_Genset_Customer_list4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list4MouseClicked
+
+    private void Shop_Genset_Customer_list4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list4MouseEntered
+
+    private void Shop_Genset_Customer_list4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list4MouseExited
+
+    private void Shop_Genset_Customer_list5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list5MouseClicked
+        JTab.setSelectedIndex(8);
+    }//GEN-LAST:event_Shop_Genset_Customer_list5MouseClicked
+
+    private void Shop_Genset_Customer_list5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list5MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list5MouseEntered
+
+    private void Shop_Genset_Customer_list5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list5MouseExited
+
+    private void Shop_Genset_Customer_list6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list6MouseClicked
+        History_Genset hg = new History_Genset();
+        hg.setVisible(true);
         
-    }//GEN-LAST:event_Shop_GensetMouseExited
+    }//GEN-LAST:event_Shop_Genset_Customer_list6MouseClicked
 
-    private void Shop_Filter_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Filter_TableMouseClicked
-        int i=Shop_Filter_Table.getSelectedRow();
-        TableModel model = Shop_Filter_Table.getModel();
-        Shop_filter_id.setText(model.getValueAt(i,0).toString());
-    }//GEN-LAST:event_Shop_Filter_TableMouseClicked
-
-    private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
-
-       if(cartIfEmpty.getText().equals("1")){
-           // empty cart
-           JOptionPane.showMessageDialog(null, "PLEASE ADD CART ITEM BEFORE PROCESSED!","",JOptionPane.WARNING_MESSAGE);
-       }
-       else{
-           if(cartIfEmpty.getText().equals("2")){
-             AddCart pf = new AddCart();
-             pf.setVisible(true);
-           } 
-       }
-    }//GEN-LAST:event_Back1MouseClicked
-
-    private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered
+    private void Shop_Genset_Customer_list6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list6MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_Back1MouseEntered
+    }//GEN-LAST:event_Shop_Genset_Customer_list6MouseEntered
 
-    private void Back1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseExited
+    private void Shop_Genset_Customer_list6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list6MouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_Back1MouseExited
+    }//GEN-LAST:event_Shop_Genset_Customer_list6MouseExited
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+       
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        JTab.setSelectedIndex(10);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        JTab.setSelectedIndex(9);
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+         JTab.setSelectedIndex(8);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        JTab.setSelectedIndex(11);
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+         JTab.setSelectedIndex(12);
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        JTab.setSelectedIndex(13);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void Shop_Genset_Customer_list7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list7MouseClicked
+        Bin_Genset bg = new Bin_Genset();
+        bg.setVisible(true);
+    }//GEN-LAST:event_Shop_Genset_Customer_list7MouseClicked
+
+    private void Shop_Genset_Customer_list7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list7MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list7MouseEntered
+
+    private void Shop_Genset_Customer_list7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list7MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list7MouseExited
+
+    private void Shop_Genset_Customer_list8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list8MouseClicked
+        JTab.setSelectedIndex(11);
+    }//GEN-LAST:event_Shop_Genset_Customer_list8MouseClicked
+
+    private void Shop_Genset_Customer_list8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list8MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list8MouseEntered
+
+    private void Shop_Genset_Customer_list8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list8MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list8MouseExited
+
+    private void Bin_Genset_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bin_Genset_TableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Bin_Genset_TableMouseClicked
+
+    private void Shop_Genset_Customer_list9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list9MouseClicked
+        Bin_Filter bf = new Bin_Filter();
+        bf.setVisible(true);
+    }//GEN-LAST:event_Shop_Genset_Customer_list9MouseClicked
+
+    private void Shop_Genset_Customer_list9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list9MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list9MouseEntered
+
+    private void Shop_Genset_Customer_list9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list9MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list9MouseExited
+
+    private void Shop_Genset_Customer_list10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list10MouseClicked
+        JTab.setSelectedIndex(11);
+    }//GEN-LAST:event_Shop_Genset_Customer_list10MouseClicked
+
+    private void Shop_Genset_Customer_list10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list10MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list10MouseEntered
+
+    private void Shop_Genset_Customer_list10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list10MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list10MouseExited
+
+    private void Bin_Filter_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bin_Filter_TableMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Bin_Filter_TableMouseClicked
       
     /**
      * @param args the command line arguments
@@ -1852,12 +2472,20 @@ public class Mainpage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private keeptoo.KGradientPanel BIN;
+    private keeptoo.KGradientPanel BIN_FILTER;
+    private keeptoo.KGradientPanel BIN_GENSET;
     public static javax.swing.JLabel Back1;
+    public static javax.swing.JTable Bin_Filter_Table;
+    public static javax.swing.JTable Bin_Genset_Table;
     private javax.swing.JPanel DRAWER;
     public static javax.swing.JLabel Dashboard_Display_1;
     public static javax.swing.JLabel Dashboard_Display_2;
     public static javax.swing.JLabel Genset_id;
     private javax.swing.JPanel HEADER;
+    private keeptoo.KGradientPanel HISTORY;
+    private keeptoo.KGradientPanel HISTORY_FILTER;
+    private keeptoo.KGradientPanel HISTORY_GENSET;
     private keeptoo.KGradientPanel HOME;
     private javax.swing.JLabel HOME_LABEL;
     private javax.swing.JPanel HOME_PANEL;
@@ -1895,8 +2523,24 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel Shop_Genset;
     private javax.swing.JLabel Shop_Genset_Btn;
     private javax.swing.JLabel Shop_Genset_Customer_list;
+    private javax.swing.JLabel Shop_Genset_Customer_list10;
+    private javax.swing.JLabel Shop_Genset_Customer_list3;
+    private javax.swing.JLabel Shop_Genset_Customer_list4;
+    private javax.swing.JLabel Shop_Genset_Customer_list5;
+    private javax.swing.JLabel Shop_Genset_Customer_list6;
+    private javax.swing.JLabel Shop_Genset_Customer_list7;
+    private javax.swing.JLabel Shop_Genset_Customer_list8;
+    private javax.swing.JLabel Shop_Genset_Customer_list9;
     private javax.swing.JLabel Shop_Genset_Panel_Back;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer10;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer3;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer4;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer5;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer6;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer7;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer8;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer9;
     public static javax.swing.JPanel Shop_Genset_Panel_back;
     public static javax.swing.JPanel Shop_Genset_Panel_view;
     public static javax.swing.JTable Shop_Genset_Table;
@@ -1928,17 +2572,30 @@ public class Mainpage extends javax.swing.JFrame {
     public static javax.swing.JLabel cartIfEmpty;
     public static javax.swing.JLabel filter_id;
     private javax.swing.JLabel fpe_home;
+    public static javax.swing.JTable history_filter_table;
+    public static javax.swing.JTable history_genset_table;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
