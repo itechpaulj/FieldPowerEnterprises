@@ -113,12 +113,13 @@ public class Mainpage extends javax.swing.JFrame {
         REPORT_LABEL = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         HEADER = new javax.swing.JPanel();
-        Dashboard_Display_1 = new javax.swing.JLabel();
         Dashboard_Display_2 = new javax.swing.JLabel();
         Home_Dates = new javax.swing.JLabel();
         Home_Time = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        Dashboard_Display_3 = new javax.swing.JLabel();
+        Dashboard_Display_1 = new javax.swing.JLabel();
         JTab = new javax.swing.JTabbedPane();
         HOME = new keeptoo.KGradientPanel();
         fpe_home = new javax.swing.JLabel();
@@ -412,40 +413,44 @@ public class Mainpage extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_logos.png"))); // NOI18N
-        DRAWER.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 190, 160));
+        DRAWER.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 190, 160));
 
         getContentPane().add(DRAWER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 725));
 
         HEADER.setBackground(new java.awt.Color(2, 71, 94));
         HEADER.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Dashboard_Display_1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        Dashboard_Display_1.setForeground(new java.awt.Color(255, 255, 255));
-        HEADER.add(Dashboard_Display_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 190, 70));
-
         Dashboard_Display_2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         Dashboard_Display_2.setForeground(new java.awt.Color(255, 255, 255));
-        HEADER.add(Dashboard_Display_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 350, 70));
+        HEADER.add(Dashboard_Display_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 30, 370, 70));
 
-        Home_Dates.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        Home_Dates.setForeground(new java.awt.Color(255, 255, 255));
-        HEADER.add(Home_Dates, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 20, 100, 30));
+        Home_Dates.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        Home_Dates.setForeground(new java.awt.Color(243, 246, 26));
+        HEADER.add(Home_Dates, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 30, 110, 30));
 
-        Home_Time.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        Home_Time.setForeground(new java.awt.Color(255, 255, 255));
-        HEADER.add(Home_Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 60, 100, 30));
+        Home_Time.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        Home_Time.setForeground(new java.awt.Color(243, 246, 26));
+        HEADER.add(Home_Time, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 60, 110, 30));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(243, 246, 26));
         jLabel2.setText("TIME   :");
-        HEADER.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 60, 70, 30));
+        HEADER.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 60, 70, 30));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("DATE  :");
-        HEADER.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, 70, 30));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(243, 246, 26));
+        jLabel3.setText("DATE   :");
+        HEADER.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 30, 70, 30));
 
-        getContentPane().add(HEADER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 120));
+        Dashboard_Display_3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Dashboard_Display_3.setForeground(new java.awt.Color(255, 255, 255));
+        HEADER.add(Dashboard_Display_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 30, 250, 70));
+
+        Dashboard_Display_1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Dashboard_Display_1.setForeground(new java.awt.Color(255, 255, 255));
+        HEADER.add(Dashboard_Display_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 250, 70));
+
+        getContentPane().add(HEADER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1364, 120));
 
         HOME.setBackground(new java.awt.Color(0, 79, 153));
         HOME.setkEndColor(new java.awt.Color(0, 230, 184));
@@ -1778,7 +1783,7 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("REPORTS", BIN_FILTER);
 
-        getContentPane().add(JTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 1130, 635));
+        getContentPane().add(JTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 1132, 634));
 
         pack();
         setLocationRelativeTo(null);
@@ -1788,6 +1793,7 @@ public class Mainpage extends javax.swing.JFrame {
         // HEADER MENU
         Dashboard_Display_1.setText("HOME");
         Dashboard_Display_2.setText(null);
+        Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(0);
     }//GEN-LAST:event_HOME_LABELMouseClicked
 
@@ -1816,6 +1822,7 @@ public class Mainpage extends javax.swing.JFrame {
         // HEADER MENU
         Dashboard_Display_1.setText("STOCK");
         Dashboard_Display_2.setText(null);
+        Dashboard_Display_3.setText(null);
         // STOCK JTAB
         JTab.setSelectedIndex(1);
     }//GEN-LAST:event_STOCK_LABELMouseClicked
@@ -1834,6 +1841,7 @@ public class Mainpage extends javax.swing.JFrame {
         // HEADER MENU
         Dashboard_Display_1.setText("SHOP");
         Dashboard_Display_2.setText(null);
+        Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(4);
     }//GEN-LAST:event_SHOP_LABELMouseClicked
 
@@ -1852,6 +1860,7 @@ public class Mainpage extends javax.swing.JFrame {
         // HEADER MENU
         Dashboard_Display_1.setText("REPORT");
         Dashboard_Display_2.setText(null);
+        Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(7);
     }//GEN-LAST:event_REPORT_LABELMouseClicked
 
@@ -2046,7 +2055,10 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Shop_FilterMouseEntered
 
     private void Shop_FilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_FilterMouseClicked
+        Dashboard_Display_2.setText("SHOP FILTER");
+        Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(6);
+        
     }//GEN-LAST:event_Shop_FilterMouseClicked
 
     private void Shop_GensetMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_GensetMouseExited
@@ -2059,6 +2071,8 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Shop_GensetMouseEntered
 
     private void Shop_GensetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_GensetMouseClicked
+        Dashboard_Display_2.setText("SHOP GENSET");
+        Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(5);
     }//GEN-LAST:event_Shop_GensetMouseClicked
 
@@ -2275,7 +2289,9 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void Stock_GensetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_GensetMouseClicked
         JTab.setSelectedIndex(2);
-        Stock_Genset_Btn.setForeground(new Color(41, 61, 61));
+        Dashboard_Display_2.setText("STOCK GENSET");
+        Dashboard_Display_3.setText(null);
+        
     }//GEN-LAST:event_Stock_GensetMouseClicked
 
     private void Stock_FilterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_FilterMouseExited
@@ -2287,7 +2303,8 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_FilterMouseEntered
 
     private void Stock_FilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_FilterMouseClicked
-        Stock_Genset_Supplier.setForeground(new Color(41, 61, 61));
+        Dashboard_Display_2.setText("STOCK FILTER");
+        Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(3);
     }//GEN-LAST:event_Stock_FilterMouseClicked
 
@@ -2354,19 +2371,26 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        Dashboard_Display_3.setText("FILTER");
         JTab.setSelectedIndex(10);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        Dashboard_Display_3.setText("GENSET");
         JTab.setSelectedIndex(9);
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+         Dashboard_Display_2.setText("PURCHASE HISTORT");
+         Dashboard_Display_3.setText(null);
          JTab.setSelectedIndex(8);
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        Dashboard_Display_2.setText("BIN HISTORT");
+         Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(11);
+        
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
@@ -2481,6 +2505,7 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JPanel DRAWER;
     public static javax.swing.JLabel Dashboard_Display_1;
     public static javax.swing.JLabel Dashboard_Display_2;
+    public static javax.swing.JLabel Dashboard_Display_3;
     public static javax.swing.JLabel Genset_id;
     private javax.swing.JPanel HEADER;
     private keeptoo.KGradientPanel HISTORY;

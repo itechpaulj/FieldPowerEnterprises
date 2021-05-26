@@ -75,6 +75,8 @@ public class Process_Filter extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Supplier_List_Btn = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        Process_Filter_Customer_dealing_info = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         quotation = new javax.swing.JTextField();
@@ -117,25 +119,25 @@ public class Process_Filter extends javax.swing.JFrame {
         id1.setForeground(new java.awt.Color(20, 31, 31));
         id1.setText("NAME");
         id1.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 70, 100, 30));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(20, 31, 31));
         jLabel21.setText("ADDRESS");
         jLabel21.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 110, 100, 30));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(20, 31, 31));
         jLabel19.setText("EMAIL ");
         jLabel19.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 180, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 150, 100, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(20, 31, 31));
         jLabel18.setText("CONTACT NO.");
         jLabel18.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 220, 100, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 100, 30));
 
         id3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id3.setForeground(new java.awt.Color(20, 31, 31));
@@ -162,7 +164,7 @@ public class Process_Filter extends javax.swing.JFrame {
         Process_Filter_Customer_address.setMargin(new java.awt.Insets(8, 8, 8, 8));
         jScrollPane1.setViewportView(Process_Filter_Customer_address);
 
-        KG2_ADD_STOCK_GENSET.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 140, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 110, 180, 30));
 
         Order_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -183,13 +185,13 @@ public class Process_Filter extends javax.swing.JFrame {
         Process_Filter_Customer_email.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_Customer_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_Customer_email.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 180, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 150, 180, 30));
 
         Process_Filter_Customer_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Filter_Customer_contact.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_Customer_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_Customer_contact.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 190, 180, 30));
 
         Process_Filter_Agent_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Process_Filter_Agent_name.setForeground(new java.awt.Color(20, 31, 31));
@@ -207,7 +209,7 @@ public class Process_Filter extends javax.swing.JFrame {
         Process_Filter_Customer_name.setForeground(new java.awt.Color(20, 31, 31));
         Process_Filter_Customer_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Process_Filter_Customer_name.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 100, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 70, 180, 30));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
 
@@ -290,7 +292,7 @@ public class Process_Filter extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,13 +307,25 @@ public class Process_Filter extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 51, 0));
         jLabel12.setToolTipText("");
-        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "ORDER LIST", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
+        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "ORDER LIST", 4, 2, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 670, 470));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(20, 31, 31));
+        jLabel20.setText("DEALING INFO");
+        jLabel20.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 230, 100, 30));
+
+        Process_Filter_Customer_dealing_info.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Process_Filter_Customer_dealing_info.setForeground(new java.awt.Color(20, 31, 31));
+        Process_Filter_Customer_dealing_info.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Process_Filter_Customer_dealing_info.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(Process_Filter_Customer_dealing_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 230, 180, 30));
 
         jLabel23.setBackground(new java.awt.Color(255, 255, 255));
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setToolTipText("");
-        jLabel23.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "CUSTOMER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
+        jLabel23.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "CUSTOMER INFORMATION", 4, 2, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, 330, 280));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -337,7 +351,7 @@ public class Process_Filter extends javax.swing.JFrame {
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel17.setToolTipText("");
-        jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "AGENT NFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
+        jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "AGENT NFORMATION", 4, 2, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, 330, 180));
 
         yearQuot.setText("0000");
@@ -365,6 +379,7 @@ public class Process_Filter extends javax.swing.JFrame {
      String cotact = Process_Filter_Customer_contact.getText();
      String agent_name = Process_Filter_Agent_name.getText();
      String agent_contact = Process_Filter_Agent_contact.getText();
+     String dealing_info = Process_Filter_Customer_dealing_info.getText();
      String count_processed = count_process.getText();
      String subject = "FILTER / PARTS / OTHERS";
             
@@ -376,7 +391,7 @@ public class Process_Filter extends javax.swing.JFrame {
         if(rs.next()){
           
 
-            if(!Class_Order.UpdateHistoryFilter(qout, unique, name, address, email, cotact, agent_name, agent_contact) && !Class_Cart.DeleteCart()){
+            if(!Class_Order.UpdateHistoryFilter(qout, unique, name, address, email, cotact, agent_name, agent_contact,dealing_info) && !Class_Cart.DeleteCart()){
                 JOptionPane.showMessageDialog(null, "SUCCESS"); ct.ShowCart(); ct.ShowOrder();
                     Mainpage.cartIfEmpty.setText("1");
                     JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printfilter.jrxml");
@@ -547,6 +562,7 @@ public class Process_Filter extends javax.swing.JFrame {
     private javax.swing.JLabel Process_Filter_Btn;
     public static javax.swing.JTextArea Process_Filter_Customer_address;
     public static javax.swing.JTextField Process_Filter_Customer_contact;
+    public static javax.swing.JTextField Process_Filter_Customer_dealing_info;
     public static javax.swing.JTextField Process_Filter_Customer_email;
     public static javax.swing.JTextField Process_Filter_Customer_name;
     public static javax.swing.JLabel Process_Filter_Display;
@@ -560,6 +576,7 @@ public class Process_Filter extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;

@@ -493,6 +493,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         String c_contact = "";
         String agent_name = "";
         String agent_contact = "";
+        String dealing_info = "";
         String filter_id =View_Shop_Filter_id.getText();
         String count_processed = count_process.getText();
         int quanResult = 0;
@@ -513,7 +514,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
                 ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
             }        
             else{
-                if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
+                if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, dealing_info, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
                     JOptionPane.showMessageDialog(null, "ADDED"); ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
                     Mainpage.cartIfEmpty.setText("2");
                     display_stock_quantity.setText(result.getText());
