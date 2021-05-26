@@ -52,6 +52,8 @@ public class History_Fitler extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         History_Shop_Filter_type = new javax.swing.JLabel();
         History_Shop_Filter_quantity = new javax.swing.JLabel();
+        View_Shop_Filter_input_quantity = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
         history_genset_back = new javax.swing.JLabel();
@@ -59,6 +61,7 @@ public class History_Fitler extends javax.swing.JFrame {
         history_genset_return_item = new javax.swing.JLabel();
         Stock_Genset_Panel_Back1 = new javax.swing.JPanel();
         history_genset_customer = new javax.swing.JLabel();
+        result = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         History_Genset_Display = new javax.swing.JLabel();
 
@@ -128,9 +131,9 @@ public class History_Fitler extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(20, 31, 31));
-        jLabel16.setText("DATE");
+        jLabel16.setText("RETURN STOCK");
         jLabel16.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 80, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, 120, 30));
 
         a1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         a1.setForeground(new java.awt.Color(20, 31, 31));
@@ -186,7 +189,30 @@ public class History_Fitler extends javax.swing.JFrame {
         History_Shop_Filter_quantity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         History_Shop_Filter_quantity.setAlignmentY(1.0F);
         History_Shop_Filter_quantity.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(History_Shop_Filter_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, 200, 30));
+        KG2_ADD_STOCK_GENSET.add(History_Shop_Filter_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 60, 200, 30));
+
+        View_Shop_Filter_input_quantity.setBackground(new java.awt.Color(0, 230, 184));
+        View_Shop_Filter_input_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        View_Shop_Filter_input_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        View_Shop_Filter_input_quantity.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        View_Shop_Filter_input_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                View_Shop_Filter_input_quantityKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                View_Shop_Filter_input_quantityKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                View_Shop_Filter_input_quantityKeyTyped(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_input_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, 200, 30));
+
+        jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(20, 31, 31));
+        jLabel17.setText("DATE");
+        jLabel17.setAlignmentY(1.0F);
+        KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 80, 30));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -290,6 +316,7 @@ public class History_Fitler extends javax.swing.JFrame {
         );
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 530, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 10, 80, 20));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
@@ -381,31 +408,60 @@ public class History_Fitler extends javax.swing.JFrame {
             String type = History_Shop_Filter_type.getText();
             String seller_price =History_Shop_Filter_seller_price.getText();
             String quantity = History_Shop_Filter_quantity.getText();
-            
-            
-            try{
-            ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE`,`ID FILTER` FROM `history_filter` WHERE `ID`='"+id+"'");
-            rs = ps.executeQuery();
-            if(rs.next()){
-                    images = rs.getBytes("IMAGE");
-                    String idFilter = rs.getString("ID FILTER");
-                    ps=FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `filter_table` WHERE `ID`='"+idFilter+"'");
-                    rs = ps.executeQuery();
-                    if(rs.next()){
-                        String currentQuantity = rs.getString("QUANTITY");
-                        int updateQuantity = Integer.parseInt(currentQuantity) + Integer.parseInt(quantity); 
-                        String stringQuantity = String.valueOf(updateQuantity);
-                        if(!Class_history.ReturnFilter(date, brand, description, type, seller_price, stringQuantity, images,idFilter)){
-                        JOptionPane.showMessageDialog(null, "SUCCESS","",JOptionPane.INFORMATION_MESSAGE);ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
-                         }
-                    }
-                
-                    
-                  
+            String inputQuantity = View_Shop_Filter_input_quantity.getText();
+            String resultIs = result.getText();
+            int getValidNumber = Integer.parseInt(resultIs);
+            if(resultIs.equals("0")){
+                try{
+                ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE`,`ID FILTER` FROM `history_filter` WHERE `ID`='"+id+"'");
+                rs = ps.executeQuery();
+                if(rs.next()){
+                        images = rs.getBytes("IMAGE");
+                        String idFilter = rs.getString("ID FILTER");
+                        ps=FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `filter_table` WHERE `ID`='"+idFilter+"'");
+                        rs = ps.executeQuery();
+                        if(rs.next()){
+                            String currentQuantity = rs.getString("QUANTITY");
+                            int updateQuantity = Integer.parseInt(currentQuantity) + Integer.parseInt(inputQuantity); 
+                            String stringQuantity = String.valueOf(updateQuantity);
+                            if(!Class_history.ReturnFilter(date, brand, description, type, seller_price, stringQuantity, images,idFilter)){
+                            JOptionPane.showMessageDialog(null, "SUCCESS","",JOptionPane.INFORMATION_MESSAGE);ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
+                             }
+                        }
+
+                }
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
             }
-            }catch(Exception e){
-                e.printStackTrace();
-            }           
+            else if(getValidNumber < 0){
+                JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+               ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+            }
+            else{
+                            
+                try{
+                ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE`,`ID FILTER` FROM `history_filter` WHERE `ID`='"+id+"'");
+                rs = ps.executeQuery();
+                if(rs.next()){
+                        images = rs.getBytes("IMAGE");
+                        String idFilter = rs.getString("ID FILTER");
+                        ps=FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `filter_table` WHERE `ID`='"+idFilter+"'");
+                        rs = ps.executeQuery();
+                        if(rs.next()){
+                            String currentQuantity = rs.getString("QUANTITY");
+                            int updateQuantity = Integer.parseInt(currentQuantity) + Integer.parseInt(resultIs); 
+                            String stringQuantity = String.valueOf(updateQuantity);
+                            if(!Class_history.ReturnFilter(date, brand, description, type, seller_price, stringQuantity, images,idFilter)){
+                            JOptionPane.showMessageDialog(null, "SUCCESS","",JOptionPane.INFORMATION_MESSAGE);ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
+                             }
+                        }
+
+                }
+                }catch(Exception e){
+                    e.printStackTrace();
+                } 
+            }
        }
     }//GEN-LAST:event_history_genset_return_itemMouseClicked
 
@@ -431,6 +487,32 @@ public class History_Fitler extends javax.swing.JFrame {
     private void history_genset_customerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_customerMouseExited
         history_genset_customer.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_history_genset_customerMouseExited
+
+    private void View_Shop_Filter_input_quantityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Shop_Filter_input_quantityKeyPressed
+        
+    }//GEN-LAST:event_View_Shop_Filter_input_quantityKeyPressed
+
+    private void View_Shop_Filter_input_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Shop_Filter_input_quantityKeyReleased
+        try{
+        int minus=0,returnStock = 0, inputQuantity = 0 ;
+        returnStock = Integer.parseInt(History_Shop_Filter_quantity.getText());
+        inputQuantity = Integer.parseInt(View_Shop_Filter_input_quantity.getText().toString());
+        minus = returnStock - inputQuantity;
+        result.setText(""+minus);
+        
+        }
+        catch(Exception e){
+            
+        }
+
+    }//GEN-LAST:event_View_Shop_Filter_input_quantityKeyReleased
+
+    private void View_Shop_Filter_input_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Shop_Filter_input_quantityKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_View_Shop_Filter_input_quantityKeyTyped
 
     /**
      * @param args the command line arguments
@@ -482,12 +564,14 @@ public class History_Fitler extends javax.swing.JFrame {
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back1;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
+    private javax.swing.JTextField View_Shop_Filter_input_quantity;
     private javax.swing.JLabel a1;
     private javax.swing.JLabel history_genset_back;
     private javax.swing.JLabel history_genset_customer;
     private javax.swing.JLabel history_genset_return_item;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -495,5 +579,6 @@ public class History_Fitler extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel result;
     // End of variables declaration//GEN-END:variables
 }
