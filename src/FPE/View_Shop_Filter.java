@@ -30,6 +30,9 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     String[] countQuotation = todayQuot.split(" - ");
     public View_Shop_Filter() {
         initComponents();
+        count_quotation.setVisible(false);
+        count_process.setVisible(false);
+        result.setVisible(false);
     }
     
 
@@ -401,7 +404,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
             
         try{   
             String id = Mainpage.Shop_filter_id.getText();
-            ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `filter_table` WHERE `ID`='"+id+"'");
+            ps=FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `QUANTITY`, `IMAGE`, `SUPPLIER` FROM `filter_table` WHERE `ID`='"+id+"'");
             rs = ps.executeQuery();
             while(rs.next()){
             View_Shop_Filter_id.setText(rs.getString("ID"));
@@ -500,7 +503,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         
         quanResult = Integer.parseInt(result.getText().toString()) ;
         String strQuantity = Integer.toString(quanResult);
-
+        try{
         if(quantity.equals("")){
             JOptionPane.showMessageDialog(null, "ENTER QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
         }
@@ -514,13 +517,22 @@ public class View_Shop_Filter extends javax.swing.JFrame {
                 ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
             }        
             else{
-                if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, dealing_info, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
+                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE` FROM `filter_table` WHERE `ID`='"+id+"'");
+                    ResultSet rs = ps.executeQuery();
+                    while(rs.next()){
+                    images = rs.getBytes("IMAGE");
+                    if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, images,price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, dealing_info, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
                     JOptionPane.showMessageDialog(null, "ADDED"); ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
                     Mainpage.cartIfEmpty.setText("2");
                     display_stock_quantity.setText(result.getText());
-                }
+                    }              
+
             }
         }
+       }
+        }catch(Exception e){
+              e.printStackTrace();
+         }     
                 
     }//GEN-LAST:event_AddToCartMouseClicked
 

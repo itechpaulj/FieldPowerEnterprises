@@ -626,99 +626,107 @@ public class Process_Genset extends javax.swing.JFrame {
 //    Reciept.Receipt_Cooments.setText("");
     String[] getValidQuot = quotation_display_year.getText().split(" - ");
     
-    if(getValidQuot[0].equals("0000")){
-        JOptionPane.showMessageDialog(null, "Please Check Quotation");
+    
+    if(brand.equals("") || model.equals("") || kva.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || seller_price.equals("") || engine_sn.equals("") || alters1_sn.equals("") || c_name.equals("") || c_add.equals("") || c_email.equals("") || c_contact.equals("") || c_deal.equals("") || agent_name.equals("") || agent_contact.equals("") || quotation.equals("") || date_recieved.equals("") || sup_name.equals("") || energized_date.equals("") || tank_cap.equals("") || oil_usage.equals("") || tech.equals("") || esystem.equals("") || weight.equals("") || frame.equals("") || updated_at.equals("") ){
+        JOptionPane.showMessageDialog(null, "EMPTY SOME FIELDS!","",JOptionPane.INFORMATION_MESSAGE);
     }
-    else if (id.equals("") || brand.equals("") || model.equals("") || kva.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || seller_price.equals("") || engine_sn.equals("") || alters1_sn.equals("") || c_name.equals("") || c_add.equals("") || c_email.equals("") || c_contact.equals("") || c_deal.equals("") || agent_name.equals("") || agent_contact.equals("") || quotation.equals("") || sup_price.equals("") || date_recieved.equals("") || sup_name.equals("") || energized_date.equals("") || tank_cap.equals("") || oil_usage.equals("") || tech.equals("") || updated_at.equals("")){
-     JOptionPane.showMessageDialog(null, "EMPTY SOME FIELDS!!","",JOptionPane.INFORMATION_MESSAGE);
-    }else{
-//        int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO PRINT THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
-//        if(opt==0){
-//            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION)
-//            {
-                if(processed.equals("1")){
-                    //insert histoty_genset_table
-                    //insert bin_genset
-                    // delete insert_genset
-                    if(!Class_Bin.Historygenset(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGenset(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
-                     {
-                          JOptionPane.showMessageDialog(null, "SUCCESS");
-                         try{
+    else{
+        if(getValidQuot[0].equals("0000")){
+            JOptionPane.showMessageDialog(null, "Please Check Quotation");
+        }
+        else if (id.equals("") || brand.equals("") || model.equals("") || kva.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || seller_price.equals("") || engine_sn.equals("") || alters1_sn.equals("") || c_name.equals("") || c_add.equals("") || c_email.equals("") || c_contact.equals("") || c_deal.equals("") || agent_name.equals("") || agent_contact.equals("") || quotation.equals("") || sup_price.equals("") || date_recieved.equals("") || sup_name.equals("") || energized_date.equals("") || tank_cap.equals("") || oil_usage.equals("") || tech.equals("") || updated_at.equals("")){
+         JOptionPane.showMessageDialog(null, "EMPTY SOME FIELDS!!","",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+    //        int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO PRINT THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
+    //        if(opt==0){
+    //            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION)
+    //            {
+                    if(processed.equals("1")){
+                        //insert histoty_genset_table
+                        //insert bin_genset
+                        // delete insert_genset
+                        if(!Class_Bin.Historygenset(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGenset(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
+                         {
+                              JOptionPane.showMessageDialog(null, "SUCCESS");
+                             try{
 
-                                 JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
-                                 String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT`, `ID_GENSET` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
-                                 JRDesignQuery jrdesignquery = new JRDesignQuery();
-                                 jrdesignquery.setText(sql);
-                                 jasperdesign.setQuery(jrdesignquery);
-                                 JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+                                     JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
+                                     String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT`, `ID_GENSET` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
+                                     JRDesignQuery jrdesignquery = new JRDesignQuery();
+                                     jrdesignquery.setText(sql);
+                                     jasperdesign.setQuery(jrdesignquery);
+                                     JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
 
-                             HashMap<String, Object> params = new HashMap<String, Object>();
-                             String subject = "Quotation for Brand "+kva+" "+" "+ brand +" "+model;
-                             String title = kva+ " "+brand+" "+ model;
-                             BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
-                             params.put("logo", image );
-                             params.put("subject",subject);
-                             params.put("title",title);
-                             params.put("start_system",esystem);
-                             params.put("weight",weight);
-                             params.put("frame",frame);
-                             JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
-                             JasperViewer.viewReport(jasperprint, false);
-
-
-                             }
-                             catch(Exception e){
-                                 System.out.println(e.getMessage());
-                                JOptionPane.showMessageDialog(null, e);
-                             }        
-
-                     }                    
-                    //JOptionPane.showMessageDialog(null, "1");
-                    process.setText("2");//update
-                }else{
-                    if(processed.equals("2")){
-                       // JOptionPane.showMessageDialog(null, "2");
-                       // update class
-                    if(!Class_Bin.HistorygensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
-                     {
-                          JOptionPane.showMessageDialog(null, "SUCCESS");
-                         try{
-
-                                 JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
-                                 String sql = "SELECT ID,`BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT`, `ID_GENSET` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
-                                 JRDesignQuery jrdesignquery = new JRDesignQuery();
-                                 jrdesignquery.setText(sql);
-                                 jasperdesign.setQuery(jrdesignquery);
-                                 JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
-
-                             HashMap<String, Object> params = new HashMap<String, Object>();
-                             String subject = "Quotation for Brand "+kva+" "+" "+ brand +" "+model;
-                             String title = kva+ " "+brand+" "+ model;
-                             BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
-                             params.put("logo", image );
-                             params.put("subject",subject);
-                             params.put("title",title);
-                             params.put("start_system",esystem);
-                             params.put("weight",weight);
-                             params.put("frame",frame);
-                             JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
-                             JasperViewer.viewReport(jasperprint, false);
+                                 HashMap<String, Object> params = new HashMap<String, Object>();
+                                 String subject = "Quotation for Brand "+kva+" "+" "+ brand +" "+model;
+                                 String title = kva+ " "+brand+" "+ model;
+                                 BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+                                 params.put("logo", image );
+                                 params.put("subject",subject);
+                                 params.put("title",title);
+                                 params.put("start_system",esystem);
+                                 params.put("weight",weight);
+                                 params.put("frame",frame);
+                                 JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+                                 JasperViewer.viewReport(jasperprint, false);
 
 
-                             }
-                             catch(Exception e){
-                                 System.out.println(e.getMessage());
-                                JOptionPane.showMessageDialog(null, e);
-                             }                         
-                     }                
+                                 }
+                                 catch(Exception e){
+                                     System.out.println(e.getMessage());
+                                    JOptionPane.showMessageDialog(null, e);
+                                 }        
+
+                         }                    
+                        //JOptionPane.showMessageDialog(null, "1");
+                        process.setText("2");//update
+                    }else{
+                        if(processed.equals("2")){
+                           // JOptionPane.showMessageDialog(null, "2");
+                           // update class
+                        if(!Class_Bin.HistorygensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
+                         {
+                              JOptionPane.showMessageDialog(null, "SUCCESS");
+                             try{
+
+                                     JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
+                                     String sql = "SELECT ID,`BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT`, `ID_GENSET` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
+                                     JRDesignQuery jrdesignquery = new JRDesignQuery();
+                                     jrdesignquery.setText(sql);
+                                     jasperdesign.setQuery(jrdesignquery);
+                                     JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+
+                                 HashMap<String, Object> params = new HashMap<String, Object>();
+                                 String subject = "Quotation for Brand "+kva+" "+" "+ brand +" "+model;
+                                 String title = kva+ " "+brand+" "+ model;
+                                 BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+                                 params.put("logo", image );
+                                 params.put("subject",subject);
+                                 params.put("title",title);
+                                 params.put("start_system",esystem);
+                                 params.put("weight",weight);
+                                 params.put("frame",frame);
+                                 JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+                                 JasperViewer.viewReport(jasperprint, false);
+
+
+                                 }
+                                 catch(Exception e){
+                                     System.out.println(e.getMessage());
+                                    JOptionPane.showMessageDialog(null, e);
+                                 }                         
+                         }                
+                        }
                     }
-                }
-                
-                
-           // }
-        //}
-         
+
+
+               // }
+            //}
+
+        }        
     }
+    
+
  
 
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked

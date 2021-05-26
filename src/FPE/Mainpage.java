@@ -206,6 +206,7 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Customer_list5 = new javax.swing.JLabel();
         Shop_Genset_Panel_Customer6 = new javax.swing.JPanel();
         Shop_Genset_Customer_list6 = new javax.swing.JLabel();
+        history_id_genset = new javax.swing.JLabel();
         HISTORY_FILTER = new keeptoo.KGradientPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         history_filter_table = new javax.swing.JTable();
@@ -213,6 +214,7 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Customer_list3 = new javax.swing.JLabel();
         Shop_Genset_Panel_Customer4 = new javax.swing.JPanel();
         Shop_Genset_Customer_list4 = new javax.swing.JLabel();
+        history_id_filter = new javax.swing.JLabel();
         BIN = new keeptoo.KGradientPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -1482,6 +1484,7 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         HISTORY_GENSET.add(Shop_Genset_Panel_Customer6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 210, 50));
+        HISTORY_GENSET.add(history_id_genset, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 50, 30));
 
         JTab.addTab("ORDERED", HISTORY_GENSET);
 
@@ -1547,7 +1550,7 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Customer_list4.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Genset_Customer_list4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Shop_Genset_Customer_list4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
-        Shop_Genset_Customer_list4.setText(" CUSTOMER LIST");
+        Shop_Genset_Customer_list4.setText("VIEW");
         Shop_Genset_Customer_list4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Shop_Genset_Customer_list4MouseClicked(evt);
@@ -1572,6 +1575,7 @@ public class Mainpage extends javax.swing.JFrame {
         );
 
         HISTORY_FILTER.add(Shop_Genset_Panel_Customer4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 210, 50));
+        HISTORY_FILTER.add(history_id_filter, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 54, 50, 20));
 
         JTab.addTab("ORDERED", HISTORY_FILTER);
 
@@ -2309,11 +2313,15 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_FilterMouseClicked
 
     private void history_genset_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_tableMouseClicked
-        // TODO add your handling code here:
+        int i=history_genset_table.getSelectedRow();
+        TableModel model = history_genset_table.getModel();
+        history_id_genset.setText(model.getValueAt(i,0).toString());
     }//GEN-LAST:event_history_genset_tableMouseClicked
 
     private void history_filter_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_filter_tableMouseClicked
-        // TODO add your handling code here:
+        int i=history_filter_table.getSelectedRow();
+        TableModel model = history_filter_table.getModel();
+        history_id_filter.setText(model.getValueAt(i,0).toString());
     }//GEN-LAST:event_history_filter_tableMouseClicked
 
     private void Shop_Genset_Customer_list3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list3MouseClicked
@@ -2329,7 +2337,13 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Shop_Genset_Customer_list3MouseExited
 
     private void Shop_Genset_Customer_list4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list4MouseClicked
-        // TODO add your handling code here:
+        History_Fitler hf = new History_Fitler();
+        if(history_id_filter.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "PLEASE SELECT!","",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+        History_Fitler.History_Shop_Filter_id.setText(history_id_filter.getText());
+        hf.setVisible(true);
+        }
     }//GEN-LAST:event_Shop_Genset_Customer_list4MouseClicked
 
     private void Shop_Genset_Customer_list4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list4MouseEntered
@@ -2354,8 +2368,16 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void Shop_Genset_Customer_list6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list6MouseClicked
         History_Genset hg = new History_Genset();
-        hg.setVisible(true);
         
+        if(history_id_genset.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "PLEASE SELECT !!","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            History_Genset.history_genset_id.setText(history_id_genset.getText());
+            hg.setVisible(true);            
+        }
+
+       
     }//GEN-LAST:event_Shop_Genset_Customer_list6MouseClicked
 
     private void Shop_Genset_Customer_list6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list6MouseEntered
@@ -2381,13 +2403,13 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-         Dashboard_Display_2.setText("PURCHASE HISTORT");
+         Dashboard_Display_2.setText("PURCHASE HISTORY");
          Dashboard_Display_3.setText(null);
          JTab.setSelectedIndex(8);
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        Dashboard_Display_2.setText("BIN HISTORT");
+        Dashboard_Display_2.setText("BIN HISTORY");
          Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(11);
         
@@ -2599,6 +2621,8 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel fpe_home;
     public static javax.swing.JTable history_filter_table;
     public static javax.swing.JTable history_genset_table;
+    private javax.swing.JLabel history_id_filter;
+    private javax.swing.JLabel history_id_genset;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
