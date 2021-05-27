@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="java" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="091a5eb8-f31e-4bd6-bc51-5865adbba732">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.Object" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY`, `TOTAL PRICE`, `QUOTATION` FROM `history_filter`]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BRAND" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DESCRIPTION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TYPE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PRICE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="QUANTITY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TOTAL PRICE" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="QUOTATION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="338" y="30" width="161" height="10" uuid="dadeedcb-a388-49b3-a540-3e3cdc0bd8c1"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1467 , ABAD SANTOS, METRO MANILA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="62" width="161" height="11" uuid="0702e981-bee3-469a-81a3-b99988f46fb3"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[www.fieldpowerenterprises.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="40" width="161" height="11" uuid="590faeab-15f2-4b7f-a54c-ed181d0ff0a1"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[T : 02-734-4318, 0956-1845577]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="10" width="290" height="20" uuid="ad9ff646-f65a-4699-b756-575ed636829a"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIELD POWER ENTERPRISES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="51" width="161" height="11" uuid="f70beb35-5290-4c97-8aac-3f9ebe862d48"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E : fieldpowergen@gmail.com]]></text>
+			</staticText>
+			<image>
+				<reportElement x="250" y="10" width="88" height="63" uuid="3e43d0a4-1e89-40b0-a894-21b95ddf2aa5"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="3" width="77" height="20" uuid="ff904922-9be6-4e42-a3ce-74e16119a4f0"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="0" width="100" height="20" uuid="ae369562-da3c-40ce-b8b1-d0c51742bd31"/>
+				<text><![CDATA[BRAND]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="177" y="3" width="112" height="20" uuid="7743d69d-4126-4c94-85d9-cf6c39a1cda4"/>
+				<text><![CDATA[DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="3" width="105" height="20" uuid="1cefac0a-409e-4a87-9bec-905d4fabec7e"/>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="3" width="123" height="20" uuid="4dd361da-1281-41c4-86bc-54b497988bf0"/>
+				<text><![CDATA[PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="517" y="0" width="111" height="20" uuid="3a59a1ae-75b5-4398-bc2e-442496094c89"/>
+				<text><![CDATA[TOTAL PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="628" y="0" width="74" height="20" uuid="e2df00c1-22ef-48d0-8ed1-dd7cf3560388"/>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="706" y="2" width="100" height="20" uuid="fc4b01fd-79a1-42f7-b77f-17f4b325ab9c"/>
+				<text><![CDATA[QUOTATION]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="77" height="20" uuid="90cc0ddf-506f-4278-85e2-a040c21436ed"/>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="0" width="100" height="20" uuid="8ae11baf-d3b9-411d-b059-4eba92960e34"/>
+				<textFieldExpression><![CDATA[$F{BRAND}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="177" y="0" width="112" height="20" uuid="30bbfd4b-47df-4552-9fcb-acf9f364a4f5"/>
+				<textFieldExpression><![CDATA[$F{DESCRIPTION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="289" y="0" width="105" height="20" uuid="f50c301f-c28d-4800-af33-a7cd92c427bd"/>
+				<textFieldExpression><![CDATA[$F{TYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="0" width="123" height="20" uuid="c2346058-d928-4cf6-9638-7e48a22a34e9"/>
+				<textFieldExpression><![CDATA[$F{PRICE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="628" y="0" width="74" height="20" uuid="6998a650-3fad-4666-a8fb-3d8acbb83323"/>
+				<textFieldExpression><![CDATA[$F{DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="702" y="0" width="100" height="20" uuid="35c69ff7-5d74-4be4-8d64-6e5efd22ade9"/>
+				<textFieldExpression><![CDATA[$F{QUOTATION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="517" y="0" width="111" height="20" uuid="e41b6712-1c91-43ea-8749-78fd69804725"/>
+				<textFieldExpression><![CDATA[$F{TOTAL PRICE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

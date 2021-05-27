@@ -233,7 +233,8 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Customer_list4 = new javax.swing.JLabel();
         history_id_filter = new javax.swing.JLabel();
         Shop_Genset_Panel_Customer11 = new javax.swing.JPanel();
-        Shop_Genset_Customer_list11 = new javax.swing.JLabel();
+        Shop_Genset_Print_Filter = new javax.swing.JLabel();
+        history_searched_filter = new javax.swing.JTextField();
         BIN = new keeptoo.KGradientPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -1646,20 +1647,20 @@ public class Mainpage extends javax.swing.JFrame {
 
         Shop_Genset_Panel_Customer11.setBackground(new java.awt.Color(133, 173, 173));
 
-        Shop_Genset_Customer_list11.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        Shop_Genset_Customer_list11.setForeground(new java.awt.Color(255, 255, 255));
-        Shop_Genset_Customer_list11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Genset_Customer_list11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
-        Shop_Genset_Customer_list11.setText("PRINT");
-        Shop_Genset_Customer_list11.addMouseListener(new java.awt.event.MouseAdapter() {
+        Shop_Genset_Print_Filter.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Print_Filter.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Print_Filter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Print_Filter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Print_Filter.setText("PRINT");
+        Shop_Genset_Print_Filter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Shop_Genset_Customer_list11MouseClicked(evt);
+                Shop_Genset_Print_FilterMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Shop_Genset_Customer_list11MouseEntered(evt);
+                Shop_Genset_Print_FilterMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Shop_Genset_Customer_list11MouseExited(evt);
+                Shop_Genset_Print_FilterMouseExited(evt);
             }
         });
 
@@ -1668,15 +1669,22 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer11Layout.setHorizontalGroup(
             Shop_Genset_Panel_Customer11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Shop_Genset_Panel_Customer11Layout.createSequentialGroup()
-                .addComponent(Shop_Genset_Customer_list11, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Shop_Genset_Print_Filter, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 53, Short.MAX_VALUE))
         );
         Shop_Genset_Panel_Customer11Layout.setVerticalGroup(
             Shop_Genset_Panel_Customer11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list11, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Print_Filter, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         HISTORY_FILTER.add(Shop_Genset_Panel_Customer11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 210, 50));
+
+        history_searched_filter.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                history_searched_filterKeyReleased(evt);
+            }
+        });
+        HISTORY_FILTER.add(history_searched_filter, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 120, 30));
 
         JTab.addTab("ORDERED", HISTORY_FILTER);
 
@@ -2582,22 +2590,34 @@ public class Mainpage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Bin_Filter_TableMouseClicked
 
-    private void Shop_Genset_Customer_list11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list11MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Genset_Customer_list11MouseClicked
+    private void Shop_Genset_Print_FilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Print_FilterMouseClicked
+        try{
+          DefaultTableModel tablemodel =(DefaultTableModel) history_filter_table.getModel();
+          HashMap<String, Object> params = new HashMap<String, Object>();
+          BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+          params.put("logo", image );
+          JasperPrint jasperPrint = null;
+          JasperCompileManager.compileReportToFile("C:\\Users\\Javinez\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\history_filter.jrxml");
+          jasperPrint = JasperFillManager.fillReport("C:\\Users\\Javinez\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\history_filter.jasper", params, new JRTableModelDataSource(tablemodel));
+          JasperViewer.viewReport(jasperPrint, false);
 
-    private void Shop_Genset_Customer_list11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list11MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Genset_Customer_list11MouseEntered
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_Shop_Genset_Print_FilterMouseClicked
 
-    private void Shop_Genset_Customer_list11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list11MouseExited
+    private void Shop_Genset_Print_FilterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Print_FilterMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Genset_Customer_list11MouseExited
+    }//GEN-LAST:event_Shop_Genset_Print_FilterMouseEntered
+
+    private void Shop_Genset_Print_FilterMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Print_FilterMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Print_FilterMouseExited
 
     private void Shop_Genset_Print_GensetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Print_GensetMouseClicked
         try{
             DefaultTableModel tablemodel =(DefaultTableModel) history_genset_table.getModel();
-          // JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/history_genset.jrxml");
           HashMap<String, Object> params = new HashMap<String, Object>();
           BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
           params.put("logo", image );
@@ -2605,18 +2625,6 @@ public class Mainpage extends javax.swing.JFrame {
           JasperCompileManager.compileReportToFile("src/FPE/history_genset.jrxml");
           jasperPrint = JasperFillManager.fillReport("src/FPE/history_genset.jasper", params, new JRTableModelDataSource(tablemodel));
           JasperViewer.viewReport(jasperPrint, false);
-//            String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `QUOTATION`FROM `history_genset_table`";
-//            JRDesignQuery jrdesignquery = new JRDesignQuery();
-//            jrdesignquery.setText(sql);
-//            jasperdesign.setQuery(jrdesignquery);
-//            JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
-//
-//        HashMap<String, Object> params = new HashMap<String, Object>();
-//        BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
-//        params.put("logo", image );
-//        JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,new JRTableModelDataSource(tablemodel));
-//        JasperViewer.viewReport(jasperprint, false);
-
 
         }
         catch(Exception e){
@@ -2649,6 +2657,20 @@ public class Mainpage extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_history_searched_gensetKeyReleased
+
+    private void history_searched_filterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_history_searched_filterKeyReleased
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+        String sql = "SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY`, `TOTAL PRICE`, `QUOTATION` FROM `history_filter` WHERE `QUOTATION` lIKE '%"+history_searched_filter.getText()+"%'";
+        ps = FPE_DB.getConnection().prepareStatement(sql);
+        rs = ps.executeQuery();
+        history_filter_table.setModel(net.proteanit.sql.DbUtils.resultSetToTableModel(rs));
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_history_searched_filterKeyReleased
       
     /**
      * @param args the command line arguments
@@ -2740,7 +2762,6 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel Shop_Genset_Btn;
     private javax.swing.JLabel Shop_Genset_Customer_list;
     private javax.swing.JLabel Shop_Genset_Customer_list10;
-    private javax.swing.JLabel Shop_Genset_Customer_list11;
     private javax.swing.JLabel Shop_Genset_Customer_list3;
     private javax.swing.JLabel Shop_Genset_Customer_list4;
     private javax.swing.JLabel Shop_Genset_Customer_list5;
@@ -2762,6 +2783,7 @@ public class Mainpage extends javax.swing.JFrame {
     public static javax.swing.JPanel Shop_Genset_Panel_Customer9;
     public static javax.swing.JPanel Shop_Genset_Panel_back;
     public static javax.swing.JPanel Shop_Genset_Panel_view;
+    private javax.swing.JLabel Shop_Genset_Print_Filter;
     private javax.swing.JLabel Shop_Genset_Print_Genset;
     public static javax.swing.JTable Shop_Genset_Table;
     private javax.swing.JLabel Shop_Gensetr_view;
@@ -2796,6 +2818,7 @@ public class Mainpage extends javax.swing.JFrame {
     public static javax.swing.JTable history_genset_table;
     private javax.swing.JLabel history_id_filter;
     private javax.swing.JLabel history_id_genset;
+    private javax.swing.JTextField history_searched_filter;
     private javax.swing.JTextField history_searched_genset;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

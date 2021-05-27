@@ -136,7 +136,7 @@ public class Class_tables {
                   
     public boolean History_Fitler(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, `PRICE`, `QUANTITY`, `TOTAL PRICE`, `QUOTATION` FROM `history_filter`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY`, `TOTAL PRICE`, `QUOTATION` FROM `history_filter`");
         ResultSet rs = ps.executeQuery();
         history_filter_table.setModel(DbUtils.resultSetToTableModel(rs));
         history_filter_table.getColumnModel().getColumn(0).setMaxWidth(100);
