@@ -2597,8 +2597,8 @@ public class Mainpage extends javax.swing.JFrame {
           BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
           params.put("logo", image );
           JasperPrint jasperPrint = null;
-          JasperCompileManager.compileReportToFile("C:\\Users\\Javinez\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\history_filter.jrxml");
-          jasperPrint = JasperFillManager.fillReport("C:\\Users\\Javinez\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\history_filter.jasper", params, new JRTableModelDataSource(tablemodel));
+          JasperCompileManager.compileReportToFile("src/FPE/history_filter.jrxml");
+          jasperPrint = JasperFillManager.fillReport("src/FPE/history_filter.jasper", params, new JRTableModelDataSource(tablemodel));
           JasperViewer.viewReport(jasperPrint, false);
 
         }
