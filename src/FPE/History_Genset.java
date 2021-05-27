@@ -592,7 +592,7 @@ public class History_Genset extends javax.swing.JFrame {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                     images = rs.getBytes("IMAGE");
-                if(!Class_history.ReturnGenset(brand, model, kva, phasing, type, dimen, price, s_price, engines, alters, date, images, name, energized_date, tank_cap, oil_usage, tech, estart, weight, frame, updated_at)){
+                if(!Class_history.ReturnGenset(brand, model, kva, phasing, type, dimen, price, s_price, engines, alters, date, images, name, energized_date, tank_cap, oil_usage, tech, estart, weight, frame, updated_at) && !Class_history.ReturnDeleteGenset(id)){
                     JOptionPane.showMessageDialog(null, "SUCCESS","",JOptionPane.INFORMATION_MESSAGE);ct.Bin_Genset();ct.Genset();ct.History_Genset();
                 }
             }

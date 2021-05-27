@@ -424,7 +424,7 @@ public class History_Fitler extends javax.swing.JFrame {
                             String currentQuantity = rs.getString("QUANTITY");
                             int updateQuantity = Integer.parseInt(currentQuantity) + Integer.parseInt(inputQuantity); 
                             String stringQuantity = String.valueOf(updateQuantity);
-                            if(!Class_history.ReturnFilter(date, brand, description, type, seller_price, stringQuantity, images,idFilter)){
+                            if(!Class_history.ReturnFilter(date, brand, description, type, seller_price, stringQuantity, images,idFilter) && !Class_history.ReturnDeleteFilter(id)){
                             JOptionPane.showMessageDialog(null, "SUCCESS","",JOptionPane.INFORMATION_MESSAGE);ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
                              }
                         }
@@ -452,7 +452,7 @@ public class History_Fitler extends javax.swing.JFrame {
                             String currentQuantity = rs.getString("QUANTITY");
                             int updateQuantity = Integer.parseInt(currentQuantity) + Integer.parseInt(resultIs); 
                             String stringQuantity = String.valueOf(updateQuantity);
-                            if(!Class_history.ReturnFilter(date, brand, description, type, seller_price, stringQuantity, images,idFilter)){
+                            if(!Class_history.ReturnFilter(date, brand, description, type, seller_price, stringQuantity, images,idFilter) && !Class_history.ReturnUpdateFilter(resultIs, id)){
                             JOptionPane.showMessageDialog(null, "SUCCESS","",JOptionPane.INFORMATION_MESSAGE);ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
                              }
                         }

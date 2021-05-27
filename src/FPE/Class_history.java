@@ -67,4 +67,44 @@ public class Class_history {
         }
         return false;
     }
+    
+    public static boolean ReturnUpdateFilter(String quantity,String id){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `history_filter` SET `QUANTITY`=? WHERE `ID`=?");
+        ps.setString(1,quantity);
+        ps.setString(2,id);
+        ps.execute();
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean ReturnDeleteFilter(String id){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `history_filter` WHERE `ID`=?");
+        ps.setString(1,id);
+        ps.execute();
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean ReturnDeleteGenset(String id){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `history_genset_table` WHERE `ID`=?");
+        ps.setString(1,id);
+        ps.execute();
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        return false;
+    }    
 }

@@ -674,7 +674,6 @@ public class Process_Genset extends javax.swing.JFrame {
                                  }
                                  catch(Exception e){
                                      System.out.println(e.getMessage());
-                                    JOptionPane.showMessageDialog(null, e);
                                  }        
 
                          }                    

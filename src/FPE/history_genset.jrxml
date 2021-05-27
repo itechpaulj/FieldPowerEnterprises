@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d81fc40-bc2e-4c78-9428-8eacb0aaf644">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="8"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.Object" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `QUOTATION`FROM `history_genset_table`]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BRAND" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MODEL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KVA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHASING" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="UNIT_TYPE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SELLER PRICE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ENGINE_SERIAL_NO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ALTERNATOR_SERIAL_NO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="QUOTATION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="328" y="30" width="161" height="10" uuid="2648263d-c252-4a51-b183-ae39ccb55282"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1467 , ABAD SANTOS, METRO MANILA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="51" width="161" height="11" uuid="77291ad8-af57-4c7a-9d41-2518e6462df3"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E : fieldpowergen@gmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="62" width="161" height="11" uuid="67473c04-3c44-4ce1-876a-9112eb2847c1"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[www.fieldpowerenterprises.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="10" width="290" height="20" uuid="f65e6b3d-d59d-422d-a0b4-2f4645b391e9"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIELD POWER ENTERPRISES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="328" y="40" width="161" height="11" uuid="cd6453b4-46de-499c-beda-6892813e8a74"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[T : 02-734-4318, 0956-1845577]]></text>
+			</staticText>
+			<image>
+				<reportElement x="241" y="12" width="87" height="61" uuid="547e4e75-f8f2-418d-834a-a7e7d0422611"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="76" height="20" uuid="f5d949e9-ac03-4544-89f3-5c8b9c1cba24"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="76" y="0" width="100" height="20" uuid="3590447e-fee1-41a4-b631-64a12e34e954"/>
+				<text><![CDATA[BRAND]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="0" width="116" height="20" uuid="a7ee7d7b-627c-4d82-b1c6-da606b14552c"/>
+				<text><![CDATA[MODEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="0" width="115" height="20" uuid="ea7cfd71-5739-436e-925d-ac27c3ce3116"/>
+				<text><![CDATA[PHASING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="0" width="118" height="20" uuid="be287429-4656-4acf-b4ec-dc8eb10955a1"/>
+				<text><![CDATA[UNIT_TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="708" y="0" width="94" height="20" uuid="ff5595ae-9149-4f62-8967-b519fd160afe"/>
+				<text><![CDATA[QUOTATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="618" y="0" width="90" height="20" uuid="41201e8a-4c1d-4365-a72c-21fab84d7a1a"/>
+				<text><![CDATA[PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="292" y="0" width="93" height="20" uuid="2c8f2a35-4332-45b1-8402-2428c47b2d3f"/>
+				<text><![CDATA[KVA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="76" height="20" uuid="5085c2b8-3ab2-48f6-b872-3ec6daa4b4ab"/>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="76" y="1" width="100" height="20" uuid="d97bed1e-4a46-4b93-bea0-9a7993705764"/>
+				<textFieldExpression><![CDATA[$F{BRAND}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="1" width="116" height="20" uuid="67bfa41d-c986-431a-ae3a-b30c5417bea4"/>
+				<textFieldExpression><![CDATA[$F{MODEL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="0" width="93" height="20" uuid="3489f4b2-5e64-4c8c-9d40-e348a20a1ee5"/>
+				<textFieldExpression><![CDATA[$F{KVA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="0" width="115" height="20" uuid="267e0187-4c34-4685-89b7-73760a70827e"/>
+				<textFieldExpression><![CDATA[$F{PHASING}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="1" width="118" height="20" uuid="0a146387-8513-4db1-aaf0-cfb84a1f2d24"/>
+				<textFieldExpression><![CDATA[$F{UNIT_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="708" y="1" width="94" height="20" uuid="e88e9f8d-6bf3-4a3d-b975-4cb9a65a722e"/>
+				<textFieldExpression><![CDATA[$F{QUOTATION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="618" y="0" width="90" height="20" uuid="94c45960-f900-4b4d-bc8b-8c62b77efea9"/>
+				<textFieldExpression><![CDATA[$F{SELLER PRICE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="20" splitType="Stretch"/>
+	</summary>
+</jasperReport>
