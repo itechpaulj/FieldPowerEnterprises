@@ -124,7 +124,7 @@ public class Class_tables {
          
           public boolean History_Genset(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `QUOTATION` FROM `history_genset_table`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `QUOTATION` FROM `history_genset_table`");
         ResultSet rs = ps.executeQuery();
         history_genset_table.setModel(DbUtils.resultSetToTableModel(rs));
         history_genset_table.getColumnModel().getColumn(0).setMaxWidth(100);

@@ -5,7 +5,7 @@
 	<property name="ireport.y" value="0"/>
 	<parameter name="logo" class="java.lang.Object" isForPrompting="false"/>
 	<queryString>
-		<![CDATA[SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `QUOTATION`FROM `history_genset_table`]]>
+		<![CDATA[SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `QUOTATION` FROM `history_genset_table`]]>
 	</queryString>
 	<field name="ID" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -25,7 +25,7 @@
 	<field name="UNIT_TYPE" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="SELLER PRICE" class="java.lang.String">
+	<field name="PRICE" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="ENGINE_SERIAL_NO" class="java.lang.String">
@@ -153,8 +153,8 @@
 				<textFieldExpression><![CDATA[$F{QUOTATION}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="618" y="0" width="90" height="20" uuid="94c45960-f900-4b4d-bc8b-8c62b77efea9"/>
-				<textFieldExpression><![CDATA[$F{SELLER PRICE}]]></textFieldExpression>
+				<reportElement x="618" y="0" width="90" height="20" uuid="93b9bf4a-6837-419e-89e7-cd95283f9ed9"/>
+				<textFieldExpression><![CDATA[$F{PRICE}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

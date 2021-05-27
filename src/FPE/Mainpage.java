@@ -2640,7 +2640,7 @@ public class Mainpage extends javax.swing.JFrame {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
-        String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `QUOTATION`FROM `history_genset_table` WHERE `QUOTATION` lIKE '%"+history_searched_genset.getText()+"%'";
+        String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `QUOTATION` FROM `history_genset_table` WHERE `QUOTATION` lIKE '%"+history_searched_genset.getText()+"%'";
         ps = FPE_DB.getConnection().prepareStatement(sql);
         rs = ps.executeQuery();
         history_genset_table.setModel(net.proteanit.sql.DbUtils.resultSetToTableModel(rs));
