@@ -63,20 +63,20 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Display_Supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Display_Supplier.setText("ADD SUPPLIER");
         Display_Supplier.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Display_SupplierAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Display_Supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 400, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_supplier_list.setBackground(new java.awt.Color(255, 255, 179));
@@ -96,7 +96,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         panel_supplier_list.setLayout(panel_supplier_listLayout);
         panel_supplier_listLayout.setHorizontalGroup(
             panel_supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Supplier_List_Btn2, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+            .addComponent(Supplier_List_Btn2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
         );
         panel_supplier_listLayout.setVerticalGroup(
             panel_supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,11 +105,11 @@ public class Insert_Supplier extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        kGradientPanel1.add(panel_supplier_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 250, 30));
+        kGradientPanel1.add(panel_supplier_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 280, 30));
 
         Insert_Supplier_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Supplier_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Insert_Supplier_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 250, 30));
+        kGradientPanel1.add(Insert_Supplier_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 280, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setText("CONTACT NO.");
@@ -123,7 +123,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
 
         Insert_Supplier_email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Supplier_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Insert_Supplier_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 250, 30));
+        kGradientPanel1.add(Insert_Supplier_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 280, 30));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
@@ -132,11 +132,11 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Insert_Supplier_address.setRows(5);
         jScrollPane1.setViewportView(Insert_Supplier_address);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 250, 80));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 280, 80));
 
         Insert_Supplier_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Supplier_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Insert_Supplier_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 250, 30));
+        kGradientPanel1.add(Insert_Supplier_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 280, 30));
 
         id1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id1.setText("NAME");
@@ -171,14 +171,16 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addGroup(Stock_Genset_Panel_BackLayout.createSequentialGroup()
+                .addComponent(Stock_Genset_Back)
+                .addGap(0, 71, Short.MAX_VALUE))
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 150, -1));
+        kGradientPanel1.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 180, -1));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
 
@@ -203,18 +205,20 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Save, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+            .addGroup(Stock_Genset_Panel_UpdateLayout.createSequentialGroup()
+                .addComponent(Stock_Genset_Save, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 82, Short.MAX_VALUE))
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Save, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 140, -1));
+        kGradientPanel1.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 180, -1));
 
         Insert_Supplier_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Supplier_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Insert_Supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 250, 30));
+        kGradientPanel1.add(Insert_Supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 280, 30));
 
         id2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id2.setText("ID");

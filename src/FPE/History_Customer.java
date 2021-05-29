@@ -49,50 +49,54 @@ public class History_Customer extends javax.swing.JFrame {
         Display_Customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Display_Customer.setText("CUSTOMER DETAILED");
         Display_Customer.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Display_CustomerAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Display_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 480, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         History_Customer_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(History_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 250, 30));
+        kGradientPanel1.add(History_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 270, 250, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setText("CONTACT NO.");
         jLabel18.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 100, 30));
+        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 100, 30));
 
         History_Customer_email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(History_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 250, 30));
+        kGradientPanel1.add(History_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 250, 30));
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         History_Customer_address.setColumns(20);
         History_Customer_address.setRows(5);
         jScrollPane1.setViewportView(History_Customer_address);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 250, 110));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 250, 80));
 
         id1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id1.setText("NAME");
         id1.setAlignmentY(1.0F);
-        kGradientPanel1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 100, 30));
+        kGradientPanel1.add(id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 100, 30));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel21.setText("EMAIL");
         jLabel21.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 100, 30));
+        kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 100, 30));
 
-        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
+        Stock_Genset_Panel_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
@@ -115,30 +119,30 @@ public class History_Customer extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 150, -1));
+        kGradientPanel1.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 210, -1));
 
         id2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id2.setText("ID");
         id2.setAlignmentY(1.0F);
-        kGradientPanel1.add(id2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 100, 30));
+        kGradientPanel1.add(id2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 100, 30));
 
         History_Customer_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(History_Customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 250, 30));
+        kGradientPanel1.add(History_Customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 250, 30));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setText("ADDRESS");
         jLabel22.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 100, 30));
+        kGradientPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 100, 30));
 
         History_customer_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(History_customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 250, 30));
+        kGradientPanel1.add(History_customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 250, 30));
 
         validate.setText("1");
         kGradientPanel1.add(validate, new org.netbeans.lib.awtextra.AbsoluteConstraints(404, 4, 60, 20));

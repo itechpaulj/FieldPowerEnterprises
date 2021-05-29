@@ -54,10 +54,6 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         View_Shop_Filter_brand = new javax.swing.JLabel();
         View_Shop_Filter_pic = new javax.swing.JLabel();
         View_Shop_Filter_id = new javax.swing.JLabel();
-        ViewAdd = new javax.swing.JPanel();
-        AddToCart = new javax.swing.JLabel();
-        Stock_Genset_Panel_Back = new javax.swing.JPanel();
-        CartBack = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         View_Shop_Filter_quantity = new javax.swing.JTextField();
         a1 = new javax.swing.JLabel();
@@ -71,6 +67,10 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         display_stock_quantity = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        ViewAdd = new javax.swing.JPanel();
+        AddToCart = new javax.swing.JLabel();
+        Stock_Genset_Panel_Back = new javax.swing.JPanel();
+        CartBack = new javax.swing.JLabel();
         ViewCart = new javax.swing.JPanel();
         GoToCart = new javax.swing.JLabel();
         ViewAdd1 = new javax.swing.JPanel();
@@ -100,9 +100,9 @@ public class View_Shop_Filter extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 100));
 
-        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(0, 230, 184));
+        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 162, 162));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
-        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(0, 230, 184));
+        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 162, 162));
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         result.setText("0");
@@ -169,77 +169,13 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         View_Shop_Filter_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 170, 30));
 
-        ViewAdd.setBackground(new java.awt.Color(0, 204, 68));
-
-        AddToCart.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        AddToCart.setForeground(new java.awt.Color(255, 255, 255));
-        AddToCart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        AddToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
-        AddToCart.setText(" ADD TO CART");
-        AddToCart.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AddToCartMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                AddToCartMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                AddToCartMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout ViewAddLayout = new javax.swing.GroupLayout(ViewAdd);
-        ViewAdd.setLayout(ViewAddLayout);
-        ViewAddLayout.setHorizontalGroup(
-            ViewAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AddToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        ViewAddLayout.setVerticalGroup(
-            ViewAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AddToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        KG2_ADD_STOCK_GENSET.add(ViewAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, 190, 50));
-
-        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
-
-        CartBack.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        CartBack.setForeground(new java.awt.Color(255, 255, 255));
-        CartBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CartBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        CartBack.setText(" BACK");
-        CartBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CartBackMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                CartBackMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                CartBackMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Stock_Genset_Panel_BackLayout = new javax.swing.GroupLayout(Stock_Genset_Panel_Back);
-        Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
-        Stock_Genset_Panel_BackLayout.setHorizontalGroup(
-            Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CartBack, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-        );
-        Stock_Genset_Panel_BackLayout.setVerticalGroup(
-            Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(CartBack, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 530, 190, 50));
-
         jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(20, 31, 31));
         jLabel16.setText("DATE");
         jLabel16.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 80, 30));
 
-        View_Shop_Filter_quantity.setBackground(new java.awt.Color(0, 230, 184));
+        View_Shop_Filter_quantity.setBackground(new java.awt.Color(42, 162, 162));
         View_Shop_Filter_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Shop_Filter_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Shop_Filter_quantity.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -324,13 +260,80 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "FILTER / PART INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1000, 470));
 
-        ViewCart.setBackground(new java.awt.Color(102, 204, 255));
+        ViewAdd.setBackground(new java.awt.Color(0, 153, 51));
+        ViewAdd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+
+        AddToCart.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        AddToCart.setForeground(new java.awt.Color(255, 255, 255));
+        AddToCart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        AddToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
+        AddToCart.setText(" ADD THIS TO CART ");
+        AddToCart.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddToCartMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AddToCartMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AddToCartMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ViewAddLayout = new javax.swing.GroupLayout(ViewAdd);
+        ViewAdd.setLayout(ViewAddLayout);
+        ViewAddLayout.setHorizontalGroup(
+            ViewAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AddToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+        );
+        ViewAddLayout.setVerticalGroup(
+            ViewAddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AddToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+        KG2_ADD_STOCK_GENSET.add(ViewAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 210, 50));
+
+        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
+        Stock_Genset_Panel_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+
+        CartBack.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        CartBack.setForeground(new java.awt.Color(255, 255, 255));
+        CartBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CartBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        CartBack.setText(" BACK");
+        CartBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CartBackMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CartBackMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CartBackMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Stock_Genset_Panel_BackLayout = new javax.swing.GroupLayout(Stock_Genset_Panel_Back);
+        Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
+        Stock_Genset_Panel_BackLayout.setHorizontalGroup(
+            Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CartBack, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+        );
+        Stock_Genset_Panel_BackLayout.setVerticalGroup(
+            Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(CartBack, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 530, 210, 50));
+
+        ViewCart.setBackground(new java.awt.Color(0, 128, 255));
+        ViewCart.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         GoToCart.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         GoToCart.setForeground(new java.awt.Color(255, 255, 255));
         GoToCart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GoToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        GoToCart.setText(" GO TO CART");
+        GoToCart.setText(" GO TO MY CART");
         GoToCart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 GoToCartMouseClicked(evt);
@@ -347,22 +350,23 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         ViewCart.setLayout(ViewCartLayout);
         ViewCartLayout.setHorizontalGroup(
             ViewCartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(GoToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(GoToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         ViewCartLayout.setVerticalGroup(
             ViewCartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(GoToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(GoToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(ViewCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(ViewCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 210, 50));
 
-        ViewAdd1.setBackground(new java.awt.Color(102, 255, 102));
+        ViewAdd1.setBackground(new java.awt.Color(255, 51, 153));
+        ViewAdd1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         OTHERS.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         OTHERS.setForeground(new java.awt.Color(255, 255, 255));
         OTHERS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         OTHERS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
-        OTHERS.setText(" OTHERS");
+        OTHERS.setText("ADD SOMETHING");
         OTHERS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OTHERSMouseClicked(evt);
@@ -379,14 +383,14 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         ViewAdd1.setLayout(ViewAdd1Layout);
         ViewAdd1Layout.setHorizontalGroup(
             ViewAdd1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(OTHERS, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(OTHERS, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         ViewAdd1Layout.setVerticalGroup(
             ViewAdd1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(OTHERS, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(OTHERS, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(ViewAdd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(ViewAdd1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, 210, 50));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 

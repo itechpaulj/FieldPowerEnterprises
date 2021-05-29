@@ -48,20 +48,20 @@ public class History_Genset_Customer extends javax.swing.JFrame {
         Display_Customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Display_Customer.setText("CUSTOMER INFROMATION");
         Display_Customer.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Display_CustomerAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Display_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 430, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Insert_Customer_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N

@@ -75,8 +75,8 @@ public class year extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 74));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Panel_Energized_Energized_Back.setBackground(new java.awt.Color(255, 194, 102));
@@ -143,29 +143,36 @@ public class year extends javax.swing.JFrame {
 
         kGradientPanel1.add(Pane_Energized_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 150, -1));
 
+        yr.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         yr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 yrActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, 30));
+        kGradientPanel1.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 190, 30));
 
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setText("PREVIOUS QUOTATION :");
-        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 150, 30));
+        kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 180, 30));
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setText("QUOTATION # :");
-        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 150, 30));
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 180, 30));
 
+        quot_number.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         quot_number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 quot_numberActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(quot_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 150, 30));
+        kGradientPanel1.add(quot_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 190, 30));
 
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("SELECTED YEAR:");
-        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 150, 30));
-        kGradientPanel1.add(prev_quo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 150, 30));
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 180, 30));
+
+        prev_quo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        kGradientPanel1.add(prev_quo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 190, 30));
 
         yearCompared.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         yearCompared.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

@@ -62,12 +62,12 @@ public class AddCart extends javax.swing.JFrame {
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         displays.setText("CART LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 displaysAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 570, 80));
@@ -92,8 +92,8 @@ public class AddCart extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         kGradientPanel1.add(Cart_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 120, 30));
 
@@ -120,7 +120,8 @@ public class AddCart extends javax.swing.JFrame {
 
         kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 980, 420));
 
-        update_panel_supplier.setBackground(new java.awt.Color(51, 187, 255));
+        update_panel_supplier.setBackground(new java.awt.Color(0, 102, 255));
+        update_panel_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Back1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Back1.setForeground(new java.awt.Color(255, 255, 255));
@@ -143,18 +144,17 @@ public class AddCart extends javax.swing.JFrame {
         update_panel_supplier.setLayout(update_panel_supplierLayout);
         update_panel_supplierLayout.setHorizontalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(update_panel_supplierLayout.createSequentialGroup()
-                .addComponent(Back1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 34, Short.MAX_VALUE))
+            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         update_panel_supplierLayout.setVerticalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 540, 200, 50));
+        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 210, 50));
 
         delete_panel_supplier.setBackground(new java.awt.Color(255, 77, 77));
+        delete_panel_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         sup_del.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         sup_del.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,18 +177,17 @@ public class AddCart extends javax.swing.JFrame {
         delete_panel_supplier.setLayout(delete_panel_supplierLayout);
         delete_panel_supplierLayout.setHorizontalGroup(
             delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(delete_panel_supplierLayout.createSequentialGroup()
-                .addComponent(sup_del, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 27, Short.MAX_VALUE))
+            .addComponent(sup_del, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         delete_panel_supplierLayout.setVerticalGroup(
             delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sup_del, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(sup_del, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(delete_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 540, 200, 50));
+        kGradientPanel1.add(delete_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 540, 210, 50));
 
-        back_panel_supplier.setBackground(new java.awt.Color(255, 194, 102));
+        back_panel_supplier.setBackground(new java.awt.Color(255, 173, 51));
+        back_panel_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Back.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Back.setForeground(new java.awt.Color(255, 255, 255));
@@ -211,16 +210,14 @@ public class AddCart extends javax.swing.JFrame {
         back_panel_supplier.setLayout(back_panel_supplierLayout);
         back_panel_supplierLayout.setHorizontalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(back_panel_supplierLayout.createSequentialGroup()
-                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 32, Short.MAX_VALUE))
+            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         back_panel_supplierLayout.setVerticalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, 200, 50));
+        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 210, 50));
 
         Supplier_Search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_Search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -229,11 +226,11 @@ public class AddCart extends javax.swing.JFrame {
                 Supplier_SearchKeyPressed(evt);
             }
         });
-        kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
+        kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 35));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Search_Btn.png"))); // NOI18N
-        kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+        kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 35));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1060, 630));
 

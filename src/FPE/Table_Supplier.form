@@ -70,10 +70,10 @@
     <Container class="keeptoo.KGradientPanel" name="kGradientPanel1">
       <Properties>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="b8" green="e6" red="0" type="rgb"/>
+          <Color blue="a2" green="a2" red="2a" type="rgb"/>
         </Property>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="b8" green="e6" red="0" type="rgb"/>
+          <Color blue="a2" green="a2" red="2a" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -145,7 +145,14 @@
         <Container class="javax.swing.JPanel" name="add_panel_supplier">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="77" green="ff" red="33" type="rgb"/>
+              <Color blue="33" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="1a" green="f6" red="f3" type="rgb"/>
+                </LineBorder>
+              </Border>
             </Property>
           </Properties>
           <AuxValues>
@@ -160,12 +167,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Add" alignment="0" pref="200" max="32767" attributes="0"/>
+                  <Component id="Add" alignment="0" pref="198" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Add" alignment="0" pref="50" max="32767" attributes="0"/>
+                  <Component id="Add" alignment="0" pref="48" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -200,6 +207,13 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="bb" red="33" type="rgb"/>
             </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="1a" green="f6" red="f3" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -218,7 +232,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="sup_listUpdate" alignment="0" pref="50" max="32767" attributes="0"/>
+                  <Component id="sup_listUpdate" alignment="0" pref="48" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -253,6 +267,13 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4d" green="4d" red="ff" type="rgb"/>
             </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="1a" green="f6" red="f3" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
@@ -266,12 +287,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="sup_del" alignment="0" pref="200" max="32767" attributes="0"/>
+                  <Component id="sup_del" alignment="0" pref="198" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="sup_del" alignment="0" pref="50" max="32767" attributes="0"/>
+                  <Component id="sup_del" alignment="0" pref="48" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -304,7 +325,14 @@
         <Container class="javax.swing.JPanel" name="back_panel_supplier">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="c2" red="ff" type="rgb"/>
+              <Color blue="33" green="ad" red="ff" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="1a" green="f6" red="f3" type="rgb"/>
+                </LineBorder>
+              </Border>
             </Property>
           </Properties>
           <AuxValues>
@@ -319,12 +347,12 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Back" alignment="0" pref="200" max="32767" attributes="0"/>
+                  <Component id="Back" alignment="0" pref="198" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Back" alignment="0" pref="50" max="32767" attributes="0"/>
+                  <Component id="Back" alignment="0" pref="48" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -339,7 +367,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Back_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Images_Images_Back_Btn.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" BACK  "/>
               </Properties>

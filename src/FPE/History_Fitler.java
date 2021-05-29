@@ -69,9 +69,10 @@ public class History_Fitler extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(0, 230, 184));
+        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 162, 162));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
-        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(0, 230, 184));
+        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 162, 162));
+        KG2_ADD_STOCK_GENSET.setkTransparentControls(false);
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         History_Shop_Filter_description.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
@@ -191,7 +192,7 @@ public class History_Fitler extends javax.swing.JFrame {
         History_Shop_Filter_quantity.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(History_Shop_Filter_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 60, 200, 30));
 
-        View_Shop_Filter_input_quantity.setBackground(new java.awt.Color(0, 230, 184));
+        View_Shop_Filter_input_quantity.setBackground(new java.awt.Color(42, 162, 162));
         View_Shop_Filter_input_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Shop_Filter_input_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Shop_Filter_input_quantity.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -221,7 +222,8 @@ public class History_Fitler extends javax.swing.JFrame {
         jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "FILTER / PART INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1000, 470));
 
-        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
+        Stock_Genset_Panel_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         history_genset_back.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         history_genset_back.setForeground(new java.awt.Color(255, 255, 255));
@@ -244,16 +246,17 @@ public class History_Fitler extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 210, 50));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
+        Stock_Genset_Panel_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         history_genset_return_item.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         history_genset_return_item.setForeground(new java.awt.Color(255, 255, 255));
@@ -276,22 +279,23 @@ public class History_Fitler extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(history_genset_return_item, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(history_genset_return_item, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(history_genset_return_item, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(history_genset_return_item, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 530, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 210, 50));
 
-        Stock_Genset_Panel_Back1.setBackground(new java.awt.Color(255, 194, 102));
+        Stock_Genset_Panel_Back1.setBackground(new java.awt.Color(51, 153, 102));
+        Stock_Genset_Panel_Back1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         history_genset_customer.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         history_genset_customer.setForeground(new java.awt.Color(255, 255, 255));
         history_genset_customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_customer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        history_genset_customer.setText(" CUSTOMER");
+        history_genset_customer.setText(" VIEW CUSTOMER");
         history_genset_customer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 history_genset_customerMouseClicked(evt);
@@ -308,14 +312,14 @@ public class History_Fitler extends javax.swing.JFrame {
         Stock_Genset_Panel_Back1.setLayout(Stock_Genset_Panel_Back1Layout);
         Stock_Genset_Panel_Back1Layout.setHorizontalGroup(
             Stock_Genset_Panel_Back1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(history_genset_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(history_genset_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_Back1Layout.setVerticalGroup(
             Stock_Genset_Panel_Back1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(history_genset_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(history_genset_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 530, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 530, 210, 50));
         KG2_ADD_STOCK_GENSET.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 10, 80, 20));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
@@ -328,12 +332,12 @@ public class History_Fitler extends javax.swing.JFrame {
         History_Genset_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         History_Genset_Display.setText("ORDERED FILTER");
         History_Genset_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 History_Genset_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(History_Genset_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 80));

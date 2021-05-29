@@ -29,11 +29,11 @@
     <Container class="keeptoo.KGradientPanel" name="KG2_ADD_STOCK_GENSET">
       <Properties>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="b8" green="e6" red="0" type="rgb"/>
+          <Color blue="a2" green="a2" red="2a" type="rgb"/>
         </Property>
         <Property name="kGradientFocus" type="int" value="700"/>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="b8" green="e6" red="0" type="rgb"/>
+          <Color blue="a2" green="a2" red="2a" type="rgb"/>
         </Property>
         <Property name="kTransparentControls" type="boolean" value="false"/>
       </Properties>
@@ -250,7 +250,7 @@
         <Component class="javax.swing.JTextField" name="View_Shop_Filter_quantity">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="b8" green="e6" red="0" type="rgb"/>
+              <Color blue="a2" green="a2" red="2a" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
@@ -460,14 +460,14 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="430" y="540" width="190" height="50"/>
+              <AbsoluteConstraints x="420" y="540" width="210" height="50"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="history_genset_back" alignment="0" pref="190" max="32767" attributes="0"/>
+                  <Component id="history_genset_back" alignment="0" pref="210" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">

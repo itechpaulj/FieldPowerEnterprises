@@ -258,13 +258,19 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Customer_list8 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
         Bin_Genset_Table = new javax.swing.JTable();
+        bin_genset_id = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
         BIN_FILTER_13 = new keeptoo.KGradientPanel();
-        Shop_Genset_Panel_Customer9 = new javax.swing.JPanel();
-        Shop_Genset_Customer_list9 = new javax.swing.JLabel();
-        Shop_Genset_Panel_Customer10 = new javax.swing.JPanel();
-        Shop_Genset_Customer_list10 = new javax.swing.JLabel();
         jScrollPane12 = new javax.swing.JScrollPane();
         Bin_Filter_Table = new javax.swing.JTable();
+        Shop_Genset_Panel_Customer13 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list11 = new javax.swing.JLabel();
+        Shop_Genset_Panel_Customer14 = new javax.swing.JPanel();
+        Shop_Genset_Customer_list12 = new javax.swing.JLabel();
+        bin_filter_id = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
         STATUS_14 = new keeptoo.KGradientPanel();
         HOME_PANEL9 = new javax.swing.JPanel();
         Sale_Genset_Btn = new javax.swing.JLabel();
@@ -532,9 +538,9 @@ public class Mainpage extends javax.swing.JFrame {
         getContentPane().add(HEADER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1364, 120));
 
         HOME_0.setBackground(new java.awt.Color(0, 79, 153));
-        HOME_0.setkEndColor(new java.awt.Color(0, 230, 184));
+        HOME_0.setkEndColor(new java.awt.Color(42, 162, 162));
         HOME_0.setkGradientFocus(700);
-        HOME_0.setkStartColor(new java.awt.Color(0, 230, 184));
+        HOME_0.setkStartColor(new java.awt.Color(42, 162, 162));
         HOME_0.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         fpe_home.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
@@ -544,9 +550,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("1", HOME_0);
 
-        STOCK_1.setkEndColor(new java.awt.Color(0, 230, 184));
+        STOCK_1.setkEndColor(new java.awt.Color(42, 162, 162));
         STOCK_1.setkGradientFocus(700);
-        STOCK_1.setkStartColor(new java.awt.Color(0, 230, 184));
+        STOCK_1.setkStartColor(new java.awt.Color(42, 162, 162));
         STOCK_1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Stock_Filter.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
@@ -639,9 +645,7 @@ public class Mainpage extends javax.swing.JFrame {
         HOME_PANEL2.setLayout(HOME_PANEL2Layout);
         HOME_PANEL2Layout.setHorizontalGroup(
             HOME_PANEL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HOME_PANEL2Layout.createSequentialGroup()
-                .addGap(0, 45, Short.MAX_VALUE)
-                .addComponent(Stock_Genset_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Stock_Genset_Btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         HOME_PANEL2Layout.setVerticalGroup(
             HOME_PANEL2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -652,12 +656,13 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("1", STOCK_1);
 
-        STOCK_GENSET_2.setkEndColor(new java.awt.Color(0, 230, 184));
+        STOCK_GENSET_2.setkEndColor(new java.awt.Color(42, 162, 162));
         STOCK_GENSET_2.setkGradientFocus(700);
-        STOCK_GENSET_2.setkStartColor(new java.awt.Color(0, 230, 184));
+        STOCK_GENSET_2.setkStartColor(new java.awt.Color(42, 162, 162));
         STOCK_GENSET_2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Stock_Genset_Panel_Add.setBackground(new java.awt.Color(51, 255, 119));
+        Stock_Genset_Panel_Add.setBackground(new java.awt.Color(0, 153, 51));
+        Stock_Genset_Panel_Add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_Add.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Add.setForeground(new java.awt.Color(255, 255, 255));
@@ -680,16 +685,17 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Genset_Panel_Add.setLayout(Stock_Genset_Panel_AddLayout);
         Stock_Genset_Panel_AddLayout.setHorizontalGroup(
             Stock_Genset_Panel_AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Add, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Add, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_AddLayout.setVerticalGroup(
             Stock_Genset_Panel_AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Add, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Add, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        STOCK_GENSET_2.add(Stock_Genset_Panel_Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 190, 50));
+        STOCK_GENSET_2.add(Stock_Genset_Panel_Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 210, 50));
 
-        Stock_Genset_Panel_Supplier.setBackground(new java.awt.Color(133, 173, 173));
+        Stock_Genset_Panel_Supplier.setBackground(new java.awt.Color(153, 153, 102));
+        Stock_Genset_Panel_Supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_Supplier.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Supplier.setForeground(new java.awt.Color(255, 255, 255));
@@ -712,21 +718,22 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Genset_Panel_Supplier.setLayout(Stock_Genset_Panel_SupplierLayout);
         Stock_Genset_Panel_SupplierLayout.setHorizontalGroup(
             Stock_Genset_Panel_SupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_SupplierLayout.setVerticalGroup(
             Stock_Genset_Panel_SupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        STOCK_GENSET_2.add(Stock_Genset_Panel_Supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 190, 50));
+        STOCK_GENSET_2.add(Stock_Genset_Panel_Supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 210, 50));
 
-        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
+        Stock_Genset_Panel_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back_Btn.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
         Stock_Genset_Back.setText("   BACK       ");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -744,14 +751,16 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addGroup(Stock_Genset_Panel_BackLayout.createSequentialGroup()
+                .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 42, Short.MAX_VALUE))
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        STOCK_GENSET_2.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, 190, 50));
+        STOCK_GENSET_2.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, 210, 50));
 
         Stock_Genset_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -787,7 +796,8 @@ public class Mainpage extends javax.swing.JFrame {
         });
         STOCK_GENSET_2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
-        Stock_Genset_Panel_View.setBackground(new java.awt.Color(255, 153, 153));
+        Stock_Genset_Panel_View.setBackground(new java.awt.Color(0, 102, 102));
+        Stock_Genset_Panel_View.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_View.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_View.setForeground(new java.awt.Color(255, 255, 255));
@@ -810,20 +820,20 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Genset_Panel_View.setLayout(Stock_Genset_Panel_ViewLayout);
         Stock_Genset_Panel_ViewLayout.setHorizontalGroup(
             Stock_Genset_Panel_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_View, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_View, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_ViewLayout.setVerticalGroup(
             Stock_Genset_Panel_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_View, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_View, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        STOCK_GENSET_2.add(Stock_Genset_Panel_View, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, 190, 50));
+        STOCK_GENSET_2.add(Stock_Genset_Panel_View, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 210, 50));
 
         JTab.addTab("2", STOCK_GENSET_2);
 
-        STOCK_FILTER_3.setkEndColor(new java.awt.Color(0, 230, 184));
+        STOCK_FILTER_3.setkEndColor(new java.awt.Color(42, 162, 162));
         STOCK_FILTER_3.setkGradientFocus(700);
-        STOCK_FILTER_3.setkStartColor(new java.awt.Color(0, 230, 184));
+        STOCK_FILTER_3.setkStartColor(new java.awt.Color(42, 162, 162));
         STOCK_FILTER_3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Stock_Filter_Table.setModel(new javax.swing.table.DefaultTableModel(
@@ -856,7 +866,8 @@ public class Mainpage extends javax.swing.JFrame {
         });
         STOCK_FILTER_3.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
-        Stock_Filter_Panel_Supplier.setBackground(new java.awt.Color(133, 173, 173));
+        Stock_Filter_Panel_Supplier.setBackground(new java.awt.Color(153, 153, 102));
+        Stock_Filter_Panel_Supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Filter_supplier_list.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Filter_supplier_list.setForeground(new java.awt.Color(255, 255, 255));
@@ -879,16 +890,17 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Filter_Panel_Supplier.setLayout(Stock_Filter_Panel_SupplierLayout);
         Stock_Filter_Panel_SupplierLayout.setHorizontalGroup(
             Stock_Filter_Panel_SupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_supplier_list, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Filter_supplier_list, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Filter_Panel_SupplierLayout.setVerticalGroup(
             Stock_Filter_Panel_SupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_supplier_list, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Filter_supplier_list, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        STOCK_FILTER_3.add(Stock_Filter_Panel_Supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 190, 50));
+        STOCK_FILTER_3.add(Stock_Filter_Panel_Supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 210, 50));
 
-        Stock_Filter_Panel_Add.setBackground(new java.awt.Color(51, 255, 119));
+        Stock_Filter_Panel_Add.setBackground(new java.awt.Color(0, 153, 51));
+        Stock_Filter_Panel_Add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Filter_Add.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Filter_Add.setForeground(new java.awt.Color(255, 255, 255));
@@ -911,16 +923,17 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Filter_Panel_Add.setLayout(Stock_Filter_Panel_AddLayout);
         Stock_Filter_Panel_AddLayout.setHorizontalGroup(
             Stock_Filter_Panel_AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_Add, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Filter_Add, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Filter_Panel_AddLayout.setVerticalGroup(
             Stock_Filter_Panel_AddLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_Add, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Filter_Add, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        STOCK_FILTER_3.add(Stock_Filter_Panel_Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 190, 50));
+        STOCK_FILTER_3.add(Stock_Filter_Panel_Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 210, 50));
 
-        Stock_Filter_Panel_view.setBackground(new java.awt.Color(255, 153, 153));
+        Stock_Filter_Panel_view.setBackground(new java.awt.Color(0, 102, 102));
+        Stock_Filter_Panel_view.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Filter_view.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Filter_view.setForeground(new java.awt.Color(255, 255, 255));
@@ -943,21 +956,22 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Filter_Panel_view.setLayout(Stock_Filter_Panel_viewLayout);
         Stock_Filter_Panel_viewLayout.setHorizontalGroup(
             Stock_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Filter_Panel_viewLayout.setVerticalGroup(
             Stock_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        STOCK_FILTER_3.add(Stock_Filter_Panel_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 530, 190, 50));
+        STOCK_FILTER_3.add(Stock_Filter_Panel_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 210, 50));
 
-        Stock_Filter_Panel_back.setBackground(new java.awt.Color(255, 194, 102));
+        Stock_Filter_Panel_back.setBackground(new java.awt.Color(255, 173, 51));
+        Stock_Filter_Panel_back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Filter_back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Filter_back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Filter_back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Filter_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back_Btn.png"))); // NOI18N
+        Stock_Filter_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
         Stock_Filter_back.setText("   BACK   ");
         Stock_Filter_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -975,14 +989,14 @@ public class Mainpage extends javax.swing.JFrame {
         Stock_Filter_Panel_back.setLayout(Stock_Filter_Panel_backLayout);
         Stock_Filter_Panel_backLayout.setHorizontalGroup(
             Stock_Filter_Panel_backLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Filter_Panel_backLayout.setVerticalGroup(
             Stock_Filter_Panel_backLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        STOCK_FILTER_3.add(Stock_Filter_Panel_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, 190, 50));
+        STOCK_FILTER_3.add(Stock_Filter_Panel_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, 210, 50));
 
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
@@ -990,9 +1004,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("3", STOCK_FILTER_3);
 
-        SHOP_4.setkEndColor(new java.awt.Color(0, 230, 184));
+        SHOP_4.setkEndColor(new java.awt.Color(42, 162, 162));
         SHOP_4.setkGradientFocus(700);
-        SHOP_4.setkStartColor(new java.awt.Color(0, 230, 184));
+        SHOP_4.setkStartColor(new java.awt.Color(42, 162, 162));
         SHOP_4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Shop_Genset.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
@@ -1095,9 +1109,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("4", SHOP_4);
 
-        SHOP_GENSET_5.setkEndColor(new java.awt.Color(0, 230, 184));
+        SHOP_GENSET_5.setkEndColor(new java.awt.Color(42, 162, 162));
         SHOP_GENSET_5.setkGradientFocus(700);
-        SHOP_GENSET_5.setkStartColor(new java.awt.Color(0, 230, 184));
+        SHOP_GENSET_5.setkStartColor(new java.awt.Color(42, 162, 162));
         SHOP_GENSET_5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Shop_Genset_Table.setModel(new javax.swing.table.DefaultTableModel(
@@ -1130,12 +1144,13 @@ public class Mainpage extends javax.swing.JFrame {
         });
         SHOP_GENSET_5.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
-        Shop_Genset_Panel_back.setBackground(new java.awt.Color(255, 194, 102));
+        Shop_Genset_Panel_back.setBackground(new java.awt.Color(255, 173, 51));
+        Shop_Genset_Panel_back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Panel_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Panel_Back.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Genset_Panel_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Genset_Panel_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back_Btn.png"))); // NOI18N
+        Shop_Genset_Panel_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
         Shop_Genset_Panel_Back.setText("   BACK   ");
         Shop_Genset_Panel_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1153,16 +1168,17 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_back.setLayout(Shop_Genset_Panel_backLayout);
         Shop_Genset_Panel_backLayout.setHorizontalGroup(
             Shop_Genset_Panel_backLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Panel_Back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Panel_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_backLayout.setVerticalGroup(
             Shop_Genset_Panel_backLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Panel_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Panel_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SHOP_GENSET_5.add(Shop_Genset_Panel_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 200, 50));
+        SHOP_GENSET_5.add(Shop_Genset_Panel_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 210, 50));
 
-        Shop_Genset_Panel_view.setBackground(new java.awt.Color(255, 153, 153));
+        Shop_Genset_Panel_view.setBackground(new java.awt.Color(0, 102, 102));
+        Shop_Genset_Panel_view.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Gensetr_view.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Gensetr_view.setForeground(new java.awt.Color(255, 255, 255));
@@ -1185,18 +1201,17 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_view.setLayout(Shop_Genset_Panel_viewLayout);
         Shop_Genset_Panel_viewLayout.setHorizontalGroup(
             Shop_Genset_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Shop_Genset_Panel_viewLayout.createSequentialGroup()
-                .addComponent(Shop_Gensetr_view, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Shop_Gensetr_view, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_viewLayout.setVerticalGroup(
             Shop_Genset_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Gensetr_view, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Gensetr_view, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SHOP_GENSET_5.add(Shop_Genset_Panel_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 530, 200, 50));
+        SHOP_GENSET_5.add(Shop_Genset_Panel_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 210, 50));
 
-        Shop_Genset_Panel_Customer.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Genset_Panel_Customer.setBackground(new java.awt.Color(51, 153, 102));
+        Shop_Genset_Panel_Customer.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Customer_list.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Customer_list.setForeground(new java.awt.Color(255, 255, 255));
@@ -1219,16 +1234,14 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer.setLayout(Shop_Genset_Panel_CustomerLayout);
         Shop_Genset_Panel_CustomerLayout.setHorizontalGroup(
             Shop_Genset_Panel_CustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Shop_Genset_Panel_CustomerLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Shop_Genset_Customer_list, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(Shop_Genset_Customer_list, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_CustomerLayout.setVerticalGroup(
             Shop_Genset_Panel_CustomerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SHOP_GENSET_5.add(Shop_Genset_Panel_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 530, 200, 50));
+        SHOP_GENSET_5.add(Shop_Genset_Panel_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 210, 50));
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
@@ -1236,9 +1249,9 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("5", SHOP_GENSET_5);
 
-        SHOP_FILTER_6.setkEndColor(new java.awt.Color(0, 230, 184));
+        SHOP_FILTER_6.setkEndColor(new java.awt.Color(42, 162, 162));
         SHOP_FILTER_6.setkGradientFocus(700);
-        SHOP_FILTER_6.setkStartColor(new java.awt.Color(0, 230, 184));
+        SHOP_FILTER_6.setkStartColor(new java.awt.Color(42, 162, 162));
         SHOP_FILTER_6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Shop_Filter_Table.setModel(new javax.swing.table.DefaultTableModel(
@@ -1270,12 +1283,13 @@ public class Mainpage extends javax.swing.JFrame {
         });
         SHOP_FILTER_6.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
 
-        Shop_Filter_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Shop_Filter_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
+        Shop_Filter_Panel_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Filter_back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Filter_back.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Filter_back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Filter_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back_Btn.png"))); // NOI18N
+        Shop_Filter_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
         Shop_Filter_back.setText("   BACK   ");
         Shop_Filter_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1293,16 +1307,17 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Filter_Panel_Back.setLayout(Shop_Filter_Panel_BackLayout);
         Shop_Filter_Panel_BackLayout.setHorizontalGroup(
             Shop_Filter_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(Shop_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Filter_Panel_BackLayout.setVerticalGroup(
             Shop_Filter_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Filter_back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SHOP_FILTER_6.add(Shop_Filter_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, 200, 50));
+        SHOP_FILTER_6.add(Shop_Filter_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, 210, 50));
 
-        Shop_Filter_Panel_view.setBackground(new java.awt.Color(255, 153, 153));
+        Shop_Filter_Panel_view.setBackground(new java.awt.Color(0, 102, 102));
+        Shop_Filter_Panel_view.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Filter_view.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Filter_view.setForeground(new java.awt.Color(255, 255, 255));
@@ -1325,16 +1340,17 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Filter_Panel_view.setLayout(Shop_Filter_Panel_viewLayout);
         Shop_Filter_Panel_viewLayout.setHorizontalGroup(
             Shop_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(Shop_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Filter_Panel_viewLayout.setVerticalGroup(
             Shop_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SHOP_FILTER_6.add(Shop_Filter_Panel_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 530, 200, 50));
+        SHOP_FILTER_6.add(Shop_Filter_Panel_view, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 210, 50));
 
-        Shop_Filter_Panel_Customer_list.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Filter_Panel_Customer_list.setBackground(new java.awt.Color(51, 153, 102));
+        Shop_Filter_Panel_Customer_list.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Filter_customer.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Filter_customer.setForeground(new java.awt.Color(255, 255, 255));
@@ -1357,20 +1373,21 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Filter_Panel_Customer_list.setLayout(Shop_Filter_Panel_Customer_listLayout);
         Shop_Filter_Panel_Customer_listLayout.setHorizontalGroup(
             Shop_Filter_Panel_Customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Filter_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(Shop_Filter_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Filter_Panel_Customer_listLayout.setVerticalGroup(
             Shop_Filter_Panel_Customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Filter_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Filter_customer, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SHOP_FILTER_6.add(Shop_Filter_Panel_Customer_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 530, 200, 50));
+        SHOP_FILTER_6.add(Shop_Filter_Panel_Customer_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 210, 50));
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
         SHOP_FILTER_6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
-        update_panel_supplier.setBackground(new java.awt.Color(51, 187, 255));
+        update_panel_supplier.setBackground(new java.awt.Color(0, 102, 255));
+        update_panel_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Back1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Back1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1393,16 +1410,14 @@ public class Mainpage extends javax.swing.JFrame {
         update_panel_supplier.setLayout(update_panel_supplierLayout);
         update_panel_supplierLayout.setHorizontalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(update_panel_supplierLayout.createSequentialGroup()
-                .addComponent(Back1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         update_panel_supplierLayout.setVerticalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SHOP_FILTER_6.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, 180, 50));
+        SHOP_FILTER_6.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 530, 210, 50));
 
         cartIfEmpty.setText("1");
         SHOP_FILTER_6.add(cartIfEmpty, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 54, 150, 20));
@@ -1410,8 +1425,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("6", SHOP_FILTER_6);
 
-        REPORT_7.setkEndColor(new java.awt.Color(0, 230, 184));
-        REPORT_7.setkStartColor(new java.awt.Color(0, 230, 184));
+        REPORT_7.setkEndColor(new java.awt.Color(42, 162, 162));
+        REPORT_7.setkStartColor(new java.awt.Color(42, 162, 162));
         REPORT_7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HOME_PANEL5.setBackground(new java.awt.Color(0, 117, 128));
@@ -1514,8 +1529,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("7", REPORT_7);
 
-        SALES_8.setkEndColor(new java.awt.Color(0, 230, 184));
-        SALES_8.setkStartColor(new java.awt.Color(0, 230, 184));
+        SALES_8.setkEndColor(new java.awt.Color(42, 162, 162));
+        SALES_8.setkStartColor(new java.awt.Color(42, 162, 162));
         SALES_8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Stock_Genset2.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
@@ -1618,8 +1633,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("8", SALES_8);
 
-        SALES_GENSET_9.setkEndColor(new java.awt.Color(0, 230, 184));
-        SALES_GENSET_9.setkStartColor(new java.awt.Color(0, 230, 184));
+        SALES_GENSET_9.setkEndColor(new java.awt.Color(42, 162, 162));
+        SALES_GENSET_9.setkStartColor(new java.awt.Color(42, 162, 162));
         SALES_GENSET_9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         history_genset_table.setModel(new javax.swing.table.DefaultTableModel(
@@ -1642,7 +1657,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         SALES_GENSET_9.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1070, 420));
 
-        Shop_Genset_Panel_Customer5.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Genset_Panel_Customer5.setBackground(new java.awt.Color(255, 173, 51));
+        Shop_Genset_Panel_Customer5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Customer_list5.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Customer_list5.setForeground(new java.awt.Color(255, 255, 255));
@@ -1665,18 +1681,17 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer5.setLayout(Shop_Genset_Panel_Customer5Layout);
         Shop_Genset_Panel_Customer5Layout.setHorizontalGroup(
             Shop_Genset_Panel_Customer5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Shop_Genset_Panel_Customer5Layout.createSequentialGroup()
-                .addComponent(Shop_Genset_Customer_list5, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 44, Short.MAX_VALUE))
+            .addComponent(Shop_Genset_Customer_list5, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_Customer5Layout.setVerticalGroup(
             Shop_Genset_Panel_Customer5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list5, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SALES_GENSET_9.add(Shop_Genset_Panel_Customer5, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 210, 50));
+        SALES_GENSET_9.add(Shop_Genset_Panel_Customer5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 210, 50));
 
-        Shop_Genset_Panel_Customer6.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Genset_Panel_Customer6.setBackground(new java.awt.Color(0, 102, 102));
+        Shop_Genset_Panel_Customer6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Customer_list6.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Customer_list6.setForeground(new java.awt.Color(255, 255, 255));
@@ -1699,17 +1714,18 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer6.setLayout(Shop_Genset_Panel_Customer6Layout);
         Shop_Genset_Panel_Customer6Layout.setHorizontalGroup(
             Shop_Genset_Panel_Customer6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list6, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list6, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_Customer6Layout.setVerticalGroup(
             Shop_Genset_Panel_Customer6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list6, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list6, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SALES_GENSET_9.add(Shop_Genset_Panel_Customer6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 210, 50));
+        SALES_GENSET_9.add(Shop_Genset_Panel_Customer6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, 210, 50));
         SALES_GENSET_9.add(history_id_genset, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 50, 30));
 
-        Shop_Genset_Panel_Customer12.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Genset_Panel_Customer12.setBackground(new java.awt.Color(255, 159, 128));
+        Shop_Genset_Panel_Customer12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Print_Genset.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Print_Genset.setForeground(new java.awt.Color(255, 255, 255));
@@ -1732,14 +1748,14 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer12.setLayout(Shop_Genset_Panel_Customer12Layout);
         Shop_Genset_Panel_Customer12Layout.setHorizontalGroup(
             Shop_Genset_Panel_Customer12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Print_Genset, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Print_Genset, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_Customer12Layout.setVerticalGroup(
             Shop_Genset_Panel_Customer12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Print_Genset, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Print_Genset, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SALES_GENSET_9.add(Shop_Genset_Panel_Customer12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 210, 50));
+        SALES_GENSET_9.add(Shop_Genset_Panel_Customer12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 210, 50));
 
         history_searched_genset.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -1749,12 +1765,12 @@ public class Mainpage extends javax.swing.JFrame {
                 history_searched_gensetKeyReleased(evt);
             }
         });
-        SALES_GENSET_9.add(history_searched_genset, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 150, 30));
+        SALES_GENSET_9.add(history_searched_genset, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 180, 30));
 
         JTab.addTab("9", SALES_GENSET_9);
 
-        SALES_FILTER_10.setkEndColor(new java.awt.Color(0, 230, 184));
-        SALES_FILTER_10.setkStartColor(new java.awt.Color(0, 230, 184));
+        SALES_FILTER_10.setkEndColor(new java.awt.Color(42, 162, 162));
+        SALES_FILTER_10.setkStartColor(new java.awt.Color(42, 162, 162));
         SALES_FILTER_10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         history_filter_table.setModel(new javax.swing.table.DefaultTableModel(
@@ -1777,7 +1793,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         SALES_FILTER_10.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1070, 420));
 
-        Shop_Genset_Panel_Customer3.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Genset_Panel_Customer3.setBackground(new java.awt.Color(255, 173, 51));
+        Shop_Genset_Panel_Customer3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Customer_list3.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Customer_list3.setForeground(new java.awt.Color(255, 255, 255));
@@ -1800,24 +1817,23 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer3.setLayout(Shop_Genset_Panel_Customer3Layout);
         Shop_Genset_Panel_Customer3Layout.setHorizontalGroup(
             Shop_Genset_Panel_Customer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Shop_Genset_Panel_Customer3Layout.createSequentialGroup()
-                .addComponent(Shop_Genset_Customer_list3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 53, Short.MAX_VALUE))
+            .addComponent(Shop_Genset_Customer_list3, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_Customer3Layout.setVerticalGroup(
             Shop_Genset_Panel_Customer3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list3, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SALES_FILTER_10.add(Shop_Genset_Panel_Customer3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 530, 210, 50));
+        SALES_FILTER_10.add(Shop_Genset_Panel_Customer3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 210, 50));
 
-        Shop_Genset_Panel_Customer4.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Genset_Panel_Customer4.setBackground(new java.awt.Color(0, 102, 102));
+        Shop_Genset_Panel_Customer4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Customer_list4.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Customer_list4.setForeground(new java.awt.Color(255, 255, 255));
         Shop_Genset_Customer_list4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Shop_Genset_Customer_list4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
-        Shop_Genset_Customer_list4.setText("VIEW");
+        Shop_Genset_Customer_list4.setText("VIEW ITEM");
         Shop_Genset_Customer_list4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Shop_Genset_Customer_list4MouseClicked(evt);
@@ -1834,19 +1850,18 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer4.setLayout(Shop_Genset_Panel_Customer4Layout);
         Shop_Genset_Panel_Customer4Layout.setHorizontalGroup(
             Shop_Genset_Panel_Customer4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Shop_Genset_Panel_Customer4Layout.createSequentialGroup()
-                .addComponent(Shop_Genset_Customer_list4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 30, Short.MAX_VALUE))
+            .addComponent(Shop_Genset_Customer_list4, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_Customer4Layout.setVerticalGroup(
             Shop_Genset_Panel_Customer4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list4, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SALES_FILTER_10.add(Shop_Genset_Panel_Customer4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 530, 210, 50));
+        SALES_FILTER_10.add(Shop_Genset_Panel_Customer4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, 210, 50));
         SALES_FILTER_10.add(history_id_filter, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 54, 50, 20));
 
-        Shop_Genset_Panel_Customer11.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Genset_Panel_Customer11.setBackground(new java.awt.Color(255, 159, 128));
+        Shop_Genset_Panel_Customer11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Print_Filter.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Print_Filter.setForeground(new java.awt.Color(255, 255, 255));
@@ -1869,16 +1884,14 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer11.setLayout(Shop_Genset_Panel_Customer11Layout);
         Shop_Genset_Panel_Customer11Layout.setHorizontalGroup(
             Shop_Genset_Panel_Customer11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Shop_Genset_Panel_Customer11Layout.createSequentialGroup()
-                .addComponent(Shop_Genset_Print_Filter, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 53, Short.MAX_VALUE))
+            .addComponent(Shop_Genset_Print_Filter, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_Customer11Layout.setVerticalGroup(
             Shop_Genset_Panel_Customer11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Print_Filter, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Print_Filter, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        SALES_FILTER_10.add(Shop_Genset_Panel_Customer11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 210, 50));
+        SALES_FILTER_10.add(Shop_Genset_Panel_Customer11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 210, 50));
 
         history_searched_filter.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1889,8 +1902,8 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("10", SALES_FILTER_10);
 
-        BIN_11.setkEndColor(new java.awt.Color(0, 230, 184));
-        BIN_11.setkStartColor(new java.awt.Color(0, 230, 184));
+        BIN_11.setkEndColor(new java.awt.Color(42, 162, 162));
+        BIN_11.setkStartColor(new java.awt.Color(42, 162, 162));
         BIN_11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HOME_PANEL7.setBackground(new java.awt.Color(0, 117, 128));
@@ -1993,11 +2006,12 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("11", BIN_11);
 
-        BIN_GENSET_12.setkEndColor(new java.awt.Color(0, 230, 184));
-        BIN_GENSET_12.setkStartColor(new java.awt.Color(0, 230, 184));
+        BIN_GENSET_12.setkEndColor(new java.awt.Color(42, 162, 162));
+        BIN_GENSET_12.setkStartColor(new java.awt.Color(42, 162, 162));
         BIN_GENSET_12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Shop_Genset_Panel_Customer7.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Genset_Panel_Customer7.setBackground(new java.awt.Color(0, 102, 102));
+        Shop_Genset_Panel_Customer7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Customer_list7.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Customer_list7.setForeground(new java.awt.Color(255, 255, 255));
@@ -2020,16 +2034,17 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer7.setLayout(Shop_Genset_Panel_Customer7Layout);
         Shop_Genset_Panel_Customer7Layout.setHorizontalGroup(
             Shop_Genset_Panel_Customer7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list7, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list7, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_Customer7Layout.setVerticalGroup(
             Shop_Genset_Panel_Customer7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list7, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        BIN_GENSET_12.add(Shop_Genset_Panel_Customer7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 210, 50));
+        BIN_GENSET_12.add(Shop_Genset_Panel_Customer7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 210, 50));
 
-        Shop_Genset_Panel_Customer8.setBackground(new java.awt.Color(133, 173, 173));
+        Shop_Genset_Panel_Customer8.setBackground(new java.awt.Color(255, 173, 51));
+        Shop_Genset_Panel_Customer8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Shop_Genset_Customer_list8.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Shop_Genset_Customer_list8.setForeground(new java.awt.Color(255, 255, 255));
@@ -2052,14 +2067,14 @@ public class Mainpage extends javax.swing.JFrame {
         Shop_Genset_Panel_Customer8.setLayout(Shop_Genset_Panel_Customer8Layout);
         Shop_Genset_Panel_Customer8Layout.setHorizontalGroup(
             Shop_Genset_Panel_Customer8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list8, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list8, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Shop_Genset_Panel_Customer8Layout.setVerticalGroup(
             Shop_Genset_Panel_Customer8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list8, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Genset_Customer_list8, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        BIN_GENSET_12.add(Shop_Genset_Panel_Customer8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 210, 50));
+        BIN_GENSET_12.add(Shop_Genset_Panel_Customer8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, 210, 50));
 
         Bin_Genset_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2081,75 +2096,27 @@ public class Mainpage extends javax.swing.JFrame {
 
         BIN_GENSET_12.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1060, 420));
 
+        bin_genset_id.setText("jLabel4");
+        BIN_GENSET_12.add(bin_genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
+        jTextField5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField5KeyPressed(evt);
+            }
+        });
+        BIN_GENSET_12.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
+
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
+        BIN_GENSET_12.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+
         JTab.addTab("12", BIN_GENSET_12);
 
-        BIN_FILTER_13.setkEndColor(new java.awt.Color(0, 230, 184));
-        BIN_FILTER_13.setkStartColor(new java.awt.Color(0, 230, 184));
+        BIN_FILTER_13.setkEndColor(new java.awt.Color(42, 162, 162));
+        BIN_FILTER_13.setkStartColor(new java.awt.Color(42, 162, 162));
         BIN_FILTER_13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Shop_Genset_Panel_Customer9.setBackground(new java.awt.Color(133, 173, 173));
-
-        Shop_Genset_Customer_list9.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        Shop_Genset_Customer_list9.setForeground(new java.awt.Color(255, 255, 255));
-        Shop_Genset_Customer_list9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Genset_Customer_list9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
-        Shop_Genset_Customer_list9.setText("VIEW ITEM");
-        Shop_Genset_Customer_list9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Shop_Genset_Customer_list9MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Shop_Genset_Customer_list9MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Shop_Genset_Customer_list9MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Shop_Genset_Panel_Customer9Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer9);
-        Shop_Genset_Panel_Customer9.setLayout(Shop_Genset_Panel_Customer9Layout);
-        Shop_Genset_Panel_Customer9Layout.setHorizontalGroup(
-            Shop_Genset_Panel_Customer9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list9, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-        );
-        Shop_Genset_Panel_Customer9Layout.setVerticalGroup(
-            Shop_Genset_Panel_Customer9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list9, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        BIN_FILTER_13.add(Shop_Genset_Panel_Customer9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 530, 210, 50));
-
-        Shop_Genset_Panel_Customer10.setBackground(new java.awt.Color(133, 173, 173));
-
-        Shop_Genset_Customer_list10.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        Shop_Genset_Customer_list10.setForeground(new java.awt.Color(255, 255, 255));
-        Shop_Genset_Customer_list10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Genset_Customer_list10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
-        Shop_Genset_Customer_list10.setText(" BACK");
-        Shop_Genset_Customer_list10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Shop_Genset_Customer_list10MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Shop_Genset_Customer_list10MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Shop_Genset_Customer_list10MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Shop_Genset_Panel_Customer10Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer10);
-        Shop_Genset_Panel_Customer10.setLayout(Shop_Genset_Panel_Customer10Layout);
-        Shop_Genset_Panel_Customer10Layout.setHorizontalGroup(
-            Shop_Genset_Panel_Customer10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list10, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-        );
-        Shop_Genset_Panel_Customer10Layout.setVerticalGroup(
-            Shop_Genset_Panel_Customer10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Genset_Customer_list10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-        );
-
-        BIN_FILTER_13.add(Shop_Genset_Panel_Customer10, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 530, 210, 50));
 
         Bin_Filter_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2171,10 +2138,92 @@ public class Mainpage extends javax.swing.JFrame {
 
         BIN_FILTER_13.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1070, 420));
 
+        Shop_Genset_Panel_Customer13.setBackground(new java.awt.Color(0, 102, 102));
+        Shop_Genset_Panel_Customer13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+
+        Shop_Genset_Customer_list11.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list11.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list11.setText("VIEW ITEM");
+        Shop_Genset_Customer_list11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list11MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list11MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list11MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer13Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer13);
+        Shop_Genset_Panel_Customer13.setLayout(Shop_Genset_Panel_Customer13Layout);
+        Shop_Genset_Panel_Customer13Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list11, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer13Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list11, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+        BIN_FILTER_13.add(Shop_Genset_Panel_Customer13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 210, 50));
+
+        Shop_Genset_Panel_Customer14.setBackground(new java.awt.Color(255, 173, 51));
+        Shop_Genset_Panel_Customer14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+
+        Shop_Genset_Customer_list12.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Shop_Genset_Customer_list12.setForeground(new java.awt.Color(255, 255, 255));
+        Shop_Genset_Customer_list12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Genset_Customer_list12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Customer_Btn.png"))); // NOI18N
+        Shop_Genset_Customer_list12.setText(" BACK");
+        Shop_Genset_Customer_list12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list12MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list12MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Genset_Customer_list12MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Shop_Genset_Panel_Customer14Layout = new javax.swing.GroupLayout(Shop_Genset_Panel_Customer14);
+        Shop_Genset_Panel_Customer14.setLayout(Shop_Genset_Panel_Customer14Layout);
+        Shop_Genset_Panel_Customer14Layout.setHorizontalGroup(
+            Shop_Genset_Panel_Customer14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list12, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+        );
+        Shop_Genset_Panel_Customer14Layout.setVerticalGroup(
+            Shop_Genset_Panel_Customer14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Genset_Customer_list12, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+        BIN_FILTER_13.add(Shop_Genset_Panel_Customer14, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, 210, 50));
+
+        bin_filter_id.setText("jLabel4");
+        BIN_FILTER_13.add(bin_filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
+
+        jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField6KeyPressed(evt);
+            }
+        });
+        BIN_FILTER_13.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
+
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search_Btn.png"))); // NOI18N
+        BIN_FILTER_13.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+
         JTab.addTab("13", BIN_FILTER_13);
 
-        STATUS_14.setkEndColor(new java.awt.Color(0, 230, 184));
-        STATUS_14.setkStartColor(new java.awt.Color(0, 230, 184));
+        STATUS_14.setkEndColor(new java.awt.Color(42, 162, 162));
+        STATUS_14.setkStartColor(new java.awt.Color(42, 162, 162));
         STATUS_14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HOME_PANEL9.setBackground(new java.awt.Color(0, 117, 128));
@@ -2277,7 +2326,7 @@ public class Mainpage extends javax.swing.JFrame {
 
         JTab.addTab("14", STATUS_14);
 
-        getContentPane().add(JTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 1132, 634));
+        getContentPane().add(JTab, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 1134, 634));
 
         pack();
         setLocationRelativeTo(null);
@@ -2370,6 +2419,7 @@ public class Mainpage extends javax.swing.JFrame {
     private void LOGOUT_LABEL1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOGOUT_LABEL1MouseClicked
         Login l = new Login();
         l.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_LOGOUT_LABEL1MouseClicked
 
     private void Back1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseExited
@@ -2906,7 +2956,10 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void Shop_Genset_Customer_list7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list7MouseClicked
         Bin_Genset bg = new Bin_Genset();
+       
+        
         bg.setVisible(true);
+       
     }//GEN-LAST:event_Shop_Genset_Customer_list7MouseClicked
 
     private void Shop_Genset_Customer_list7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list7MouseEntered
@@ -2919,7 +2972,6 @@ public class Mainpage extends javax.swing.JFrame {
 
     private void Shop_Genset_Customer_list8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list8MouseClicked
         Dashboard_Display_1.setForeground(new Color(255,255,255));
- 
         Dashboard_Display_2.setForeground(new Color(243,246,26));
         Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(11);
@@ -2934,39 +2986,15 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Shop_Genset_Customer_list8MouseExited
 
     private void Bin_Genset_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bin_Genset_TableMouseClicked
-        // TODO add your handling code here:
+       int i=Bin_Genset_Table.getSelectedRow();
+        TableModel model = Bin_Genset_Table.getModel();
+        bin_genset_id.setText(model.getValueAt(i,0).toString());
     }//GEN-LAST:event_Bin_Genset_TableMouseClicked
 
-    private void Shop_Genset_Customer_list9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list9MouseClicked
-        Bin_Filter bf = new Bin_Filter();
-        bf.setVisible(true);
-    }//GEN-LAST:event_Shop_Genset_Customer_list9MouseClicked
-
-    private void Shop_Genset_Customer_list9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list9MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Genset_Customer_list9MouseEntered
-
-    private void Shop_Genset_Customer_list9MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list9MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Genset_Customer_list9MouseExited
-
-    private void Shop_Genset_Customer_list10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list10MouseClicked
-        Dashboard_Display_1.setForeground(new Color(255,255,255));
-        Dashboard_Display_2.setForeground(new Color(243,246,26));
-        Dashboard_Display_3.setText(null);
-        JTab.setSelectedIndex(11);
-    }//GEN-LAST:event_Shop_Genset_Customer_list10MouseClicked
-
-    private void Shop_Genset_Customer_list10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list10MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Genset_Customer_list10MouseEntered
-
-    private void Shop_Genset_Customer_list10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list10MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Shop_Genset_Customer_list10MouseExited
-
     private void Bin_Filter_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bin_Filter_TableMouseClicked
-        // TODO add your handling code here:
+        int i=Bin_Filter_Table.getSelectedRow();
+        TableModel model = Bin_Filter_Table.getModel();
+        bin_filter_id.setText(model.getValueAt(i,0).toString());
     }//GEN-LAST:event_Bin_Filter_TableMouseClicked
 
     private void Shop_Genset_Print_FilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Print_FilterMouseClicked
@@ -3060,11 +3088,13 @@ public class Mainpage extends javax.swing.JFrame {
     }//GEN-LAST:event_SALESMouseClicked
 
     private void SALESMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SALESMouseEntered
-        // TODO add your handling code here:
+       SALES.setForeground(new Color(41, 61, 61));
+       SALES_PANEL.setBackground(new Color(128, 229, 255));
     }//GEN-LAST:event_SALESMouseEntered
 
     private void SALESMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SALESMouseExited
-        // TODO add your handling code here:
+       SALES.setForeground(new Color(255,255,255));
+        SALES_PANEL.setBackground(new Color(0, 117, 128));
     }//GEN-LAST:event_SALESMouseExited
 
     private void Stock_Genset_Btn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_Btn1MouseClicked
@@ -3284,6 +3314,41 @@ public class Mainpage extends javax.swing.JFrame {
     private void Stock_Genset_Btn2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_Btn2MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_Stock_Genset_Btn2MouseExited
+
+    private void Shop_Genset_Customer_list11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list11MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list11MouseClicked
+
+    private void Shop_Genset_Customer_list11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list11MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list11MouseEntered
+
+    private void Shop_Genset_Customer_list11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list11MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list11MouseExited
+
+    private void Shop_Genset_Customer_list12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list12MouseClicked
+        Dashboard_Display_1.setForeground(new Color(255,255,255));
+        Dashboard_Display_2.setForeground(new Color(243,246,26));
+        Dashboard_Display_3.setText(null);
+        JTab.setSelectedIndex(11);
+    }//GEN-LAST:event_Shop_Genset_Customer_list12MouseClicked
+
+    private void Shop_Genset_Customer_list12MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list12MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list12MouseEntered
+
+    private void Shop_Genset_Customer_list12MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list12MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Genset_Customer_list12MouseExited
+
+    private void jTextField5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5KeyPressed
+
+    private void jTextField6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6KeyPressed
       
     /**
      * @param args the command line arguments
@@ -3393,26 +3458,26 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel Shop_Genset;
     private javax.swing.JLabel Shop_Genset_Btn;
     private javax.swing.JLabel Shop_Genset_Customer_list;
-    private javax.swing.JLabel Shop_Genset_Customer_list10;
+    private javax.swing.JLabel Shop_Genset_Customer_list11;
+    private javax.swing.JLabel Shop_Genset_Customer_list12;
     private javax.swing.JLabel Shop_Genset_Customer_list3;
     private javax.swing.JLabel Shop_Genset_Customer_list4;
     private javax.swing.JLabel Shop_Genset_Customer_list5;
     private javax.swing.JLabel Shop_Genset_Customer_list6;
     private javax.swing.JLabel Shop_Genset_Customer_list7;
     private javax.swing.JLabel Shop_Genset_Customer_list8;
-    private javax.swing.JLabel Shop_Genset_Customer_list9;
     private javax.swing.JLabel Shop_Genset_Panel_Back;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer;
-    public static javax.swing.JPanel Shop_Genset_Panel_Customer10;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer11;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer12;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer13;
+    public static javax.swing.JPanel Shop_Genset_Panel_Customer14;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer3;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer4;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer5;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer6;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer7;
     public static javax.swing.JPanel Shop_Genset_Panel_Customer8;
-    public static javax.swing.JPanel Shop_Genset_Panel_Customer9;
     public static javax.swing.JPanel Shop_Genset_Panel_back;
     public static javax.swing.JPanel Shop_Genset_Panel_view;
     private javax.swing.JLabel Shop_Genset_Print_Filter;
@@ -3451,6 +3516,8 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel Stock_Genset_Supplier;
     public static javax.swing.JTable Stock_Genset_Table;
     private javax.swing.JLabel Stock_Genset_View;
+    public static javax.swing.JLabel bin_filter_id;
+    private javax.swing.JLabel bin_genset_id;
     public static javax.swing.JLabel cartIfEmpty;
     public static javax.swing.JLabel filter_id;
     private javax.swing.JLabel fpe_home;
@@ -3463,9 +3530,11 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -3479,6 +3548,8 @@ public class Mainpage extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     public static javax.swing.JLabel stock_supplier_id;
     public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables

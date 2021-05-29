@@ -107,9 +107,9 @@ public class View_Stock_Genset extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 100));
 
-        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(0, 230, 184));
+        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 162, 162));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
-        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(0, 230, 184));
+        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 162, 162));
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         View_stock_Genset_phasing.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
@@ -245,6 +245,7 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(View_stock_Genset_alter, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 330, 170, 26));
 
         Stock_Genset_Panel_Delete.setBackground(new java.awt.Color(255, 77, 77));
+        Stock_Genset_Panel_Delete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_Delete.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Delete.setForeground(new java.awt.Color(255, 255, 255));
@@ -267,16 +268,17 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         Stock_Genset_Panel_Delete.setLayout(Stock_Genset_Panel_DeleteLayout);
         Stock_Genset_Panel_DeleteLayout.setHorizontalGroup(
             Stock_Genset_Panel_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_DeleteLayout.setVerticalGroup(
             Stock_Genset_Panel_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 530, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 540, 210, 50));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
+        Stock_Genset_Panel_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
@@ -299,16 +301,17 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 210, 50));
 
-        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
+        Stock_Genset_Panel_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
@@ -331,14 +334,14 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 530, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, 210, 50));
 
         View_stock_supplier_id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_stock_supplier_id.setForeground(new java.awt.Color(20, 31, 31));

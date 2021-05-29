@@ -57,9 +57,9 @@ public class Bin_Filter extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(0, 230, 184));
+        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 162, 162));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
-        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(0, 230, 184));
+        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 162, 162));
         KG2_ADD_STOCK_GENSET.setkTransparentControls(false);
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -124,7 +124,7 @@ public class Bin_Filter extends javax.swing.JFrame {
         jLabel16.setAlignmentY(1.0F);
         KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 80, 30));
 
-        View_Shop_Filter_quantity.setBackground(new java.awt.Color(0, 230, 184));
+        View_Shop_Filter_quantity.setBackground(new java.awt.Color(42, 162, 162));
         View_Shop_Filter_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Shop_Filter_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Shop_Filter_quantity.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -220,14 +220,14 @@ public class Bin_Filter extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 540, 190, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 210, 50));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
@@ -239,12 +239,12 @@ public class Bin_Filter extends javax.swing.JFrame {
         Wiew_Genset_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Wiew_Genset_Display.setText("ORDERED FILTER");
         Wiew_Genset_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Wiew_Genset_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Wiew_Genset_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 80));

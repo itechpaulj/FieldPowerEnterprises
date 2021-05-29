@@ -70,85 +70,86 @@ public class Energized extends javax.swing.JFrame {
         Display_Engine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Display_Engine.setText("ENGINE ENERGIZED");
         Display_Engine.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Display_EngineAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Display_Engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 440, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 255, 153));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 255, 153));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Energized_technician.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_technician.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Energized_technician, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 220, 35));
+        kGradientPanel1.add(Energized_technician, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 240, 35));
 
         Energized_oil_usage.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_oil_usage.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Energized_oil_usage, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 220, 35));
+        kGradientPanel1.add(Energized_oil_usage, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 240, 35));
 
         Energized_date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-        kGradientPanel1.add(Energized_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 220, 30));
+        kGradientPanel1.add(Energized_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 240, 30));
 
         Energized_tank_capacity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_tank_capacity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Energized_tank_capacity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 220, 35));
+        kGradientPanel1.add(Energized_tank_capacity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 240, 35));
 
         Energized_oil_esystem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_oil_esystem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Energized_oil_esystem, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 220, 35));
+        kGradientPanel1.add(Energized_oil_esystem, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 240, 35));
 
         Energized_oil_weight.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_oil_weight.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Energized_oil_weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 220, 35));
+        kGradientPanel1.add(Energized_oil_weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 240, 35));
 
         Energized_oil_frame.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Energized_oil_frame.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Energized_oil_frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 220, 35));
+        kGradientPanel1.add(Energized_oil_frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 240, 35));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setText("TECHNICIAN");
         jLabel18.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 100, 35));
+        kGradientPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 100, 35));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setText("ENERGIZED DATE");
         jLabel19.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 130, 35));
+        kGradientPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 130, 35));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel21.setText("OIL USAGE");
         jLabel21.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 100, 35));
+        kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 100, 35));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setText("STARTING SYSTEM");
         jLabel23.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 130, 35));
+        kGradientPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 130, 35));
 
         jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel24.setText("WEIGHT");
         jLabel24.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 100, 35));
+        kGradientPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 100, 35));
 
         jLabel25.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel25.setText("FRAME");
         jLabel25.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 100, 35));
+        kGradientPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 100, 35));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setText("TANK CAPACITY");
         jLabel22.setAlignmentY(1.0F);
-        kGradientPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 130, 35));
+        kGradientPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 130, 35));
 
         Panel_Energized_Energized_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Panel_Energized_Energized_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Energized_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Energized_Back.setForeground(new java.awt.Color(255, 255, 255));
@@ -171,16 +172,17 @@ public class Energized extends javax.swing.JFrame {
         Panel_Energized_Energized_Back.setLayout(Panel_Energized_Energized_BackLayout);
         Panel_Energized_Energized_BackLayout.setHorizontalGroup(
             Panel_Energized_Energized_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Energized_Back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(Energized_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
         );
         Panel_Energized_Energized_BackLayout.setVerticalGroup(
             Panel_Energized_Energized_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Energized_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Panel_Energized_Energized_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 150, -1));
+        kGradientPanel1.add(Panel_Energized_Energized_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 180, -1));
 
         Pane_Energized_Update.setBackground(new java.awt.Color(51, 187, 255));
+        Pane_Energized_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Energized_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Energized_Update.setForeground(new java.awt.Color(255, 255, 255));
@@ -203,14 +205,14 @@ public class Energized extends javax.swing.JFrame {
         Pane_Energized_Update.setLayout(Pane_Energized_UpdateLayout);
         Pane_Energized_UpdateLayout.setHorizontalGroup(
             Pane_Energized_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Energized_Update, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(Energized_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
         );
         Pane_Energized_UpdateLayout.setVerticalGroup(
             Pane_Energized_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Energized_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Pane_Energized_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 150, -1));
+        kGradientPanel1.add(Pane_Energized_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 180, -1));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 480, 450));
 

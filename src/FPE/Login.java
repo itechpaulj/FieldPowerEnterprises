@@ -61,10 +61,12 @@ public class Login extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(2, 71, 94));
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 250, 30));
 
         jTextField2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(2, 71, 94));
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 250, 30));
 
         jLabel4.setToolTipText("");
@@ -78,6 +80,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 590, 140));
 
         jPanel2.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Cancel_btn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Cancel_btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,16 +102,17 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Cancel_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(Cancel_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Cancel_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Cancel_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 150, 50));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 180, 50));
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 51));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Login_Btn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Login_Btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,14 +134,14 @@ public class Login extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Login_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(Login_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Login_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Login_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, 150, 50));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 180, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

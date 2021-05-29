@@ -70,10 +70,10 @@
     <Container class="keeptoo.KGradientPanel" name="kGradientPanel1">
       <Properties>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="b8" green="e6" red="0" type="rgb"/>
+          <Color blue="a2" green="a2" red="2a" type="rgb"/>
         </Property>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="b8" green="e6" red="0" type="rgb"/>
+          <Color blue="a2" green="a2" red="2a" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -97,7 +97,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="320" width="250" height="30"/>
+              <AbsoluteConstraints x="160" y="320" width="270" height="30"/>
             </Constraint>
           </Constraints>
 
@@ -106,7 +106,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="Supplier_List_Btn2" min="-2" pref="229" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="21" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="41" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -146,7 +146,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="280" width="250" height="30"/>
+              <AbsoluteConstraints x="160" y="280" width="270" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -186,7 +186,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="240" width="250" height="30"/>
+              <AbsoluteConstraints x="160" y="240" width="270" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -196,7 +196,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="120" width="250" height="110"/>
+              <AbsoluteConstraints x="160" y="120" width="270" height="110"/>
             </Constraint>
           </Constraints>
 
@@ -218,7 +218,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="80" width="250" height="30"/>
+              <AbsoluteConstraints x="160" y="80" width="270" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -253,7 +253,7 @@
         <Container class="javax.swing.JPanel" name="Stock_Genset_Panel_Back">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="c2" red="ff" type="rgb"/>
+              <Color blue="33" green="ad" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -261,14 +261,14 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="250" y="370" width="150" height="-1"/>
+              <AbsoluteConstraints x="250" y="370" width="180" height="-1"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Stock_Genset_Back" alignment="1" pref="150" max="32767" attributes="0"/>
+                  <Component id="Stock_Genset_Back" alignment="0" pref="180" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -311,14 +311,14 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="370" width="150" height="-1"/>
+              <AbsoluteConstraints x="50" y="370" width="180" height="-1"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Stock_Genset_Update" alignment="1" pref="150" max="32767" attributes="0"/>
+                  <Component id="Stock_Genset_Update" alignment="0" pref="180" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -376,7 +376,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="40" width="250" height="30"/>
+              <AbsoluteConstraints x="160" y="40" width="270" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

@@ -69,12 +69,13 @@
     </Container>
     <Container class="keeptoo.KGradientPanel" name="KG2_ADD_STOCK_GENSET">
       <Properties>
+        <Property name="doubleBuffered" type="boolean" value="false"/>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="b8" green="e6" red="0" type="rgb"/>
+          <Color blue="a2" green="a2" red="2a" type="rgb"/>
         </Property>
         <Property name="kGradientFocus" type="int" value="700"/>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="b8" green="e6" red="0" type="rgb"/>
+          <Color blue="a2" green="a2" red="2a" type="rgb"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -718,7 +719,14 @@
         <Container class="javax.swing.JPanel" name="Stock_Genset_Panel_Back">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="c2" red="ff" type="rgb"/>
+              <Color blue="33" green="ad" red="ff" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="1a" green="f6" red="f3" type="rgb"/>
+                </LineBorder>
+              </Border>
             </Property>
           </Properties>
           <AuxValues>
@@ -726,19 +734,19 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="670" y="530" width="190" height="50"/>
+              <AbsoluteConstraints x="530" y="540" width="210" height="50"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Stock_Genset_Back" alignment="0" pref="190" max="32767" attributes="0"/>
+                  <Component id="Stock_Genset_Back" alignment="0" pref="208" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Stock_Genset_Back" alignment="0" pref="50" max="32767" attributes="0"/>
+                  <Component id="Stock_Genset_Back" alignment="0" pref="48" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -751,11 +759,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Picture/Images_Images_Back_Btn.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="  BACK               "/>
+                <Property name="text" type="java.lang.String" value="  BACK"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_BackMouseClicked"/>
@@ -770,25 +778,32 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4d" green="4d" red="ff" type="rgb"/>
             </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="1a" green="f6" red="f3" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="440" y="530" width="190" height="50"/>
+              <AbsoluteConstraints x="280" y="540" width="210" height="50"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Stock_Genset_Delete" alignment="0" pref="190" max="32767" attributes="0"/>
+                  <Component id="Stock_Genset_Delete" alignment="0" pref="208" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Stock_Genset_Delete" alignment="0" pref="50" max="32767" attributes="0"/>
+                  <Component id="Stock_Genset_Delete" alignment="0" pref="48" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -801,11 +816,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Picture/Images_Delete_Btn.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" DELETE ITEM      "/>
+                <Property name="text" type="java.lang.String" value=" DELETE ITEM"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_DeleteMouseClicked"/>
@@ -820,25 +835,32 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="bb" red="33" type="rgb"/>
             </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder>
+                  <Color PropertyName="color" blue="1a" green="f6" red="f3" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="210" y="530" width="190" height="50"/>
+              <AbsoluteConstraints x="30" y="540" width="210" height="50"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Stock_Genset_Update" alignment="0" pref="190" max="32767" attributes="0"/>
+                  <Component id="Stock_Genset_Update" alignment="0" pref="208" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Stock_Genset_Update" alignment="0" pref="50" max="32767" attributes="0"/>
+                  <Component id="Stock_Genset_Update" alignment="0" pref="48" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -851,11 +873,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Picture/Images_Edit_Btn.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" UPDATE ITEM    "/>
+                <Property name="text" type="java.lang.String" value=" UPDATE ITEM"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_UpdateMouseClicked"/>

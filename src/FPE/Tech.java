@@ -69,8 +69,8 @@ public class Tech extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         View_Shop_Filter_description.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
@@ -87,7 +87,7 @@ public class Tech extends javax.swing.JFrame {
         View_Shop_Filter_seller_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         kGradientPanel1.add(View_Shop_Filter_seller_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 220, 30));
 
-        View_Shop_Filter_quantity.setBackground(new java.awt.Color(0, 230, 184));
+        View_Shop_Filter_quantity.setBackground(new java.awt.Color(42, 162, 162));
         View_Shop_Filter_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Shop_Filter_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Shop_Filter_quantity.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));

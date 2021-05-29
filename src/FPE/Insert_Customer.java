@@ -52,20 +52,20 @@ public class Insert_Customer extends javax.swing.JFrame {
         Display_Customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Display_Customer.setText("ADD CUSTOMER");
         Display_Customer.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Display_CustomerAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Display_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 480, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(0, 230, 184));
-        kGradientPanel1.setkStartColor(new java.awt.Color(0, 230, 184));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_customer_list.setBackground(new java.awt.Color(255, 255, 179));
@@ -87,7 +87,7 @@ public class Insert_Customer extends javax.swing.JFrame {
             panel_customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_customer_listLayout.createSequentialGroup()
                 .addComponent(Supplier_List_Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 21, Short.MAX_VALUE))
+                .addGap(0, 41, Short.MAX_VALUE))
         );
         panel_customer_listLayout.setVerticalGroup(
             panel_customer_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,10 +96,10 @@ public class Insert_Customer extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        kGradientPanel1.add(panel_customer_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 250, 30));
+        kGradientPanel1.add(panel_customer_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 270, 30));
 
         Insert_Customer_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(Insert_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 250, 30));
+        kGradientPanel1.add(Insert_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 270, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setText("CONTACT NO.");
@@ -112,16 +112,16 @@ public class Insert_Customer extends javax.swing.JFrame {
         kGradientPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 100, 30));
 
         Insert_Customer_email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(Insert_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 250, 30));
+        kGradientPanel1.add(Insert_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 270, 30));
 
         Insert_Customer_address.setColumns(20);
         Insert_Customer_address.setRows(5);
         jScrollPane1.setViewportView(Insert_Customer_address);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 250, 110));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 270, 110));
 
         Insert_Customer_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(Insert_Customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 250, 30));
+        kGradientPanel1.add(Insert_Customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 270, 30));
 
         id1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id1.setText("NAME");
@@ -133,7 +133,7 @@ public class Insert_Customer extends javax.swing.JFrame {
         jLabel21.setAlignmentY(1.0F);
         kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 100, 30));
 
-        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
 
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,14 +156,14 @@ public class Insert_Customer extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 150, -1));
+        kGradientPanel1.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 180, -1));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
 
@@ -188,14 +188,14 @@ public class Insert_Customer extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 150, -1));
+        kGradientPanel1.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 180, -1));
 
         id2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id2.setText("ID");
@@ -204,7 +204,7 @@ public class Insert_Customer extends javax.swing.JFrame {
 
         Insert_customer_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_customer_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        kGradientPanel1.add(Insert_customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 250, 30));
+        kGradientPanel1.add(Insert_customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 270, 30));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 480, 450));
 
