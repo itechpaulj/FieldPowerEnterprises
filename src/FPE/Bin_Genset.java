@@ -44,7 +44,7 @@ public class Bin_Genset extends javax.swing.JFrame {
         bin_genset_id = new javax.swing.JLabel();
         bin_genset_brand = new javax.swing.JLabel();
         bin_genset_model = new javax.swing.JLabel();
-        View_Genset_pic = new javax.swing.JLabel();
+        bin_Genset_pic = new javax.swing.JLabel();
         bin_genset_type = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -166,18 +166,18 @@ public class Bin_Genset extends javax.swing.JFrame {
         bin_genset_model.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(bin_genset_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 180, 30));
 
-        View_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        View_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
-        View_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
-        View_Genset_pic.setAlignmentY(1.0F);
-        View_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
-        View_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+        bin_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        bin_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
+        bin_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bin_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
+        bin_Genset_pic.setAlignmentY(1.0F);
+        bin_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
+        bin_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                View_Genset_picMouseClicked(evt);
+                bin_Genset_picMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Genset_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 270, 150));
+        KG2_ADD_STOCK_GENSET.add(bin_Genset_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 270, 150));
 
         bin_genset_type.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         bin_genset_type.setForeground(new java.awt.Color(20, 31, 31));
@@ -387,7 +387,7 @@ public class Bin_Genset extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 51, 0));
         jLabel12.setToolTipText("");
-        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "GENSET INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
+        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "GENSET INFORMATION", 4, 2, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1030, 480));
 
         Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
@@ -482,8 +482,8 @@ public class Bin_Genset extends javax.swing.JFrame {
 //            View_Genset_alterNEWOLD.setText(alter_sn[0]);
                     
             byte[] images = rs.getBytes("IMAGE");
-            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Genset_pic.getWidth(), View_Genset_pic.getHeight(),Image.SCALE_SMOOTH) );
-            View_Genset_pic.setIcon(imageicon);
+            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(bin_Genset_pic.getWidth(), bin_Genset_pic.getHeight(),Image.SCALE_SMOOTH) );
+            bin_Genset_pic.setIcon(imageicon);
           
             }
         }catch(Exception e){
@@ -491,9 +491,9 @@ public class Bin_Genset extends javax.swing.JFrame {
         } }
     }//GEN-LAST:event_Bin_Genset_DisplayAncestorAdded
 
-    private void View_Genset_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset_picMouseClicked
+    private void bin_Genset_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bin_Genset_picMouseClicked
 
-    }//GEN-LAST:event_View_Genset_picMouseClicked
+    }//GEN-LAST:event_bin_Genset_picMouseClicked
 
     private void history_genset_backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_backMouseClicked
         Mainpage.Shop_genset_id.setText("");
@@ -548,15 +548,15 @@ public class Bin_Genset extends javax.swing.JFrame {
     public static javax.swing.JLabel Bin_Genset_Display;
     private keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
-    public static javax.swing.JLabel View_Genset_pic;
     private javax.swing.JLabel a;
+    public static javax.swing.JLabel bin_Genset_pic;
     public static javax.swing.JLabel bin_genset_alter;
     public static javax.swing.JLabel bin_genset_brand;
     public static javax.swing.JLabel bin_genset_dimension;
     public static javax.swing.JLabel bin_genset_energized_date;
     public static javax.swing.JLabel bin_genset_engine;
     public static javax.swing.JLabel bin_genset_frame;
-    public static javax.swing.JLabel bin_genset_id;
+    private static javax.swing.JLabel bin_genset_id;
     public static javax.swing.JLabel bin_genset_kva;
     public static javax.swing.JLabel bin_genset_model;
     public static javax.swing.JLabel bin_genset_oil_usage;
