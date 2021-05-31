@@ -151,7 +151,7 @@ public class Class_tables {
            
           public boolean Bin_Genset(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `SELLER PRICE`FROM `bin_genset`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `SELLER PRICE`FROM `bin_genset`");
         ResultSet rs = ps.executeQuery();
         Bin_Genset_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Bin_Genset_Table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -164,7 +164,7 @@ public class Class_tables {
                  
           public boolean Bin_Filter(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `BRAND`, `DESCRIPTION`, `TYPE`, `PRICE`, `QUANTITY`, `TOTAL PRICE` FROM `bin_filter`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`BRAND`, `DESCRIPTION`, `TYPE`, `PRICE`, `QUANTITY`, `TOTAL PRICE` FROM `bin_filter`");
         ResultSet rs = ps.executeQuery();
         Bin_Filter_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Bin_Filter_Table.getColumnModel().getColumn(0).setMaxWidth(100);

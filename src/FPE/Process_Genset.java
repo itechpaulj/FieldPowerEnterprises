@@ -5,6 +5,7 @@
  */
 package FPE;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
@@ -25,6 +26,10 @@ import net.sf.jasperreports.engine.design.JRDesignQuery;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
 
 
 /**
@@ -41,6 +46,11 @@ public class Process_Genset extends javax.swing.JFrame {
     public Process_Genset() {
         initComponents();
      con = FPE_DB.getConnection();
+      Class_Graph cg = new Class_Graph();
+    cg.yandong();
+    cg.isuzu();
+    cg.cummins();
+    cg.perkins();
         
     }
 
@@ -579,6 +589,25 @@ public class Process_Genset extends javax.swing.JFrame {
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
 
      //date
+    Class_Graph cg = new Class_Graph();
+    cg.yandong();
+    cg.isuzu();
+    cg.cummins();
+    cg.perkins();
+
+      DefaultPieDataset barDataset = new DefaultPieDataset( );
+      barDataset.setValue( "YANDONG" , new Integer(Class_Graph.yandong) );  
+      barDataset.setValue( "ISUZU" , new Integer(Class_Graph.isuzu) );   
+      barDataset.setValue( "CUMMINS" , new Integer(Class_Graph.cummins));    
+      barDataset.setValue( "PERKINS" , new Integer(Class_Graph.perkins) );  
+      
+      //create chart
+       JFreeChart piechart = ChartFactory.createPieChart("GENSET SALES",barDataset, true,true,false);//explain
+      
+        ChartPanel barChartPanel = new ChartPanel(piechart);
+        Mainpage.Graph_Genset.removeAll();
+        Mainpage.Graph_Genset.add(barChartPanel, BorderLayout.CENTER);
+        Mainpage.Graph_Genset.validate();
     Date today = new Date();
     SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
     String getdate = date.format(today);
@@ -628,28 +657,47 @@ public class Process_Genset extends javax.swing.JFrame {
 //    Reciept.Receipt_Cooments.setText("");
     String[] getValidQuot = quotation_display_year.getText().split(" - ");
     
-    
+
     if(brand.equals("") || model.equals("") || kva.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || seller_price.equals("") || engine_sn.equals("") || alters1_sn.equals("") || c_name.equals("") || c_add.equals("") || c_email.equals("") || c_contact.equals("") || c_deal.equals("") || agent_name.equals("") || agent_contact.equals("") || quotation.equals("") || date_recieved.equals("") || sup_name.equals("") || energized_date.equals("") || tank_cap.equals("") || oil_usage.equals("") || tech.equals("") || esystem.equals("") || weight.equals("") || frame.equals("") || updated_at.equals("") ){
         JOptionPane.showMessageDialog(null, "EMPTY SOME FIELDS!","",JOptionPane.INFORMATION_MESSAGE);
+
     }
     else{
         if(getValidQuot[0].equals("0000")){
             JOptionPane.showMessageDialog(null, "Please Check Quotation");
+               cg.yandong();
+               cg.isuzu();
+               cg.cummins();
+               cg.perkins();
         }
         else if (id.equals("") || brand.equals("") || model.equals("") || kva.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || seller_price.equals("") || engine_sn.equals("") || alters1_sn.equals("") || c_name.equals("") || c_add.equals("") || c_email.equals("") || c_contact.equals("") || c_deal.equals("") || agent_name.equals("") || agent_contact.equals("") || quotation.equals("") || sup_price.equals("") || date_recieved.equals("") || sup_name.equals("") || energized_date.equals("") || tank_cap.equals("") || oil_usage.equals("") || tech.equals("") || updated_at.equals("")){
          JOptionPane.showMessageDialog(null, "EMPTY SOME FIELDS!!","",JOptionPane.INFORMATION_MESSAGE);
+               cg.yandong();
+               cg.isuzu();
+               cg.cummins();
+               cg.perkins();
         }else{
     //        int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO PRINT THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
     //        if(opt==0){
     //            if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION)
     //            {
+               
+               cg.yandong();
+               cg.isuzu();
+               cg.cummins();
+               cg.perkins();
                     if(processed.equals("1")){
                         //insert histoty_genset_table
                         //insert bin_genset
                         // delete insert_genset
+                    cg.yandong();
+                    cg.isuzu();
+                    cg.cummins();
+                    cg.perkins();
                         if(!Class_Bin.Historygenset(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGenset(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
                          {
                               JOptionPane.showMessageDialog(null, "SUCCESS");
+
                              try{
 
                                      JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
@@ -683,6 +731,10 @@ public class Process_Genset extends javax.swing.JFrame {
                         process.setText("2");//update
                     }else{
                         if(processed.equals("2")){
+                    cg.yandong();
+                    cg.isuzu();
+                    cg.cummins();
+                    cg.perkins();
                            // JOptionPane.showMessageDialog(null, "2");
                            // update class
                         if(!Class_Bin.HistorygensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )

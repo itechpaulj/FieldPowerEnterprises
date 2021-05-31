@@ -94,6 +94,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Supplier_contact = new javax.swing.JTextField();
         Insert_Invetory_Supplier_email = new javax.swing.JTextField();
         Insert_Invetory_Supplier_name = new javax.swing.JTextField();
+        engine1 = new javax.swing.JComboBox<>();
         Insert_Invetory_Genset_date = new datechooser.beans.DateChooserCombo();
         engine = new javax.swing.JComboBox<>();
         alter = new javax.swing.JComboBox<>();
@@ -145,7 +146,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(20, 31, 31));
         jLabel7.setText("KVA");
         jLabel7.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 70, 30));
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(20, 31, 31));
@@ -188,7 +189,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(20, 31, 31));
         jLabel5.setText("MODEL");
         jLabel5.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 80, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 80, 30));
 
         id1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         id1.setText("NAME");
@@ -214,7 +215,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(20, 31, 31));
         jLabel10.setText("PHASING");
         jLabel10.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 70, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, 70, 30));
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(20, 31, 31));
@@ -246,7 +247,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Genset_model.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Invetory_Genset_model.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Invetory_Genset_model.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 190, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 190, 30));
 
         Insert_Invetory_Genset_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Invetory_Genset_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -256,7 +257,8 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Genset_brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Invetory_Genset_brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Invetory_Genset_brand.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 190, 30));
+        Insert_Invetory_Genset_brand.setEnabled(false);
+        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 190, 30));
 
         Insert_Invetory_Genset_Alter_Serial.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Invetory_Genset_Alter_Serial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -281,12 +283,12 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Genset_kva.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Invetory_Genset_kva.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Invetory_Genset_kva.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 190, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 190, 30));
 
         Insert_Invetory_Genset_phasing.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Invetory_Genset_phasing.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Invetory_Genset_phasing.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 190, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 190, 30));
 
         Insert_Invetory_Genset_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Invetory_Genset_type.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -308,12 +310,38 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Supplier_name.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Supplier_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 180, 30));
 
+        engine1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        engine1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "YANDONG", "CUMMINS", "ISUZU", "PERKINS", "OTHER" }));
+        engine1.setBorder(null);
+        engine1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                engine1MouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                engine1MousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                engine1MouseReleased(evt);
+            }
+        });
+        engine1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                engine1ActionPerformed(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(engine1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 190, 30));
+
         Insert_Invetory_Genset_date.setCalendarPreferredSize(new java.awt.Dimension(400, 500));
         KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Genset_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 190, 30));
 
         engine.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         engine.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ENGINE NEW", "ENGINE OLD" }));
         engine.setBorder(null);
+        engine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                engineActionPerformed(evt);
+            }
+        });
         KG2_ADD_STOCK_GENSET.add(engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 320, 190, 30));
 
         alter.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -353,7 +381,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -388,7 +416,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -421,7 +449,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -446,7 +474,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Panel_Energized.setLayout(Panel_EnergizedLayout);
         Panel_EnergizedLayout.setHorizontalGroup(
             Panel_EnergizedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Energized, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(Energized, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         Panel_EnergizedLayout.setVerticalGroup(
             Panel_EnergizedLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -487,12 +515,12 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Inventory_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Inventory_Display.setText("ADD GENSET PRODUCT");
         Inventory_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Inventory_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Inventory_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 80));
@@ -651,6 +679,39 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         e.setVisible(true);
     }//GEN-LAST:event_EnergizedMouseClicked
 
+    private void engineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_engineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_engineActionPerformed
+
+    private void engine1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_engine1MouseClicked
+    
+               
+    }//GEN-LAST:event_engine1MouseClicked
+
+    private void engine1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_engine1MousePressed
+   
+    }//GEN-LAST:event_engine1MousePressed
+
+    private void engine1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_engine1MouseReleased
+      
+        
+    }//GEN-LAST:event_engine1MouseReleased
+
+    private void engine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_engine1ActionPerformed
+         String ty = engine1.getSelectedItem().toString();
+       int tys = engine1.getSelectedIndex();
+        if(ty.equals("OTHER")){
+       
+        Insert_Invetory_Genset_brand.setText(null);
+        Insert_Invetory_Genset_brand.enable(true);
+            
+        }else{
+        Insert_Invetory_Genset_brand.setText(engine1.getSelectedItem().toString());
+        Insert_Invetory_Genset_brand.enable(false);
+        
+        }
+    }//GEN-LAST:event_engine1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -718,6 +779,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     public static javax.swing.JLabel a;
     public static javax.swing.JComboBox<String> alter;
     public static javax.swing.JComboBox<String> engine;
+    public static javax.swing.JComboBox<String> engine1;
     private javax.swing.JLabel id1;
     public static javax.swing.JLabel id2;
     private javax.swing.JLabel jLabel10;

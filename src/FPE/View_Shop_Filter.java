@@ -22,17 +22,20 @@ import javax.swing.JOptionPane;
 public class View_Shop_Filter extends javax.swing.JFrame {
 
     public static byte[] images  = null;
+    
     Class_tables ct = new Class_tables();
     Date today = new Date();
     //quotaion
     SimpleDateFormat dateQuotation = new SimpleDateFormat("yyyy");
     String todayQuot = dateQuotation.format(today) + " - " + "1";  
     String[] countQuotation = todayQuot.split(" - ");
+    
     public View_Shop_Filter() {
         initComponents();
         count_quotation.setVisible(false);
         count_process.setVisible(false);
         result.setVisible(false);
+       
     }
     
 
@@ -106,41 +109,41 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         result.setText("0");
-        KG2_ADD_STOCK_GENSET.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 30, -1));
+        KG2_ADD_STOCK_GENSET.add(result, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 30, -1));
 
         count_process.setText("NO COUNT PROCESS");
-        KG2_ADD_STOCK_GENSET.add(count_process, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
+        KG2_ADD_STOCK_GENSET.add(count_process, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, -1, -1));
 
         count_quotation.setText("NO QUOTATION");
-        KG2_ADD_STOCK_GENSET.add(count_quotation, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+        KG2_ADD_STOCK_GENSET.add(count_quotation, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, -1));
 
         View_Shop_Filter_description.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Shop_Filter_description.setForeground(new java.awt.Color(20, 31, 31));
         View_Shop_Filter_description.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Shop_Filter_description.setAlignmentY(1.0F);
         View_Shop_Filter_description.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_description, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 200, 30));
+        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_description, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 190, 30));
 
         View_Shop_Filter_total.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Shop_Filter_total.setForeground(new java.awt.Color(20, 31, 31));
         View_Shop_Filter_total.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Shop_Filter_total.setAlignmentY(1.0F);
         View_Shop_Filter_total.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 350, 200, 30));
+        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 190, 30));
 
         View_Shop_Filter_date.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Shop_Filter_date.setForeground(new java.awt.Color(20, 31, 31));
         View_Shop_Filter_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Shop_Filter_date.setAlignmentY(1.0F);
         View_Shop_Filter_date.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 110, 200, 30));
+        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 190, 30));
 
         View_Shop_Filter_seller_price.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Shop_Filter_seller_price.setForeground(new java.awt.Color(20, 31, 31));
         View_Shop_Filter_seller_price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Shop_Filter_seller_price.setAlignmentY(1.0F);
         View_Shop_Filter_seller_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_seller_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 200, 30));
+        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_seller_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 250, 190, 30));
 
         View_Shop_Filter_brand.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Shop_Filter_brand.setForeground(new java.awt.Color(20, 31, 31));
@@ -160,7 +163,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
                 View_Shop_Filter_picMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 270, 150));
+        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 270, 160));
 
         View_Shop_Filter_id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Shop_Filter_id.setForeground(new java.awt.Color(20, 31, 31));
@@ -171,9 +174,9 @@ public class View_Shop_Filter extends javax.swing.JFrame {
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(20, 31, 31));
-        jLabel16.setText("DATE");
+        jLabel16.setText("ORDER DATE ");
         jLabel16.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 80, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 110, 30));
 
         View_Shop_Filter_quantity.setBackground(new java.awt.Color(42, 162, 162));
         View_Shop_Filter_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -190,7 +193,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
                 View_Shop_Filter_quantityKeyTyped(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, 200, 30));
+        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 190, 30));
 
         a1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         a1.setForeground(new java.awt.Color(20, 31, 31));
@@ -239,26 +242,28 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         View_Shop_Filter_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Shop_Filter_type.setAlignmentY(1.0F);
         View_Shop_Filter_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, 200, 30));
+        KG2_ADD_STOCK_GENSET.add(View_Shop_Filter_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 190, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(20, 31, 31));
-        jLabel18.setText("AVAILABLE STOCK:");
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("AVAILABLE STOCK");
         jLabel18.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, 140, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 160, 30));
 
         display_stock_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         display_stock_quantity.setForeground(new java.awt.Color(20, 31, 31));
+        display_stock_quantity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         display_stock_quantity.setText("0");
         display_stock_quantity.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(display_stock_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 50, 120, 30));
+        KG2_ADD_STOCK_GENSET.add(display_stock_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 190, 30));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 51, 0));
         jLabel12.setToolTipText("");
         jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "FILTER / PART INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 1000, 470));
+        KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 1000, 480));
 
         ViewAdd.setBackground(new java.awt.Color(0, 153, 51));
         ViewAdd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
@@ -414,7 +419,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
             View_Shop_Filter_id.setText(rs.getString("ID"));
             View_Shop_Filter_brand.setText(rs.getString("BRAND"));
             View_Shop_Filter_description.setText(rs.getString("DESCRIPTION"));
-            View_Shop_Filter_date.setText(rs.getString("DATE"));
+            View_Shop_Filter_date.setText(Mainpage.Home_Dates.getText());
             View_Shop_Filter_type.setText(rs.getString("TYPE"));
             View_Shop_Filter_seller_price.setText(rs.getString("SELLER PRICE"));
             display_stock_quantity.setText(rs.getString("QUANTITY"));
@@ -525,7 +530,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
                     ResultSet rs = ps.executeQuery();
                     while(rs.next()){
                     images = rs.getBytes("IMAGE");
-                    if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, images,price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, dealing_info, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
+                    if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total,images) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, images,price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, dealing_info, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
                     JOptionPane.showMessageDialog(null, "ADDED"); ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
                     Mainpage.cartIfEmpty.setText("2");
                     display_stock_quantity.setText(result.getText());

@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class History_Genset extends javax.swing.JFrame {
     byte[] images  = null;
+    String date = null;
     /**
      * Creates new form History_Genset
      */
@@ -45,7 +46,6 @@ public class History_Genset extends javax.swing.JFrame {
         history_genset_id = new javax.swing.JLabel();
         history_genset_brand = new javax.swing.JLabel();
         history_genset_model = new javax.swing.JLabel();
-        View_Genset_pic = new javax.swing.JLabel();
         history_genset_type = new javax.swing.JLabel();
         Stock_Genset_Panel_Update = new javax.swing.JPanel();
         history_genset_return_item = new javax.swing.JLabel();
@@ -82,11 +82,10 @@ public class History_Genset extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         history_genset_frame = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        history_genset_date = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        View_Genset_pic = new javax.swing.JLabel();
         Stock_Genset_Panel_Back1 = new javax.swing.JPanel();
         history_genset_back1 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -100,12 +99,12 @@ public class History_Genset extends javax.swing.JFrame {
         View_Genset_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Genset_Display.setText("ORDERED GENSET");
         View_Genset_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_Genset_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_Genset_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 80));
@@ -122,76 +121,63 @@ public class History_Genset extends javax.swing.JFrame {
         history_genset_phasing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_phasing.setAlignmentY(1.0F);
         history_genset_phasing.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 180, 30));
 
         history_genset_kva.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_kva.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_kva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_kva.setAlignmentY(1.0F);
         history_genset_kva.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 390, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 420, 180, 30));
 
         history_genset_engine.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_engine.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_engine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_engine.setAlignmentY(1.0F);
         history_genset_engine.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, 180, 30));
 
         history_genset_dimension.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_dimension.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_dimension.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_dimension.setAlignmentY(1.0F);
         history_genset_dimension.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_dimension, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 180, 30));
 
         history_genset_alter.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_alter.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_alter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_alter.setAlignmentY(1.0F);
         history_genset_alter.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_alter, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_alter, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 370, 180, 30));
 
         history_genset_id.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_id.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_id.setAlignmentY(1.0F);
         history_genset_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 180, 30));
 
         history_genset_brand.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_brand.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_brand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_brand.setAlignmentY(1.0F);
         history_genset_brand.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 180, 30));
 
         history_genset_model.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_model.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_model.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_model.setAlignmentY(1.0F);
         history_genset_model.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 180, 30));
-
-        View_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        View_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
-        View_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
-        View_Genset_pic.setAlignmentY(1.0F);
-        View_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
-        View_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                View_Genset_picMouseClicked(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(View_Genset_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 270, 150));
+        KG2_ADD_STOCK_GENSET.add(history_genset_model, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 180, 30));
 
         history_genset_type.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_type.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_type.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_type.setAlignmentY(1.0F);
         history_genset_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 440, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 180, 30));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
         Stock_Genset_Panel_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
@@ -265,218 +251,211 @@ public class History_Genset extends javax.swing.JFrame {
         jLabel20.setForeground(new java.awt.Color(20, 31, 31));
         jLabel20.setText("UNIT TYPE");
         jLabel20.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 80, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 80, 30));
 
         jLabel22.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(20, 31, 31));
         jLabel22.setText("DIMENSION");
         jLabel22.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 120, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 120, 30));
 
         jLabel29.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(20, 31, 31));
         jLabel29.setText("PRICE");
         jLabel29.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 130, 30));
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(20, 31, 31));
         jLabel11.setText("ENGINE_SN");
         jLabel11.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 130, 30));
 
         jLabel15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(20, 31, 31));
         jLabel15.setText("ALTERNATOR_SN");
         jLabel15.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 130, 30));
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(20, 31, 31));
         jLabel10.setText("PHASING");
         jLabel10.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 120, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 170, 120, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(20, 31, 31));
         jLabel7.setText("KVA");
         jLabel7.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 80, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 80, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(20, 31, 31));
         jLabel5.setText("MODEL");
         jLabel5.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 80, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 80, 30));
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(20, 31, 31));
         jLabel2.setText("BRAND");
         jLabel2.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 80, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 80, 30));
 
         history_genset_seller_price.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_seller_price.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_seller_price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_seller_price.setAlignmentY(1.0F);
         history_genset_seller_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_seller_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_seller_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, 180, 30));
 
         a.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         a.setForeground(new java.awt.Color(20, 31, 31));
         a.setText("ID");
         a.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(a, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 80, 30));
+        KG2_ADD_STOCK_GENSET.add(a, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 80, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(20, 31, 31));
         jLabel8.setText("ENERGIZED DATE");
         jLabel8.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 60, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 70, 130, 30));
 
         history_genset_energized_date.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_energized_date.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_energized_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_energized_date.setAlignmentY(1.0F);
         history_genset_energized_date.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_energized_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 60, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_energized_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 70, 170, 30));
 
         history_genset_tank_cap.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_tank_cap.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_tank_cap.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_tank_cap.setAlignmentY(1.0F);
         history_genset_tank_cap.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_tank_cap, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 110, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_tank_cap, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 170, 30));
 
         jLabel21.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(20, 31, 31));
         jLabel21.setText("TANK CAPACITY");
         jLabel21.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 110, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 120, 130, 30));
 
         jLabel23.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(20, 31, 31));
         jLabel23.setText("OIL USAGE");
         jLabel23.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 130, 30));
 
         history_genset_oil_usage.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_oil_usage.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_oil_usage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_oil_usage.setAlignmentY(1.0F);
         history_genset_oil_usage.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_oil_usage, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 160, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_oil_usage, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 170, 170, 30));
 
         history_genset_technician.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_technician.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_technician.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_technician.setAlignmentY(1.0F);
         history_genset_technician.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_technician, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_technician, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 170, 30));
 
         jLabel13.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(20, 31, 31));
         jLabel13.setText("TECHNICIAN");
         jLabel13.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 220, 130, 30));
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(20, 31, 31));
         jLabel9.setText("SUPPLIER PRICE");
         jLabel9.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 130, 30));
 
         history_genset_supplier_price.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_supplier_price.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_supplier_price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_supplier_price.setAlignmentY(1.0F);
         history_genset_supplier_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_supplier_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_supplier_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 180, 30));
 
         jLabel14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(20, 31, 31));
         jLabel14.setText("SUPPLIER NAME");
         jLabel14.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 400, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 420, 130, 30));
 
         history_genset_supplier_name.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_supplier_name.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_supplier_name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_supplier_name.setAlignmentY(1.0F);
         history_genset_supplier_name.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_supplier_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 400, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_supplier_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, 180, 30));
 
         jLabel16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(20, 31, 31));
         jLabel16.setText("UPDATED AT");
         jLabel16.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 420, 130, 30));
 
         history_genset_updated_at.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_updated_at.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_updated_at.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_updated_at.setAlignmentY(1.0F);
         history_genset_updated_at.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_updated_at, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 410, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_updated_at, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 420, 170, 30));
 
         jLabel17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(20, 31, 31));
         jLabel17.setText("STARTING SYSTEM");
         jLabel17.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 260, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 270, 140, 30));
 
         history_genset_starting.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_starting.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_starting.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_starting.setAlignmentY(1.0F);
         history_genset_starting.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_starting, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 260, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_starting, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 270, 170, 30));
 
         history_genset_weight.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_weight.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_weight.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_weight.setAlignmentY(1.0F);
         history_genset_weight.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 310, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_weight, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 320, 170, 30));
 
         jLabel18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(20, 31, 31));
         jLabel18.setText("WEIGHT");
         jLabel18.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 310, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 320, 130, 30));
 
         jLabel19.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(20, 31, 31));
         jLabel19.setText("FRAME");
         jLabel19.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 360, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 370, 130, 30));
 
         history_genset_frame.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         history_genset_frame.setForeground(new java.awt.Color(20, 31, 31));
         history_genset_frame.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         history_genset_frame.setAlignmentY(1.0F);
         history_genset_frame.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 360, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(history_genset_frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 370, 170, 30));
 
-        jLabel24.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(20, 31, 31));
-        jLabel24.setText("DATE");
-        jLabel24.setAlignmentY(1.0F);
-        KG2_ADD_STOCK_GENSET.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 120, 30));
-
-        history_genset_date.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        history_genset_date.setForeground(new java.awt.Color(20, 31, 31));
-        history_genset_date.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        history_genset_date.setAlignmentY(1.0F);
-        history_genset_date.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        KG2_ADD_STOCK_GENSET.add(history_genset_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 180, 30));
-
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 51, 0));
-        jLabel12.setToolTipText("");
-        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "GENSET INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1030, 480));
+        View_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        View_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
+        View_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        View_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
+        View_Genset_pic.setAlignmentY(1.0F);
+        View_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
+        View_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                View_Genset_picMouseClicked(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(View_Genset_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 270, 170));
 
         Stock_Genset_Panel_Back1.setBackground(new java.awt.Color(255, 173, 51));
         Stock_Genset_Panel_Back1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
@@ -511,6 +490,13 @@ public class History_Genset extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 210, 50));
 
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 51, 0));
+        jLabel12.setToolTipText("");
+        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "GENSET INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1030, 480));
+
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
         pack();
@@ -535,7 +521,7 @@ public class History_Genset extends javax.swing.JFrame {
                     history_genset_seller_price.setText(rs.getString("SELLER PRICE"));
                     history_genset_engine.setText(rs.getString("ENGINE_SERIAL_NO"));
                     history_genset_alter.setText(rs.getString("ALTERNATOR_SERIAL_NO"));
-                    history_genset_date.setText(rs.getString("DATE"));
+                    date = rs.getString("DATE");
                     history_genset_supplier_name.setText(rs.getString("SUPPLIER"));
                     history_genset_energized_date.setText(rs.getString("ENERGIZED DATE"));
                     history_genset_tank_cap.setText(rs.getString("TANK CAPACITY"));
@@ -556,17 +542,13 @@ public class History_Genset extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_View_Genset_DisplayAncestorAdded
 
-    private void View_Genset_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset_picMouseClicked
-
-    }//GEN-LAST:event_View_Genset_picMouseClicked
-
     private void history_genset_return_itemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_return_itemMouseClicked
 
         String brand    = history_genset_brand.getText().toUpperCase(); 
         String model     = history_genset_model.getText().toUpperCase();
         String kva      = history_genset_kva.getText().toUpperCase();
         String type     = history_genset_type.getText().toUpperCase();
-        String date     = history_genset_date.getText().toUpperCase();
+//        String date     = history_genset_date.getText().toUpperCase();
         String phasing  = history_genset_phasing.getText().toUpperCase(); 
         String dimen    = history_genset_dimension.getText().toUpperCase();
         String price    = history_genset_supplier_price.getText().toUpperCase();
@@ -646,6 +628,10 @@ public class History_Genset extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_history_genset_back1MouseExited
 
+    private void View_Genset_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset_picMouseClicked
+
+    }//GEN-LAST:event_View_Genset_picMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -693,7 +679,6 @@ public class History_Genset extends javax.swing.JFrame {
     private javax.swing.JLabel history_genset_back1;
     public static javax.swing.JLabel history_genset_brand;
     private javax.swing.JLabel history_genset_customer;
-    public static javax.swing.JLabel history_genset_date;
     public static javax.swing.JLabel history_genset_dimension;
     public static javax.swing.JLabel history_genset_energized_date;
     public static javax.swing.JLabel history_genset_engine;
@@ -728,7 +713,6 @@ public class History_Genset extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;

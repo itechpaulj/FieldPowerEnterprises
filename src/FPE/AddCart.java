@@ -62,12 +62,12 @@ public class AddCart extends javax.swing.JFrame {
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         displays.setText("CART LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 displaysAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 570, 80));

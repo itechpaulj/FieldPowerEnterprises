@@ -42,10 +42,10 @@ public class Class_Order {
      return false;
     }
     
-        public static boolean InsertBinFilter(String brand,String date,String desc,String type,String price,String quantity,String total){
+        public static boolean InsertBinFilter(String brand,String date,String desc,String type,String price,String quantity,String total,byte[] images){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `bin_filter`( `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, `PRICE`, `QUANTITY`, `TOTAL PRICE`) VALUES (?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `bin_filter`( `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, `PRICE`, `QUANTITY`, `TOTAL PRICE`,`IMAGE` ) VALUES (?,?,?,?,?,?,?,?)");
         ps.setString(1,date);
         ps.setString(2,brand);
         ps.setString(3,desc);
@@ -53,6 +53,7 @@ public class Class_Order {
         ps.setString(5,price);
         ps.setString(6,quantity);
         ps.setString(7,total);
+        ps.setBytes(8,images);
         
         ps.execute();
         
