@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1ac19b96-57da-49e4-a69c-fbe76251eb73">
 	<property name="ireport.zoom" value="2.0"/>
-	<property name="ireport.x" value="230"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="833"/>
 	<parameter name="counted_process" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -319,7 +319,7 @@
 				</textElement>
 				<text><![CDATA[SUB TOTAL :]]></text>
 			</staticText>
-			<textField pattern="¤ #,##0.00">
+			<textField pattern="#,##0.00">
 				<reportElement x="417" y="0" width="138" height="20" uuid="1415f2cb-7bf0-4a59-815f-61b68b749d79"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>

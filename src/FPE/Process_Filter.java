@@ -37,8 +37,10 @@ public class Process_Filter extends javax.swing.JFrame {
         initComponents();
         con = FPE_DB.getConnection();
         ct.ShowOrder();
-
-    }
+        quotation.setEditable(false);
+        yearQuot.setVisible(false);
+        numQuot.setVisible(false);
+   }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -380,7 +382,7 @@ public class Process_Filter extends javax.swing.JFrame {
      String name = Process_Filter_Customer_name.getText();
      String address = Process_Filter_Customer_address.getText();
      String email = Process_Filter_Customer_email.getText();
-     String cotact = Process_Filter_Customer_contact.getText();
+     String contact = Process_Filter_Customer_contact.getText();
      String agent_name = Process_Filter_Agent_name.getText();
      String agent_contact = Process_Filter_Agent_contact.getText();
      String dealing_info = Process_Filter_Customer_dealing_info.getText();
@@ -391,11 +393,13 @@ public class Process_Filter extends javax.swing.JFrame {
      try{
         ps=FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DATE`, `DESCRIPTION`, `TYPE`, `QUANTITY`, `PRICE`, `TOTAL PRICE` FROM `add_cart`");
         rs = ps.executeQuery();
-        
-        if(rs.next()){
+        if(name.equals("") || address.equals("") || email.equals("") || contact.equals("") || agent_name.equals("") || agent_name.equals("") || agent_contact.equals("") || dealing_info.equals("")  ){
+           JOptionPane.showMessageDialog(null,"FILLED SOME BLANKS !!! ","",JOptionPane.ERROR_MESSAGE);
+        }
+        else if(rs.next()){
             ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
-
-            if(!Class_Order.UpdateHistoryFilter(qout, unique, name, address, email, cotact, agent_name, agent_contact,dealing_info) && !Class_Cart.DeleteCart()){
+            
+            if(!Class_Order.UpdateHistoryFilter(qout, unique, name, address, email, contact, agent_name, agent_contact,dealing_info) && !Class_Cart.DeleteCart()){
                 JOptionPane.showMessageDialog(null, "SUCCESS"); ct.ShowCart(); ct.ShowOrder();
                     Mainpage.cartIfEmpty.setText("1");
                     JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printfilter.jrxml");
