@@ -6,6 +6,7 @@
 package FPE;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -72,8 +73,8 @@ public class Class_Filter {
      return false;
     }
     
-    //update quantity
-        public static boolean updateQuantity(String id, String quantity){
+    //update quantity filter table
+     public static boolean updateQuantity(String id, String quantity){
         PreparedStatement ps = null;
         try{
         ps = FPE_DB.getConnection().prepareStatement("UPDATE `filter_table` SET `QUANTITY`=? WHERE `ID` = ?");
@@ -83,12 +84,40 @@ public class Class_Filter {
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-        }
-
-        
+        } 
      return false;
     }
     
-
-
+    public static boolean ExistBrand(String brand){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        boolean brand_name = false;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("SELECT `BRAND` FROM `add_cart` WHERE `BRAND`=?");
+        ps.setString(1,brand);
+        rs = ps.executeQuery();
+            if(!rs.next()){
+                brand_name = true;
+            }
+        }
+        catch(Exception e){
+            //JOptionPane.showMessageDialog(null, e);
+            e.printStackTrace();
+        }   
+     return brand_name;
+    }
+    //update quantity add cart
+     public static boolean updateQuantityCart(String brand, String quantity){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `add_cart` SET `QUANTITY`=? WHERE `BRAND` = ?");
+        ps.setString(1,quantity);
+        ps.setString(2,brand);
+        ps.execute();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        } 
+     return false;
+    }
 }

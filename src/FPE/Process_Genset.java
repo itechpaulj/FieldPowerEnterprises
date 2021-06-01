@@ -587,8 +587,8 @@ public class Process_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_Process_Genset_picMouseClicked
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
-
-
+    Class_tables ct = new Class_tables();
+    
     Date today = new Date();
     SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
     String getdate = date.format(today);
@@ -641,7 +641,7 @@ public class Process_Genset extends javax.swing.JFrame {
 
     if(brand.equals("") || model.equals("") || kva.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || seller_price.equals("") || engine_sn.equals("") || alters1_sn.equals("") || c_name.equals("") || c_add.equals("") || c_email.equals("") || c_contact.equals("") || c_deal.equals("") || agent_name.equals("") || agent_contact.equals("") || quotation.equals("") || date_recieved.equals("") || sup_name.equals("") || energized_date.equals("") || tank_cap.equals("") || oil_usage.equals("") || tech.equals("") || esystem.equals("") || weight.equals("") || frame.equals("") || updated_at.equals("") ){
         JOptionPane.showMessageDialog(null, "EMPTY SOME FIELDS!","",JOptionPane.INFORMATION_MESSAGE);
-
+        ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
     }
     else{
         if(getValidQuot[0].equals("0000")){
@@ -650,7 +650,7 @@ public class Process_Genset extends javax.swing.JFrame {
         }
         else if (id.equals("") || brand.equals("") || model.equals("") || kva.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || seller_price.equals("") || engine_sn.equals("") || alters1_sn.equals("") || c_name.equals("") || c_add.equals("") || c_email.equals("") || c_contact.equals("") || c_deal.equals("") || agent_name.equals("") || agent_contact.equals("") || quotation.equals("") || sup_price.equals("") || date_recieved.equals("") || sup_name.equals("") || energized_date.equals("") || tank_cap.equals("") || oil_usage.equals("") || tech.equals("") || updated_at.equals("")){
          JOptionPane.showMessageDialog(null, "EMPTY SOME FIELDS!!","",JOptionPane.INFORMATION_MESSAGE);
-      
+         ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
         }else{
     //        int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO PRINT THIS PRODUCT ? ","",JOptionPane.YES_NO_OPTION);
     //        if(opt==0){
@@ -662,8 +662,8 @@ public class Process_Genset extends javax.swing.JFrame {
                         //insert histoty_genset_table
                         //insert bin_genset
                         // delete insert_genset
-               
-                        if(!Class_Bin.Historygenset(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGenset(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
+                        ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
+                        if(!Class_Bin.Historygenset(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.gensetTable(id) )
                          {
                               JOptionPane.showMessageDialog(null, "SUCCESS");
 
@@ -699,11 +699,12 @@ public class Process_Genset extends javax.swing.JFrame {
                         //JOptionPane.showMessageDialog(null, "1");
                         process.setText("2");//update
                     }else{
+                        ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
                         if(processed.equals("2")){
               
                            // JOptionPane.showMessageDialog(null, "2");
                            // update class
-                        if(!Class_Bin.HistorygensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.BinGensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price, seller_price, engine_sn, alters1_sn, frame, images, sup_price, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame, updated_at) && !Class_Bin.gensetTable(id) )
+                        if(!Class_Bin.HistorygensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.gensetTable(id) )
                          {
                               JOptionPane.showMessageDialog(null, "SUCCESS");
                              try{

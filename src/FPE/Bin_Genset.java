@@ -435,7 +435,7 @@ public class Bin_Genset extends javax.swing.JFrame {
             
         try{   
             String id = Mainpage.bin_genset_ids.getText();
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `bin_genset` WHERE `ID`='"+id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `history_genset_table` WHERE `ID`='"+id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                      

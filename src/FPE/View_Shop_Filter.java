@@ -490,6 +490,9 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_Wiew_Genset_DisplayAncestorAdded
 
     private void AddToCartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddToCartMouseClicked
+
+        PreparedStatement ps;
+        ResultSet rs;
         String id = View_Shop_Filter_id.getText();
         String date = View_Shop_Filter_date.getText();
         String brand = View_Shop_Filter_brand.getText();
@@ -515,26 +518,59 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         try{
         if(quantity.equals("")){
             JOptionPane.showMessageDialog(null, "ENTER QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
+            ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+            ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
         }
         else{
-            if(display_stock_quantity .getText().equals("0")){
+            if(display_stock_quantity.getText().equals("0")){
                 JOptionPane.showMessageDialog(null, "NO STACK AVAILABLE!","",JOptionPane.INFORMATION_MESSAGE);
                 ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+                ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
             }
             else if(quanResult < 0){
                 JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
                 ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+                ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
             }        
             else{
-                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE` FROM `filter_table` WHERE `ID`='"+id+"'");
-                    ResultSet rs = ps.executeQuery();
+                    ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+                    ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
+                    ps=FPE_DB.getConnection().prepareStatement("SELECT `IMAGE` FROM `filter_table` WHERE `ID`='"+id+"'");
+                     rs = ps.executeQuery();
                     while(rs.next()){
                     images = rs.getBytes("IMAGE");
-                    if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertBinFilter(date, brand, desc, type, price, quantity, total,images) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, images,price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, dealing_info, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
-                    JOptionPane.showMessageDialog(null, "ADDED"); ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
-                    Mainpage.cartIfEmpty.setText("2");
-                    display_stock_quantity.setText(result.getText());
-                    }              
+                    
+                    if(!Class_Filter.ExistBrand(brand)){
+                        int getCurrentQuantity = Integer.parseInt(display_stock_quantity.getText());
+                        int getInputQuantity = Integer.parseInt(quantity);
+                        int getUpdateFilter = getCurrentQuantity - getInputQuantity;
+                        String stringQuanityFilter = Integer.toString(getUpdateFilter);
+                        display_stock_quantity.setText(stringQuanityFilter);
+                         ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+                         ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
+                         //JOptionPane.showMessageDialog(null, "EXIST CART");
+                          ps=FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `add_cart` WHERE `BRAND`='"+brand+"'");
+                          rs = ps.executeQuery();
+                          if(rs.next()){
+                              int OldQuantity = Integer.parseInt(rs.getString("QUANTITY"));
+                              int newQuantity = Integer.parseInt(quantity);
+                              int result = OldQuantity + newQuantity;
+                              String updateQuantity = Integer.toString(result);
+                              if(!Class_Filter.updateQuantityCart(brand, updateQuantity) && !Class_Order.UpdateQuanityHistotyFilter(brand, updateQuantity) && !Class_Filter.updateQuantity(id, stringQuanityFilter)){
+                                 JOptionPane.showMessageDialog(null, "ADDED");
+                              }
+                          }
+                    }
+                    else{
+                        if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, images,price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, dealing_info, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
+                        JOptionPane.showMessageDialog(null, "ADDED");
+                           Mainpage.cartIfEmpty.setText("2");
+                           display_stock_quantity.setText(result.getText());
+                           ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+                           ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
+                        }                         
+                    }
+             
 
             }
         }

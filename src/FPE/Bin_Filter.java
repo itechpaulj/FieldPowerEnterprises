@@ -297,7 +297,7 @@ public class Bin_Filter extends javax.swing.JFrame {
             
         try{   
             String id = Mainpage.bin_filter_id.getText();
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `bin_filter` WHERE `ID`='"+id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `history_filter` WHERE `ID`='"+id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                      

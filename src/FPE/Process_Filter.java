@@ -369,6 +369,8 @@ public class Process_Filter extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Process_Filter_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Process_Filter_BtnMouseClicked
+      Class_tables ct =  new Class_tables();
+      
       PreparedStatement ps;
       ResultSet rs;
         
@@ -391,7 +393,7 @@ public class Process_Filter extends javax.swing.JFrame {
         rs = ps.executeQuery();
         
         if(rs.next()){
-          
+            ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
 
             if(!Class_Order.UpdateHistoryFilter(qout, unique, name, address, email, cotact, agent_name, agent_contact,dealing_info) && !Class_Cart.DeleteCart()){
                 JOptionPane.showMessageDialog(null, "SUCCESS"); ct.ShowCart(); ct.ShowOrder();
@@ -424,6 +426,7 @@ public class Process_Filter extends javax.swing.JFrame {
         }
         else{
             JOptionPane.showMessageDialog(null, "EMPTY CART","",JOptionPane.ERROR_MESSAGE);
+            ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
         }
      }
      catch(Exception e){

@@ -447,7 +447,12 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
     else if(Banner.equals("ADD FILTER PRODUCT") && Path.getText().equals("1"))
     {
         //new supplier and new new filter
-        if(!Class_Supplier.ExistSupplier(email)){
+        if(!Class_Filter.ExistBrand(brand)){
+            JOptionPane.showMessageDialog(null, "EXIST BRAND\nPLEASE UPDATE QUANTITY!","",JOptionPane.WARNING_MESSAGE);
+            //Path.setText("2"); // exist supplier
+            ct.Filter(); ct.Supplier(); ct.ShopFilter();
+        }
+        else if(!Class_Supplier.ExistSupplier(email)){
             JOptionPane.showMessageDialog(null, " EXIST SUPPLIER\nPLEASE SELECT SUPPLIER LIST!","",JOptionPane.WARNING_MESSAGE);
             //Path.setText("2"); // exist supplier
             ct.Filter(); ct.Supplier(); ct.ShopFilter();
@@ -466,7 +471,13 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
     else if(Banner.equals("ADD FILTER PRODUCT") && Path.getText().equals("3"))
     {
         //exist supplier but new new filter
-        if(!Class_Filter.AddFilter(date, brand, description, type, supplier_price, seller_price, quantity, images, name))
+                //new supplier and new new filter
+        if(!Class_Filter.ExistBrand(brand)){
+            JOptionPane.showMessageDialog(null, "ALREADY SELECTED ITEM\nTHIS QUANTITY WILL BE ADD","",JOptionPane.WARNING_MESSAGE);
+            //Path.setText("2"); // exist supplier
+            ct.Filter(); ct.Supplier(); ct.ShopFilter();
+        }
+        else if(!Class_Filter.AddFilter(date, brand, description, type, supplier_price, seller_price, quantity, images, name))
         {
             JOptionPane.showMessageDialog(null, " SUCCESFULLY ADDED ","",JOptionPane.INFORMATION_MESSAGE);
            ct.Filter(); ct.Supplier(); ct.ShopFilter();

@@ -6,6 +6,7 @@
 package FPE;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 /**
  *
@@ -68,7 +69,7 @@ public class Class_Cart {
     }
     
           
-        public static boolean DeleteCart(){
+    public static boolean DeleteCart(){
         PreparedStatement ps = null;
         try{
         ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `add_cart`");
@@ -82,5 +83,25 @@ public class Class_Cart {
      return false;
     } 
     
+        
     
+    public static boolean ExistCart(String brand){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        boolean brand_name = false;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("SELECT `BRAND` FROM `add_cart` WHERE `BRAND`=?");
+        ps.setString(1,brand);
+        rs = ps.executeQuery();
+            if(!rs.next()){
+                brand_name = true;
+            } 
+ 
+        }
+        catch(Exception e){
+            //JOptionPane.showMessageDialog(null, e);
+            e.printStackTrace();
+        }   
+     return brand_name;
+    }
 }

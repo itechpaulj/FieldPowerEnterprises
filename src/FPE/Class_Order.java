@@ -88,11 +88,26 @@ public class Class_Order {
      return false;
     }
     
-        public static boolean UpdateBinFilter(String brand,String date,String desc,String type,String price,String quantity,String total){
+//     public static boolean UpdateBinFilter(String brand,String date,String desc,String type,String price,String quantity,String total){
+//        PreparedStatement ps = null;
+//        try{
+//        ps = FPE_DB.getConnection().prepareStatement("UPDATE `bin_filter` SET `ID`=?,`DATE`=?,`BRAND`=?,`DESCRIPTION`=?,?=?,`SUPPLIER PRICE`=?,`SELLER PRICE`=?,`QUANTITY`=?,`SUPPLIER`=? WHERE ");
+//        ps.setString(1,quantity);
+//        
+//        ps.execute();
+//        }catch(Exception e){
+//           e.printStackTrace();
+//        }
+//        
+//     return false;
+//    }
+     
+        public static boolean UpdateQuanityHistotyFilter(String brand,String quantity){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `bin_filter` SET `ID`=?,`DATE`=?,`BRAND`=?,`DESCRIPTION`=?,?=?,`SUPPLIER PRICE`=?,`SELLER PRICE`=?,`QUANTITY`=?,`SUPPLIER`=? WHERE ");
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `history_filter` SET `QUANTITY`=? WHERE `BRAND`=? ");
         ps.setString(1,quantity);
+        ps.setString(2,brand);
         
         ps.execute();
         }catch(Exception e){
@@ -100,7 +115,7 @@ public class Class_Order {
         }
         
      return false;
-    } 
+    }
 
         
         
