@@ -55,6 +55,7 @@ public class Mainpage extends javax.swing.JFrame {
        cg.isuzu();
        cg.cummins();
        cg.perkins();
+       cg.other();
        
        ct.Genset();
        ct.Filter();
@@ -70,10 +71,7 @@ public class Mainpage extends javax.swing.JFrame {
        showDate();
        cartifEmpty();
        showPieChart();
-       qwe1.setText(""+Class_Graph.yandong);
-       qwe2.setText(""+Class_Graph.yandong);
-       qwe3.setText(""+Class_Graph.yandong);
-       qwe4.setText(""+Class_Graph.yandong);
+ 
     }
          
 public void yan(){
@@ -131,17 +129,14 @@ public void yan(){
     }
     
 public void showPieChart(){
-       Class_Graph cg =new Class_Graph();
-       cg.yandong();
-       cg.isuzu();
-       cg.cummins();
-       cg.perkins();
+       //Class_Graph cg =new Class_Graph();
       DefaultPieDataset barDataset = new DefaultPieDataset( );
       barDataset.setValue( "YANDONG" , new Integer(Class_Graph.yandong) );  
       barDataset.setValue( "ISUZU" , new Integer(Class_Graph.isuzu) );   
       barDataset.setValue( "CUMMINS" , new Integer(Class_Graph.cummins));    
-      barDataset.setValue( "PERKINS" , new Integer(Class_Graph.perkins) );  
-      
+      barDataset.setValue( "PERKINS" , new Integer(Class_Graph.perkins) );
+      barDataset.setValue( "OTHER" , new Integer(Class_Graph.other) );  
+
       //create chart
        JFreeChart piechart = ChartFactory.createPieChart("GENSET SALES",barDataset, true,true,false);//explain
       
@@ -320,10 +315,6 @@ public void showPieChart(){
         Graph_Agent = new javax.swing.JPanel();
         HOME_PANEL13 = new javax.swing.JPanel();
         Sale_Filter_Btn1 = new javax.swing.JLabel();
-        qwe4 = new javax.swing.JLabel();
-        qwe1 = new javax.swing.JLabel();
-        qwe2 = new javax.swing.JLabel();
-        qwe3 = new javax.swing.JLabel();
 
         stock_supplier_id.setText("jLabel2");
 
@@ -2276,7 +2267,7 @@ public void showPieChart(){
         Sale_Filter_Btn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         Sale_Filter_Btn.setForeground(new java.awt.Color(255, 255, 255));
         Sale_Filter_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Sale_Filter_Btn.setText("AGENTS");
+        Sale_Filter_Btn.setText("FILTER / PARTS / OTHER");
         Sale_Filter_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Sale_Filter_BtnMouseClicked(evt);
@@ -2341,18 +2332,6 @@ public void showPieChart(){
         );
 
         STATUS_14.add(HOME_PANEL13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, 450, 45));
-
-        qwe4.setText("jLabel4");
-        STATUS_14.add(qwe4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
-
-        qwe1.setText("jLabel4");
-        STATUS_14.add(qwe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
-
-        qwe2.setText("jLabel4");
-        STATUS_14.add(qwe2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
-
-        qwe3.setText("jLabel4");
-        STATUS_14.add(qwe3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
 
         JTab.addTab("14", STATUS_14);
 
@@ -2434,10 +2413,7 @@ public void showPieChart(){
         Dashboard_Display_2.setText(null);
         Dashboard_Display_3.setText(null);
         Class_Graph cg =new Class_Graph();
-        cg.yandong();
-        cg.isuzu();
-        cg.cummins();
-        cg.perkins();
+        showPieChart();
        
         JTab.setSelectedIndex(14);
     }//GEN-LAST:event_STATUSMouseClicked
@@ -3589,10 +3565,6 @@ public void showPieChart(){
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     public static javax.swing.JLabel process;
-    public static javax.swing.JLabel qwe1;
-    public static javax.swing.JLabel qwe2;
-    public static javax.swing.JLabel qwe3;
-    public static javax.swing.JLabel qwe4;
     public static javax.swing.JLabel stock_supplier_id;
     public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables

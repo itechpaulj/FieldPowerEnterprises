@@ -16,6 +16,7 @@ public class Class_Graph {
    public static int isuzu;
    public static int cummins;
    public static int perkins;
+   public static int other;
     
     public static boolean yandong(){
 
@@ -59,6 +60,19 @@ public class Class_Graph {
      ResultSet rs = ps.executeQuery();
          while(rs.next()){
          perkins = rs.getInt("COUNT");         
+         }
+         }catch(Exception e){
+         e.printStackTrace();
+         }
+     return true;
+    }
+    
+     public static boolean other(){
+
+     try{PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT COUNT(`BRAND`) as `COUNT` FROM `history_genset_table` WHERE `BRAND` LIKE '%OTHER BRAND%' ");
+     ResultSet rs = ps.executeQuery();
+         while(rs.next()){
+         other = rs.getInt("COUNT");         
          }
          }catch(Exception e){
          e.printStackTrace();

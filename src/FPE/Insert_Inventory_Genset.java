@@ -112,6 +112,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        other = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         Inventory_Display = new javax.swing.JLabel();
 
@@ -311,7 +312,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Supplier_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 180, 30));
 
         engine1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        engine1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "YANDONG", "CUMMINS", "ISUZU", "PERKINS", "OTHER" }));
+        engine1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "YANDONG", "CUMMINS", "ISUZU", "PERKINS", "OTHER BRAND" }));
         engine1.setBorder(null);
         engine1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -504,6 +505,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         jLabel17.setToolTipText("");
         jLabel17.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "SUPPLIER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 30, 330, 480));
+        KG2_ADD_STOCK_GENSET.add(other, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 110, 20));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
@@ -594,6 +596,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     String sel_engine = engine.getSelectedItem().toString();
     String sel_alter = alter.getSelectedItem().toString();
     
+    String other_brand = other.getText();
 
     if(brand.equals("") || mode.equals("") || kva.equals("") || date.equals("") || phasing.equals("") || type.equals("") || dimen.equals("") || price.equals("") || s_price.equals("") || name.equals("") || address.equals("") || email.equals("") || contact.equals("") || sel_engine.equals("SELECT") || sel_alter.equals("SELECT")){
        
@@ -601,28 +604,67 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     }
     else if(Banner.equals("ADD GENSET PRODUCT") && Path.getText().equals("1"))
     {
-        if(!Class_Supplier.ExistSupplier(email)){
-            JOptionPane.showMessageDialog(null, " EXIST SUPPLIER\nPLEASE SELECT SUPPLIER LIST!","",JOptionPane.WARNING_MESSAGE);
-            //Path.setText("2"); // exist supplier
-            ct.Genset(); ct.Supplier();ct.ShopGenset();
+        if(other_brand.equals("")){
+            if(!Class_Supplier.ExistSupplier(email)){
+                JOptionPane.showMessageDialog(null, " EXIST SUPPLIER\nPLEASE SELECT SUPPLIER LIST!","",JOptionPane.WARNING_MESSAGE);
+                //Path.setText("2"); // exist supplier
+                ct.Genset(); ct.Supplier();ct.ShopGenset();
+            }
+            else{
+                if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name) && !Class_Supplier.AddSupplier(name, address, contact, email))
+                {
+                    JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
+                    ct.Genset(); ct.Supplier();ct.ShopGenset();
+                    dispose();
+                }   
+            }
         }
         else{
-            if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name) && !Class_Supplier.AddSupplier(name, address, contact, email))
-            {
-                JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
-                ct.Genset(); ct.Supplier();ct.ShopGenset();
-                dispose();
-            }   
+            if(other_brand.equals("OTHER BRAND")){
+                 String confirm_otherBrand = brand + " "+other_brand;
+                 if(!Class_Stock.AddGenset(date, confirm_otherBrand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name) && !Class_Supplier.AddSupplier(name, address, contact, email))
+                 {
+                     JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
+                     ct.Genset(); ct.Supplier();ct.ShopGenset();
+                     dispose();
+                 }    
+            }
+            else{
+                String confirm_otherBrand = brand + " "+other_brand;
+                if(other_brand.equals("OITHER BRAND")){
+                    if(!Class_Stock.AddGenset(date, confirm_otherBrand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name) && !Class_Supplier.AddSupplier(name, address, contact, email))
+                    {
+                        JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
+                        ct.Genset(); ct.Supplier();ct.ShopGenset();
+                        dispose();
+                    }
+                }
+            }
+            
         }
     }
     else if(Banner.equals("ADD GENSET PRODUCT") && Path.getText().equals("2")){
         // exist supplier but new genset product
-        if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name))
-        {
-            JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
-            ct.Genset(); ct.Supplier();ct.ShopGenset();
-            dispose();
+        if(other_brand.equals("")){
+            if(!Class_Stock.AddGenset(date, brand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name))
+            {
+                JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
+                ct.Genset(); ct.Supplier();ct.ShopGenset();
+                dispose();
+            }
         }
+        else{
+            String confirm_otherBrand = brand + " "+ other_brand;
+            if(other_brand.equals("OTHER BRAND")){
+               if(!Class_Stock.AddGenset(date, confirm_otherBrand, mode, kva, phasing, type, dimen, price, s_price, engines, alters, images, name))
+               {
+                   JOptionPane.showMessageDialog(null, " SUCCESFULL ADDED ","",JOptionPane.INFORMATION_MESSAGE);
+                   ct.Genset(); ct.Supplier();ct.ShopGenset();
+                   dispose();
+               }
+            }
+        }
+
 
     }
     else if(Banner.equals("UPDATE GENSET PRODUCT"))
@@ -698,17 +740,18 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_engine1MouseReleased
 
     private void engine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_engine1ActionPerformed
-         String ty = engine1.getSelectedItem().toString();
+       String ty = engine1.getSelectedItem().toString();
        int tys = engine1.getSelectedIndex();
-        if(ty.equals("OTHER")){
+        if(ty.equals("OTHER BRAND")){
        
         Insert_Invetory_Genset_brand.setText(null);
         Insert_Invetory_Genset_brand.enable(true);
+        other.setText("OTHER BRAND");
             
         }else{
         Insert_Invetory_Genset_brand.setText(engine1.getSelectedItem().toString());
         Insert_Invetory_Genset_brand.enable(false);
-        
+        other.setText("");
         }
     }//GEN-LAST:event_engine1ActionPerformed
 
@@ -802,5 +845,6 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel other;
     // End of variables declaration//GEN-END:variables
 }
