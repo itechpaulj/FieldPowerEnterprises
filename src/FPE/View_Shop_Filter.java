@@ -558,6 +558,8 @@ public class View_Shop_Filter extends javax.swing.JFrame {
                               String updateQuantity = Integer.toString(result);
                               if(!Class_Filter.updateQuantityCart(brand, updateQuantity) && !Class_Order.UpdateQuanityHistotyFilter(brand, updateQuantity) && !Class_Filter.updateQuantity(id, stringQuanityFilter)){
                                  JOptionPane.showMessageDialog(null, "ADDED");
+                                 ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+                                 ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
                               }
                           }
                     }

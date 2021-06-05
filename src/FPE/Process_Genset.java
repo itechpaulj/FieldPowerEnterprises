@@ -51,7 +51,7 @@ public class Process_Genset extends javax.swing.JFrame {
     cg.isuzu();
     cg.cummins();
     cg.perkins();
-        
+    quotations.setEditable(false);
     }
 
     /**
