@@ -29,7 +29,7 @@
     <Container class="javax.swing.JPanel" name="jPanel4">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="5e" green="47" red="2" type="rgb"/>
+          <Color blue="4a" green="33" red="2" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -70,10 +70,10 @@
     <Container class="keeptoo.KGradientPanel" name="kGradientPanel1">
       <Properties>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="a2" green="a2" red="2a" type="rgb"/>
+          <Color blue="8e" green="8e" red="2a" type="rgb"/>
         </Property>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="a2" green="a2" red="2a" type="rgb"/>
+          <Color blue="8e" green="8e" red="2a" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -164,7 +164,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Add_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Btn/Btn_Add.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" ADD CUSTOMER"/>
               </Properties>
@@ -204,7 +204,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="sup_listUpdate" alignment="0" max="32767" attributes="0"/>
+                  <Component id="sup_listUpdate" alignment="0" pref="198" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -224,7 +224,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Edit_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Btn/Btn_Updates.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" UPDATE "/>
               </Properties>
@@ -284,7 +284,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Delete_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Btn/Btn_Cancel.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" DELETE"/>
               </Properties>
@@ -344,7 +344,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Images_Back_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Btn/Btn_Back.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" BACK  "/>
               </Properties>
@@ -389,7 +389,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Picture/Images_Search_Btn.png"/>
+              <Image iconType="3" name="/Picture/Btn/Btn_Search.png"/>
             </Property>
           </Properties>
           <Constraints>

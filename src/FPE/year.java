@@ -80,11 +80,12 @@ public class year extends javax.swing.JFrame {
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Panel_Energized_Energized_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Panel_Energized_Energized_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Energized_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Energized_Back.setForeground(new java.awt.Color(255, 255, 255));
         Energized_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Energized_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Energized_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
         Energized_Back.setText(" BACK     ");
         Energized_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -102,21 +103,24 @@ public class year extends javax.swing.JFrame {
         Panel_Energized_Energized_Back.setLayout(Panel_Energized_Energized_BackLayout);
         Panel_Energized_Energized_BackLayout.setHorizontalGroup(
             Panel_Energized_Energized_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Energized_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addGroup(Panel_Energized_Energized_BackLayout.createSequentialGroup()
+                .addComponent(Energized_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 22, Short.MAX_VALUE))
         );
         Panel_Energized_Energized_BackLayout.setVerticalGroup(
             Panel_Energized_Energized_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Energized_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Panel_Energized_Energized_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 150, -1));
+        kGradientPanel1.add(Panel_Energized_Energized_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 150, -1));
 
         Pane_Energized_Update.setBackground(new java.awt.Color(51, 187, 255));
+        Pane_Energized_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Energized_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Energized_Update.setForeground(new java.awt.Color(255, 255, 255));
         Energized_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Energized_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Save_Btn.png"))); // NOI18N
+        Energized_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Check.png"))); // NOI18N
         Energized_Update.setText(" SAVE");
         Energized_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -134,14 +138,14 @@ public class year extends javax.swing.JFrame {
         Pane_Energized_Update.setLayout(Pane_Energized_UpdateLayout);
         Pane_Energized_UpdateLayout.setHorizontalGroup(
             Pane_Energized_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Energized_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(Energized_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
         );
         Pane_Energized_UpdateLayout.setVerticalGroup(
             Pane_Energized_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Energized_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Pane_Energized_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 150, -1));
+        kGradientPanel1.add(Pane_Energized_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 150, -1));
 
         yr.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         yr.addActionListener(new java.awt.event.ActionListener() {
@@ -285,6 +289,7 @@ public class year extends javax.swing.JFrame {
         }else{
             if(yearCompared.getText().equals("2")){
                 Process_Filter.quotation.setText(yr.getSelectedItem().toString()+" - "+quot_number.getText());
+                dispose();
             }
         }
 

@@ -29,11 +29,11 @@
     <Container class="keeptoo.KGradientPanel" name="KG2_ADD_STOCK_GENSET">
       <Properties>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="a2" green="a2" red="2a" type="rgb"/>
+          <Color blue="8e" green="8e" red="2a" type="rgb"/>
         </Property>
         <Property name="kGradientFocus" type="int" value="700"/>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="a2" green="a2" red="2a" type="rgb"/>
+          <Color blue="8e" green="8e" red="2a" type="rgb"/>
         </Property>
         <Property name="kTransparentControls" type="boolean" value="false"/>
       </Properties>
@@ -182,7 +182,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Picture/Images_Image.png"/>
+              <Image iconType="3" name="/Picture/Drawer_Btn/Default_Imge.png"/>
             </Property>
             <Property name="alignmentY" type="float" value="1.0"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -419,7 +419,7 @@
         <Component class="javax.swing.JTextField" name="View_Shop_Filter_input_quantity">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="a2" green="a2" red="2a" type="rgb"/>
+              <Color blue="8e" green="8e" red="2a" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
@@ -536,7 +536,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Images_Back_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Btn/Btn_Backss.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" BACK"/>
               </Properties>
@@ -593,7 +593,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Edit_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Btn/Btn_Return.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" RETURN"/>
               </Properties>
@@ -650,7 +650,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Images_Back_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Btn/Btn_Customer.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value=" VIEW CUSTOMER"/>
               </Properties>
@@ -674,7 +674,7 @@
     <Container class="javax.swing.JPanel" name="jPanel4">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="5e" green="47" red="2" type="rgb"/>
+          <Color blue="4a" green="33" red="2" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>

@@ -40,7 +40,7 @@ public class History_Genset_Customer extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Display_Customer.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -48,20 +48,20 @@ public class History_Genset_Customer extends javax.swing.JFrame {
         Display_Customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Display_Customer.setText("CUSTOMER INFROMATION");
         Display_Customer.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Display_CustomerAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Display_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 430, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
-        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Insert_Customer_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -99,13 +99,13 @@ public class History_Genset_Customer extends javax.swing.JFrame {
         jLabel21.setAlignmentY(1.0F);
         kGradientPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 100, 30));
 
-        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
 
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        Stock_Genset_Back.setText(" BACK     ");
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        Stock_Genset_Back.setText(" BACK");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_BackMouseClicked(evt);
@@ -122,7 +122,7 @@ public class History_Genset_Customer extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -29,7 +29,7 @@
     <Container class="javax.swing.JPanel" name="jPanel4">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="5e" green="47" red="2" type="rgb"/>
+          <Color blue="4a" green="33" red="2" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -70,10 +70,10 @@
     <Container class="keeptoo.KGradientPanel" name="kGradientPanel1">
       <Properties>
         <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="a2" green="a2" red="2a" type="rgb"/>
+          <Color blue="8e" green="8e" red="2a" type="rgb"/>
         </Property>
         <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="a2" green="a2" red="2a" type="rgb"/>
+          <Color blue="8e" green="8e" red="2a" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -201,7 +201,7 @@
         <Container class="javax.swing.JPanel" name="Stock_Genset_Panel_Back">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="c2" red="ff" type="rgb"/>
+              <Color blue="33" green="ad" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -216,7 +216,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Stock_Genset_Back" alignment="1" pref="200" max="32767" attributes="0"/>
+                  <Component id="Stock_Genset_Back" alignment="0" pref="200" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -236,9 +236,9 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/Picture/Images_Images_Back_Btn.png"/>
+                  <Image iconType="3" name="/Picture/Btn/Btn_Backss.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" BACK     "/>
+                <Property name="text" type="java.lang.String" value=" BACK"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_BackMouseClicked"/>

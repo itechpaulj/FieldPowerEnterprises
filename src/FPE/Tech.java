@@ -49,7 +49,7 @@ public class Tech extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Process_Filter_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -69,8 +69,8 @@ public class Tech extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
-        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         View_Shop_Filter_description.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
@@ -87,7 +87,7 @@ public class Tech extends javax.swing.JFrame {
         View_Shop_Filter_seller_price.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         kGradientPanel1.add(View_Shop_Filter_seller_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 220, 30));
 
-        View_Shop_Filter_quantity.setBackground(new java.awt.Color(42, 162, 162));
+        View_Shop_Filter_quantity.setBackground(new java.awt.Color(42, 142, 142));
         View_Shop_Filter_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Shop_Filter_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Shop_Filter_quantity.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -136,11 +136,13 @@ public class Tech extends javax.swing.JFrame {
         kGradientPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 110, 30));
 
         jPanel1.setBackground(new java.awt.Color(255, 194, 102));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CANCEL");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Back.png"))); // NOI18N
+        jLabel1.setText(" CANCEL");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -151,21 +153,23 @@ public class Tech extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         kGradientPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 160, 50));
 
-        jPanel2.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         ADD.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         ADD.setForeground(new java.awt.Color(255, 255, 255));
         ADD.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ADD.setText("ADD");
+        ADD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Add.png"))); // NOI18N
+        ADD.setText(" ADD");
         ADD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ADDMouseClicked(evt);
@@ -176,11 +180,11 @@ public class Tech extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ADD, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(ADD, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ADD, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(ADD, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         kGradientPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 160, 50));

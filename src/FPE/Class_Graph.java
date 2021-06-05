@@ -17,7 +17,10 @@ public class Class_Graph {
    public static int cummins;
    public static int perkins;
    public static int other;
-    
+   
+   public static int filter;
+   public static int parts;
+   
     public static boolean yandong(){
 
      try{PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT COUNT(`BRAND`) as `COUNT` FROM `history_genset_table` WHERE `BRAND`= 'YANDONG' ");
@@ -30,6 +33,7 @@ public class Class_Graph {
          }
      return true;
     }
+    
     public static boolean isuzu(){
 
      try{PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT COUNT(`BRAND`) as `COUNT` FROM `history_genset_table` WHERE `BRAND`= 'ISUZU' ");
@@ -67,7 +71,7 @@ public class Class_Graph {
      return true;
     }
     
-     public static boolean other(){
+     public static boolean GensetOther(){
 
      try{PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT COUNT(`BRAND`) as `COUNT` FROM `history_genset_table` WHERE `BRAND` LIKE '%OTHER BRAND%' ");
      ResultSet rs = ps.executeQuery();
@@ -79,4 +83,33 @@ public class Class_Graph {
          }
      return true;
     }
+     
+    public static boolean Filter(){
+
+     try{PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT COUNT(`TYPE`) as COUNT FROM `history_filter` WHERE `TYPE`= 'FILTER'");
+     ResultSet rs = ps.executeQuery();
+         while(rs.next()){
+         filter = rs.getInt("COUNT");         
+         }
+         }catch(Exception e){
+         e.printStackTrace();
+         }
+     return true;
+    }
+        
+     public static boolean Parts(){
+
+     try{PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT COUNT(`TYPE`) as COUNT FROM `history_filter` WHERE `TYPE`= 'PARTS' ");
+     ResultSet rs = ps.executeQuery();
+         while(rs.next()){
+         parts = rs.getInt("COUNT");         
+         }
+         }catch(Exception e){
+         e.printStackTrace();
+         }
+     return true;
+    }
+     
+     
+ 
 }

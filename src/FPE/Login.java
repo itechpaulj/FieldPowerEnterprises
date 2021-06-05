@@ -6,6 +6,7 @@
 package FPE;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,9 +14,9 @@ import java.awt.Color;
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+    public static String admin_name = Class_Login.admin_name;
+    public static String admin_id = Class_Login.admin_id;
+    
     public Login() {
         initComponents();
     }
@@ -32,42 +33,40 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Cancel_btn = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         Login_Btn = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel1.setBackground(new java.awt.Color(2, 51, 74));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Username");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 100, 30));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Admin.png"))); // NOI18N
+        jLabel1.setText(" Username");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 130, 40));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Password");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 100, 30));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Password.png"))); // NOI18N
+        jLabel2.setText(" Password");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 130, 40));
 
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(2, 71, 94));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 250, 30));
-
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(2, 71, 94));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 250, 30));
+        username.setBackground(new java.awt.Color(230, 230, 230));
+        username.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        username.setForeground(new java.awt.Color(2, 71, 94));
+        username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 200, 240, 40));
 
         jLabel4.setToolTipText("");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 43, -1, -1));
@@ -75,17 +74,18 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial", 1, 34)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/logo.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Logo/Logo.png"))); // NOI18N
         jLabel5.setText(" Field Power Enterprises");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 590, 140));
 
-        jPanel2.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel2.setBackground(new java.awt.Color(255, 194, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
-        Cancel_btn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Cancel_btn.setForeground(new java.awt.Color(255, 255, 255));
+        Cancel_btn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Cancel_btn.setForeground(new java.awt.Color(0, 51, 51));
         Cancel_btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Cancel_btn.setText("CANCEL");
+        Cancel_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Cancel.png"))); // NOI18N
+        Cancel_btn.setText(" CANCEL");
         Cancel_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Cancel_btnMouseClicked(evt);
@@ -111,13 +111,14 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 180, 50));
 
-        jPanel3.setBackground(new java.awt.Color(0, 102, 51));
+        jPanel3.setBackground(new java.awt.Color(0, 204, 68));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
-        Login_Btn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Login_Btn.setForeground(new java.awt.Color(255, 255, 255));
+        Login_Btn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Login_Btn.setForeground(new java.awt.Color(0, 51, 51));
         Login_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Login_Btn.setText("LOGIN");
+        Login_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Key.png"))); // NOI18N
+        Login_Btn.setText(" LOGIN  ");
         Login_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Login_BtnMouseClicked(evt);
@@ -143,6 +144,10 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 180, 50));
 
+        password.setBackground(new java.awt.Color(230, 230, 230));
+        password.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 240, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,23 +164,42 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Login_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseEntered
-        Login_Btn.setForeground(new Color(2,71,94));
+        Login_Btn.setForeground(new Color(0,51,51));
+        jPanel3.setBackground(new Color(0, 230, 230));
     }//GEN-LAST:event_Login_BtnMouseEntered
 
     private void Cancel_btnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseEntered
-         Cancel_btn.setForeground(new Color(255,255,255));
+         Cancel_btn.setForeground(new Color(0,51,51));
+         jPanel2.setBackground(new Color(0, 230, 230));
     }//GEN-LAST:event_Cancel_btnMouseEntered
 
     private void Login_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseExited
-        Login_Btn.setForeground(new Color(2,71,94));
+        Login_Btn.setForeground(new Color(0,51,51));
+        jPanel3.setBackground(new Color(0, 204, 68));
     }//GEN-LAST:event_Login_BtnMouseExited
 
     private void Cancel_btnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseExited
-        Cancel_btn.setForeground(new Color(255,255,255));
+        Cancel_btn.setForeground(new Color(0,51,51));
+        jPanel2.setBackground(new Color(255,194,102));
     }//GEN-LAST:event_Cancel_btnMouseExited
 
     private void Login_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseClicked
+        String user = username.getText();
+        String pass = password.getText();
         
+        if(!Class_Login.LoginAdmin(user, pass))
+        {
+            if(Class_Login.admin_name.equals(user) && Class_Login.password.equals(pass)){
+            JOptionPane.showMessageDialog(null, "WELCOME "+Class_Login.admin_name+"","",JOptionPane.INFORMATION_MESSAGE);
+            Mainpage m = new Mainpage();
+            m.setVisible(true);
+            dispose();                
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "INCORRECT PASSWORD","",JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+
     }//GEN-LAST:event_Login_BtnMouseClicked
 
     private void Cancel_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseClicked
@@ -228,7 +252,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

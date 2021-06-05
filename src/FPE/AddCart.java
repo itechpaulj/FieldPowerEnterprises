@@ -35,7 +35,6 @@ public class AddCart extends javax.swing.JFrame {
 
         jPanel4 = new javax.swing.JPanel();
         displays = new javax.swing.JLabel();
-        sup_listUpdate = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
         Cart_id = new javax.swing.JLabel();
         Path = new javax.swing.JLabel();
@@ -54,7 +53,8 @@ public class AddCart extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
+        jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -72,28 +72,11 @@ public class AddCart extends javax.swing.JFrame {
         });
         jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 570, 80));
 
-        sup_listUpdate.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        sup_listUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        sup_listUpdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sup_listUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
-        sup_listUpdate.setText("  PROCESS");
-        sup_listUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sup_listUpdateMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                sup_listUpdateMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                sup_listUpdateMouseExited(evt);
-            }
-        });
-        jPanel4.add(sup_listUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 580, 200, 50));
-
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
-        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 1, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         kGradientPanel1.add(Cart_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 120, 30));
 
@@ -126,7 +109,7 @@ public class AddCart extends javax.swing.JFrame {
         Back1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Back1.setForeground(new java.awt.Color(255, 255, 255));
         Back1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Process.png"))); // NOI18N
         Back1.setText(" PROCESS");
         Back1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -159,7 +142,7 @@ public class AddCart extends javax.swing.JFrame {
         sup_del.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         sup_del.setForeground(new java.awt.Color(255, 255, 255));
         sup_del.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sup_del.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Delete_Btn.png"))); // NOI18N
+        sup_del.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Cancel.png"))); // NOI18N
         sup_del.setText(" REMOVE");
         sup_del.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -192,8 +175,8 @@ public class AddCart extends javax.swing.JFrame {
         Back.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Back.setForeground(new java.awt.Color(255, 255, 255));
         Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        Back.setText(" BACK  ");
+        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backs.png"))); // NOI18N
+        Back.setText("BACK");
         Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BackMouseClicked(evt);
@@ -229,7 +212,7 @@ public class AddCart extends javax.swing.JFrame {
         kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 35));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Search_Btn.png"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 35));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1060, 630));
@@ -248,19 +231,6 @@ public class AddCart extends javax.swing.JFrame {
         Cart_id.setText(model.getValueAt(i,0).toString());
 
     }//GEN-LAST:event_Cart_tableMouseClicked
-
-    private void sup_listUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseClicked
-
-
-    }//GEN-LAST:event_sup_listUpdateMouseClicked
-
-    private void sup_listUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseEntered
-        sup_listUpdate.setForeground(new Color(41, 61, 61));
-    }//GEN-LAST:event_sup_listUpdateMouseEntered
-
-    private void sup_listUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseExited
-        sup_listUpdate.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_sup_listUpdateMouseExited
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
         String id = Cart_id.getText();
@@ -366,7 +336,6 @@ public class AddCart extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
     public static javax.swing.JLabel sup_del;
-    public static javax.swing.JLabel sup_listUpdate;
     public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables
 }

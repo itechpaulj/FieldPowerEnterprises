@@ -97,7 +97,7 @@ public class View_Shop_Genset extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         View_Genset_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -181,7 +181,7 @@ public class View_Shop_Genset extends javax.swing.JFrame {
         View_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
         View_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
+        View_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         View_Genset_pic.setAlignmentY(1.0F);
         View_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         View_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -204,7 +204,7 @@ public class View_Shop_Genset extends javax.swing.JFrame {
         View_Genset__Btn.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         View_Genset__Btn.setForeground(new java.awt.Color(255, 255, 255));
         View_Genset__Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Genset__Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
+        View_Genset__Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Process.png"))); // NOI18N
         View_Genset__Btn.setText(" PROCEED");
         View_Genset__Btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -237,7 +237,7 @@ public class View_Shop_Genset extends javax.swing.JFrame {
         View_Genset__Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         View_Genset__Back.setForeground(new java.awt.Color(255, 255, 255));
         View_Genset__Back.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        View_Genset__Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        View_Genset__Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
         View_Genset__Back.setText("  BACK              ");
         View_Genset__Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

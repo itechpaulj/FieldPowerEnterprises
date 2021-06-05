@@ -62,7 +62,7 @@ public class Energized extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Display_Engine.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -70,20 +70,20 @@ public class Energized extends javax.swing.JFrame {
         Display_Engine.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Display_Engine.setText("ENGINE ENERGIZED");
         Display_Engine.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Display_EngineAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Display_Engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 440, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
-        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Energized_technician.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -154,8 +154,8 @@ public class Energized extends javax.swing.JFrame {
         Energized_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Energized_Back.setForeground(new java.awt.Color(255, 255, 255));
         Energized_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Energized_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        Energized_Back.setText(" BACK     ");
+        Energized_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        Energized_Back.setText(" BACK");
         Energized_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Energized_BackMouseClicked(evt);
@@ -187,7 +187,7 @@ public class Energized extends javax.swing.JFrame {
         Energized_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Energized_Update.setForeground(new java.awt.Color(255, 255, 255));
         Energized_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Energized_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Save_Btn.png"))); // NOI18N
+        Energized_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
         Energized_Update.setText(" SAVE");
         Energized_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

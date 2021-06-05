@@ -85,7 +85,7 @@ public class Bin_Genset extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Bin_Genset_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -105,9 +105,9 @@ public class Bin_Genset extends javax.swing.JFrame {
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1070, 100));
 
-        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 162, 162));
+        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
-        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 162, 162));
+        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bin_genset_phasing.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
@@ -169,7 +169,7 @@ public class Bin_Genset extends javax.swing.JFrame {
         bin_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         bin_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
         bin_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bin_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
+        bin_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         bin_Genset_pic.setAlignmentY(1.0F);
         bin_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         bin_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -394,9 +394,9 @@ public class Bin_Genset extends javax.swing.JFrame {
 
         history_genset_back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         history_genset_back.setForeground(new java.awt.Color(255, 255, 255));
-        history_genset_back.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        history_genset_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        history_genset_back.setText("  BACK              ");
+        history_genset_back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        history_genset_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        history_genset_back.setText(" BACK");
         history_genset_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 history_genset_backMouseClicked(evt);

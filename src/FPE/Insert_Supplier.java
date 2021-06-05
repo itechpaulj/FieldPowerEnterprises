@@ -55,7 +55,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Display_Supplier.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -63,27 +63,27 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Display_Supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Display_Supplier.setText("ADD SUPPLIER");
         Display_Supplier.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Display_SupplierAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
         });
-        jPanel4.add(Display_Supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 400, 80));
+        jPanel4.add(Display_Supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 410, 60));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 100));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(42, 162, 162));
-        kGradientPanel1.setkStartColor(new java.awt.Color(42, 162, 162));
+        kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
+        kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel_supplier_list.setBackground(new java.awt.Color(255, 255, 179));
 
         Supplier_List_Btn2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_List_Btn2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Supplier_List_Btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Exist.png"))); // NOI18N
+        Supplier_List_Btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Supplier.png"))); // NOI18N
         Supplier_List_Btn2.setText(" SUPPLIER LIST   ");
         Supplier_List_Btn2.setAlignmentY(1.0F);
         Supplier_List_Btn2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -100,12 +100,10 @@ public class Insert_Supplier extends javax.swing.JFrame {
         );
         panel_supplier_listLayout.setVerticalGroup(
             panel_supplier_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_supplier_listLayout.createSequentialGroup()
-                .addComponent(Supplier_List_Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Supplier_List_Btn2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(panel_supplier_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 280, 30));
+        kGradientPanel1.add(panel_supplier_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 280, 40));
 
         Insert_Supplier_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Supplier_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -153,8 +151,8 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        Stock_Genset_Back.setText(" BACK     ");
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        Stock_Genset_Back.setText(" BACK");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_BackMouseClicked(evt);
@@ -171,9 +169,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Stock_Genset_Panel_BackLayout.createSequentialGroup()
-                .addComponent(Stock_Genset_Back)
-                .addGap(0, 71, Short.MAX_VALUE))
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +183,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Stock_Genset_Save.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Save.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Save.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Save_Btn.png"))); // NOI18N
+        Stock_Genset_Save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
         Stock_Genset_Save.setText(" SAVE");
         Stock_Genset_Save.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -205,9 +201,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Stock_Genset_Panel_UpdateLayout.createSequentialGroup()
-                .addComponent(Stock_Genset_Save, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 82, Short.MAX_VALUE))
+            .addComponent(Stock_Genset_Save, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -40,7 +40,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
  public void imgisNull(){
         try{
             if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("src/Picture/Images_Image.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -120,9 +120,9 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 162, 162));
+        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
-        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 162, 162));
+        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel20.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -170,7 +170,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Insert_Invetory_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         Insert_Invetory_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
         Insert_Invetory_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Insert_Invetory_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
+        Insert_Invetory_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         Insert_Invetory_Genset_pic.setAlignmentY(1.0F);
         Insert_Invetory_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         Insert_Invetory_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -369,7 +369,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
 
         Supplier_List_Btn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_List_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Supplier_List_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Exist.png"))); // NOI18N
+        Supplier_List_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Supplier.png"))); // NOI18N
         Supplier_List_Btn.setText(" SUPPLIER LIST   ");
         Supplier_List_Btn.setAlignmentY(1.0F);
         Supplier_List_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -386,12 +386,10 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 370, 180, 30));
+        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 370, 180, 40));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
         Stock_Genset_Panel_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
@@ -399,7 +397,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Save_Btn.png"))); // NOI18N
+        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
         Stock_Genset_Update.setText(" SAVE RECORD ");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -432,8 +430,8 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        Stock_Genset_Back.setText(" CANCEL ");
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        Stock_Genset_Back.setText(" BACK");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_BackMouseClicked(evt);
@@ -509,7 +507,7 @@ public class Insert_Inventory_Genset extends javax.swing.JFrame {
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Inventory_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N

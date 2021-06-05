@@ -87,7 +87,7 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Wiew_Genset_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -213,7 +213,7 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         View_stock_Genset_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_stock_Genset_pic.setForeground(new java.awt.Color(20, 31, 31));
         View_stock_Genset_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_stock_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
+        View_stock_Genset_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         View_stock_Genset_pic.setAlignmentY(1.0F);
         View_stock_Genset_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         View_stock_Genset_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -250,7 +250,7 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         Stock_Genset_Delete.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Delete.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Delete.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Stock_Genset_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Delete_Btn.png"))); // NOI18N
+        Stock_Genset_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Cancel.png"))); // NOI18N
         Stock_Genset_Delete.setText(" DELETE ITEM      ");
         Stock_Genset_Delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -283,7 +283,7 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
+        Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Updates.png"))); // NOI18N
         Stock_Genset_Update.setText(" UPDATE ITEM    ");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -316,7 +316,7 @@ public class View_Stock_Genset extends javax.swing.JFrame {
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Back.png"))); // NOI18N
         Stock_Genset_Back.setText("  BACK               ");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

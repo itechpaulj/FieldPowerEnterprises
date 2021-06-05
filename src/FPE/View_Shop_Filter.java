@@ -83,7 +83,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Wiew_Genset_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -155,7 +155,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         View_Shop_Filter_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Shop_Filter_pic.setForeground(new java.awt.Color(20, 31, 31));
         View_Shop_Filter_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Shop_Filter_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
+        View_Shop_Filter_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         View_Shop_Filter_pic.setAlignmentY(1.0F);
         View_Shop_Filter_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         View_Shop_Filter_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -271,7 +271,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         AddToCart.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         AddToCart.setForeground(new java.awt.Color(255, 255, 255));
         AddToCart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        AddToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
+        AddToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Add.png"))); // NOI18N
         AddToCart.setText(" ADD THIS TO CART ");
         AddToCart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -304,7 +304,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         CartBack.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         CartBack.setForeground(new java.awt.Color(255, 255, 255));
         CartBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        CartBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        CartBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
         CartBack.setText(" BACK");
         CartBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -337,7 +337,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         GoToCart.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         GoToCart.setForeground(new java.awt.Color(255, 255, 255));
         GoToCart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        GoToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
+        GoToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Carts.png"))); // NOI18N
         GoToCart.setText(" GO TO MY CART");
         GoToCart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -364,14 +364,14 @@ public class View_Shop_Filter extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(ViewCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 210, 50));
 
-        ViewAdd1.setBackground(new java.awt.Color(255, 51, 153));
+        ViewAdd1.setBackground(new java.awt.Color(51, 153, 102));
         ViewAdd1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         OTHERS.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         OTHERS.setForeground(new java.awt.Color(255, 255, 255));
         OTHERS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        OTHERS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Edit_Btn.png"))); // NOI18N
-        OTHERS.setText("ADD SOMETHING");
+        OTHERS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Add.png"))); // NOI18N
+        OTHERS.setText("ADD OTHER ");
         OTHERS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OTHERSMouseClicked(evt);

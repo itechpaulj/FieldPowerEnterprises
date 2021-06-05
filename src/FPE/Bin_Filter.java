@@ -61,9 +61,9 @@ public class Bin_Filter extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 162, 162));
+        KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
-        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 162, 162));
+        KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setkTransparentControls(false);
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -105,7 +105,7 @@ public class Bin_Filter extends javax.swing.JFrame {
         bin_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         bin_pic.setForeground(new java.awt.Color(20, 31, 31));
         bin_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bin_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Image.png"))); // NOI18N
+        bin_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         bin_pic.setAlignmentY(1.0F);
         bin_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
         bin_pic.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -129,7 +129,7 @@ public class Bin_Filter extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 390, 130, 30));
 
         bin_quantity.setEditable(false);
-        bin_quantity.setBackground(new java.awt.Color(42, 162, 162));
+        bin_quantity.setBackground(new java.awt.Color(42, 142, 142));
         bin_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         bin_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         bin_quantity.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -206,9 +206,9 @@ public class Bin_Filter extends javax.swing.JFrame {
 
         history_genset_back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         history_genset_back.setForeground(new java.awt.Color(255, 255, 255));
-        history_genset_back.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        history_genset_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Images_Images_Back_Btn.png"))); // NOI18N
-        history_genset_back.setText("  BACK              ");
+        history_genset_back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        history_genset_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        history_genset_back.setText(" BACK");
         history_genset_back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 history_genset_backMouseClicked(evt);
@@ -236,7 +236,7 @@ public class Bin_Filter extends javax.swing.JFrame {
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1070, 620));
 
-        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
+        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Bin_Filter_Banner.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
