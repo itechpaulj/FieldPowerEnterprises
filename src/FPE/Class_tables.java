@@ -101,9 +101,9 @@ public class Class_tables {
     }
         
         
-        public boolean ShowCart(){
+    public boolean ShowCart(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,  `DESCRIPTION`, `PRICE`, `QUANTITY`,  `TOTAL PRICE` FROM `add_cart`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DESCRIPTION`, `PRICE`, `QUANTITY`,  `TOTAL PRICE` FROM `add_cart`");
         ResultSet rs = ps.executeQuery();
         Cart_table.setModel(DbUtils.resultSetToTableModel(rs));
         Cart_table.getColumnModel().getColumn(0).setMaxWidth(100);

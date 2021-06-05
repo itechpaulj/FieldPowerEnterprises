@@ -391,7 +391,7 @@ public class Process_Filter extends javax.swing.JFrame {
      try{
         ps=FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DATE`, `DESCRIPTION`, `TYPE`, `QUANTITY`, `PRICE`, `TOTAL PRICE` FROM `add_cart`");
         rs = ps.executeQuery();
-        if(name.equals("") || address.equals("") || email.equals("") || contact.equals("") || agent_name.equals("") || agent_name.equals("") || agent_contact.equals("") || dealing_info.equals("")  ){
+        if(name.equals("") || address.equals("") || email.equals("") || contact.equals("") || agent_name.equals("") || agent_name.equals("") || agent_contact.equals("") || dealing_info.equals("") || qout.equals("") ){
            JOptionPane.showMessageDialog(null,"FILLED SOME BLANKS !!! ","",JOptionPane.ERROR_MESSAGE);
         }
         else if(rs.next()){

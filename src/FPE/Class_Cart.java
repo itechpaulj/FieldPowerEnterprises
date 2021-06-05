@@ -7,17 +7,19 @@ package FPE;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  *
  * @author Javinez
  */
 public class Class_Cart {
+    public static int last_insert_id = 0;
     public static boolean AddCart(String id,String brand,String date,String desc,String type,String price,String quantity,String total){
         PreparedStatement ps = null;
         try{
        
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `add_cart`(`BRAND`, `DATE`, `DESCRIPTION`, `TYPE`, `PRICE`,`QUANTITY`,`TOTAL PRICE`) VALUES (?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `add_cart`(`BRAND`, `DATE`, `DESCRIPTION`, `TYPE`, `PRICE`,`QUANTITY`,`TOTAL PRICE`) VALUES (?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS);
         ps.setString(1,brand);
         ps.setString(2,date);
         ps.setString(3,desc);
@@ -25,10 +27,14 @@ public class Class_Cart {
         ps.setString(5,price);
         ps.setString(6,quantity);
         ps.setString(7,total);
- 
         
-        ps.execute();
         
+        ps.executeUpdate();
+        ResultSet rs = ps.getGeneratedKeys();
+            if(rs.next())
+            {
+                last_insert_id = rs.getInt(1);
+            }
         }catch(Exception e){
            e.printStackTrace();
         }
@@ -56,9 +62,12 @@ public class Class_Cart {
     public static boolean Cart_Item_Delete(String id){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `add_cart` WHERE ID = ?");
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `add_cart` WHERE `ID` = ?");
         ps.setString(1,id);
-     
+        ps.execute();
+        
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `history_filter` WHERE `ID CART` = ?");
+        ps.setString(1,id);
         ps.execute();
         
         }catch(Exception e){

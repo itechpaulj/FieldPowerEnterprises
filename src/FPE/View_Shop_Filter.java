@@ -564,12 +564,20 @@ public class View_Shop_Filter extends javax.swing.JFrame {
                           }
                     }
                     else{
-                        if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Order.InsertHistoryFilter(brand, date, desc, type, images,price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, dealing_info, filter_id, count_processed) && !Class_Filter.updateQuantity(id, strQuantity)){
-                        JOptionPane.showMessageDialog(null, "ADDED");
-                           Mainpage.cartIfEmpty.setText("2");
-                           display_stock_quantity.setText(result.getText());
-                           ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
-                           ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
+                        
+                        if(!Class_Cart.AddCart(filter_id,brand, date, desc, type, price, quantity, total) && !Class_Filter.updateQuantity(id, strQuantity)){
+                             String idcart1 = Integer.toString(Class_Cart.last_insert_id);
+                            if(!Class_Order.InsertHistoryFilter(brand, date, desc, type, images,price, quantity, total, qoutation, c_name, c_address, c_email, c_contact, agent_name, agent_contact, dealing_info, filter_id, idcart1, count_processed)){
+                                JOptionPane.showMessageDialog(null, "ADDED");
+                                Mainpage.cartIfEmpty.setText("2");
+                                display_stock_quantity.setText(result.getText());
+                                ct.ShowCart(); ct.ShowOrder();ct.ShopFilter();ct.Filter();
+                                ct.Bin_Filter();ct.Filter();ct.History_Fitler();ct.ShopFilter();
+                          }
+                            
+
+                           
+                           //JOptionPane.showMessageDialog(null,"Id new"+Class_Cart.last_insert_id);
                         }                         
                     }
              

@@ -120,4 +120,19 @@ public class Class_Filter {
         } 
      return false;
     }
+     
+    //update quantity filter table
+     public static boolean brandQuantity(String brand,String quantity){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `filter_table` SET `QUANTITY`=? WHERE `BRAND` = ?");
+        ps.setString(1,quantity);
+        ps.setString(2,brand);
+        ps.execute();
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        } 
+     return false;
+    }   
 }

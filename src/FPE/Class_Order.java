@@ -9,10 +9,10 @@ import java.sql.PreparedStatement;
 
 
 public class Class_Order {
-    public static boolean InsertHistoryFilter(String brand,String date,String desc,String type,byte[] images,String price,String quantity,String total,String qoutation,String c_name,String c_address,String c_email,String c_contact,String agent_name,String agent_contact,String dealing_info ,String filter_id, String count_process){
+    public static boolean InsertHistoryFilter(String brand,String date,String desc,String type,byte[] images,String price,String quantity,String total,String qoutation,String c_name,String c_address,String c_email,String c_contact,String agent_name,String agent_contact,String dealing_info ,String filter_id, String idcart, String count_process){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `history_filter`(`DATE`, `BRAND`, `DESCRIPTION`, `TYPE`,`IMAGE`, `PRICE`, `QUANTITY`, `TOTAL PRICE`, `QUOTATION`, `NAME`, `ADDRESS`, `EMAIL`, `CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`, `DEALING INFO`, `ID FILTER`,`COUNT_PROCESS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `history_filter`(`DATE`, `BRAND`, `DESCRIPTION`, `TYPE`,`IMAGE`, `PRICE`, `QUANTITY`, `TOTAL PRICE`, `QUOTATION`, `NAME`, `ADDRESS`, `EMAIL`, `CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`, `DEALING INFO`, `ID FILTER`, `ID CART`, `COUNT_PROCESS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1,date);
         ps.setString(2,brand);
         ps.setString(3,desc);
@@ -31,7 +31,8 @@ public class Class_Order {
         ps.setString(15,agent_contact);
         ps.setString(16,dealing_info); 
         ps.setString(17,filter_id);
-        ps.setString(18,count_process);
+        ps.setString(18,idcart);
+        ps.setString(19,count_process);
         
         ps.execute();
         

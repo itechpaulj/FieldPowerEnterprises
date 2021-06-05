@@ -6,6 +6,8 @@
 package FPE;
 
 import java.awt.Color;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 
@@ -14,13 +16,12 @@ import javax.swing.table.TableModel;
  * @author Javinez
  */
 public class AddCart extends javax.swing.JFrame {
-
+   Class_tables ct = new Class_tables();
     /**
      * Creates new form AddCart
      */
     public AddCart() {
         initComponents();
-        Class_tables ct = new Class_tables();
         ct.ShowCart();
     }
 
@@ -47,7 +48,9 @@ public class AddCart extends javax.swing.JFrame {
         back_panel_supplier = new javax.swing.JPanel();
         Back = new javax.swing.JLabel();
         Supplier_Search = new javax.swing.JTextField();
+        quantity = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        brand = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -210,12 +213,14 @@ public class AddCart extends javax.swing.JFrame {
             }
         });
         kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 35));
+        kGradientPanel1.add(quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 40, 20));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 35));
+        kGradientPanel1.add(brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 100, 20));
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1060, 630));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 110, 1060, 630));
 
         pack();
         setLocationRelativeTo(null);
@@ -229,14 +234,41 @@ public class AddCart extends javax.swing.JFrame {
         int i=Cart_table.getSelectedRow();
         TableModel model = Cart_table.getModel();
         Cart_id.setText(model.getValueAt(i,0).toString());
-
+        brand.setText(model.getValueAt(i,1).toString());
+        quantity.setText(model.getValueAt(i,4).toString());
+        
     }//GEN-LAST:event_Cart_tableMouseClicked
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
+        PreparedStatement ps;
+        ResultSet rs;
         String id = Cart_id.getText();
-        
+        String brand1 = brand.getText();
+        String quantity1 = quantity.getText();
         if(!Class_Cart.Cart_Item_Delete(id)){
-            JOptionPane.showMessageDialog(null, "SUCEESSFULY REMOVED");
+           // JOptionPane.showMessageDialog(null, "SUCEESSFULY REMOVED");
+           if(brand1.equals("") || quantity1.equals("") ){
+               //nothing
+           }else{
+               try{
+                ps=FPE_DB.getConnection().prepareStatement("SELECT `BRAND`, `QUANTITY` FROM `filter_table` WHERE `BRAND`='"+brand1+"'");
+                rs = ps.executeQuery();
+                if(rs.next()){
+                    String findBrand = rs.getString("BRAND");
+                    String findQuantity = rs.getString("QUANTITY");
+                    int result = Integer.parseInt(quantity1) + Integer.parseInt(findQuantity);
+                    String stringToQuantity = Integer.toString(result);
+                  if(!Class_Filter.brandQuantity(findBrand, stringToQuantity)){
+                      JOptionPane.showMessageDialog(null, "REMOVED SUCCESSFULLY");
+                      ct.ShowCart();
+                  }
+                }
+
+               }
+               catch(Exception e){
+                   
+               }
+           }
         }
 
     }//GEN-LAST:event_sup_delMouseClicked
@@ -329,12 +361,14 @@ public class AddCart extends javax.swing.JFrame {
     public static javax.swing.JLabel Path;
     private javax.swing.JTextField Supplier_Search;
     public static javax.swing.JPanel back_panel_supplier;
+    private javax.swing.JLabel brand;
     public static javax.swing.JPanel delete_panel_supplier;
     public static javax.swing.JLabel displays;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel quantity;
     public static javax.swing.JLabel sup_del;
     public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables
