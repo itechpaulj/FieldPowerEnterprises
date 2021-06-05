@@ -23,6 +23,10 @@ public class AddCart extends javax.swing.JFrame {
     public AddCart() {
         initComponents();
         ct.ShowCart();
+        Path.setVisible(false);
+        quantity.setVisible(false);
+        brand.setVisible(false);
+        
     }
 
     /**

@@ -25,6 +25,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
     public Insert_Inventory_Filter() {
         initComponents();
         imgisNull();
+        Path.setVisible(false);
         
     }
  public void imgisNull(){

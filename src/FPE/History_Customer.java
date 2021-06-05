@@ -12,6 +12,7 @@ public class History_Customer extends javax.swing.JFrame {
     
     public History_Customer() {
         initComponents();
+        validate.setVisible(false);
     }
 
     

@@ -692,18 +692,20 @@ public class Process_Genset extends javax.swing.JFrame {
                                  catch(Exception e){
                                      System.out.println(e.getMessage());
                                  }        
-
+                             ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
                          }                    
                         //JOptionPane.showMessageDialog(null, "1");
                         process.setText("2");//update
+                        ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
                     }else{
                         ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
                         if(processed.equals("2")){
-              
+                        ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
                            // JOptionPane.showMessageDialog(null, "2");
                            // update class
                         if(!Class_Bin.HistorygensetUpdate(id,brand, model, kva, phasing, type, dimen, sup_price,  seller_price, engine_sn, alters1_sn, date_recieved , images, sup_name, energized_date, tank_cap, oil_usage, tech, esystem, weight, frame , updated_at, quotation, c_name, c_add, c_email, c_contact, c_deal, agent_name, agent_contact) && !Class_Bin.gensetTable(id) )
                          {
+                             ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
                               JOptionPane.showMessageDialog(null, "SUCCESS");
                              try{
 
@@ -732,7 +734,8 @@ public class Process_Genset extends javax.swing.JFrame {
                                  catch(Exception e){
                                      System.out.println(e.getMessage());
                                     JOptionPane.showMessageDialog(null, e);
-                                 }                         
+                                 }
+                             ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
                          }                
                         }
                     }
@@ -745,7 +748,7 @@ public class Process_Genset extends javax.swing.JFrame {
     }
     
 
- 
+ ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
 
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 

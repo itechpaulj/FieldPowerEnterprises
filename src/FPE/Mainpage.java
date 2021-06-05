@@ -66,6 +66,15 @@ public class Mainpage extends javax.swing.JFrame {
        cartifEmpty();
        showPieChart();
        Graph();
+       Genset_id.setVisible(false);
+       filter_id.setVisible(false);
+       Shop_genset_id.setVisible(false);
+       Shop_filter_id.setVisible(false);
+       jLabel4.setVisible(false);
+       history_id_filter.setVisible(false);
+       bin_genset_ids.setVisible(false);
+       bin_filter_id.setVisible(false);
+               
     }
          
 public void Graph(){
@@ -78,6 +87,7 @@ public void Graph(){
        cg.GensetOther();
        cg.Filter(); 
        cg.Parts();
+       showPieChart();
        }
 
     void showDate(){
@@ -2328,8 +2338,6 @@ public void showPieChart(){
         jScrollPane11.setViewportView(Bin_Genset_Table);
 
         BIN_GENSET_12.add(jScrollPane11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 1060, 420));
-
-        bin_genset_ids.setText("jLabel4");
         BIN_GENSET_12.add(bin_genset_ids, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
 
         jTextField5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -2436,8 +2444,6 @@ public void showPieChart(){
         );
 
         BIN_FILTER_13.add(Shop_Genset_Panel_Customer14, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 530, 210, 50));
-
-        bin_filter_id.setText("jLabel4");
         BIN_FILTER_13.add(bin_filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 140, 30));
 
         jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -2668,9 +2674,7 @@ public void showPieChart(){
         Dashboard_Display_1.setText("STATUS");
         Dashboard_Display_2.setText(null);
         Dashboard_Display_3.setText(null);
-        Class_Graph cg =new Class_Graph();
-        showPieChart();
-       
+        Graph();
         JTab.setSelectedIndex(14);
     }//GEN-LAST:event_STATUSMouseClicked
 
