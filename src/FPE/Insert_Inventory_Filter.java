@@ -365,7 +365,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Filter_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 190, 30));
 
         Insert_Invetory_Filter_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Invetory_Filter_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS", "OTHER" }));
+        Insert_Invetory_Filter_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
         KG2_ADD_STOCK_GENSET.add(Insert_Invetory_Filter_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 190, 30));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));

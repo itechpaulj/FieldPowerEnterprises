@@ -28,7 +28,11 @@ import javax.swing.table.TableRowSorter;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRTableModelDataSource;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -221,6 +225,9 @@ public void showPieChart(){
         Stock_Genset_Panel_View = new javax.swing.JPanel();
         Stock_Genset_View = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
+        genset_brand = new javax.swing.JComboBox<>();
+        Stock_Genset_Panel_Supplier1 = new javax.swing.JPanel();
+        Stock_Genset_Supplier1 = new javax.swing.JLabel();
         STOCK_FILTER_3 = new keeptoo.KGradientPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         Stock_Filter_Table = new javax.swing.JTable();
@@ -235,6 +242,9 @@ public void showPieChart(){
         Stock_Filter_Panel_back = new javax.swing.JPanel();
         Stock_Filter_back = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        fil_type = new javax.swing.JComboBox<>();
+        Stock_Filter_Panel_view1 = new javax.swing.JPanel();
+        Stock_Filter_view1 = new javax.swing.JLabel();
         SHOP_4 = new keeptoo.KGradientPanel();
         Shop_Genset_3 = new javax.swing.JPanel();
         Shop_Genset_2 = new javax.swing.JLabel();
@@ -825,7 +835,9 @@ public void showPieChart(){
         Stock_Genset_Panel_Supplier.setLayout(Stock_Genset_Panel_SupplierLayout);
         Stock_Genset_Panel_SupplierLayout.setHorizontalGroup(
             Stock_Genset_Panel_SupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+            .addGroup(Stock_Genset_Panel_SupplierLayout.createSequentialGroup()
+                .addComponent(Stock_Genset_Supplier)
+                .addGap(0, 54, Short.MAX_VALUE))
         );
         Stock_Genset_Panel_SupplierLayout.setVerticalGroup(
             Stock_Genset_Panel_SupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -886,7 +898,7 @@ public void showPieChart(){
         jScrollPane5.setViewportView(Stock_Genset_Table);
 
         STOCK_GENSET_2.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1070, 420));
-        STOCK_GENSET_2.add(Genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, 150, 30));
+        STOCK_GENSET_2.add(Genset_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 30, 150, 30));
 
         jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -934,6 +946,42 @@ public void showPieChart(){
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         STOCK_GENSET_2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
+        genset_brand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "CUMMINS", "ISUZU", "PERKINS", "YANDONG", "OTHER BRAND" }));
+        STOCK_GENSET_2.add(genset_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 110, 30));
+
+        Stock_Genset_Panel_Supplier1.setBackground(new java.awt.Color(153, 153, 102));
+        Stock_Genset_Panel_Supplier1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+
+        Stock_Genset_Supplier1.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Stock_Genset_Supplier1.setForeground(new java.awt.Color(255, 255, 255));
+        Stock_Genset_Supplier1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Stock_Genset_Supplier1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Supplier.png"))); // NOI18N
+        Stock_Genset_Supplier1.setText("PRINT");
+        Stock_Genset_Supplier1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Stock_Genset_Supplier1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Stock_Genset_Supplier1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Stock_Genset_Supplier1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Stock_Genset_Panel_Supplier1Layout = new javax.swing.GroupLayout(Stock_Genset_Panel_Supplier1);
+        Stock_Genset_Panel_Supplier1.setLayout(Stock_Genset_Panel_Supplier1Layout);
+        Stock_Genset_Panel_Supplier1Layout.setHorizontalGroup(
+            Stock_Genset_Panel_Supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Stock_Genset_Supplier1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+        );
+        Stock_Genset_Panel_Supplier1Layout.setVerticalGroup(
+            Stock_Genset_Panel_Supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Stock_Genset_Supplier1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+        STOCK_GENSET_2.add(Stock_Genset_Panel_Supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, 210, 50));
+
         JTab.addTab("2", STOCK_GENSET_2);
 
         STOCK_FILTER_3.setkEndColor(new java.awt.Color(42, 142, 142));
@@ -960,7 +1008,7 @@ public void showPieChart(){
         jScrollPane6.setViewportView(Stock_Filter_Table);
 
         STOCK_FILTER_3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 1050, 420));
-        STOCK_FILTER_3.add(filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 70, 20));
+        STOCK_FILTER_3.add(filter_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 70, 20));
 
         jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -1061,7 +1109,9 @@ public void showPieChart(){
         Stock_Filter_Panel_view.setLayout(Stock_Filter_Panel_viewLayout);
         Stock_Filter_Panel_viewLayout.setHorizontalGroup(
             Stock_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Filter_view, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+            .addGroup(Stock_Filter_Panel_viewLayout.createSequentialGroup()
+                .addComponent(Stock_Filter_view, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 41, Short.MAX_VALUE))
         );
         Stock_Filter_Panel_viewLayout.setVerticalGroup(
             Stock_Filter_Panel_viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1106,6 +1156,42 @@ public void showPieChart(){
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         STOCK_FILTER_3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+
+        fil_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
+        STOCK_FILTER_3.add(fil_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, -1, -1));
+
+        Stock_Filter_Panel_view1.setBackground(new java.awt.Color(0, 107, 179));
+        Stock_Filter_Panel_view1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+
+        Stock_Filter_view1.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Stock_Filter_view1.setForeground(new java.awt.Color(255, 255, 255));
+        Stock_Filter_view1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Stock_Filter_view1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_View.png"))); // NOI18N
+        Stock_Filter_view1.setText("  VIEW ITEM");
+        Stock_Filter_view1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Stock_Filter_view1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Stock_Filter_view1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Stock_Filter_view1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Stock_Filter_Panel_view1Layout = new javax.swing.GroupLayout(Stock_Filter_Panel_view1);
+        Stock_Filter_Panel_view1.setLayout(Stock_Filter_Panel_view1Layout);
+        Stock_Filter_Panel_view1Layout.setHorizontalGroup(
+            Stock_Filter_Panel_view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Stock_Filter_view1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+        );
+        Stock_Filter_Panel_view1Layout.setVerticalGroup(
+            Stock_Filter_Panel_view1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Stock_Filter_view1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+        STOCK_FILTER_3.add(Stock_Filter_Panel_view1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 20, -1, -1));
 
         JTab.addTab("3", STOCK_FILTER_3);
 
@@ -3937,6 +4023,74 @@ public void showPieChart(){
     private void Shop_Genset_Customer_list10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list10MouseExited
          Shop_Genset_Panel_Customer10.setBackground(new Color(0,102,102));
     }//GEN-LAST:event_Shop_Genset_Customer_list10MouseExited
+
+    private void Stock_Genset_Supplier1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_Supplier1MouseClicked
+    try{
+        String brand_gen = genset_brand.getSelectedItem().toString();
+        JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_genset.jrxml");
+        String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,  FORMAT(`SELLER_PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO` FROM `genset_table` WHERE `BRAND` LIKE '%"+brand_gen+"%'";
+        JRDesignQuery jrdesignquery = new JRDesignQuery();
+        jrdesignquery.setText(sql);
+        jasperdesign.setQuery(jrdesignquery);
+        JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+
+        HashMap<String, Object> params = new HashMap<String, Object>();
+
+        BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+        params.put("logo", image );
+        params.put("brand_gen",brand_gen);
+        JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+        JasperViewer.viewReport(jasperprint, false);
+
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null,e.getMessage() );
+            e.printStackTrace();
+        } 
+    }//GEN-LAST:event_Stock_Genset_Supplier1MouseClicked
+
+    private void Stock_Genset_Supplier1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_Supplier1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Stock_Genset_Supplier1MouseEntered
+
+    private void Stock_Genset_Supplier1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_Supplier1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Stock_Genset_Supplier1MouseExited
+
+    private void Stock_Filter_view1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_view1MouseClicked
+    try{
+        String type_fil = fil_type.getSelectedItem().toString();
+        JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_filter.jrxml");
+        String sql = "SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY` FROM `filter_table` WHERE `TYPE` LIKE '%"+type_fil+"%'";
+        JRDesignQuery jrdesignquery = new JRDesignQuery();
+        jrdesignquery.setText(sql);
+        jasperdesign.setQuery(jrdesignquery);
+        JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+
+        HashMap<String, Object> params = new HashMap<String, Object>();
+
+        BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+        params.put("logo", image );
+        params.put("type_fil",type_fil);
+        JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+        JasperViewer.viewReport(jasperprint, false);
+
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null,e.getMessage() );
+            e.printStackTrace();
+        } 
+    }//GEN-LAST:event_Stock_Filter_view1MouseClicked
+
+    private void Stock_Filter_view1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_view1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Stock_Filter_view1MouseEntered
+
+    private void Stock_Filter_view1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_view1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Stock_Filter_view1MouseExited
       
     /**
      * @param args the command line arguments
@@ -4102,10 +4256,12 @@ public void showPieChart(){
     public static javax.swing.JPanel Stock_Filter_Panel_Supplier;
     public static javax.swing.JPanel Stock_Filter_Panel_back;
     public static javax.swing.JPanel Stock_Filter_Panel_view;
+    public static javax.swing.JPanel Stock_Filter_Panel_view1;
     public static javax.swing.JTable Stock_Filter_Table;
     private javax.swing.JLabel Stock_Filter_back;
     private javax.swing.JLabel Stock_Filter_supplier_list;
     private javax.swing.JLabel Stock_Filter_view;
+    private javax.swing.JLabel Stock_Filter_view1;
     private javax.swing.JPanel Stock_Genset_1;
     private javax.swing.JLabel Stock_Genset_2;
     private javax.swing.JLabel Stock_Genset_3;
@@ -4119,8 +4275,10 @@ public void showPieChart(){
     public static javax.swing.JPanel Stock_Genset_Panel_Back1;
     public static javax.swing.JPanel Stock_Genset_Panel_Back2;
     public static javax.swing.JPanel Stock_Genset_Panel_Supplier;
+    public static javax.swing.JPanel Stock_Genset_Panel_Supplier1;
     public static javax.swing.JPanel Stock_Genset_Panel_View;
     private javax.swing.JLabel Stock_Genset_Supplier;
+    private javax.swing.JLabel Stock_Genset_Supplier1;
     public static javax.swing.JTable Stock_Genset_Table;
     private javax.swing.JLabel Stock_Genset_View;
     private javax.swing.JPanel bin_1;
@@ -4130,8 +4288,10 @@ public void showPieChart(){
     public static javax.swing.JLabel bin_filter_id;
     public static javax.swing.JLabel bin_genset_ids;
     public static javax.swing.JLabel cartIfEmpty;
+    private javax.swing.JComboBox<String> fil_type;
     public static javax.swing.JLabel filter_id;
     private javax.swing.JLabel fpe_home;
+    private javax.swing.JComboBox<String> genset_brand;
     public static javax.swing.JTable history_filter_table;
     public static javax.swing.JTable history_genset_table;
     private javax.swing.JLabel history_id_filter;
