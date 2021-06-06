@@ -154,7 +154,7 @@ public class Insert_Customer extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,13 +255,12 @@ public class Insert_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
 
     private void Stock_Genset_BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseEntered
-        Stock_Genset_Back.setForeground(new Color(41, 61, 61));
-        Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
+        Stock_Genset_Panel_Back.setBackground(new Color(255,193,71));
+       
     }//GEN-LAST:event_Stock_Genset_BackMouseEntered
 
     private void Stock_Genset_BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseExited
-        Stock_Genset_Back.setForeground(new Color(255,255,255));
-        Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
+        Stock_Genset_Panel_Back.setBackground(new Color(255,173,51));
     }//GEN-LAST:event_Stock_Genset_BackMouseExited
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
@@ -301,12 +300,12 @@ public class Insert_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
     private void Stock_Genset_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseEntered
-        Stock_Genset_Update.setForeground(new Color(41, 61, 61));
-        Stock_Genset_Panel_Update.setBackground(new Color(51, 187, 255));
+        
+        Stock_Genset_Panel_Update.setBackground(new Color(51,207,255));
     }//GEN-LAST:event_Stock_Genset_UpdateMouseEntered
 
     private void Stock_Genset_UpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseExited
-        Stock_Genset_Update.setForeground(new Color(255,255,255));
+        
         Stock_Genset_Panel_Update.setBackground(new Color(51, 187, 255));
     }//GEN-LAST:event_Stock_Genset_UpdateMouseExited
 

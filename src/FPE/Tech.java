@@ -5,6 +5,7 @@
  */
 package FPE;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -147,6 +148,12 @@ public class Tech extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel1MouseExited(evt);
+            }
         });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -173,6 +180,12 @@ public class Tech extends javax.swing.JFrame {
         ADD.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ADDMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ADDMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ADDMouseExited(evt);
             }
         });
 
@@ -243,6 +256,22 @@ public class Tech extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
             dispose();
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void ADDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ADDMouseEntered
+       jPanel2.setBackground(new Color(0,173,71));
+    }//GEN-LAST:event_ADDMouseEntered
+
+    private void ADDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ADDMouseExited
+        jPanel2.setBackground(new Color(0,153,51));
+    }//GEN-LAST:event_ADDMouseExited
+
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        jPanel1.setBackground(new Color(255,174,122));
+    }//GEN-LAST:event_jLabel1MouseEntered
+
+    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+       jPanel1.setBackground(new Color(255,194,122));
+    }//GEN-LAST:event_jLabel1MouseExited
 
     /**
      * @param args the command line arguments

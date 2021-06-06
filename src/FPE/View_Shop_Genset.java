@@ -575,12 +575,12 @@ public class View_Shop_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_View_Genset__BtnMouseClicked
 
     private void View_Genset__BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset__BtnMouseEntered
-        View_Genset__Btn.setForeground(new Color(41, 61, 61));
+        Stock_Genset_Panel_Update.setBackground(new Color(51,207,255));
       
     }//GEN-LAST:event_View_Genset__BtnMouseEntered
 
     private void View_Genset__BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset__BtnMouseExited
-        View_Genset__Btn.setForeground(new Color(255,255,255));
+        Stock_Genset_Panel_Update.setBackground(new Color(51,187,255));
     }//GEN-LAST:event_View_Genset__BtnMouseExited
 
     private void View_Genset__BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset__BackMouseClicked
@@ -590,11 +590,11 @@ public class View_Shop_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_View_Genset__BackMouseClicked
 
     private void View_Genset__BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset__BackMouseEntered
-        View_Genset__Back.setForeground(new Color(41, 61, 61));
+        Stock_Genset_Panel_Back.setBackground(new Color(255,173,71));
     }//GEN-LAST:event_View_Genset__BackMouseEntered
 
     private void View_Genset__BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset__BackMouseExited
-        View_Genset__Back.setForeground(new Color(255,255,255));
+        Stock_Genset_Panel_Back.setBackground(new Color(255,153,51));
     }//GEN-LAST:event_View_Genset__BackMouseExited
 
     private void View_Genset_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset_picMouseClicked

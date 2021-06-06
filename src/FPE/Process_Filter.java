@@ -444,12 +444,12 @@ public class Process_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_Process_Filter_BtnMouseClicked
 
     private void Process_Filter_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Process_Filter_BtnMouseEntered
-        Process_Filter_Btn.setForeground(new Color(41, 61, 61));
-        Stock_Genset_Panel_Update.setBackground(new Color(51, 187, 255));
+     
+        Stock_Genset_Panel_Update.setBackground(new Color(51, 207, 255));
     }//GEN-LAST:event_Process_Filter_BtnMouseEntered
 
     private void Process_Filter_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Process_Filter_BtnMouseExited
-        Process_Filter_Btn.setForeground(new Color(255,255,255));
+      
         Stock_Genset_Panel_Update.setBackground(new Color(51, 187, 255));
     }//GEN-LAST:event_Process_Filter_BtnMouseExited
 
@@ -459,12 +459,12 @@ public class Process_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_Process_Filter_BackMouseClicked
 
     private void Process_Filter_BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Process_Filter_BackMouseEntered
-        Process_Filter_Back.setForeground(new Color(41, 61, 61));
-        Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
+     
+        Stock_Genset_Panel_Back.setBackground(new Color(255,214,122));
     }//GEN-LAST:event_Process_Filter_BackMouseEntered
 
     private void Process_Filter_BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Process_Filter_BackMouseExited
-        Process_Filter_Back.setForeground(new Color(255,255,255));
+      
         Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
     }//GEN-LAST:event_Process_Filter_BackMouseExited
 

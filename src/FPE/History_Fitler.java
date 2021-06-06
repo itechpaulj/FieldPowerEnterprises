@@ -389,11 +389,12 @@ public class History_Fitler extends javax.swing.JFrame {
     }//GEN-LAST:event_history_genset_backMouseClicked
 
     private void history_genset_backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_backMouseEntered
-        history_genset_back.setForeground(new Color(41, 61, 61));
+    
+        Stock_Genset_Panel_Back.setBackground(new Color(255,173,71));
     }//GEN-LAST:event_history_genset_backMouseEntered
 
     private void history_genset_backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_backMouseExited
-        history_genset_back.setForeground(new Color(255,255,255));
+        Stock_Genset_Panel_Back.setBackground(new Color(255,193,51));
     }//GEN-LAST:event_history_genset_backMouseExited
 
     private void history_genset_return_itemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_return_itemMouseClicked
@@ -492,7 +493,7 @@ public class History_Fitler extends javax.swing.JFrame {
     }//GEN-LAST:event_history_genset_customerMouseEntered
 
     private void history_genset_customerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_customerMouseExited
-        Stock_Genset_Panel_Back1.setBackground(new Color([51,153,102]));
+        Stock_Genset_Panel_Back1.setBackground(new Color(51,153,102));
     }//GEN-LAST:event_history_genset_customerMouseExited
 
     private void View_Shop_Filter_input_quantityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Shop_Filter_input_quantityKeyPressed

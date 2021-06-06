@@ -179,7 +179,7 @@ public class History_Genset extends javax.swing.JFrame {
         history_genset_type.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         KG2_ADD_STOCK_GENSET.add(history_genset_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 180, 30));
 
-        Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
+        Stock_Genset_Panel_Update.setBackground(new java.awt.Color(255, 153, 221));
         Stock_Genset_Panel_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         history_genset_return_item.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
@@ -590,12 +590,12 @@ public class History_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_history_genset_return_itemMouseClicked
 
     private void history_genset_return_itemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_return_itemMouseEntered
-        history_genset_return_item.setForeground(new Color(41, 61, 61));
+        Stock_Genset_Panel_Update.setBackground(new Color(255, 173, 241));
 
     }//GEN-LAST:event_history_genset_return_itemMouseEntered
 
     private void history_genset_return_itemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_return_itemMouseExited
-        history_genset_return_item.setForeground(new Color(255,255,255));
+        Stock_Genset_Panel_Update.setBackground(new Color(255, 153, 221));
     }//GEN-LAST:event_history_genset_return_itemMouseExited
 
     private void history_genset_customerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_customerMouseClicked
@@ -607,11 +607,11 @@ public class History_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_history_genset_customerMouseClicked
 
     private void history_genset_customerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_customerMouseEntered
-        history_genset_customer.setForeground(new Color(41, 61, 61));
+        Stock_Genset_Panel_Back.setBackground(new Color(51,173,142));
     }//GEN-LAST:event_history_genset_customerMouseEntered
 
     private void history_genset_customerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_customerMouseExited
-        history_genset_customer.setForeground(new Color(255,255,255));
+        Stock_Genset_Panel_Back.setBackground(new Color(51,153,102));
     }//GEN-LAST:event_history_genset_customerMouseExited
 
     private void history_genset_back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_back1MouseClicked
@@ -619,11 +619,11 @@ public class History_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_history_genset_back1MouseClicked
 
     private void history_genset_back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_back1MouseEntered
-        // TODO add your handling code here:
+        Stock_Genset_Panel_Back1.setBackground(new Color(55,193,71));
     }//GEN-LAST:event_history_genset_back1MouseEntered
 
     private void history_genset_back1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_back1MouseExited
-        // TODO add your handling code here:
+        Stock_Genset_Panel_Back1.setBackground(new Color(55,173,51));
     }//GEN-LAST:event_history_genset_back1MouseExited
 
     private void View_Genset_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Genset_picMouseClicked

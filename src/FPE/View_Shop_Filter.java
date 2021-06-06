@@ -359,7 +359,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         );
         ViewCartLayout.setVerticalGroup(
             ViewCartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(GoToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(GoToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 48, Short.MAX_VALUE)
         );
 
         KG2_ADD_STOCK_GENSET.add(ViewCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 210, 50));
@@ -592,12 +592,12 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_AddToCartMouseClicked
 
     private void AddToCartMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddToCartMouseEntered
-        AddToCart.setForeground(new Color(41, 61, 61));
+        ViewAdd.setBackground(new Color(0,173,71));
       
     }//GEN-LAST:event_AddToCartMouseEntered
 
     private void AddToCartMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddToCartMouseExited
-        AddToCart.setForeground(new Color(255,255,255));
+        ViewAdd.setBackground(new Color(0,153,51));
     }//GEN-LAST:event_AddToCartMouseExited
 
     private void CartBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartBackMouseClicked
@@ -607,11 +607,11 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_CartBackMouseClicked
 
     private void CartBackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartBackMouseEntered
-        CartBack.setForeground(new Color(41, 61, 61));
+       Stock_Genset_Panel_Back.setBackground(new Color(255,193,71));
     }//GEN-LAST:event_CartBackMouseEntered
 
     private void CartBackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CartBackMouseExited
-        CartBack.setForeground(new Color(255,255,255));
+       Stock_Genset_Panel_Back.setBackground(new Color(255,173,51));
     }//GEN-LAST:event_CartBackMouseExited
 
     private void View_Shop_Filter_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Shop_Filter_picMouseClicked
@@ -667,11 +667,11 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_GoToCartMouseClicked
 
     private void GoToCartMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToCartMouseEntered
-        // TODO add your handling code here:
+        ViewCart.setBackground(new Color(0,148,275));
     }//GEN-LAST:event_GoToCartMouseEntered
 
     private void GoToCartMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToCartMouseExited
-        // TODO add your handling code here:
+       ViewCart.setBackground(new Color(0,128,255));
     }//GEN-LAST:event_GoToCartMouseExited
 
     private void OTHERSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OTHERSMouseClicked
@@ -681,11 +681,11 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_OTHERSMouseClicked
 
     private void OTHERSMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OTHERSMouseEntered
-        // TODO add your handling code here:
+        ViewAdd1.setBackground(new Color(51,173,122));
     }//GEN-LAST:event_OTHERSMouseEntered
 
     private void OTHERSMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OTHERSMouseExited
-        // TODO add your handling code here:
+        ViewAdd1.setBackground(new Color(51,153,102));
     }//GEN-LAST:event_OTHERSMouseExited
 
     /**

@@ -416,35 +416,36 @@ public class Table_Supplier extends javax.swing.JFrame {
     }//GEN-LAST:event_Supplier_SearchKeyPressed
 
     private void AddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseEntered
-        Add.setForeground(new Color(41, 61, 61));
+        add_panel_supplier.setBackground(new Color(0,173,71));
     }//GEN-LAST:event_AddMouseEntered
 
     private void sup_listUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseEntered
-        sup_listUpdate.setForeground(new Color(41, 61, 61));
+        update_panel_supplier.setBackground(new Color(51,207,255));
     }//GEN-LAST:event_sup_listUpdateMouseEntered
 
     private void sup_delMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseEntered
-       sup_del.setForeground(new Color(41, 61, 61));
+       delete_panel_supplier.setBackground(new Color(255,97,97));
     }//GEN-LAST:event_sup_delMouseEntered
 
     private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
-       Back.setForeground(new Color(41, 61, 61));
+       back_panel_supplier.setBackground(new Color(255,193,71));
     }//GEN-LAST:event_BackMouseEntered
 
     private void AddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseExited
-        Add.setForeground(new Color(255,255,255));
+      add_panel_supplier.setBackground(new Color(0,153,51));
+
     }//GEN-LAST:event_AddMouseExited
 
     private void sup_listUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseExited
-       sup_listUpdate.setForeground(new Color(255,255,255));
+      update_panel_supplier.setBackground(new Color(51,187,255));
     }//GEN-LAST:event_sup_listUpdateMouseExited
 
     private void sup_delMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseExited
-       sup_del.setForeground(new Color(255,255,255));
+       delete_panel_supplier.setBackground(new Color(255,77,77));
     }//GEN-LAST:event_sup_delMouseExited
 
     private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
-       Back.setForeground(new Color(255,255,255));
+       back_panel_supplier.setBackground(new Color(255,173,51));
     }//GEN-LAST:event_BackMouseExited
 
     /**
