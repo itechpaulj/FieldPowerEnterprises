@@ -557,7 +557,7 @@ public class Reciept extends javax.swing.JFrame {
                         graphics2D.scale(0.5, 0.5);
 
                         // Now paint panel as graphics2D
-                        reciept_genset.paint(graphics2D);
+                        //reciept_genset.paint(graphics2D);
 
                         // return if page exists
                         return Printable.PAGE_EXISTS;

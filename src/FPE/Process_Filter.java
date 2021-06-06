@@ -421,6 +421,7 @@ public class Process_Filter extends javax.swing.JFrame {
 
                     JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
                     JasperViewer.viewReport(jasperprint,false);
+                    
                     dispose();
             }
 
@@ -433,7 +434,7 @@ public class Process_Filter extends javax.swing.JFrame {
      }
      catch(Exception e){
            System.out.println(e.getMessage());
-           JOptionPane.showMessageDialog(null, e);
+           JOptionPane.showMessageDialog(null, e.getMessage());
      }
     
      

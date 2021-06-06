@@ -692,6 +692,7 @@ public class Process_Genset extends javax.swing.JFrame {
                                  }
                                  catch(Exception e){
                                      System.out.println(e.getMessage());
+                                     JOptionPane.showMessageDialog(null, e.getMessage());
                                  }        
                              ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
                          }                    
@@ -734,7 +735,7 @@ public class Process_Genset extends javax.swing.JFrame {
                                  }
                                  catch(Exception e){
                                      System.out.println(e.getMessage());
-                                    JOptionPane.showMessageDialog(null, e);
+                                    JOptionPane.showMessageDialog(null, e.getMessage());
                                  }
                              ct.Bin_Genset();ct.Genset();ct.History_Genset();ct.ShopGenset();
                          }                

@@ -3545,13 +3545,14 @@ public void showPieChart(){
           BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
           params.put("logo", image );
           JasperPrint jasperPrint = null;
-          JasperCompileManager.compileReportToFile("src/FPE/history_filter.jrxml");
-          jasperPrint = JasperFillManager.fillReport("src/FPE/history_filter.jasper", params, new JRTableModelDataSource(tablemodel));
+          JasperCompileManager.compileReportToFile("C:\\Users\\"+located+"\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\history_filter.jrxml");
+          jasperPrint = JasperFillManager.fillReport("C:\\Users\\"+located+"\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\history_filter.jasper", params, new JRTableModelDataSource(tablemodel));
           JasperViewer.viewReport(jasperPrint, false);
 
         }
         catch(Exception e){
             System.out.println(e.getMessage());
+             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }//GEN-LAST:event_Shop_Genset_Print_FilterMouseClicked
 
@@ -3571,13 +3572,15 @@ public void showPieChart(){
           BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
           params.put("logo", image );
           JasperPrint jasperPrint = null;
-          JasperCompileManager.compileReportToFile("src/FPE/history_genset.jrxml");
-          jasperPrint = JasperFillManager.fillReport("src/FPE/history_genset.jasper", params, new JRTableModelDataSource(tablemodel));
+          JasperCompileManager.compileReportToFile("C:\\Users\\"+located+"\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\history_genset.jrxml");
+          jasperPrint = JasperFillManager.fillReport("C:\\Users\\"+located+"\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\history_genset.jasper", params, new JRTableModelDataSource(tablemodel));
           JasperViewer.viewReport(jasperPrint, false);
 
         }
         catch(Exception e){
             System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            
         }
     }//GEN-LAST:event_Shop_Genset_Print_GensetMouseClicked
 
