@@ -30,6 +30,8 @@ public class Table_Supplier extends javax.swing.JFrame {
         initComponents();
         Class_tables ct = new Class_tables();
         ct.Supplier();
+        supplier_id.setVisible(false);
+        Path.setVisible(false);
     }
 
     /**

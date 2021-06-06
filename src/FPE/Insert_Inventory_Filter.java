@@ -31,7 +31,7 @@ public class Insert_Inventory_Filter extends javax.swing.JFrame {
  public void imgisNull(){
         try{
                 if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){

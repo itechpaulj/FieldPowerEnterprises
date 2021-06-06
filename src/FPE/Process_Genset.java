@@ -668,7 +668,7 @@ public class Process_Genset extends javax.swing.JFrame {
 
                              try{
 
-                                     JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
+                                     JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/printgenset.jrxml");
                                      String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT`, `ID_GENSET` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
                                      JRDesignQuery jrdesignquery = new JRDesignQuery();
                                      jrdesignquery.setText(sql);
@@ -710,7 +710,7 @@ public class Process_Genset extends javax.swing.JFrame {
                               JOptionPane.showMessageDialog(null, "SUCCESS");
                              try{
 
-                                     JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printgenset.jrxml");
+                                     JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/printgenset.jrxml");
                                      String sql = "SELECT ID,`BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,`PRICE`, FORMAT(`SELLER PRICE`,'#,##0.00') AS `SELLER PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO`, `DATE`, `IMAGE`, `SUPPLIER`, `ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `DEALING INFO`, `AGENT_NAME`, `AGENT_CONTACT`, `ID_GENSET` FROM `history_genset_table` ORDER BY `ID` DESC LIMIT 1";
                                      JRDesignQuery jrdesignquery = new JRDesignQuery();
                                      jrdesignquery.setText(sql);

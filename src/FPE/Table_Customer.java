@@ -30,6 +30,8 @@ public class Table_Customer extends javax.swing.JFrame {
         initComponents();
         Class_tables ct = new Class_tables();
         ct.Customer();
+        Customer_id.setVisible(false);
+        Path.setVisible(false);
     }
 
     /**

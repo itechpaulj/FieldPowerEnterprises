@@ -11,7 +11,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -37,13 +36,12 @@ import net.sf.jasperreports.view.JasperViewer;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PiePlot;
 import org.jfree.data.general.DefaultPieDataset;
 
 
 
 public class Mainpage extends javax.swing.JFrame {
-
+    public static String located = "Javinez"; // report or print default location path
     public static SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
     public static SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
     public static String admin_id ;
@@ -4023,7 +4021,7 @@ public void showPieChart(){
         String brand_gen = genset_brand.getSelectedItem().toString();
         if(brand_gen.equals("ALL")){
             try{
-            JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_genset_all.jrxml");
+            JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/stock_genset_all.jrxml");
             String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,  FORMAT(`SELLER_PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO` FROM `genset_table`";
             JRDesignQuery jrdesignquery = new JRDesignQuery();
             jrdesignquery.setText(sql);
@@ -4046,7 +4044,7 @@ public void showPieChart(){
         }
         else{
             try{
-            JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_genset.jrxml");
+            JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/stock_genset.jrxml");
             String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,  FORMAT(`SELLER_PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO` FROM `genset_table` WHERE `BRAND` LIKE '%"+brand_gen+"%'";
             JRDesignQuery jrdesignquery = new JRDesignQuery();
             jrdesignquery.setText(sql);
@@ -4084,7 +4082,7 @@ public void showPieChart(){
         String type_fil = fil_type.getSelectedItem().toString();
         if(type_fil.equals("ALL")){
             try{
-            JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_filter_all.jrxml");
+            JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/stock_filter_all.jrxml");
             String sql = "SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY` FROM `filter_table`";
             JRDesignQuery jrdesignquery = new JRDesignQuery();
             jrdesignquery.setText(sql);
@@ -4106,7 +4104,7 @@ public void showPieChart(){
             }            
         }else{
             try{
-            JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_filter.jrxml");
+            JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/stock_filter.jrxml");
             String sql = "SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY` FROM `filter_table` WHERE `TYPE` LIKE '%"+type_fil+"%'";
             JRDesignQuery jrdesignquery = new JRDesignQuery();
             jrdesignquery.setText(sql);

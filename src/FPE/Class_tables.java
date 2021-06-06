@@ -41,7 +41,7 @@ public class Class_tables {
     
     public boolean Filter(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DESCRIPTION`, `TYPE`, `SELLER PRICE`, `QUANTITY` FROM `filter_table` ORDER BY `ID` DESC");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY` FROM `filter_table` ORDER BY `ID` DESC");
         ResultSet rs = ps.executeQuery();
         Stock_Filter_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Stock_Filter_Table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -90,7 +90,7 @@ public class Class_tables {
 
         public boolean ShopFilter(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DESCRIPTION`, `TYPE`, `SELLER PRICE`, `QUANTITY` FROM `filter_table` ORDER BY `ID` DESC ");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY` FROM `filter_table` ORDER BY `ID` DESC ");
         ResultSet rs = ps.executeQuery();
         Shop_Filter_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Shop_Filter_Table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -151,7 +151,7 @@ public class Class_tables {
            
     public boolean Bin_Genset(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `SELLER PRICE`FROM `history_genset_table`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE` FROM `history_genset_table`");
         ResultSet rs = ps.executeQuery();
         Bin_Genset_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Bin_Genset_Table.getColumnModel().getColumn(0).setMaxWidth(100);

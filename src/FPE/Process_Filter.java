@@ -400,7 +400,7 @@ public class Process_Filter extends javax.swing.JFrame {
             if(!Class_Order.UpdateHistoryFilter(qout, unique, name, address, email, contact, agent_name, agent_contact,dealing_info) && !Class_Cart.DeleteCart()){
                 JOptionPane.showMessageDialog(null, "SUCCESS"); ct.ShowCart(); ct.ShowOrder();
                     Mainpage.cartIfEmpty.setText("1");
-                    JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/printfilter.jrxml");
+                    JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/printfilter.jrxml");
                     String sql = "SELECT `ID`, CONCAT(`BRAND`,' ',`DESCRIPTION`) AS `DESCRIPTION` , `PRICE`, `QUANTITY`, `TOTAL PRICE` FROM `history_filter` WHERE `COUNT_PROCESS`='"+unique+"'";
                     JRDesignQuery jrdesignquery = new JRDesignQuery();
                     jrdesignquery.setText(sql);
