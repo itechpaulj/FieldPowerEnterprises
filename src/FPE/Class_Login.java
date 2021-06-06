@@ -40,7 +40,7 @@ public class Class_Login {
         boolean status = false;
         try{
        
-        ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`NAME`,`PASSWORD` FROM `login` WHERE `USERNAME` = ? and `PASSWORD` =?");
+        ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`USERNAME`,`PASSWORD` FROM `login` WHERE `USERNAME` = ? and `PASSWORD` =?");
         ps.setString(1,user);
         ps.setString(2,pass);
         
@@ -49,7 +49,7 @@ public class Class_Login {
         while(rs.next()){
        
         admin_id = rs.getString("ID");  
-        admin_name = rs.getString("NAME");
+        admin_name = rs.getString("USERNAME");
          password = rs.getString("PASSWORD");       
          }
         status = rs.next();

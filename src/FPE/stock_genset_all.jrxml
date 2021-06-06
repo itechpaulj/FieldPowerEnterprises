@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c27b01ed-5fc0-47eb-96fc-91371f9bd6cc">
-	<property name="ireport.zoom" value="0.75"/>
-	<property name="ireport.x" value="0"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ddbd77b9-bbf3-44d7-bdca-047a4b7d5f72">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="147"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="logo" class="java.lang.Object" isForPrompting="false"/>
-	<parameter name="brand_gen" class="java.lang.String"/>
-	<queryString>
-		<![CDATA[SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,  FORMAT(`SELLER_PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO` FROM `genset_table` WHERE `BRAND` LIKE '%'||'$P!{brand_gen}'||'%']]>
+	<queryString language="SQL">
+		<![CDATA[SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,  FORMAT(`SELLER_PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO` FROM `genset_table`]]>
 	</queryString>
 	<field name="ID" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -42,55 +41,55 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="81" splitType="Stretch">
+		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="327" y="30" width="161" height="11" uuid="3fbb0c53-7bda-42ac-a5ef-2dde502e2e73"/>
-				<textElement>
-					<font fontName="Arial" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[T : 02-734-4318, 0956-1845577]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="327" y="20" width="161" height="10" uuid="7db9a3fb-1fb2-4c91-a68a-a9668ed22c96"/>
-				<textElement>
-					<font fontName="Arial" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[1467 , ABAD SANTOS, METRO MANILA]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="327" y="52" width="161" height="11" uuid="3afaca9e-35e3-45d2-9864-a8ac15f2f45e"/>
-				<textElement>
-					<font fontName="Arial" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[www.fieldpowerenterprises.com]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="327" y="0" width="290" height="20" uuid="3cebe668-3a9c-464e-bafd-5dc9d12f50f4"/>
+				<reportElement x="353" y="0" width="290" height="20" uuid="ace6bc3c-0ab9-4da6-b1d1-a3110f73e79e"/>
 				<textElement>
 					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FIELD POWER ENTERPRISES]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="327" y="41" width="161" height="11" uuid="184dc94e-ae00-4451-aaea-7eb1949261a7"/>
+				<reportElement x="353" y="52" width="161" height="11" uuid="88a3a157-8f4c-429b-9a5d-e477c800fa85"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[www.fieldpowerenterprises.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="41" width="161" height="11" uuid="80c5b406-396a-4466-af58-217d53496d3a"/>
 				<textElement>
 					<font fontName="Arial" size="8" isBold="true"/>
 				</textElement>
 				<text><![CDATA[E : fieldpowergen@gmail.com]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="353" y="20" width="161" height="10" uuid="2d3aa045-14f2-4879-89ae-558952e5650b"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1467 , ABAD SANTOS, METRO MANILA]]></text>
+			</staticText>
 			<image>
-				<reportElement x="227" y="2" width="100" height="61" uuid="71658821-bdce-4db0-966e-07e1abc26b92"/>
+				<reportElement x="253" y="0" width="100" height="63" uuid="a1615b42-83d0-47f0-86ca-75c44b0df6d6"/>
 				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement x="359" y="30" width="161" height="11" uuid="015cac0c-2af5-426f-a289-be8dfabaf76d"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[T : 02-734-4318, 0956-1845577]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="20" splitType="Stretch">
+		<band height="21" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="64" height="20" uuid="1c2f2ad2-39d9-413c-b8f1-578a7e2e225c"/>
+				<reportElement x="0" y="1" width="66" height="20" uuid="4caad68a-06cc-4282-bf49-fefc15e3ccfd"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -103,7 +102,7 @@
 				<text><![CDATA[BRAND]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="64" y="0" width="83" height="20" uuid="8330b19e-9626-435b-a565-dfd2a2744a09"/>
+				<reportElement x="66" y="1" width="84" height="20" uuid="51705d79-d620-48db-baec-ffbe02df89cd"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -116,7 +115,7 @@
 				<text><![CDATA[MODEL]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="147" y="0" width="98" height="20" uuid="ff0a3bb7-c5cb-4878-b5d0-32fcf81fef45"/>
+				<reportElement x="150" y="0" width="66" height="20" uuid="46781fcb-29f5-49c7-a950-168d04ba30d5"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -129,7 +128,7 @@
 				<text><![CDATA[KVA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="245" y="0" width="82" height="20" uuid="185dcee6-317e-48f9-bd59-a75637257f40"/>
+				<reportElement x="216" y="1" width="99" height="20" uuid="f59be179-42e6-41e0-ab3b-e790ce332b9b"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -142,7 +141,7 @@
 				<text><![CDATA[PHASING]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="327" y="0" width="100" height="20" uuid="7d8b6189-5856-49bc-9f3f-3e8667d1864c"/>
+				<reportElement x="315" y="1" width="92" height="20" uuid="dd6b8609-4023-4541-8eb9-7d28285dae00"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -155,7 +154,7 @@
 				<text><![CDATA[UNIT_TYPE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="427" y="0" width="69" height="20" uuid="8631fa2d-add7-4708-8e6d-bf4568c15dfa"/>
+				<reportElement x="407" y="1" width="100" height="20" uuid="df5d5418-d9e3-4855-a6a2-6bda211aa208"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -168,7 +167,7 @@
 				<text><![CDATA[PRICE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="496" y="0" width="136" height="20" uuid="983553c6-f975-40e4-81e5-a98b63f88180"/>
+				<reportElement x="507" y="1" width="139" height="20" uuid="f5741e71-2e2d-41d8-9b30-631d62d01290"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -181,7 +180,7 @@
 				<text><![CDATA[ENGINE_SERIAL_NO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="632" y="0" width="170" height="20" uuid="ba7091b4-461e-46c0-8765-7c46942092a5"/>
+				<reportElement x="646" y="1" width="156" height="20" uuid="878cc9b7-1558-4636-b29f-2492eb05cb3a"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -198,20 +197,17 @@
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="64" height="20" uuid="78220e79-6e55-4899-bafb-21d403e29e5d"/>
+				<reportElement x="0" y="0" width="66" height="20" uuid="05be3af4-06d3-4657-9372-a57f952fed8f"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement>
-					<font isBold="false"/>
-				</textElement>
 				<textFieldExpression><![CDATA[$F{BRAND}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="64" y="0" width="83" height="20" uuid="75e5bacd-83ae-4378-a4c7-4af555e65803"/>
+				<reportElement x="66" y="0" width="84" height="20" uuid="55999fed-5ffe-4498-8efb-ddc7e17f75d0"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -221,17 +217,7 @@
 				<textFieldExpression><![CDATA[$F{MODEL}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="147" y="0" width="98" height="20" uuid="bf223c21-ab11-4d6a-873f-1cb7367ba4a8"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textFieldExpression><![CDATA[$F{KVA}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="245" y="0" width="82" height="20" uuid="33011f94-e66e-40e1-9ac7-45bf3db82703"/>
+				<reportElement x="216" y="0" width="99" height="20" uuid="03657b15-87dd-4c07-8453-f13894e2beb3"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -241,7 +227,7 @@
 				<textFieldExpression><![CDATA[$F{PHASING}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="327" y="0" width="100" height="20" uuid="2c9b782f-49e8-42f2-a6d6-84452446af3b"/>
+				<reportElement x="315" y="0" width="92" height="20" uuid="a18d60c7-e065-4cca-8358-d527ff7be28c"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -251,7 +237,7 @@
 				<textFieldExpression><![CDATA[$F{UNIT_TYPE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="427" y="0" width="69" height="20" uuid="88cd2168-bbd4-4204-a21e-b10e05e34408"/>
+				<reportElement x="407" y="0" width="100" height="20" uuid="c67e0621-9492-4011-96cb-4e93616a1903"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -261,7 +247,7 @@
 				<textFieldExpression><![CDATA[$F{PRICE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="496" y="0" width="136" height="20" uuid="b6df653a-b177-4ce9-8a7e-33e36646bab2"/>
+				<reportElement x="507" y="0" width="139" height="20" uuid="58eabbab-5f02-4019-af7b-dd09787086be"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -271,7 +257,17 @@
 				<textFieldExpression><![CDATA[$F{ENGINE_SERIAL_NO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="632" y="0" width="170" height="20" uuid="3d3379f6-9cae-4f03-83aa-2cb05436eed2"/>
+				<reportElement x="150" y="0" width="66" height="20" uuid="0842ab59-7cae-495f-a696-42af6bb0816f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{KVA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="646" y="0" width="156" height="20" uuid="285a7702-b5e5-43cb-8714-3ea748db2978"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>

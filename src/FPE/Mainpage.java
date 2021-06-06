@@ -78,7 +78,6 @@ public class Mainpage extends javax.swing.JFrame {
        history_id_filter.setVisible(false);
        bin_genset_ids.setVisible(false);
        bin_filter_id.setVisible(false);
-               
     }
          
 public void Graph(){
@@ -946,7 +945,7 @@ public void showPieChart(){
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         STOCK_GENSET_2.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
-        genset_brand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "CUMMINS", "ISUZU", "PERKINS", "YANDONG", "OTHER BRAND" }));
+        genset_brand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALL", "CUMMINS", "ISUZU", "PERKINS", "YANDONG", "OTHER BRAND" }));
         STOCK_GENSET_2.add(genset_brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 110, 30));
 
         Stock_Genset_Panel_Supplier1.setBackground(new java.awt.Color(153, 153, 102));
@@ -1157,8 +1156,8 @@ public void showPieChart(){
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         STOCK_FILTER_3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
-        fil_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
-        STOCK_FILTER_3.add(fil_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, -1, -1));
+        fil_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALL", "FILTER", "PARTS" }));
+        STOCK_FILTER_3.add(fil_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 80, -1));
 
         Stock_Filter_Panel_view1.setBackground(new java.awt.Color(0, 107, 179));
         Stock_Filter_Panel_view1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
@@ -4025,29 +4024,55 @@ public void showPieChart(){
     }//GEN-LAST:event_Shop_Genset_Customer_list10MouseExited
 
     private void Stock_Genset_Supplier1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_Supplier1MouseClicked
-    try{
         String brand_gen = genset_brand.getSelectedItem().toString();
-        JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_genset.jrxml");
-        String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,  FORMAT(`SELLER_PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO` FROM `genset_table` WHERE `BRAND` LIKE '%"+brand_gen+"%'";
-        JRDesignQuery jrdesignquery = new JRDesignQuery();
-        jrdesignquery.setText(sql);
-        jasperdesign.setQuery(jrdesignquery);
-        JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+        if(brand_gen.equals("ALL")){
+            try{
+            JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_genset_all.jrxml");
+            String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,  FORMAT(`SELLER_PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO` FROM `genset_table`";
+            JRDesignQuery jrdesignquery = new JRDesignQuery();
+            jrdesignquery.setText(sql);
+            jasperdesign.setQuery(jrdesignquery);
+            JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
 
-        HashMap<String, Object> params = new HashMap<String, Object>();
+            HashMap<String, Object> params = new HashMap<String, Object>();
 
-        BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
-        params.put("logo", image );
-        params.put("brand_gen",brand_gen);
-        JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
-        JasperViewer.viewReport(jasperprint, false);
+            BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+            params.put("logo", image );
+            JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+            JasperViewer.viewReport(jasperprint, false);
 
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(null,e.getMessage() );
+                e.printStackTrace();
+            }
         }
-        catch(Exception e){
-            System.out.println(e.getMessage());
-            JOptionPane.showMessageDialog(null,e.getMessage() );
-            e.printStackTrace();
-        } 
+        else{
+            try{
+            JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_genset.jrxml");
+            String sql = "SELECT `ID`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `UNIT_TYPE`, `DIMENSION`,  FORMAT(`SELLER_PRICE`, '#,##0.00') AS `PRICE`, `ENGINE_SERIAL_NO`, `ALTERNATOR_SERIAL_NO` FROM `genset_table` WHERE `BRAND` LIKE '%"+brand_gen+"%'";
+            JRDesignQuery jrdesignquery = new JRDesignQuery();
+            jrdesignquery.setText(sql);
+            jasperdesign.setQuery(jrdesignquery);
+            JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+
+            HashMap<String, Object> params = new HashMap<String, Object>();
+
+            BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+            params.put("logo", image );
+            params.put("brand_gen",brand_gen);
+            JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+            JasperViewer.viewReport(jasperprint, false);
+
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(null,e.getMessage() );
+                e.printStackTrace();
+            }       
+        }
+
     }//GEN-LAST:event_Stock_Genset_Supplier1MouseClicked
 
     private void Stock_Genset_Supplier1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_Supplier1MouseEntered
@@ -4059,29 +4084,54 @@ public void showPieChart(){
     }//GEN-LAST:event_Stock_Genset_Supplier1MouseExited
 
     private void Stock_Filter_view1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_view1MouseClicked
-    try{
         String type_fil = fil_type.getSelectedItem().toString();
-        JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_filter.jrxml");
-        String sql = "SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY` FROM `filter_table` WHERE `TYPE` LIKE '%"+type_fil+"%'";
-        JRDesignQuery jrdesignquery = new JRDesignQuery();
-        jrdesignquery.setText(sql);
-        jasperdesign.setQuery(jrdesignquery);
-        JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+        if(type_fil.equals("ALL")){
+            try{
+            JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_filter_all.jrxml");
+            String sql = "SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY` FROM `filter_table`";
+            JRDesignQuery jrdesignquery = new JRDesignQuery();
+            jrdesignquery.setText(sql);
+            jasperdesign.setQuery(jrdesignquery);
+            JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
 
-        HashMap<String, Object> params = new HashMap<String, Object>();
+            HashMap<String, Object> params = new HashMap<String, Object>();
 
-        BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
-        params.put("logo", image );
-        params.put("type_fil",type_fil);
-        JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
-        JasperViewer.viewReport(jasperprint, false);
+            BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+            params.put("logo", image );
+            JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+            JasperViewer.viewReport(jasperprint, false);
 
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(null,e.getMessage() );
+                e.printStackTrace();
+            }            
+        }else{
+            try{
+            JasperDesign jasperdesign =JRXmlLoader.load("src/FPE/stock_filter.jrxml");
+            String sql = "SELECT `ID`, `DATE`, `BRAND`, `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `QUANTITY` FROM `filter_table` WHERE `TYPE` LIKE '%"+type_fil+"%'";
+            JRDesignQuery jrdesignquery = new JRDesignQuery();
+            jrdesignquery.setText(sql);
+            jasperdesign.setQuery(jrdesignquery);
+            JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+
+            HashMap<String, Object> params = new HashMap<String, Object>();
+
+            BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+            params.put("logo", image );
+            params.put("type_fil",type_fil);
+            JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+            JasperViewer.viewReport(jasperprint, false);
+
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+                JOptionPane.showMessageDialog(null,e.getMessage() );
+                e.printStackTrace();
+            }   
         }
-        catch(Exception e){
-            System.out.println(e.getMessage());
-            JOptionPane.showMessageDialog(null,e.getMessage() );
-            e.printStackTrace();
-        } 
+
     }//GEN-LAST:event_Stock_Filter_view1MouseClicked
 
     private void Stock_Filter_view1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Filter_view1MouseEntered
