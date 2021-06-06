@@ -146,6 +146,7 @@ public class Login extends javax.swing.JFrame {
 
         password.setBackground(new java.awt.Color(230, 230, 230));
         password.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 240, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
