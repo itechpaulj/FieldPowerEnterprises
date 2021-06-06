@@ -78,11 +78,11 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setText(" Field Power Enterprises");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 590, 140));
 
-        jPanel2.setBackground(new java.awt.Color(255, 194, 102));
+        jPanel2.setBackground(new java.awt.Color(255, 179, 128));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Cancel_btn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        Cancel_btn.setForeground(new java.awt.Color(0, 51, 51));
+        Cancel_btn.setForeground(new java.awt.Color(255, 255, 255));
         Cancel_btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Cancel_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Cancel.png"))); // NOI18N
         Cancel_btn.setText(" CANCEL");
@@ -106,16 +106,16 @@ public class Login extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Cancel_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(Cancel_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 180, 50));
 
-        jPanel3.setBackground(new java.awt.Color(0, 204, 68));
+        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Login_Btn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        Login_Btn.setForeground(new java.awt.Color(0, 51, 51));
+        Login_Btn.setForeground(new java.awt.Color(255, 255, 255));
         Login_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Login_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Key.png"))); // NOI18N
         Login_Btn.setText(" LOGIN  ");
@@ -164,23 +164,23 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Login_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseEntered
-        Login_Btn.setForeground(new Color(0,51,51));
-        jPanel3.setBackground(new Color(0, 230, 230));
+       // Login_Btn.setBackground(new Color(0,137,148));
+        jPanel3.setBackground(new Color(0,173,173));
     }//GEN-LAST:event_Login_BtnMouseEntered
 
     private void Cancel_btnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseEntered
-         Cancel_btn.setForeground(new Color(0,51,51));
-         jPanel2.setBackground(new Color(0, 230, 230));
+        // Cancel_btn.setForeground(new Color(0,51,51));
+       jPanel2.setBackground(new Color(255, 199, 148));
     }//GEN-LAST:event_Cancel_btnMouseEntered
 
     private void Login_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseExited
-        Login_Btn.setForeground(new Color(0,51,51));
-        jPanel3.setBackground(new Color(0, 204, 68));
+       // Login_Btn.setForeground(new Color(0,51,51));
+        jPanel3.setBackground(new Color(0,153,153));
     }//GEN-LAST:event_Login_BtnMouseExited
 
     private void Cancel_btnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseExited
-        Cancel_btn.setForeground(new Color(0,51,51));
-        jPanel2.setBackground(new Color(255,194,102));
+       // Cancel_btn.setForeground(new Color(0,51,51));
+        jPanel2.setBackground(new Color(255, 179, 128));
     }//GEN-LAST:event_Cancel_btnMouseExited
 
     private void Login_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseClicked
