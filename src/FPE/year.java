@@ -22,6 +22,7 @@ public class year extends javax.swing.JFrame {
      */
     public year() {
         initComponents();
+        yearCompared.setVisible(false);
     }
 
     /**

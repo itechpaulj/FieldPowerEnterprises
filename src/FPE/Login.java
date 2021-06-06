@@ -193,6 +193,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "WELCOME "+Class_Login.admin_name+"","",JOptionPane.INFORMATION_MESSAGE);
             Mainpage m = new Mainpage();
             m.setVisible(true);
+            Mainpage.admin_id = Class_Login.admin_id;
             dispose();                
             }
             else{

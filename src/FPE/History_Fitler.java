@@ -255,7 +255,7 @@ public class History_Fitler extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 530, 210, 50));
 
-        Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
+        Stock_Genset_Panel_Update.setBackground(new java.awt.Color(255, 153, 221));
         Stock_Genset_Panel_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         history_genset_return_item.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -470,11 +470,12 @@ public class History_Fitler extends javax.swing.JFrame {
     }//GEN-LAST:event_history_genset_return_itemMouseClicked
 
     private void history_genset_return_itemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_return_itemMouseEntered
-        history_genset_return_item.setForeground(new Color(41, 61, 61));
+      
+        Stock_Genset_Panel_Update.setBackground(new Color(255, 173, 241));
     }//GEN-LAST:event_history_genset_return_itemMouseEntered
 
     private void history_genset_return_itemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_return_itemMouseExited
-        history_genset_return_item.setForeground(new Color(255,255,255));
+        Stock_Genset_Panel_Update.setBackground(new Color(255, 153, 221));
     }//GEN-LAST:event_history_genset_return_itemMouseExited
 
     private void history_genset_customerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_customerMouseClicked
@@ -485,11 +486,13 @@ public class History_Fitler extends javax.swing.JFrame {
     }//GEN-LAST:event_history_genset_customerMouseClicked
 
     private void history_genset_customerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_customerMouseEntered
-        history_genset_customer.setForeground(new Color(41, 61, 61));
+    
+        Stock_Genset_Panel_Back1.setBackground(new Color(51,173,122));
+        
     }//GEN-LAST:event_history_genset_customerMouseEntered
 
     private void history_genset_customerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_customerMouseExited
-        history_genset_customer.setForeground(new Color(255,255,255));
+        Stock_Genset_Panel_Back1.setBackground(new Color([51,153,102]));
     }//GEN-LAST:event_history_genset_customerMouseExited
 
     private void View_Shop_Filter_input_quantityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Shop_Filter_input_quantityKeyPressed

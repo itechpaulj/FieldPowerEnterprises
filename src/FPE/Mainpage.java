@@ -42,7 +42,7 @@ public class Mainpage extends javax.swing.JFrame {
 
     public static SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
     public static SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
-    public static String admin_id = Login.admin_id;  
+    public static String admin_id ;
 
     
     public static byte[] images = null;
@@ -3329,7 +3329,7 @@ public void showPieChart(){
         Dashboard_Display_1.setForeground(new Color(255,255,255));
         Dashboard_Display_2.setForeground(new Color(243,246,26));
         Dashboard_Display_3.setText(null);
-        JTab.setSelectedIndex(9);  
+        JTab.setSelectedIndex(10);  
        }else if(path.equals("2"))
        {
         Dashboard_Display_1.setForeground(new Color(255,255,255));
@@ -3337,7 +3337,7 @@ public void showPieChart(){
         Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(16);  
        }
-       pat_back_filter.setText(null);
+       pat_back_filter.setText(null     );
     }//GEN-LAST:event_Shop_Genset_Customer_list3MouseClicked
 
     private void Shop_Genset_Customer_list3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list3MouseEntered
@@ -3927,7 +3927,7 @@ public void showPieChart(){
         Dashboard_Display_3.setForeground(new Color(243,246,26));
         Dashboard_Display_3.setText("SALES");
         pat_back_filter.setText("2");
-        JTab.setSelectedIndex(9);
+        JTab.setSelectedIndex(10);
     }//GEN-LAST:event_Shop_Genset_Customer_list10MouseClicked
 
     private void Shop_Genset_Customer_list10MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Genset_Customer_list10MouseEntered

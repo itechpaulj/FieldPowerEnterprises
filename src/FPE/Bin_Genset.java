@@ -391,6 +391,7 @@ public class Bin_Genset extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1030, 480));
 
         Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 194, 102));
+        Stock_Genset_Panel_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         history_genset_back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         history_genset_back.setForeground(new java.awt.Color(255, 255, 255));
@@ -413,11 +414,11 @@ public class Bin_Genset extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(history_genset_back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 210, 50));
@@ -489,11 +490,11 @@ public class Bin_Genset extends javax.swing.JFrame {
     }//GEN-LAST:event_history_genset_backMouseClicked
 
     private void history_genset_backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_backMouseEntered
-        history_genset_back.setForeground(new Color(41, 61, 61));
+         Stock_Genset_Panel_Back.setBackground(new Color(255,214,122));
     }//GEN-LAST:event_history_genset_backMouseEntered
 
     private void history_genset_backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_genset_backMouseExited
-        history_genset_back.setForeground(new Color(255,255,255));
+         Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
     }//GEN-LAST:event_history_genset_backMouseExited
 
     /**

@@ -205,13 +205,11 @@ public class History_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
 
     private void Stock_Genset_BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseEntered
-        Stock_Genset_Back.setForeground(new Color(41, 61, 61));
-        Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
+       Stock_Genset_Panel_Back.setBackground(new Color(255,193,71));
     }//GEN-LAST:event_Stock_Genset_BackMouseEntered
 
     private void Stock_Genset_BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseExited
-        Stock_Genset_Back.setForeground(new Color(255,255,255));
-        Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
+       Stock_Genset_Panel_Back.setBackground(new Color(255,193,71));
     }//GEN-LAST:event_Stock_Genset_BackMouseExited
 
     /**

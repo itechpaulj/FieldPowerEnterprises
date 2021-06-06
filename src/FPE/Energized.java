@@ -250,13 +250,12 @@ public class Energized extends javax.swing.JFrame {
     }//GEN-LAST:event_Energized_BackMouseClicked
 
     private void Energized_BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_BackMouseEntered
-        Energized_Back.setForeground(new Color(41, 61, 61));
-        Panel_Energized_Energized_Back.setBackground(new Color(255,194,102));
+        
+        Panel_Energized_Energized_Back.setBackground(new Color(255,214,122));
     }//GEN-LAST:event_Energized_BackMouseEntered
-
     private void Energized_BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_BackMouseExited
-        Energized_Back.setForeground(new Color(255,255,255));
-        Panel_Energized_Energized_Back.setBackground(new Color(255,194,102));
+       Panel_Energized_Energized_Back.setBackground(new Color(255,194,102)); 
+        
     }//GEN-LAST:event_Energized_BackMouseExited
 
     private void Energized_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseClicked
@@ -284,13 +283,11 @@ public class Energized extends javax.swing.JFrame {
     }//GEN-LAST:event_Energized_UpdateMouseClicked
 
     private void Energized_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseEntered
-        Energized_Update.setForeground(new Color(41, 61, 61));
-        Pane_Energized_Update.setBackground(new Color(51, 187, 255));
+        Pane_Energized_Update.setBackground(new Color(51,207,255));
     }//GEN-LAST:event_Energized_UpdateMouseEntered
 
     private void Energized_UpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseExited
-        Energized_Update.setForeground(new Color(255,255,255));
-        Pane_Energized_Update.setBackground(new Color(51, 187, 255));
+        Pane_Energized_Update.setBackground(new Color(51,187,255));
     }//GEN-LAST:event_Energized_UpdateMouseExited
 
     /**

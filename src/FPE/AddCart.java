@@ -112,6 +112,11 @@ public class AddCart extends javax.swing.JFrame {
 
         update_panel_supplier.setBackground(new java.awt.Color(0, 102, 255));
         update_panel_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+        update_panel_supplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                update_panel_supplierMouseClicked(evt);
+            }
+        });
 
         Back1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Back1.setForeground(new java.awt.Color(255, 255, 255));
@@ -278,11 +283,11 @@ public class AddCart extends javax.swing.JFrame {
     }//GEN-LAST:event_sup_delMouseClicked
 
     private void sup_delMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseEntered
-        sup_del.setForeground(new Color(41, 61, 61));
+    delete_panel_supplier.setBackground(new Color(255,97,97));
     }//GEN-LAST:event_sup_delMouseEntered
 
     private void sup_delMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseExited
-        sup_del.setForeground(new Color(255,255,255));
+    delete_panel_supplier.setBackground(new Color(255,77,77)); 
     }//GEN-LAST:event_sup_delMouseExited
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
@@ -290,11 +295,11 @@ public class AddCart extends javax.swing.JFrame {
     }//GEN-LAST:event_BackMouseClicked
 
     private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
-        Back.setForeground(new Color(41, 61, 61));
+    back_panel_supplier.setBackground(new Color(255,193,71));
     }//GEN-LAST:event_BackMouseEntered
 
     private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
-        Back.setForeground(new Color(255,255,255));
+    back_panel_supplier.setBackground(new Color(255,173,51));  
     }//GEN-LAST:event_BackMouseExited
 
     private void Supplier_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Supplier_SearchKeyPressed
@@ -316,11 +321,17 @@ public class AddCart extends javax.swing.JFrame {
 
     private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered
         // TODO add your handling code here:
+        update_panel_supplier.setBackground(new Color(0,122,245));
     }//GEN-LAST:event_Back1MouseEntered
 
     private void Back1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseExited
-        // TODO add your handling code here:
+        // TODO add your handling code here: [0,102,255]
+        update_panel_supplier.setBackground(new Color(0,102,255));
     }//GEN-LAST:event_Back1MouseExited
+
+    private void update_panel_supplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_panel_supplierMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_panel_supplierMouseClicked
 
     /**
      * @param args the command line arguments
