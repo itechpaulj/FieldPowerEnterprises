@@ -41,7 +41,7 @@ import org.jfree.data.general.DefaultPieDataset;
 
 
 public class Mainpage extends javax.swing.JFrame {
-    public static String located = "Javinez"; // report or print default location path
+    public static String located = "Robles"; // report or print default location path
     public static SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
     public static SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
     public static String admin_id ;
@@ -52,15 +52,7 @@ public class Mainpage extends javax.swing.JFrame {
     public Mainpage() {
        initComponents();
        con = FPE_DB.getConnection();
-       Class_tables ct = new Class_tables();
-       ct.Genset();
-       ct.Filter();
-       ct.ShopGenset();
-       ct.ShopFilter();
-       ct.History_Genset();
-       ct.History_Fitler();
-       ct.Bin_Genset();
-       ct.Bin_Filter();
+       Refresh();
        cartIfEmpty.setVisible(false);
        Home_Dates.setText(""+date);
        Home_Time.setText(""+time);   
@@ -91,6 +83,19 @@ public void Graph(){
        showPieChart();
        }
 
+public void Refresh()
+{
+       Class_tables ct = new Class_tables();
+       ct.Genset();
+       ct.Filter();
+       ct.ShopGenset();
+       ct.ShopFilter();
+       ct.History_Genset();
+       ct.History_Fitler();
+       ct.Bin_Genset();
+       ct.Bin_Filter();
+       Graph();
+}
     void showDate(){
 
                new Timer(0, new ActionListener() {
@@ -2834,6 +2839,7 @@ public void showPieChart(){
         Dashboard_Display_2.setText(null);
         Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(0);
+        Refresh();
     }//GEN-LAST:event_HOMEMouseClicked
 
     private void HOMEMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HOMEMouseEntered
@@ -2863,6 +2869,7 @@ public void showPieChart(){
         Dashboard_Display_2.setText(null);
         Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(1);
+        Refresh();
     }//GEN-LAST:event_STOCKMouseClicked
 
     private void STOCKMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_STOCKMouseEntered
@@ -2881,6 +2888,7 @@ public void showPieChart(){
         Dashboard_Display_2.setText(null);
         Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(4);
+        Refresh();
     }//GEN-LAST:event_SHOPMouseClicked
 
     private void SHOPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SHOPMouseEntered
@@ -2899,7 +2907,8 @@ public void showPieChart(){
         Dashboard_Display_1.setText("STATUS");
         Dashboard_Display_2.setText(null);
         Dashboard_Display_3.setText(null);
-        Graph();
+       
+        Refresh();
         JTab.setSelectedIndex(14);
     }//GEN-LAST:event_STATUSMouseClicked
 
@@ -3096,7 +3105,7 @@ public void showPieChart(){
     private void ShopFilter_Parts_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShopFilter_Parts_2MouseEntered
 //        ShopFilter_Parts_2.setForeground(new Color(41, 61, 61));
         ShopFilter_Parts_1.setBackground(new Color(0,137,148));
-        ShopFilter_Parts_3.setBackground(new Color(0,117,128));
+        ShopFilter_Parts_3.setBackground(new Color(0,137,148));
     }//GEN-LAST:event_ShopFilter_Parts_2MouseEntered
 
     private void ShopFilter_Parts_2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShopFilter_Parts_2MouseClicked
@@ -3111,7 +3120,7 @@ public void showPieChart(){
     private void Shop_FilterMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_FilterMouseEntered
 //        ShopFilter_Parts_2.setForeground(new Color(41, 61, 61));
         ShopFilter_Parts_1.setBackground(new Color(0,137,148));
-        ShopFilter_Parts_3.setBackground(new Color(0,117,128));
+        ShopFilter_Parts_3.setBackground(new Color(0,137,148));
     }//GEN-LAST:event_Shop_FilterMouseEntered
 
     private void Shop_FilterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_FilterMouseClicked
@@ -3630,6 +3639,7 @@ public void showPieChart(){
         Dashboard_Display_2.setText(null);
         Dashboard_Display_3.setText(null);
         JTab.setSelectedIndex(7);
+        Refresh();
     }//GEN-LAST:event_SALESMouseClicked
 
     private void SALESMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SALESMouseEntered

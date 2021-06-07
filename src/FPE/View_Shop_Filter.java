@@ -337,7 +337,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         GoToCart.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         GoToCart.setForeground(new java.awt.Color(255, 255, 255));
         GoToCart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        GoToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Carts.png"))); // NOI18N
+        GoToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Cart.png"))); // NOI18N
         GoToCart.setText(" GO TO MY CART");
         GoToCart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -359,7 +359,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
         );
         ViewCartLayout.setVerticalGroup(
             ViewCartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(GoToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(GoToCart, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         KG2_ADD_STOCK_GENSET.add(ViewCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 210, 50));
@@ -667,7 +667,7 @@ public class View_Shop_Filter extends javax.swing.JFrame {
     }//GEN-LAST:event_GoToCartMouseClicked
 
     private void GoToCartMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToCartMouseEntered
-        ViewCart.setBackground(new Color(0,148,275));
+        ViewCart.setBackground(new Color(0,148,255));
     }//GEN-LAST:event_GoToCartMouseEntered
 
     private void GoToCartMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GoToCartMouseExited
