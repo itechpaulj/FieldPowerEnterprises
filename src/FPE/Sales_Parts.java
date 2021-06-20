@@ -201,6 +201,8 @@ public class Sales_Parts extends javax.swing.JFrame {
         Path.setText("1");
         KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 30, -1));
 
+        View_Parts_Category.setEditable(false);
+        View_Parts_Category.setBackground(new java.awt.Color(204, 204, 204));
         View_Parts_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Parts_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Parts_Category.setText("PARTS");

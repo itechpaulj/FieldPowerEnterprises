@@ -1,7 +1,7 @@
 package FPE;
 
 
-import FPE.folder.Class_Stock;
+
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -260,27 +260,27 @@ public class Energized extends javax.swing.JFrame {
     }//GEN-LAST:event_Energized_BackMouseExited
 
     private void Energized_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseClicked
-        String id = Insert_Generator.Insert_Gen_Category.getText();
-        String tank_cap = Energized_tank_capacity.getText().toUpperCase();
-        String date_energized = Energized_date.getText().toUpperCase();
-        String oil = Energized_oil_usage.getText().toUpperCase();
-        String tech = Energized_technician.getText().toUpperCase();
-        String esystem = Energized_oil_esystem.getText().toUpperCase();
-        String weight = Energized_oil_weight.getText().toUpperCase();
-        String frame = Energized_oil_frame.getText().toUpperCase();
-        Date today = new Date();
-
-        SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
-       
-        SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
- 
-       
-       String updated_at = date.format(today) + " - " + s.format(today);
-        
-        if(!Class_Stock.UpdateEnergized(date_energized,tank_cap, oil, tech,esystem,weight,frame, updated_at ,id)){
-            JOptionPane.showMessageDialog(null, "ENERGIZED UPDATED ");
-            dispose();
-        }
+//        String id = Insert_Generator.Insert_Gen_Category.getText();
+//        String tank_cap = Energized_tank_capacity.getText().toUpperCase();
+//        String date_energized = Energized_date.getText().toUpperCase();
+//        String oil = Energized_oil_usage.getText().toUpperCase();
+//        String tech = Energized_technician.getText().toUpperCase();
+//        String esystem = Energized_oil_esystem.getText().toUpperCase();
+//        String weight = Energized_oil_weight.getText().toUpperCase();
+//        String frame = Energized_oil_frame.getText().toUpperCase();
+//        Date today = new Date();
+//
+//        SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
+//       
+//        SimpleDateFormat s = new SimpleDateFormat("hh:mm:ss a");
+// 
+//       
+//       String updated_at = date.format(today) + " - " + s.format(today);
+//        
+//        if(!Class_Stock.UpdateEnergized(date_energized,tank_cap, oil, tech,esystem,weight,frame, updated_at ,id)){
+//            JOptionPane.showMessageDialog(null, "ENERGIZED UPDATED ");
+//            dispose();
+//        }
     }//GEN-LAST:event_Energized_UpdateMouseClicked
 
     private void Energized_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseEntered

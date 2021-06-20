@@ -114,6 +114,8 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         View_Wh_quantity.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 260, 30));
 
+        View_Wh_Category.setEditable(false);
+        View_Wh_Category.setBackground(new java.awt.Color(204, 204, 204));
         View_Wh_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Wh_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_Category.setText("WAREHOUSE");

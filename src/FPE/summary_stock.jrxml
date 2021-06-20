@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c0442c89-f9ca-4c59-af2c-cb69f92a4b4b">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="876"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.Object" isForPrompting="false"/>
+	<parameter name="searched" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE  `ID` LIKE '%"+jTextField1.getText()+"%' OR `DATE RECEIVED` LIKE '%'||'$P!{searched}'||'%' OR `CATEGORY` LIKE '%'||'$P!{searched}'||'%' OR `BRAND` LIKE '%'||'$P!{searched}'||'%' OR `MODEL` LIKE '%'||'$P!{searched}'||'%' OR `KVA` LIKE '%'||'$P!{searched}'||'%' OR `PHASING` LIKE '%'||'$P!{searched}'||'%' OR `TYPE` LIKE '%'||'$P!{searched}'||'%' OR `SUPPLIER PRICE` LIKE '%'||'$P!{searched}'||'%' OR `SELLER PRICE` LIKE '%'||'$P!{searched}'||'%' OR `ENGINE S N` LIKE '%'||'$P!{searched}'||'%' OR `ALTERNATOR S N` LIKE '%'||'$P!{searched}'||'%' OR `QUANTITY` LIKE '%'||'$P!{searched}'||'%' OR `PERSON IN CHARGE` LIKE '%'||'$P!{searched}'||'%' OR `REMARKS` LIKE '%'||'$P!{searched}'||'%' OR `SUPPLIER` LIKE '%'||'$P!{searched}'||'%']]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DATE RECEIVED" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CATEGORY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="BRAND" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="MODEL" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="KVA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PHASING" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TYPE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SUPPLIER PRICE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SELLER PRICE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ENGINE S N" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ALTERNATOR S N" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="QUANTITY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PERSON IN CHARGE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REMARKS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SUPPLIER" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<staticText>
+				<reportElement x="321" y="0" width="290" height="20" uuid="791d694a-417a-425a-ae64-b799860f4126"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIELD POWER ENTERPRISES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="20" width="161" height="10" uuid="a765e07d-8c6d-4acd-86cf-94931426fa61"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1467 , ABAD SANTOS, METRO MANILA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="41" width="161" height="11" uuid="c2e7845f-10f5-4ad5-9697-9eb28fa721d2"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E : fieldpowergen@gmail.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="52" width="161" height="11" uuid="8f0ea605-a12b-4e0d-ac2b-5ee035315381"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[www.fieldpowerenterprises.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="30" width="161" height="11" uuid="9b978cec-cab7-4b85-ad1b-f9835eec0c1c"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[T : 02-734-4318, 0956-1845577]]></text>
+			</staticText>
+			<image>
+				<reportElement x="221" y="2" width="100" height="61" uuid="41ca7e82-f383-4a6d-8f6e-f754d955a141"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="94" y="2" width="72" height="20" uuid="7e694725-92ba-4dc3-90ee-8486e7c4d62a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[CATEGORY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="2" width="48" height="20" uuid="37b73377-168c-482d-82d1-6a670358f721"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="2" width="46" height="20" uuid="657095d6-c682-4ddd-b6b2-dbae2b7db0ed"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="2" width="41" height="20" uuid="74c86979-b6de-449a-a4ad-17d81bddc5df"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[BRAND]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="2" width="42" height="20" uuid="35acfc7e-796a-49be-848e-08f8b245371c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[MODEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="2" width="43" height="20" uuid="20c02d57-b0b1-4067-b22c-ceeacfd50060"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[KVA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="292" y="2" width="50" height="20" uuid="235efbae-d350-4b3e-9bea-452f8da43307"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[PHASING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="2" width="40" height="20" uuid="bf0a3eb7-d2db-47d7-9727-53e6c70a3aa7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="2" width="85" height="20" uuid="66485497-486d-4338-8f29-d863f65e5858"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="2" width="76" height="20" uuid="faddf5e7-096f-4f9a-bc4f-1a9c4a6f882a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[SELLER PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="543" y="2" width="52" height="20" uuid="eb8c8c32-7fc3-459e-922b-608f8ab3dc38"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[QUANTITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="595" y="2" width="52" height="20" uuid="5bf64ff8-7c63-4457-a115-6a5f0743f1d6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[PERSON]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="647" y="2" width="51" height="20" uuid="223f7187-1d21-49cc-a6bc-8516142d7745"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[REMARKS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="698" y="2" width="54" height="20" uuid="837ca412-9b75-4288-88bd-dcfeb3cb82ce"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Arial" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[SUPPLIER]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="94" y="0" width="72" height="20" uuid="759adbf5-742b-410f-b10c-b28d402ad3d0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{CATEGORY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="48" height="20" uuid="64cf5308-cb1a-4d5a-b7b1-85dcee8a7384"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="0" width="46" height="20" uuid="f53737a8-8cd8-4d76-9404-c88a03476d77"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{DATE RECEIVED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="0" width="41" height="20" uuid="ab645977-4258-4249-ac8b-c37e1aa4ee38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{BRAND}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="207" y="0" width="42" height="20" uuid="5ea3042c-8155-461e-bfa4-49ef8bdd59e4"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{MODEL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="0" width="43" height="20" uuid="86eb9fe3-b833-4db9-9fc0-560765114fc5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{KVA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="0" width="50" height="20" uuid="f9720c7e-36f4-4ba2-9332-b3a67f6c1c3a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{PHASING}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="0" width="76" height="20" uuid="376d14ec-3a3a-4310-babf-fa3c27274812"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{SELLER PRICE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="543" y="0" width="52" height="20" uuid="dfee18a9-db63-494f-9338-cd16deb73134"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{QUANTITY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="595" y="0" width="52" height="20" uuid="2fcfa905-b545-436a-8f87-e1509fd8c147"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{PERSON IN CHARGE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="647" y="0" width="51" height="20" uuid="f2b02685-7a50-4534-835e-ceb4438c7d67"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{REMARKS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="342" y="0" width="40" height="20" uuid="3a6cb14c-08b9-4095-aa92-dcbbff6d5c0d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{TYPE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="0" width="85" height="20" uuid="3b2ab25b-8d72-4232-aa04-7a4094842bc2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{SUPPLIER PRICE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="698" y="0" width="54" height="20" uuid="cc57b64e-5b1a-4fb3-972c-65a750ba0ff6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{SUPPLIER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

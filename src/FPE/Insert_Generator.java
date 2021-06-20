@@ -315,6 +315,7 @@ public class Insert_Generator extends javax.swing.JFrame {
         Insert_Gen_kva.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Gen_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 220, 31));
 
+        Insert_Gen_Supplier_Name.setEditable(false);
         Insert_Gen_Supplier_Name.setBackground(new java.awt.Color(204, 204, 204));
         Insert_Gen_Supplier_Name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Gen_Supplier_Name.setForeground(new java.awt.Color(51, 51, 51));
@@ -322,6 +323,7 @@ public class Insert_Generator extends javax.swing.JFrame {
         Insert_Gen_Supplier_Name.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Gen_Supplier_Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 70, 220, 31));
 
+        Insert_Gen_Supplier_Email.setEditable(false);
         Insert_Gen_Supplier_Email.setBackground(new java.awt.Color(204, 204, 204));
         Insert_Gen_Supplier_Email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Gen_Supplier_Email.setForeground(new java.awt.Color(51, 51, 51));
@@ -329,6 +331,7 @@ public class Insert_Generator extends javax.swing.JFrame {
         Insert_Gen_Supplier_Email.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Gen_Supplier_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 220, 220, 31));
 
+        Insert_Gen_Supplier_Contact.setEditable(false);
         Insert_Gen_Supplier_Contact.setBackground(new java.awt.Color(204, 204, 204));
         Insert_Gen_Supplier_Contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Gen_Supplier_Contact.setForeground(new java.awt.Color(51, 51, 51));
@@ -520,6 +523,7 @@ public class Insert_Generator extends javax.swing.JFrame {
     jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
     jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
+    Insert_Gen_Supplier_Address.setEditable(false);
     Insert_Gen_Supplier_Address.setBackground(new java.awt.Color(204, 204, 204));
     Insert_Gen_Supplier_Address.setColumns(10);
     Insert_Gen_Supplier_Address.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N

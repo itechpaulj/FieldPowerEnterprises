@@ -191,6 +191,7 @@ public class Sales_Office extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(sales_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 210, 31));
 
         sales_catagory.setEditable(false);
+        sales_catagory.setBackground(new java.awt.Color(204, 204, 204));
         sales_catagory.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         sales_catagory.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sales_catagory.setText("OFFICE");

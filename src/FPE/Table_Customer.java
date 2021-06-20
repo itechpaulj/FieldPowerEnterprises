@@ -8,10 +8,10 @@ package FPE;
 
 
 //import static FPE2.Table_Customer.Customer_table;
-import FPE.folder.Class_Customers;
-import FPE.folder.Process_Filter;
-import FPE.folder.Process_Genset;
-import FPE.folder.Insert_Customer;
+//import FPE.folder.Class_Customers;
+//import FPE.folder.Process_Filter;
+//import FPE.folder.Process_Genset;
+//import FPE.folder.Insert_Customer;
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -279,80 +279,80 @@ public class Table_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_Customer_TableMouseClicked
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
-        String Action = Add.getText();
-        String id = Customer_id.getText();
-        String way = Path.getText();
-        
-        if(Action.equals("ADD CUSTOMER") && way.equals("1")){ 
-            Insert_Customer ic = new Insert_Customer();
-            Insert_Customer.Display_Customer.setText("ADD CUSTOMER");
-            Insert_Customer.panel_customer_list.setVisible(false);
-            Insert_Customer.Insert_customer_id.setEditable(false);
-            ic.setVisible(true);
-        }
-        else if(Action.equals("SELECT") && way.equals("1")){
-            if(id.equals("")){
-            JOptionPane.showMessageDialog(null, " SELECT CUSTOMER !!","",JOptionPane.ERROR_MESSAGE);
-            }else{
-            Insert_Customer is = new Insert_Customer();
-            is.setVisible(true);       
-            Insert_Customer.Display_Customer.setText("CUSTOMER SELECTED");
-             Path.setText("");
-                                               
-            }
-        }
-        else if(Action.equals("SELECT") && way.equals("2")){
-            if(id.equals(""))
-            {
-                JOptionPane.showMessageDialog(null, " SELECT CUSTOMER !!","",JOptionPane.ERROR_MESSAGE);
-            }
-            else{      
-            try{
-                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` WHERE `ID` = "+id+"");
-                ResultSet rs = ps.executeQuery();
-                while(rs.next()){
-                //Insert_Inventory_Genset.Insert_Invetory_Supplier_id.setText(rs.getString("ID"));
-                Process_Genset.Process_Genset_Customer_name.setText(rs.getString("NAME"));
-                Process_Genset.Process_Genset_Customer_address.setText(rs.getString("ADDRESS"));
-                Process_Genset.Process_Genset_Customer_email.setText(rs.getString("EMAIL"));
-                Process_Genset.Process_Genset_Customer_contact.setText(rs.getString("CONTACT"));
-                }
-            }
-            catch(Exception e){
-                e.printStackTrace();
-            }
-            Path.setText("");
-            dispose();  
-            
-            }
-        }
-        else if(Action.equals("SELECT") && way.equals("3")){
-                if(id.equals(""))
-                {
-                    JOptionPane.showMessageDialog(null, " SELECT CUSTOMER !!","",JOptionPane.ERROR_MESSAGE);
-                }
-                else{      
-                try{
-                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` WHERE `ID` = "+id+"");
-                    ResultSet rs = ps.executeQuery();
-                    while(rs.next()){
-                        
-                    //Insert_Inventory_Filter.Insert_Filter_Supplier_id.setText(rs.getString("ID"));
-                    //Insert_Inventory_Filter.Insert_Filter_Supplier_id.setEditable(false);
-                    Process_Filter.Process_Filter_Customer_name.setText(rs.getString("NAME"));
-                    Process_Filter.Process_Filter_Customer_address.setText(rs.getString("ADDRESS"));
-                    Process_Filter.Process_Filter_Customer_email.setText(rs.getString("EMAIL"));
-                    Process_Filter.Process_Filter_Customer_contact.setText(rs.getString("CONTACT"));
-        
-                    }
-                }
-                catch(Exception e){
-                    e.printStackTrace();
-                }
-                Path.setText("");
-                dispose();  
-            }
-        }
+//        String Action = Add.getText();
+//        String id = Customer_id.getText();
+//        String way = Path.getText();
+//        
+//        if(Action.equals("ADD CUSTOMER") && way.equals("1")){ 
+//            Insert_Customer ic = new Insert_Customer();
+//            Insert_Customer.Display_Customer.setText("ADD CUSTOMER");
+//            Insert_Customer.panel_customer_list.setVisible(false);
+//            Insert_Customer.Insert_customer_id.setEditable(false);
+//            ic.setVisible(true);
+//        }
+//        else if(Action.equals("SELECT") && way.equals("1")){
+//            if(id.equals("")){
+//            JOptionPane.showMessageDialog(null, " SELECT CUSTOMER !!","",JOptionPane.ERROR_MESSAGE);
+//            }else{
+//            Insert_Customer is = new Insert_Customer();
+//            is.setVisible(true);       
+//            Insert_Customer.Display_Customer.setText("CUSTOMER SELECTED");
+//             Path.setText("");
+//                                               
+//            }
+//        }
+//        else if(Action.equals("SELECT") && way.equals("2")){
+//            if(id.equals(""))
+//            {
+//                JOptionPane.showMessageDialog(null, " SELECT CUSTOMER !!","",JOptionPane.ERROR_MESSAGE);
+//            }
+//            else{      
+//            try{
+//                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` WHERE `ID` = "+id+"");
+//                ResultSet rs = ps.executeQuery();
+//                while(rs.next()){
+//                //Insert_Inventory_Genset.Insert_Invetory_Supplier_id.setText(rs.getString("ID"));
+//                Process_Genset.Process_Genset_Customer_name.setText(rs.getString("NAME"));
+//                Process_Genset.Process_Genset_Customer_address.setText(rs.getString("ADDRESS"));
+//                Process_Genset.Process_Genset_Customer_email.setText(rs.getString("EMAIL"));
+//                Process_Genset.Process_Genset_Customer_contact.setText(rs.getString("CONTACT"));
+//                }
+//            }
+//            catch(Exception e){
+//                e.printStackTrace();
+//            }
+//            Path.setText("");
+//            dispose();  
+//            
+//            }
+//        }
+//        else if(Action.equals("SELECT") && way.equals("3")){
+//                if(id.equals(""))
+//                {
+//                    JOptionPane.showMessageDialog(null, " SELECT CUSTOMER !!","",JOptionPane.ERROR_MESSAGE);
+//                }
+//                else{      
+//                try{
+//                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `customer_table` WHERE `ID` = "+id+"");
+//                    ResultSet rs = ps.executeQuery();
+//                    while(rs.next()){
+//                        
+//                    //Insert_Inventory_Filter.Insert_Filter_Supplier_id.setText(rs.getString("ID"));
+//                    //Insert_Inventory_Filter.Insert_Filter_Supplier_id.setEditable(false);
+//                    Process_Filter.Process_Filter_Customer_name.setText(rs.getString("NAME"));
+//                    Process_Filter.Process_Filter_Customer_address.setText(rs.getString("ADDRESS"));
+//                    Process_Filter.Process_Filter_Customer_email.setText(rs.getString("EMAIL"));
+//                    Process_Filter.Process_Filter_Customer_contact.setText(rs.getString("CONTACT"));
+//        
+//                    }
+//                }
+//                catch(Exception e){
+//                    e.printStackTrace();
+//                }
+//                Path.setText("");
+//                dispose();  
+//            }
+//        }
 
     }//GEN-LAST:event_AddMouseClicked
 
@@ -361,37 +361,37 @@ public class Table_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_BackMouseClicked
 
     private void sup_listUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseClicked
-        String id = Customer_id.getText();
-        if(id.equals("")){
-            JOptionPane.showMessageDialog(null, " SELECT SUPPLIER !!","",JOptionPane.ERROR_MESSAGE);
-        }else{
-            Insert_Customer is = new Insert_Customer();
-            //Insert_Customer.Insert_Customer_id.setText(id);
-            Insert_Customer.Display_Customer.setText("UPDATE CUSTOMER");
-            is.setVisible(true);
-        
-        }
+//        String id = Customer_id.getText();
+//        if(id.equals("")){
+//            JOptionPane.showMessageDialog(null, " SELECT SUPPLIER !!","",JOptionPane.ERROR_MESSAGE);
+//        }else{
+//            Insert_Customer is = new Insert_Customer();
+//            //Insert_Customer.Insert_Customer_id.setText(id);
+//            Insert_Customer.Display_Customer.setText("UPDATE CUSTOMER");
+//            is.setVisible(true);
+//        
+//        }
 
 
     }//GEN-LAST:event_sup_listUpdateMouseClicked
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
-        String id = Customer_id.getText();
-
-        
-        if(id.equals("")){
-            JOptionPane.showMessageDialog(null, "PLEASE SELECT CUSTOMER!","",JOptionPane.INFORMATION_MESSAGE);
-        }
-        else{
-            int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
-            if(opt==0){
-                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Customers.DeleteCustomer(id) ){
-                Class_tables ct = new Class_tables();
-                ct.Customer();
-                JOptionPane.showMessageDialog(null, " SUPPLIER DELETED ","",JOptionPane.INFORMATION_MESSAGE);
-                }
-            }            
-        }
+//        String id = Customer_id.getText();
+//
+//        
+//        if(id.equals("")){
+//            JOptionPane.showMessageDialog(null, "PLEASE SELECT CUSTOMER!","",JOptionPane.INFORMATION_MESSAGE);
+//        }
+//        else{
+//            int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
+//            if(opt==0){
+//                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_Customers.DeleteCustomer(id) ){
+//                Class_tables ct = new Class_tables();
+//                ct.Customer();
+//                JOptionPane.showMessageDialog(null, " SUPPLIER DELETED ","",JOptionPane.INFORMATION_MESSAGE);
+//                }
+//            }            
+//        }
 
     }//GEN-LAST:event_sup_delMouseClicked
 

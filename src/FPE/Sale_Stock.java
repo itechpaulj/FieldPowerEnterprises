@@ -163,6 +163,7 @@ public class Sale_Stock extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(Sales_Gen_Model, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 250, 31));
 
         Sales_Gen_Category.setEditable(false);
+        Sales_Gen_Category.setBackground(new java.awt.Color(204, 204, 204));
         Sales_Gen_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Sales_Gen_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Sales_Gen_Category.setText("GENERATOR");
