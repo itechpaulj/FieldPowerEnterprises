@@ -7,110 +7,116 @@ package FPE;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Javinez
- */
+
 public class Class_Cart {
-    public static int last_insert_id = 0;
-    public static boolean AddCart(String id,String brand,String date,String desc,String type,String price,String quantity,String total){
+        public static int process = 0;
+        public static boolean InsertCart(String dateOut , String category, String brand, String model, String kva, String phasing, String type, String supplier_price,String seller_price, String engine_sn, String alternator_sn, String quantity,String supplier_id,String customer_id,String stock_id, byte[] pic,String status,String process_id){
         PreparedStatement ps = null;
         try{
-       
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `add_cart`(`BRAND`, `DATE`, `DESCRIPTION`, `TYPE`, `PRICE`,`QUANTITY`,`TOTAL PRICE`) VALUES (?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS);
-        ps.setString(1,brand);
-        ps.setString(2,date);
-        ps.setString(3,desc);
-        ps.setString(4,type);
-        ps.setString(5,price);
-        ps.setString(6,quantity);
-        ps.setString(7,total);
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `sale_summary_stock`(`DATE RELEASE`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `SUPPLIER ID`, `CUSTOMER ID`, `STOCK ID`, `IMAGE`, `STATUS`, `PROCESS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps.setString(1,dateOut);
+        ps.setString(2,category);
+        ps.setString(3,brand);
+        ps.setString(4,model);
+        ps.setString(5,kva);
+        ps.setString(6,phasing);
+        ps.setString(7,type);
+        ps.setString(8,supplier_price);
+        ps.setString(9,seller_price);
+        ps.setString(10,engine_sn);
+        ps.setString(11,alternator_sn);
+        ps.setString(12,quantity);
+        ps.setString(13, supplier_id); 
+        ps.setString(14, customer_id);
+        ps.setString(15, stock_id);
+        ps.setBytes(16,pic);
+        ps.setString(17,status);
+        ps.setString(18, process_id);
+      
         
-        
-        ps.executeUpdate();
-        ResultSet rs = ps.getGeneratedKeys();
-            if(rs.next())
-            {
-                last_insert_id = rs.getInt(1);
-            }
+        ps.execute();
+                                                                                                                                                                   //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`
         }catch(Exception e){
            e.printStackTrace();
         }
-        
-     return false;
+    
+    return false;
     }
     
-    public static boolean AddOther(String desc,String price,String quantity,String total){
+   // ( UPDATE `summary_stock` SET `QUANTITY`="+update_quantity+" WHERE `ID` "+stock_id+")     
+        
+    public static boolean AddCart(String dateOut , String category, String brand, String model, String kva, String phasing, String type, String supplier_price,String seller_price, String engine_sn, String alternator_sn, String quantity,String supplier_id,String customer_id,String stock_id, byte[] pic,String status,String process_id){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `add_cart`(`DESCRIPTION`, `QUANTITY`, `PRICE`, `TOTAL PRICE`) VALUES (?,?,?,?)");
-        ps.setString(1,desc);
-        ps.setString(2,price);
-        ps.setString(3,quantity);
-        ps.setString(4,total);
-        ps.execute();
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `add_cart`(`DATE RELEASE`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `SUPPLIER ID`, `CUSTOMER ID`, `STOCK ID`, `IMAGE`, `STATUS`, `PROCESS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps.setString(1,dateOut);
+        ps.setString(2,category);
+        ps.setString(3,brand);
+        ps.setString(4,model);
+        ps.setString(5,kva);
+        ps.setString(6,phasing);
+        ps.setString(7,type);
+        ps.setString(8,supplier_price);
+        ps.setString(9,seller_price);
+        ps.setString(10,engine_sn);
+        ps.setString(11,alternator_sn);
+        ps.setString(12,quantity);
+        ps.setString(13, supplier_id); 
+        ps.setString(14, customer_id);
+        ps.setString(15, stock_id);
+        ps.setBytes(16,pic);
+        ps.setString(17,status);
+        ps.setString(18, process_id);
         
+        ps.execute();
+                                                                                                                                                                   //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`
         }catch(Exception e){
            e.printStackTrace();
         }
-        
-     return false;
-    }
     
-    public static boolean Cart_Item_Delete(String id){
-        PreparedStatement ps = null;
+    return false;
+    }        
+    public static boolean addCart(){
+        PreparedStatement ps;
+        ResultSet rs;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `add_cart` WHERE `ID` = ?");
-        ps.setString(1,id);
-        ps.execute();
-        
-        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `history_filter` WHERE `ID CART` = ?");
-        ps.setString(1,id);
-        ps.execute();
-        
-        }catch(Exception e){
-           e.printStackTrace();
-        }
-        
-     return false;
-    }
-    
-          
-    public static boolean DeleteCart(){
-        PreparedStatement ps = null;
-        try{
-        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `add_cart`");
-
-        ps.execute();
-        
-        }catch(Exception e){
-           e.printStackTrace();
-        }
-        
-     return false;
-    } 
-    
-        
-    
-    public static boolean ExistCart(String brand){
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        boolean brand_name = false;
-        try{
-        ps = FPE_DB.getConnection().prepareStatement("SELECT `BRAND` FROM `add_cart` WHERE `BRAND`=?");
-        ps.setString(1,brand);
+        ps=FPE_DB.getConnection().prepareStatement("SELECT `STATUS`,`PROCESS` FROM `sale_summary_stock` ORDER BY `ID` DESC LIMIT 1");
         rs = ps.executeQuery();
-            if(!rs.next()){
-                brand_name = true;
-            } 
- 
+            if(rs.next()){
+                // Database is not empty
+                String process_count = rs.getString("PROCESS");
+                String convert = Integer.toString(process);
+                convert = process_count;
+                int counted = Integer.parseInt(convert) + Integer.parseInt(process_count) - 1; // database
+                
+                if(rs.getString("STATUS").equals("")){
+                    process = Integer.parseInt(convert);
+                }
+                else{
+                    //process.setText(""+counted);
+                    if(rs.getString("STATUS").equals("DONE")){ //its only update tapos na yung cart
+                        int statusCart = Integer.parseInt(convert) + 1; // database
+                        process = statusCart;
+                    }
+                    else{
+                        process = counted; //eto hindi pa tapos yung cart process
+                    }
+                }
+            }
+            else{
+                //empty database
+                process = 1;
+            }
         }
         catch(Exception e){
-            //JOptionPane.showMessageDialog(null, e);
             e.printStackTrace();
-        }   
-     return brand_name;
+        } 
+        return false;
+    }
+
+    static boolean InsertCart(String date_release, String category, String brand, String model, String kva, String phasing, String type, String supplier_price, String seller_price, String engine_sn, String alternator_sn, String quantity, String supplier_id, String customer_id, String stock_id1, byte[] images, String status, String process_id, String update_quantity) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

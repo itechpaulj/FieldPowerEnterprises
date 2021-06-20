@@ -8,6 +8,10 @@ package FPE;
 
 
 //import static FPE2.Table_Customer.Customer_table;
+import FPE.folder.Class_Customers;
+import FPE.folder.Process_Filter;
+import FPE.folder.Process_Genset;
+import FPE.folder.Insert_Customer;
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

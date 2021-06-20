@@ -1,6 +1,7 @@
 package FPE;
 
 
+import FPE.folder.Class_Stock;
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -226,7 +227,7 @@ public class Energized extends javax.swing.JFrame {
         if(Banner.equals("ENGINE ENERGIZED")){
             
         try{   
-            String id = Insert_Inventory_Genset.Insert_Invetory_Genset_id.getText();
+            String id = Insert_Generator.Insert_Gen_Category.getText();
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `ENERGIZED DATE`, `OIL USAGE`,`TECHNICIAN`, `STARTING SYSTEM`,`WEIGHT`,`FRAME`,`TANK CAPACITY` FROM `genset_table` WHERE `ID` ='"+id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
@@ -259,7 +260,7 @@ public class Energized extends javax.swing.JFrame {
     }//GEN-LAST:event_Energized_BackMouseExited
 
     private void Energized_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Energized_UpdateMouseClicked
-        String id = Insert_Inventory_Genset.Insert_Invetory_Genset_id.getText();
+        String id = Insert_Generator.Insert_Gen_Category.getText();
         String tank_cap = Energized_tank_capacity.getText().toUpperCase();
         String date_energized = Energized_date.getText().toUpperCase();
         String oil = Energized_oil_usage.getText().toUpperCase();
