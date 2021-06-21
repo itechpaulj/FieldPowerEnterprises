@@ -92,6 +92,19 @@ public class Class_SummaryStock {
         }
     
     return false;
-    } 
+    }
+    public static boolean DeleteGenset(String sid){
+    PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `summary_stock` WHERE `ID`=?");
+        ps.setString(1,sid);
+        ps.execute();
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+    
+    return false;
+    }    
 }
 //( ")

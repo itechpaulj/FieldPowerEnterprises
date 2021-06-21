@@ -26,10 +26,10 @@ public class Table_Supplier extends javax.swing.JFrame {
     String add = null;
     String email = null;
     String contact = null;
-    
+    Class_tables ct = new Class_tables();
     public Table_Supplier() {
         initComponents();
-        Class_tables ct = new Class_tables();
+        
         ct.Supplier();
       
        
@@ -285,7 +285,7 @@ public class Table_Supplier extends javax.swing.JFrame {
 
         kGradientPanel1.add(back_panel_supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 160, 50));
         kGradientPanel1.add(supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 80, 30));
-        kGradientPanel1.add(Supplier_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 80, 30));
+        kGradientPanel1.add(Supplier_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 34, 50, 30));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 570));
 
@@ -319,8 +319,8 @@ public class Table_Supplier extends javax.swing.JFrame {
     }//GEN-LAST:event_AddMouseClicked
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-        supplier_id.setText("");
         Supplier_path.setText("");
+        supplier_id.setText("");
         dispose();
         
     }//GEN-LAST:event_BackMouseClicked
@@ -328,17 +328,28 @@ public class Table_Supplier extends javax.swing.JFrame {
     private void sup_listUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseClicked
         if(supplier_id.getText().isEmpty()){
            JOptionPane.showMessageDialog(null, "PLEASE SELECT CUSTOMER !","",JOptionPane.ERROR_MESSAGE);
+           ct.Supplier();
        }else{
            Insert_Supplier is = new Insert_Supplier();
            is.setVisible(true);
            Insert_Supplier.Insert_Supplier_Display.setText("UPDATE SUPPLIER");
+           ct.Supplier();
         }
-        
 
     }//GEN-LAST:event_sup_listUpdateMouseClicked
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
-       
+      String id1 = supplier_id.getText();
+           int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
+            if(opt==0){
+                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION ){
+                    if(!Class_Supplier.DeleteSupplier(id1)){        
+                    JOptionPane.showMessageDialog(null, "DELETE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
+                    ct.Supplier();
+                    }
+                } 
+            }
+
     }//GEN-LAST:event_sup_delMouseClicked
 
     private void Supplier_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Supplier_SearchKeyPressed

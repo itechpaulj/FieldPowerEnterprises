@@ -38,8 +38,7 @@ public class Sale_Stock extends javax.swing.JFrame {
     String supplier_name;
     String supplier_id;
     Class_Cart ct = new Class_Cart();
-    
-    
+    Class_tables tbl = new Class_tables();
     
     
     
@@ -47,18 +46,18 @@ public class Sale_Stock extends javax.swing.JFrame {
     public Sale_Stock() {
         initComponents();
         imgisNull();
-        showDate();
+//        showDate();
         ct.addCart();
     }
-        void showDate(){
-       Date today = new Date();
-        DateTime = Mainpage.date.format(today) +" - " + Mainpage.time.format(today);
- }
+//        void showDate(){
+//       Date today = new Date();
+//        DateTime = Mainpage.date.format(today) +" - " + Mainpage.time.format(today);
+// }
 
  public void imgisNull(){
         try{
             if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -357,12 +356,12 @@ public class Sale_Stock extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 240, 150, 31));
 
         Sales_Gen_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Sales_Gen_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " SELECT", " SILENT TYPE", " OPEN TYPE" }));
+        Sales_Gen_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SILENT TYPE", "OPEN TYPE" }));
         Sales_Gen_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Sales_Gen_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, 250, 31));
 
         Sales_Gen_Phasing.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Sales_Gen_Phasing.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " SELECT", " SINGLE PHASE", " THREE PHASE" }));
+        Sales_Gen_Phasing.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SINGLE PHASE", "THREE PHASE" }));
         Sales_Gen_Phasing.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Sales_Gen_Phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 250, 31));
         KG2_ADD_STOCK_GENSET.add(stock_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 110, 20));
@@ -417,7 +416,7 @@ public class Sale_Stock extends javax.swing.JFrame {
     String seller_price = Sales_Gen_Seller_Price.getText().toUpperCase(); 
     String engine_sn = Sales_Gen_Engine.getText().toUpperCase();
     String alternator_sn = Sales_Gen_Alternator.getText().toUpperCase();
-    String quantity="";
+    String quantity="1";
         
   
     String customer_id = "";
@@ -425,14 +424,23 @@ public class Sale_Stock extends javax.swing.JFrame {
         
     String status = "";
     String  process_id = Integer.toString(Class_Cart.process) ;
-     
+    
+    // payment details
+    String amount = "";
+    String balanced = "";
+    String cash_checked = "";
+    String bank = "";
+    String or_no = "";
+    String remark = "";
+    
      // 17 IMAGE
       
      //JOptionPane.showMessageDialog(null, process_id);
-        if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images, status, process_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images, status, process_id))
+        if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images, amount,balanced,cash_checked,bank,or_no,remark ,status, process_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images,status, process_id))
         {
             JOptionPane.showMessageDialog(null, "OK");
             Class_Cart.addCart();
+            tbl.Cart();
             dispose();
         }
    
@@ -465,7 +473,7 @@ public class Sale_Stock extends javax.swing.JFrame {
 
     private void sale_Generator_BannerAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_sale_Generator_BannerAncestorAdded
     String Banner = sale_Generator_Banner.getText();
-    String ids = Webpage.ss_id1.getText();
+    String ids = Webpage.sales_id;
     
     if(Banner.equals("SALE GENERATOR"))
     {
@@ -484,8 +492,8 @@ public class Sale_Stock extends javax.swing.JFrame {
             
             Sales_Gen_Model.setText(rs.getString("MODEL"));
             Sales_Gen_kva.setText(rs.getString("KVA"));
-            Sales_Gen_Phasing.setSelectedItem("PHASING");
-            Sales_Gen_Type.setSelectedItem("TYPE");
+            Sales_Gen_Phasing.setSelectedItem(rs.getString("PHASING"));
+            Sales_Gen_Type.setSelectedItem(rs.getString("TYPE"));
             Supplier_price = rs.getString("SUPPLIER PRICE");
             Sales_Gen_Seller_Price.setText(rs.getString("SELLER PRICE"));
             Sales_Gen_Engine.setText(rs.getString("ENGINE S N"));

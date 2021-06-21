@@ -5,21 +5,17 @@
  */
 package FPE;
 
-import FPE.Class_Cart;
-import FPE.Class_Cart;
-import FPE.Class_Filter;
-import FPE.Class_Filter;
-import FPE.Class_tables;
-import FPE.Class_tables;
-import FPE.FPE_DB;
-import FPE.FPE_DB;
-import FPE.Process_Filter;
-import FPE.Process_Filter;
+
+
+import static FPE.Sale_Stock.sale_Generator_Banner;
 import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Enumeration;
+import javax.swing.AbstractButton;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -27,18 +23,36 @@ import javax.swing.table.TableModel;
  */
 public class AddCart extends javax.swing.JFrame {
    Class_tables ct = new Class_tables();
+   String getCart = null;
     /**
      * Creates new form AddCart
      */
     public AddCart() {
         initComponents();
-        
-        Path.setVisible(false);
-        quantity.setVisible(false);
-        brand.setVisible(false);
+        add_cart();
         
     }
 
+    private void add_cart(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `DATE RELEASE`, `CATEGORY`, CONCAT(`BRAND`, ' ' ,`MODEL`,' ',`KVA`,' ',`PHASING`) AS `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY` FROM `add_cart`");
+        ResultSet rs = ps.executeQuery();
+        Cart_table.setModel(DbUtils.resultSetToTableModel(rs));
+        }catch(Exception e){
+              //System.out.println(e);
+        }
+    }
+    
+    public String getSelectedOption() {
+            Enumeration<AbstractButton> radioButtons = cash_checked.getElements();
+            while (radioButtons.hasMoreElements()) {
+                AbstractButton currentRadioButton = radioButtons.nextElement();
+                if (currentRadioButton.isSelected()) {
+                    return currentRadioButton.getText();
+                }
+            }
+            return null;
+        }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,31 +62,21 @@ public class AddCart extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
+        cash_checked = new javax.swing.ButtonGroup();
         jPanel4 = new javax.swing.JPanel();
         displays = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        Cart_id = new javax.swing.JLabel();
-        Path = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Cart_table = new javax.swing.JTable();
         update_panel_supplier = new javax.swing.JPanel();
-        Back1 = new javax.swing.JLabel();
-        delete_panel_supplier = new javax.swing.JPanel();
-        sup_del = new javax.swing.JLabel();
-        back_panel_supplier = new javax.swing.JPanel();
-        Back = new javax.swing.JLabel();
+        process = new javax.swing.JLabel();
         Supplier_Search = new javax.swing.JTextField();
-        quantity = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        brand = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        cart_customer_name = new javax.swing.JTextField();
+        cart_customer_id = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
@@ -80,15 +84,16 @@ public class AddCart extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        cart_amount = new javax.swing.JTextField();
+        cart_balanced = new javax.swing.JTextField();
+        cart_or_no = new javax.swing.JTextField();
+        cart_remark = new javax.swing.JTextField();
+        checked = new javax.swing.JRadioButton();
+        cash = new javax.swing.JRadioButton();
         jTextField14 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
+        cart_bank = new javax.swing.JTextField();
+        Stock_Genset_Panel_Add6 = new javax.swing.JPanel();
+        Shop_Add4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -113,16 +118,12 @@ public class AddCart extends javax.swing.JFrame {
         });
         jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 570, 80));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 100));
 
         kGradientPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 1, new java.awt.Color(0, 0, 0)));
         kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        kGradientPanel1.add(Cart_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 120, 30));
-
-        Path.setText("1");
-        kGradientPanel1.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 30, 20));
 
         Cart_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -142,30 +143,31 @@ public class AddCart extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(Cart_table);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 460, 420));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 990, 250));
 
         update_panel_supplier.setBackground(new java.awt.Color(0, 102, 255));
         update_panel_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+        update_panel_supplier.setPreferredSize(new java.awt.Dimension(170, 45));
         update_panel_supplier.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 update_panel_supplierMouseClicked(evt);
             }
         });
 
-        Back1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Back1.setForeground(new java.awt.Color(255, 255, 255));
-        Back1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Process.png"))); // NOI18N
-        Back1.setText(" PROCESS");
-        Back1.addMouseListener(new java.awt.event.MouseAdapter() {
+        process.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        process.setForeground(new java.awt.Color(255, 255, 255));
+        process.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Process.png"))); // NOI18N
+        process.setText(" PROCESS");
+        process.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Back1MouseClicked(evt);
+                processMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Back1MouseEntered(evt);
+                processMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Back1MouseExited(evt);
+                processMouseExited(evt);
             }
         });
 
@@ -173,80 +175,16 @@ public class AddCart extends javax.swing.JFrame {
         update_panel_supplier.setLayout(update_panel_supplierLayout);
         update_panel_supplierLayout.setHorizontalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+            .addGroup(update_panel_supplierLayout.createSequentialGroup()
+                .addComponent(process, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
         );
         update_panel_supplierLayout.setVerticalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(process, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 540, 210, 50));
-
-        delete_panel_supplier.setBackground(new java.awt.Color(255, 77, 77));
-        delete_panel_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
-
-        sup_del.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        sup_del.setForeground(new java.awt.Color(255, 255, 255));
-        sup_del.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sup_del.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Cancel.png"))); // NOI18N
-        sup_del.setText(" REMOVE");
-        sup_del.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sup_delMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                sup_delMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                sup_delMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout delete_panel_supplierLayout = new javax.swing.GroupLayout(delete_panel_supplier);
-        delete_panel_supplier.setLayout(delete_panel_supplierLayout);
-        delete_panel_supplierLayout.setHorizontalGroup(
-            delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sup_del, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-        );
-        delete_panel_supplierLayout.setVerticalGroup(
-            delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sup_del, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-        );
-
-        kGradientPanel1.add(delete_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 540, 210, 50));
-
-        back_panel_supplier.setBackground(new java.awt.Color(255, 173, 51));
-        back_panel_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
-
-        Back.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Back.setForeground(new java.awt.Color(255, 255, 255));
-        Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backs.png"))); // NOI18N
-        Back.setText("BACK");
-        Back.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BackMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BackMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BackMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout back_panel_supplierLayout = new javax.swing.GroupLayout(back_panel_supplier);
-        back_panel_supplier.setLayout(back_panel_supplierLayout);
-        back_panel_supplierLayout.setHorizontalGroup(
-            back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-        );
-        back_panel_supplierLayout.setVerticalGroup(
-            back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-        );
-
-        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 540, 210, 50));
+        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, 210, 50));
 
         Supplier_Search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_Search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -256,12 +194,10 @@ public class AddCart extends javax.swing.JFrame {
             }
         });
         kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 35));
-        kGradientPanel1.add(quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 10, 40, 20));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 35));
-        kGradientPanel1.add(brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 100, 20));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 0));
 
@@ -269,6 +205,11 @@ public class AddCart extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("CUSTOMER LIST");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -281,161 +222,145 @@ public class AddCart extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 190, 30));
+        kGradientPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 190, 30));
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(255, 255, 153));
         jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField1.setText("CUSTOMER NAME:");
-        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 130, 30));
+        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 130, 30));
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(153, 153, 255));
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField2.setText("TOTAL PRICE");
-        kGradientPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 120, 30));
+        cart_customer_name.setEditable(false);
+        cart_customer_name.setBackground(new java.awt.Color(204, 204, 204));
+        kGradientPanel1.add(cart_customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 160, 30));
 
-        jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
-        kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 170, 160, 30));
-
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
-        kGradientPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 160, 30));
+        cart_customer_id.setEditable(false);
+        cart_customer_id.setBackground(new java.awt.Color(204, 204, 204));
+        kGradientPanel1.add(cart_customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 160, 30));
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(255, 255, 153));
         jTextField5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField5.setText("CUSTOMER ID:");
-        kGradientPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 130, 30));
+        kGradientPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 130, 30));
 
         jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(255, 255, 153));
         jTextField6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField6.setText("BALANCED :");
-        kGradientPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 130, 30));
+        kGradientPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 430, 130, 30));
 
         jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(255, 255, 153));
         jTextField7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField7.setText("CASH / CHECK NO :");
-        kGradientPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 130, 30));
+        kGradientPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 130, 30));
 
         jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(255, 255, 153));
         jTextField8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField8.setText("OR NO :");
-        kGradientPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 130, 30));
+        kGradientPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 130, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText("PAYMENT DETAILS :");
-        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 120, 30));
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 120, 30));
 
         jTextField9.setEditable(false);
         jTextField9.setBackground(new java.awt.Color(255, 255, 153));
         jTextField9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField9.setText("AMOUNT :");
-        kGradientPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 130, 30));
+        kGradientPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, 130, 30));
 
         jTextField10.setEditable(false);
         jTextField10.setBackground(new java.awt.Color(255, 255, 153));
         jTextField10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField10.setText("REMARKS :");
-        kGradientPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, 130, 30));
-        kGradientPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 160, 30));
-        kGradientPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 290, 160, 30));
+        kGradientPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 480, 130, 30));
+        kGradientPanel1.add(cart_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 160, 30));
+        kGradientPanel1.add(cart_balanced, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 160, 30));
+        kGradientPanel1.add(cart_or_no, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, 160, 30));
+        kGradientPanel1.add(cart_remark, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 480, 160, 30));
 
-        jTextField13.setEditable(false);
-        jTextField13.setBackground(new java.awt.Color(204, 204, 204));
-        kGradientPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 130, 30));
-        kGradientPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 410, 160, 30));
-        kGradientPanel1.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, 160, 30));
+        cash_checked.add(checked);
+        checked.setText("CHECKED");
+        kGradientPanel1.add(checked, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 90, 30));
 
-        jRadioButton1.setText("CHECKED");
-        kGradientPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 330, 90, 30));
-
-        jRadioButton2.setText("CASH");
-        kGradientPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, 60, 30));
+        cash_checked.add(cash);
+        cash.setText("CASH");
+        kGradientPanel1.add(cash, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 60, 30));
 
         jTextField14.setEditable(false);
         jTextField14.setBackground(new java.awt.Color(255, 255, 153));
         jTextField14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTextField14.setText("BANKED :");
-        kGradientPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, 130, 30));
-        kGradientPanel1.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 370, 160, 30));
+        kGradientPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 380, 130, 30));
+        kGradientPanel1.add(cart_bank, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 380, 160, 30));
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 920, 640));
+        Stock_Genset_Panel_Add6.setBackground(new java.awt.Color(204, 204, 255));
+
+        Shop_Add4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Shop_Add4.setForeground(new java.awt.Color(98, 71, 73));
+        Shop_Add4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Add4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/arrow_35px.png"))); // NOI18N
+        Shop_Add4.setText(" BACK");
+        Shop_Add4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Add4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Add4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Add4MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Stock_Genset_Panel_Add6Layout = new javax.swing.GroupLayout(Stock_Genset_Panel_Add6);
+        Stock_Genset_Panel_Add6.setLayout(Stock_Genset_Panel_Add6Layout);
+        Stock_Genset_Panel_Add6Layout.setHorizontalGroup(
+            Stock_Genset_Panel_Add6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Add4, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+        );
+        Stock_Genset_Panel_Add6Layout.setVerticalGroup(
+            Stock_Genset_Panel_Add6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Add4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        kGradientPanel1.add(Stock_Genset_Panel_Add6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 170, 50));
+
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1060, 640));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void displaysAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displaysAncestorAdded
-
+        String Banner = displays.getText();
+    
+            if(Banner.equals("CART LIST"))
+            {
+                try{
+                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `add_cart` ORDER BY `PROCESS` DESC LIMIT 1");
+                    ResultSet rs = ps.executeQuery();
+                    if(rs.next()){
+                        getCart = rs.getString("PROCESS");
+                    }
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
     }//GEN-LAST:event_displaysAncestorAdded
 
     private void Cart_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cart_tableMouseClicked
         int i=Cart_table.getSelectedRow();
         TableModel model = Cart_table.getModel();
-        Cart_id.setText(model.getValueAt(i,0).toString());
-        brand.setText(model.getValueAt(i,1).toString());
-        quantity.setText(model.getValueAt(i,4).toString());
+//        Cart_id.setText(model.getValueAt(i,0).toString());
+//        brand.setText(model.getValueAt(i,1).toString());
+//        quantity.setText(model.getValueAt(i,4).toString());
         
     }//GEN-LAST:event_Cart_tableMouseClicked
-
-    private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
-//        PreparedStatement ps;
-//        ResultSet rs;
-//        String id = Cart_id.getText();
-//        String brand1 = brand.getText();
-//        String quantity1 = quantity.getText();
-//        if(!Class_Cart.Cart_Item_Delete(id)){
-//           // JOptionPane.showMessageDialog(null, "SUCEESSFULY REMOVED");
-//           if(brand1.equals("") || quantity1.equals("") ){
-//               //nothing
-//           }else{
-//               try{
-//                ps=FPE_DB.getConnection().prepareStatement("SELECT `BRAND`, `QUANTITY` FROM `filter_table` WHERE `BRAND`='"+brand1+"'");
-//                rs = ps.executeQuery();
-//                if(rs.next()){
-//                    String findBrand = rs.getString("BRAND");
-//                    String findQuantity = rs.getString("QUANTITY");
-//                    int result = Integer.parseInt(quantity1) + Integer.parseInt(findQuantity);
-//                    String stringToQuantity = Integer.toString(result);
-//                  if(!Class_Filter.brandQuantity(findBrand, stringToQuantity)){
-//                      JOptionPane.showMessageDialog(null, "REMOVED SUCCESSFULLY");
-//                      ct.ShowCart();
-//                  }
-//                }
-//
-//               }
-//               catch(Exception e){
-//                   
-//               }
-//           }
-//        }
-
-    }//GEN-LAST:event_sup_delMouseClicked
-
-    private void sup_delMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseEntered
-    delete_panel_supplier.setBackground(new Color(255,97,97));
-    }//GEN-LAST:event_sup_delMouseEntered
-
-    private void sup_delMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseExited
-    delete_panel_supplier.setBackground(new Color(255,77,77)); 
-    }//GEN-LAST:event_sup_delMouseExited
-
-    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-       dispose();
-    }//GEN-LAST:event_BackMouseClicked
-
-    private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
-    back_panel_supplier.setBackground(new Color(255,193,71));
-    }//GEN-LAST:event_BackMouseEntered
-
-    private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
-    back_panel_supplier.setBackground(new Color(255,173,51));  
-    }//GEN-LAST:event_BackMouseExited
 
     private void Supplier_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Supplier_SearchKeyPressed
 //        DefaultTableModel tm = (DefaultTableModel)Supplier_table.getModel();
@@ -445,28 +370,93 @@ public class AddCart extends javax.swing.JFrame {
 //        tr.setRowFilter(RowFilter.regexFilter(find));
     }//GEN-LAST:event_Supplier_SearchKeyPressed
 
-    private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
-        String unique = "1";
-        
-        Process_Filter pf = new Process_Filter();
-        
-        pf.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_Back1MouseClicked
+    private void processMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseClicked
+        try{
+            String selected = getSelectedOption();
+            Class_Process cp = new Class_Process();
+            String customer_id = "";
+            String amount = "";
+            String balanced = "";
+            String cash_checked = "";
+            String bank = "";
+            String or_no = "";
+            String remark = "";
+            String status = "DONE";
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `add_cart` ORDER BY `PROCESS` DESC LIMIT 1");
+                ResultSet rs = ps.executeQuery();
+                if(rs.next()){
+                    getCart = rs.getString("PROCESS");
+                       
+                if (selected == null) {
+                    JOptionPane.showMessageDialog(null, "CHOOSE CASH OR CHECKED");
+                    return;
+                }
+                
+                switch (selected.toUpperCase()) {
+                    case "CASH":
+                        cash_checked = "CASH";
+                        break;
+                    case "CHECKED":
+                        cash_checked = "CHECKED";
+                        break;
+                }
 
-    private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered
+                    // getText
+                    amount = cart_amount.getText();
+                    balanced = cart_balanced.getText();
+                    bank = cart_bank.getText();
+                    or_no = cart_or_no.getText();
+                    remark = cart_remark.getText();
+                    if(!cp.process_genset_summaryStock(customer_id, amount, balanced, cash_checked, bank, or_no, remark, status,getCart) && !cp.process_genset_addCart(status, getCart) && !cp.process_cart_delete()){
+                        JOptionPane.showMessageDialog(null, "TRANSACTION HAS PROCESSED","",JOptionPane.INFORMATION_MESSAGE);
+                        add_cart();
+                        ct.Cart_Generator();
+                        ct.Generator();
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "EMPTY CART! ","",JOptionPane.ERROR_MESSAGE);
+                    add_cart();
+                    ct.Cart_Generator();
+                    ct.Generator();
+                }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_processMouseClicked
+
+    private void processMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseEntered
         // TODO add your handling code here:
         update_panel_supplier.setBackground(new Color(0,122,245));
-    }//GEN-LAST:event_Back1MouseEntered
+    }//GEN-LAST:event_processMouseEntered
 
-    private void Back1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseExited
+    private void processMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseExited
         // TODO add your handling code here: [0,102,255]
         update_panel_supplier.setBackground(new Color(0,102,255));
-    }//GEN-LAST:event_Back1MouseExited
+    }//GEN-LAST:event_processMouseExited
 
     private void update_panel_supplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_panel_supplierMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_update_panel_supplierMouseClicked
+
+    private void Shop_Add4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add4MouseClicked
+        dispose();
+    }//GEN-LAST:event_Shop_Add4MouseClicked
+
+    private void Shop_Add4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add4MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Add4MouseEntered
+
+    private void Shop_Add4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add4MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Add4MouseExited
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        Table_Customer tcs = new Table_Customer();
+        Table_Customer.id_cus = null;
+        tcs.setVisible(true);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -504,46 +494,37 @@ public class AddCart extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JLabel Back;
-    public static javax.swing.JLabel Back1;
-    public static javax.swing.JLabel Cart_id;
     public static javax.swing.JTable Cart_table;
-    public static javax.swing.JLabel Path;
+    public static javax.swing.JLabel Shop_Add4;
+    public static javax.swing.JPanel Stock_Genset_Panel_Add6;
     private javax.swing.JTextField Supplier_Search;
-    public static javax.swing.JPanel back_panel_supplier;
-    private javax.swing.JLabel brand;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    public static javax.swing.JPanel delete_panel_supplier;
+    private javax.swing.JTextField cart_amount;
+    private javax.swing.JTextField cart_balanced;
+    private javax.swing.JTextField cart_bank;
+    public static javax.swing.JTextField cart_customer_id;
+    public static javax.swing.JTextField cart_customer_name;
+    private javax.swing.JTextField cart_or_no;
+    private javax.swing.JTextField cart_remark;
+    private javax.swing.JRadioButton cash;
+    private javax.swing.ButtonGroup cash_checked;
+    private javax.swing.JRadioButton checked;
     public static javax.swing.JLabel displays;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private keeptoo.KGradientPanel kGradientPanel1;
-    private javax.swing.JLabel quantity;
-    public static javax.swing.JLabel sup_del;
+    public static javax.swing.JLabel process;
     public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables
 }

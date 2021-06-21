@@ -620,7 +620,7 @@ public class Insert_Generator extends javax.swing.JFrame {
     String remarks = Insert_Gen_Remarks.getText().toUpperCase();
     
     String person_in_charge = "";
-    String quantity = "";
+    String quantity = "1";
    
     
     

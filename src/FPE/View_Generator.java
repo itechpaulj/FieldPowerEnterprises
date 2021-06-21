@@ -604,7 +604,7 @@ public class View_Generator extends javax.swing.JFrame {
     String remarks = View_Gen_Remarks.getText().toUpperCase();
     
     String person_in_charge = "";
-    String quantity = "";
+    String quantity = "1";
    
     String supplier_name = View_Gen_Supplier_Name.getText();
     

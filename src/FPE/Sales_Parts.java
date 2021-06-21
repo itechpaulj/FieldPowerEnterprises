@@ -28,7 +28,7 @@ public class Sales_Parts extends javax.swing.JFrame {
     
     public static byte[] images = null;
     public static String Supplier_id ;
-    
+    String original_quantity;
     String Parts_id;
     String date;
     String Supplier_price;
@@ -83,12 +83,12 @@ public class Sales_Parts extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         stock_id = new javax.swing.JLabel();
-        Quantity = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         View_Parts_Quantity = new javax.swing.JTextField();
         Quantity1 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
+        Quantity = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -100,7 +100,7 @@ public class Sales_Parts extends javax.swing.JFrame {
         View_Parts_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         View_Parts_Display.setForeground(new java.awt.Color(255, 255, 255));
         View_Parts_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Parts_Display.setText("OFFICE ITEM");
+        View_Parts_Display.setText("SALE PARTS");
         View_Parts_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -262,19 +262,6 @@ public class Sales_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, 30));
         KG2_ADD_STOCK_GENSET.add(stock_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, 70, 20));
 
-        Quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Quantity.setBorder(null);
-        Quantity.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                QuantityKeyReleased(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                QuantityKeyTyped(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 210, 30));
-
         jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(255, 128, 128));
         jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -293,6 +280,7 @@ public class Sales_Parts extends javax.swing.JFrame {
 
         View_Parts_Quantity.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         View_Parts_Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        View_Parts_Quantity.setText("0");
         View_Parts_Quantity.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Parts_Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 210, 30));
 
@@ -308,6 +296,15 @@ public class Sales_Parts extends javax.swing.JFrame {
         jTextField9.setText("  TOTAL PRICE");
         jTextField9.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, 30));
+
+        Quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                QuantityKeyReleased(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 210, 30));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 760, 470));
 
@@ -344,38 +341,74 @@ public class Sales_Parts extends javax.swing.JFrame {
     }//GEN-LAST:event_View_Parts_PicMouseClicked
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
-    String date_release = "";
-        
-    String category = View_Parts_Category.getText().toUpperCase(); 
-    String brand = View_Parts_Brand.getText().toUpperCase();
-    String model="";
-    String kva = "";
-    String phasing ="";
-    String type = View_Parts_Type.getSelectedItem().toString().toUpperCase(); 
-    String supplier_price ="";
-        
-    String seller_price = View_Parts_Price.getText().toUpperCase(); 
-    String engine_sn ="";
-    String alternator_sn ="";
-    
 
-    String  quantity = Quantity.getText();
     
-    String  update_quantity = View_Parts_Quantity.getText();
-    
-    String supplier_id = Supplier_id;
-    String customer_id = "";
+    try{
+        String date_release = "";
 
-    String stock_id1 = stock_id.getText();    
-    String status = "";
-    String process_id = Integer.toString(Class_Cart.process) ;
-    
-  
-    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images, status, process_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images, status, process_id) && !Class_SummaryStock.UpdateQuantity(update_quantity, stock_id1)){
-            JOptionPane.showMessageDialog(null,quantity+" "+brand+" WILL ADDED");
-            Class_Cart.addCart();
-            dispose();
+        String category = View_Parts_Category.getText().toUpperCase(); 
+        String brand = View_Parts_Brand.getText().toUpperCase();
+        String model="";
+        String kva = "";
+        String phasing ="";
+        String type = View_Parts_Type.getSelectedItem().toString().toUpperCase(); 
+        String supplier_price ="";
+
+        String seller_price = View_Parts_Price.getText().toUpperCase(); 
+        String engine_sn ="";
+        String alternator_sn ="";
+
+        int result = Integer.parseInt(View_Parts_Quantity.getText().toString()) - Integer.parseInt(Quantity.getText().toString());
+        String quantity = Integer.toString(result);
+        int originalQuantity = 0;
+        originalQuantity = Integer.parseInt(View_Parts_Quantity.getText().toString());
+        String  update_quantity = View_Parts_Quantity.getText();
+        
+        String supplier_id = Supplier_id;
+        String customer_id = "";
+        
+        String stock_id1 = stock_id.getText();    
+        String status = "";
+        String process_id = Integer.toString(Class_Cart.process) ;
+
+            int inputQuantity = Integer.parseInt(Quantity.getText().toString());
+            String validQuantity = Quantity.getText();
+            if(validQuantity.equals("")){
+                JOptionPane.showMessageDialog(null, "ENTER QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{
+                int plusOne = originalQuantity + 1;
+             //JOptionPane.showMessageDialog(null, "Good","",JOptionPane.INFORMATION_MESSAGE);
+             if(View_Parts_Quantity.getText().equals("0")){
+                 JOptionPane.showMessageDialog(null, "NO STOCK AVAILABLE!","",JOptionPane.INFORMATION_MESSAGE);
+             }
+             else if (validQuantity.equals("0")){
+                 JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+             }
+             else if(inputQuantity>=plusOne){
+                     JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+             }
+             else{
+                 //execute the code
+                 JOptionPane.showMessageDialog(null, ""+quantity,"",JOptionPane.INFORMATION_MESSAGE);
+//                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images, status, process_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images, status, process_id) && !Class_SummaryStock.UpdateQuantity(update_quantity, stock_id1)){
+//                            JOptionPane.showMessageDialog(null,quantity+" "+brand+" WILL ADDED");
+//                            Class_Cart.addCart();
+//                            dispose();
+//                    }
+             
+             }
+
+            
+            }
+
     }
+    catch(NumberFormatException  e){
+       // JOptionPane.showMessageDialog(null,"Please Enter","",JOptionPane.ERROR_MESSAGE);
+    }
+
+  
+
     
     
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
@@ -407,7 +440,7 @@ public class Sales_Parts extends javax.swing.JFrame {
 
     private void View_Parts_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Parts_DisplayAncestorAdded
     String Banner = View_Parts_Display.getText();
-    String ids = Webpage.ss_id1.getText();
+    String ids = Webpage.sales_id;
     
     if(Banner.equals("SALE PARTS"))
     {
@@ -424,7 +457,7 @@ public class Sales_Parts extends javax.swing.JFrame {
             View_Parts_Category.setText(rs.getString("CATEGORY"));
             Supplier_id = rs.getString("SUPPLIER ID");
             View_Parts_Brand.setText(rs.getString("BRAND"));
-            
+            original_quantity = rs.getString("QUANTITY");
            
             View_Parts_Type.setSelectedItem("TYPE");
             View_Parts_Price.setText(rs.getString("SELLER PRICE"));
@@ -448,32 +481,15 @@ public class Sales_Parts extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_View_Parts_PriceActionPerformed
 
-    private void QuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_QuantityKeyTyped
-        char enter = evt.getKeyChar();
-
-        if(!(Character.isDigit(enter))){
-            evt.consume();
-
-        }
-
-    }//GEN-LAST:event_QuantityKeyTyped
-
     private void QuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_QuantityKeyReleased
-        int price=0,quantitys,sum=0;
-        price = Integer.parseInt(View_Parts_Price.getText());
-        
-        if(Quantity.getText().equals("")){
-         
-        quantitys = 0  ;
-        sum = price * quantitys;
-        Quantity1.setText(""+sum); 
-        }else{
-        quantitys = Integer.parseInt(Quantity.getText());
-        
-        sum = price * quantitys;
-        Quantity1.setText(""+sum);
+        try{
+            String number  = Quantity.getText() ;
+            int inputQuantity = Integer.parseInt(Quantity.getText());
+           
         }
-        
+        catch(NumberFormatException  e){
+           Quantity.setText("");
+        }
     }//GEN-LAST:event_QuantityKeyReleased
 
     /**
@@ -545,7 +561,7 @@ public class Sales_Parts extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     public static javax.swing.JLabel Path;
-    public static javax.swing.JTextField Quantity;
+    private javax.swing.JTextField Quantity;
     public static javax.swing.JTextField Quantity1;
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
