@@ -31,7 +31,7 @@ public class Insert_Office extends javax.swing.JFrame {
  public void imgisNull(){
         try{
                 if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -190,6 +190,7 @@ public class Insert_Office extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(Insert_Office_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 260, 31));
 
         Insert_Office_Category.setEditable(false);
+        Insert_Office_Category.setBackground(new java.awt.Color(204, 204, 204));
         Insert_Office_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Office_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Office_Category.setText("OFFICE");
@@ -215,7 +216,7 @@ public class Insert_Office extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(Insert_Office_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 260, 31));
 
         Insert_Office_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
+        Insert_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "LAPTOP", "INK", "PRINT", "PAPER", "BALLPEN", "ERASER" }));
         Insert_Office_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Office_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 260, 31));
 
@@ -352,11 +353,13 @@ public class Insert_Office extends javax.swing.JFrame {
     String alternator_sn="";
     String kva="";
     String id = "";
-    
+    Class_tables ct = new Class_tables();
     if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks,supplier_name,id, images))
     {
+        ct.Stocks();
         JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
     }else{
+        ct.Stocks();
         JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
     }
     

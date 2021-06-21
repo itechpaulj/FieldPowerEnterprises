@@ -22,6 +22,7 @@ import javax.swing.JOptionPane;
  */
 public class View_Office extends javax.swing.JFrame {
     String filename = null;
+    String Office_id = null;
     public static byte[] images = null;
     
     public View_Office() {
@@ -33,7 +34,7 @@ public class View_Office extends javax.swing.JFrame {
  public void imgisNull(){
         try{
                 if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -126,7 +127,7 @@ public class View_Office extends javax.swing.JFrame {
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
-        Stock_Genset_Update.setText(" SAVE RECORD ");
+        Stock_Genset_Update.setText("UPDATE");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_UpdateMouseClicked(evt);
@@ -198,6 +199,7 @@ public class View_Office extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(View_Office_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 260, 31));
 
         View_Office_Category.setEditable(false);
+        View_Office_Category.setBackground(new java.awt.Color(204, 204, 204));
         View_Office_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Office_Category.setText("OFFICE");
@@ -223,7 +225,7 @@ public class View_Office extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(View_Office_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 260, 31));
 
         View_Office_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
+        View_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "LAPTOP", "INK", "PRINT", "PAPER", "BALLPEN", "ERASER" }));
         View_Office_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Office_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 260, 31));
 
@@ -343,6 +345,7 @@ public class View_Office extends javax.swing.JFrame {
     }//GEN-LAST:event_View_Office_picMouseClicked
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
+
     String date = View_Office_date.getText();
     String category = View_Office_Category.getText();
     String brand = View_Office_Brand.getText();
@@ -351,7 +354,7 @@ public class View_Office extends javax.swing.JFrame {
     String quantity = View_Office_quantity.getText();
     String remarks = View_Office_Remarks.getText();
     String person_in_charge = View_Office_Incharges.getText();
-    
+    String id = "";
     String supplier_name = "";
     String supplier_address = "";
     String supplier_email = "";
@@ -362,13 +365,15 @@ public class View_Office extends javax.swing.JFrame {
     String engine_sn="";
     String alternator_sn="";
     String kva="";
-    
-//    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks,supplier_name, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
-//    {
-//        JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
-//    }else{
-//        JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
-//    }
+    Class_tables ct = new Class_tables();
+    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,id, images, Office_id))
+    {
+        ct.Stocks();
+        JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        ct.Stocks();
+        JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
+    }
     
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
@@ -383,7 +388,9 @@ public class View_Office extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_UpdateMouseExited
 
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
-        
+    Class_tables ct = new Class_tables();
+    ct.Stocks();
+    Webpage.Stock_cat = null;        
     dispose();
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
 
@@ -399,7 +406,7 @@ public class View_Office extends javax.swing.JFrame {
 
     private void View_Office_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Office_DisplayAncestorAdded
     String Banner = View_Office_Display.getText();
-    String id = Mainpage.ss_id.getText();
+    String id = Webpage.ss_id.getText();
     
     if(Banner.equals("VIEW OFFICE ITEM"))
     {
@@ -407,10 +414,11 @@ public class View_Office extends javax.swing.JFrame {
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `summary_stock` WHERE `ID` = '"+id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
+            Office_id = rs.getString("ID");
             View_Office_date.setText(rs.getString("DATE RECEIVED"));
             View_Office_Category.setText(rs.getString("CATEGORY"));
             View_Office_Brand.setText(rs.getString("BRAND"));
-            View_Office_Type.setSelectedItem("TYPE");
+            View_Office_Type.setSelectedItem(rs.getString("TYPE"));
             View_Office_Price.setText(rs.getString("SELLER PRICE"));
             View_Office_quantity.setText(rs.getString("QUANTITY"));
             View_Office_Remarks.setText(rs.getString("REMARKS"));

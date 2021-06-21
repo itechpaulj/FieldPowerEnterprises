@@ -30,7 +30,7 @@ public class View_Warehouse extends javax.swing.JFrame {
  public void imgisNull(){
         try{
                 if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -115,6 +115,8 @@ public class View_Warehouse extends javax.swing.JFrame {
         View_Wh_quantity.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 260, 31));
 
+        View_Wh_Category.setEditable(false);
+        View_Wh_Category.setBackground(new java.awt.Color(204, 204, 204));
         View_Wh_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Wh_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_Category.setText("WAREHOUSE");
@@ -217,7 +219,7 @@ public class View_Warehouse extends javax.swing.JFrame {
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
-        Stock_Genset_Update.setText(" SAVE RECORD ");
+        Stock_Genset_Update.setText("UPDATE");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_UpdateMouseClicked(evt);
@@ -356,13 +358,15 @@ public class View_Warehouse extends javax.swing.JFrame {
     String alternator_sn="";
     String kva="";
     String id = "";
-    
-    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,id, images, kva))
-    {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
-    }else{
-        JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
-    }
+    Class_tables ct = new Class_tables();
+        if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,id, images, Warehouse_id))
+        {
+            ct.Stocks();
+            JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            ct.Stocks();
+            JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
     private void Stock_Genset_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseEntered
@@ -376,7 +380,9 @@ public class View_Warehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_UpdateMouseExited
 
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
-        
+    Class_tables ct = new Class_tables();
+    ct.Stocks();
+    Webpage.Stock_cat = null;
     dispose();
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
 
@@ -392,7 +398,7 @@ public class View_Warehouse extends javax.swing.JFrame {
 
     private void View_WH_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_WH_DisplayAncestorAdded
     String Banner = View_WH_Display.getText();
-    String id = Mainpage.ss_id.getText();
+    String id = Webpage.ss_id.getText();
     
     if(Banner.equals("VIEW WAREHOUSE ITEM"))
     {

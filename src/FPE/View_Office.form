@@ -173,7 +173,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Picture/Btn/Btn_Save.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" SAVE RECORD "/>
+                <Property name="text" type="java.lang.String" value="UPDATE"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_UpdateMouseClicked"/>
@@ -278,6 +278,9 @@
         <Component class="javax.swing.JTextField" name="View_Office_Category">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="0"/>
             </Property>
@@ -358,10 +361,14 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
+              <StringArray count="7">
                 <StringItem index="0" value="SELECT"/>
-                <StringItem index="1" value="FILTER"/>
-                <StringItem index="2" value="PARTS"/>
+                <StringItem index="1" value="LAPTOP"/>
+                <StringItem index="2" value="INK"/>
+                <StringItem index="3" value="PRINT"/>
+                <StringItem index="4" value="PAPER"/>
+                <StringItem index="5" value="BALLPEN"/>
+                <StringItem index="6" value="ERASER"/>
               </StringArray>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

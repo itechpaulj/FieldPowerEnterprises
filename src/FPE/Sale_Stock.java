@@ -449,6 +449,7 @@ public class Sale_Stock extends javax.swing.JFrame {
     }//GEN-LAST:event_View_BtnMouseExited
 
     private void Back_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back_BtnMouseClicked
+    Webpage.Stock_cat = null;
     dispose();
     }//GEN-LAST:event_Back_BtnMouseClicked
 

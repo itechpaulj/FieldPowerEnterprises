@@ -30,13 +30,12 @@ public class View_Parts extends javax.swing.JFrame {
     public View_Parts() {
         initComponents();
         imgisNull();
-        Path.setVisible(false);
         
     }
  public void imgisNull(){
         try{
                 if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -68,7 +67,6 @@ public class View_Parts extends javax.swing.JFrame {
         Stock_Genset_Update = new javax.swing.JLabel();
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
         Stock_Genset_Back = new javax.swing.JLabel();
-        Path = new javax.swing.JLabel();
         View_Parts_Quantity = new javax.swing.JTextField();
         View_Parts_Category = new javax.swing.JTextField();
         View_Parts_Brand = new javax.swing.JTextField();
@@ -195,7 +193,7 @@ public class View_Parts extends javax.swing.JFrame {
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
-        Stock_Genset_Update.setText(" SAVE RECORD ");
+        Stock_Genset_Update.setText("UPDATE");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_UpdateMouseClicked(evt);
@@ -254,14 +252,13 @@ public class View_Parts extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 210, 50));
 
-        Path.setText("1");
-        KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 30, -1));
-
         View_Parts_Quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Parts_Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Parts_Quantity.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Parts_Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, 220, 31));
 
+        View_Parts_Category.setEditable(false);
+        View_Parts_Category.setBackground(new java.awt.Color(204, 204, 204));
         View_Parts_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Parts_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Parts_Category.setText("PARTS");
@@ -441,13 +438,13 @@ public class View_Parts extends javax.swing.JFrame {
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
 
-    String date = View_Parts_Date.getText();
-    String category = View_Parts_Category.getText();
-    String brand = View_Parts_Brand.getText();
-    String type = View_Parts_Type.getSelectedItem().toString();
-    String seller_price = View_Parts_Price.getText();
-    String quantity = View_Parts_Quantity.getText();
-    String remarks = View_Parts_Remarks.getText();
+    String date = View_Parts_Date.getText(); //
+    String category = View_Parts_Category.getText();//
+    String brand = View_Parts_Brand.getText();//
+    String type = View_Parts_Type.getSelectedItem().toString();//
+    String seller_price = View_Parts_Price.getText();//
+    String quantity = View_Parts_Quantity.getText();//
+    String remarks = View_Parts_Remarks.getText();//
     
     String supplier_name = View_Parts_Supplier_name.getText();
     String supplier_address = View_Parts_Supplier_Address.getText();
@@ -461,11 +458,13 @@ public class View_Parts extends javax.swing.JFrame {
     String engine_sn="";
     String alternator_sn="";
     String kva="";
-    
+    Class_tables ct = new Class_tables();
     if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,Supplier_id, images, Parts_id))
     {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATED","",JOptionPane.INFORMATION_MESSAGE);
+        ct.Stocks();
+        JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
     }else{
+        ct.Stocks();
         JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
     }
     
@@ -483,7 +482,9 @@ public class View_Parts extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_UpdateMouseExited
 
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
-        
+    Class_tables ct = new Class_tables();
+    ct.Stocks();
+    Webpage.Stock_cat = null;
     dispose();
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
 
@@ -499,7 +500,7 @@ public class View_Parts extends javax.swing.JFrame {
 
     private void View_Parts_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Parts_DisplayAncestorAdded
     String Banner = View_Parts_Display.getText();
-    String ids = Mainpage.ss_id.getText();
+    String ids = Webpage.ss_id.getText();
     
     if(Banner.equals("VIEW PARTS ITEM"))
     {
@@ -512,7 +513,7 @@ public class View_Parts extends javax.swing.JFrame {
             View_Parts_Date.setText(rs.getString("DATE RECEIVED"));
             View_Parts_Category.setText(rs.getString("CATEGORY"));
             View_Parts_Brand.setText(rs.getString("BRAND"));
-            View_Parts_Type.setSelectedItem("TYPE");
+            View_Parts_Type.setSelectedItem(rs.getString("TYPE"));
             View_Parts_Price.setText(rs.getString("SELLER PRICE"));
             View_Parts_Quantity.setText(rs.getString("QUANTITY"));
             View_Parts_Remarks.setText(rs.getString("REMARKS"));
@@ -611,7 +612,6 @@ public class View_Parts extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
-    public static javax.swing.JLabel Path;
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;

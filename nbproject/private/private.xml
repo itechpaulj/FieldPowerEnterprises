@@ -12,10 +12,16 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Class_tables.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/test_print_stock.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Table_Supplier.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Insert_Supplier.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Class_Supplier.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Insert_Generator.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Sales_Office.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Sales_Parts.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Sale_Stock.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Insert_Parts.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Sales_Warehouse.java</file>
             <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Webpage.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/summary_stock.jrxml</file>
         </group>
     </open-files>
 </project-private>

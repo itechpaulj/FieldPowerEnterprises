@@ -391,7 +391,7 @@ public class Sales_Parts extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_UpdateMouseExited
 
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
-        
+     Webpage.Stock_cat = null;
     dispose();
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
 

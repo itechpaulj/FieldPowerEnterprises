@@ -44,7 +44,7 @@ public class View_Generator extends javax.swing.JFrame {
  public void imgisNull(){
         try{
             if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -72,7 +72,7 @@ public class View_Generator extends javax.swing.JFrame {
         View_Gen_Supplier_Price = new javax.swing.JTextField();
         View_Gen_Model = new javax.swing.JTextField();
         View_Gen_Category = new javax.swing.JTextField();
-        View_Gen_Band = new javax.swing.JTextField();
+        View_Gen_Brand = new javax.swing.JTextField();
         View_Gen_Alternator = new javax.swing.JTextField();
         View_Gen_Seller_Price = new javax.swing.JTextField();
         View_Gen__Engine = new javax.swing.JTextField();
@@ -80,7 +80,7 @@ public class View_Generator extends javax.swing.JFrame {
         View_Gen_Supplier_Contact = new javax.swing.JTextField();
         View_Gen_Supplier_Email = new javax.swing.JTextField();
         View_Gen_Supplier_Name = new javax.swing.JTextField();
-        Insert_Gen_Band = new javax.swing.JComboBox<>();
+        Insert_Gen_Brand = new javax.swing.JComboBox<>();
         View_Gen_Date = new datechooser.beans.DateChooserCombo();
         jScrollPane1 = new javax.swing.JScrollPane();
         View_Gen_Supplier_Address = new javax.swing.JTextArea();
@@ -173,17 +173,23 @@ public class View_Generator extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(View_Gen_Model, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 220, 31));
 
         View_Gen_Category.setEditable(false);
+        View_Gen_Category.setBackground(new java.awt.Color(204, 204, 204));
         View_Gen_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Gen_Category.setText("GENERATOR");
         View_Gen_Category.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Gen_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 220, 31));
 
-        View_Gen_Band.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Gen_Band.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Gen_Band.setBorder(null);
-        View_Gen_Band.setEnabled(false);
-        KG2_ADD_STOCK_GENSET.add(View_Gen_Band, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 220, 31));
+        View_Gen_Brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        View_Gen_Brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        View_Gen_Brand.setBorder(null);
+        View_Gen_Brand.setEnabled(false);
+        View_Gen_Brand.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                View_Gen_BrandActionPerformed(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(View_Gen_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 220, 31));
 
         View_Gen_Alternator.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Alternator.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -236,26 +242,26 @@ public class View_Generator extends javax.swing.JFrame {
         View_Gen_Supplier_Name.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Gen_Supplier_Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 70, 220, 31));
 
-        Insert_Gen_Band.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Gen_Band.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "YANDONG", "CUMMINS", "ISUZU", "PERKINS", "WEIFANG", "YAMADA" }));
-        Insert_Gen_Band.setBorder(null);
-        Insert_Gen_Band.addMouseListener(new java.awt.event.MouseAdapter() {
+        Insert_Gen_Brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Insert_Gen_Brand.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "YANDONG", "CUMMINS", "ISUZU", "PERKINS", "WEIFANG", "YAMADA" }));
+        Insert_Gen_Brand.setBorder(null);
+        Insert_Gen_Brand.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Insert_Gen_BandMouseClicked(evt);
+                Insert_Gen_BrandMouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                Insert_Gen_BandMousePressed(evt);
+                Insert_Gen_BrandMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                Insert_Gen_BandMouseReleased(evt);
+                Insert_Gen_BrandMouseReleased(evt);
             }
         });
-        Insert_Gen_Band.addActionListener(new java.awt.event.ActionListener() {
+        Insert_Gen_Brand.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Insert_Gen_BandActionPerformed(evt);
+                Insert_Gen_BrandActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Gen_Band, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Gen_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 220, 31));
 
         View_Gen_Date.setCalendarPreferredSize(new java.awt.Dimension(500, 400));
         View_Gen_Date.setFieldFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 14));
@@ -456,12 +462,12 @@ public class View_Generator extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 140, 31));
 
         View_Gen_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Gen_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " SELECT", " SILENT TYPE", " OPEN TYPE" }));
+        View_Gen_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SILENT TYPE", "OPEN TYPE" }));
         View_Gen_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Gen_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 220, 31));
 
         View_Gen_Phasing.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Gen_Phasing.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " SELECT", " SINGLE PHASE", " THREE PHASE" }));
+        View_Gen_Phasing.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SINGLE PHASE", "THREE PHASE" }));
         View_Gen_Phasing.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Gen_Phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, 220, 31));
 
@@ -585,7 +591,7 @@ public class View_Generator extends javax.swing.JFrame {
 
     String date = View_Gen_Date.getText().toUpperCase();
     String category = View_Gen_Category.getText().toUpperCase();
-    String brand = Insert_Gen_Band.getSelectedItem().toString().toUpperCase();
+    String brand = Insert_Gen_Brand.getSelectedItem().toString().toUpperCase();
     String model= View_Gen_Model.getText().toUpperCase();
     String kva = View_Gen_kva.getText().toUpperCase();
     String phasing = View_Gen_Phasing.getSelectedItem().toString().toUpperCase();
@@ -605,10 +611,14 @@ public class View_Generator extends javax.swing.JFrame {
     String supplier_address = View_Gen_Supplier_Address.getText();
     String supplier_email = View_Gen_Supplier_Email.getText();
     String supplier_contact = View_Gen_Supplier_Contact.getText();
-    
-    if(Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,Supplier_id, images, Generator_id))  
+    Class_tables ct = new Class_tables();
+    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,Supplier_id, images, Generator_id))  
     {
-        System.out.println("OK");
+        ct.Stocks();
+        JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
+    }else{
+        ct.Stocks();
+        JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
     }
         
         
@@ -751,6 +761,9 @@ public class View_Generator extends javax.swing.JFrame {
     }//GEN-LAST:event_View_BtnMouseExited
 
     private void Back_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back_BtnMouseClicked
+    Class_tables ct = new Class_tables();
+    ct.Stocks();
+    Webpage.Stock_cat = null;
     dispose();
     }//GEN-LAST:event_Back_BtnMouseClicked
 
@@ -781,13 +794,13 @@ public class View_Generator extends javax.swing.JFrame {
             View_Gen_Date.setText(rs.getString("DATE RECEIVED"));
             View_Gen_Category.setText(rs.getString("CATEGORY"));
             
-            Insert_Gen_Band.setSelectedItem(rs.getString("BRAND"));
-            View_Gen_Band.setText(rs.getString("BRAND"));
+            Insert_Gen_Brand.setSelectedItem(rs.getString("BRAND"));
+            View_Gen_Brand.setText(rs.getString("BRAND"));
             
             View_Gen_Model.setText(rs.getString("MODEL"));
             View_Gen_kva.setText(rs.getString("KVA"));
-            View_Gen_Phasing.setSelectedItem("PHASING");
-            View_Gen_Type.setSelectedItem("TYPE");
+            View_Gen_Phasing.setSelectedItem(rs.getString("PHASING"));
+            View_Gen_Type.setSelectedItem(rs.getString("TYPE"));
             View_Gen_Supplier_Price.setText(rs.getString("SUPPLIER PRICE"));
             View_Gen_Seller_Price.setText(rs.getString("SELLER PRICE"));
             View_Gen__Engine.setText(rs.getString("ENGINE S N"));
@@ -837,35 +850,35 @@ public class View_Generator extends javax.swing.JFrame {
        
     }//GEN-LAST:event_Supplier_List_BtnMouseClicked
 
-    private void Insert_Gen_BandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Insert_Gen_BandMouseClicked
+    private void Insert_Gen_BrandMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Insert_Gen_BrandMouseClicked
     
                
-    }//GEN-LAST:event_Insert_Gen_BandMouseClicked
+    }//GEN-LAST:event_Insert_Gen_BrandMouseClicked
 
-    private void Insert_Gen_BandMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Insert_Gen_BandMousePressed
+    private void Insert_Gen_BrandMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Insert_Gen_BrandMousePressed
    
-    }//GEN-LAST:event_Insert_Gen_BandMousePressed
+    }//GEN-LAST:event_Insert_Gen_BrandMousePressed
 
-    private void Insert_Gen_BandMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Insert_Gen_BandMouseReleased
+    private void Insert_Gen_BrandMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Insert_Gen_BrandMouseReleased
       
         
-    }//GEN-LAST:event_Insert_Gen_BandMouseReleased
+    }//GEN-LAST:event_Insert_Gen_BrandMouseReleased
 
-    private void Insert_Gen_BandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Insert_Gen_BandActionPerformed
-       String ty = Insert_Gen_Band.getSelectedItem().toString();
-       int tys = Insert_Gen_Band.getSelectedIndex();
+    private void Insert_Gen_BrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Insert_Gen_BrandActionPerformed
+       String ty = Insert_Gen_Brand.getSelectedItem().toString();
+       int tys = Insert_Gen_Brand.getSelectedIndex();
         if(ty.equals("OTHER BRAND")){
        
-        View_Gen_Band.setText(null);
-        View_Gen_Band.enable(true);
+        View_Gen_Brand.setText(null);
+        View_Gen_Brand.enable(true);
         other.setText("OTHER BRAND");
             
         }else{
-        View_Gen_Band.setText(Insert_Gen_Band.getSelectedItem().toString());
-        View_Gen_Band.enable(false);
+        View_Gen_Brand.setText(Insert_Gen_Brand.getSelectedItem().toString());
+        View_Gen_Brand.enable(false);
         other.setText("");
         }
-    }//GEN-LAST:event_Insert_Gen_BandActionPerformed
+    }//GEN-LAST:event_Insert_Gen_BrandActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
@@ -890,6 +903,10 @@ public class View_Generator extends javax.swing.JFrame {
     private void View_Gen_RemarksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Gen_RemarksActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_View_Gen_RemarksActionPerformed
+
+    private void View_Gen_BrandActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Gen_BrandActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_View_Gen_BrandActionPerformed
 
     /**
      * @param args the command line arguments
@@ -929,7 +946,7 @@ public class View_Generator extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Back_Btn;
-    public static javax.swing.JComboBox<String> Insert_Gen_Band;
+    public static javax.swing.JComboBox<String> Insert_Gen_Brand;
     public static javax.swing.JTextField Insert_Invetory_Supplier_id;
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     public static javax.swing.JPanel Panel_Back_Btn;
@@ -938,7 +955,7 @@ public class View_Generator extends javax.swing.JFrame {
     private javax.swing.JLabel Supplier_List_Btn;
     private javax.swing.JLabel View_Btn;
     public static javax.swing.JTextField View_Gen_Alternator;
-    public static javax.swing.JTextField View_Gen_Band;
+    public static javax.swing.JTextField View_Gen_Brand;
     public static javax.swing.JTextField View_Gen_Category;
     public static datechooser.beans.DateChooserCombo View_Gen_Date;
     public static javax.swing.JTextField View_Gen_Model;
