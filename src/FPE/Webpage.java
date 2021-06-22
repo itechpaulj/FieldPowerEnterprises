@@ -45,6 +45,7 @@ public class Webpage extends javax.swing.JFrame {
     Class_tables Show_Sale = new Class_tables();
     Class_tables Show_Cart = new Class_tables();
     
+    Class_tables ct = new Class_tables();
     Class_tables Show_OW = new Class_tables();
     Class_tables Show_OW_Cart = new Class_tables();
     
@@ -278,6 +279,8 @@ public class Webpage extends javax.swing.JFrame {
         ss_id = new javax.swing.JLabel();
         searched_all_stock = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
+        jTextField16 = new javax.swing.JTextField();
+        sales_category1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         Stock_Genset_Panel_View1 = new javax.swing.JPanel();
         Stock_Genset_Delete = new javax.swing.JLabel();
@@ -817,6 +820,21 @@ public class Webpage extends javax.swing.JFrame {
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         STOCKS_1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 35, 31));
+
+        jTextField16.setBackground(new java.awt.Color(102, 255, 255));
+        jTextField16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField16.setText("CATEGORY");
+        STOCKS_1.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 130, 31));
+
+        sales_category1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        sales_category1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALL STOCK", "GENERATOR", "PARTS", "OFFICE", "WAREHOUSE" }));
+        sales_category1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sales_category1ActionPerformed(evt);
+            }
+        });
+        STOCKS_1.add(sales_category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 200, 31));
 
         jLabel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "SUMMARY OF STOCK", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 26), new java.awt.Color(51, 51, 51))); // NOI18N
         STOCKS_1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1320, 480));
@@ -2042,11 +2060,7 @@ public class Webpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_ViewMouseClicked
 
     private void searched_all_stockKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searched_all_stockKeyPressed
-        DefaultTableModel tm = (DefaultTableModel)All_Stock_Table.getModel();
-        String find = searched_all_stock.getText().toUpperCase();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
-        All_Stock_Table.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(find));
+
     }//GEN-LAST:event_searched_all_stockKeyPressed
 
     private void All_Stock_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_All_Stock_TableMouseClicked
@@ -2571,6 +2585,7 @@ public class Webpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Shop_Add12MouseExited
 
     private void searched_all_stockKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searched_all_stockKeyReleased
+        sales_category1.setSelectedIndex(0);
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
@@ -2673,6 +2688,23 @@ public class Webpage extends javax.swing.JFrame {
     private void Stock_Genset_AllPrint1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_AllPrint1MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_Stock_Genset_AllPrint1MouseExited
+
+    private void sales_category1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sales_category1ActionPerformed
+        String path = sales_category1.getSelectedItem().toString();
+        
+        if(path.equals("ALL STOCK")){
+            ct.Stocks();
+        }
+        else if(path.equals("GENERATOR")){
+            ct.Generator();
+        }
+        else if(path.equals("OFFICE")){
+            ct.Office();
+        }
+        else if(path.equals("WAREHOUSE")){
+            ct.WareHouse();
+        }
+    }//GEN-LAST:event_sales_category1ActionPerformed
       
     /**
      * @param args the command line arguments
@@ -2832,6 +2864,7 @@ public class Webpage extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
@@ -2845,6 +2878,7 @@ public class Webpage extends javax.swing.JFrame {
     public static javax.swing.JLabel process2;
     private javax.swing.JLabel process3;
     private javax.swing.JComboBox<String> sales_category;
+    private javax.swing.JComboBox<String> sales_category1;
     private javax.swing.JTextField searched_all_stock;
     public static javax.swing.JLabel ss_id;
     public static javax.swing.JLabel ss_id1;
