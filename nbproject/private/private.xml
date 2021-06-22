@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
         <file>
             <url>src/FPE/View_Shop_Filter.java</url>
             <bookmark id="1">
@@ -9,19 +9,23 @@
                 <key/>
             </bookmark>
         </file>
+        <file>
+            <url>src/FPE/Webpage.java</url>
+            <bookmark id="2">
+                <name/>
+                <line>2360</line>
+                <key/>
+            </bookmark>
+        </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Table_Supplier.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Insert_Supplier.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Class_Supplier.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Insert_Generator.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Sales_Office.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Sales_Parts.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Sale_Stock.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Insert_Parts.java</file>
-            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Sales_Warehouse.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Class_tables.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Table_Customer.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Class_Process.java</file>
             <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/Webpage.java</file>
+            <file>file:/C:/Users/Javinez/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/AddCart.java</file>
         </group>
     </open-files>
 </project-private>
