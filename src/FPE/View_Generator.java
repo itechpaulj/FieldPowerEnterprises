@@ -111,8 +111,8 @@ public class View_Generator extends javax.swing.JFrame {
         jTextField15 = new javax.swing.JTextField();
         jTextField16 = new javax.swing.JTextField();
         View_Gen_Remarks = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         Insert_Invetory_Supplier_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Invetory_Supplier_id.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -154,7 +154,7 @@ public class View_Generator extends javax.swing.JFrame {
         View_Gen_Pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Gen_Pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         View_Gen_Pic.setAlignmentY(1.0F);
-        View_Gen_Pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
+        View_Gen_Pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)));
         View_Gen_Pic.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 View_Gen_PicMouseClicked(evt);
@@ -286,7 +286,6 @@ public class View_Generator extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 120, 220, 80));
 
         Panel_View_Btn.setBackground(new java.awt.Color(51, 187, 255));
-        Panel_View_Btn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         View_Btn.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         View_Btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -309,22 +308,21 @@ public class View_Generator extends javax.swing.JFrame {
         Panel_View_Btn.setLayout(Panel_View_BtnLayout);
         Panel_View_BtnLayout.setHorizontalGroup(
             Panel_View_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(View_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+            .addComponent(View_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         Panel_View_BtnLayout.setVerticalGroup(
             Panel_View_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(View_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(View_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Panel_View_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 500, 210, 50));
+        KG2_ADD_STOCK_GENSET.add(Panel_View_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, 160, 45));
 
-        Panel_Back_Btn.setBackground(new java.awt.Color(255, 173, 51));
-        Panel_Back_Btn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+        Panel_Back_Btn.setBackground(new java.awt.Color(185, 144, 149));
 
         Back_Btn.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Back_Btn.setForeground(new java.awt.Color(255, 255, 255));
         Back_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Back_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        Back_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/arrow_35px.png"))); // NOI18N
         Back_Btn.setText(" BACK");
         Back_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -342,14 +340,14 @@ public class View_Generator extends javax.swing.JFrame {
         Panel_Back_Btn.setLayout(Panel_Back_BtnLayout);
         Panel_Back_BtnLayout.setHorizontalGroup(
             Panel_Back_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
+            .addComponent(Back_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         Panel_Back_BtnLayout.setVerticalGroup(
             Panel_Back_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(Back_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Panel_Back_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 210, 50));
+        KG2_ADD_STOCK_GENSET.add(Panel_Back_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 160, 45));
 
         Path.setText("1");
         KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 100, 40));
@@ -546,11 +544,11 @@ public class View_Generator extends javax.swing.JFrame {
         });
         KG2_ADD_STOCK_GENSET.add(View_Gen_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 220, 31));
 
-        jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)), "SUPPLIER INFO", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 20), new java.awt.Color(0, 51, 51))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 420, 460));
+        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " GENERATOR INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 790, 460));
 
-        jLabel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)), "ADDING NEW GENERATOR", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 0, 20), new java.awt.Color(0, 51, 51))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 800, 460));
+        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 410, 460));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1280, 580));
 
@@ -972,8 +970,8 @@ public class View_Generator extends javax.swing.JFrame {
     public static javax.swing.JTextField View_Gen__Engine;
     public static javax.swing.JTextField View_Gen_kva;
     public static javax.swing.JLabel View_Generator_Banner;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;

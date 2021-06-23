@@ -71,7 +71,6 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
         Stock_Genset_Back = new javax.swing.JLabel();
         Insert_Wh_pic = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -95,7 +94,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         });
         jPanel4.add(Inventory_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 470, 80));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 100));
 
         KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
@@ -103,28 +102,28 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Insert_Wh_date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 260, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 210, 30));
 
         Insert_Wh_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "TOOLS" }));
         Insert_Wh_Type.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 260, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 210, 30));
 
         Insert_Wh_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Wh_quantity.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 260, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 210, 30));
 
         Insert_Wh_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Wh_Category.setText("WAREHOUSE");
         Insert_Wh_Category.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 260, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 210, 30));
 
         Insert_Wh_Brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_Brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Wh_Brand.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 260, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 210, 30));
 
         Insert_Wh_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -134,17 +133,17 @@ public class Insert_Warehouse extends javax.swing.JFrame {
                 Insert_Wh_priceActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 260, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 210, 30));
 
         Insert_Wh_remarks.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Wh_remarks.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 260, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 210, 30));
 
         Insert_Wh_incharge.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_incharge.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Wh_incharge.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_incharge, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 260, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_incharge, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 210, 30));
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(102, 255, 102));
@@ -152,7 +151,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField1.setText(" CATEGORY");
         jTextField1.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 160, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 160, 30));
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(102, 255, 102));
@@ -160,7 +159,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField2.setText(" DATE RECIEVED");
         jTextField2.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 160, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 160, 30));
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(102, 255, 102));
@@ -168,7 +167,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField3.setText(" DESCRPTION");
         jTextField3.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 160, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 160, 30));
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(102, 255, 102));
@@ -176,7 +175,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField5.setText(" QUANTITY");
         jTextField5.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 160, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 160, 30));
 
         jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(102, 255, 102));
@@ -184,7 +183,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField7.setText(" PRICE");
         jTextField7.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 160, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 160, 30));
 
         jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(102, 255, 102));
@@ -192,7 +191,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField8.setText(" TYPE");
         jTextField8.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 160, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 160, 30));
 
         jTextField14.setEditable(false);
         jTextField14.setBackground(new java.awt.Color(102, 255, 102));
@@ -200,7 +199,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         jTextField14.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField14.setText(" REMARKS");
         jTextField14.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 160, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 160, 30));
 
         jTextField15.setEditable(false);
         jTextField15.setBackground(new java.awt.Color(102, 255, 102));
@@ -208,7 +207,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         jTextField15.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField15.setText(" PERSON INCHARGES");
         jTextField15.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 160, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 160, 30));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(5, 157, 192));
 
@@ -240,14 +239,14 @@ public class Insert_Warehouse extends javax.swing.JFrame {
             .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 170, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 170, 50));
 
         Stock_Genset_Panel_Back.setBackground(new java.awt.Color(185, 144, 149));
 
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/arrow_35px.png"))); // NOI18N
         Stock_Genset_Back.setText(" BACK");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -272,29 +271,22 @@ public class Insert_Warehouse extends javax.swing.JFrame {
             .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 170, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, 170, 50));
 
         Insert_Wh_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         Insert_Wh_pic.setForeground(new java.awt.Color(20, 31, 31));
         Insert_Wh_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Insert_Wh_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         Insert_Wh_pic.setAlignmentY(1.0F);
-        Insert_Wh_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
+        Insert_Wh_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)));
         Insert_Wh_pic.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Insert_Wh_picMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 300, 180));
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 280, 180));
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 51, 0));
-        jLabel12.setToolTipText("");
-        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "ADD NEW PARTS", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 790, 450));
-
-        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 830, 550));
+        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 750, 550));
 
         pack();
         setLocationRelativeTo(null);
@@ -457,7 +449,6 @@ public class Insert_Warehouse extends javax.swing.JFrame {
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
     private javax.swing.JLabel Stock_Genset_Update;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField14;

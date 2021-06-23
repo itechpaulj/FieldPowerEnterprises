@@ -70,7 +70,7 @@ public class Add_Selection extends javax.swing.JFrame {
                 GenMouseExited(evt);
             }
         });
-        Panel_Gen.add(Gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 40));
+        Panel_Gen.add(Gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
 
         getContentPane().add(Panel_Gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
 
@@ -94,7 +94,7 @@ public class Add_Selection extends javax.swing.JFrame {
                 PartsMouseExited(evt);
             }
         });
-        Panel_Parts.add(Parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 40));
+        Panel_Parts.add(Parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
 
         getContentPane().add(Panel_Parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, 170, 45));
 
@@ -119,7 +119,7 @@ public class Add_Selection extends javax.swing.JFrame {
                 OfficeMouseExited(evt);
             }
         });
-        Panel_Office.add(Office, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 40));
+        Panel_Office.add(Office, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
 
         getContentPane().add(Panel_Office, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 170, 45));
 
@@ -144,15 +144,15 @@ public class Add_Selection extends javax.swing.JFrame {
                 WHMouseExited(evt);
             }
         });
-        Panel_WH.add(WH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 40));
+        Panel_WH.add(WH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
 
         getContentPane().add(Panel_WH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 135, 170, 45));
 
-        setBounds(15, 477, 170, 180);
+        setBounds(17, 468, 170, 180);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        Webpage.as.dispose();
+     
     
     }//GEN-LAST:event_formMouseExited
 

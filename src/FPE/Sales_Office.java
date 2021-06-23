@@ -60,19 +60,19 @@ public class Sales_Office extends javax.swing.JFrame {
         Stock_Genset_Back = new javax.swing.JLabel();
         Path = new javax.swing.JLabel();
         sales_quantity = new javax.swing.JTextField();
-        sales_catagory = new javax.swing.JTextField();
+        sales_type = new javax.swing.JTextField();
         sales_description = new javax.swing.JTextField();
         sales_price = new javax.swing.JTextField();
-        sales_type = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
         Sales_given = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
         View_Parts_Quantity = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        sales_catagory1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -84,7 +84,7 @@ public class Sales_Office extends javax.swing.JFrame {
         View_Office_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         View_Office_Display.setForeground(new java.awt.Color(255, 255, 255));
         View_Office_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Office_Display.setText("OFFICE ITEM");
+        View_Office_Display.setText("OFFICE");
         View_Office_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -94,9 +94,9 @@ public class Sales_Office extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel4.add(View_Office_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 420, 80));
+        jPanel4.add(View_Office_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 450, 80));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 100));
 
         KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
@@ -108,16 +108,15 @@ public class Sales_Office extends javax.swing.JFrame {
         View_Office_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Office_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         View_Office_pic.setAlignmentY(1.0F);
-        View_Office_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
+        View_Office_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)));
         View_Office_pic.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 View_Office_picMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Office_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 300, 180));
+        KG2_ADD_STOCK_GENSET.add(View_Office_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 280, 180));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
-        Stock_Genset_Panel_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
@@ -140,22 +139,21 @@ public class Sales_Office extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 170, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 160, 45));
 
-        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
-        Stock_Genset_Panel_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(185, 144, 149));
 
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/arrow_35px.png"))); // NOI18N
         Stock_Genset_Back.setText(" BACK");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -173,14 +171,14 @@ public class Sales_Office extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 170, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 160, 45));
 
         Path.setText("1");
         KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 30, -1));
@@ -190,22 +188,20 @@ public class Sales_Office extends javax.swing.JFrame {
         sales_quantity.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(sales_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 210, 31));
 
-        sales_catagory.setEditable(false);
-        sales_catagory.setBackground(new java.awt.Color(204, 204, 204));
-        sales_catagory.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        sales_catagory.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        sales_catagory.setText("OFFICE");
-        sales_catagory.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(sales_catagory, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 210, 31));
+        sales_type.setEditable(false);
+        sales_type.setBackground(new java.awt.Color(204, 204, 204));
+        sales_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        sales_type.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        KG2_ADD_STOCK_GENSET.add(sales_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 210, 31));
 
+        sales_description.setBackground(new java.awt.Color(204, 204, 204));
         sales_description.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         sales_description.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        sales_description.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(sales_description, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 210, 31));
 
+        sales_price.setBackground(new java.awt.Color(204, 204, 204));
         sales_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         sales_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        sales_price.setBorder(null);
         sales_price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sales_priceActionPerformed(evt);
@@ -213,50 +209,10 @@ public class Sales_Office extends javax.swing.JFrame {
         });
         KG2_ADD_STOCK_GENSET.add(sales_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 210, 31));
 
-        sales_type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        sales_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
-        KG2_ADD_STOCK_GENSET.add(sales_type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 210, 31));
-
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(255, 128, 128));
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField1.setText(" CATEGORY");
-        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 140, 31));
-
-        jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(255, 128, 128));
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField3.setText(" DESCRIPTION");
-        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, 31));
-
-        jTextField5.setEditable(false);
-        jTextField5.setBackground(new java.awt.Color(255, 128, 128));
-        jTextField5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField5.setText(" QUANTITY");
-        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 140, 31));
-
-        jTextField7.setEditable(false);
-        jTextField7.setBackground(new java.awt.Color(255, 128, 128));
-        jTextField7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField7.setText(" PRICE");
-        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 140, 31));
-
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(255, 128, 128));
-        jTextField8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField8.setText(" TYPE");
-        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, 31));
-
+        Sales_given.setBackground(new java.awt.Color(204, 204, 204));
         Sales_given.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Sales_given.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Sales_given.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Sales_given, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 210, 31));
-
-        jTextField15.setEditable(false);
-        jTextField15.setBackground(new java.awt.Color(255, 128, 128));
-        jTextField15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField15.setText(" GIVEN TO");
-        KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, 31));
 
         View_Parts_Quantity.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         View_Parts_Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -271,7 +227,63 @@ public class Sales_Office extends javax.swing.JFrame {
         jTextField6.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 180, 30));
 
-        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 760, 470));
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(255, 128, 128));
+        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField1.setText("  CATEGORY");
+        jTextField1.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 140, 30));
+
+        jTextField3.setEditable(false);
+        jTextField3.setBackground(new java.awt.Color(255, 128, 128));
+        jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField3.setText("  DESCRPTION");
+        jTextField3.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, 30));
+
+        jTextField8.setEditable(false);
+        jTextField8.setBackground(new java.awt.Color(255, 128, 128));
+        jTextField8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField8.setText("  TYPE");
+        jTextField8.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, 30));
+
+        jTextField7.setEditable(false);
+        jTextField7.setBackground(new java.awt.Color(255, 128, 128));
+        jTextField7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField7.setText("  PRICE");
+        jTextField7.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 140, 30));
+
+        jTextField9.setEditable(false);
+        jTextField9.setBackground(new java.awt.Color(255, 128, 128));
+        jTextField9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField9.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField9.setText("  QUANTITY");
+        jTextField9.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 140, 30));
+
+        jTextField10.setEditable(false);
+        jTextField10.setBackground(new java.awt.Color(255, 128, 128));
+        jTextField10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField10.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField10.setText("  TOTAL PRICE");
+        jTextField10.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, 30));
+
+        sales_catagory1.setEditable(false);
+        sales_catagory1.setBackground(new java.awt.Color(204, 204, 204));
+        sales_catagory1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        sales_catagory1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        sales_catagory1.setText("OFFICE");
+        sales_catagory1.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(sales_catagory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 210, 31));
+
+        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 750, 480));
 
         pack();
         setLocationRelativeTo(null);
@@ -307,9 +319,9 @@ public class Sales_Office extends javax.swing.JFrame {
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
     String date = "";
-    String category = sales_catagory.getText();
+    String category = sales_type.getText();
     String brand = sales_description.getText();
-    String type = sales_type.getSelectedItem().toString();
+    String type = sales_type.getText();
     String seller_price = sales_price.getText();
     String quantity = sales_quantity.getText();
     String remarks = "";
@@ -371,9 +383,9 @@ public class Sales_Office extends javax.swing.JFrame {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
 //            View_Office_date.setText(rs.getString("DATE RECEIVED"));
-            sales_catagory.setText(rs.getString("CATEGORY"));
+            sales_type.setText(rs.getString("CATEGORY"));
             sales_description.setText(rs.getString("BRAND"));
-            sales_type.setSelectedItem("TYPE");
+            sales_type.setText("TYPE");
             sales_price.setText(rs.getString("SELLER PRICE"));
             sales_quantity.setText(rs.getString("QUANTITY"));
             //sales_remarks.setText(rs.getString("REMARKS"));
@@ -445,16 +457,16 @@ public class Sales_Office extends javax.swing.JFrame {
     public static javax.swing.JTextField View_Parts_Quantity;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    public static javax.swing.JTextField sales_catagory;
+    private javax.swing.JTextField jTextField9;
+    public static javax.swing.JTextField sales_catagory1;
     public static javax.swing.JTextField sales_description;
     public static javax.swing.JTextField sales_price;
     public static javax.swing.JTextField sales_quantity;
-    public static javax.swing.JComboBox<String> sales_type;
+    public static javax.swing.JTextField sales_type;
     // End of variables declaration//GEN-END:variables
 }

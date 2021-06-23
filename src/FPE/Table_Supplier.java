@@ -114,7 +114,7 @@ public class Table_Supplier extends javax.swing.JFrame {
 
         add_panel_supplier.setBackground(new java.awt.Color(35, 215, 176));
 
-        Add.setFont(new java.awt.Font("Calibri", 0, 22)); // NOI18N
+        Add.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Add.setForeground(new java.awt.Color(255, 255, 255));
         Add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Add_Supplier_Btn.PNG"))); // NOI18N
@@ -135,18 +135,18 @@ public class Table_Supplier extends javax.swing.JFrame {
         add_panel_supplier.setLayout(add_panel_supplierLayout);
         add_panel_supplierLayout.setHorizontalGroup(
             add_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Add, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(Add, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         add_panel_supplierLayout.setVerticalGroup(
             add_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Add, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(add_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 160, 50));
+        kGradientPanel1.add(add_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 150, 50));
 
         update_panel_supplier.setBackground(new java.awt.Color(66, 139, 202));
 
-        sup_listUpdate.setFont(new java.awt.Font("Calibri", 0, 22)); // NOI18N
+        sup_listUpdate.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         sup_listUpdate.setForeground(new java.awt.Color(255, 255, 255));
         sup_listUpdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sup_listUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Edit_Supplier_Btn.png"))); // NOI18N
@@ -167,18 +167,20 @@ public class Table_Supplier extends javax.swing.JFrame {
         update_panel_supplier.setLayout(update_panel_supplierLayout);
         update_panel_supplierLayout.setHorizontalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sup_listUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addGroup(update_panel_supplierLayout.createSequentialGroup()
+                .addComponent(sup_listUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         update_panel_supplierLayout.setVerticalGroup(
             update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sup_listUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 160, 50));
+        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 150, 50));
 
         delete_panel_supplier.setBackground(new java.awt.Color(255, 77, 77));
 
-        sup_del.setFont(new java.awt.Font("Calibri", 0, 22)); // NOI18N
+        sup_del.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         sup_del.setForeground(new java.awt.Color(255, 255, 255));
         sup_del.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sup_del.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Remove_Supplier_Btn.png"))); // NOI18N
@@ -199,19 +201,21 @@ public class Table_Supplier extends javax.swing.JFrame {
         delete_panel_supplier.setLayout(delete_panel_supplierLayout);
         delete_panel_supplierLayout.setHorizontalGroup(
             delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sup_del, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addGroup(delete_panel_supplierLayout.createSequentialGroup()
+                .addComponent(sup_del, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         delete_panel_supplierLayout.setVerticalGroup(
             delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(sup_del, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(delete_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, 160, 50));
+        kGradientPanel1.add(delete_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 470, 150, 50));
 
-        back_panel_supplier.setBackground(new java.awt.Color(216, 216, 216));
+        back_panel_supplier.setBackground(new java.awt.Color(185, 144, 149));
 
-        Back.setFont(new java.awt.Font("Calibri", 0, 22)); // NOI18N
-        Back.setForeground(new java.awt.Color(98, 71, 73));
+        Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
         Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/arrow_35px.png"))); // NOI18N
         Back.setText(" BACK  ");
@@ -231,14 +235,16 @@ public class Table_Supplier extends javax.swing.JFrame {
         back_panel_supplier.setLayout(back_panel_supplierLayout);
         back_panel_supplierLayout.setHorizontalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addGroup(back_panel_supplierLayout.createSequentialGroup()
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         back_panel_supplierLayout.setVerticalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 470, 160, 50));
+        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 470, 150, 50));
 
         Supplier_Search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Supplier_Search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -255,7 +261,7 @@ public class Table_Supplier extends javax.swing.JFrame {
 
         back_panel_supplier1.setBackground(new java.awt.Color(255, 173, 51));
 
-        Back1.setFont(new java.awt.Font("Calibri", 0, 22)); // NOI18N
+        Back1.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Back1.setForeground(new java.awt.Color(255, 255, 255));
         Back1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Select_Btn.png"))); // NOI18N
@@ -276,14 +282,16 @@ public class Table_Supplier extends javax.swing.JFrame {
         back_panel_supplier1.setLayout(back_panel_supplier1Layout);
         back_panel_supplier1Layout.setHorizontalGroup(
             back_panel_supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addGroup(back_panel_supplier1Layout.createSequentialGroup()
+                .addComponent(Back1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         back_panel_supplier1Layout.setVerticalGroup(
             back_panel_supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(back_panel_supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 160, 50));
+        kGradientPanel1.add(back_panel_supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 150, 50));
         kGradientPanel1.add(supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 80, 30));
         kGradientPanel1.add(Supplier_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 34, 50, 30));
 

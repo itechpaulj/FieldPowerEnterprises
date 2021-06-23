@@ -76,7 +76,6 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_Remarks = new javax.swing.JTextField();
         View_Office_Incharges = new javax.swing.JTextField();
         jTextField15 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -100,7 +99,7 @@ public class View_Office extends javax.swing.JFrame {
         });
         jPanel4.add(View_Office_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 470, 80));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 100));
 
         KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
@@ -112,16 +111,15 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Office_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
         View_Office_pic.setAlignmentY(1.0F);
-        View_Office_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)));
+        View_Office_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)));
         View_Office_pic.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 View_Office_picMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Office_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, 300, 180));
+        KG2_ADD_STOCK_GENSET.add(View_Office_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 280, 180));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
-        Stock_Genset_Panel_Update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
@@ -144,24 +142,21 @@ public class View_Office extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Stock_Genset_Panel_UpdateLayout.createSequentialGroup()
-                .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 210, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 160, 45));
 
-        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(255, 173, 51));
-        Stock_Genset_Panel_Back.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
+        Stock_Genset_Panel_Back.setBackground(new java.awt.Color(185, 144, 149));
 
         Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Backss.png"))); // NOI18N
+        Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/arrow_35px.png"))); // NOI18N
         Stock_Genset_Back.setText(" BACK");
         Stock_Genset_Back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -179,16 +174,14 @@ public class View_Office extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Stock_Genset_Panel_BackLayout.createSequentialGroup()
-                .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 23, Short.MAX_VALUE))
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 210, 50));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, 160, 45));
 
         Path.setText("1");
         KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 30, -1));
@@ -196,7 +189,7 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Office_quantity.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Office_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 260, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Office_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 210, 31));
 
         View_Office_Category.setEditable(false);
         View_Office_Category.setBackground(new java.awt.Color(204, 204, 204));
@@ -204,12 +197,12 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Office_Category.setText("OFFICE");
         View_Office_Category.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Office_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 260, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Office_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 210, 31));
 
         View_Office_Brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_Brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Office_Brand.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Office_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 260, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Office_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 210, 31));
 
         View_Office_Price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_Price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -219,15 +212,15 @@ public class View_Office extends javax.swing.JFrame {
                 View_Office_PriceActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Office_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 260, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Office_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 210, 31));
 
         View_Office_date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-        KG2_ADD_STOCK_GENSET.add(View_Office_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 260, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Office_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 210, 31));
 
         View_Office_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "LAPTOP", "INK", "PRINT", "PAPER", "BALLPEN", "ERASER" }));
         View_Office_Type.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Office_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 260, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Office_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 210, 31));
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(51, 214, 255));
@@ -235,7 +228,7 @@ public class View_Office extends javax.swing.JFrame {
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField1.setText(" CATEGORY");
         jTextField1.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 160, 31));
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(51, 214, 255));
@@ -243,7 +236,7 @@ public class View_Office extends javax.swing.JFrame {
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField2.setText(" DATE RECIEVED");
         jTextField2.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 160, 31));
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(51, 214, 255));
@@ -251,7 +244,7 @@ public class View_Office extends javax.swing.JFrame {
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField3.setText(" DESCRIPTION");
         jTextField3.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 160, 31));
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(51, 214, 255));
@@ -259,7 +252,7 @@ public class View_Office extends javax.swing.JFrame {
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField5.setText(" QUANTITY");
         jTextField5.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 160, 31));
 
         jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(51, 214, 255));
@@ -267,7 +260,7 @@ public class View_Office extends javax.swing.JFrame {
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField7.setText(" PRICE");
         jTextField7.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 160, 31));
 
         jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(51, 214, 255));
@@ -275,7 +268,7 @@ public class View_Office extends javax.swing.JFrame {
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField8.setText(" TYPE");
         jTextField8.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 160, 31));
 
         jTextField14.setEditable(false);
         jTextField14.setBackground(new java.awt.Color(51, 214, 255));
@@ -283,17 +276,17 @@ public class View_Office extends javax.swing.JFrame {
         jTextField14.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField14.setText(" REMARKS");
         jTextField14.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 160, 31));
 
         View_Office_Remarks.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_Remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Office_Remarks.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Office_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 260, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Office_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 210, 31));
 
         View_Office_Incharges.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_Incharges.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Office_Incharges.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Office_Incharges, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 260, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Office_Incharges, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 210, 31));
 
         jTextField15.setEditable(false);
         jTextField15.setBackground(new java.awt.Color(51, 214, 255));
@@ -301,16 +294,9 @@ public class View_Office extends javax.swing.JFrame {
         jTextField15.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField15.setText("  PERSON INCHARGES");
         jTextField15.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 160, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 160, 31));
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 51, 0));
-        jLabel12.setToolTipText("");
-        jLabel12.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(20, 31, 31)), "ADD NEW PARTS", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Arial", 0, 20), new java.awt.Color(20, 31, 31))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 790, 450));
-
-        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 830, 580));
+        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 750, 580));
 
         pack();
         setLocationRelativeTo(null);
@@ -494,7 +480,6 @@ public class View_Office extends javax.swing.JFrame {
     public static datechooser.beans.DateChooserCombo View_Office_date;
     public static javax.swing.JLabel View_Office_pic;
     public static javax.swing.JTextField View_Office_quantity;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField14;
