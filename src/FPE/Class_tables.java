@@ -69,6 +69,7 @@ public class Class_tables {
         ResultSet rs = ps.executeQuery();
         All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
         All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        
         }catch(Exception e){
               //System.out.println(e);
             }

@@ -500,7 +500,7 @@ public class View_Parts extends javax.swing.JFrame {
 
     private void View_Parts_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Parts_DisplayAncestorAdded
     String Banner = View_Parts_Display.getText();
-    String ids = Webpage.ss_id.getText();
+    String ids = Webpage.Stock_Category_Id.getText();
     
     if(Banner.equals("VIEW PARTS ITEM"))
     {

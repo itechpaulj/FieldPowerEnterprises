@@ -398,7 +398,7 @@ public class View_Warehouse extends javax.swing.JFrame {
 
     private void View_WH_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_WH_DisplayAncestorAdded
     String Banner = View_WH_Display.getText();
-    String id = Webpage.ss_id.getText();
+    String id = Webpage.Stock_Category_Id.getText();
     
     if(Banner.equals("VIEW WAREHOUSE ITEM"))
     {

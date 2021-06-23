@@ -406,7 +406,7 @@ public class View_Office extends javax.swing.JFrame {
 
     private void View_Office_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Office_DisplayAncestorAdded
     String Banner = View_Office_Display.getText();
-    String id = Webpage.ss_id.getText();
+    String id = Webpage.Stock_Category_Id.getText();
     
     if(Banner.equals("VIEW OFFICE ITEM"))
     {

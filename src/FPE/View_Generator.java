@@ -779,7 +779,7 @@ public class View_Generator extends javax.swing.JFrame {
 
     private void View_Generator_BannerAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Generator_BannerAncestorAdded
     String Banner = View_Generator_Banner.getText();
-    String ids = Webpage.ss_id.getText();
+    String ids = Webpage.Stock_Category_Id.getText();
     
     if(Banner.equals("VIEW GENERATOR ITEM"))
     {

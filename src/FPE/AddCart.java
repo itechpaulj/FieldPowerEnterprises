@@ -66,32 +66,47 @@ public class AddCart extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         displays = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Cart_table = new javax.swing.JTable();
-        update_panel_supplier = new javax.swing.JPanel();
-        process = new javax.swing.JLabel();
-        Supplier_Search = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        cart_balanced1 = new javax.swing.JTextField();
+        cart_amount1 = new javax.swing.JTextField();
+        cart_bank1 = new javax.swing.JTextField();
+        jTextField15 = new javax.swing.JTextField();
+        checked1 = new javax.swing.JCheckBox();
+        cash1 = new javax.swing.JCheckBox();
+        jTextField16 = new javax.swing.JTextField();
+        cart_balanced2 = new javax.swing.JTextField();
+        cash2 = new javax.swing.JCheckBox();
+        checked2 = new javax.swing.JCheckBox();
+        cart_amount3 = new javax.swing.JTextField();
+        jTextField17 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        cart_bank2 = new javax.swing.JTextField();
+        cart_balanced3 = new javax.swing.JTextField();
+        jTextField19 = new javax.swing.JTextField();
+        cart_balanced4 = new javax.swing.JTextField();
+        jTextField20 = new javax.swing.JTextField();
+        cart_balanced5 = new javax.swing.JTextField();
+        cart_balanced6 = new javax.swing.JTextField();
+        jTextField21 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
+        jTextField22 = new javax.swing.JTextField();
+        cart_bank3 = new javax.swing.JTextField();
+        cart_amount2 = new javax.swing.JTextField();
+        jTextField23 = new javax.swing.JTextField();
+        jTextField24 = new javax.swing.JTextField();
+        cart_balanced7 = new javax.swing.JTextField();
+        cart_balanced8 = new javax.swing.JTextField();
+        jTextField25 = new javax.swing.JTextField();
+        jTextField26 = new javax.swing.JTextField();
+        cart_balanced9 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        cart_customer_name = new javax.swing.JTextField();
-        cart_customer_id = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        cart_amount = new javax.swing.JTextField();
-        cart_balanced = new javax.swing.JTextField();
-        cart_or_no = new javax.swing.JTextField();
-        cart_remark = new javax.swing.JTextField();
-        checked = new javax.swing.JRadioButton();
-        cash = new javax.swing.JRadioButton();
-        jTextField14 = new javax.swing.JTextField();
-        cart_bank = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        Stock_Genset_Panel_Add7 = new javax.swing.JPanel();
+        Shop_Add5 = new javax.swing.JLabel();
         Stock_Genset_Panel_Add6 = new javax.swing.JPanel();
         Shop_Add4 = new javax.swing.JLabel();
 
@@ -106,7 +121,7 @@ public class AddCart extends javax.swing.JFrame {
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         displays.setForeground(new java.awt.Color(255, 255, 255));
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displays.setText("CART LIST");
+        displays.setText("PAYMENT METHOD");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -125,177 +140,240 @@ public class AddCart extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Cart_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
+        jTextField11.setEditable(false);
+        jTextField11.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField11.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField11.setText(" AMOUNT :");
+        jTextField11.setBorder(null);
+        kGradientPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 130, 30));
 
-            }
-        ));
-        Cart_table.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Cart_tableMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(Cart_table);
+        jTextField12.setEditable(false);
+        jTextField12.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField12.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField12.setText(" OR NO :");
+        jTextField12.setBorder(null);
+        kGradientPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 130, 30));
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 990, 250));
+        cart_balanced1.setBorder(null);
+        kGradientPanel1.add(cart_balanced1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 300, 30));
 
-        update_panel_supplier.setBackground(new java.awt.Color(0, 102, 255));
-        update_panel_supplier.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
-        update_panel_supplier.setPreferredSize(new java.awt.Dimension(170, 45));
-        update_panel_supplier.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                update_panel_supplierMouseClicked(evt);
-            }
-        });
+        cart_amount1.setBorder(null);
+        kGradientPanel1.add(cart_amount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 60, 300, 30));
 
-        process.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        process.setForeground(new java.awt.Color(255, 255, 255));
-        process.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        process.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Process.png"))); // NOI18N
-        process.setText(" PROCESS");
-        process.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                processMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                processMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                processMouseExited(evt);
-            }
-        });
+        cart_bank1.setBorder(null);
+        kGradientPanel1.add(cart_bank1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 300, 30));
 
-        javax.swing.GroupLayout update_panel_supplierLayout = new javax.swing.GroupLayout(update_panel_supplier);
-        update_panel_supplier.setLayout(update_panel_supplierLayout);
-        update_panel_supplierLayout.setHorizontalGroup(
-            update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(update_panel_supplierLayout.createSequentialGroup()
-                .addComponent(process, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 27, Short.MAX_VALUE))
-        );
-        update_panel_supplierLayout.setVerticalGroup(
-            update_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(process, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-        );
+        jTextField15.setEditable(false);
+        jTextField15.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField15.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField15.setText(" BANKED :");
+        jTextField15.setBorder(null);
+        kGradientPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 130, 30));
 
-        kGradientPanel1.add(update_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, 210, 50));
+        checked1.setBackground(new java.awt.Color(255, 255, 255));
+        cash_checked.add(checked1);
+        checked1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        checked1.setText(" CHECK");
+        checked1.setBorder(null);
+        kGradientPanel1.add(checked1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 150, 30));
 
-        Supplier_Search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Supplier_Search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Supplier_Search.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Supplier_SearchKeyPressed(evt);
-            }
-        });
-        kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 35));
+        cash1.setBackground(new java.awt.Color(255, 255, 255));
+        cash_checked.add(cash1);
+        cash1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        cash1.setText(" CASH");
+        cash1.setBorder(null);
+        kGradientPanel1.add(cash1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 140, 30));
 
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
-        kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 35));
+        jTextField16.setEditable(false);
+        jTextField16.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField16.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField16.setText("  DATE");
+        jTextField16.setBorder(null);
+        kGradientPanel1.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 130, 30));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 0));
+        cart_balanced2.setBorder(null);
+        kGradientPanel1.add(cart_balanced2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 300, 30));
 
-        jLabel1.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        cash2.setBackground(new java.awt.Color(255, 255, 255));
+        cash2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        cash2.setText(" CASH");
+        cash2.setBorder(null);
+        kGradientPanel1.add(cash2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 140, 30));
+
+        checked2.setBackground(new java.awt.Color(255, 255, 255));
+        checked2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        checked2.setText(" CHECK");
+        checked2.setBorder(null);
+        kGradientPanel1.add(checked2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 150, 30));
+
+        cart_amount3.setBorder(null);
+        kGradientPanel1.add(cart_amount3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 300, 30));
+
+        jTextField17.setEditable(false);
+        jTextField17.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField17.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField17.setText(" AMOUNT :");
+        jTextField17.setBorder(null);
+        kGradientPanel1.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 130, 30));
+
+        jTextField18.setEditable(false);
+        jTextField18.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField18.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField18.setText(" BANKED :");
+        jTextField18.setBorder(null);
+        kGradientPanel1.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 130, 30));
+
+        cart_bank2.setBorder(null);
+        kGradientPanel1.add(cart_bank2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 300, 30));
+
+        cart_balanced3.setBorder(null);
+        kGradientPanel1.add(cart_balanced3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 300, 30));
+
+        jTextField19.setEditable(false);
+        jTextField19.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField19.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField19.setText("  DATE");
+        jTextField19.setBorder(null);
+        kGradientPanel1.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 130, 30));
+
+        cart_balanced4.setBorder(null);
+        kGradientPanel1.add(cart_balanced4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 300, 30));
+
+        jTextField20.setEditable(false);
+        jTextField20.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField20.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField20.setText(" OR NO :");
+        jTextField20.setBorder(null);
+        kGradientPanel1.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 130, 30));
+
+        cart_balanced5.setBorder(null);
+        kGradientPanel1.add(cart_balanced5, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 220, 300, 30));
+
+        cart_balanced6.setBorder(null);
+        kGradientPanel1.add(cart_balanced6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 300, 30));
+
+        jTextField21.setEditable(false);
+        jTextField21.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField21.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField21.setText(" EMAIL / CONTACT NO");
+        jTextField21.setBorder(null);
+        kGradientPanel1.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, 130, 30));
+
+        jTextField13.setEditable(false);
+        jTextField13.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField13.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField13.setText(" CUSTOMER PO NO.");
+        jTextField13.setBorder(null);
+        kGradientPanel1.add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, 130, 30));
+
+        jTextField22.setEditable(false);
+        jTextField22.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField22.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField22.setText(" ADDRESS");
+        jTextField22.setBorder(null);
+        kGradientPanel1.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 130, 30));
+
+        cart_bank3.setBorder(null);
+        kGradientPanel1.add(cart_bank3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 100, 300, 70));
+
+        cart_amount2.setBorder(null);
+        kGradientPanel1.add(cart_amount2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, 300, 30));
+
+        jTextField23.setEditable(false);
+        jTextField23.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField23.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField23.setText(" CUSTOMER NAME :");
+        jTextField23.setBorder(null);
+        kGradientPanel1.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 130, 30));
+
+        jTextField24.setEditable(false);
+        jTextField24.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField24.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField24.setText(" P.O DATE :");
+        jTextField24.setBorder(null);
+        kGradientPanel1.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 260, 130, 30));
+
+        cart_balanced7.setBorder(null);
+        kGradientPanel1.add(cart_balanced7, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, 300, 30));
+
+        cart_balanced8.setBorder(null);
+        kGradientPanel1.add(cart_balanced8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 300, 300, 30));
+
+        jTextField25.setEditable(false);
+        jTextField25.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField25.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField25.setText(" QOUTATION NO.");
+        jTextField25.setBorder(null);
+        kGradientPanel1.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 300, 130, 30));
+
+        jTextField26.setEditable(false);
+        jTextField26.setBackground(new java.awt.Color(255, 255, 153));
+        jTextField26.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTextField26.setText(" QOUTATION DATE");
+        jTextField26.setBorder(null);
+        kGradientPanel1.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 340, 130, 30));
+
+        cart_balanced9.setBorder(null);
+        kGradientPanel1.add(cart_balanced9, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 340, 300, 30));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("CUSTOMER LIST");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Customer.png"))); // NOI18N
+        jLabel1.setText(" CUSTOMER");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 190, 30));
+        kGradientPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 390, 220, 40));
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(255, 255, 153));
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField1.setText("CUSTOMER NAME:");
-        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 130, 30));
+        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "DOWNPAYMENT", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 490, 250));
 
-        cart_customer_name.setEditable(false);
-        cart_customer_name.setBackground(new java.awt.Color(204, 204, 204));
-        kGradientPanel1.add(cart_customer_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 160, 30));
+        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "DOWNPAYMENT", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 490, 250));
 
-        cart_customer_id.setEditable(false);
-        cart_customer_id.setBackground(new java.awt.Color(204, 204, 204));
-        kGradientPanel1.add(cart_customer_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 160, 30));
+        jLabel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "CUSTOMER INFORMATION", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, 490, 430));
 
-        jTextField5.setEditable(false);
-        jTextField5.setBackground(new java.awt.Color(255, 255, 153));
-        jTextField5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField5.setText("CUSTOMER ID:");
-        kGradientPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 130, 30));
+        Stock_Genset_Panel_Add7.setBackground(new java.awt.Color(102, 255, 102));
 
-        jTextField6.setEditable(false);
-        jTextField6.setBackground(new java.awt.Color(255, 255, 153));
-        jTextField6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField6.setText("BALANCED :");
-        kGradientPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 430, 130, 30));
+        Shop_Add5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Shop_Add5.setForeground(new java.awt.Color(98, 71, 73));
+        Shop_Add5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Shop_Add5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Check.png"))); // NOI18N
+        Shop_Add5.setText(" PRINT");
+        Shop_Add5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Shop_Add5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Shop_Add5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Shop_Add5MouseExited(evt);
+            }
+        });
 
-        jTextField7.setEditable(false);
-        jTextField7.setBackground(new java.awt.Color(255, 255, 153));
-        jTextField7.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField7.setText("CASH / CHECK NO :");
-        kGradientPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 480, 130, 30));
+        javax.swing.GroupLayout Stock_Genset_Panel_Add7Layout = new javax.swing.GroupLayout(Stock_Genset_Panel_Add7);
+        Stock_Genset_Panel_Add7.setLayout(Stock_Genset_Panel_Add7Layout);
+        Stock_Genset_Panel_Add7Layout.setHorizontalGroup(
+            Stock_Genset_Panel_Add7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Add5, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+        );
+        Stock_Genset_Panel_Add7Layout.setVerticalGroup(
+            Stock_Genset_Panel_Add7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Shop_Add5, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+        );
 
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(255, 255, 153));
-        jTextField8.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField8.setText("OR NO :");
-        kGradientPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 430, 130, 30));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel3.setText("PAYMENT DETAILS :");
-        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 120, 30));
-
-        jTextField9.setEditable(false);
-        jTextField9.setBackground(new java.awt.Color(255, 255, 153));
-        jTextField9.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField9.setText("AMOUNT :");
-        kGradientPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, 130, 30));
-
-        jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(255, 255, 153));
-        jTextField10.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField10.setText("REMARKS :");
-        kGradientPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 480, 130, 30));
-        kGradientPanel1.add(cart_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 380, 160, 30));
-        kGradientPanel1.add(cart_balanced, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 160, 30));
-        kGradientPanel1.add(cart_or_no, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 430, 160, 30));
-        kGradientPanel1.add(cart_remark, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 480, 160, 30));
-
-        cash_checked.add(checked);
-        checked.setText("CHECKED");
-        kGradientPanel1.add(checked, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 480, 90, 30));
-
-        cash_checked.add(cash);
-        cash.setText("CASH");
-        kGradientPanel1.add(cash, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 60, 30));
-
-        jTextField14.setEditable(false);
-        jTextField14.setBackground(new java.awt.Color(255, 255, 153));
-        jTextField14.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTextField14.setText("BANKED :");
-        kGradientPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 380, 130, 30));
-        kGradientPanel1.add(cart_bank, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 380, 160, 30));
+        kGradientPanel1.add(Stock_Genset_Panel_Add7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, -1, -1));
 
         Stock_Genset_Panel_Add6.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -324,12 +402,12 @@ public class AddCart extends javax.swing.JFrame {
         );
         Stock_Genset_Panel_Add6Layout.setVerticalGroup(
             Stock_Genset_Panel_Add6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Add4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(Shop_Add4, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Add6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, 170, 50));
+        kGradientPanel1.add(Stock_Genset_Panel_Add6, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 490, -1, -1));
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1060, 640));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1060, 570));
 
         pack();
         setLocationRelativeTo(null);
@@ -353,95 +431,20 @@ public class AddCart extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_displaysAncestorAdded
 
-    private void Cart_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cart_tableMouseClicked
-        int i=Cart_table.getSelectedRow();
-        TableModel model = Cart_table.getModel();
-//        Cart_id.setText(model.getValueAt(i,0).toString());
-//        brand.setText(model.getValueAt(i,1).toString());
-//        quantity.setText(model.getValueAt(i,4).toString());
-        
-    }//GEN-LAST:event_Cart_tableMouseClicked
-
-    private void Supplier_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Supplier_SearchKeyPressed
-//        DefaultTableModel tm = (DefaultTableModel)Supplier_table.getModel();
-//        String find = Supplier_Search.getText().toUpperCase();
-//        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
-//        Supplier_table.setRowSorter(tr);
-//        tr.setRowFilter(RowFilter.regexFilter(find));
-    }//GEN-LAST:event_Supplier_SearchKeyPressed
-
-    private void processMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseClicked
-        try{
-            String selected = getSelectedOption();
-            Class_Process cp = new Class_Process();
-            String customer_id = "";
-            String amount = "";
-            String balanced = "";
-            String cash_checked = "";
-            String bank = "";
-            String or_no = "";
-            String remark = "";
-            String status = "DONE";
-                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `add_cart` ORDER BY `PROCESS` DESC LIMIT 1");
-                ResultSet rs = ps.executeQuery();
-                if(rs.next()){
-                    getCart = rs.getString("PROCESS");
-                       
-                if (selected == null) {
-                    JOptionPane.showMessageDialog(null, "CHOOSE CASH OR CHECKED");
-                    return;
-                }
-                
-                switch (selected.toUpperCase()) {
-                    case "CASH":
-                        cash_checked = "CASH";
-                        break;
-                    case "CHECKED":
-                        cash_checked = "CHECKED";
-                        break;
-                }
-
-                    // getText
-                    amount = cart_amount.getText();
-                    balanced = cart_balanced.getText();
-                    bank = cart_bank.getText();
-                    or_no = cart_or_no.getText();
-                    remark = cart_remark.getText();
-                    if(!cp.process_genset_summaryStock(customer_id, amount, balanced, cash_checked, bank, or_no, remark, status,getCart) && !cp.process_genset_addCart(status, getCart) && !cp.process_cart_delete()){
-                        JOptionPane.showMessageDialog(null, "TRANSACTION HAS PROCESSED","",JOptionPane.INFORMATION_MESSAGE);
-                        add_cart();
-                        ct.Cart_Generator();
-                        ct.Generator();
-                    }
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "EMPTY CART! ","",JOptionPane.ERROR_MESSAGE);
-                    add_cart();
-                    ct.Cart_Generator();
-                    ct.Generator();
-                }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_processMouseClicked
-
-    private void processMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseEntered
+    private void Shop_Add5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add5MouseClicked
         // TODO add your handling code here:
-        update_panel_supplier.setBackground(new Color(0,122,245));
-    }//GEN-LAST:event_processMouseEntered
+    }//GEN-LAST:event_Shop_Add5MouseClicked
 
-    private void processMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseExited
-        // TODO add your handling code here: [0,102,255]
-        update_panel_supplier.setBackground(new Color(0,102,255));
-    }//GEN-LAST:event_processMouseExited
-
-    private void update_panel_supplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_panel_supplierMouseClicked
+    private void Shop_Add5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add5MouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_update_panel_supplierMouseClicked
+    }//GEN-LAST:event_Shop_Add5MouseEntered
+
+    private void Shop_Add5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add5MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Shop_Add5MouseExited
 
     private void Shop_Add4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add4MouseClicked
-        dispose();
+        JTab.setSelectedIndex(3);
     }//GEN-LAST:event_Shop_Add4MouseClicked
 
     private void Shop_Add4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add4MouseEntered
@@ -451,12 +454,6 @@ public class AddCart extends javax.swing.JFrame {
     private void Shop_Add4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add4MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_Shop_Add4MouseExited
-
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        Table_Customer tcs = new Table_Customer();
-        Table_Customer.id_cus = null;
-        tcs.setVisible(true);
-    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -494,37 +491,52 @@ public class AddCart extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JTable Cart_table;
     public static javax.swing.JLabel Shop_Add4;
+    public static javax.swing.JLabel Shop_Add5;
     public static javax.swing.JPanel Stock_Genset_Panel_Add6;
-    private javax.swing.JTextField Supplier_Search;
-    private javax.swing.JTextField cart_amount;
-    private javax.swing.JTextField cart_balanced;
-    private javax.swing.JTextField cart_bank;
-    public static javax.swing.JTextField cart_customer_id;
-    public static javax.swing.JTextField cart_customer_name;
-    private javax.swing.JTextField cart_or_no;
-    private javax.swing.JTextField cart_remark;
-    private javax.swing.JRadioButton cash;
+    public static javax.swing.JPanel Stock_Genset_Panel_Add7;
+    private javax.swing.JTextField cart_amount1;
+    private javax.swing.JTextField cart_amount2;
+    private javax.swing.JTextField cart_amount3;
+    private javax.swing.JTextField cart_balanced1;
+    private javax.swing.JTextField cart_balanced2;
+    private javax.swing.JTextField cart_balanced3;
+    private javax.swing.JTextField cart_balanced4;
+    private javax.swing.JTextField cart_balanced5;
+    private javax.swing.JTextField cart_balanced6;
+    private javax.swing.JTextField cart_balanced7;
+    private javax.swing.JTextField cart_balanced8;
+    private javax.swing.JTextField cart_balanced9;
+    private javax.swing.JTextField cart_bank1;
+    private javax.swing.JTextField cart_bank2;
+    private javax.swing.JTextField cart_bank3;
+    private javax.swing.JCheckBox cash1;
+    private javax.swing.JCheckBox cash2;
     private javax.swing.ButtonGroup cash_checked;
-    private javax.swing.JRadioButton checked;
+    private javax.swing.JCheckBox checked1;
+    private javax.swing.JCheckBox checked2;
     public static javax.swing.JLabel displays;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
     private keeptoo.KGradientPanel kGradientPanel1;
-    public static javax.swing.JLabel process;
-    public static javax.swing.JPanel update_panel_supplier;
     // End of variables declaration//GEN-END:variables
 }
