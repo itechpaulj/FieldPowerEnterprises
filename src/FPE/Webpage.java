@@ -64,6 +64,7 @@ public class Webpage extends javax.swing.JFrame {
     public Webpage() {
        initComponents();
         Class_Cart.addCart();
+        Stock_Category.setSelectedIndex(0);
         Cart_Category.setSelectedIndex(0);
         Sale_Category.setSelectedIndex(0);
         Warehouse_Office_Category.setSelectedIndex(0);
@@ -760,6 +761,7 @@ public void Dispose(){
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         STOCKS_1.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 35, 31));
 
+        jTextField16.setEditable(false);
         jTextField16.setBackground(new java.awt.Color(102, 255, 255));
         jTextField16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField16.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -2014,16 +2016,19 @@ public void Dispose(){
         String path = Stock_Category.getSelectedItem().toString();
         
         if(path.equals("ALL STOCK")){
-            ct.Stocks();
+        ct.Stocks();
         }
         else if(path.equals("GENERATOR")){
-            ct.Generator();
+           ct.StockedGenerator();
+        }
+        else if(path.equals("PARTS")){
+            ct.StockedParts();
         }
         else if(path.equals("OFFICE")){
-            ct.Office();
+            ct.StockedOffice();
         }
         else if(path.equals("WAREHOUSE")){
-            ct.WareHouse();
+            ct.StockedWareHouse();
         }
     }//GEN-LAST:event_Stock_CategoryActionPerformed
 
