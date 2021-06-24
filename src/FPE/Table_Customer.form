@@ -51,7 +51,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="SUPPLIER LIST"/>
+            <Property name="text" type="java.lang.String" value="CUSTOMER LIST"/>
           </Properties>
           <Events>
             <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="displaysAncestorAdded"/>
@@ -438,7 +438,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JLabel" name="Supplier_path">
+        <Component class="javax.swing.JLabel" name="Customer_path">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>

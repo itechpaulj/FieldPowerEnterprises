@@ -21,7 +21,7 @@ import javax.swing.table.TableRowSorter;
  */
 public class Table_Customer extends javax.swing.JFrame {
 
-    String id = null;
+    public static String id = null;
     String name = null;
     String add = null;
     String email = null;
@@ -31,7 +31,7 @@ public class Table_Customer extends javax.swing.JFrame {
     public Table_Customer() {
         initComponents();
         
-        ct.Supplier();
+        ct.Customer();
       
        
     }
@@ -63,7 +63,7 @@ public class Table_Customer extends javax.swing.JFrame {
         Supplier_Search = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         id_cus = new javax.swing.JLabel();
-        Supplier_path = new javax.swing.JLabel();
+        Customer_path = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -75,7 +75,7 @@ public class Table_Customer extends javax.swing.JFrame {
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         displays.setForeground(new java.awt.Color(255, 255, 255));
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displays.setText("SUPPLIER LIST");
+        displays.setText("CUSTOMER LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -295,7 +295,7 @@ public class Table_Customer extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
         kGradientPanel1.add(id_cus, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 80, 30));
-        kGradientPanel1.add(Supplier_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 34, 50, 30));
+        kGradientPanel1.add(Customer_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 34, 50, 30));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 570));
 
@@ -317,19 +317,20 @@ public class Table_Customer extends javax.swing.JFrame {
         add = model.getValueAt(i,2).toString();
         email = model.getValueAt(i,3).toString();
         contact = model.getValueAt(i,4).toString();
+
     }//GEN-LAST:event_Customer_TableMouseClicked
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
         
-        Insert_Supplier is = new Insert_Supplier();
-        is.setVisible(true);
-        Insert_Supplier.Insert_Supplier_Display.setText("ADD NEW SUPPLIER");
+        Insert_Customer ic = new Insert_Customer();
+        ic.setVisible(true);
+        Insert_Supplier.Insert_Supplier_Display.setText("ADD NEW CUSTOMER");
         
 
     }//GEN-LAST:event_AddMouseClicked
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-        Supplier_path.setText("");
+        Customer_path.setText("");
         id_cus.setText("");
         dispose();
         
@@ -338,24 +339,24 @@ public class Table_Customer extends javax.swing.JFrame {
     private void sup_listUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseClicked
         if(id_cus.getText().isEmpty()){
            JOptionPane.showMessageDialog(null, "PLEASE SELECT CUSTOMER !","",JOptionPane.ERROR_MESSAGE);
-           ct.Supplier();
+           ct.Customer();
        }else{
-           Insert_Supplier is = new Insert_Supplier();
-           is.setVisible(true);
-           Insert_Supplier.Insert_Supplier_Display.setText("UPDATE SUPPLIER");
-           ct.Supplier();
+           Insert_Customer ic = new Insert_Customer();
+           ic.setVisible(true);
+           Insert_Customer.Display_Customer.setText("UPDATE CUSTOMER");
+           ct.Customer();
         }
 
     }//GEN-LAST:event_sup_listUpdateMouseClicked
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
       String id1 = id_cus.getText();
-           int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
+           int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS CUSTOMER ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
                 if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION ){
-                    if(!Class_Supplier.DeleteSupplier(id1)){        
+                    if(!Class_Customers.DeleteCustomer(id1)){        
                     JOptionPane.showMessageDialog(null, "DELETE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
-                    ct.Supplier();
+                    ct.Customer();
                     }
                 } 
             }
@@ -404,38 +405,14 @@ public class Table_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_BackMouseExited
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
-       String path = Supplier_path.getText();
-       if(id_cus.getText().isEmpty()){
-           JOptionPane.showMessageDialog(null, "PLEASE SELECT CUSTOMER !","",JOptionPane.ERROR_MESSAGE);
-       }else if(path.equals("INSERT_GENERATOR")){
-            Insert_Generator.Supplier_id = id;
-            Insert_Generator.Insert_Gen_Supplier_Name.setText(name);
-            Insert_Generator.Insert_Gen_Supplier_Address.setText(add);
-            Insert_Generator.Insert_Gen_Supplier_Email.setText(email);
-            Insert_Generator.Insert_Gen_Supplier_Contact.setText(contact);
-            dispose();
-       }else if(path.equals("INSERT_PARTS")){
-            Insert_Parts.Supplier_id = id;
-            Insert_Parts.Insert_Parts_Supplier_name.setText(name);
-            Insert_Parts.Insert_Parts_Supplier_Address.setText(add);
-            Insert_Parts.Insert_Parts_Supplier_Email.setText(email);
-            Insert_Parts.Insert_Parts_Supplier_Contact.setText(contact);
-            dispose();
-       }else if(path.equals("VIEW_GENERATOR")){
-            View_Generator.Supplier_id = id;
-            View_Generator.View_Gen_Supplier_Name.setText(name);
-            View_Generator.View_Gen_Supplier_Address.setText(add);
-            View_Generator.View_Gen_Supplier_Email.setText(email);
-            View_Generator.View_Gen_Supplier_Contact.setText(contact);
-            dispose();
-       }else if(path.equals("VIEW_PARTS")){
-            View_Parts.Supplier_id = id;
-            View_Parts.View_Parts_Supplier_name.setText(name);
-            View_Parts.View_Parts_Supplier_Address.setText(add);
-            View_Parts.View_Parts_Supplier_Email.setText(email);
-            View_Parts.View_Parts_Supplier_Contact.setText(contact);
-            dispose();
-       }
+       //String path = Customer_path.getText();
+       dispose();
+       AddCart.c_name.setText(name);
+       AddCart.c_address.setText(add);
+       AddCart.c_contact.setText(contact);
+       AddCart.cus_id = id;
+       
+       
     }//GEN-LAST:event_Back1MouseClicked
 
     private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered
@@ -487,8 +464,8 @@ public class Table_Customer extends javax.swing.JFrame {
     public static javax.swing.JLabel Back;
     public static javax.swing.JLabel Back1;
     public static javax.swing.JTable Customer_Table;
+    public static javax.swing.JLabel Customer_path;
     private javax.swing.JTextField Supplier_Search;
-    public static javax.swing.JLabel Supplier_path;
     public static javax.swing.JPanel add_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier1;

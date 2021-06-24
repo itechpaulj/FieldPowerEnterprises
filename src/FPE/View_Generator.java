@@ -111,6 +111,8 @@ public class View_Generator extends javax.swing.JFrame {
         jTextField15 = new javax.swing.JTextField();
         jTextField16 = new javax.swing.JTextField();
         View_Gen_Remarks = new javax.swing.JTextField();
+        jTextField17 = new javax.swing.JTextField();
+        View_Gen_quantitty = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -165,7 +167,7 @@ public class View_Generator extends javax.swing.JFrame {
         View_Gen_Supplier_Price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Supplier_Price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Gen_Supplier_Price.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Gen_Supplier_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Gen_Supplier_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 240, 220, 31));
 
         View_Gen_Model.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Model.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -199,7 +201,7 @@ public class View_Generator extends javax.swing.JFrame {
                 View_Gen_AlternatorActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Gen_Alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 370, 220, 30));
+        KG2_ADD_STOCK_GENSET.add(View_Gen_Alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, 220, 30));
 
         View_Gen_Seller_Price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Seller_Price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -209,17 +211,17 @@ public class View_Generator extends javax.swing.JFrame {
                 View_Gen_Seller_PriceActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Gen_Seller_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Gen_Seller_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 290, 220, 31));
 
         View_Gen__Engine.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen__Engine.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Gen__Engine.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Gen__Engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 320, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Gen__Engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, 220, 31));
 
         View_Gen_kva.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_kva.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Gen_kva.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Gen_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 70, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Gen_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, 220, 31));
 
         View_Gen_Supplier_Contact.setBackground(new java.awt.Color(204, 204, 204));
         View_Gen_Supplier_Contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -375,7 +377,7 @@ public class View_Generator extends javax.swing.JFrame {
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField3.setText(" KVA");
         jTextField3.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 140, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 90, 140, 31));
 
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(51, 214, 255));
@@ -396,7 +398,7 @@ public class View_Generator extends javax.swing.JFrame {
                 jTextField5ActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 220, 140, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, 140, 31));
 
         jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(51, 214, 255));
@@ -417,7 +419,7 @@ public class View_Generator extends javax.swing.JFrame {
                 jTextField7ActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 140, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 140, 31));
 
         jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(51, 214, 255));
@@ -425,7 +427,7 @@ public class View_Generator extends javax.swing.JFrame {
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField8.setText(" PHASING");
         jTextField8.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 120, 140, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 140, 140, 31));
 
         jTextField9.setEditable(false);
         jTextField9.setBackground(new java.awt.Color(51, 214, 255));
@@ -441,7 +443,7 @@ public class View_Generator extends javax.swing.JFrame {
         jTextField10.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField10.setText(" ALTERNATOR S.N.");
         jTextField10.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, 140, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 390, 140, 31));
 
         jTextField11.setEditable(false);
         jTextField11.setBackground(new java.awt.Color(51, 214, 255));
@@ -449,7 +451,7 @@ public class View_Generator extends javax.swing.JFrame {
         jTextField11.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField11.setText(" ENGINE S.N");
         jTextField11.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 140, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 140, 31));
 
         jTextField12.setEditable(false);
         jTextField12.setBackground(new java.awt.Color(51, 214, 255));
@@ -457,17 +459,17 @@ public class View_Generator extends javax.swing.JFrame {
         jTextField12.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField12.setText(" SELLER PRICE");
         jTextField12.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 270, 140, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 140, 31));
 
         View_Gen_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SILENT TYPE", "OPEN TYPE" }));
         View_Gen_Type.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Gen_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Gen_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 190, 220, 31));
 
         View_Gen_Phasing.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Phasing.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SINGLE PHASE", "THREE PHASE" }));
         View_Gen_Phasing.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Gen_Phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Gen_Phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 220, 31));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 179));
 
@@ -532,7 +534,7 @@ public class View_Generator extends javax.swing.JFrame {
         jTextField16.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField16.setText(" REMARKS");
         jTextField16.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 420, 140, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 440, 140, 31));
 
         View_Gen_Remarks.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -542,7 +544,20 @@ public class View_Generator extends javax.swing.JFrame {
                 View_Gen_RemarksActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Gen_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Gen_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 220, 31));
+
+        jTextField17.setEditable(false);
+        jTextField17.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField17.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        jTextField17.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField17.setText(" QUANTITY");
+        jTextField17.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, 140, 31));
+
+        View_Gen_quantitty.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        View_Gen_quantitty.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        View_Gen_quantitty.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(View_Gen_quantitty, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 220, 31));
 
         jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " GENERATOR INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 790, 460));
@@ -602,7 +617,7 @@ public class View_Generator extends javax.swing.JFrame {
     String remarks = View_Gen_Remarks.getText().toUpperCase();
     
     String person_in_charge = "";
-    String quantity = "1";
+    String quantity = View_Gen_quantitty.getText();
    
     String supplier_name = View_Gen_Supplier_Name.getText();
     
@@ -803,6 +818,7 @@ public class View_Generator extends javax.swing.JFrame {
             View_Gen_Seller_Price.setText(rs.getString("SELLER PRICE"));
             View_Gen__Engine.setText(rs.getString("ENGINE S N"));
             View_Gen_Alternator.setText(rs.getString("ALTERNATOR S N"));
+            View_Gen_quantitty.setText(rs.getString("QUANTITY"));
             View_Gen_Remarks.setText(rs.getString("REMARKS"));
             View_Gen_Supplier_Name.setText(rs.getString("SUPPLIER"));
             
@@ -969,6 +985,7 @@ public class View_Generator extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> View_Gen_Type;
     public static javax.swing.JTextField View_Gen__Engine;
     public static javax.swing.JTextField View_Gen_kva;
+    public static javax.swing.JTextField View_Gen_quantitty;
     public static javax.swing.JLabel View_Generator_Banner;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -983,6 +1000,7 @@ public class View_Generator extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;

@@ -29,10 +29,10 @@ public class Class_tables {
     
     public boolean Generator(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`DATE RECEIVED`,`CATEGORY`,`BRAND`,`MODEL`,`KVA`,`PHASING`,`TYPE`,`SELLER PRICE`,`ENGINE S N`,`ALTERNATOR S N`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='GENERATOR'");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`DATE RECEIVED`,`CATEGORY`,`BRAND`,`MODEL`,`KVA`,`PHASING`,`TYPE`,FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`,`ENGINE S N`,`ALTERNATOR S N`, `QUANTITY`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='GENERATOR'");
         ResultSet rs = ps.executeQuery();
-        All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-        All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        Sales_Table_Generator.setModel(DbUtils.resultSetToTableModel(rs));
+        Sales_Table_Generator.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
               //System.out.println(e);
             }
@@ -41,10 +41,10 @@ public class Class_tables {
     
     public boolean Parts(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`,`TYPE`, `SELLER PRICE`, `QUANTITY`, `REMARKS`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY` = 'PARTS'");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`DATE RECEIVED`,`CATEGORY`,`BRAND`,`MODEL`,`KVA`,`PHASING`,`TYPE`,FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`,`ENGINE S N`,`ALTERNATOR S N`, `QUANTITY`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY` = 'PARTS'");
         ResultSet rs = ps.executeQuery();
-        All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-        All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        Sales_Table_Generator.setModel(DbUtils.resultSetToTableModel(rs));
+        Sales_Table_Generator.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
               //System.out.println(e);
             }
@@ -122,7 +122,7 @@ public class Class_tables {
     
        public boolean Cart(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N` FROM `add_cart`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`,`QUANTITY` FROM `add_cart`");
         ResultSet rs = ps.executeQuery();
         Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -146,7 +146,7 @@ public class Class_tables {
     
     public boolean Cart_Parts(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT`CATEGORY`, `BRAND`,`TYPE`,`SELLER PRICE`, `QUANTITY` FROM `add_cart` WHERE `CATEGORY`='PARTS'");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `CATEGORY`, `BRAND`,`TYPE`,`SELLER PRICE`, `QUANTITY` FROM `add_cart` WHERE `CATEGORY`='PARTS'");
         ResultSet rs = ps.executeQuery();
         Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);

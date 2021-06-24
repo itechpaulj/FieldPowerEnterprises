@@ -256,7 +256,6 @@ public class Insert_Customer extends javax.swing.JFrame {
                 {
                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
                     ct.Customer();
-                    ct.Customer();
 
                 } 
             }

@@ -33,7 +33,7 @@ public class Insert_Parts extends javax.swing.JFrame {
  public void imgisNull(){
         try{
                 if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -451,7 +451,11 @@ public class Insert_Parts extends javax.swing.JFrame {
     String alternator_sn="";
     String kva="";
     Class_tables ct = new Class_tables();
-    if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks,supplier_name,Supplier_id, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
+    if(supplier_name.equals("") || supplier_address.equals("") || supplier_email.equals("") || supplier_contact.equals("") ){
+        JOptionPane.showMessageDialog(null, "SUPPLIER EMPTY FIELDS","",JOptionPane.INFORMATION_MESSAGE);
+        ct.Stocks();
+    }
+    else if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks,supplier_name,Supplier_id, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
     {
         ct.Stocks();
         JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
