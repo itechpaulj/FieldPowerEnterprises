@@ -58,9 +58,18 @@ public class Webpage extends javax.swing.JFrame {
     public  static String Stock_cat = null;
     public static String Sales_cat = null;
     
-    Class_Refresh crf = new Class_Refresh();
+
     
     public static String searched_method = null;
+    
+    public static String cart_id = null;
+    
+    //request
+    public static String request_id = null;
+    //String request_category = null;
+    public static String request_quantity = null;
+    
+    //============end
     public Webpage() {
        initComponents();
         Class_Cart.addCart();
@@ -70,8 +79,7 @@ public class Webpage extends javax.swing.JFrame {
         Warehouse_Office_Category.setSelectedIndex(0);
         Cart_Warehouse_Office_Category.setSelectedIndex(0);
         AllTable();
-        //crf.Refresh();
-
+        request_category.setVisible(false);
     }
 
 
@@ -99,7 +107,7 @@ public class Webpage extends javax.swing.JFrame {
 
     private void cart_table(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`,`QUANTITY` FROM `add_cart`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT (`STOCK ID`) AS `ID`,`CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`,`QUANTITY`,`TOTAL PRICE` FROM `add_cart`");
         ResultSet rs = ps.executeQuery();
         Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -107,29 +115,42 @@ public class Webpage extends javax.swing.JFrame {
               //System.out.println(e);
         }        
     }
-//    private void order_numPrint(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RELEASE`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `SUPPLIER ID`, `CUSTOMER ID`, `STOCK ID`, `IMAGE`, `AMOUNT`, `BALANCED`, `CASH_OR_CHECKED`, `BANKED`, `OR NO`, `REMARKS` FROM `sale_summary_stock`");
-//        ResultSet rs = ps.executeQuery();
-//        Order_Number_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Order_Number_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//    }
+    
+    private void SalesStock(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ',`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE` `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY` FROM `summary_stock` WHERE `CATEGORY`='GENERATOR' OR `CATEGORY`='PARTS'");
+        ResultSet rs = ps.executeQuery();
+        Sales_Table_Generator.setModel(DbUtils.resultSetToTableModel(rs));
+        Sales_Table_Generator.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+        }        
+    }
+    
+    private void request(){
+    //SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='PARTS' OR `CATEGORY`='OFFICE' OR `CATEGORY`='WAREHOUSE'    
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='PARTS' OR `CATEGORY`='OFFICE' OR `CATEGORY`='WAREHOUSE'");
+        ResultSet rs = ps.executeQuery();
+        office_warehouse_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        office_warehouse_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+        }    
+    }
     
     private void AllTable(){
         all_stock();
-        //stock_generator();
         cart_table();
-//        order_numPrint();
+        SalesStock();
+        request();
     }
-public void Dispose(){
+    public void Dispose(){
         ads.dispose();
         adr.dispose();
         ada.dispose();
         as.dispose();
-}
+    }
 //public void Refresh()
 //{
 //       Class_tables ct = new Class_tables();
@@ -315,7 +336,7 @@ public void Dispose(){
         CART_3 = new keeptoo.KGradientPanel();
         Stock_Genset_Panel_Add4 = new javax.swing.JPanel();
         Shop_Add2 = new javax.swing.JLabel();
-        Cart_Category_Id = new javax.swing.JLabel();
+        request_category = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
         Cart_Table = new javax.swing.JTable();
@@ -1051,7 +1072,7 @@ public void Dispose(){
         );
 
         CART_3.add(Stock_Genset_Panel_Add4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 170, 45));
-        CART_3.add(Cart_Category_Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, 150, 30));
+        CART_3.add(request_category, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, 150, 30));
 
         jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -1673,7 +1694,8 @@ public void Dispose(){
     }//GEN-LAST:event_REPORTMouseExited
 
     private void SALEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SALEMouseClicked
-       // JTab.setSelectedIndex(2);
+       new Class_tables().SalesStock();
+       JTab.setSelectedIndex(2);
     }//GEN-LAST:event_SALEMouseClicked
 
     private void SALEMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SALEMouseEntered
@@ -1720,7 +1742,6 @@ public void Dispose(){
         else if(s_category.equals("GENERATOR")){
           Sale_Stock ss = new Sale_Stock();
           ss.setVisible(true);
-          ct.Generator();
             
         }
         else if(s_category.equals("PARTS")){
@@ -1753,14 +1774,7 @@ public void Dispose(){
         ResultSet rs = ps.executeQuery();
         if(rs.next()){
             AddCart ac = new AddCart();
-            if(searched_method == "GENERATOR"){
-                ac.setVisible(true);
-                AddCart.getCategory = "GENERATOR";
-            }
-            else if(searched_method == "PARTS"){
-                ac.setVisible(true);
-                AddCart.getCategory = "PARTS";
-            }
+            ac.setVisible(true);
         }else{
            JOptionPane.showMessageDialog(null, "EMPTY CART!","",JOptionPane.ERROR_MESSAGE);
         }
@@ -1783,7 +1797,14 @@ public void Dispose(){
     }//GEN-LAST:event_jTextField6KeyPressed
 
     private void Cart_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cart_TableMouseClicked
-        // TODO add your handling code here:
+        int i=Cart_Table.getSelectedRow();
+        TableModel model = Cart_Table.getModel();
+        cart_id = model.getValueAt(i,0).toString();
+        request_quantity = model.getValueAt(i,10).toString();
+        request_category.setText(model.getValueAt(i,1).toString());
+
+        //Stock_cat = model.getValueAt(i,2).toString();
+//        as.dispose();
     }//GEN-LAST:event_Cart_TableMouseClicked
 
     private void CART_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CART_3MouseEntered
@@ -1815,7 +1836,60 @@ public void Dispose(){
     }//GEN-LAST:event_Shop_Add4MouseExited
 
     private void Shop_Add5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add5MouseClicked
-        // TODO add your handling code here:
+        //JOptionPane.showMessageDialog(null, ""+cart_id,"",JOptionPane.INFORMATION_MESSAGE);
+        if(request_category.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "PLEASE SELECT!","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(request_category.getText().equals("GENERATOR")){
+            //JOptionPane.showMessageDialog(null, "GENERATOR","",JOptionPane.INFORMATION_MESSAGE);
+            Sale_Stock ss = new Sale_Stock();
+            Sale_Stock.sale_Generator_Banner.setText("REMOVED CART GENERATOR");
+            Sale_Stock.View_Btn.setText("REMOVE");
+            Sale_Stock.cart_id = cart_id;
+            Sale_Stock.txtStock.setText("REMOVED STOCK");
+            Sale_Stock.stock.setText(request_quantity);
+            Sale_Stock.sell_priceTxt.setVisible(false);
+            Sale_Stock.Sales_Gen_Seller_Price.setVisible(false);
+            ss.setVisible(true);
+        }
+        else if (request_category.getText().equals("PARTS")){
+            //JOptionPane.showMessageDialog(null, "PARTS","",JOptionPane.INFORMATION_MESSAGE);
+            Sales_Parts sp = new Sales_Parts();
+            Sales_Parts.View_Parts_Display.setText("REMOVED CART PARTS");
+            Sales_Parts.Stock_Genset_Update.setText("REMOVE");
+            Sales_Parts.cart_id = cart_id;
+            Sales_Parts.txtStock.setText("REMOVED STOCK");
+            Sales_Parts.View_Parts_Quantity.setText(request_quantity);
+            Sales_Parts.tp_txt.setVisible(false);
+            Sales_Parts.Quantity1.setVisible(false);
+      
+            sp.setVisible(true);
+        }
+//        try{
+//            PreparedStatement ps = null;
+//            ResultSet rs = null;
+//            ps=FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `add_cart` WHERE `STOCK ID` = '"+cart_id+"'");
+//            rs = ps.executeQuery();
+//            if(rs.next()){
+//                String cart_quantity = rs.getString("QUANTITY");
+//                //JOptionPane.showMessageDialog(null, cart_quantity);
+//                int result = Integer.parseInt(cart_quantity);
+//                
+//                ps=FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `summary_stock` WHERE `ID` = '"+cart_id+"'");
+//                rs = ps.executeQuery();
+//                
+//                if(rs.next()){
+//                   int getFinalQuantity = result + Integer.parseInt(rs.getString("QUANTITY"));
+//                   
+//                   JOptionPane.showMessageDialog(null, ""+getFinalQuantity);
+//                }
+//            }
+//        }
+//        catch(Exception e){
+//            e.printStackTrace();
+//        }
+
+
     }//GEN-LAST:event_Shop_Add5MouseClicked
 
     private void Shop_Add5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add5MouseEntered
@@ -1838,7 +1912,12 @@ public void Dispose(){
     }//GEN-LAST:event_Cart_CategoryActionPerformed
 
     private void Shop_Add6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add6MouseClicked
- 
+//        if(request_category == "OFFICE"){
+//            
+//        }
+//        else if(request_category == "PARTS"){
+//            
+//        }
     }//GEN-LAST:event_Shop_Add6MouseClicked
 
     private void Shop_Add6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add6MouseEntered
@@ -1865,11 +1944,14 @@ public void Dispose(){
     }//GEN-LAST:event_Warehouse_Office_CategoryActionPerformed
 
     private void office_warehouse_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_office_warehouse_TableMouseClicked
-        // TODO add your handling code here:
+        int i=office_warehouse_Table.getSelectedRow();
+        TableModel model = office_warehouse_Table.getModel();
+        request_id = model.getValueAt(i,0).toString();
+        //request_category = model.getValueAt(i,3).toString(); 
     }//GEN-LAST:event_office_warehouse_TableMouseClicked
 
     private void Shop_Add7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add7MouseClicked
-        JTab.setSelectedIndex(6);
+        JTab.setSelectedIndex(5);
     }//GEN-LAST:event_Shop_Add7MouseClicked
 
     private void Shop_Add7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add7MouseEntered
@@ -1905,7 +1987,7 @@ public void Dispose(){
     }//GEN-LAST:event_Cart_Table1MouseClicked
 
     private void Shop_Add9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add9MouseClicked
-        JTab.setSelectedIndex(5);
+        JTab.setSelectedIndex(4);
     }//GEN-LAST:event_Shop_Add9MouseClicked
 
     private void Shop_Add9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add9MouseEntered
@@ -2098,7 +2180,6 @@ public void Dispose(){
     public static javax.swing.JTable All_Stock_Table;
     private keeptoo.KGradientPanel CART_3;
     private javax.swing.JComboBox<String> Cart_Category;
-    public static javax.swing.JLabel Cart_Category_Id;
     public static javax.swing.JTable Cart_Table;
     public static javax.swing.JTable Cart_Table1;
     private javax.swing.JComboBox<String> Cart_Warehouse_Office_Category;
@@ -2192,6 +2273,7 @@ public void Dispose(){
     private javax.swing.JLabel process1;
     public static javax.swing.JLabel process2;
     private javax.swing.JLabel process3;
+    public static javax.swing.JLabel request_category;
     private javax.swing.JTextField searched_all_stock;
     private javax.swing.JTextField searched_sale;
     public static javax.swing.JLabel stock_supplier_id;

@@ -39,14 +39,16 @@ public class Sales_Parts extends javax.swing.JFrame {
     String supplier_name;
     String supplier_id;
     Class_Cart ct = new Class_Cart();
-    
-    
+    //removed for cart
+    public static String cart_id = null;
+    String totalQuantity = null;
     
     public Sales_Parts() {
         initComponents();
         imgisNull();
         ct.addCart();
         showDate();
+
     }
     
         void showDate(){
@@ -92,10 +94,10 @@ public class Sales_Parts extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtStock = new javax.swing.JTextField();
         View_Parts_Quantity = new javax.swing.JTextField();
         Quantity1 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        tp_txt = new javax.swing.JTextField();
         Quantity = new javax.swing.JTextField();
         View_Parts_Brand1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -218,12 +220,14 @@ public class Sales_Parts extends javax.swing.JFrame {
         View_Parts_Category.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Parts_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 210, 30));
 
+        View_Parts_Type.setEditable(false);
         View_Parts_Type.setBackground(new java.awt.Color(204, 204, 204));
         View_Parts_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Parts_Type.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Parts_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Parts_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 210, 30));
 
+        View_Parts_Price.setEditable(false);
         View_Parts_Price.setBackground(new java.awt.Color(204, 204, 204));
         View_Parts_Price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Parts_Price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -275,33 +279,35 @@ public class Sales_Parts extends javax.swing.JFrame {
         jTextField6.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 140, 30));
 
-        jTextField5.setEditable(false);
-        jTextField5.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField5.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField5.setText("    AVAILABLE STOCK  :");
-        jTextField5.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 180, 30));
+        txtStock.setEditable(false);
+        txtStock.setBackground(new java.awt.Color(255, 255, 255));
+        txtStock.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
+        txtStock.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        txtStock.setText("    AVAILABLE STOCK  :");
+        txtStock.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(txtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 180, 30));
 
+        View_Parts_Quantity.setEditable(false);
         View_Parts_Quantity.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         View_Parts_Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Parts_Quantity.setText("0");
         View_Parts_Quantity.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Parts_Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 210, 30));
 
+        Quantity1.setEditable(false);
         Quantity1.setBackground(new java.awt.Color(204, 204, 204));
         Quantity1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Quantity1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Quantity1.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Quantity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 210, 30));
 
-        jTextField9.setEditable(false);
-        jTextField9.setBackground(new java.awt.Color(255, 128, 128));
-        jTextField9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField9.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField9.setText("  TOTAL PRICE");
-        jTextField9.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 140, 30));
+        tp_txt.setEditable(false);
+        tp_txt.setBackground(new java.awt.Color(255, 128, 128));
+        tp_txt.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tp_txt.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        tp_txt.setText("  TOTAL PRICE");
+        tp_txt.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(tp_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 140, 30));
 
         Quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -370,117 +376,156 @@ public class Sales_Parts extends javax.swing.JFrame {
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
 
-    
-    try{
-        String date_release = View_Parts_dateReleased.getText();
+    String Banner = View_Parts_Display.getText();
+    if(Banner.equals("PARTS")){
+        try{
+            String date_release = View_Parts_dateReleased.getText();
 
-        String category = View_Parts_Category.getText().toUpperCase(); 
-        String brand = View_Parts_Type.getText().toUpperCase();
-        String model="";
-        String kva = "";
-        String phasing ="";
-        String type = View_Parts_Type.getText().toUpperCase(); 
-        String supplier_price ="";
+            String category = View_Parts_Category.getText().toUpperCase(); 
+            String brand = View_Parts_Type.getText().toUpperCase();
+            String model="";
+            String kva = "";
+            String phasing ="";
+            String type = View_Parts_Type.getText().toUpperCase(); 
+            String supplier_price ="";
 
-        String seller_price = View_Parts_Price.getText().toUpperCase(); 
-        String engine_sn ="";
-        String alternator_sn ="";
+            String seller_price = View_Parts_Price.getText().toUpperCase(); 
+            String engine_sn ="";
+            String alternator_sn ="";
 
-        int result = Integer.parseInt(View_Parts_Quantity.getText().toString()) - Integer.parseInt(Quantity.getText().toString());
-        String quantity = Integer.toString(result);
-        int originalQuantity = 0;
-        originalQuantity = Integer.parseInt(View_Parts_Quantity.getText().toString());
-        String  update_quantity = View_Parts_Quantity.getText();
-        
-        String supplier_id = Supplier_id;
-        String customer_id = "";
-        
-        String stock_id1 = Parts_id;    
-        String status = "";
-        String process_id = Integer.toString(Class_Cart.process) ;
-        
-        // OR NO and  quotation
-        String orno = "";
-        String quoataion = "";
-            int inputQuantity = Integer.parseInt(Quantity.getText().toString());
-            String validQuantity = Quantity.getText();
-            if(validQuantity.equals("")){
-                JOptionPane.showMessageDialog(null, "ENTER QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
-            }
-            else{
-                int plusOne = originalQuantity + 1;
-                int finalQuantity = Integer.parseInt(View_Parts_Quantity.getText()) - Integer.parseInt(Quantity.getText()) ;
-             //JOptionPane.showMessageDialog(null, "Good","",JOptionPane.INFORMATION_MESSAGE);
-             if(finalQuantity == 0){
-                 JOptionPane.showMessageDialog(null, "NO STOCK AVAILABLE!","",JOptionPane.INFORMATION_MESSAGE);
-             }
-             else if (validQuantity.equals("0")){
-                 JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
-             }
-             else if(inputQuantity>=plusOne){
+            int result = Integer.parseInt(View_Parts_Quantity.getText().toString()) - Integer.parseInt(Quantity.getText().toString());
+            String quantity = Integer.toString(result);
+            int originalQuantity = 0;
+            originalQuantity = Integer.parseInt(View_Parts_Quantity.getText().toString());
+            String  update_quantity = View_Parts_Quantity.getText();
+
+            String supplier_id = Supplier_id;
+            String customer_id = "";
+
+            String stock_id1 = Parts_id;    
+            String status = "";
+            String process_id = Integer.toString(Class_Cart.process) ;
+
+            //total price
+            String total_price = Quantity1.getText();
+
+
+            // OR NO and  quotation
+            String orno = "";
+            String quoataion = "";
+                int inputQuantity = Integer.parseInt(Quantity.getText().toString());
+                String validQuantity = Quantity.getText();
+                if(validQuantity.equals("")){
+                    JOptionPane.showMessageDialog(null, "ENTER QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    int plusOne = originalQuantity + 1;
+                    int finalQuantity = Integer.parseInt(View_Parts_Quantity.getText()) - Integer.parseInt(Quantity.getText()) ;
+                 //JOptionPane.showMessageDialog(null, "Good","",JOptionPane.INFORMATION_MESSAGE);
+                 if(finalQuantity == 0){
+                     JOptionPane.showMessageDialog(null, "NO STOCK AVAILABLE!","",JOptionPane.INFORMATION_MESSAGE);
+                 }
+                 else if (validQuantity.equals("0")){
                      JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
-             }
-             else{
-                 //execute the code
-                // JOptionPane.showMessageDialog(null, ""+quantity,"",JOptionPane.INFORMATION_MESSAGE);
-                
-                try{
-                    PreparedStatement ps;
-                    ResultSet rs;
-                    ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `add_cart` WHERE `STOCK ID`='"+Parts_id+"'");
-                    rs = ps.executeQuery();
-                    if(rs.next()){
-                        //update
-                        //JOptionPane.showMessageDialog(null, "Update","",JOptionPane.INFORMATION_MESSAGE);
-                       if(!Class_Cart.summary_StockUpdateQuantity(Integer.toString(finalQuantity), Parts_id))
-                       {
-                            ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `add_cart` WHERE `STOCK ID`='"+Parts_id+"'");
-                            rs = ps.executeQuery();
-                                if(rs.next()){
-                                    String currentQuantity = rs.getString("QUANTITY");
-                                    int getQuantity = Integer.parseInt(currentQuantity) + Integer.parseInt(Quantity.getText());
-                                    String last = Integer.toString(getQuantity);
-                                    if(!Class_Cart.existCartToUpdateQuantity(last, Parts_id) && !Class_Cart.existSale_Summary_stockToUpdateQuantity(last, Parts_id)){
-                                         JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
-                                         Class_Cart.addCart();
-                                         new Class_tables().Cart();
-                                         new Class_tables().Stocks();
-                                         new Class_tables().Parts();
-                                         dispose();
+                 }
+                 else if(inputQuantity>=plusOne){
+                         JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+                 }
+                 else{
+                     //execute the code
+                    // JOptionPane.showMessageDialog(null, ""+quantity,"",JOptionPane.INFORMATION_MESSAGE);
 
+                    try{
+                        PreparedStatement ps;
+                        ResultSet rs;
+                        ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `add_cart` WHERE `STOCK ID`='"+Parts_id+"'");
+                        rs = ps.executeQuery();
+                        if(rs.next()){
+                            //update
+                            //JOptionPane.showMessageDialog(null, "Update","",JOptionPane.INFORMATION_MESSAGE);
+                           if(!Class_Cart.summary_StockUpdateQuantity(Integer.toString(finalQuantity),Parts_id))
+                           {
+                                ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY`,`TOTAL PRICE` FROM `add_cart` WHERE `STOCK ID`='"+Parts_id+"'");
+                                rs = ps.executeQuery();
+                                    if(rs.next()){
+                                        String currentQuantity = rs.getString("QUANTITY");
+                                        int getCurrentPrice = rs.getInt("TOTAL PRICE");
+                                        int update_totalPrice = getCurrentPrice + Integer.parseInt(Quantity1.getText());
+                                        int getQuantity = Integer.parseInt(currentQuantity) + Integer.parseInt(Quantity.getText());
+                                        String last = Integer.toString(getQuantity);
+
+                                        if(!Class_Cart.existCartToUpdateQuantity(last,  update_totalPrice,Parts_id) && !Class_Cart.existSale_Summary_stockToUpdateQuantity(last,update_totalPrice,Parts_id)){
+                                             JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
+                                             Class_Cart.addCart();
+                                             new Class_tables().Cart();
+                                             new Class_tables().Stocks();
+                                             new Class_tables().SalesStock();
+                                             dispose();
+
+                                        }
                                     }
-                                }
-                       }
-                        //JOptionPane.showMessageDialog(null, ""+finalQuantity,"",JOptionPane.INFORMATION_MESSAGE);
-                    }
-                    else{
-                        if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, Quantity.getText(), supplier_id, customer_id, stock_id1, images, quoataion ,orno,status, process_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, Quantity.getText(), supplier_id, customer_id, stock_id1, images, status, quoataion ,orno ,process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
-                                JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
-                                Class_Cart.addCart();
-                                new Class_tables().Cart();
-                                new Class_tables().Stocks();
-                                new Class_tables().Parts();
-                                dispose();
+                           }
+                            //JOptionPane.showMessageDialog(null, ""+finalQuantity,"",JOptionPane.INFORMATION_MESSAGE);
                         }
+                        else{
+                            if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, Quantity.getText(), Integer.parseInt(total_price),supplier_id, customer_id, stock_id1, images, quoataion ,orno,status, process_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, Quantity.getText(), Integer.parseInt(total_price),supplier_id, customer_id, stock_id1, images, status, quoataion ,orno ,process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
+                                    JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
+                                    Class_Cart.addCart();
+                                    new Class_tables().Cart();
+                                    new Class_tables().Stocks();
+                                    new Class_tables().SalesStock();
+                                    dispose();
+                            }
+                        }
+                    }catch(Exception e){
+                    e.printStackTrace();
                     }
-                }catch(Exception e){
-                e.printStackTrace();
+
+
+
+                 }
+
+
                 }
 
+        }
+        catch(NumberFormatException  e){
+           // JOptionPane.showMessageDialog(null,"Please Enter","",JOptionPane.ERROR_MESSAGE);
+        }        
+    }
 
-             
+
+    // remove cart
+    
+    if(Banner.equals("REMOVED CART PARTS")){
+        //JOptionPane.showMessageDialog(null, cart_id);
+     String input_quantityRemoved = Quantity.getText();
+     String stockRemoved = View_Parts_Quantity.getText();
+     int result = Integer.parseInt(input_quantityRemoved) + Integer.parseInt(totalQuantity); // resultQuantity
+     int resultCartOnlyQuantity = Integer.parseInt(stockRemoved) - Integer.parseInt(input_quantityRemoved);
+     
+     if(resultCartOnlyQuantity == 0){
+         Class_Cart_Remove ccr = new Class_Cart_Remove();
+         if(ccr.quantityCartIsZero(cart_id)){
+            new Class_tables().Cart();
+         }
+     }
+        if(input_quantityRemoved.equals("")){
+            JOptionPane.showMessageDialog(null, "ENTER QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else if(Integer.parseInt(stockRemoved) + 1  <= Integer.parseInt(input_quantityRemoved)){
+           JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            Class_Cart_Remove ccr = new Class_Cart_Remove();
+             if(!ccr.Sales_Parts(Integer.toString(result), Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) ){
+                 new Class_tables().Cart();
+                 new Class_tables().Stocks();
+                 JOptionPane.showMessageDialog(null, "SUCCESSFULLY REMOVED","",JOptionPane.INFORMATION_MESSAGE);
+                 dispose();
              }
-
-            
-            }
-
+        }
     }
-    catch(NumberFormatException  e){
-       // JOptionPane.showMessageDialog(null,"Please Enter","",JOptionPane.ERROR_MESSAGE);
-    }
-
-  
-
     
     
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
@@ -513,39 +558,69 @@ public class Sales_Parts extends javax.swing.JFrame {
     private void View_Parts_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Parts_DisplayAncestorAdded
     String Banner = View_Parts_Display.getText();
     String ids = Webpage.sales_id;
-    
+    String removed_id = Webpage.cart_id;
     if(Banner.equals("PARTS"))
-    {
-        try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `summary_stock` WHERE `ID` = '"+ids+"'");
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-            Parts_id = ""+rs.getInt("ID");    
-            Supplier_id = rs.getString("SUPPLIER ID");
-            System.out.println(""+Parts_id);
-            System.out.println(Supplier_id);
-            date = rs.getString("DATE RECEIVED");
-            View_Parts_Category.setText(rs.getString("CATEGORY"));
-            Supplier_id = rs.getString("SUPPLIER ID");
-            View_Parts_Type.setText(rs.getString("BRAND"));
-            original_quantity = rs.getString("QUANTITY");
-            View_Parts_Brand1.setText(rs.getString("BRAND"));
-            View_Parts_Type.setText(rs.getString("TYPE"));
-            View_Parts_Price.setText(rs.getString("SELLER PRICE"));
-            View_Parts_Quantity.setText(rs.getString("QUANTITY"));
-            
-            
-            
-            images = rs.getBytes("IMAGE");
-            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Parts_Pic.getWidth(), View_Parts_Pic.getHeight(),Image.SCALE_SMOOTH) );
-            View_Parts_Pic.setIcon(imageicon);
-         
+        {
+            try{
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `summary_stock` WHERE `ID` = '"+ids+"'");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                Parts_id = ""+rs.getInt("ID");    
+                Supplier_id = rs.getString("SUPPLIER ID");
+                System.out.println(""+Parts_id);
+                System.out.println(Supplier_id);
+                date = rs.getString("DATE RECEIVED");
+                View_Parts_Category.setText(rs.getString("CATEGORY"));
+                Supplier_id = rs.getString("SUPPLIER ID");
+                View_Parts_Type.setText(rs.getString("BRAND"));
+                original_quantity = rs.getString("QUANTITY");
+                View_Parts_Brand1.setText(rs.getString("BRAND"));
+                View_Parts_Type.setText(rs.getString("TYPE"));
+                View_Parts_Price.setText(rs.getString("SELLER PRICE"));
+                View_Parts_Quantity.setText(rs.getString("QUANTITY"));
+ 
+
+
+                images = rs.getBytes("IMAGE");
+                ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Parts_Pic.getWidth(), View_Parts_Pic.getHeight(),Image.SCALE_SMOOTH) );
+                View_Parts_Pic.setIcon(imageicon);
+
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
             }
         }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-    }
+    
+     //removed
+     if(Banner.equals("REMOVED CART PARTS")){
+            try{
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `summary_stock` WHERE `ID` = '"+removed_id+"'");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                Parts_id = ""+rs.getInt("ID");    
+                Supplier_id = rs.getString("SUPPLIER ID");
+                System.out.println(""+Parts_id);
+                System.out.println(Supplier_id);
+                date = rs.getString("DATE RECEIVED");
+                View_Parts_Category.setText(rs.getString("CATEGORY"));
+                Supplier_id = rs.getString("SUPPLIER ID");
+                View_Parts_Type.setText(rs.getString("BRAND"));
+                original_quantity = rs.getString("QUANTITY");
+                View_Parts_Brand1.setText(rs.getString("BRAND"));
+                View_Parts_Type.setText(rs.getString("TYPE"));
+                View_Parts_Price.setText(rs.getString("SELLER PRICE"));
+                totalQuantity = rs.getString("QUANTITY");
+                images = rs.getBytes("IMAGE");
+                ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Parts_Pic.getWidth(), View_Parts_Pic.getHeight(),Image.SCALE_SMOOTH) );
+                View_Parts_Pic.setIcon(imageicon);
+
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+     }
     }//GEN-LAST:event_View_Parts_DisplayAncestorAdded
 
     private void View_Parts_PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Parts_PriceActionPerformed
@@ -638,7 +713,7 @@ public class Sales_Parts extends javax.swing.JFrame {
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
-    private javax.swing.JLabel Stock_Genset_Update;
+    public static javax.swing.JLabel Stock_Genset_Update;
     public static javax.swing.JTextField View_Parts_Brand1;
     public static javax.swing.JTextField View_Parts_Category;
     public static javax.swing.JLabel View_Parts_Display;
@@ -651,10 +726,10 @@ public class Sales_Parts extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    public static javax.swing.JTextField tp_txt;
+    public static javax.swing.JTextField txtStock;
     // End of variables declaration//GEN-END:variables
 }

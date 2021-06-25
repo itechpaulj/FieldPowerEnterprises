@@ -42,6 +42,9 @@ public class Sale_Stock extends javax.swing.JFrame {
     Class_tables tbl = new Class_tables();
     
     
+    //removed
+    public static String cart_id = null;
+    String totalQuantity = null;
     
     
     public Sale_Stock() {
@@ -108,14 +111,14 @@ public class Sale_Stock extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        sell_priceTxt = new javax.swing.JTextField();
         Sales_Gen_Category1 = new javax.swing.JTextField();
         Sales_Gen_Phasing = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         Sales_Gen_Quantity = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         Sales_Gen_dateRelease = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        txtStock = new javax.swing.JLabel();
         stock = new javax.swing.JLabel();
 
         Insert_Invetory_Supplier_id.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -197,7 +200,7 @@ public class Sale_Stock extends javax.swing.JFrame {
                 Sales_Gen_AlternatorActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Sales_Gen_Alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 250, 30));
+        KG2_ADD_STOCK_GENSET.add(Sales_Gen_Alternator, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 250, 30));
 
         Sales_Gen_Seller_Price.setEditable(false);
         Sales_Gen_Seller_Price.setBackground(new java.awt.Color(204, 204, 204));
@@ -209,14 +212,14 @@ public class Sale_Stock extends javax.swing.JFrame {
                 Sales_Gen_Seller_PriceActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Sales_Gen_Seller_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 290, 250, 31));
+        KG2_ADD_STOCK_GENSET.add(Sales_Gen_Seller_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 250, 31));
 
         Sales_Gen_Engine.setEditable(false);
         Sales_Gen_Engine.setBackground(new java.awt.Color(204, 204, 204));
         Sales_Gen_Engine.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Sales_Gen_Engine.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Sales_Gen_Engine.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Sales_Gen_Engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, 250, 31));
+        KG2_ADD_STOCK_GENSET.add(Sales_Gen_Engine, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 290, 250, 31));
 
         Sales_Gen_kva.setEditable(false);
         Sales_Gen_kva.setBackground(new java.awt.Color(204, 204, 204));
@@ -351,7 +354,7 @@ public class Sale_Stock extends javax.swing.JFrame {
         jTextField10.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField10.setText(" ALTERNATOR S.N.");
         jTextField10.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, 150, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 150, 31));
 
         jTextField11.setEditable(false);
         jTextField11.setBackground(new java.awt.Color(255, 128, 128));
@@ -359,15 +362,15 @@ public class Sale_Stock extends javax.swing.JFrame {
         jTextField11.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField11.setText(" ENGINE S.N");
         jTextField11.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 150, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 150, 31));
 
-        jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(255, 128, 128));
-        jTextField12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField12.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField12.setText(" SELLER PRICE");
-        jTextField12.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 150, 31));
+        sell_priceTxt.setEditable(false);
+        sell_priceTxt.setBackground(new java.awt.Color(255, 128, 128));
+        sell_priceTxt.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        sell_priceTxt.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        sell_priceTxt.setText(" SELLER PRICE");
+        sell_priceTxt.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(sell_priceTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 390, 150, 31));
 
         Sales_Gen_Category1.setEditable(false);
         Sales_Gen_Category1.setBackground(new java.awt.Color(204, 204, 204));
@@ -392,7 +395,6 @@ public class Sale_Stock extends javax.swing.JFrame {
         jTextField6.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 31));
 
-        Sales_Gen_Quantity.setBackground(new java.awt.Color(255, 255, 255));
         Sales_Gen_Quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Sales_Gen_Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Sales_Gen_Quantity.setBorder(null);
@@ -418,9 +420,9 @@ public class Sale_Stock extends javax.swing.JFrame {
         Sales_Gen_dateRelease.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Sales_Gen_dateRelease, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 220, 31));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
-        jLabel1.setText("AVAILABLE STOCK :");
-        KG2_ADD_STOCK_GENSET.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 130, -1));
+        txtStock.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        txtStock.setText("AVAILABLE STOCK :");
+        KG2_ADD_STOCK_GENSET.add(txtStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 130, -1));
 
         stock.setText("0");
         KG2_ADD_STOCK_GENSET.add(stock, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 50, 140, 20));
@@ -461,7 +463,9 @@ public class Sale_Stock extends javax.swing.JFrame {
     }//GEN-LAST:event_Sales_Gen_PicMouseClicked
 
     private void View_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_BtnMouseClicked
-
+    
+    String Banner = sale_Generator_Banner.getText();
+    if(Banner.equals("GENERATOR")){
     String date_release = Sales_Gen_dateRelease.getText();
         
     String category = Sales_Gen_Category1.getText().toUpperCase(); 
@@ -483,6 +487,10 @@ public class Sale_Stock extends javax.swing.JFrame {
         
     String status = "";
     String  process_id = Integer.toString(Class_Cart.process) ;
+    
+    
+    //total price
+    int total_price = Integer.parseInt(Sales_Gen_Quantity.getText()) * Integer.parseInt(Sales_Gen_Seller_Price.getText());
     
     // payment details
     String quotation = "";
@@ -519,18 +527,21 @@ public class Sale_Stock extends javax.swing.JFrame {
                //update
                 if(!Class_Cart.summary_StockUpdateQuantity(Integer.toString(result), stock_id))
                 {
-                    ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `add_cart` WHERE `STOCK ID`='"+stock_id+"'");
+                    ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY`,`TOTAL PRICE` FROM `add_cart` WHERE `STOCK ID`='"+stock_id+"'");
                     rs = ps.executeQuery();
                     if(rs.next()){
                        String currentQuantity = rs.getString("QUANTITY");
+                       int getCurrentPrice = rs.getInt("TOTAL PRICE");
+                       int update_totalPrice =  getCurrentPrice + Integer.parseInt(Sales_Gen_Seller_Price.getText());
                        int getQuantity = Integer.parseInt(currentQuantity) + Integer.parseInt(Sales_Gen_Quantity.getText());
+                       //JOptionPane.showMessageDialog(null, ""+update_totalPrice);
                        String last = Integer.toString(getQuantity);
-                       if(!Class_Cart.existCartToUpdateQuantity(last, stock_id) && !Class_Cart.existSale_Summary_stockToUpdateQuantity(last, stock_id)){
+                       if(!Class_Cart.existCartToUpdateQuantity(last, update_totalPrice,stock_id) && !Class_Cart.existSale_Summary_stockToUpdateQuantity(last, update_totalPrice,stock_id)){
                             JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
                             Class_Cart.addCart();
                             tbl.Cart();
                             new Class_tables().Stocks();
-                            new Class_tables().Generator();
+                            new Class_tables().SalesStock();
                             dispose();
                             
                        }
@@ -540,13 +551,14 @@ public class Sale_Stock extends javax.swing.JFrame {
            }
            else{
                //insert
-                if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images, quotation,orno,status, process_id) && !Class_Cart.summary_StockUpdateQuantity(Integer.toString(result), stock_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, supplier_id, customer_id, stock_id1, images,quotation,orno,status, process_id) )
+               System.out.println(""+total_price);
+                if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,supplier_id, customer_id, stock_id1, images, quotation,orno,status, process_id) && !Class_Cart.summary_StockUpdateQuantity(Integer.toString(result), stock_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,supplier_id, customer_id, stock_id1, images,quotation,orno,status, process_id) )
                 {
                     JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
                     Class_Cart.addCart();
                     tbl.Cart();
                     new Class_tables().Stocks();
-                    new Class_tables().Generator();
+                    new Class_tables().SalesStock();
                     dispose();
                     
                 }
@@ -557,7 +569,40 @@ public class Sale_Stock extends javax.swing.JFrame {
 
         }
       
-       }
+       }  
+    }
+    
+    
+        if(Banner.equals("REMOVED CART GENERATOR")){
+//            JOptionPane.showMessageDialog(null, "test");
+         String input_quantityRemoved = Sales_Gen_Quantity.getText();
+         String stockRemoved = stock.getText();
+         int result1 = Integer.parseInt(input_quantityRemoved) + Integer.parseInt(totalQuantity); // resultQuantity
+         int resultCartOnlyQuantity = Integer.parseInt(stockRemoved) - Integer.parseInt(input_quantityRemoved);
+            if(resultCartOnlyQuantity == 0){
+                Class_Cart_Remove ccr = new Class_Cart_Remove();
+                if(ccr.quantityCartIsZero(cart_id)){
+                   new Class_tables().Cart();
+                }
+            }
+            
+            if(input_quantityRemoved.equals("")){
+                JOptionPane.showMessageDialog(null, "ENTER QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+            }
+            else if(Integer.parseInt(stockRemoved) + 1  <= Integer.parseInt(input_quantityRemoved)){
+               JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{
+                Class_Cart_Remove ccr = new Class_Cart_Remove();
+                 if(!ccr.Sales_Parts(Integer.toString(result1), Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) ){
+                     new Class_tables().Cart();
+                     new Class_tables().Stocks();
+                     JOptionPane.showMessageDialog(null, "SUCCESSFULLY REMOVED","",JOptionPane.INFORMATION_MESSAGE);
+                     dispose();
+                 }
+            }
+        }
+
    
     }//GEN-LAST:event_View_BtnMouseClicked
 
@@ -590,7 +635,7 @@ public class Sale_Stock extends javax.swing.JFrame {
     private void sale_Generator_BannerAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_sale_Generator_BannerAncestorAdded
     String Banner = sale_Generator_Banner.getText();
     String ids = Webpage.sales_id;
-    
+    String removed_id = Webpage.cart_id;
     if(Banner.equals("GENERATOR"))
     {
         try{
@@ -628,6 +673,43 @@ public class Sale_Stock extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+    
+    if(Banner.equals("REMOVED CART GENERATOR"))
+    {
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `summary_stock` WHERE `ID` = '"+removed_id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            //stock_id.setText(""+rs.getInt("ID")); 
+            stock_id = Integer.toString(rs.getInt("ID"));
+            supplier_id = rs.getString("SUPPLIER ID");
+            System.out.println(""+Generator_id);
+            System.out.println(supplier_id);
+            date = rs.getString("DATE RECEIVED");
+            Sales_Gen_Type.setText(rs.getString("CATEGORY"));
+        
+            Sales_Gen_Band.setText(rs.getString("BRAND"));
+            
+            Sales_Gen_Model.setText(rs.getString("MODEL"));
+            Sales_Gen_kva.setText(rs.getString("KVA"));
+            Sales_Gen_Phasing.setText(rs.getString("PHASING"));
+            Sales_Gen_Type.setText(rs.getString("TYPE"));
+            Supplier_price = rs.getString("SUPPLIER PRICE");
+            Sales_Gen_Seller_Price.setText(rs.getString("SELLER PRICE"));
+            Sales_Gen_Engine.setText(rs.getString("ENGINE S N"));
+            Sales_Gen_Alternator.setText(rs.getString("ALTERNATOR S N"));
+            totalQuantity = rs.getString("QUANTITY");
+            
+            images = rs.getBytes("IMAGE");
+            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sales_Gen_Pic.getWidth(), Sales_Gen_Pic.getHeight(),Image.SCALE_SMOOTH) );
+            Sales_Gen_Pic.setIcon(imageicon);
+         
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }    
         
     }//GEN-LAST:event_sale_Generator_BannerAncestorAdded
 
@@ -708,13 +790,11 @@ public class Sale_Stock extends javax.swing.JFrame {
     public static javax.swing.JTextField Sales_Gen_Type;
     public static javax.swing.JTextField Sales_Gen_dateRelease;
     public static javax.swing.JTextField Sales_Gen_kva;
-    private javax.swing.JLabel View_Btn;
-    private javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel View_Btn;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -724,6 +804,8 @@ public class Sale_Stock extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField8;
     private javax.swing.JLabel other;
     public static javax.swing.JLabel sale_Generator_Banner;
-    private javax.swing.JLabel stock;
+    public static javax.swing.JTextField sell_priceTxt;
+    public static javax.swing.JLabel stock;
+    public static javax.swing.JLabel txtStock;
     // End of variables declaration//GEN-END:variables
 }

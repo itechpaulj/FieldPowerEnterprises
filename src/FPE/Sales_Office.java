@@ -122,7 +122,7 @@ public class Sales_Office extends javax.swing.JFrame {
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
-        Stock_Genset_Update.setText(" ADD");
+        Stock_Genset_Update.setText(" ADD CART");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_UpdateMouseClicked(evt);
@@ -186,6 +186,11 @@ public class Sales_Office extends javax.swing.JFrame {
         sales_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         sales_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sales_quantity.setBorder(null);
+        sales_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                sales_quantityKeyReleased(evt);
+            }
+        });
         KG2_ADD_STOCK_GENSET.add(sales_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 210, 31));
 
         sales_type.setEditable(false);
@@ -199,6 +204,7 @@ public class Sales_Office extends javax.swing.JFrame {
         sales_description.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         KG2_ADD_STOCK_GENSET.add(sales_description, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 210, 31));
 
+        sales_price.setEditable(false);
         sales_price.setBackground(new java.awt.Color(204, 204, 204));
         sales_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         sales_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -209,6 +215,7 @@ public class Sales_Office extends javax.swing.JFrame {
         });
         KG2_ADD_STOCK_GENSET.add(sales_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 210, 31));
 
+        Sales_given.setEditable(false);
         Sales_given.setBackground(new java.awt.Color(204, 204, 204));
         Sales_given.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Sales_given.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -408,6 +415,17 @@ public class Sales_Office extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_sales_priceActionPerformed
 
+    private void sales_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sales_quantityKeyReleased
+        try{
+            String number  = sales_quantity.getText() ;
+            int inputQuantity = Integer.parseInt(sales_quantity.getText());
+           
+        }
+        catch(NumberFormatException  e){
+           sales_quantity.setText("");
+        }
+    }//GEN-LAST:event_sales_quantityKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -454,7 +472,7 @@ public class Sales_Office extends javax.swing.JFrame {
     private javax.swing.JLabel Stock_Genset_Update;
     public static javax.swing.JLabel View_Office_Display;
     public static javax.swing.JLabel View_Office_pic;
-    public static javax.swing.JTextField View_Parts_Quantity;
+    private javax.swing.JTextField View_Parts_Quantity;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;

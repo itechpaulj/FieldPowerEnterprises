@@ -716,75 +716,47 @@ setLocationRelativeTo(null);
            {
                 JOptionPane.showMessageDialog(null, "CUSTOMER EMPTY FIELDS! ","",JOptionPane.INFORMATION_MESSAGE);
            }else{
-                    if(getCategory == "GENERATOR"){
-                      if(d_orno.equals(b_orno)){
-                          if(!cp.process_balanced(b_amount, cashCheckedBalanced, b_bank, b_date, b_orno, cus_quotation) && !cp.process_downpayment(d_amount, cashCheckedDownpayment, d_bank, d_date, d_orno, cus_quotation) &&!cp.process_customer_info(cus_name, cus_add, cus_contact, cus_po, cus_poDate, cus_quotation, cus_quotationDate, b_orno,agent_name,agent_contact, cus_remarks) && !cp.process_cart_delete() && !new Class_Process().updateProcess(cus_id,cus_quotation,b_orno,getCart)){
-                             JOptionPane.showMessageDialog(null, "TRANSACTION HAS BEEN PROCESSED.","",JOptionPane.INFORMATION_MESSAGE);
-                              new Class_tables().Cart();
-                              try{
+                if(d_orno.equals(b_orno)){
 
-                               JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/quotation_genset.jrxml");
-                               String sql = "SELECT `ID`, `DATE RELEASE`, `CATEGORY`,`MODEL`, CONCAT('QUOATION FOR BRAND',`KVA`,' ',`BRAND`,' ',`MODEL`) AS `SUBJECT`, `PHASING`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, (SELECT `NAME` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER NAME`,(SELECT `ADDRESS` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER ADDRESS` ,CONCAT(`KVA`,' ',`BRAND`,' ',`KVA`) AS `TITLE`,`IMAGE`, `QUOTATION`, `OR NO`, `STATUS`, `PROCESS` FROM `sale_summary_stock` WHERE `CATEGORY`='GENERATOR' ORDER BY `ID` DESC LIMIT 1";
-                               JRDesignQuery jrdesignquery = new JRDesignQuery();
-                               jrdesignquery.setText(sql);
-                               jasperdesign.setQuery(jrdesignquery);
-                               JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+                  //JOptionPane.showMessageDialog(null, "PARTS");
+                  if(d_orno.equals(b_orno)){
+                      if(!cp.process_balanced(b_amount, cashCheckedBalanced, b_bank, b_date, b_orno, cus_quotation) && !cp.process_downpayment(d_amount, cashCheckedDownpayment, d_bank, d_date, d_orno, cus_quotation) && !cp.process_customer_info(cus_name, cus_add, cus_contact, cus_po, cus_poDate, cus_quotation, cus_quotationDate, b_orno,agent_name,agent_contact, cus_remarks) && !cp.process_cart_delete() && !new Class_Process().updateProcess(cus_id,cus_quotation,b_orno,getCart)){
+                          JOptionPane.showMessageDialog(null, "TRANSACTION HAS BEEN PROCESSED.","",JOptionPane.INFORMATION_MESSAGE);
+                          new Class_tables().Cart();
+                        try{
+                         new Class_tables().Cart();
+                         new Class_tables().SalesStock();
+                         JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/quotation.jrxml");
+                         String sql = "SELECT `ID`,`CATEGORY`,CONCAT(`BRAND`,' ',`MODEL`, ' ',`KVA`, ' ',`PHASING`) AS `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `QUOTATION`, `OR NO`,(SELECT `NAME` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER NAME`,(SELECT `ADDRESS` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER ADDRESS` FROM `sale_summary_stock` WHERE `PROCESS`='"+getCart+"'";
+                         JRDesignQuery jrdesignquery = new JRDesignQuery();
+                         jrdesignquery.setText(sql);
+                         jasperdesign.setQuery(jrdesignquery);
+                         JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
 
-                               HashMap<String, Object> params = new HashMap<String, Object>();
-                               BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
-                               params.put("logo", image );
-                               params.put("agent_name", agent_name );
-                               params.put("agent_contact", agent_contact);
-                               JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
-                               JasperViewer.viewReport(jasperprint, false);
+                         HashMap<String, Object> params = new HashMap<String, Object>();
+                         BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+                         params.put("logo", image );
+                         params.put("cus_name", cus_name );
+                         params.put("cus_add", cus_add );
+                         params.put("subject", "GENSET / PARTS" );
+                         params.put("agent_name", agent_name );
+                         params.put("agent_contact", agent_contact);
+                         params.put("quot", cus_quotation);
+                         params.put("counted_process", getCart);
+                         JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+                         JasperViewer.viewReport(jasperprint, false);
 
-                               }
-                               catch(Exception e){
-                                   System.out.println(e.getMessage());
-                                   JOptionPane.showMessageDialog(null, e.getMessage());
-                               } 
-                          }
+                         }
+                         catch(Exception e){
+                             System.out.println(e.getMessage());
+                             JOptionPane.showMessageDialog(null, e.getMessage());
+                         }                                
                       }
-                      else{
-                          JOptionPane.showMessageDialog(null, "CAN'T SAME VALUE WITH [OR NO] - FOR DOWNPAYMENT AND BALANCED","",JOptionPane.INFORMATION_MESSAGE);
-                      }
-                    }
-                    else if(getCategory == "PARTS"){
-                        //JOptionPane.showMessageDialog(null, "PARTS");
-                        if(d_orno.equals(b_orno)){
-                            if(!cp.process_balanced(b_amount, cashCheckedBalanced, b_bank, b_date, b_orno, cus_quotation) && !cp.process_downpayment(d_amount, cashCheckedDownpayment, d_bank, d_date, d_orno, cus_quotation) &&!cp.process_customer_info(cus_name, cus_add, cus_contact, cus_po, cus_poDate, cus_quotation, cus_quotationDate, b_orno,agent_name,agent_contact, cus_remarks) && !cp.process_cart_delete() && !new Class_Process().updateProcess(cus_id,cus_quotation,b_orno,getCart)){
-                                JOptionPane.showMessageDialog(null, "TRANSACTION HAS BEEN PROCESSED.","",JOptionPane.INFORMATION_MESSAGE);
-                                new Class_tables().Cart();
-                              try{
-
-                               JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/quotation_parts.jrxml");
-                               String sql = "SELECT (`BRAND`) AS `DESCRIPTION`, `TYPE`, `SELLER PRICE`, `QUANTITY`, (`SELLER PRICE`*`QUANTITY`) AS `TOTAL PRICE`, `QUOTATION`, `OR NO`,(SELECT `NAME` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER NAME`,(SELECT `ADDRESS` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER ADDRESS` FROM `sale_summary_stock` WHERE `CATEGORY`='PARTS' AND `PROCESS`='"+getCart+"'";
-                               JRDesignQuery jrdesignquery = new JRDesignQuery();
-                               jrdesignquery.setText(sql);
-                               jasperdesign.setQuery(jrdesignquery);
-                               JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
-
-                               HashMap<String, Object> params = new HashMap<String, Object>();
-                               BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
-                               params.put("logo", image );
-                               params.put("cus_name", cus_name );
-                               params.put("cus_add", cus_add );
-                               params.put("subject", "FILTER / PARTS" );
-                               params.put("agent_name", agent_name );
-                                params.put("agent_contact", agent_contact);
-                               params.put("quot", cus_quotation);
-                               params.put("counted_process", getCart);
-                               JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
-                               JasperViewer.viewReport(jasperprint, false);
-
-                               }
-                               catch(Exception e){
-                                   System.out.println(e.getMessage());
-                                   JOptionPane.showMessageDialog(null, e.getMessage());
-                               }                                
-                            }
-                        }
-                    }               
+                  }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"PLEASE CHECK SAME VALUE IN [OR NO]","",JOptionPane.INFORMATION_MESSAGE);
+                }
            }
 
            
