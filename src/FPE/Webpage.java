@@ -1283,6 +1283,7 @@ public class Webpage extends javax.swing.JFrame {
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         OW_STOCK_4.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, 35, 31));
 
+        jTextField12.setEditable(false);
         jTextField12.setBackground(new java.awt.Color(102, 255, 255));
         jTextField12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
