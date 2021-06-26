@@ -52,10 +52,8 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
         Insert_Wh_date = new datechooser.beans.DateChooserCombo();
         Insert_Wh_Type = new javax.swing.JComboBox<>();
-        Insert_Wh_quantity = new javax.swing.JTextField();
         Insert_Wh_Category = new javax.swing.JTextField();
         Insert_Wh_Brand = new javax.swing.JTextField();
-        Insert_Wh_price = new javax.swing.JTextField();
         Insert_Wh_remarks = new javax.swing.JTextField();
         Insert_Wh_incharge = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
@@ -71,6 +69,8 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
         Stock_Genset_Back = new javax.swing.JLabel();
         Insert_Wh_pic = new javax.swing.JLabel();
+        Insert_Wh_quantity = new javax.swing.JTextField();
+        Insert_Wh_price = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -109,11 +109,6 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         Insert_Wh_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Wh_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 210, 30));
 
-        Insert_Wh_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Wh_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Insert_Wh_quantity.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 210, 30));
-
         Insert_Wh_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Wh_Category.setText("WAREHOUSE");
@@ -124,16 +119,6 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         Insert_Wh_Brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Wh_Brand.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Wh_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 210, 30));
-
-        Insert_Wh_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Wh_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Insert_Wh_price.setBorder(null);
-        Insert_Wh_price.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Insert_Wh_priceActionPerformed(evt);
-            }
-        });
-        KG2_ADD_STOCK_GENSET.add(Insert_Wh_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 210, 30));
 
         Insert_Wh_remarks.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -286,6 +271,34 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         });
         KG2_ADD_STOCK_GENSET.add(Insert_Wh_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 280, 180));
 
+        Insert_Wh_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Insert_Wh_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Insert_Wh_quantity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Insert_Wh_quantityActionPerformed(evt);
+            }
+        });
+        Insert_Wh_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Insert_Wh_quantityKeyReleased(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 210, 30));
+
+        Insert_Wh_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Insert_Wh_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Insert_Wh_price.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Insert_Wh_priceActionPerformed(evt);
+            }
+        });
+        Insert_Wh_price.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Insert_Wh_priceKeyReleased(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(Insert_Wh_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 210, 30));
+
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 750, 550));
 
         pack();
@@ -328,7 +341,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
     String seller_price = Insert_Wh_price.getText();
     String quantity = Insert_Wh_quantity.getText();
     String remarks = Insert_Wh_remarks.getText();
-    String person_in_charge= Insert_Wh_incharge.getText();
+    //String person_in_charge= Insert_Wh_incharge.getText();
     
     String supplier_name = "";
     String model="";
@@ -340,7 +353,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
     String kva="";
     String id = "";
     Class_tables ct = new Class_tables();
-        if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks,supplier_name,id, images))
+        if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks,supplier_name,id, images))
         {
             ct.Stocks();
             JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
@@ -379,9 +392,28 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Inventory_DisplayAncestorAdded
 
+    private void Insert_Wh_quantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Insert_Wh_quantityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Insert_Wh_quantityActionPerformed
+
     private void Insert_Wh_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Insert_Wh_priceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Insert_Wh_priceActionPerformed
+
+    private void Insert_Wh_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Wh_priceKeyReleased
+        try{
+            String number  = Insert_Wh_price.getText() ;
+            int inputQuantity = Integer.parseInt(Insert_Wh_price.getText());
+            
+        }
+        catch(NumberFormatException  e){
+           Insert_Wh_price.setText("");
+        }
+    }//GEN-LAST:event_Insert_Wh_priceKeyReleased
+
+    private void Insert_Wh_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Wh_quantityKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Insert_Wh_quantityKeyReleased
 
     /**
      * @param args the command line arguments
@@ -440,8 +472,8 @@ public class Insert_Warehouse extends javax.swing.JFrame {
     public static datechooser.beans.DateChooserCombo Insert_Wh_date;
     public static javax.swing.JTextField Insert_Wh_incharge;
     public static javax.swing.JLabel Insert_Wh_pic;
-    public static javax.swing.JTextField Insert_Wh_price;
-    public static javax.swing.JTextField Insert_Wh_quantity;
+    private javax.swing.JTextField Insert_Wh_price;
+    private javax.swing.JTextField Insert_Wh_quantity;
     public static javax.swing.JTextField Insert_Wh_remarks;
     public static javax.swing.JLabel Inventory_Display;
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;

@@ -69,6 +69,9 @@ public class Webpage extends javax.swing.JFrame {
     //String request_category = null;
     public static String request_quantity = null;
     
+    
+    //Request
+    public static String Warehouse_Office_CategorySet = null;
     //============end
     public Webpage() {
        initComponents();
@@ -79,13 +82,13 @@ public class Webpage extends javax.swing.JFrame {
         Warehouse_Office_Category.setSelectedIndex(0);
         Cart_Warehouse_Office_Category.setSelectedIndex(0);
         AllTable();
-        request_category.setVisible(false);
+       // request_category.setVisible(false);
     }
 
 
     private void all_stock(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`,`REMARKS`, `SUPPLIER` FROM `summary_stock`");
         ResultSet rs = ps.executeQuery();
         All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
         All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -130,7 +133,7 @@ public class Webpage extends javax.swing.JFrame {
     private void request(){
     //SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='PARTS' OR `CATEGORY`='OFFICE' OR `CATEGORY`='WAREHOUSE'    
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='PARTS' OR `CATEGORY`='OFFICE' OR `CATEGORY`='WAREHOUSE'");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='PARTS' OR `CATEGORY`='OFFICE' OR `CATEGORY`='WAREHOUSE'");
         ResultSet rs = ps.executeQuery();
         office_warehouse_Table.setModel(DbUtils.resultSetToTableModel(rs));
         office_warehouse_Table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -1249,7 +1252,7 @@ public class Webpage extends javax.swing.JFrame {
         OW_STOCK_4.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 240, 31));
 
         Warehouse_Office_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Warehouse_Office_Category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALL STOCK", "WAREHOUSE", "OFFICE" }));
+        Warehouse_Office_Category.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALL STOCK", "PARTS", "WAREHOUSE", "OFFICE" }));
         Warehouse_Office_Category.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Warehouse_Office_CategoryActionPerformed(evt);
@@ -1912,12 +1915,38 @@ public class Webpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Cart_CategoryActionPerformed
 
     private void Shop_Add6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add6MouseClicked
-//        if(request_category == "OFFICE"){
-//            
-//        }
-//        else if(request_category == "PARTS"){
-//            
-//        }
+
+        if(Warehouse_Office_CategorySet.equals("PARTS")){
+           // JOptionPane.showMessageDialog(null, "PARTS");
+           Sales_Parts sp = new Sales_Parts();
+           Sales_Parts.View_Parts_Display.setText("REQUEST PARTS");
+           Sales_Parts.tp_txt.setText("PERSON IN CHARGE");
+           Sales_Parts.Quantity1.setEditable(true);
+           Sales_Parts.Quantity1.setBackground(new Color(255, 255, 255));
+           Sales_Parts.Stock_Genset_Update.setText("REQUEST");
+           sp.setVisible(true);
+        }
+        else if(Warehouse_Office_CategorySet.equals("OFFICE")){
+//           Sales_Parts sp = new Sales_Parts();
+//           Sales_Parts.View_Parts_Display.setText("REQUEST PARTS");
+//           Sales_Parts.tp_txt.setText("PERSON IN CHARGE");
+//           Sales_Parts.Quantity1.setEditable(true);
+//           Sales_Parts.Quantity1.setBackground(new Color(255, 255, 255));
+//           Sales_Parts.Stock_Genset_Update.setText("REQUEST");
+//           sp.setVisible(true);
+        }
+        else if(Warehouse_Office_CategorySet.equals("WAREHOUSE")){
+           Sales_Warehouse sw = new Sales_Warehouse();
+           Sales_Warehouse.View_WH_Display.setText("REQUEST WAREHOUSE");
+           Sales_Warehouse.w_tp.setText("PERSON IN CHARGE");
+           Sales_Warehouse.View_Wh_totalprice.setEditable(true);
+           Sales_Warehouse.View_Wh_totalprice.setBackground(new Color(255, 255, 255));
+           Sales_Warehouse.Stock_Genset_Update.setText("REQUEST");
+           sw.setVisible(true);
+        }
+        else{
+            //nothing
+        }
     }//GEN-LAST:event_Shop_Add6MouseClicked
 
     private void Shop_Add6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add6MouseEntered
@@ -1936,7 +1965,11 @@ public class Webpage extends javax.swing.JFrame {
         String cart_car = Warehouse_Office_Category.getSelectedItem().toString();
        if(cart_car.equals("ALL STOCK")){
           Show_OW.Sales_OW();
-       }else if(cart_car.equals("WAREHOUSE")){
+       }
+       else if(cart_car.equals("PARTS")){
+          Show_OW.Sales_PW();  
+       }
+       else if(cart_car.equals("WAREHOUSE")){
           Show_OW.Sales_WareHouse();
        }else if(cart_car.equals("OFFICE")){
           Show_OW.Sales_Office();  
@@ -1947,7 +1980,9 @@ public class Webpage extends javax.swing.JFrame {
         int i=office_warehouse_Table.getSelectedRow();
         TableModel model = office_warehouse_Table.getModel();
         request_id = model.getValueAt(i,0).toString();
-        //request_category = model.getValueAt(i,3).toString(); 
+        Warehouse_Office_CategorySet = model.getValueAt(i,2).toString(); 
+
+        
     }//GEN-LAST:event_office_warehouse_TableMouseClicked
 
     private void Shop_Add7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add7MouseClicked
@@ -2030,7 +2065,7 @@ public class Webpage extends javax.swing.JFrame {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
-        String sql = "SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE  `ID` LIKE '%"+searched_all_stock.getText()+"%' OR `DATE RECEIVED` LIKE '%"+searched_all_stock.getText()+"%' OR `CATEGORY` LIKE '%"+searched_all_stock.getText()+"%' OR `BRAND` LIKE '%"+searched_all_stock.getText()+"%' OR `MODEL` LIKE '%"+searched_all_stock.getText()+"%' OR `KVA` LIKE '%"+searched_all_stock.getText()+"%' OR `PHASING` LIKE '%"+searched_all_stock.getText()+"%' OR `TYPE` LIKE '%"+searched_all_stock.getText()+"%' OR `SUPPLIER PRICE` LIKE '%"+searched_all_stock.getText()+"%' OR `SELLER PRICE` LIKE '%"+searched_all_stock.getText()+"%' OR `ENGINE S N` LIKE '%"+searched_all_stock.getText()+"%' OR `ALTERNATOR S N` LIKE '%"+searched_all_stock.getText()+"%' OR `QUANTITY` LIKE '%"+searched_all_stock.getText()+"%' OR `PERSON IN CHARGE` LIKE '%"+searched_all_stock+"%' OR `REMARKS` LIKE '%"+searched_all_stock.getText()+"%' OR `SUPPLIER` LIKE '%"+searched_all_stock.getText()+"%'";
+        String sql = "SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE  `ID` LIKE '%"+searched_all_stock.getText()+"%' OR `DATE RECEIVED` LIKE '%"+searched_all_stock.getText()+"%' OR `CATEGORY` LIKE '%"+searched_all_stock.getText()+"%' OR `BRAND` LIKE '%"+searched_all_stock.getText()+"%' OR `MODEL` LIKE '%"+searched_all_stock.getText()+"%' OR `KVA` LIKE '%"+searched_all_stock.getText()+"%' OR `PHASING` LIKE '%"+searched_all_stock.getText()+"%' OR `TYPE` LIKE '%"+searched_all_stock.getText()+"%' OR `SUPPLIER PRICE` LIKE '%"+searched_all_stock.getText()+"%' OR `SELLER PRICE` LIKE '%"+searched_all_stock.getText()+"%' OR `ENGINE S N` LIKE '%"+searched_all_stock.getText()+"%' OR `ALTERNATOR S N` LIKE '%"+searched_all_stock.getText()+"%' OR `QUANTITY` LIKE '%"+searched_all_stock.getText()+"%' OR `REMARKS` LIKE '%"+searched_all_stock.getText()+"%' OR `SUPPLIER` LIKE '%"+searched_all_stock.getText()+"%'";
         ps = FPE_DB.getConnection().prepareStatement(sql);
         rs = ps.executeQuery();
         All_Stock_Table.setModel(net.proteanit.sql.DbUtils.resultSetToTableModel(rs));

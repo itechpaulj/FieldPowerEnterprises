@@ -137,12 +137,12 @@ public class Sale_Stock extends javax.swing.JFrame {
         sale_Generator_Banner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sale_Generator_Banner.setText("GENERATOR");
         sale_Generator_Banner.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 sale_Generator_BannerAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(sale_Generator_Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 890, 80));
@@ -475,12 +475,12 @@ public class Sale_Stock extends javax.swing.JFrame {
     String phasing = Sales_Gen_Phasing.getText().toUpperCase();
     String type = Sales_Gen_Type.getText().toUpperCase(); 
     String supplier_price = Supplier_price ;
-        
+    
     String seller_price = Sales_Gen_Seller_Price.getText().toUpperCase(); 
     String engine_sn = Sales_Gen_Engine.getText().toUpperCase();
     String alternator_sn = Sales_Gen_Alternator.getText().toUpperCase();
     String quantity=Sales_Gen_Quantity.getText();
-        
+    String person_in_charge = "";
   
     String customer_id = "";
     String stock_id1 = stock_id;
@@ -552,7 +552,7 @@ public class Sale_Stock extends javax.swing.JFrame {
            else{
                //insert
                System.out.println(""+total_price);
-                if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,supplier_id, customer_id, stock_id1, images, quotation,orno,status, process_id) && !Class_Cart.summary_StockUpdateQuantity(Integer.toString(result), stock_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,supplier_id, customer_id, stock_id1, images,quotation,orno,status, process_id) )
+                if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,person_in_charge,supplier_id, customer_id, stock_id1, images, quotation,orno,status, process_id) && !Class_Cart.summary_StockUpdateQuantity(Integer.toString(result), stock_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,person_in_charge,supplier_id, customer_id, stock_id1, images,quotation,orno,status, process_id) )
                 {
                     JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
                     Class_Cart.addCart();

@@ -451,13 +451,13 @@ public class View_Parts extends javax.swing.JFrame {
     
     String model="";
     String phasing="";
-    String person_in_charge="";
+    //String person_in_charge="";
     String supplier_price="";
     String engine_sn="";
     String alternator_sn="";
     String kva="";
     Class_tables ct = new Class_tables();
-    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,Supplier_id, images, Parts_id))
+    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks, supplier_name,Supplier_id, images, Parts_id))
     {
         ct.Stocks();
         JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);

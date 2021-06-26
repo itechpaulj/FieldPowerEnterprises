@@ -339,7 +339,7 @@ public class View_Office extends javax.swing.JFrame {
     String seller_price = View_Office_Price.getText();
     String quantity = View_Office_quantity.getText();
     String remarks = View_Office_Remarks.getText();
-    String person_in_charge = View_Office_Incharges.getText();
+    //String person_in_charge = View_Office_Incharges.getText();
     String id = "";
     String supplier_name = "";
     String supplier_address = "";
@@ -352,7 +352,7 @@ public class View_Office extends javax.swing.JFrame {
     String alternator_sn="";
     String kva="";
     Class_tables ct = new Class_tables();
-    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,id, images, Office_id))
+    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks, supplier_name,id, images, Office_id))
     {
         ct.Stocks();
         JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);

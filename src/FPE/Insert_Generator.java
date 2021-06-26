@@ -579,6 +579,11 @@ public class Insert_Generator extends javax.swing.JFrame {
     Insert_Gen_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
     Insert_Gen_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
     Insert_Gen_quantity.setBorder(null);
+    Insert_Gen_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            Insert_Gen_quantityKeyReleased(evt);
+        }
+    });
     KG2_ADD_STOCK_GENSET.add(Insert_Gen_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 40, 220, 31));
 
     jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " GENERATOR INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
@@ -635,7 +640,7 @@ public class Insert_Generator extends javax.swing.JFrame {
     String alternator_sn = Insert_Gen_Alternator.getText().toUpperCase();
     String remarks = Insert_Gen_Remarks.getText().toUpperCase();
     
-    String person_in_charge = "";
+    //String person_in_charge = "";
     String quantity = Insert_Gen_quantity.getText();
    
     
@@ -651,7 +656,7 @@ public class Insert_Generator extends javax.swing.JFrame {
     if(supplier_name.equals("") || supplier_address.equals("") || supplier_email.equals("") || supplier_contact.equals("") ){
         JOptionPane.showMessageDialog(null, "Please Fill in Supplier!","",JOptionPane.INFORMATION_MESSAGE);
     }
-    else if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks,supplier_name,Supplier_id, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
+    else if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks,supplier_name,Supplier_id, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
     {
         ct.Stocks();
         ct.Generator();
@@ -857,6 +862,16 @@ public class Insert_Generator extends javax.swing.JFrame {
     private void Insert_Gen_Seller_PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Insert_Gen_Seller_PriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Insert_Gen_Seller_PriceActionPerformed
+
+    private void Insert_Gen_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Gen_quantityKeyReleased
+        try{
+            String number  = Insert_Gen_quantity.getText() ;
+            int inputQuantity = Integer.parseInt(Insert_Gen_quantity.getText());
+        }
+        catch(NumberFormatException  e){
+           Insert_Gen_quantity.setText("");
+        }
+    }//GEN-LAST:event_Insert_Gen_quantityKeyReleased
 
     /**
      * @param args the command line arguments

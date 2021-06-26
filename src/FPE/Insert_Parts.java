@@ -263,6 +263,11 @@ public class Insert_Parts extends javax.swing.JFrame {
         Insert_Parts_Quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Parts_Quantity.setBorder(null);
+        Insert_Parts_Quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Insert_Parts_QuantityKeyReleased(evt);
+            }
+        });
         KG2_ADD_STOCK_GENSET.add(Insert_Parts_Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 210, 30));
 
         Insert_Parts_Category.setEditable(false);
@@ -283,6 +288,11 @@ public class Insert_Parts extends javax.swing.JFrame {
         Insert_Parts_Price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Insert_Parts_PriceActionPerformed(evt);
+            }
+        });
+        Insert_Parts_Price.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Insert_Parts_PriceKeyReleased(evt);
             }
         });
         KG2_ADD_STOCK_GENSET.add(Insert_Parts_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 210, 30));
@@ -445,7 +455,7 @@ public class Insert_Parts extends javax.swing.JFrame {
     
     String model="";
     String phasing="";
-    String person_in_charge="";
+    //String person_in_charge="";
     String supplier_price="";
     String engine_sn="";
     String alternator_sn="";
@@ -455,7 +465,7 @@ public class Insert_Parts extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "SUPPLIER EMPTY FIELDS","",JOptionPane.INFORMATION_MESSAGE);
         ct.Stocks();
     }
-    else if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks,supplier_name,Supplier_id, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
+    else if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks,supplier_name,Supplier_id, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
     {
         ct.Stocks();
         JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
@@ -506,6 +516,26 @@ public class Insert_Parts extends javax.swing.JFrame {
     private void Insert_Parts_PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Insert_Parts_PriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Insert_Parts_PriceActionPerformed
+
+    private void Insert_Parts_PriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Parts_PriceKeyReleased
+        try{
+            String number  = Insert_Parts_Price.getText() ;
+            int inputQuantity = Integer.parseInt(Insert_Parts_Price.getText());
+        }
+        catch(NumberFormatException  e){
+           Insert_Parts_Price.setText("");
+        }
+    }//GEN-LAST:event_Insert_Parts_PriceKeyReleased
+
+    private void Insert_Parts_QuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Parts_QuantityKeyReleased
+        try{
+            String number  = Insert_Parts_Quantity.getText() ;
+            
+        }
+        catch(NumberFormatException  e){
+           Insert_Parts_Quantity.setText("");
+        }
+    }//GEN-LAST:event_Insert_Parts_QuantityKeyReleased
 
     /**
      * @param args the command line arguments

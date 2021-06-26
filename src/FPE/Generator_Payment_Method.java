@@ -543,7 +543,7 @@ public class Generator_Payment_Method extends javax.swing.JFrame {
     String engine_sn = Insert_Gen_Engine.getText().toUpperCase();
     String alternator_sn = Insert_Gen_Alternator.getText().toUpperCase();
     String remarks = Insert_Gen_Remarks.getText().toUpperCase();
-    String person_in_charge = "";
+   // String person_in_charge = "";
     String quantity = "";
    
     
@@ -554,7 +554,7 @@ public class Generator_Payment_Method extends javax.swing.JFrame {
     String supplier_email = Insert_Gen_Supplier_Email.getText();
     String supplier_contact = Insert_Gen_Supplier_Contact.getText();
 //    String supplier_
-    if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks,supplier_name,Supplier_id, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
+    if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks,supplier_name,Supplier_id, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
     {
         JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
     }else{

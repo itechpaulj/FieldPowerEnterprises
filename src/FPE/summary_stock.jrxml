@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c0442c89-f9ca-4c59-af2c-cb69f92a4b4b">
-	<property name="ireport.zoom" value="3.0"/>
-	<property name="ireport.x" value="1416"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="logo" class="java.lang.Object" isForPrompting="false"/>
 	<parameter name="searched" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE  `ID` LIKE '%"+jTextField1.getText()+"%' OR `DATE RECEIVED` LIKE '%'||'$P!{searched}'||'%' OR `CATEGORY` LIKE '%'||'$P!{searched}'||'%' OR `BRAND` LIKE '%'||'$P!{searched}'||'%' OR `MODEL` LIKE '%'||'$P!{searched}'||'%' OR `KVA` LIKE '%'||'$P!{searched}'||'%' OR `PHASING` LIKE '%'||'$P!{searched}'||'%' OR `TYPE` LIKE '%'||'$P!{searched}'||'%' OR `SUPPLIER PRICE` LIKE '%'||'$P!{searched}'||'%' OR `SELLER PRICE` LIKE '%'||'$P!{searched}'||'%' OR `ENGINE S N` LIKE '%'||'$P!{searched}'||'%' OR `ALTERNATOR S N` LIKE '%'||'$P!{searched}'||'%' OR `QUANTITY` LIKE '%'||'$P!{searched}'||'%' OR `PERSON IN CHARGE` LIKE '%'||'$P!{searched}'||'%' OR `REMARKS` LIKE '%'||'$P!{searched}'||'%' OR `SUPPLIER` LIKE '%'||'$P!{searched}'||'%']]>
+		<![CDATA[SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE  `ID` LIKE '%"+jTextField1.getText()+"%' OR `DATE RECEIVED` LIKE '%'||'$P!{searched}'||'%' OR `CATEGORY` LIKE '%'||'$P!{searched}'||'%' OR `BRAND` LIKE '%'||'$P!{searched}'||'%' OR `MODEL` LIKE '%'||'$P!{searched}'||'%' OR `KVA` LIKE '%'||'$P!{searched}'||'%' OR `PHASING` LIKE '%'||'$P!{searched}'||'%' OR `TYPE` LIKE '%'||'$P!{searched}'||'%' OR `SUPPLIER PRICE` LIKE '%'||'$P!{searched}'||'%' OR `SELLER PRICE` LIKE '%'||'$P!{searched}'||'%' OR `ENGINE S N` LIKE '%'||'$P!{searched}'||'%' OR `ALTERNATOR S N` LIKE '%'||'$P!{searched}'||'%' OR `QUANTITY` LIKE '%'||'$P!{searched}'||'%' OR `REMARKS` LIKE '%'||'$P!{searched}'||'%' OR `SUPPLIER` LIKE '%'||'$P!{searched}'||'%']]>
 	</queryString>
 	<field name="ID" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -45,9 +45,6 @@
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="QUANTITY" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="PERSON IN CHARGE" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="REMARKS" class="java.lang.String">
@@ -108,7 +105,7 @@
 	<columnHeader>
 		<band height="22" splitType="Stretch">
 			<staticText>
-				<reportElement x="94" y="2" width="72" height="20" uuid="7e694725-92ba-4dc3-90ee-8486e7c4d62a"/>
+				<reportElement x="46" y="2" width="72" height="20" uuid="7e694725-92ba-4dc3-90ee-8486e7c4d62a"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -121,20 +118,7 @@
 				<text><![CDATA[ CATEGORY]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="2" width="48" height="20" uuid="37b73377-168c-482d-82d1-6a670358f721"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement>
-					<font fontName="Arial" isBold="true" isItalic="false"/>
-				</textElement>
-				<text><![CDATA[ ID]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="48" y="2" width="46" height="20" uuid="657095d6-c682-4ddd-b6b2-dbae2b7db0ed"/>
+				<reportElement x="0" y="2" width="46" height="20" uuid="657095d6-c682-4ddd-b6b2-dbae2b7db0ed"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -147,7 +131,7 @@
 				<text><![CDATA[ DATE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="166" y="2" width="41" height="20" uuid="74c86979-b6de-449a-a4ad-17d81bddc5df"/>
+				<reportElement x="118" y="2" width="74" height="20" uuid="74c86979-b6de-449a-a4ad-17d81bddc5df"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -160,7 +144,7 @@
 				<text><![CDATA[ BRAND]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="207" y="2" width="42" height="20" uuid="35acfc7e-796a-49be-848e-08f8b245371c"/>
+				<reportElement x="192" y="2" width="70" height="20" uuid="35acfc7e-796a-49be-848e-08f8b245371c"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -173,7 +157,7 @@
 				<text><![CDATA[ MODEL]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="249" y="2" width="43" height="20" uuid="20c02d57-b0b1-4067-b22c-ceeacfd50060"/>
+				<reportElement x="262" y="2" width="59" height="20" uuid="20c02d57-b0b1-4067-b22c-ceeacfd50060"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -186,7 +170,7 @@
 				<text><![CDATA[ KVA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="292" y="2" width="50" height="20" uuid="235efbae-d350-4b3e-9bea-452f8da43307"/>
+				<reportElement x="321" y="2" width="58" height="20" uuid="235efbae-d350-4b3e-9bea-452f8da43307"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -199,7 +183,7 @@
 				<text><![CDATA[ PHASING]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="342" y="2" width="40" height="20" uuid="bf0a3eb7-d2db-47d7-9727-53e6c70a3aa7"/>
+				<reportElement x="379" y="2" width="55" height="20" uuid="bf0a3eb7-d2db-47d7-9727-53e6c70a3aa7"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -212,7 +196,7 @@
 				<text><![CDATA[ TYPE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="382" y="2" width="85" height="20" uuid="66485497-486d-4338-8f29-d863f65e5858"/>
+				<reportElement x="434" y="2" width="85" height="20" uuid="66485497-486d-4338-8f29-d863f65e5858"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -225,7 +209,7 @@
 				<text><![CDATA[SUPPLIER PRICE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="467" y="2" width="76" height="20" uuid="faddf5e7-096f-4f9a-bc4f-1a9c4a6f882a"/>
+				<reportElement x="519" y="2" width="76" height="20" uuid="faddf5e7-096f-4f9a-bc4f-1a9c4a6f882a"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -238,7 +222,7 @@
 				<text><![CDATA[SELLER PRICE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="543" y="2" width="52" height="20" uuid="eb8c8c32-7fc3-459e-922b-608f8ab3dc38"/>
+				<reportElement x="595" y="2" width="52" height="20" uuid="eb8c8c32-7fc3-459e-922b-608f8ab3dc38"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -249,19 +233,6 @@
 					<font fontName="Arial" isBold="true" isItalic="false"/>
 				</textElement>
 				<text><![CDATA[QUANTITY]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="595" y="2" width="52" height="20" uuid="5bf64ff8-7c63-4457-a115-6a5f0743f1d6"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement>
-					<font fontName="Arial" isBold="true" isItalic="false"/>
-				</textElement>
-				<text><![CDATA[ PERSON]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="647" y="2" width="51" height="20" uuid="223f7187-1d21-49cc-a6bc-8516142d7745"/>
@@ -294,7 +265,7 @@
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement x="94" y="0" width="72" height="20" uuid="759adbf5-742b-410f-b10c-b28d402ad3d0"/>
+				<reportElement x="46" y="0" width="72" height="20" uuid="759adbf5-742b-410f-b10c-b28d402ad3d0"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -305,18 +276,7 @@
 				<textFieldExpression><![CDATA[$F{CATEGORY}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="0" width="48" height="20" uuid="64cf5308-cb1a-4d5a-b7b1-85dcee8a7384"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textFieldExpression><![CDATA[$F{ID}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="48" y="0" width="46" height="20" uuid="f53737a8-8cd8-4d76-9404-c88a03476d77"/>
+				<reportElement x="0" y="0" width="46" height="20" uuid="f53737a8-8cd8-4d76-9404-c88a03476d77"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -327,7 +287,7 @@
 				<textFieldExpression><![CDATA[$F{DATE RECEIVED}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="166" y="0" width="41" height="20" uuid="ab645977-4258-4249-ac8b-c37e1aa4ee38"/>
+				<reportElement x="118" y="0" width="74" height="20" uuid="ab645977-4258-4249-ac8b-c37e1aa4ee38"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -338,7 +298,7 @@
 				<textFieldExpression><![CDATA[$F{BRAND}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="207" y="0" width="42" height="20" uuid="5ea3042c-8155-461e-bfa4-49ef8bdd59e4"/>
+				<reportElement x="192" y="0" width="70" height="20" uuid="5ea3042c-8155-461e-bfa4-49ef8bdd59e4"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -349,7 +309,7 @@
 				<textFieldExpression><![CDATA[$F{MODEL}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="249" y="0" width="43" height="20" uuid="86eb9fe3-b833-4db9-9fc0-560765114fc5"/>
+				<reportElement x="262" y="0" width="59" height="20" uuid="86eb9fe3-b833-4db9-9fc0-560765114fc5"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -360,7 +320,7 @@
 				<textFieldExpression><![CDATA[$F{KVA}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="292" y="0" width="50" height="20" uuid="f9720c7e-36f4-4ba2-9332-b3a67f6c1c3a"/>
+				<reportElement x="321" y="0" width="58" height="20" uuid="f9720c7e-36f4-4ba2-9332-b3a67f6c1c3a"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -371,7 +331,7 @@
 				<textFieldExpression><![CDATA[$F{PHASING}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="467" y="0" width="76" height="20" uuid="376d14ec-3a3a-4310-babf-fa3c27274812"/>
+				<reportElement x="519" y="0" width="76" height="20" uuid="376d14ec-3a3a-4310-babf-fa3c27274812"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -382,7 +342,7 @@
 				<textFieldExpression><![CDATA[$F{SELLER PRICE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="543" y="0" width="52" height="20" uuid="dfee18a9-db63-494f-9338-cd16deb73134"/>
+				<reportElement x="595" y="0" width="52" height="20" uuid="dfee18a9-db63-494f-9338-cd16deb73134"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -391,17 +351,6 @@
 					<rightPen lineWidth="1.0"/>
 				</box>
 				<textFieldExpression><![CDATA[$F{QUANTITY}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="595" y="0" width="52" height="20" uuid="2fcfa905-b545-436a-8f87-e1509fd8c147"/>
-				<box>
-					<pen lineWidth="1.0"/>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textFieldExpression><![CDATA[$F{PERSON IN CHARGE}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="647" y="0" width="51" height="20" uuid="f2b02685-7a50-4534-835e-ceb4438c7d67"/>
@@ -415,7 +364,7 @@
 				<textFieldExpression><![CDATA[$F{REMARKS}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="342" y="0" width="40" height="20" uuid="3a6cb14c-08b9-4095-aa92-dcbbff6d5c0d"/>
+				<reportElement x="379" y="0" width="55" height="20" uuid="3a6cb14c-08b9-4095-aa92-dcbbff6d5c0d"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -426,7 +375,7 @@
 				<textFieldExpression><![CDATA[$F{TYPE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="382" y="0" width="85" height="20" uuid="3b2ab25b-8d72-4232-aa04-7a4094842bc2"/>
+				<reportElement x="434" y="0" width="85" height="20" uuid="3b2ab25b-8d72-4232-aa04-7a4094842bc2"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>

@@ -330,7 +330,7 @@ public class View_Warehouse extends javax.swing.JFrame {
     String seller_price = View_Wh_price.getText();
     String quantity = View_Wh_quantity.getText();
     String remarks = View_Wh_remarks.getText();
-    String person_in_charge= View_Wh_incharge.getText();
+    //String person_in_charge= View_Wh_incharge.getText();
     
     String supplier_name = "";
     String supplier_address = "";
@@ -345,7 +345,7 @@ public class View_Warehouse extends javax.swing.JFrame {
     String kva="";
     String id = "";
     Class_tables ct = new Class_tables();
-        if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,id, images, Warehouse_id))
+        if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks, supplier_name,id, images, Warehouse_id))
         {
             ct.Stocks();
             JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);

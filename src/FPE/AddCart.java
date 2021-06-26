@@ -707,8 +707,8 @@ setLocationRelativeTo(null);
             JOptionPane.showMessageDialog(null, "ENTERED [OR NO] - [QUOTATION NO] ","",JOptionPane.INFORMATION_MESSAGE);
         }else{
             //cash checked concat
-            String cashCheckedDownpayment = getCashCheckedDownpayment+" "+d_cashChecked;
-            String cashCheckedBalanced = getCashCheckedBalanced+" "+b_cashChecked;
+            String cashCheckedDownpayment = getCashCheckedDownpayment+" - "+d_cashChecked;
+            String cashCheckedBalanced = getCashCheckedBalanced+" - "+b_cashChecked;
             Class_Process cp = new Class_Process();
            //if(!cp.process_customer_info(cus_name, cus_add, cus_contact, cus_po, cus_poDate, cus_quotation, cus_quotationDate, b_orno, cus_remarks))
            

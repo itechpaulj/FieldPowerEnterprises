@@ -11,6 +11,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.imageio.stream.FileImageInputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -20,17 +22,26 @@ public class Sales_Warehouse extends javax.swing.JFrame {
     String filename = null;
     public static byte[] images = null;
     String Warehouse_id =null;
-    
+    public static String wh_id = null;
+    String Supplier_id = null;
+    String totalQuantity = null;
     public Sales_Warehouse() {
         initComponents();
         imgisNull();
-    
+        showDate();
         
     }
+    
+    void showDate(){
+            Date today = new Date();
+
+            SimpleDateFormat date = new SimpleDateFormat("MM/dd/yy");
+            View_Wh_dateReleased.setText(date.format(today)); 
+     }     
  public void imgisNull(){
         try{
                 if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -54,7 +65,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         View_Wh_Type = new javax.swing.JTextField();
         View_Wh_Brand = new javax.swing.JTextField();
         View_Wh_price = new javax.swing.JTextField();
-        View_Wh_remarks = new javax.swing.JTextField();
+        View_Wh_totalprice = new javax.swing.JTextField();
         Stock_Genset_Panel_Update = new javax.swing.JPanel();
         Stock_Genset_Update = new javax.swing.JLabel();
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
@@ -68,7 +79,9 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        w_tp = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        View_Wh_dateReleased = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -82,12 +95,12 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         View_WH_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_WH_Display.setText("WAREHOUSE");
         View_WH_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_WH_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_WH_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 470, 80));
@@ -102,21 +115,28 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         View_Wh_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Wh_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_quantity.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 210, 31));
+        View_Wh_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                View_Wh_quantityKeyReleased(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(View_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 210, 31));
 
         View_Wh_Type.setEditable(false);
         View_Wh_Type.setBackground(new java.awt.Color(204, 204, 204));
         View_Wh_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Wh_Type.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_Type.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Wh_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Wh_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, 210, 31));
 
+        View_Wh_Brand.setEditable(false);
         View_Wh_Brand.setBackground(new java.awt.Color(204, 204, 204));
         View_Wh_Brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Wh_Brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_Brand.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Wh_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Wh_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 210, 31));
 
+        View_Wh_price.setEditable(false);
         View_Wh_price.setBackground(new java.awt.Color(204, 204, 204));
         View_Wh_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Wh_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -126,13 +146,18 @@ public class Sales_Warehouse extends javax.swing.JFrame {
                 View_Wh_priceActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Wh_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Wh_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, 210, 31));
 
-        View_Wh_remarks.setBackground(new java.awt.Color(204, 204, 204));
-        View_Wh_remarks.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Wh_remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Wh_remarks.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Wh_remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 210, 31));
+        View_Wh_totalprice.setBackground(new java.awt.Color(204, 204, 204));
+        View_Wh_totalprice.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        View_Wh_totalprice.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        View_Wh_totalprice.setBorder(null);
+        View_Wh_totalprice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                View_Wh_totalpriceActionPerformed(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(View_Wh_totalprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 210, 31));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
 
@@ -164,7 +189,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
             .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 160, 45));
 
         Stock_Genset_Panel_Back.setBackground(new java.awt.Color(185, 144, 149));
 
@@ -196,7 +221,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
             .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 390, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 160, 45));
 
         View_Wh_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Wh_pic.setForeground(new java.awt.Color(20, 31, 31));
@@ -219,6 +244,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         jTextField6.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 180, 30));
 
+        View_Parts_Quantity.setEditable(false);
         View_Parts_Quantity.setFont(new java.awt.Font("Calibri Light", 1, 14)); // NOI18N
         View_Parts_Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Parts_Quantity.setText("0");
@@ -231,7 +257,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         View_Wh_Category1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_Category1.setText("WAREHOUSE");
         View_Wh_Category1.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Wh_Category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(View_Wh_Category1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 210, 31));
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(255, 128, 128));
@@ -239,7 +265,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField1.setText("  CATEGORY");
         jTextField1.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 140, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 140, 30));
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(255, 128, 128));
@@ -247,7 +273,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField3.setText("  DESCRPTION");
         jTextField3.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 140, 30));
 
         jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(255, 128, 128));
@@ -255,7 +281,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField8.setText("  TYPE");
         jTextField8.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 140, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 140, 30));
 
         jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(255, 128, 128));
@@ -263,7 +289,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField7.setText("  PRICE");
         jTextField7.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 140, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 140, 30));
 
         jTextField9.setEditable(false);
         jTextField9.setBackground(new java.awt.Color(255, 128, 128));
@@ -271,15 +297,30 @@ public class Sales_Warehouse extends javax.swing.JFrame {
         jTextField9.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField9.setText("  QUANTITY");
         jTextField9.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 140, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 140, 30));
 
-        jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(255, 128, 128));
-        jTextField10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField10.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField10.setText("  TOTAL PRICE");
-        jTextField10.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 140, 30));
+        w_tp.setEditable(false);
+        w_tp.setBackground(new java.awt.Color(255, 128, 128));
+        w_tp.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        w_tp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        w_tp.setText("  TOTAL PRICE");
+        w_tp.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(w_tp, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 140, 30));
+
+        jTextField2.setEditable(false);
+        jTextField2.setBackground(new java.awt.Color(255, 128, 128));
+        jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField2.setText("  DATE RELEASED");
+        jTextField2.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, 30));
+
+        View_Wh_dateReleased.setEditable(false);
+        View_Wh_dateReleased.setBackground(new java.awt.Color(204, 204, 204));
+        View_Wh_dateReleased.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        View_Wh_dateReleased.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        View_Wh_dateReleased.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(View_Wh_dateReleased, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 210, 30));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 750, 480));
 
@@ -288,34 +329,114 @@ public class Sales_Warehouse extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
-    String date = "";
-    String category = View_Wh_Type.getText();
-    String brand = View_Wh_Brand.getText();
-    String type = View_Wh_Type.getText();
-    String seller_price = View_Wh_price.getText();
-    String quantity = View_Wh_quantity.getText();
-    String remarks = View_Wh_remarks.getText();
-    String person_in_charge="";
     
-    String supplier_name = "";
-    String supplier_address = "";
-    String supplier_email = "";
-    String supplier_contact = "";
-    String model="";
-    String phasing="";
+    String Banner = View_WH_Display.getText();
     
-    String supplier_price="";
-    String engine_sn="";
-    String alternator_sn="";
-    String kva="";
-    String id = "";
-    
-    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,id, images, kva))
-    {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
-    }else{
-        JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
+    if(Banner.equals("WAREHOUSE")){
+        String date = View_Wh_dateReleased.getText();
+        String category = View_Wh_Type.getText();
+        String brand = View_Wh_Brand.getText();
+        String type = View_Wh_Type.getText();
+        String seller_price = View_Wh_price.getText();
+        String quantity = View_Wh_quantity.getText();
+        String remarks = View_Wh_totalprice.getText();
+        //String person_in_charge="";
+
+        String supplier_name = "";
+        String supplier_address = "";
+        String supplier_email = "";
+        String supplier_contact = "";
+        String model="";
+        String phasing="";
+
+        String supplier_price="";
+        String engine_sn="";
+        String alternator_sn="";
+        String kva="";
+        String id = "";
+
+        if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks, supplier_name,id, images, kva))
+        {
+            JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
+        }        
     }
+    
+        if(Banner.equals("REQUEST WAREHOUSE")){
+
+
+
+            String quantity = View_Wh_quantity.getText();
+            String remarks = View_Wh_totalprice.getText();
+
+            String supplier_name = "";
+            String supplier_address = "";
+            String supplier_email = "";
+            String supplier_contact = "";
+            String model="";
+            String phasing="";
+
+            String supplier_price="";
+            String engine_sn="";
+            String alternator_sn="";
+            String kva="";
+            String id = "";            
+            
+            
+            String date_release = View_Wh_dateReleased.getText();
+
+            String category = View_Wh_Type.getText().toUpperCase(); 
+            String brand = View_Wh_Brand.getText().toUpperCase();
+
+            String type = View_Wh_Type.getText().toUpperCase(); 
+
+            String person_in_charge = View_Wh_totalprice.getText();
+            String seller_price = View_Wh_price.getText().toUpperCase(); 
+
+
+            
+            int originalQuantity = 0;
+            originalQuantity = Integer.parseInt(View_Parts_Quantity.getText().toString());
+
+            String supplier_id = Supplier_id;
+            String customer_id = "";
+
+            String stock_id1 = Warehouse_id;    
+            String status = "DONE";
+            String process_id = Integer.toString(Class_Cart.process) ;
+
+            //total price
+            String total_price = "0";
+
+
+            // OR NO and  quotation
+            String orno = "REQUEST";
+            String quoataion = "REQUEST";
+            int getNowQuantity = Integer.parseInt(View_Wh_quantity.getText());
+            String reqQuantity = Integer.toString(getNowQuantity);
+
+            int result = Integer.parseInt(View_Parts_Quantity.getText()) - Integer.parseInt(View_Wh_quantity.getText());
+            int validQuantity = Integer.parseInt(View_Wh_quantity.getText()); 
+
+                if( result + 1 <= validQuantity  ){
+                    JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
+                }
+                else if(View_Wh_totalprice.equals("")){
+                    JOptionPane.showMessageDialog(null, "EMPTY FIELDS","",JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,status, process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
+                            JOptionPane.showMessageDialog(null, "SUCCESSFULLY REQUEST","",JOptionPane.INFORMATION_MESSAGE);
+                            Class_Cart.addCart();
+                            new Class_tables().Cart();
+                            new Class_tables().Stocks();
+                            new Class_tables().Sales_OW();
+                            dispose();
+                    }                    
+                }
+        }
+
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
     private void Stock_Genset_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseEntered
@@ -344,7 +465,34 @@ public class Sales_Warehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_Stock_Genset_BackMouseExited
 
     private void View_WH_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_WH_DisplayAncestorAdded
-   
+        String Banner = View_WH_Display.getText();
+        String wh_id = Webpage.request_id;
+     if(Banner.equals("REQUEST WAREHOUSE")){
+            try{
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `summary_stock` WHERE `ID` = '"+wh_id+"'");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                Warehouse_id = ""+rs.getInt("ID");    
+                View_Wh_dateReleased.setText(rs.getString("DATE RECEIVED"));
+                View_Wh_Category1.setText(rs.getString("CATEGORY"));
+                Supplier_id = rs.getString("SUPPLIER ID");
+                View_Wh_Brand.setText(rs.getString("BRAND"));
+                View_Parts_Quantity.setText(rs.getString("QUANTITY"));
+                View_Wh_Brand.setText(rs.getString("BRAND"));
+                View_Wh_Type.setText(rs.getString("TYPE"));
+                View_Wh_price.setText(rs.getString("SELLER PRICE"));
+                totalQuantity = rs.getString("QUANTITY");
+                images = rs.getBytes("IMAGE");
+                ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Wh_pic.getWidth(), View_Wh_pic.getHeight(),Image.SCALE_SMOOTH) );
+                View_Wh_pic.setIcon(imageicon);
+
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+     }
+        
     }//GEN-LAST:event_View_WH_DisplayAncestorAdded
 
     private void View_Wh_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Wh_priceActionPerformed
@@ -377,6 +525,38 @@ public class Sales_Warehouse extends javax.swing.JFrame {
             // e.printStackTrace();
         }
     }//GEN-LAST:event_View_Wh_picMouseClicked
+
+    private void View_Wh_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Wh_quantityKeyReleased
+        String Banner = View_WH_Display.getText();
+        
+        if(Banner.equals("WAREHOUSE")){
+            try{
+                String number  = View_Wh_quantity.getText() ;
+                int result = Integer.parseInt(View_Wh_quantity.getText().toString()) * Integer.parseInt(View_Parts_Quantity.getText().toString());
+                View_Wh_totalprice.setText(""+result);
+            }
+            catch(NumberFormatException  e){
+               View_Wh_quantity.setText("");
+               
+            }
+        }
+
+        if(Banner.equals("REQUEST WAREHOUSE")){
+            try{
+                String number  = View_Wh_quantity.getText() ;
+                int result = Integer.parseInt(View_Wh_quantity.getText().toString());
+                Integer.toString(result);
+            }
+            catch(NumberFormatException  e){
+               View_Wh_quantity.setText("");
+               
+            }
+        }
+    }//GEN-LAST:event_View_Wh_quantityKeyReleased
+
+    private void View_Wh_totalpriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Wh_totalpriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_View_Wh_totalpriceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -545,23 +725,25 @@ public class Sales_Warehouse extends javax.swing.JFrame {
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
-    private javax.swing.JLabel Stock_Genset_Update;
+    public static javax.swing.JLabel Stock_Genset_Update;
     public static javax.swing.JTextField View_Parts_Quantity;
     public static javax.swing.JLabel View_WH_Display;
     public static javax.swing.JTextField View_Wh_Brand;
     public static javax.swing.JTextField View_Wh_Category1;
     public static javax.swing.JTextField View_Wh_Type;
+    public static javax.swing.JTextField View_Wh_dateReleased;
     public static javax.swing.JLabel View_Wh_pic;
     public static javax.swing.JTextField View_Wh_price;
     public static javax.swing.JTextField View_Wh_quantity;
-    public static javax.swing.JTextField View_Wh_remarks;
+    public static javax.swing.JTextField View_Wh_totalprice;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
+    public static javax.swing.JTextField w_tp;
     // End of variables declaration//GEN-END:variables
 }

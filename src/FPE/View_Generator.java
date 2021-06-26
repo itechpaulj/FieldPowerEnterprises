@@ -625,7 +625,7 @@ public class View_Generator extends javax.swing.JFrame {
     String supplier_email = View_Gen_Supplier_Email.getText();
     String supplier_contact = View_Gen_Supplier_Contact.getText();
     Class_tables ct = new Class_tables();
-    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks, supplier_name,Supplier_id, images, Generator_id))  
+    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks, supplier_name,Supplier_id, images, Generator_id))  
     {
         ct.Stocks();
         JOptionPane.showMessageDialog(null, "UPDATE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);

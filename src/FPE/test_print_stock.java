@@ -36,7 +36,7 @@ public class test_print_stock extends javax.swing.JFrame {
     
     private void all_stock(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock`");
         ResultSet rs = ps.executeQuery();
         jTable1.setModel(DbUtils.resultSetToTableModel(rs));
         jTable1.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -125,7 +125,7 @@ public class test_print_stock extends javax.swing.JFrame {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
-        String sql = "SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE  `ID` LIKE '%"+jTextField1.getText()+"%' OR `DATE RECEIVED` LIKE '%"+jTextField1.getText()+"%' OR `CATEGORY` LIKE '%"+jTextField1.getText()+"%' OR `BRAND` LIKE '%"+jTextField1.getText()+"%' OR `MODEL` LIKE '%"+jTextField1.getText()+"%' OR `KVA` LIKE '%"+jTextField1.getText()+"%' OR `PHASING` LIKE '%"+jTextField1.getText()+"%' OR `TYPE` LIKE '%"+jTextField1.getText()+"%' OR `SUPPLIER PRICE` LIKE '%"+jTextField1.getText()+"%' OR `SELLER PRICE` LIKE '%"+jTextField1.getText()+"%' OR `ENGINE S N` LIKE '%"+jTextField1.getText()+"%' OR `ALTERNATOR S N` LIKE '%"+jTextField1.getText()+"%' OR `QUANTITY` LIKE '%"+jTextField1.getText()+"%' OR `PERSON IN CHARGE` LIKE '%"+jTextField1.getText()+"%' OR `REMARKS` LIKE '%"+jTextField1.getText()+"%' OR `SUPPLIER` LIKE '%"+jTextField1.getText()+"%'";
+        String sql = "SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE  `ID` LIKE '%"+jTextField1.getText()+"%' OR `DATE RECEIVED` LIKE '%"+jTextField1.getText()+"%' OR `CATEGORY` LIKE '%"+jTextField1.getText()+"%' OR `BRAND` LIKE '%"+jTextField1.getText()+"%' OR `MODEL` LIKE '%"+jTextField1.getText()+"%' OR `KVA` LIKE '%"+jTextField1.getText()+"%' OR `PHASING` LIKE '%"+jTextField1.getText()+"%' OR `TYPE` LIKE '%"+jTextField1.getText()+"%' OR `SUPPLIER PRICE` LIKE '%"+jTextField1.getText()+"%' OR `SELLER PRICE` LIKE '%"+jTextField1.getText()+"%' OR `ENGINE S N` LIKE '%"+jTextField1.getText()+"%' OR `ALTERNATOR S N` LIKE '%"+jTextField1.getText()+"%' OR `QUANTITY` LIKE '%"+jTextField1.getText()+"%' OR `REMARKS` LIKE '%"+jTextField1.getText()+"%' OR `SUPPLIER` LIKE '%"+jTextField1.getText()+"%'";
         ps = FPE_DB.getConnection().prepareStatement(sql);
         rs = ps.executeQuery();
         jTable1.setModel(net.proteanit.sql.DbUtils.resultSetToTableModel(rs));
