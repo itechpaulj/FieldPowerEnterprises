@@ -1925,13 +1925,13 @@ public class Webpage extends javax.swing.JFrame {
            sp.setVisible(true);
         }
         else if(Warehouse_Office_CategorySet.equals("OFFICE")){
-//           Sales_Parts sp = new Sales_Parts();
-//           Sales_Parts.View_Parts_Display.setText("REQUEST PARTS");
-//           Sales_Parts.tp_txt.setText("PERSON IN CHARGE");
-//           Sales_Parts.Quantity1.setEditable(true);
-//           Sales_Parts.Quantity1.setBackground(new Color(255, 255, 255));
-//           Sales_Parts.Stock_Genset_Update.setText("REQUEST");
-//           sp.setVisible(true);
+           Sales_Office so = new Sales_Office();
+           Sales_Office.View_Office_Display.setText("REQUEST OFFICE");
+           Sales_Office.o_txt.setText("PERSON IN CHARGE");
+           Sales_Office.Sales_given.setEditable(true);
+           Sales_Office.Sales_given.setBackground(new Color(255, 255, 255));
+           Sales_Office.Stock_Genset_Update.setText("REQUEST");
+           so.setVisible(true);
         }
         else if(Warehouse_Office_CategorySet.equals("WAREHOUSE")){
            Sales_Warehouse sw = new Sales_Warehouse();
@@ -2088,6 +2088,7 @@ public class Webpage extends javax.swing.JFrame {
                     if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_SummaryStock.DeleteGenset(sid) ){
                          JOptionPane.showMessageDialog(null, " DELETE STOCK! ","",JOptionPane.ERROR_MESSAGE);
                          all_stock();
+                         request();
                      }
                 }                
             }

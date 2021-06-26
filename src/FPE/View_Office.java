@@ -74,8 +74,6 @@ public class View_Office extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
         View_Office_Remarks = new javax.swing.JTextField();
-        View_Office_Incharges = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -89,12 +87,12 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Office_Display.setText("VIEW OFFICE ITEM");
         View_Office_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_Office_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_Office_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 470, 80));
@@ -283,19 +281,6 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_Remarks.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Office_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 210, 31));
 
-        View_Office_Incharges.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Office_Incharges.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Office_Incharges.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Office_Incharges, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 210, 31));
-
-        jTextField15.setEditable(false);
-        jTextField15.setBackground(new java.awt.Color(51, 214, 255));
-        jTextField15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField15.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField15.setText("  PERSON INCHARGES");
-        jTextField15.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 160, 31));
-
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 750, 580));
 
         pack();
@@ -408,7 +393,6 @@ public class View_Office extends javax.swing.JFrame {
             View_Office_Price.setText(rs.getString("SELLER PRICE"));
             View_Office_quantity.setText(rs.getString("QUANTITY"));
             View_Office_Remarks.setText(rs.getString("REMARKS"));
-            View_Office_Incharges.setText(rs.getString("PERSON IN CHARGE"));
             
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Office_pic.getWidth(), View_Office_pic.getHeight(),Image.SCALE_SMOOTH) );
@@ -473,7 +457,6 @@ public class View_Office extends javax.swing.JFrame {
     public static javax.swing.JTextField View_Office_Brand;
     public static javax.swing.JTextField View_Office_Category;
     public static javax.swing.JLabel View_Office_Display;
-    public static javax.swing.JTextField View_Office_Incharges;
     public static javax.swing.JTextField View_Office_Price;
     public static javax.swing.JTextField View_Office_Remarks;
     public static javax.swing.JComboBox<String> View_Office_Type;
@@ -483,7 +466,6 @@ public class View_Office extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;

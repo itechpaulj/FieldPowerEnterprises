@@ -57,7 +57,6 @@ public class View_Warehouse extends javax.swing.JFrame {
         View_Wh_Brand = new javax.swing.JTextField();
         View_Wh_price = new javax.swing.JTextField();
         View_Wh_remarks = new javax.swing.JTextField();
-        View_Wh_incharge = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -65,7 +64,6 @@ public class View_Warehouse extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
         Stock_Genset_Panel_Update = new javax.swing.JPanel();
         Stock_Genset_Update = new javax.swing.JLabel();
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
@@ -84,12 +82,12 @@ public class View_Warehouse extends javax.swing.JFrame {
         View_WH_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_WH_Display.setText("VIEW WAREHOUSE ITEM");
         View_WH_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_WH_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_WH_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 360, 80));
@@ -141,11 +139,6 @@ public class View_Warehouse extends javax.swing.JFrame {
         View_Wh_remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_remarks.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Wh_remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 210, 31));
-
-        View_Wh_incharge.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Wh_incharge.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Wh_incharge.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Wh_incharge, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 390, 210, 31));
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(51, 214, 255));
@@ -202,14 +195,6 @@ public class View_Warehouse extends javax.swing.JFrame {
         jTextField14.setText(" REMARKS");
         jTextField14.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 160, 31));
-
-        jTextField15.setEditable(false);
-        jTextField15.setBackground(new java.awt.Color(51, 214, 255));
-        jTextField15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField15.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField15.setText(" INCHARGES");
-        jTextField15.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 160, 31));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
 
@@ -400,7 +385,6 @@ public class View_Warehouse extends javax.swing.JFrame {
             View_Wh_price.setText(rs.getString("SELLER PRICE"));
             View_Wh_quantity.setText(rs.getString("QUANTITY"));
             View_Wh_remarks.setText(rs.getString("REMARKS"));
-            View_Wh_incharge.setText(rs.getString("PERSON IN CHARGE"));
             
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Wh_pic.getWidth(), View_Wh_pic.getHeight(),Image.SCALE_SMOOTH) );
@@ -494,7 +478,6 @@ public class View_Warehouse extends javax.swing.JFrame {
     public static javax.swing.JTextField View_Wh_Category;
     public static javax.swing.JComboBox<String> View_Wh_Type;
     public static datechooser.beans.DateChooserCombo View_Wh_date;
-    public static javax.swing.JTextField View_Wh_incharge;
     public static javax.swing.JLabel View_Wh_pic;
     public static javax.swing.JTextField View_Wh_price;
     public static javax.swing.JTextField View_Wh_quantity;
@@ -502,7 +485,6 @@ public class View_Warehouse extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField5;
