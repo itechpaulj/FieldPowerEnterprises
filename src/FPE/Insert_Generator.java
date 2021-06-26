@@ -34,12 +34,12 @@ public class Insert_Generator extends javax.swing.JFrame {
     public Insert_Generator() {
         initComponents();
         imgisNull();
-        showDate();
+
     }
-        void showDate(){
-       Date today = new Date();
-        DateTime = Mainpage.date.format(today) +" - " + Mainpage.time.format(today);
- }
+//        void showDate(){
+//       Date today = new Date();
+//        DateTime = Mainpage.date.format(today) +" - " + Mainpage.time.format(today);
+// }
 
  public void imgisNull(){
         try{
@@ -651,6 +651,7 @@ public class Insert_Generator extends javax.swing.JFrame {
     String supplier_address = Insert_Gen_Supplier_Address.getText();
     String supplier_email = Insert_Gen_Supplier_Email.getText();
     String supplier_contact = Insert_Gen_Supplier_Contact.getText();
+    
 //    String supplier_
     Class_tables ct = new Class_tables();
     if(supplier_name.equals("") || supplier_address.equals("") || supplier_email.equals("") || supplier_contact.equals("") ){

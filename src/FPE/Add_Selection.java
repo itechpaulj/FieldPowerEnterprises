@@ -197,7 +197,7 @@ public class Add_Selection extends javax.swing.JFrame {
     }//GEN-LAST:event_WHMouseExited
 
     private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
-        Mainpage.as.setVisible(true);
+
     }//GEN-LAST:event_formMouseEntered
 
     private void GenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GenMouseClicked

@@ -12,10 +12,10 @@ import javax.swing.JOptionPane;
 
 public class Class_Cart {
         public static int process = 0;
-        public static boolean InsertCart(String dateOut , String category, String brand, String model, String kva, String phasing, String type, String supplier_price,String seller_price, String engine_sn, String alternator_sn, String quantity,int total_price,String person_in_charge,String supplier_id,String customer_id,String stock_id, byte[] pic, String quotation,String orno,String status,String process_id){
+        public static boolean InsertCart(String dateOut , String category, String brand, String model, String kva, String phasing, String type, String supplier_price,String seller_price, String engine_sn, String alternator_sn, String quantity,int total_price,String person_in_charge,String supplier_id,String customer_id,String stock_id, byte[] pic, String quotation,String orno,String completed,String status,String process_id){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `sale_summary_stock`(`DATE RELEASE`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `TOTAL PRICE`,`PERSON IN CHARGE`,`SUPPLIER ID`, `CUSTOMER ID`, `STOCK ID`, `IMAGE`, `QUOTATION`,`OR NO`,`STATUS`, `PROCESS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `sale_summary_stock`(`DATE RELEASE`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `TOTAL PRICE`,`PERSON IN CHARGE`,`SUPPLIER ID`, `CUSTOMER ID`, `STOCK ID`, `IMAGE`, `QUOTATION`,`OR NO`,`COMPLETED`,`STATUS`, `PROCESS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1,dateOut);
         ps.setString(2,category);
         ps.setString(3,brand);
@@ -36,8 +36,9 @@ public class Class_Cart {
         ps.setBytes(18,pic);
         ps.setString(19, quotation);
         ps.setString(20, orno);
-        ps.setString(21,status);
-        ps.setString(22, process_id);
+        ps.setString(21, completed);
+        ps.setString(22,status);
+        ps.setString(23, process_id);
       
         
         ps.execute();

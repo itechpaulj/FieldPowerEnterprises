@@ -34,12 +34,12 @@ public class View_Generator extends javax.swing.JFrame {
     public View_Generator() {
         initComponents();
         imgisNull();
-        showDate();
+
     }
-        void showDate(){
-       Date today = new Date();
-        DateTime = Mainpage.date.format(today) +" - " + Mainpage.time.format(today);
- }
+//        void showDate(){
+//       Date today = new Date();
+//        DateTime = Mainpage.date.format(today) +" - " + Mainpage.time.format(today);
+// }
 
  public void imgisNull(){
         try{

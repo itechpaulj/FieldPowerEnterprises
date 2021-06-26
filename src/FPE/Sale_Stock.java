@@ -495,7 +495,7 @@ public class Sale_Stock extends javax.swing.JFrame {
     // payment details
     String quotation = "";
     String orno = "";
-    
+    String completed = "";
      // 17 IMAGE
       
      //JOptionPane.showMessageDialog(null, process_id);
@@ -552,7 +552,7 @@ public class Sale_Stock extends javax.swing.JFrame {
            else{
                //insert
                System.out.println(""+total_price);
-                if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,person_in_charge,supplier_id, customer_id, stock_id1, images, quotation,orno,status, process_id) && !Class_Cart.summary_StockUpdateQuantity(Integer.toString(result), stock_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,person_in_charge,supplier_id, customer_id, stock_id1, images,quotation,orno,status, process_id) )
+                if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,person_in_charge,supplier_id, customer_id, stock_id1, images, quotation,orno,completed,status, process_id) && !Class_Cart.summary_StockUpdateQuantity(Integer.toString(result), stock_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, total_price,person_in_charge,supplier_id, customer_id, stock_id1, images,quotation,orno,status, process_id) )
                 {
                     JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
                     Class_Cart.addCart();
@@ -581,7 +581,8 @@ public class Sale_Stock extends javax.swing.JFrame {
          int resultCartOnlyQuantity = Integer.parseInt(stockRemoved) - Integer.parseInt(input_quantityRemoved);
             if(resultCartOnlyQuantity == 0){
                 Class_Cart_Remove ccr = new Class_Cart_Remove();
-                if(ccr.quantityCartIsZero(cart_id)){
+                if(!ccr.quantityCartIsZero(cart_id) && !ccr.quantitySaleSummaryIsZero(cart_id)){
+                   new Class_tables().Stocks();
                    new Class_tables().Cart();
                 }
             }
@@ -593,13 +594,13 @@ public class Sale_Stock extends javax.swing.JFrame {
                JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
             }
             else{
-                Class_Cart_Remove ccr = new Class_Cart_Remove();
-                 if(!ccr.Sales_Parts(Integer.toString(result1), Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) ){
-                     new Class_tables().Cart();
-                     new Class_tables().Stocks();
-                     JOptionPane.showMessageDialog(null, "SUCCESSFULLY REMOVED","",JOptionPane.INFORMATION_MESSAGE);
-                     dispose();
-                 }
+//                Class_Cart_Remove ccr = new Class_Cart_Remove();
+//                 if(!ccr.Sales_Parts(Integer.toString(result1), Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) ){
+//                     new Class_tables().Cart();
+//                     new Class_tables().Stocks();
+//                     JOptionPane.showMessageDialog(null, "SUCCESSFULLY REMOVED","",JOptionPane.INFORMATION_MESSAGE);
+//                     dispose();
+//                 }
             }
         }
 

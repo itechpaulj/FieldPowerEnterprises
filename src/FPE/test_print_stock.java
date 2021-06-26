@@ -6,7 +6,7 @@
 package FPE;
 
 
-import static FPE.Mainpage.located;
+
 import java.awt.image.BufferedImage;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

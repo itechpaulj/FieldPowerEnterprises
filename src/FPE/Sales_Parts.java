@@ -63,7 +63,7 @@ public class Sales_Parts extends javax.swing.JFrame {
  public void imgisNull(){
         try{
                 if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -416,6 +416,7 @@ public class Sales_Parts extends javax.swing.JFrame {
             // OR NO and  quotation
             String orno = "";
             String quoataion = "";
+            String completed = "";
                 int inputQuantity = Integer.parseInt(Quantity.getText().toString());
                 String validQuantity = Quantity.getText();
                 if(validQuantity.equals("")){
@@ -473,7 +474,7 @@ public class Sales_Parts extends javax.swing.JFrame {
                         else{
                             
                             String getNowQuantity = Integer.toString(inputQuantity);
-                            if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, getNowQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,status, process_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, getNowQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, status, quoataion ,orno ,process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
+                            if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, getNowQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,completed,status, process_id) && !Class_Cart.AddCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, getNowQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, status, quoataion ,orno ,process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
                                     JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
                                     Class_Cart.addCart();
                                     new Class_tables().Cart();
@@ -506,12 +507,11 @@ public class Sales_Parts extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(null, cart_id);
      String input_quantityRemoved = Quantity.getText();
      String stockRemoved = View_Parts_Quantity.getText();
-     int result = Integer.parseInt(input_quantityRemoved) + Integer.parseInt(totalQuantity); // resultQuantity
+     int result = Integer.parseInt(input_quantityRemoved) + Integer.parseInt(totalQuantity); // resultQuantity restore Stock
      int resultCartOnlyQuantity = Integer.parseInt(stockRemoved) - Integer.parseInt(input_quantityRemoved);
-     
      if(resultCartOnlyQuantity == 0){
          Class_Cart_Remove ccr = new Class_Cart_Remove();
-         if(ccr.quantityCartIsZero(cart_id)){
+         if(!ccr.quantityCartIsZero(cart_id) && !ccr.quantitySaleSummaryIsZero(cart_id)){
             new Class_tables().Cart();
          }
      }
@@ -523,7 +523,7 @@ public class Sales_Parts extends javax.swing.JFrame {
         }
         else{
             Class_Cart_Remove ccr = new Class_Cart_Remove();
-             if(!ccr.Sales_Parts(Integer.toString(result), Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) ){
+             if(!ccr.Sales_Parts(Integer.toString(result),Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) && !ccr.UpdateSummary(Integer.toString(resultCartOnlyQuantity), cart_id) ){
                  new Class_tables().Cart();
                  new Class_tables().Stocks();
                  JOptionPane.showMessageDialog(null, "SUCCESSFULLY REMOVED","",JOptionPane.INFORMATION_MESSAGE);
@@ -560,7 +560,7 @@ public class Sales_Parts extends javax.swing.JFrame {
             String stock_id1 = Parts_id;    
             String status = "DONE";
             String process_id = Integer.toString(Class_Cart.process) ;
-
+            
             //total price
             String total_price = "0";
 
@@ -568,6 +568,7 @@ public class Sales_Parts extends javax.swing.JFrame {
             // OR NO and  quotation
             String orno = "REQUEST";
             String quoataion = "REQUEST";
+            String completed = "";
             
             int getNowQuantity = Integer.parseInt(Quantity.getText());
             String reqQuantity = Integer.toString(getNowQuantity);
@@ -582,7 +583,7 @@ public class Sales_Parts extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "EMPTY FIELDS","",JOptionPane.INFORMATION_MESSAGE);
                 }
                 else{
-                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,status, process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
+                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,completed,status, process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
                             JOptionPane.showMessageDialog(null, "SUCCESSFULLY REQUEST","",JOptionPane.INFORMATION_MESSAGE);
                             Class_Cart.addCart();
                             new Class_tables().Cart();

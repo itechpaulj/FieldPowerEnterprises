@@ -136,16 +136,17 @@ public class Class_Process {
         return false;
     }
     
-    public boolean updateProcess(String cus_id,String quotation,String orno,String process){
+    public boolean updateProcess(String cus_id,String quotation,String orno,String completed,String process){
         
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `sale_summary_stock` SET `CUSTOMER ID`=?, `QUOTATION`=?, `OR NO`=?, `STATUS`=? WHERE `PROCESS`=?");
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `sale_summary_stock` SET `CUSTOMER ID`=?, `QUOTATION`=?, `OR NO`=?, `COMPLETED`=?, `STATUS`=? WHERE `PROCESS`=?");
         ps.setString(1,cus_id);
         ps.setString(2,quotation);
         ps.setString(3,orno);
-        ps.setString(4,"DONE");
-        ps.setString(5,process);
+        ps.setString(4,completed);
+        ps.setString(5,"DONE");
+        ps.setString(6,process);
 
         ps.execute();
         

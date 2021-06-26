@@ -413,6 +413,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
             // OR NO and  quotation
             String orno = "REQUEST";
             String quoataion = "REQUEST";
+            String completed = "";
             int getNowQuantity = Integer.parseInt(View_Wh_quantity.getText());
             String reqQuantity = Integer.toString(getNowQuantity);
 
@@ -426,7 +427,7 @@ public class Sales_Warehouse extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "EMPTY FIELDS","",JOptionPane.INFORMATION_MESSAGE);
                 }
                 else{
-                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,status, process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
+                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,completed,status, process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
                             JOptionPane.showMessageDialog(null, "SUCCESSFULLY REQUEST","",JOptionPane.INFORMATION_MESSAGE);
                             Class_Cart.addCart();
                             new Class_tables().Cart();

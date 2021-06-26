@@ -32,17 +32,17 @@ public class Generator_Payment_Method extends javax.swing.JFrame {
     public Generator_Payment_Method() {
         initComponents();
         imgisNull();
-        showDate();
+        //showDate();
     }
-        void showDate(){
-       Date today = new Date();
-        DateTime = Mainpage.date.format(today) +" - " + Mainpage.time.format(today);
- }
+//        void showDate(){
+//       Date today = new Date();
+//        DateTime = Mainpage.date.format(today) +" - " + Webpage.time.format(today);
+// }
 
  public void imgisNull(){
         try{
             if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){

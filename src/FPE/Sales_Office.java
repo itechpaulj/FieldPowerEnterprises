@@ -33,7 +33,7 @@ public class Sales_Office extends javax.swing.JFrame {
  public void imgisNull(){
         try{
                 if(images == null) {
-                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Mainpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
+                FileImageInputStream fis1 = new FileImageInputStream(new File("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/Picture/Drawer_Btn/Default_Imge.png"));
                 ByteArrayOutputStream bos1 = new ByteArrayOutputStream();
                 byte[] buf1 = new byte[1024];
                     for(int readNum;(readNum=fis1.read(buf1)) !=-1;){
@@ -381,7 +381,7 @@ public class Sales_Office extends javax.swing.JFrame {
 
     private void View_Office_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Office_DisplayAncestorAdded
     String Banner = View_Office_Display.getText();
-    String id = Mainpage.ss_id.getText();
+    String id = Webpage.sales_id;
     
     if(Banner.equals("VIEW OFFICE ITEM"))
     {
