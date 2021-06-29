@@ -41,7 +41,7 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Drawer_Logout.png"))); // NOI18N
-        jLabel2.setText(" LOGOUT ");
+        jLabel2.setText(" LOGOUT    ");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel2MouseEntered(evt);
@@ -54,7 +54,7 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
 
-        setBounds(1143, 112, 200, 60);
+        setBounds(1143, 102, 200, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited

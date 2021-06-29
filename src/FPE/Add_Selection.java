@@ -58,7 +58,7 @@ public class Add_Selection extends javax.swing.JFrame {
         Gen.setForeground(new java.awt.Color(255, 255, 255));
         Gen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Gen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/Generator.png"))); // NOI18N
-        Gen.setText("  GENERATOR");
+        Gen.setText(" GENERATOR");
         Gen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 GenMouseClicked(evt);
@@ -70,9 +70,9 @@ public class Add_Selection extends javax.swing.JFrame {
                 GenMouseExited(evt);
             }
         });
-        Panel_Gen.add(Gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
+        Panel_Gen.add(Gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 45));
 
-        getContentPane().add(Panel_Gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
+        getContentPane().add(Panel_Gen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 45));
 
         Panel_Parts.setBackground(new java.awt.Color(24, 165, 88));
         Panel_Parts.setForeground(new java.awt.Color(204, 204, 204));
@@ -82,7 +82,8 @@ public class Add_Selection extends javax.swing.JFrame {
         Parts.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Parts.setForeground(new java.awt.Color(255, 255, 255));
         Parts.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Parts.setText("PARTS");
+        Parts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/warehouse.png"))); // NOI18N
+        Parts.setText(" PARTS        ");
         Parts.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PartsMouseClicked(evt);
@@ -94,9 +95,9 @@ public class Add_Selection extends javax.swing.JFrame {
                 PartsMouseExited(evt);
             }
         });
-        Panel_Parts.add(Parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
+        Panel_Parts.add(Parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 45));
 
-        getContentPane().add(Panel_Parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, 170, 45));
+        getContentPane().add(Panel_Parts, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 45, 180, 45));
 
         Panel_Office.setBackground(new java.awt.Color(24, 165, 88));
         Panel_Office.setForeground(new java.awt.Color(204, 204, 204));
@@ -107,7 +108,7 @@ public class Add_Selection extends javax.swing.JFrame {
         Office.setForeground(new java.awt.Color(255, 255, 255));
         Office.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Office.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/department.png"))); // NOI18N
-        Office.setText("  OFFICE       ");
+        Office.setText(" OFFICE       ");
         Office.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OfficeMouseClicked(evt);
@@ -119,9 +120,9 @@ public class Add_Selection extends javax.swing.JFrame {
                 OfficeMouseExited(evt);
             }
         });
-        Panel_Office.add(Office, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
+        Panel_Office.add(Office, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 45));
 
-        getContentPane().add(Panel_Office, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 170, 45));
+        getContentPane().add(Panel_Office, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 180, 45));
 
         Panel_WH.setBackground(new java.awt.Color(24, 165, 88));
         Panel_WH.setForeground(new java.awt.Color(204, 204, 204));
@@ -131,7 +132,6 @@ public class Add_Selection extends javax.swing.JFrame {
         WH.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         WH.setForeground(new java.awt.Color(255, 255, 255));
         WH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        WH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/warehouse.png"))); // NOI18N
         WH.setText("  WAREHOUSE");
         WH.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -144,11 +144,11 @@ public class Add_Selection extends javax.swing.JFrame {
                 WHMouseExited(evt);
             }
         });
-        Panel_WH.add(WH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 45));
+        Panel_WH.add(WH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 45));
 
-        getContentPane().add(Panel_WH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 135, 170, 45));
+        getContentPane().add(Panel_WH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 135, 180, 45));
 
-        setBounds(17, 468, 170, 180);
+        setBounds(17, 468, 180, 180);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited

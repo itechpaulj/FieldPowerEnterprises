@@ -45,7 +45,7 @@ public class Add_Drawer_Reports extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Drawer_Chart.png"))); // NOI18N
-        jLabel2.setText("  STATUS  ");
+        jLabel2.setText(" STATUS    ");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel2MouseEntered(evt);
@@ -65,7 +65,7 @@ public class Add_Drawer_Reports extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Drawer_History.png"))); // NOI18N
-        jLabel1.setText("  HISTORY");
+        jLabel1.setText(" HISTORY   ");
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel1MouseEntered(evt);
@@ -78,7 +78,7 @@ public class Add_Drawer_Reports extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
 
-        setBounds(923, 112, 200, 120);
+        setBounds(923, 102, 200, 120);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
