@@ -137,12 +137,12 @@ public class Sale_Stock extends javax.swing.JFrame {
         sale_Generator_Banner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sale_Generator_Banner.setText("GENERATOR");
         sale_Generator_Banner.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 sale_Generator_BannerAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(sale_Generator_Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 890, 80));
@@ -582,8 +582,7 @@ public class Sale_Stock extends javax.swing.JFrame {
             if(resultCartOnlyQuantity == 0){
                 Class_Cart_Remove ccr = new Class_Cart_Remove();
                 if(!ccr.quantityCartIsZero(cart_id) && !ccr.quantitySaleSummaryIsZero(cart_id)){
-                   new Class_tables().Stocks();
-                   new Class_tables().Cart();
+                   Webpage.AllTable();
                 }
             }
             
@@ -594,13 +593,13 @@ public class Sale_Stock extends javax.swing.JFrame {
                JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
             }
             else{
-//                Class_Cart_Remove ccr = new Class_Cart_Remove();
-//                 if(!ccr.Sales_Parts(Integer.toString(result1), Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) ){
-//                     new Class_tables().Cart();
-//                     new Class_tables().Stocks();
-//                     JOptionPane.showMessageDialog(null, "SUCCESSFULLY REMOVED","",JOptionPane.INFORMATION_MESSAGE);
-//                     dispose();
-//                 }
+                Class_Cart_Remove ccr = new Class_Cart_Remove();
+                 if(!ccr.Sales_Parts(Integer.toString(result1), Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) ){
+                     new Class_tables().Cart();
+                     new Class_tables().Stocks();
+                     JOptionPane.showMessageDialog(null, "SUCCESSFULLY REMOVED","",JOptionPane.INFORMATION_MESSAGE);
+                     dispose();
+                 }
             }
         }
 
@@ -636,7 +635,7 @@ public class Sale_Stock extends javax.swing.JFrame {
     private void sale_Generator_BannerAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_sale_Generator_BannerAncestorAdded
     String Banner = sale_Generator_Banner.getText();
     String ids = Webpage.sales_id;
-    String removed_id = Webpage.cart_id;
+    String removed_id = Webpage.Cart_Category_Id.getText();
     if(Banner.equals("GENERATOR"))
     {
         try{

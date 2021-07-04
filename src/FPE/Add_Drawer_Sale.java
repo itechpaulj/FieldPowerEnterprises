@@ -93,25 +93,28 @@ public class Add_Drawer_Sale extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseEntered
 
     private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-       jPanel3.setBackground(new Color(0,117,128));
+        jPanel3.setBackground(new Color(0,117,128));
         jLabel3.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_jLabel3MouseExited
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
 //        new Class_tables().request();
         Webpage.JTab.setSelectedIndex(2);
+        Webpage.ct.SalesStock();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
+        Webpage.JTab.setSelectedIndex(2);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
-        // TODO add your handling code here:
+        jPanel4.setBackground(new Color(163, 235, 177));
+        jLabel4.setForeground(new Color(33, 21, 34));
     }//GEN-LAST:event_jLabel4MouseEntered
 
     private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
-        // TODO add your handling code here:
+        jPanel4.setBackground(new Color(0,117,128));
+        jLabel4.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_jLabel4MouseExited
 
     /**

@@ -625,7 +625,7 @@ public class Sales_Parts extends javax.swing.JFrame {
     private void View_Parts_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Parts_DisplayAncestorAdded
     String Banner = View_Parts_Display.getText();
     String ids = Webpage.sales_id;
-    String removed_id = Webpage.cart_id;
+    String removed_id = Webpage.Cart_Category_Id.getText();
     String request = Webpage.request_id;
     if(Banner.equals("PARTS"))
         {

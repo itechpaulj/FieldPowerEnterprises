@@ -69,6 +69,8 @@ public class View_Warehouse extends javax.swing.JFrame {
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
         Stock_Genset_Back = new javax.swing.JLabel();
         View_Wh_pic = new javax.swing.JLabel();
+        Stock_Genset_Panel_View1 = new javax.swing.JPanel();
+        Stock_Genset_Delete = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -82,12 +84,12 @@ public class View_Warehouse extends javax.swing.JFrame {
         View_WH_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_WH_Display.setText("VIEW WAREHOUSE ITEM");
         View_WH_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_WH_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_WH_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 360, 80));
@@ -196,7 +198,7 @@ public class View_Warehouse extends javax.swing.JFrame {
         jTextField14.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 160, 31));
 
-        Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
+        Stock_Genset_Panel_Update.setBackground(new java.awt.Color(66, 139, 202));
 
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
@@ -251,14 +253,16 @@ public class View_Warehouse extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addGroup(Stock_Genset_Panel_BackLayout.createSequentialGroup()
+                .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 47, Short.MAX_VALUE))
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 450, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 450, 160, 45));
 
         View_Wh_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
         View_Wh_pic.setForeground(new java.awt.Color(20, 31, 31));
@@ -272,6 +276,40 @@ public class View_Warehouse extends javax.swing.JFrame {
             }
         });
         KG2_ADD_STOCK_GENSET.add(View_Wh_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, 280, 180));
+
+        Stock_Genset_Panel_View1.setBackground(new java.awt.Color(255, 86, 83));
+
+        Stock_Genset_Delete.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Stock_Genset_Delete.setForeground(new java.awt.Color(255, 255, 255));
+        Stock_Genset_Delete.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Stock_Genset_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_View.png"))); // NOI18N
+        Stock_Genset_Delete.setText("  DELETE ");
+        Stock_Genset_Delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Stock_Genset_DeleteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Stock_Genset_DeleteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Stock_Genset_DeleteMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Stock_Genset_Panel_View1Layout = new javax.swing.GroupLayout(Stock_Genset_Panel_View1);
+        Stock_Genset_Panel_View1.setLayout(Stock_Genset_Panel_View1Layout);
+        Stock_Genset_Panel_View1Layout.setHorizontalGroup(
+            Stock_Genset_Panel_View1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Stock_Genset_Panel_View1Layout.createSequentialGroup()
+                .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 24, Short.MAX_VALUE))
+        );
+        Stock_Genset_Panel_View1Layout.setVerticalGroup(
+            Stock_Genset_Panel_View1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+        );
+
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 170, 45));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 750, 550));
 
@@ -401,6 +439,32 @@ public class View_Warehouse extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_View_Wh_priceActionPerformed
 
+    private void Stock_Genset_DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseClicked
+        String sid = Webpage.Stock_Category_Id.getText();
+
+        if(sid.equals("")){
+            JOptionPane.showMessageDialog(null, " PLEASE SELECT! ","",JOptionPane.ERROR_MESSAGE);
+             Webpage.ct.Stocks();
+        }
+        else{
+            int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS STOCK ? ","",JOptionPane.YES_NO_OPTION);
+            if(opt==0){
+                if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_SummaryStock.DeleteGenset(sid) ){
+                    JOptionPane.showMessageDialog(null, " DELETE STOCK! ","",JOptionPane.ERROR_MESSAGE);
+                Webpage.ct.Stocks();
+                }
+            }
+        }
+    }//GEN-LAST:event_Stock_Genset_DeleteMouseClicked
+
+    private void Stock_Genset_DeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Stock_Genset_DeleteMouseEntered
+
+    private void Stock_Genset_DeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Stock_Genset_DeleteMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -470,8 +534,10 @@ public class View_Warehouse extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     private javax.swing.JLabel Stock_Genset_Back;
+    public static javax.swing.JLabel Stock_Genset_Delete;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
+    public static javax.swing.JPanel Stock_Genset_Panel_View1;
     private javax.swing.JLabel Stock_Genset_Update;
     public static javax.swing.JLabel View_WH_Display;
     public static javax.swing.JTextField View_Wh_Brand;
