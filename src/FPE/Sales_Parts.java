@@ -382,6 +382,7 @@ public class Sales_Parts extends javax.swing.JFrame {
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
 
     String Banner = View_Parts_Display.getText();
+    int inputQuantity = 0;
     if(Banner.equals("PARTS")){
         try{
             String date_release = "";
@@ -417,7 +418,7 @@ public class Sales_Parts extends javax.swing.JFrame {
             String orno = "";
             String quoataion = "";
             String completed = "";
-                int inputQuantity = Integer.parseInt(Quantity.getText().toString());
+                inputQuantity = Integer.parseInt(Quantity.getText().toString());
                 String validQuantity = Quantity.getText();
                 if(validQuantity.equals("")){
                     JOptionPane.showMessageDialog(null, "ENTER QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
@@ -554,7 +555,7 @@ public class Sales_Parts extends javax.swing.JFrame {
             int originalQuantity = 0;
             originalQuantity = Integer.parseInt(View_Parts_Quantity.getText().toString());
 
-            int inputQuantity = Integer.parseInt(Quantity.getText().toString());
+            inputQuantity = Integer.parseInt(Quantity.getText().toString());
             String supplier_id = Supplier_id;
             String customer_id = "";
 
@@ -578,7 +579,7 @@ public class Sales_Parts extends javax.swing.JFrame {
             
             
 
-            
+            inputQuantity = Integer.parseInt(Quantity.getText().toString());
             int validQuantity = Integer.parseInt(Quantity.getText());
             int finalQuantity = Integer.parseInt(View_Parts_Quantity.getText()) - Integer.parseInt(Quantity.getText()) ;
                 if( Quantity.getText().equals("")){
@@ -587,8 +588,56 @@ public class Sales_Parts extends javax.swing.JFrame {
                 else if( getNowQuantity >= totalReqQuantity + 1  ){
                     JOptionPane.showMessageDialog(null, "INVALID QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
                 }
+                else if(Quantity.getText().equals("0")){
+                    JOptionPane.showMessageDialog(null, "INVALID QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
+                }
                 else{
-                    JOptionPane.showMessageDialog(null, "GOOD","",JOptionPane.INFORMATION_MESSAGE);
+                    //JOptionPane.showMessageDialog(null, "GOOD","",JOptionPane.INFORMATION_MESSAGE);
+                    try{
+                        PreparedStatement ps;
+                        ResultSet rs;
+                        ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `request_cart` WHERE `STOCK ID`='"+Parts_id+"'");
+                        rs = ps.executeQuery();
+                        if(rs.next()){
+                            //update
+                           if(!Class_Cart.summary_StockUpdateQuantity(Integer.toString(finalQuantity),Parts_id))
+                           {
+                                ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY`,`TOTAL PRICE` FROM `request_cart` WHERE `STOCK ID`='"+Parts_id+"'");
+                                rs = ps.executeQuery();
+                                    if(rs.next()){
+                                        String currentQuantity = rs.getString("QUANTITY");
+                                        int getCurrentPrice = rs.getInt("TOTAL PRICE");
+                                        int update_totalPrice = getCurrentPrice + Integer.parseInt(Quantity1.getText());
+                                        int getQuantity = Integer.parseInt(currentQuantity) + Integer.parseInt(Quantity.getText());
+                                        String last = Integer.toString(getQuantity);
+
+                                        if(!Class_Cart.existRequestToUpdateQuantity(last,  update_totalPrice,Parts_id) && !Class_Cart.existSale_Summary_stockToUpdateQuantity(last,update_totalPrice,Parts_id)){
+                                             JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADD CART","",JOptionPane.INFORMATION_MESSAGE);
+                                                Webpage.ct.Stocks();
+                                                Webpage.ct.Request_Cart();
+                                                Webpage.ct.Sales_OW();
+                                                dispose();
+
+                                        }
+                                    }
+                           }
+                        }
+                        else{
+                            // insert
+                            String getRequestQuantity = Integer.toString(inputQuantity);
+                           // JOptionPane.showMessageDialog(null, "INSERT","",JOptionPane.INFORMATION_MESSAGE);
+                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,completed,status, process_id) && !Class_Cart.AddCartRequest(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, getRequestQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, status, quoataion ,orno ,process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(finalQuantity), stock_id1)){
+                            JOptionPane.showMessageDialog(null, "SUCCESSFULLY REQUEST","",JOptionPane.INFORMATION_MESSAGE);
+                            Webpage.ct.Stocks();
+                            Webpage.ct.Request_Cart();
+                            Webpage.ct.Sales_OW();
+                            dispose();
+                    }
+                        }
+                    }
+                    catch(Exception e){
+                        e.printStackTrace();
+                    }
                    //
                     //JOptionPane.showMessageDialog(null, "GOOD","",JOptionPane.INFORMATION_MESSAGE);
 //                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,completed,status, process_id) && !Class_Cart.AddCartRequest(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, getRequestNowQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, status, quoataion ,orno ,process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
@@ -731,7 +780,39 @@ public class Sales_Parts extends javax.swing.JFrame {
             catch(Exception e){
                 e.printStackTrace();
             }
+     }
+
+     //remover request part
+     if(Banner.equals("REMOVED REQUEST CART PARTS")){
+             try{
+                PreparedStatement ps = null;
+                ResultSet rs =null;
+                ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `summary_stock` WHERE `ID` = '"+removed_id+"'");
+                rs = ps.executeQuery();
+                while(rs.next()){
+                Parts_id = ""+rs.getInt("ID");    
+                Supplier_id = rs.getString("SUPPLIER ID");
+                System.out.println(""+Parts_id);
+                System.out.println(Supplier_id);
+                date = rs.getString("DATE RECEIVED");
+                View_Parts_Category.setText(rs.getString("CATEGORY"));
+                Supplier_id = rs.getString("SUPPLIER ID");
+                View_Parts_Type.setText(rs.getString("BRAND"));
+                original_quantity = rs.getString("QUANTITY");
+                View_Parts_Brand1.setText(rs.getString("BRAND"));
+                View_Parts_Type.setText(rs.getString("TYPE"));
+                View_Parts_Price.setText(rs.getString("SELLER PRICE"));
+                images = rs.getBytes("IMAGE");
+                ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Parts_Pic.getWidth(), View_Parts_Pic.getHeight(),Image.SCALE_SMOOTH) );
+                View_Parts_Pic.setIcon(imageicon);
+
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }        
      }     
+     
      
     }//GEN-LAST:event_View_Parts_DisplayAncestorAdded
 

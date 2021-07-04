@@ -159,6 +159,23 @@ public class Class_Cart {
     return false;
     }
     
+    public static boolean existRequestToUpdateQuantity(String quantity , int total_price,String id){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `request_cart` SET `QUANTITY`=?,`TOTAL PRICE`=? WHERE `STOCK ID`=?");
+        ps.setString(1,quantity);
+        ps.setInt(2,total_price);
+        ps.setString(3,id);
+
+        ps.execute();
+                                                                                                                                                                   //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+    
+    return false;
+    }    
+    
     public static boolean existSale_Summary_stockToUpdateQuantity(String quantity ,int total_price, String id){
         PreparedStatement ps = null;
         try{

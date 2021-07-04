@@ -1596,7 +1596,6 @@ public class Webpage extends javax.swing.JFrame {
             Sale_Stock.stock.setText(Cart_Quantity);
             Sale_Stock.sell_priceTxt.setVisible(false);
             Sale_Stock.Sales_Gen_Seller_Price.setVisible(false);
-           
         }
         else if (Cart_cat.equals("PARTS")){
             //JOptionPane.showMessageDialog(null, "PARTS","",JOptionPane.INFORMATION_MESSAGE);
@@ -1609,7 +1608,6 @@ public class Webpage extends javax.swing.JFrame {
             Sales_Parts.View_Parts_Quantity.setText(Cart_Quantity);
             Sales_Parts.tp_txt.setVisible(false);
             Sales_Parts.Quantity1.setVisible(false);
-      
            
         }
         
@@ -1722,7 +1720,25 @@ public class Webpage extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField13KeyPressed
 
     private void Req_Cart_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Req_Cart_TableMouseClicked
-        // TODO add your handling code here:
+        int i=Req_Cart_Table.getSelectedRow();
+        TableModel model = Req_Cart_Table.getModel();
+        Cart_Category_Id.setText(model.getValueAt(i,0).toString());
+        
+        Cart_cat = model.getValueAt(i,1).toString();
+        Cart_Quantity = model.getValueAt(i,4).toString();
+        
+        if(Cart_cat.equals("PARTS")){
+            //JOptionPane.showMessageDialog(null, "GENERATOR","",JOptionPane.INFORMATION_MESSAGE);
+            Sales_Parts sp = new Sales_Parts();
+             sp.setVisible(true);
+            Sales_Parts.View_Parts_Display.setText("REMOVED REQUEST CART PARTS");
+            Sales_Parts.Stock_Genset_Update.setText("REMOVE");
+            Sales_Parts.cart_id = Cart_Category_Id.getText();
+            Sales_Parts.txtStock.setText("REMOVED STOCK");
+            Sales_Parts.View_Parts_Quantity.setText(Cart_Quantity);
+            Sales_Parts.tp_txt.setVisible(false);
+            Sales_Parts.Quantity1.setVisible(false);
+        }
     }//GEN-LAST:event_Req_Cart_TableMouseClicked
 
     private void Shop_Add9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add9MouseClicked
