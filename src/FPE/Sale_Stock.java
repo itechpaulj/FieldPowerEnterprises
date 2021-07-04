@@ -504,14 +504,16 @@ public class Sale_Stock extends javax.swing.JFrame {
        String availableStock = stock.getText();
        
        int result =  Integer.parseInt(availableStock) - Integer.parseInt(inputQuantity);
-       if(result == 0){
-          // JOptionPane.showMessageDialog(null, "DELETE","",JOptionPane.INFORMATION_MESSAGE);
-          stock.setText(""+result);
-          JOptionPane.showMessageDialog(null, "NO STOCK AVAILABLE","",JOptionPane.INFORMATION_MESSAGE);
+       if(stock.getText().equals("0")){
+            JOptionPane.showMessageDialog(null, "NO STOCK AVAILABLE","",JOptionPane.INFORMATION_MESSAGE);
             Class_Cart.addCart();
-            tbl.Cart();
+            tbl.Cart();      
        }
-       else if(Integer.parseInt(inputQuantity) >= Integer.parseInt(availableStock)){
+//       else if(result == 0){
+//          //JOptionPane.showMessageDialog(null, "DELETE","",JOptionPane.INFORMATION_MESSAGE);
+//
+//       }
+       else if(Integer.parseInt(inputQuantity) > Integer.parseInt(availableStock)){
            JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
             Class_Cart.addCart();
             tbl.Cart();
