@@ -175,7 +175,45 @@ public class Class_Cart {
     
         return false;
     }
+
+     public static boolean AddCartRequest(String dateOut , String category, String brand, String model, String kva, String phasing, String type, String supplier_price,String seller_price, String engine_sn, String alternator_sn, String quantity, int total_price,String person_in_charge, String supplier_id,String customer_id,String stock_id, byte[] pic, String quotation,String orno,String status,String process_id){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `request_cart`(`DATE RELEASE`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `TOTAL PRICE`, `PERSON IN CHARGE`,`SUPPLIER ID`, `CUSTOMER ID`, `STOCK ID`, `IMAGE`,`QUOTATION`,`OR NO`,`STATUS`, `PROCESS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps.setString(1,dateOut);
+        ps.setString(2,category);
+        ps.setString(3,brand);
+        ps.setString(4,model);
+        ps.setString(5,kva);
+        ps.setString(6,phasing);
+        ps.setString(7,type);
+        ps.setString(8,supplier_price);
+        ps.setString(9,seller_price);
+        ps.setString(10,engine_sn);
+        ps.setString(11,alternator_sn);
+        ps.setString(12,quantity);
+        ps.setInt(13,total_price);
+        ps.setString(14, person_in_charge); 
+        ps.setString(15, supplier_id); 
+        ps.setString(16, customer_id);
+        ps.setString(17, stock_id);
+        ps.setBytes(18,pic);
+        ps.setString(19,quotation);
+        ps.setString(20,orno);
+        ps.setString(21,status);
+        ps.setString(22, process_id);
+        
+        ps.execute();
+                                                                                                                                                                   //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`
+        }catch(Exception e){
+           e.printStackTrace();
+        }
     
+    return false;
+    }
+    
+
+
 //       public static boolean updateQuantity_summaryStock (String dateOut , String category, String brand, String model, String kva, String phasing, String type, String supplier_price,String seller_price, String engine_sn, String alternator_sn, String quantity,String supplier_id,String customer_id,String stock_id, byte[] pic,String status,String process_id){
 //        PreparedStatement ps = null;
 //        try{

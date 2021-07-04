@@ -384,7 +384,7 @@ public class Sales_Parts extends javax.swing.JFrame {
     String Banner = View_Parts_Display.getText();
     if(Banner.equals("PARTS")){
         try{
-            String date_release = View_Parts_dateReleased.getText();
+            String date_release = "";
 
             String category = View_Parts_Category.getText().toUpperCase(); 
             String brand = View_Parts_Type.getText().toUpperCase();
@@ -539,7 +539,7 @@ public class Sales_Parts extends javax.swing.JFrame {
             String date_release = View_Parts_dateReleased.getText();
 
             String category = View_Parts_Category.getText().toUpperCase(); 
-            String brand = View_Parts_Type.getText().toUpperCase();
+            String brand = View_Parts_Brand1.getText().toUpperCase();
             String model="";
             String kva = "";
             String phasing ="";
@@ -547,22 +547,23 @@ public class Sales_Parts extends javax.swing.JFrame {
             String supplier_price ="";
             String person_in_charge = Quantity1.getText();
             String seller_price = View_Parts_Price.getText().toUpperCase(); 
-            String engine_sn ="";
+            String engine_sn = "";
             String alternator_sn ="";
 
             
             int originalQuantity = 0;
             originalQuantity = Integer.parseInt(View_Parts_Quantity.getText().toString());
 
+            int inputQuantity = Integer.parseInt(Quantity.getText().toString());
             String supplier_id = Supplier_id;
             String customer_id = "";
 
             String stock_id1 = Parts_id;    
-            String status = "DONE";
+            String status = "";
             String process_id = Integer.toString(Class_Cart.process) ;
             
             //total price
-            String total_price = "0";
+            String total_price = Quantity1.getText();;
 
 
             // OR NO and  quotation
@@ -571,27 +572,37 @@ public class Sales_Parts extends javax.swing.JFrame {
             String completed = "";
             
             int getNowQuantity = Integer.parseInt(Quantity.getText());
+            int totalReqQuantity = Integer.parseInt(View_Parts_Quantity.getText());
+            
             String reqQuantity = Integer.toString(getNowQuantity);
             
+            
 
-            int result = Integer.parseInt(View_Parts_Quantity.getText()) - Integer.parseInt(Quantity.getText());
+            
             int validQuantity = Integer.parseInt(Quantity.getText());
-                if( result + 1 <= validQuantity  ){
-                    JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
-                }
-                else if(Quantity1.equals("")){
-                    JOptionPane.showMessageDialog(null, "EMPTY FIELDS","",JOptionPane.INFORMATION_MESSAGE);
+            int finalQuantity = Integer.parseInt(View_Parts_Quantity.getText()) - Integer.parseInt(Quantity.getText()) ;
+                if( Quantity.getText().equals("")){
+                    JOptionPane.showMessageDialog(null, "ENTER QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
+                }            
+                else if( getNowQuantity >= totalReqQuantity + 1  ){
+                    JOptionPane.showMessageDialog(null, "INVALID QUANTITY!","",JOptionPane.INFORMATION_MESSAGE);
                 }
                 else{
-                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,completed,status, process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
-                            JOptionPane.showMessageDialog(null, "SUCCESSFULLY REQUEST","",JOptionPane.INFORMATION_MESSAGE);
-                            Class_Cart.addCart();
-                            new Class_tables().Cart();
-                            new Class_tables().Stocks();
-                            new Class_tables().Sales_OW();
-                            dispose();
-                    }                    
+                    JOptionPane.showMessageDialog(null, "GOOD","",JOptionPane.INFORMATION_MESSAGE);
+                   //
+                    //JOptionPane.showMessageDialog(null, "GOOD","",JOptionPane.INFORMATION_MESSAGE);
+//                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,completed,status, process_id) && !Class_Cart.AddCartRequest(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, getRequestNowQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, status, quoataion ,orno ,process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
+//                            JOptionPane.showMessageDialog(null, "SUCCESSFULLY REQUEST","",JOptionPane.INFORMATION_MESSAGE);
+//                            Class_Cart.addCart();
+//                            new Class_tables().Cart();
+//                            new Class_tables().Stocks();
+//                            new Class_tables().Sales_OW();
+//                            dispose();
+//                    }
+                    
                 }
+                
+
             
     }
     
@@ -754,8 +765,8 @@ public class Sales_Parts extends javax.swing.JFrame {
         if(Banner.equals("REQUEST PARTS")){
             try{
                 String number  = Quantity.getText() ;
-                int result = Integer.parseInt(Quantity.getText().toString());
-                Integer.toString(result);
+                int result = Integer.parseInt(Quantity.getText().toString()) * Integer.parseInt(View_Parts_Price.getText().toString());
+                Quantity1.setText(""+result);
             }
             catch(NumberFormatException  e){
                Quantity.setText("");

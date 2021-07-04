@@ -100,11 +100,12 @@ public class Add_Drawer_Sale extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
 //        new Class_tables().request();
         Webpage.JTab.setSelectedIndex(2);
-        Webpage.ct.SalesStock();
+        Webpage.ct.Sales_OW();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        Webpage.JTab.setSelectedIndex(2);
+        Webpage.JTab.setSelectedIndex(4);
+        Webpage.ct.request();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered

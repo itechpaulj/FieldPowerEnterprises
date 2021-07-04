@@ -79,7 +79,6 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 590, 140));
 
         jPanel2.setBackground(new java.awt.Color(255, 179, 128));
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Cancel_btn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         Cancel_btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,17 +101,18 @@ public class Login extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Cancel_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(Cancel_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 40, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Cancel_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 180, 50));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, 180, 50));
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(243, 246, 26)));
 
         Login_Btn.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         Login_Btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,14 +135,16 @@ public class Login extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Login_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(Login_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 34, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Login_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(Login_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 180, 50));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 180, 50));
 
         password.setBackground(new java.awt.Color(230, 230, 230));
         password.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
@@ -164,49 +166,48 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Login_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseEntered
-       // Login_Btn.setBackground(new Color(0,137,148));
-        jPanel3.setBackground(new Color(0,173,173));
-    }//GEN-LAST:event_Login_BtnMouseEntered
+    private void Cancel_btnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseExited
+        // Cancel_btn.setForeground(new Color(0,51,51));
+        jPanel2.setBackground(new Color(255, 179, 128));
+    }//GEN-LAST:event_Cancel_btnMouseExited
 
     private void Cancel_btnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseEntered
         // Cancel_btn.setForeground(new Color(0,51,51));
-       jPanel2.setBackground(new Color(255, 199, 148));
+        jPanel2.setBackground(new Color(255, 199, 148));
     }//GEN-LAST:event_Cancel_btnMouseEntered
 
+    private void Cancel_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_Cancel_btnMouseClicked
+
     private void Login_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseExited
-       // Login_Btn.setForeground(new Color(0,51,51));
+        // Login_Btn.setForeground(new Color(0,51,51));
         jPanel3.setBackground(new Color(0,153,153));
     }//GEN-LAST:event_Login_BtnMouseExited
 
-    private void Cancel_btnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseExited
-       // Cancel_btn.setForeground(new Color(0,51,51));
-        jPanel2.setBackground(new Color(255, 179, 128));
-    }//GEN-LAST:event_Cancel_btnMouseExited
+    private void Login_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseEntered
+        // Login_Btn.setBackground(new Color(0,137,148));
+        jPanel3.setBackground(new Color(0,173,173));
+    }//GEN-LAST:event_Login_BtnMouseEntered
 
     private void Login_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseClicked
         String user = username.getText();
         String pass = password.getText();
-        
+
         if(!Class_Login.LoginAdmin(user, pass))
         {
             if(Class_Login.admin_name.equals(user) && Class_Login.password.equals(pass)){
-            JOptionPane.showMessageDialog(null, "WELCOME "+Class_Login.admin_name+"","",JOptionPane.INFORMATION_MESSAGE);
-//            Mainpage m = new Mainpage();
-//            m.setVisible(true);
-//            Mainpage.admin_id = Class_Login.admin_id;
-            dispose();                
+                JOptionPane.showMessageDialog(null, "WELCOME "+Class_Login.admin_name+"","",JOptionPane.INFORMATION_MESSAGE);
+                //            Mainpage m = new Mainpage();
+                //            m.setVisible(true);
+                //            Mainpage.admin_id = Class_Login.admin_id;
+                dispose();
             }
             else{
                 JOptionPane.showMessageDialog(null, "INCORRECT PASSWORD","",JOptionPane.INFORMATION_MESSAGE);
             }
         }
-
     }//GEN-LAST:event_Login_BtnMouseClicked
-
-    private void Cancel_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_Cancel_btnMouseClicked
 
     /**
      * @param args the command line arguments

@@ -373,11 +373,11 @@ public class Sales_Office extends javax.swing.JFrame {
             String customer_id = "";
 
             String stock_id1 = Office_id;    
-            String status = "DONE";
+            String status = "";
             String process_id = Integer.toString(Class_Cart.process) ;
             
             //total price
-            String total_price = "0";
+            String total_price = Sales_given.getText();
 
 
             // OR NO and  quotation
@@ -387,7 +387,7 @@ public class Sales_Office extends javax.swing.JFrame {
             
             int getNowQuantity = Integer.parseInt(sales_quantity.getText());
             String reqQuantity = Integer.toString(getNowQuantity);
-            
+            int inputQuantity = Integer.parseInt(sales_quantity.getText().toString());
 
             int result = Integer.parseInt(View_Parts_Quantity.getText()) - Integer.parseInt(sales_quantity.getText());
             int validQuantity = Integer.parseInt(sales_quantity.getText());
@@ -398,7 +398,8 @@ public class Sales_Office extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "EMPTY FIELDS","",JOptionPane.INFORMATION_MESSAGE);
                 }
                 else{
-                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,completed,status, process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
+                    String getRequestNowQuantity = Integer.toString(inputQuantity);
+                    if(!Class_Cart.InsertCart(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, reqQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, quoataion ,orno,completed,status, process_id) && !Class_Cart.AddCartRequest(date_release, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, getRequestNowQuantity, Integer.parseInt(total_price),person_in_charge,supplier_id, customer_id, stock_id1, images, status, quoataion ,orno ,process_id) && !Class_SummaryStock.UpdateQuantity(Integer.toString(result), stock_id1)){
                             JOptionPane.showMessageDialog(null, "SUCCESSFULLY REQUEST","",JOptionPane.INFORMATION_MESSAGE);
                             Class_Cart.addCart();
                             new Class_tables().Cart();
@@ -409,13 +410,7 @@ public class Sales_Office extends javax.swing.JFrame {
                 }
             
     }    
-//    if(!Class_SummaryStock.UpdateStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, person_in_charge, remarks,supplier_name, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
-//    {
-//        JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
-//    }else{
-//        JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
-//    }
-    
+
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
     private void Stock_Genset_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseEntered
@@ -482,13 +477,17 @@ public class Sales_Office extends javax.swing.JFrame {
     }//GEN-LAST:event_sales_priceActionPerformed
 
     private void sales_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sales_quantityKeyReleased
-        try{
-            String number  = sales_quantity.getText() ;
-            int inputQuantity = Integer.parseInt(sales_quantity.getText());
-           
-        }
-        catch(NumberFormatException  e){
-           sales_quantity.setText("");
+        String Banner = View_Office_Display.getText();
+        
+        if(Banner.equals("REQUEST OFFICE")){
+            try{
+                String number  = sales_quantity.getText() ;
+                int result = Integer.parseInt(sales_quantity.getText().toString()) * Integer.parseInt(sales_price.getText().toString());
+                Sales_given.setText(""+result);
+            }
+            catch(NumberFormatException  e){
+               Sales_given.setText("");
+            }
         }
     }//GEN-LAST:event_sales_quantityKeyReleased
 
