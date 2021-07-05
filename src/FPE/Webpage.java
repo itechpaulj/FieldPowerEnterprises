@@ -49,7 +49,6 @@ public class Webpage extends javax.swing.JFrame {
     
     
     
-    
     public static String sales_id = null;
     
     public static String Stock_cat = null;
@@ -211,6 +210,7 @@ public class Webpage extends javax.swing.JFrame {
         SALE = new javax.swing.JLabel();
         ACCOUNT_PANEL = new javax.swing.JPanel();
         ACCOUNT = new javax.swing.JLabel();
+        exit = new javax.swing.JLabel();
         JTab = new javax.swing.JTabbedPane();
         HOME_0 = new keeptoo.KGradientPanel();
         fpe_home = new javax.swing.JLabel();
@@ -489,6 +489,17 @@ public class Webpage extends javax.swing.JFrame {
         );
 
         HEADER.add(ACCOUNT_PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 40, 200, 60));
+
+        exit.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                exitAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        HEADER.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 80, 20));
 
         getContentPane().add(HEADER, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1364, 130));
 
@@ -1897,6 +1908,17 @@ public class Webpage extends javax.swing.JFrame {
     private void History_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_History_TableMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_History_TableMouseClicked
+
+    private void exitAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_exitAncestorAdded
+        String Banner = exit.getText();
+        
+        if(Banner.equals("exit")){
+            dispose();
+        }
+        else{
+            exit.setText("");
+        }
+    }//GEN-LAST:event_exitAncestorAdded
       
     /**
      * @param args the command line arguments
@@ -1999,6 +2021,7 @@ public class Webpage extends javax.swing.JFrame {
     public static javax.swing.JLabel Stock_Genset_Supplier;
     private javax.swing.JComboBox<String> Warehouse_Office_Category;
     public static javax.swing.JLabel Warehouse_Office_Category_Id;
+    public static javax.swing.JLabel exit;
     private javax.swing.JLabel fpe_home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

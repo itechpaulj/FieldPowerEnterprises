@@ -6,6 +6,7 @@
 package FPE;
 
 import java.awt.Color;
+import javax.swing.JFrame;
 
 /**
  *
@@ -13,10 +14,11 @@ import java.awt.Color;
  */
 public class Add_Drawer_Account extends javax.swing.JFrame {
 
-     
+    ;
     public Add_Drawer_Account() {
         initComponents();
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,77 +29,100 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        add_user_panel = new javax.swing.JPanel();
+        add_user = new javax.swing.JLabel();
+        logout_panel = new javax.swing.JPanel();
+        logout = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 117, 128));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add_user_panel.setBackground(new java.awt.Color(0, 117, 128));
+        add_user_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 22)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Drawer_Logout.png"))); // NOI18N
-        jLabel2.setText(" ADD USER  ");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        add_user.setFont(new java.awt.Font("Calibri", 1, 22)); // NOI18N
+        add_user.setForeground(new java.awt.Color(255, 255, 255));
+        add_user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Add_Supplier_Btn.PNG"))); // NOI18N
+        add_user.setText(" ADD USER  ");
+        add_user.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                add_userMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel2MouseEntered(evt);
+                add_userMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel2MouseExited(evt);
+                add_userMouseExited(evt);
             }
         });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
+        add_user_panel.add(add_user, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
+        getContentPane().add(add_user_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
 
-        jPanel2.setBackground(new java.awt.Color(0, 117, 128));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        logout_panel.setBackground(new java.awt.Color(0, 117, 128));
+        logout_panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 1, 22)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Drawer_Logout.png"))); // NOI18N
-        jLabel3.setText(" LOGOUT    ");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        logout.setFont(new java.awt.Font("Calibri", 1, 22)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Drawer_Logout.png"))); // NOI18N
+        logout.setText("  LOGOUT    ");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel3MouseEntered(evt);
+                logoutMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
+                logoutMouseExited(evt);
             }
         });
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
+        logout_panel.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 60));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 200, 60));
+        getContentPane().add(logout_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 200, 60));
 
         setBounds(1143, 102, 200, 120);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
-        jPanel1.setBackground(new Color(0,117,128));
-        jLabel2.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_jLabel2MouseExited
+    private void add_userMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_userMouseExited
+        add_user_panel.setBackground(new Color(0,117,128));
+        add_user.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_add_userMouseExited
 
-    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
-        jPanel1.setBackground(new Color(163, 235, 177));
-        jLabel2.setForeground(new Color(33, 21, 34));
-    }//GEN-LAST:event_jLabel2MouseEntered
+    private void add_userMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_userMouseEntered
+        add_user_panel.setBackground(new Color(163, 235, 177));
+        add_user.setForeground(new Color(33, 21, 34));
+    }//GEN-LAST:event_add_userMouseEntered
 
-    private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
-        jPanel2.setBackground(new Color(0,117,128));
-        jLabel3.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_jLabel3MouseEntered
+    private void logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseEntered
+        logout_panel.setBackground(new Color(163, 235, 177));
+        logout.setForeground(new Color(33, 21, 34));
+    }//GEN-LAST:event_logoutMouseEntered
 
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
-        jPanel2.setBackground(new Color(163, 235, 177));
-        jLabel3.setForeground(new Color(33, 21, 34));
-    }//GEN-LAST:event_jLabel3MouseExited
+    private void logoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseExited
+        logout_panel.setBackground(new Color(0,117,128));
+        logout.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_logoutMouseExited
+
+    private void add_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_userMouseClicked
+        Register l = new Register();
+        l.setVisible(true);
+        add_user_panel.setBackground(new Color(0,117,128));
+        dispose();
+    }//GEN-LAST:event_add_userMouseClicked
+
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        
+        Webpage.exit.setText("exit");
+        Login l = new Login();
+        l.setVisible(true);
+        logout_panel.setBackground(new Color(0,117,128)); 
+        
+        
+    }//GEN-LAST:event_logoutMouseClicked
 
     /**
      * @param args the command line arguments
@@ -136,9 +161,9 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel add_user;
+    private javax.swing.JPanel add_user_panel;
+    public static javax.swing.JLabel logout;
+    public static javax.swing.JPanel logout_panel;
     // End of variables declaration//GEN-END:variables
 }

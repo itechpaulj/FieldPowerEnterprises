@@ -15,6 +15,8 @@ public class Class_Login {
    public static String admin_name = "";
    public static String admin_id = "";
    public static String password = "";
+   public static String register_user = "";
+   
      public static boolean InsertAdmin(String em_id,String fn,String email,String user,String pass){
         PreparedStatement ps = null;
         try{
@@ -56,6 +58,49 @@ public class Class_Login {
         }catch(Exception e){
            e.printStackTrace();
         }   
+     return false;
+    }
+     
+          public static boolean RegisterLook(String user){
+        PreparedStatement ps = null;
+        boolean status = false;
+        try{
+       
+        ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `login` WHERE `USERNAME` = ? ");
+        ps.setString(1,user);
+        
+        ResultSet rs = ps.executeQuery();
+        
+        while(rs.next()){
+       
+         
+       register_user = rs.getString("USERNAME");
+             
+         }
+        status = rs.next();
+        }catch(Exception e){
+           e.printStackTrace();
+        }    
+     return false;
+    }
+     
+     public static boolean Register(String fn,String level,String user,String pass,String c_pass){
+        PreparedStatement ps = null;
+        try{
+       
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `login`(`NAME`, `USER LEVEL`, `USERNAME`, `PASSWORD`, `CONFIRM PASSWORD`) VALUES (?,?,?,?,?)");
+        ps.setString(1,fn);
+        ps.setString(2,level);
+        ps.setString(3,user);
+        ps.setString(4,pass);
+        ps.setString(5,c_pass);
+
+        ps.execute();
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        
      return false;
     }
 }
