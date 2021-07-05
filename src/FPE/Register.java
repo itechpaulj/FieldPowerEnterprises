@@ -230,7 +230,7 @@ public class Register extends javax.swing.JFrame {
 //        else if(!Class_Login.register_user.equals(user)){
 //            JOptionPane.showMessageDialog(null, "TRY ANOTHER USERNAME !!","",JOptionPane.ERROR_MESSAGE);
 //        }
-        else if(!Class_Login.Register(fn, user, user, pass, C_pass)){
+        else if(!Class_Login.Register(fn, userlevel, user, pass, C_pass)){
             JOptionPane.showMessageDialog(null, "SUCCESSFULY CREATED");
         }
     }//GEN-LAST:event_Login_BtnMouseClicked
