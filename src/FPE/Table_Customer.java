@@ -77,17 +77,17 @@ public class Table_Customer extends javax.swing.JFrame {
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         displays.setText("CUSTOMER LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 displaysAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
         });
-        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 570, 80));
+        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 400, 110));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 130));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
@@ -297,7 +297,7 @@ public class Table_Customer extends javax.swing.JFrame {
         kGradientPanel1.add(id_cus, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 80, 30));
         kGradientPanel1.add(Customer_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 34, 50, 30));
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 570));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 950, 570));
 
         pack();
         setLocationRelativeTo(null);

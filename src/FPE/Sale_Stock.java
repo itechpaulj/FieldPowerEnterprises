@@ -137,12 +137,12 @@ public class Sale_Stock extends javax.swing.JFrame {
         sale_Generator_Banner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         sale_Generator_Banner.setText("GENERATOR");
         sale_Generator_Banner.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 sale_Generator_BannerAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(sale_Generator_Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 890, 80));
@@ -167,7 +167,7 @@ public class Sale_Stock extends javax.swing.JFrame {
                 Sales_Gen_PicMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Sales_Gen_Pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 370, 230));
+        KG2_ADD_STOCK_GENSET.add(Sales_Gen_Pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 370, 220));
 
         Sales_Gen_Model.setEditable(false);
         Sales_Gen_Model.setBackground(new java.awt.Color(204, 204, 204));
@@ -582,7 +582,7 @@ public class Sale_Stock extends javax.swing.JFrame {
          int result1 = Integer.parseInt(input_quantityRemoved) + Integer.parseInt(totalQuantity); // resultQuantity
          int resultCartOnlyQuantity = Integer.parseInt(stockRemoved) - Integer.parseInt(input_quantityRemoved);
             if(resultCartOnlyQuantity == 0){
-                Class_Cart_Remove ccr = new Class_Cart_Remove();
+                Class_History ccr = new Class_History();
                 if(!ccr.quantityCartIsZero(cart_id) && !ccr.quantitySaleSummaryIsZero(cart_id)){
                    Webpage.AllTable();
                 }
@@ -595,7 +595,7 @@ public class Sale_Stock extends javax.swing.JFrame {
                JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
             }
             else{
-                Class_Cart_Remove ccr = new Class_Cart_Remove();
+                Class_History ccr = new Class_History();
                  if(!ccr.Sales_Parts(Integer.toString(result1), Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) ){
                      new Class_tables().Cart();
                      new Class_tables().Stocks();

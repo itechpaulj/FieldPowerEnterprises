@@ -20,17 +20,18 @@ import javax.swing.table.TableRowSorter;
  * @author ROBLES
  */
 public class Table_Supplier extends javax.swing.JFrame {
-
+//
     String id = null;
     String name = null;
     String add = null;
-    String email = null;
     String contact = null;
+    
     Class_tables ct = new Class_tables();
+    
     public Table_Supplier() {
-        initComponents();
+    initComponents();
         
-        ct.Supplier();
+    ct.Supplier();
       
        
     }
@@ -68,7 +69,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
+        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -76,17 +77,17 @@ public class Table_Supplier extends javax.swing.JFrame {
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         displays.setText("SUPPLIER LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 displaysAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
         });
-        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 570, 80));
+        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 370, 100));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 130));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
@@ -295,7 +296,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         kGradientPanel1.add(supplier_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 80, 30));
         kGradientPanel1.add(Supplier_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 34, 50, 30));
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 950, 570));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 950, 570));
 
         pack();
         setLocationRelativeTo(null);
@@ -313,8 +314,8 @@ public class Table_Supplier extends javax.swing.JFrame {
         id = model.getValueAt(i,0).toString();
         name = model.getValueAt(i,1).toString();
         add = model.getValueAt(i,2).toString();
-        email = model.getValueAt(i,3).toString();
-        contact = model.getValueAt(i,4).toString();
+      
+        contact = model.getValueAt(i,3).toString();
     }//GEN-LAST:event_Supplier_tableMouseClicked
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
@@ -348,6 +349,7 @@ public class Table_Supplier extends javax.swing.JFrame {
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
       String id1 = supplier_id.getText();
+      
            int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
                 if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION ){
@@ -406,31 +408,31 @@ public class Table_Supplier extends javax.swing.JFrame {
        if(supplier_id.getText().isEmpty()){
            JOptionPane.showMessageDialog(null, "PLEASE SELECT CUSTOMER !","",JOptionPane.ERROR_MESSAGE);
        }else if(path.equals("INSERT_GENERATOR")){
-            Insert_Generator.Supplier_id = id;
+            Insert_Generator.supplier_id = id;
             Insert_Generator.Insert_Gen_Supplier_Name.setText(name);
             Insert_Generator.Insert_Gen_Supplier_Address.setText(add);
-            Insert_Generator.Insert_Gen_Supplier_Email.setText(email);
+            //Insert_Generator.Insert_Gen_Supplier_Email.setText(email);
             Insert_Generator.Insert_Gen_Supplier_Contact.setText(contact);
             dispose();
        }else if(path.equals("INSERT_PARTS")){
-            Insert_Parts.Supplier_id = id;
+            Insert_Parts.supplier_id = id;
             Insert_Parts.Insert_Parts_Supplier_name.setText(name);
             Insert_Parts.Insert_Parts_Supplier_Address.setText(add);
-            Insert_Parts.Insert_Parts_Supplier_Email.setText(email);
+            //Insert_Parts.Insert_Parts_Supplier_Email.setText(email);
             Insert_Parts.Insert_Parts_Supplier_Contact.setText(contact);
             dispose();
        }else if(path.equals("VIEW_GENERATOR")){
-            View_Generator.Supplier_id = id;
+            View_Generator.supplier_id = id;
             View_Generator.View_Gen_Supplier_Name.setText(name);
             View_Generator.View_Gen_Supplier_Address.setText(add);
-            View_Generator.View_Gen_Supplier_Email.setText(email);
+            //View_Generator.View_Gen_Supplier_Email.setText(email);
             View_Generator.View_Gen_Supplier_Contact.setText(contact);
             dispose();
        }else if(path.equals("VIEW_PARTS")){
-            View_Parts.Supplier_id = id;
+            View_Parts.supplier_id = id;
             View_Parts.View_Parts_Supplier_name.setText(name);
             View_Parts.View_Parts_Supplier_Address.setText(add);
-            View_Parts.View_Parts_Supplier_Email.setText(email);
+            //View_Parts.View_Parts_Supplier_Email.setText(email);
             View_Parts.View_Parts_Supplier_Contact.setText(contact);
             dispose();
        }

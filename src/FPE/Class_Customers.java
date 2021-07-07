@@ -9,14 +9,14 @@ import javax.swing.JOptionPane;
 
 public class Class_Customers {
  
-    public static boolean AddCustomer(String name,String address,String contact,String email ){
+    public static boolean AddCustomer(String name,String address,String contact ){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `customer_table`(`NAME`, `ADDRESS`, `EMAIL`, `CONTACT`) VALUES (?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `customer_table`(`NAME`, `ADDRESS`,  `CONTACT`) VALUES (?,?,?)");
         ps.setString(1, name);
         ps.setString(2, address);
-        ps.setString(3, email);
-        ps.setString(4, contact);
+        ps.setString(3, contact);
+
         ps.execute();
         }
         catch(Exception e){
@@ -27,15 +27,15 @@ public class Class_Customers {
      return false;
     }
     
-    public static boolean EditCustomer(String name,String address,String contact,String email, String id ){
+    public static boolean EditCustomer(String name,String address,String contact, String id ){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `customer_table` SET `NAME`=?,`ADDRESS`=?,`EMAIL`=?,`CONTACT`=? WHERE `ID`=?");
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `customer_table` SET `NAME`=?,`ADDRESS`=?,CONTACT`=? WHERE `ID`=?");
         ps.setString(1, name);
         ps.setString(2, address);
-        ps.setString(3, email);
-        ps.setString(4, contact);
-        ps.setString(5, id);
+        ps.setString(3, contact);
+        ps.setString(4, id);
+      
         ps.execute();
         }
         catch(Exception e){
@@ -57,13 +57,13 @@ public class Class_Customers {
      return false;
     }
     
-    public static boolean ExistCustomer(String email){
+    public static boolean ExistCustomer(String name){
         PreparedStatement ps = null;
         ResultSet rs = null;
         boolean Sup_email = false;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("SELECT `EMAIL` FROM `customer_table` WHERE `EMAIL`=?");
-        ps.setString(1,email);
+        ps = FPE_DB.getConnection().prepareStatement("SELECT `NAME` FROM `customer_table` WHERE `NAME`=?");
+        ps.setString(1,name);
         rs = ps.executeQuery();
             if(!rs.next()){
                 Sup_email = true;

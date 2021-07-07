@@ -35,11 +35,9 @@ public class Insert_Supplier extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
         Insert_Supplier_name = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Insert_Supplier_address = new javax.swing.JTextArea();
-        Insert_Supplier_email = new javax.swing.JTextField();
         Insert_Supplier_contact = new javax.swing.JTextField();
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
         Stock_Genset_Back = new javax.swing.JLabel();
@@ -50,7 +48,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
+        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Insert_Supplier_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -58,17 +56,17 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Insert_Supplier_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Insert_Supplier_Display.setText("ADD NEW SUPPLIER");
         Insert_Supplier_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Insert_Supplier_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
         });
-        jPanel4.add(Insert_Supplier_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 410, 60));
+        jPanel4.add(Insert_Supplier_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 280, 90));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 130));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
@@ -95,13 +93,6 @@ public class Insert_Supplier extends javax.swing.JFrame {
         jTextField3.setBorder(null);
         kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 120, 31));
 
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(102, 255, 102));
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField4.setText(" EMAIL");
-        jTextField4.setBorder(null);
-        kGradientPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 120, 31));
-
         Insert_Supplier_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Supplier_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Supplier_name.setBorder(null);
@@ -114,12 +105,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
         Insert_Supplier_address.setRows(5);
         jScrollPane1.setViewportView(Insert_Supplier_address);
 
-        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 270, 70));
-
-        Insert_Supplier_email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Supplier_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Insert_Supplier_email.setBorder(null);
-        kGradientPanel1.add(Insert_Supplier_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 270, 31));
+        kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 270, 110));
 
         Insert_Supplier_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Supplier_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -190,7 +176,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
 
         kGradientPanel1.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 170, -1));
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 470, 450));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 470, 450));
 
         pack();
         setLocationRelativeTo(null);
@@ -211,7 +197,7 @@ public class Insert_Supplier extends javax.swing.JFrame {
             System.out.println(Supplier_id);
             Insert_Supplier_name.setText(rs.getString("NAME"));
             Insert_Supplier_address.setText(rs.getString("ADDRESS"));
-            Insert_Supplier_email.setText(rs.getString("EMAIL"));
+            
             Insert_Supplier_contact.setText(rs.getString("CONTACT"));
             
             
@@ -244,32 +230,34 @@ public class Insert_Supplier extends javax.swing.JFrame {
 
     private void Stock_Genset_SaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SaveMouseClicked
         String Banner = Insert_Supplier_Display.getText();
-        String name = Insert_Supplier_name.getText();
-        String address = Insert_Supplier_address.getText();
-        String email = Insert_Supplier_email.getText();
-        String contact =Insert_Supplier_contact.getText();
+        String name = Insert_Supplier_name.getText().toUpperCase();
+        String address = Insert_Supplier_address.getText().toUpperCase();
+        
+        String contact =Insert_Supplier_contact.getText().toUpperCase();
       
         
-        if(name.equals("") || address.equals("") || email.equals("") || contact.equals("")){
+        if(name.equals("") || address.equals("") ||  contact.equals("")){
            JOptionPane.showMessageDialog(null, " INPUT SOME FIELDS !!","",JOptionPane.ERROR_MESSAGE);
            ct.Supplier();
         }
         else if(Banner.equals("ADD NEW SUPPLIER")){
-            if(!Class_Supplier.ExistSupplier(email)){
-                JOptionPane.showMessageDialog(null, "ALREADY EXIST EMAIL!","",JOptionPane.INFORMATION_MESSAGE);
+            if(!Class_Supplier.ExistSupplier(name)){
+                JOptionPane.showMessageDialog(null, "SUPPLIER NAME ALREADY EXIST !","",JOptionPane.INFORMATION_MESSAGE);
                 ct.Supplier();
             }else{
-                if(!Class_Supplier.AddSupplier(name, address, contact, email))
+                if(!Class_Supplier.AddSupplier(name, address, contact))
                  {
                      JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
                      ct.Supplier();
+                     dispose();
                  }
             }
         }else if(Banner.equals("UPDATE SUPPLIER")){
-           if(!Class_Supplier.UpdateSupplier(name, address, contact, email, Supplier_id))
+           if(!Class_Supplier.UpdateSupplier(name, address, contact, Supplier_id))
             {
                 JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATE","",JOptionPane.INFORMATION_MESSAGE);
                 ct.Supplier();
+                dispose();
             }
         }
     }//GEN-LAST:event_Stock_Genset_SaveMouseClicked
@@ -323,7 +311,6 @@ public class Insert_Supplier extends javax.swing.JFrame {
     public static javax.swing.JLabel Insert_Supplier_Display;
     public static javax.swing.JTextArea Insert_Supplier_address;
     public static javax.swing.JTextField Insert_Supplier_contact;
-    public static javax.swing.JTextField Insert_Supplier_email;
     public static javax.swing.JTextField Insert_Supplier_name;
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
@@ -334,7 +321,6 @@ public class Insert_Supplier extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

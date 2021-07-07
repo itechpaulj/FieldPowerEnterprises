@@ -22,7 +22,7 @@ public class Insert_Parts extends javax.swing.JFrame {
     String filename = null;
     byte[] images = null;
     
-    public static String Supplier_id=null;
+    public static String supplier_id=null;
     
     public Insert_Parts() {
         initComponents();
@@ -55,7 +55,6 @@ public class Insert_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
         Insert_Parts_Pic = new javax.swing.JLabel();
         Insert_Parts_Supplier_Contact = new javax.swing.JTextField();
-        Insert_Parts_Supplier_Email = new javax.swing.JTextField();
         Insert_Parts_Supplier_name = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Insert_Parts_Supplier_Address = new javax.swing.JTextArea();
@@ -82,8 +81,9 @@ public class Insert_Parts extends javax.swing.JFrame {
         Insert_Parts_Remarks = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
         jTextField15 = new javax.swing.JTextField();
+        Insert_Parts_total_price = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
@@ -91,7 +91,7 @@ public class Insert_Parts extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
+        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Inventory_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -99,17 +99,17 @@ public class Insert_Parts extends javax.swing.JFrame {
         Inventory_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Inventory_Display.setText("ADD NEW PARTS STOCK");
         Inventory_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Inventory_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
         });
-        jPanel4.add(Inventory_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 80));
+        jPanel4.add(Inventory_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 110));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 130));
 
         KG2_ADD_STOCK_GENSET.setkEndColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setkGradientFocus(700);
@@ -127,21 +127,14 @@ public class Insert_Parts extends javax.swing.JFrame {
                 Insert_Parts_PicMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 300, 160));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 300, 200));
 
         Insert_Parts_Supplier_Contact.setEditable(false);
         Insert_Parts_Supplier_Contact.setBackground(new java.awt.Color(204, 204, 204));
         Insert_Parts_Supplier_Contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Supplier_Contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Parts_Supplier_Contact.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Supplier_Contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 250, 230, 30));
-
-        Insert_Parts_Supplier_Email.setEditable(false);
-        Insert_Parts_Supplier_Email.setBackground(new java.awt.Color(204, 204, 204));
-        Insert_Parts_Supplier_Email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Parts_Supplier_Email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Insert_Parts_Supplier_Email.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Supplier_Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 210, 230, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Supplier_Contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 230, 30));
 
         Insert_Parts_Supplier_name.setEditable(false);
         Insert_Parts_Supplier_name.setBackground(new java.awt.Color(204, 204, 204));
@@ -191,7 +184,7 @@ public class Insert_Parts extends javax.swing.JFrame {
             .addComponent(Supplier_List_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 310, 210, 40));
+        KG2_ADD_STOCK_GENSET.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 370, 210, 40));
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(5, 157, 192));
 
@@ -268,19 +261,19 @@ public class Insert_Parts extends javax.swing.JFrame {
                 Insert_Parts_QuantityKeyReleased(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 210, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 210, 30));
 
         Insert_Parts_Category.setEditable(false);
         Insert_Parts_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Parts_Category.setText("PARTS");
         Insert_Parts_Category.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 210, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 210, 30));
 
         Insert_Parts_Brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Parts_Brand.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 210, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 210, 30));
 
         Insert_Parts_Price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -295,15 +288,15 @@ public class Insert_Parts extends javax.swing.JFrame {
                 Insert_Parts_PriceKeyReleased(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 210, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 210, 30));
 
         Insert_Parts_Date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 210, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 210, 30));
 
         Insert_Parts_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
         Insert_Parts_Type.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 210, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 210, 30));
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(102, 255, 102));
@@ -311,15 +304,15 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField1.setText(" CATEGORY");
         jTextField1.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 130, 30));
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(102, 255, 102));
         jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField2.setText(" DATE RECIEVED");
+        jTextField2.setText(" DATE INBOUND");
         jTextField2.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 130, 30));
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(102, 255, 102));
@@ -327,7 +320,7 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField3.setText(" DESCRPTION");
         jTextField3.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 130, 30));
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(102, 255, 102));
@@ -335,7 +328,7 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField5.setText(" QUANTITY");
         jTextField5.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 130, 30));
 
         jTextField7.setEditable(false);
         jTextField7.setBackground(new java.awt.Color(102, 255, 102));
@@ -343,7 +336,7 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField7.setText(" PRICE");
         jTextField7.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 130, 30));
 
         jTextField8.setEditable(false);
         jTextField8.setBackground(new java.awt.Color(102, 255, 102));
@@ -351,7 +344,7 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField8.setText(" TYPE");
         jTextField8.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 130, 30));
 
         jTextField14.setEditable(false);
         jTextField14.setBackground(new java.awt.Color(102, 255, 102));
@@ -359,12 +352,12 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField14.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField14.setText(" REMARKS");
         jTextField14.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 130, 30));
 
         Insert_Parts_Remarks.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Parts_Remarks.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 210, 30));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 210, 30));
 
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(102, 255, 102));
@@ -382,29 +375,39 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField9.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, 130, 30));
 
-        jTextField6.setEditable(false);
-        jTextField6.setBackground(new java.awt.Color(102, 255, 102));
-        jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField6.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField6.setText(" EMAIL");
-        jTextField6.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 210, 130, 30));
-
         jTextField15.setEditable(false);
         jTextField15.setBackground(new java.awt.Color(102, 255, 102));
         jTextField15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField15.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField15.setText(" CONTACT");
         jTextField15.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 250, 130, 30));
+        KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 220, 130, 30));
+
+        Insert_Parts_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Insert_Parts_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Insert_Parts_total_price.setBorder(null);
+        Insert_Parts_total_price.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Insert_Parts_total_priceKeyReleased(evt);
+            }
+        });
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_total_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 210, 30));
+
+        jTextField6.setEditable(false);
+        jTextField6.setBackground(new java.awt.Color(102, 255, 102));
+        jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField6.setText(" TOTAL PRICE");
+        jTextField6.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 130, 30));
 
         jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "PARTS INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 710, 430));
+        KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 710, 440));
 
         jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 20, 410, 430));
 
-        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1200, 550));
+        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1200, 550));
 
         pack();
         setLocationRelativeTo(null);
@@ -440,38 +443,37 @@ public class Insert_Parts extends javax.swing.JFrame {
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
 
-    String date = Insert_Parts_Date.getText();
-    String category = Insert_Parts_Category.getText();
+    String category = Insert_Parts_Category.getText().toUpperCase();
     String brand = Insert_Parts_Brand.getText();
-    String type = Insert_Parts_Type.getSelectedItem().toString();
-    String seller_price = Insert_Parts_Price.getText();
+    String model= "";
+    String kva = "";
+    String phasing = "";
+    String type = Insert_Parts_Type.getSelectedItem().toString().toUpperCase();
+    String supplier_price = "";
+    String seller_price = Insert_Parts_Price.getText().toUpperCase();
     String quantity = Insert_Parts_Quantity.getText();
-    String remarks = Insert_Parts_Remarks.getText();
+    int total_price = Integer.parseInt(Insert_Parts_total_price.getText());
     
-    String supplier_name = Insert_Parts_Supplier_name.getText();
-    String supplier_address = Insert_Parts_Supplier_Address.getText();
-    String supplier_email = Insert_Parts_Supplier_Email.getText();
-    String supplier_contact = Insert_Parts_Supplier_Contact.getText();
     
-    String model="";
-    String phasing="";
-    //String person_in_charge="";
-    String supplier_price="";
-    String engine_sn="";
-    String alternator_sn="";
-    String kva="";
-    Class_tables ct = new Class_tables();
-    if(supplier_name.equals("") || supplier_address.equals("") || supplier_email.equals("") || supplier_contact.equals("") ){
-        JOptionPane.showMessageDialog(null, "SUPPLIER EMPTY FIELDS","",JOptionPane.INFORMATION_MESSAGE);
-        ct.Stocks();
-    }
-    else if(!Class_SummaryStock.InsertStock(date, category, brand, model, kva, phasing, type, supplier_price, seller_price, engine_sn, alternator_sn, quantity, remarks,supplier_name,Supplier_id, images) && !Class_Supplier.AddSupplier(supplier_name, supplier_address, supplier_email, supplier_contact))
+    String engine_sn = "";
+    String alternator_sn = "";
+    
+    // String supplier_id ;
+    String date_inbound = Insert_Parts_Date.getText().toUpperCase();
+    // image
+    String incharge = "";
+    String remarks = Insert_Parts_Remarks.getText().toUpperCase();
+    String supplier = Insert_Parts_Supplier_name.getText();
+ 
+    /// SUpplier info
+ 
+    if(brand.equals("") || type.equals("SELECT") || seller_price.equals("") || quantity.equals("") || supplier.equals("") )
     {
-        ct.Stocks();
-        JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED","",JOptionPane.INFORMATION_MESSAGE);
-    }else{
-        ct.Stocks();
-        JOptionPane.showMessageDialog(null, "TRY AGAIN","",JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
+    }
+    else if(!Class_SummaryStock.InsertStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, images, incharge, remarks))
+    {
+        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !"); Webpage.ct.Stocks(); dispose();
     }
     
     
@@ -537,6 +539,10 @@ public class Insert_Parts extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Insert_Parts_QuantityKeyReleased
 
+    private void Insert_Parts_total_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Parts_total_priceKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Insert_Parts_total_priceKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -585,9 +591,9 @@ public class Insert_Parts extends javax.swing.JFrame {
     public static javax.swing.JTextField Insert_Parts_Remarks;
     public static javax.swing.JTextArea Insert_Parts_Supplier_Address;
     public static javax.swing.JTextField Insert_Parts_Supplier_Contact;
-    public static javax.swing.JTextField Insert_Parts_Supplier_Email;
     public static javax.swing.JTextField Insert_Parts_Supplier_name;
     public static javax.swing.JComboBox<String> Insert_Parts_Type;
+    public static javax.swing.JTextField Insert_Parts_total_price;
     public static javax.swing.JLabel Inventory_Display;
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     public static javax.swing.JLabel Path;

@@ -511,7 +511,7 @@ public class Sales_Parts extends javax.swing.JFrame {
      int result = Integer.parseInt(input_quantityRemoved) + Integer.parseInt(totalQuantity); // resultQuantity restore Stock
      int resultCartOnlyQuantity = Integer.parseInt(stockRemoved) - Integer.parseInt(input_quantityRemoved);
      if(resultCartOnlyQuantity == 0){
-         Class_Cart_Remove ccr = new Class_Cart_Remove();
+         Class_History ccr = new Class_History();
          if(!ccr.quantityCartIsZero(cart_id) && !ccr.quantitySaleSummaryIsZero(cart_id)){
             new Class_tables().Cart();
          }
@@ -523,7 +523,7 @@ public class Sales_Parts extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null, "INVALID QUANTITY","",JOptionPane.INFORMATION_MESSAGE);
         }
         else{
-            Class_Cart_Remove ccr = new Class_Cart_Remove();
+            Class_History ccr = new Class_History();
              if(!ccr.Sales_Parts(Integer.toString(result),Integer.parseInt(cart_id)) && !ccr.Updatecart(Integer.toString(resultCartOnlyQuantity), cart_id) && !ccr.UpdateSummary(Integer.toString(resultCartOnlyQuantity), cart_id) ){
                  new Class_tables().Cart();
                  new Class_tables().Stocks();

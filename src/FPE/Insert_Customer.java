@@ -37,8 +37,6 @@ public class Insert_Customer extends javax.swing.JFrame {
         Insert_Customer_name = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         Insert_Customer_address = new javax.swing.JTextArea();
-        jTextField4 = new javax.swing.JTextField();
-        Insert_Customer_email = new javax.swing.JTextField();
         Insert_Customer_contact = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
 
@@ -54,17 +52,17 @@ public class Insert_Customer extends javax.swing.JFrame {
         Display_Customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Display_Customer.setText("ADD NEW CUSTOMER");
         Display_Customer.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Display_CustomerAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
         });
-        jPanel4.add(Display_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 410, 60));
+        jPanel4.add(Display_Customer, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 410, 110));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 100));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 130));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
@@ -165,24 +163,10 @@ public class Insert_Customer extends javax.swing.JFrame {
 
         kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 270, 70));
 
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(102, 255, 102));
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField4.setText(" EMAIL");
-        jTextField4.setBorder(null);
-        kGradientPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 120, 31));
-        jTextField4.getAccessibleContext().setAccessibleDescription("");
-
-        Insert_Customer_email.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Customer_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Insert_Customer_email.setBorder(null);
-        kGradientPanel1.add(Insert_Customer_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 270, 31));
-        Insert_Customer_email.getAccessibleContext().setAccessibleDescription("");
-
         Insert_Customer_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Customer_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Customer_contact.setBorder(null);
-        kGradientPanel1.add(Insert_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 270, 31));
+        kGradientPanel1.add(Insert_Customer_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 270, 31));
         Insert_Customer_contact.getAccessibleContext().setAccessibleDescription("");
 
         jTextField3.setEditable(false);
@@ -190,10 +174,10 @@ public class Insert_Customer extends javax.swing.JFrame {
         jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField3.setText(" CONTACT NO");
         jTextField3.setBorder(null);
-        kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 120, 31));
+        kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 120, 31));
         jTextField3.getAccessibleContext().setAccessibleDescription("");
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 470, 450));
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 470, 450));
 
         pack();
         setLocationRelativeTo(null);
@@ -210,7 +194,7 @@ public class Insert_Customer extends javax.swing.JFrame {
                  ids = rs.getString("ID");
                  Insert_Customer_name.setText(rs.getString("NAME"));
                  Insert_Customer_address.setText(rs.getString("ADDRESS"));
-                 Insert_Customer_email.setText(rs.getString("EMAIL"));
+              
                  Insert_Customer_contact.setText(rs.getString("CONTACT"));
                 }
             }
@@ -241,18 +225,18 @@ public class Insert_Customer extends javax.swing.JFrame {
         String Banner = Display_Customer.getText();
         String name = Insert_Customer_name.getText().toUpperCase();
         String address = Insert_Customer_address.getText().toUpperCase();
-        String email = Insert_Customer_email.getText().toUpperCase();
+
         String contact = Insert_Customer_contact.getText().toUpperCase();
-        if(name.equals("") || address.equals("") || email.equals("") || contact.equals("")){
+        if(name.equals("") || address.equals("") || contact.equals("")){
            JOptionPane.showMessageDialog(null, " INPUT SOME FIELDS !!","",JOptionPane.ERROR_MESSAGE);
            ct.Customer();
         }
         else if(Banner.equals("ADD NEW CUSTOMER")){
-            if(!Class_Customers.ExistCustomer(email)){
-                JOptionPane.showMessageDialog(null, "ALREADY EXIST EMAIL!","",JOptionPane.INFORMATION_MESSAGE);
+            if(!Class_Customers.ExistCustomer(name)){
+                JOptionPane.showMessageDialog(null, "CUSTOMER ALREADY EXIST!","",JOptionPane.INFORMATION_MESSAGE);
                 ct.Customer();
             }else{
-                if(!Class_Customers.AddCustomer(name, address, contact, email))
+                if(!Class_Customers.AddCustomer(name, address, contact))
                 {
                     JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
                     ct.Customer();
@@ -261,7 +245,7 @@ public class Insert_Customer extends javax.swing.JFrame {
             }
         }
         else if(Banner.equals("UPDATE CUSTOMER")){
-            if(!Class_Customers.EditCustomer(name, address, contact, email, ids))
+            if(!Class_Customers.EditCustomer(name, address, contact, ids))
             {
                JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATED");
                dispose();
@@ -270,38 +254,7 @@ public class Insert_Customer extends javax.swing.JFrame {
         }
 
 
-//        String Banner = Display_Customer.getText().toUpperCase();
-//        
-//        String name = Insert_Customer_name.getText().toUpperCase();
-//        String address = Insert_Customer_address.getText().toUpperCase();
-//        String email = Insert_Customer_email.getText().toUpperCase();
-//        String contact = Insert_Customer_contact.getText().toUpperCase();
-//        Class_tables ts = new Class_tables();
-//        if(name.equals("") || address.equals("") || email.equals("") || contact.equals("")){
-//           JOptionPane.showMessageDialog(null, " INPUT SOME FIELDS !!","",JOptionPane.ERROR_MESSAGE); 
-//        }
-//        else if(Banner.equals("ADD CUSTOMER")){
-//           if(!Class_Customers.ExistCustomer(email)){
-//               JOptionPane.showMessageDialog(null, "ALREADY EXIST EMAIL!\nPLEASE TRY DIFFERENT!","",JOptionPane.WARNING_MESSAGE);
-//           } 
-//            else{
-//            if(!Class_Customers.AddCustomer(name, address, contact, email))
-//            {
-//                JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED");
-//                dispose();
-//                ts.Customer();
-//            }
-//           }
-//        }
-//        else if (Banner.equals("UPDATE CUSTOMER")){
-//            String id = Insert_customer_id.getText();
-//            if(!Class_Customers.EditCustomer(name, address, contact, email, id))
-//            {
-//               JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATED");
-//               dispose();
-//               ts.Customer();
-//            }
-//        }
+
 
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
@@ -355,7 +308,6 @@ public class Insert_Customer extends javax.swing.JFrame {
     public static javax.swing.JLabel Display_Customer;
     public static javax.swing.JTextArea Insert_Customer_address;
     public static javax.swing.JTextField Insert_Customer_contact;
-    public static javax.swing.JTextField Insert_Customer_email;
     public static javax.swing.JTextField Insert_Customer_name;
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
@@ -366,7 +318,6 @@ public class Insert_Customer extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

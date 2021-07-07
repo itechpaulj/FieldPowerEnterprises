@@ -116,9 +116,7 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
 
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         
-        Webpage.exit.setText("exit");
-        Login l = new Login();
-        l.setVisible(true);
+        
         logout_panel.setBackground(new Color(0,117,128)); 
         
         
