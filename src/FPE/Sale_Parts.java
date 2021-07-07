@@ -20,14 +20,16 @@ import javax.swing.JOptionPane;
  *
  * @author ROBLES
  */
-public class View_Parts extends javax.swing.JFrame {
+public class Sale_Parts extends javax.swing.JFrame {
     String filename = null;
     byte[] images = null;
     String Parts_id = null;
+    public static String customer_id = "";
+    
     public static String supplier_id = null;
     
     
-    public View_Parts() {
+    public Sale_Parts() {
         initComponents();
         imgisNull();
         
@@ -55,23 +57,23 @@ public class View_Parts extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         View_Parts_Display = new javax.swing.JLabel();
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
-        View_Parts_Pic = new javax.swing.JLabel();
-        View_Parts_Supplier_Contact = new javax.swing.JTextField();
-        View_Parts_Supplier_name = new javax.swing.JTextField();
+        Sale_Parts_pic = new javax.swing.JLabel();
+        Sale_Parts_Contact = new javax.swing.JTextField();
+        Sale_PartsSupplier_name = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        View_Parts_Supplier_Address = new javax.swing.JTextArea();
+        Sale_Parts_Supplier_Address = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         Supplier_List_Btn = new javax.swing.JLabel();
         Stock_Genset_Panel_Update = new javax.swing.JPanel();
         Stock_Genset_Update = new javax.swing.JLabel();
         Stock_Genset_Panel_Back = new javax.swing.JPanel();
         Stock_Genset_Back = new javax.swing.JLabel();
-        View_Parts_Quantity = new javax.swing.JTextField();
-        View_Parts_Category = new javax.swing.JTextField();
-        View_Parts_Brand = new javax.swing.JTextField();
-        View_Parts_Price = new javax.swing.JTextField();
-        View_Parts_Date = new datechooser.beans.DateChooserCombo();
-        View_Parts_Type = new javax.swing.JComboBox<>();
+        Sale_Parts_quantity = new javax.swing.JTextField();
+        Sale_Parts_Category = new javax.swing.JTextField();
+        Sale_Parts_Brand = new javax.swing.JTextField();
+        Sale_Parts_price = new javax.swing.JTextField();
+        Sale_Parts_inbound_date = new datechooser.beans.DateChooserCombo();
+        Sale_Parts_Type = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -79,13 +81,13 @@ public class View_Parts extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
-        View_Parts_Remarks = new javax.swing.JTextField();
+        Sale_Parts_remarks = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         Stock_Genset_Panel_View1 = new javax.swing.JPanel();
         Stock_Genset_Delete = new javax.swing.JLabel();
-        View_Parts_total_price = new javax.swing.JTextField();
+        Sale_Parts_total_price = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -100,14 +102,14 @@ public class View_Parts extends javax.swing.JFrame {
         View_Parts_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         View_Parts_Display.setForeground(new java.awt.Color(255, 255, 255));
         View_Parts_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Parts_Display.setText("VIEW PARTS ITEM");
+        View_Parts_Display.setText("SALE PARTS");
         View_Parts_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_Parts_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_Parts_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 110));
@@ -119,45 +121,45 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.setkStartColor(new java.awt.Color(42, 142, 142));
         KG2_ADD_STOCK_GENSET.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        View_Parts_Pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
-        View_Parts_Pic.setForeground(new java.awt.Color(20, 31, 31));
-        View_Parts_Pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Parts_Pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
-        View_Parts_Pic.setAlignmentY(1.0F);
-        View_Parts_Pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)));
-        View_Parts_Pic.addMouseListener(new java.awt.event.MouseAdapter() {
+        Sale_Parts_pic.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        Sale_Parts_pic.setForeground(new java.awt.Color(20, 31, 31));
+        Sale_Parts_pic.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Sale_Parts_pic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/Default_Imge.png"))); // NOI18N
+        Sale_Parts_pic.setAlignmentY(1.0F);
+        Sale_Parts_pic.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)));
+        Sale_Parts_pic.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                View_Parts_PicMouseClicked(evt);
+                Sale_Parts_picMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 300, 180));
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 300, 180));
 
-        View_Parts_Supplier_Contact.setEditable(false);
-        View_Parts_Supplier_Contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Supplier_Contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Parts_Supplier_Contact.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Supplier_Contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 210, 230, 31));
+        Sale_Parts_Contact.setEditable(false);
+        Sale_Parts_Contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Parts_Contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sale_Parts_Contact.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_Contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 210, 230, 31));
 
-        View_Parts_Supplier_name.setEditable(false);
-        View_Parts_Supplier_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Supplier_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Parts_Supplier_name.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Supplier_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 230, 31));
+        Sale_PartsSupplier_name.setEditable(false);
+        Sale_PartsSupplier_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_PartsSupplier_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sale_PartsSupplier_name.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(Sale_PartsSupplier_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 70, 230, 31));
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        View_Parts_Supplier_Address.setEditable(false);
-        View_Parts_Supplier_Address.setBackground(new java.awt.Color(240, 240, 240));
-        View_Parts_Supplier_Address.setColumns(10);
-        View_Parts_Supplier_Address.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Supplier_Address.setRows(5);
-        View_Parts_Supplier_Address.setTabSize(5);
-        View_Parts_Supplier_Address.setAlignmentX(3.0F);
-        View_Parts_Supplier_Address.setAlignmentY(2.0F);
-        View_Parts_Supplier_Address.setBorder(null);
-        View_Parts_Supplier_Address.setMargin(new java.awt.Insets(8, 8, 8, 8));
-        jScrollPane1.setViewportView(View_Parts_Supplier_Address);
+        Sale_Parts_Supplier_Address.setEditable(false);
+        Sale_Parts_Supplier_Address.setBackground(new java.awt.Color(240, 240, 240));
+        Sale_Parts_Supplier_Address.setColumns(10);
+        Sale_Parts_Supplier_Address.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Parts_Supplier_Address.setRows(5);
+        Sale_Parts_Supplier_Address.setTabSize(5);
+        Sale_Parts_Supplier_Address.setAlignmentX(3.0F);
+        Sale_Parts_Supplier_Address.setAlignmentY(2.0F);
+        Sale_Parts_Supplier_Address.setBorder(null);
+        Sale_Parts_Supplier_Address.setMargin(new java.awt.Insets(8, 8, 8, 8));
+        jScrollPane1.setViewportView(Sale_Parts_Supplier_Address);
 
         KG2_ADD_STOCK_GENSET.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 117, 230, 80));
 
@@ -253,44 +255,44 @@ public class View_Parts extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, 160, 45));
 
-        View_Parts_Quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Parts_Quantity.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 210, 31));
+        Sale_Parts_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Parts_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sale_Parts_quantity.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 210, 31));
 
-        View_Parts_Category.setEditable(false);
-        View_Parts_Category.setBackground(new java.awt.Color(204, 204, 204));
-        View_Parts_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Parts_Category.setText("PARTS");
-        View_Parts_Category.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 210, 31));
+        Sale_Parts_Category.setEditable(false);
+        Sale_Parts_Category.setBackground(new java.awt.Color(204, 204, 204));
+        Sale_Parts_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Parts_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sale_Parts_Category.setText("PARTS");
+        Sale_Parts_Category.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 210, 31));
 
-        View_Parts_Brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Parts_Brand.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 210, 31));
+        Sale_Parts_Brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Parts_Brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sale_Parts_Brand.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 210, 31));
 
-        View_Parts_Price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Parts_Price.setBorder(null);
-        View_Parts_Price.addActionListener(new java.awt.event.ActionListener() {
+        Sale_Parts_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Parts_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sale_Parts_price.setBorder(null);
+        Sale_Parts_price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                View_Parts_PriceActionPerformed(evt);
+                Sale_Parts_priceActionPerformed(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 210, 31));
 
-        View_Parts_Date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 210, 31));
+        Sale_Parts_inbound_date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_inbound_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 210, 31));
 
-        View_Parts_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
-        View_Parts_Type.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 210, 31));
+        Sale_Parts_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Parts_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
+        Sale_Parts_Type.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 210, 31));
 
         jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField1.setBackground(new java.awt.Color(255, 128, 128));
         jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField1.setText(" CATEGORY");
@@ -298,7 +300,7 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 140, 31));
 
         jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField2.setBackground(new java.awt.Color(255, 128, 128));
         jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField2.setText(" DATE RECIEVED");
@@ -306,7 +308,7 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 140, 31));
 
         jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField3.setBackground(new java.awt.Color(255, 128, 128));
         jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField3.setText(" DESCRPTION");
@@ -314,7 +316,7 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 140, 31));
 
         jTextField5.setEditable(false);
-        jTextField5.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField5.setBackground(new java.awt.Color(255, 128, 128));
         jTextField5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField5.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField5.setText(" QUANTITY");
@@ -322,7 +324,7 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 140, 31));
 
         jTextField7.setEditable(false);
-        jTextField7.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField7.setBackground(new java.awt.Color(255, 128, 128));
         jTextField7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField7.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField7.setText(" PRICE");
@@ -330,7 +332,7 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, 31));
 
         jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField8.setBackground(new java.awt.Color(255, 128, 128));
         jTextField8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField8.setText(" TYPE");
@@ -338,20 +340,20 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 140, 31));
 
         jTextField14.setEditable(false);
-        jTextField14.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField14.setBackground(new java.awt.Color(255, 128, 128));
         jTextField14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField14.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField14.setText(" REMARKS");
         jTextField14.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 140, 31));
 
-        View_Parts_Remarks.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Parts_Remarks.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(View_Parts_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 210, 31));
+        Sale_Parts_remarks.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Parts_remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sale_Parts_remarks.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 210, 31));
 
         jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField4.setBackground(new java.awt.Color(255, 128, 128));
         jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField4.setText(" NAME");
@@ -359,7 +361,7 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 70, 130, 31));
 
         jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField10.setBackground(new java.awt.Color(255, 128, 128));
         jTextField10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField10.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField10.setText(" ADDRESS");
@@ -372,7 +374,7 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, 130, 31));
 
         jTextField11.setEditable(false);
-        jTextField11.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField11.setBackground(new java.awt.Color(255, 128, 128));
         jTextField11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField11.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField11.setText(" CONTACT");
@@ -416,18 +418,18 @@ public class View_Parts extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 170, 45));
 
-        View_Parts_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        View_Parts_total_price.setBorder(null);
-        View_Parts_total_price.addKeyListener(new java.awt.event.KeyAdapter() {
+        Sale_Parts_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Parts_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sale_Parts_total_price.setBorder(null);
+        Sale_Parts_total_price.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                View_Parts_total_priceKeyReleased(evt);
+                Sale_Parts_total_priceKeyReleased(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(View_Parts_total_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 210, 30));
+        KG2_ADD_STOCK_GENSET.add(Sale_Parts_total_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 210, 30));
 
         jTextField6.setEditable(false);
-        jTextField6.setBackground(new java.awt.Color(51, 214, 255));
+        jTextField6.setBackground(new java.awt.Color(255, 128, 128));
         jTextField6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField6.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         jTextField6.setText(" TOTAL PRICE");
@@ -446,16 +448,16 @@ public class View_Parts extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void View_Parts_PicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_Parts_PicMouseClicked
-        View_Parts_Pic.setText(null);
+    private void Sale_Parts_picMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sale_Parts_picMouseClicked
+        Sale_Parts_pic.setText(null);
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         File f = chooser.getSelectedFile();
         filename = f.getAbsolutePath();
         
 
-        ImageIcon imageicon = new ImageIcon (new ImageIcon(filename).getImage().getScaledInstance(View_Parts_Pic.getWidth(), View_Parts_Pic.getHeight(),Image.SCALE_SMOOTH) );
-        View_Parts_Pic.setIcon(imageicon);
+        ImageIcon imageicon = new ImageIcon (new ImageIcon(filename).getImage().getScaledInstance(Sale_Parts_pic.getWidth(), Sale_Parts_pic.getHeight(),Image.SCALE_SMOOTH) );
+        Sale_Parts_pic.setIcon(imageicon);
 
         try{
             File image = new File(filename);
@@ -472,43 +474,51 @@ public class View_Parts extends javax.swing.JFrame {
         catch(Exception e){
            // e.printStackTrace();
         }
-    }//GEN-LAST:event_View_Parts_PicMouseClicked
+    }//GEN-LAST:event_Sale_Parts_picMouseClicked
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
 
-    String category = View_Parts_Category.getText().toUpperCase();
-    String brand = View_Parts_Brand.getText();
+    String category = Sale_Parts_Category.getText().toUpperCase();
+    String brand = Sale_Parts_Brand.getText();
     String model= "";
     String kva = "";
     String phasing = "";
-    String type = View_Parts_Type.getSelectedItem().toString().toUpperCase();
+    String type = Sale_Parts_Type.getSelectedItem().toString().toUpperCase();
     String supplier_price = "";
-    String seller_price = View_Parts_Price.getText().toUpperCase();
-    String quantity = View_Parts_Quantity.getText();
-    int total_price = Integer.parseInt(View_Parts_total_price.getText());
+    String seller_price = Sale_Parts_price.getText().toUpperCase();
+    String quantity = Sale_Parts_quantity.getText();
+    int total_price = Integer.parseInt(Sale_Parts_total_price.getText());
     
     
     String engine_sn = "";
     String alternator_sn = "";
     
     // String supplier_id ;
-    String date_inbound = View_Parts_Date.getText().toUpperCase();
+    String date_inbound = Sale_Parts_inbound_date.getText().toUpperCase();
     // image
     String incharge = "";
-    String remarks = View_Parts_Remarks.getText().toUpperCase();
-    String supplier = View_Parts_Supplier_name.getText();
+    String remarks = Sale_Parts_remarks.getText().toUpperCase();
+    String supplier = Sale_PartsSupplier_name.getText();
+    
+    String date_outbound = "";
+    String verify = "";
+    String process = "";
     
     
+            
+            
+            
+            
+    String project = "";
     
      if(brand.equals("") || type.equals("SELECT") || supplier_price.equals("") || seller_price.equals("") || quantity.equals("") || supplier.equals("") )
     {
         JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
     }
-    else if(!Class_SummaryStock.UpdateStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, images, incharge, remarks, Parts_id))
-    {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !");
-    }
-    
+     else if (!Class_Cart.InsertCart(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && Class_History.InsertHistory(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project))
+     {
+         JOptionPane.showMessageDialog(null, "FILL SOME BLANCK");
+     }
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
     private void Stock_Genset_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseEntered
@@ -542,7 +552,7 @@ public class View_Parts extends javax.swing.JFrame {
     String Banner = View_Parts_Display.getText();
     String ids = Webpage.Stock_Category_Id.getText();
     
-    if(Banner.equals("VIEW PARTS ITEM"))
+    if(Banner.equals("SALE PARTS"))
     {
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `stock_table` WHERE `STOCK ID` = '"+ids+"'");
@@ -550,18 +560,18 @@ public class View_Parts extends javax.swing.JFrame {
             while(rs.next()){
             Parts_id = rs.getString("STOCK ID");
            
-            View_Parts_Date.setText(rs.getString("DATE INBOUND"));
-            View_Parts_Category.setText(rs.getString("CATEGORY"));
-            View_Parts_Brand.setText(rs.getString("BRAND"));
-            View_Parts_Type.setSelectedItem(rs.getString("TYPE"));
-            View_Parts_Price.setText(rs.getString("SELLER PRICE"));
-            View_Parts_Quantity.setText(rs.getString("QUANTITY"));
-            View_Parts_Remarks.setText(rs.getString("REMARKS"));
+            Sale_Parts_inbound_date.setText(rs.getString("DATE INBOUND"));
+            Sale_Parts_Category.setText(rs.getString("CATEGORY"));
+            Sale_Parts_Brand.setText(rs.getString("BRAND"));
+            Sale_Parts_Type.setSelectedItem(rs.getString("TYPE"));
+            Sale_Parts_price.setText(rs.getString("SELLER PRICE"));
+            Sale_Parts_quantity.setText(rs.getString("QUANTITY"));
+            Sale_Parts_remarks.setText(rs.getString("REMARKS"));
             
             supplier_id = rs.getString("SUPPLIER ID");
             images = rs.getBytes("IMAGE");
-            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Parts_Pic.getWidth(), View_Parts_Pic.getHeight(),Image.SCALE_SMOOTH) );
-            View_Parts_Pic.setIcon(imageicon);
+            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Parts_pic.getWidth(), Sale_Parts_pic.getHeight(),Image.SCALE_SMOOTH) );
+            Sale_Parts_pic.setIcon(imageicon);
             }
         }
         catch(Exception e){
@@ -573,10 +583,10 @@ public class View_Parts extends javax.swing.JFrame {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             
-            View_Parts_Supplier_name.setText(rs.getString("NAME"));
-            View_Parts_Supplier_Address.setText(rs.getString("ADDRESS"));
+            Sale_PartsSupplier_name.setText(rs.getString("NAME"));
+            Sale_Parts_Supplier_Address.setText(rs.getString("ADDRESS"));
     
-            View_Parts_Supplier_Contact.setText(rs.getString("CONTACT"));
+            Sale_Parts_Contact.setText(rs.getString("CONTACT"));
             
             
             }
@@ -602,9 +612,9 @@ public class View_Parts extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField11ActionPerformed
 
-    private void View_Parts_PriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Parts_PriceActionPerformed
+    private void Sale_Parts_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sale_Parts_priceActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_View_Parts_PriceActionPerformed
+    }//GEN-LAST:event_Sale_Parts_priceActionPerformed
 
     private void Stock_Genset_DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseClicked
         String sid = Webpage.Stock_Category_Id.getText();
@@ -632,9 +642,9 @@ public class View_Parts extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Stock_Genset_DeleteMouseExited
 
-    private void View_Parts_total_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Parts_total_priceKeyReleased
+    private void Sale_Parts_total_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Parts_total_priceKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_View_Parts_total_priceKeyReleased
+    }//GEN-LAST:event_Sale_Parts_total_priceKeyReleased
 
     /**
      * @param args the command line arguments
@@ -653,14 +663,22 @@ public class View_Parts extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(View_Parts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sale_Parts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(View_Parts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sale_Parts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(View_Parts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sale_Parts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(View_Parts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sale_Parts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -673,13 +691,25 @@ public class View_Parts extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new View_Parts().setVisible(true);
+                new Sale_Parts().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
+    public static javax.swing.JTextField Sale_PartsSupplier_name;
+    public static javax.swing.JTextField Sale_Parts_Brand;
+    public static javax.swing.JTextField Sale_Parts_Category;
+    public static javax.swing.JTextField Sale_Parts_Contact;
+    public static javax.swing.JTextArea Sale_Parts_Supplier_Address;
+    public static javax.swing.JComboBox<String> Sale_Parts_Type;
+    public static datechooser.beans.DateChooserCombo Sale_Parts_inbound_date;
+    public static javax.swing.JLabel Sale_Parts_pic;
+    public static javax.swing.JTextField Sale_Parts_price;
+    public static javax.swing.JTextField Sale_Parts_quantity;
+    public static javax.swing.JTextField Sale_Parts_remarks;
+    public static javax.swing.JTextField Sale_Parts_total_price;
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JLabel Stock_Genset_Delete;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
@@ -687,19 +717,7 @@ public class View_Parts extends javax.swing.JFrame {
     public static javax.swing.JPanel Stock_Genset_Panel_View1;
     private javax.swing.JLabel Stock_Genset_Update;
     private javax.swing.JLabel Supplier_List_Btn;
-    public static javax.swing.JTextField View_Parts_Brand;
-    public static javax.swing.JTextField View_Parts_Category;
-    public static datechooser.beans.DateChooserCombo View_Parts_Date;
     public static javax.swing.JLabel View_Parts_Display;
-    public static javax.swing.JLabel View_Parts_Pic;
-    public static javax.swing.JTextField View_Parts_Price;
-    public static javax.swing.JTextField View_Parts_Quantity;
-    public static javax.swing.JTextField View_Parts_Remarks;
-    public static javax.swing.JTextArea View_Parts_Supplier_Address;
-    public static javax.swing.JTextField View_Parts_Supplier_Contact;
-    public static javax.swing.JTextField View_Parts_Supplier_name;
-    public static javax.swing.JComboBox<String> View_Parts_Type;
-    public static javax.swing.JTextField View_Parts_total_price;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

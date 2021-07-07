@@ -24,7 +24,7 @@ import javax.swing.JOptionPane;
 public class Sales_Stock_1 extends javax.swing.JFrame {
     public static String Generator_id = null;
     public static String supplier_id = null;
-    public static String customer_id = null;
+    public static String customer_id = "";
     
     String filename = null;
     public static File resoucesDirectory ;
@@ -602,7 +602,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     }//
     else if(!Class_Cart.InsertCart(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify)  && !Class_History.InsertHistory(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project))
     {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULLY UPDATE !"); Webpage.ct.Cart(); Webpage.ct.history(); dispose();
+        JOptionPane.showMessageDialog(null, "SUCCESSFULLY CHECK OUT!"); Webpage.ct.Cart(); Webpage.ct.history(); dispose();
     }
     }//GEN-LAST:event_View_BtnMouseClicked
 
@@ -663,7 +663,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
             Sale_Gen_Alternator.setText(rs.getString("ALTERNATOR S.N"));
             Sale_Gen_quantitty.setText(rs.getString("QUANTITY"));
             Sale_Gen_Remarks.setText(rs.getString("REMARKS"));
-            
+            Sale_Gen_total_price.setText(""+rs.getInt("TOTAL PRICE"));
             
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Gen_Pic.getWidth(), Sale_Gen_Pic.getHeight(),Image.SCALE_SMOOTH) );

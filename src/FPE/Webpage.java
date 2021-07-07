@@ -1401,14 +1401,14 @@ public class Webpage extends javax.swing.JFrame {
 
     private void Sale_CategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sale_CategoryActionPerformed
 //       String Stock_Table = Sale_Category.getSelectedItem().toString();
-//       
-//       if(Stock_Table.equals("ALL STOCK")){
-//             ct.SalesStock();
-//        }else if(Stock_Table.equals("GENERATOR")){
-//             ct.Sales_Generator();
-//        }else if(Stock_Table.equals("PARTS")){
-//             ct.Sales_Parts();
-//        }
+       
+       if(Stock_Table.equals("ALL STOCK")){
+             ct.Sale();
+        }else if(Stock_Table.equals("GENERATOR")){
+             ct.Sale();
+        }else if(Stock_Table.equals("PARTS")){
+             ct.Sale();
+        }
     }//GEN-LAST:event_Sale_CategoryActionPerformed
 
     private void SALES_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SALES_2MouseEntered
@@ -1507,7 +1507,7 @@ public class Webpage extends javax.swing.JFrame {
             ss.setVisible(true);
             
         }else if(Sales_cat.equals("PARTS")){
-             Sales_Parts sp = new Sales_Parts();
+             Sale_Parts sp = new Sale_Parts();
              sp.setVisible(true);
         }
         
@@ -1547,38 +1547,37 @@ public class Webpage extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField6KeyPressed
 
     private void Cart_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cart_TableMouseClicked
-        int i=Cart_Table.getSelectedRow();
-        TableModel model = Cart_Table.getModel();
-        Cart_Category_Id.setText(model.getValueAt(i,0).toString());
-        
-        Cart_cat = model.getValueAt(i,1).toString();
-        Cart_Quantity = model.getValueAt(i,10).toString();
-        
-        if(Cart_cat.equals("GENERATOR")){
-            //JOptionPane.showMessageDialog(null, "GENERATOR","",JOptionPane.INFORMATION_MESSAGE);
-            Sale_Stock ss = new Sale_Stock();
-             ss.setVisible(true);
-            Sale_Stock.sale_Generator_Banner.setText("REMOVED CART GENERATOR");
-            Sale_Stock.View_Btn.setText("REMOVE");
-            Sale_Stock.cart_id = Cart_Category_Id.getText();
-            Sale_Stock.txtStock.setText("REMOVED STOCK");
-            Sale_Stock.stock.setText(Cart_Quantity);
-            Sale_Stock.sell_priceTxt.setVisible(false);
-            Sale_Stock.Sales_Gen_Seller_Price.setVisible(false);
-        }
-        else if (Cart_cat.equals("PARTS")){
-            //JOptionPane.showMessageDialog(null, "PARTS","",JOptionPane.INFORMATION_MESSAGE);
-            Sales_Parts sp = new Sales_Parts();
-             sp.setVisible(true);
-            Sales_Parts.View_Parts_Display.setText("REMOVED CART PARTS");
-            Sales_Parts.Stock_Genset_Update.setText("REMOVE");
-            Sales_Parts.cart_id = Cart_Category_Id.getText();
-            Sales_Parts.txtStock.setText("REMOVED STOCK");
-            Sales_Parts.View_Parts_Quantity.setText(Cart_Quantity);
-            Sales_Parts.tp_txt.setVisible(false);
-            Sales_Parts.Quantity1.setVisible(false);
-           
-        }
+//        int i=Cart_Table.getSelectedRow();
+//        TableModel model = Cart_Table.getModel();
+//        Cart_Category_Id.setText(model.getValueAt(i,0).toString());
+//        
+//        Cart_cat = model.getValueAt(i,1).toString();
+//        Cart_Quantity = model.getValueAt(i,10).toString();
+//        
+//        if(Cart_cat.equals("GENERATOR")){
+//            //JOptionPane.showMessageDialog(null, "GENERATOR","",JOptionPane.INFORMATION_MESSAGE);
+//            Sale_Stock ss = new Sale_Stock();
+//             ss.setVisible(true);
+//            Sale_Stock_1.sale_Generator_Banner.setText("REMOVED CART GENERATOR");
+//            Sale_Stock.View_Btn.setText("REMOVE");
+//            Sale_Stock.cart_id = Cart_Category_Id.getText();
+//            Sale_Stock.txtStock.setText("REMOVED STOCK");
+//            Sale_Stock.stock.setText(Cart_Quantity);
+//            Sale_Stock.sell_priceTxt.setVisible(false);
+//            Sale_Stock.Sales_Gen_Seller_Price.setVisible(false);
+//        }
+//        else if (Cart_cat.equals("PARTS")){
+//            //JOptionPane.showMessageDialog(null, "PARTS","",JOptionPane.INFORMATION_MESSAGE);
+//            Sales_Parts sp = new Sales_Parts();
+//             sp.setVisible(true);
+//            Sales_Parts.View_Parts_Display.setText("REMOVED CART PARTS");
+//            Sales_Parts.Stock_Genset_Update.setText("REMOVE");
+//            Sales_Parts.cart_id = Cart_Category_Id.getText();
+//            Sales_Parts.txtStock.setText("REMOVED STOCK");
+//            Sales_Parts.View_Parts_Quantity.setText(Cart_Quantity);
+//            Sales_Parts.tp_txt.setVisible(false);
+//            Sales_Parts.Quantity1.setVisible(false);
+//           
         
 
         //Stock_cat = model.getValueAt(i,2).toString();
@@ -1647,24 +1646,24 @@ public class Webpage extends javax.swing.JFrame {
     }//GEN-LAST:event_Warehouse_Office_CategoryActionPerformed
 
     private void Request_Stock_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Request_Stock_TableMouseClicked
-        int i=Request_Stock_Table.getSelectedRow();
-        TableModel model = Request_Stock_Table.getModel();
-        request_id = model.getValueAt(i,0).toString();
-        Warehouse_Office_CategorySet = model.getValueAt(i,2).toString(); 
-        
-        if(Warehouse_Office_CategorySet.equals("PARTS")){
-            Sales_Parts sp = new Sales_Parts();
-            Sales_Parts.View_Parts_Display.setText("REQUEST PARTS");
-            sp.setVisible(true);
-        }
-        else if(Warehouse_Office_CategorySet.equals("OFFICE")){
-            Sales_Office sf = new Sales_Office();
-            Sales_Office.View_Office_Display.setText("REQUEST OFFICE");
-            sf.setVisible(true);
-        }
-        else if(Warehouse_Office_CategorySet.equals("WAREHOUSE")){
-            JOptionPane.showMessageDialog(null, "WAREHOUSE");
-        }
+//        int i=Request_Stock_Table.getSelectedRow();
+//        TableModel model = Request_Stock_Table.getModel();
+//        request_id = model.getValueAt(i,0).toString();
+//        Warehouse_Office_CategorySet = model.getValueAt(i,2).toString(); 
+//        
+//        if(Warehouse_Office_CategorySet.equals("PARTS")){
+//            Sale_Parts sp = new Sales_Parts();
+//            Sales_Parts.View_Parts_Display.setText("REQUEST PARTS");
+//            sp.setVisible(true);
+//        }
+//        else if(Warehouse_Office_CategorySet.equals("OFFICE")){
+//            Sales_Office sf = new Sales_Office();
+//            Sales_Office.View_Office_Display.setText("REQUEST OFFICE");
+//            sf.setVisible(true);
+//        }
+//        else if(Warehouse_Office_CategorySet.equals("WAREHOUSE")){
+//            JOptionPane.showMessageDialog(null, "WAREHOUSE");
+//        }
         
     }//GEN-LAST:event_Request_Stock_TableMouseClicked
 
@@ -1689,25 +1688,25 @@ public class Webpage extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField13KeyPressed
 
     private void Req_Cart_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Req_Cart_TableMouseClicked
-        int i=Req_Cart_Table.getSelectedRow();
-        TableModel model = Req_Cart_Table.getModel();
-        Cart_Category_Id.setText(model.getValueAt(i,0).toString());
+//        int i=Req_Cart_Table.getSelectedRow();
+//        TableModel model = Req_Cart_Table.getModel();
+//        Cart_Category_Id.setText(model.getValueAt(i,0).toString());
+//        
+//        Cart_cat = model.getValueAt(i,1).toString();
+//        Cart_Quantity = model.getValueAt(i,4).toString();
+//        
+//        if(Cart_cat.equals("PARTS")){
+//            //JOptionPane.showMessageDialog(null, "GENERATOR","",JOptionPane.INFORMATION_MESSAGE);
+//            Sales_Parts sp = new Sales_Parts();
+//             sp.setVisible(true);
+//            Sales_Parts.View_Parts_Display.setText("REMOVED REQUEST CART PARTS");
+//            Sales_Parts.Stock_Genset_Update.setText("REMOVE");
+//            Sales_Parts.cart_id = Cart_Category_Id.getText();
+//            Sales_Parts.txtStock.setText("REMOVED STOCK");
+//            Sales_Parts.View_Parts_Quantity.setText(Cart_Quantity);
+//            Sales_Parts.tp_txt.setVisible(false);
+//            Sales_Parts.Quantity1.setVisible(false);
         
-        Cart_cat = model.getValueAt(i,1).toString();
-        Cart_Quantity = model.getValueAt(i,4).toString();
-        
-        if(Cart_cat.equals("PARTS")){
-            //JOptionPane.showMessageDialog(null, "GENERATOR","",JOptionPane.INFORMATION_MESSAGE);
-            Sales_Parts sp = new Sales_Parts();
-             sp.setVisible(true);
-            Sales_Parts.View_Parts_Display.setText("REMOVED REQUEST CART PARTS");
-            Sales_Parts.Stock_Genset_Update.setText("REMOVE");
-            Sales_Parts.cart_id = Cart_Category_Id.getText();
-            Sales_Parts.txtStock.setText("REMOVED STOCK");
-            Sales_Parts.View_Parts_Quantity.setText(Cart_Quantity);
-            Sales_Parts.tp_txt.setVisible(false);
-            Sales_Parts.Quantity1.setVisible(false);
-        }
     }//GEN-LAST:event_Req_Cart_TableMouseClicked
 
     private void Shop_Add9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add9MouseClicked

@@ -662,9 +662,11 @@ public class View_Generator extends javax.swing.JFrame {
     {
         JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
     }
-    else if(Class_SummaryStock.UpdateStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, images, incharge, remarks, Generator_id))
+    else if(!Class_SummaryStock.UpdateStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, images, incharge, remarks, Generator_id))
     {
+        Webpage.ct.Stocks();
         JOptionPane.showMessageDialog(null, "SUCCESSFULLY UPDATE !");
+        dispose();
     }
     }//GEN-LAST:event_View_BtnMouseClicked
 
@@ -725,7 +727,7 @@ public class View_Generator extends javax.swing.JFrame {
             View_Gen_Alternator.setText(rs.getString("ALTERNATOR S.N"));
             View_Gen_quantitty.setText(rs.getString("QUANTITY"));
             View_Gen_Remarks.setText(rs.getString("REMARKS"));
-            
+            View_Gen_total_price.setText(""+rs.getInt("TOTAL PRICE"));
             
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Gen_Pic.getWidth(), View_Gen_Pic.getHeight(),Image.SCALE_SMOOTH) );
@@ -820,6 +822,7 @@ public class View_Generator extends javax.swing.JFrame {
                 if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_SummaryStock.DeleteGenset(sid) ){
                     JOptionPane.showMessageDialog(null, " DELETE STOCK! ","",JOptionPane.ERROR_MESSAGE);
                     Webpage.ct.Stocks();
+                    dispose();
                 }
             }
         }
