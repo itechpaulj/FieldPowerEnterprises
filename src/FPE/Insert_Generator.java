@@ -28,7 +28,7 @@ public class Insert_Generator extends javax.swing.JFrame {
     
 
     
-    public static byte[] images = null;
+    public static byte[] images ;
     public static String supplier_id ;
     
     public Insert_Generator() {
@@ -659,11 +659,11 @@ public class Insert_Generator extends javax.swing.JFrame {
  
     if(brand.equals("SELECT") || model.equals("") || kva.equals("") || phasing.equals("SELECT") || type.equals("SELECT") || supplier_price.equals("") || seller_price.equals("") || quantity.equals("") || engine_sn.equals("") || alternator_sn.equals("") || supplier.equals("") )
     {
-        JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE); dispose();
+        JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
     }
     else if(!Class_SummaryStock.InsertStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, images, incharge, remarks))
     {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !"); dispose();
+        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !"); Webpage.Refresh(); dispose();
     }
 
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked

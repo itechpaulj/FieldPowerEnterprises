@@ -10,8 +10,12 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 
+
 public class Class_Cart {
-    
+        
+        
+       
+        
         public static boolean InsertCart(String stock_id,String category,String brand,String model,String kva,String phasing,String type,String supplier_price,String seller_price,String quantity,int total_price,String engine,String alternator,String supplier_id,String date_inbound,String date_outbound,byte [] image,String incharge,String remarks,String process,String verify){
         PreparedStatement ps = null;
         try{

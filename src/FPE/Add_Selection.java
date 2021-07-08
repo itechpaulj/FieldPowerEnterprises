@@ -148,7 +148,7 @@ public class Add_Selection extends javax.swing.JFrame {
 
         getContentPane().add(Panel_WH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 135, 180, 45));
 
-        setBounds(17, 468, 180, 180);
+        setBounds(37, 468, 180, 180);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited

@@ -135,12 +135,12 @@ public class View_Generator extends javax.swing.JFrame {
         View_Generator_Banner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Generator_Banner.setText("VIEW GENERATOR ITEM");
         View_Generator_Banner.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_Generator_BannerAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_Generator_Banner, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 540, 110));
@@ -307,7 +307,7 @@ public class View_Generator extends javax.swing.JFrame {
             .addComponent(View_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Panel_View_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 510, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Panel_View_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 160, 45));
 
         Panel_Back_Btn.setBackground(new java.awt.Color(185, 144, 149));
 
@@ -341,7 +341,7 @@ public class View_Generator extends javax.swing.JFrame {
             .addComponent(Back_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Panel_Back_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 510, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Panel_Back_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 520, 160, 45));
 
         Path.setText("1");
         KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 100, 40));
@@ -563,7 +563,7 @@ public class View_Generator extends javax.swing.JFrame {
             .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 510, 170, 45));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 520, 170, 45));
 
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
@@ -664,9 +664,8 @@ public class View_Generator extends javax.swing.JFrame {
     }
     else if(!Class_SummaryStock.UpdateStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, images, incharge, remarks, Generator_id))
     {
-        Webpage.ct.Stocks();
-        JOptionPane.showMessageDialog(null, "SUCCESSFULLY UPDATE !");
-        dispose();
+        JOptionPane.showMessageDialog(null, "SUCCESSFULLY UPDATE !"); Webpage.Refresh(); dispose();
+   
     }
     }//GEN-LAST:event_View_BtnMouseClicked
 
@@ -681,9 +680,7 @@ public class View_Generator extends javax.swing.JFrame {
     }//GEN-LAST:event_View_BtnMouseExited
 
     private void Back_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back_BtnMouseClicked
-    Class_tables ct = new Class_tables();
-    ct.Stocks();
-    Webpage.Stock_cat = null;
+    Webpage.Refresh();
     dispose();
     }//GEN-LAST:event_Back_BtnMouseClicked
 
@@ -814,14 +811,14 @@ public class View_Generator extends javax.swing.JFrame {
 
         if(sid.equals("")){
             JOptionPane.showMessageDialog(null, " PLEASE SELECT! ","",JOptionPane.ERROR_MESSAGE);
-          Webpage.ct.Stocks();      
+               
         }
         else{
             int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS STOCK ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
                 if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_SummaryStock.DeleteGenset(sid) ){
                     JOptionPane.showMessageDialog(null, " DELETE STOCK! ","",JOptionPane.ERROR_MESSAGE);
-                    Webpage.ct.Stocks();
+                    Webpage.Refresh();
                     dispose();
                 }
             }

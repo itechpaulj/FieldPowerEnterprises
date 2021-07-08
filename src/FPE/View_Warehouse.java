@@ -413,7 +413,7 @@ public class View_Warehouse extends javax.swing.JFrame {
     }
     else if(!Class_SummaryStock.UpdateStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier, date_inbound, images, incharge, remarks, Warehouse_id))
     {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !");
+        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !");  Webpage.Refresh(); dispose();
     }
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
@@ -429,7 +429,7 @@ public class View_Warehouse extends javax.swing.JFrame {
 
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
     Class_tables ct = new Class_tables();
-    ct.Stocks();
+    ct.Stock();
     Webpage.Stock_cat = null;
     dispose();
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
@@ -461,8 +461,9 @@ public class View_Warehouse extends javax.swing.JFrame {
             View_Wh_Type.setSelectedItem("TYPE");
             View_Wh_price.setText(rs.getString("SELLER PRICE"));
             View_Wh_quantity.setText(rs.getString("QUANTITY"));
+            View_Wh_total_price.setText(rs.getString("TOTAL PRICE"));
             View_Wh_remarks.setText(rs.getString("REMARKS"));
-            
+            View_Wh_incharge.setText(rs.getString("INCHARGE"));
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(View_Wh_pic.getWidth(), View_Wh_pic.getHeight(),Image.SCALE_SMOOTH) );
             View_Wh_pic.setIcon(imageicon);
@@ -483,14 +484,14 @@ public class View_Warehouse extends javax.swing.JFrame {
 
         if(sid.equals("")){
             JOptionPane.showMessageDialog(null, " PLEASE SELECT! ","",JOptionPane.ERROR_MESSAGE);
-             Webpage.ct.Stocks();
+             Webpage.ct.Stock();
         }
         else{
             int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS STOCK ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
                 if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_SummaryStock.DeleteGenset(sid) ){
                     JOptionPane.showMessageDialog(null, " DELETE STOCK! ","",JOptionPane.ERROR_MESSAGE);
-                Webpage.ct.Stocks();
+                    Webpage.Refresh(); dispose();
                 }
             }
         }

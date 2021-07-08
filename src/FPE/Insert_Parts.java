@@ -473,7 +473,7 @@ public class Insert_Parts extends javax.swing.JFrame {
     }
     else if(!Class_SummaryStock.InsertStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, images, incharge, remarks))
     {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !"); Webpage.ct.Stocks(); dispose();
+        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !");  Webpage.Refresh(); dispose();
     }
     
     

@@ -506,7 +506,7 @@ public class View_Parts extends javax.swing.JFrame {
     }
     else if(!Class_SummaryStock.UpdateStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, images, incharge, remarks, Parts_id))
     {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !");
+        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !");  Webpage.Refresh();  dispose();
     }
     
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
@@ -523,7 +523,7 @@ public class View_Parts extends javax.swing.JFrame {
 
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
     Class_tables ct = new Class_tables();
-    ct.Stocks();
+    ct.Stock();
     Webpage.Stock_cat = null;
     dispose();
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
@@ -557,6 +557,7 @@ public class View_Parts extends javax.swing.JFrame {
             View_Parts_Price.setText(rs.getString("SELLER PRICE"));
             View_Parts_Quantity.setText(rs.getString("QUANTITY"));
             View_Parts_Remarks.setText(rs.getString("REMARKS"));
+            View_Parts_total_price.setText(rs.getString("TOTAL PRICE"));
             
             supplier_id = rs.getString("SUPPLIER ID");
             images = rs.getBytes("IMAGE");
@@ -611,14 +612,14 @@ public class View_Parts extends javax.swing.JFrame {
 
         if(sid.equals("")){
             JOptionPane.showMessageDialog(null, " PLEASE SELECT! ","",JOptionPane.ERROR_MESSAGE);
-             Webpage.ct.Stocks();
+             Webpage.ct.Stock();
         }
         else{
             int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS STOCK ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
                 if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_SummaryStock.DeleteGenset(sid) ){
                     JOptionPane.showMessageDialog(null, " DELETE STOCK! ","",JOptionPane.ERROR_MESSAGE);
-                    Webpage.ct.Stocks();
+                    Webpage.Refresh();
                 }
             }
         }

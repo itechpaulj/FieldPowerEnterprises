@@ -93,12 +93,12 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Office_Display.setText("VIEW OFFICE ITEM");
         View_Office_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_Office_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_Office_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 320, 110));
@@ -153,7 +153,7 @@ public class View_Office extends javax.swing.JFrame {
             .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 160, 45));
 
         Stock_Genset_Panel_Back.setBackground(new java.awt.Color(185, 144, 149));
 
@@ -178,14 +178,16 @@ public class View_Office extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addGroup(Stock_Genset_Panel_BackLayout.createSequentialGroup()
+                .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 470, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 480, 140, 45));
 
         Path.setText("1");
         KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 30, 30, -1));
@@ -317,7 +319,7 @@ public class View_Office extends javax.swing.JFrame {
             .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 170, 45));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 170, 45));
 
         View_Office_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -350,7 +352,7 @@ public class View_Office extends javax.swing.JFrame {
         jTextField15.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 160, 31));
 
-        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 750, 540));
+        getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 750, 550));
 
         pack();
         setLocationRelativeTo(null);
@@ -416,7 +418,7 @@ public class View_Office extends javax.swing.JFrame {
     }
     else if(!Class_SummaryStock.UpdateStock(category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier, date_inbound, images, incharge, remarks, Office_id))
     {
-        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !");
+        JOptionPane.showMessageDialog(null, "SUCCESSFULLY ADDED !");  Webpage.ct.Stock(); Webpage.ct.Sale();  dispose();
     }
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
@@ -432,7 +434,7 @@ public class View_Office extends javax.swing.JFrame {
 
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
     Class_tables ct = new Class_tables();
-    ct.Stocks();
+    ct.Stock();
     Webpage.Stock_cat = null;        
     dispose();
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
@@ -464,6 +466,7 @@ public class View_Office extends javax.swing.JFrame {
             View_Office_Type.setSelectedItem(rs.getString("TYPE"));
             View_Office_Price.setText(rs.getString("SELLER PRICE"));
             View_Office_quantity.setText(rs.getString("QUANTITY"));
+            View_Office_total_price.setText(rs.getString("TOTAL PRICE"));
             View_Office_Remarks.setText(rs.getString("REMARKS"));
             
             images = rs.getBytes("IMAGE");
@@ -488,14 +491,14 @@ public class View_Office extends javax.swing.JFrame {
 
         if(sid.equals("")){
             JOptionPane.showMessageDialog(null, " PLEASE SELECT! ","",JOptionPane.ERROR_MESSAGE);
-            Webpage.ct.Stocks();
+            Webpage.ct.Stock();
         }
         else{
             int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS STOCK ? ","",JOptionPane.YES_NO_OPTION);
             if(opt==0){
                 if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION && !Class_SummaryStock.DeleteGenset(sid) ){
                     JOptionPane.showMessageDialog(null, " DELETE STOCK! ","",JOptionPane.ERROR_MESSAGE);
-                     Webpage.ct.Stocks();
+                     Webpage.Refresh(); dispose();
                 }
             }
         }
