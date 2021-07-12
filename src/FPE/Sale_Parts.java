@@ -29,6 +29,29 @@ public class Sale_Parts extends javax.swing.JFrame {
     public static String supplier_id = null;
     
     String remarks="";
+    //-----------------------------------------------------------------
+       
+    //----FOR UPDATE----------------------------------------
+    int Update_Sale_quantity ;
+    int Update_Sale_total_price;
+    
+    // ----FOR STOCK----------------------------------------
+    int Update_Stock_quantity ;
+    int Update_Stock_total_price;
+    
+    // ----FOR STOCK RETURN----------------------------------------
+    int Update_Stock_quantity_return;
+    int Update_Stock_total_price_return;
+    
+    //----FOR SALE------------------------------------------
+    int parts_quant ;
+    //--------
+    int Sale_price;
+    int Sale_quantity ;
+    int Sale_total;
+   
+    int stock_ids;
+    int sale_ids; 
     
     public Sale_Parts() {
         initComponents();
@@ -56,7 +79,7 @@ public class Sale_Parts extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
-        View_Parts_Display = new javax.swing.JLabel();
+        Sale_Parts_Display = new javax.swing.JLabel();
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
         Sale_Parts_pic = new javax.swing.JLabel();
         Sale_Parts_Contact = new javax.swing.JTextField();
@@ -77,7 +100,6 @@ public class Sale_Parts extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
@@ -88,6 +110,7 @@ public class Sale_Parts extends javax.swing.JFrame {
         Sale_Parts_quantity = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -96,20 +119,20 @@ public class Sale_Parts extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        View_Parts_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        View_Parts_Display.setForeground(new java.awt.Color(255, 255, 255));
-        View_Parts_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Parts_Display.setText("SALE PARTS");
-        View_Parts_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+        Sale_Parts_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Sale_Parts_Display.setForeground(new java.awt.Color(255, 255, 255));
+        Sale_Parts_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Sale_Parts_Display.setText("SALE PARTS");
+        Sale_Parts_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                View_Parts_DisplayAncestorAdded(evt);
+                Sale_Parts_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel4.add(View_Parts_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 110));
+        jPanel4.add(Sale_Parts_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 110));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 130));
 
@@ -168,7 +191,7 @@ public class Sale_Parts extends javax.swing.JFrame {
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
-        Stock_Genset_Update.setText(" CHECKOUT");
+        Stock_Genset_Update.setText(" CHECK OUT");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_UpdateMouseClicked(evt);
@@ -298,20 +321,12 @@ public class Sale_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 140, 31));
 
         jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(255, 128, 128));
+        jTextField8.setBackground(new java.awt.Color(255, 255, 102));
         jTextField8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField8.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField8.setText(" TYPE");
+        jTextField8.setText(" AVAILABLE STOCK");
         jTextField8.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 140, 31));
-
-        jTextField14.setEditable(false);
-        jTextField14.setBackground(new java.awt.Color(255, 255, 102));
-        jTextField14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField14.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField14.setText(" AVAILABLE STOCK");
-        jTextField14.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, 31));
+        KG2_ADD_STOCK_GENSET.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, 31));
 
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(255, 128, 128));
@@ -385,14 +400,25 @@ public class Sale_Parts extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Sale_Parts_quantityKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Sale_Parts_quantityKeyTyped(evt);
+            }
         });
         KG2_ADD_STOCK_GENSET.add(Sale_Parts_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 210, 31));
 
-        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "PARTS INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "PARTS INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 710, 440));
 
-        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 410, 440));
+
+        jTextField9.setEditable(false);
+        jTextField9.setBackground(new java.awt.Color(255, 128, 128));
+        jTextField9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTextField9.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        jTextField9.setText(" TYPE");
+        jTextField9.setBorder(null);
+        KG2_ADD_STOCK_GENSET.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 140, 31));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1200, 550));
 
@@ -429,7 +455,7 @@ public class Sale_Parts extends javax.swing.JFrame {
     }//GEN-LAST:event_Sale_Parts_picMouseClicked
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
-
+    String btn = Stock_Genset_Update.getText();
     String category = Sale_Parts_Category.getText().toUpperCase();
     String brand = Sale_Parts_Brand.getText();
     String model= "";
@@ -439,8 +465,12 @@ public class Sale_Parts extends javax.swing.JFrame {
     String supplier_price = "";
     String seller_price = Sale_Parts_price.getText().toUpperCase();
     String quantity = Sale_Parts_quantity.getText();
-    int total_price = Integer.parseInt(Sale_Parts_total_price.getText());
+    String avail = Sale_Parts_available_quantity.getText();
     
+    int total_price = Integer.parseInt(Sale_Parts_total_price.getText());
+
+    int aq = Integer.parseInt(avail);
+    int q = Integer.parseInt(quantity);
     
     String engine_sn = "";
     String alternator_sn = "";
@@ -454,22 +484,61 @@ public class Sale_Parts extends javax.swing.JFrame {
     String date_outbound = "";
     String verify = "";
     String process = "";
-    
-    
-            
-            
-            
-            
     String project = "";
     
-     if(quantity.equals("") && total_price == 0)
-    {
-        JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
-    }
-     else if (!Class_Cart.InsertCart(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && Class_History.InsertHistory(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project))
-     {
-         JOptionPane.showMessageDialog(null, "CHECKUP SUCCESS !"); Webpage.Refresh(); dispose();
-     }
+            
+     if(quantity.equals("") || total_price == 0)
+        {
+            JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
+        }
+     else if(aq < q)
+        {
+            JOptionPane.showMessageDialog(null, "THE QUANTITY ENTERED IS TO MUCH!!","",JOptionPane.ERROR_MESSAGE);
+        }
+     
+    else if(btn.equals(" CHECK OUT"))
+        {
+          
+            if(stock_ids == sale_ids )
+               
+            {
+     
+                if(!Class_Amount.CartUpdateQuantityAndTotal(Update_Sale_quantity, Update_Sale_total_price, Parts_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+Update_Sale_quantity, Update_Sale_total_price, Parts_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id))
+                    {
+                        System.out.print(""+Update_Sale_quantity);
+                        System.out.print(Update_Sale_total_price);
+                        JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
+                    }
+                
+            }
+           else if(!Class_Cart.InsertCart(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+ Update_Sale_quantity, Update_Sale_total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id))
+                    {
+                        JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
+                    }
+    
+        }         
+
+             else if(btn.equals(" REMOVE"))
+        {
+        
+        
+                if(!Class_Amount.CartUpdateQuantityAndTotal(Update_Stock_quantity, Update_Stock_total_price, Parts_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity_return, Update_Stock_total_price_return, Parts_id))
+                    {
+                        System.out.print(""+Update_Stock_quantity);
+                        System.out.print(Update_Stock_total_price);
+                        JOptionPane.showMessageDialog(null, " SUCCESSFULY REMOVE !");Webpage.Refresh();  dispose();
+                    }
+                if(Update_Stock_quantity == 0)
+                    {
+                        if(!Class_Amount.HistoryDelete(Parts_id) &&  !Class_Amount.CartDelete(Parts_id )){
+                            Webpage.Refresh();  dispose();
+                        }
+                    }
+            
+        }
+    
+
+     
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
     private void Stock_Genset_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseEntered
@@ -499,18 +568,20 @@ public class Sale_Parts extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
     }//GEN-LAST:event_Stock_Genset_BackMouseExited
 
-    private void View_Parts_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Parts_DisplayAncestorAdded
-    String Banner = View_Parts_Display.getText();
-    String ids = Webpage.sales_id;
+    private void Sale_Parts_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Sale_Parts_DisplayAncestorAdded
+    String Banner = Sale_Parts_Display.getText();
+    
+    
     
     if(Banner.equals("SALE PARTS"))
     {
+        String ids = Webpage.sales_id;
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `stock_table` WHERE `STOCK ID` = '"+ids+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             Parts_id = rs.getString("STOCK ID");
-           
+            stock_ids = Integer.parseInt(Parts_id);
             Sale_Parts_inbound_date.setText(rs.getString("DATE INBOUND"));
             Sale_Parts_Category.setText(rs.getString("CATEGORY"));
             Sale_Parts_Brand.setText(rs.getString("BRAND"));
@@ -546,8 +617,99 @@ public class Sale_Parts extends javax.swing.JFrame {
         catch(Exception e){
             e.printStackTrace();
         }
+         
+         try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `cart_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+          
+            sale_ids = rs.getInt("STOCK ID");
+            parts_quant = rs.getInt("QUANTITY");
+            System.out.println(""+sale_ids);
+            System.out.println(""+parts_quant);
+            
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    } 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    else if(Banner.equals("REMOVE PARTS"))
+        
+    {
+        String idss = Webpage.cart_id;
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `cart_table` WHERE `STOCK ID`= '"+idss+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            Parts_id = rs.getString("STOCK ID");
+           
+            Sale_Parts_inbound_date.setText(rs.getString("DATE INBOUND"));
+            Sale_Parts_Category.setText(rs.getString("CATEGORY"));
+            Sale_Parts_Brand.setText(rs.getString("BRAND"));
+            Sale_Parts_Type.setText(rs.getString("TYPE"));
+            Sale_Parts_price.setText(rs.getString("SELLER PRICE"));
+            jTextField8.setText(" ORDER QUANTITY");
+            Sale_Parts_available_quantity.setText(rs.getString("QUANTITY"));
+            Sale_Parts_total_price.setText(""+rs.getInt("TOTAL PRICE"));
+            
+            remarks = rs.getString("REMARKS");
+            
+            supplier_id = rs.getString("SUPPLIER ID");
+            images = rs.getBytes("IMAGE");
+            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Parts_pic.getWidth(), Sale_Parts_pic.getHeight(),Image.SCALE_SMOOTH) );
+            Sale_Parts_pic.setIcon(imageicon);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+         try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = '"+supplier_id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            
+            Sale_PartsSupplier_name.setText(rs.getString("NAME"));
+            Sale_Parts_Supplier_Address.setText(rs.getString("ADDRESS"));
+    
+            Sale_Parts_Contact.setText(rs.getString("CONTACT"));
+            
+            
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+         
+         try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+          
+            sale_ids = rs.getInt("STOCK ID");
+            parts_quant = rs.getInt("QUANTITY");
+            System.out.println(""+sale_ids);
+            System.out.println(""+parts_quant);
+            
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+          
     }
-    }//GEN-LAST:event_View_Parts_DisplayAncestorAdded
+    }//GEN-LAST:event_Sale_Parts_DisplayAncestorAdded
 
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
@@ -577,12 +739,91 @@ public class Sale_Parts extends javax.swing.JFrame {
        }
        else
        {
-           quantity = Integer.parseInt(Sale_Parts_quantity.getText());
-            total = price * quantity;      
-            Sale_Parts_total_price.setText(""+total); 
+          Sale_price =  Integer.parseInt(Sale_Parts_price.getText());
+          Sale_quantity = Integer.parseInt(Sale_Parts_quantity.getText());
+          Sale_total = Sale_quantity * Sale_price;
+          Sale_Parts_total_price.setText(""+Sale_total);
+          System.out.println(" FOR ADD");
+          System.out.println(""+Sale_quantity);
+          System.out.println(""+Sale_total);
+          System.out.println("\n \n");
+          int Sale_avail = Integer.parseInt(Sale_Parts_available_quantity.getText());
+
+           System.out.println(" FOR ADD CHECKOUT");
+          Update_Sale_quantity = parts_quant + Sale_quantity;
+          Update_Sale_total_price = Update_Sale_quantity * Sale_price;
+          System.out.println(""+Update_Sale_quantity);
+          System.out.println(""+Update_Sale_total_price);
+          System.out.println("\n \n");
+          
+          System.out.println(" FOR UPDATE STOCK");
+          Update_Stock_quantity = Sale_avail - Sale_quantity;
+          Update_Stock_total_price = Update_Stock_quantity * Sale_price;
+          System.out.println(""+Update_Stock_quantity);
+          System.out.println(""+Update_Stock_total_price);
+          System.out.println("\n \n");
+          
+          Update_Stock_quantity_return = parts_quant + Sale_quantity;
+          Update_Stock_total_price_return = Update_Stock_quantity_return * Sale_price;
+          System.out.println(""+Update_Stock_quantity_return);
+          System.out.println(""+Update_Stock_total_price_return);
+          System.out.println("\n \n");System.out.println("\n \n");
+  
+   
+    
+    // ----FOR STOCK----------------------------------------
+    int Update_Stock_quantity ;
+    int Update_Stock_total_price;
+    
+    //----FOR SALE------------------------------------------
+    int Sale_total_price;
+    int Sale_quantity ;
+    
+        
+//              add_sale_quantity = Integer.parseInt(Sale_Gen_quantity.getText());
+//           int aq = Integer.parseInt(Sale_Gen_available_stock.getText());
+//           if(aq >= add_sale_quantity){
+               
+           
+        //----   FOR ADD SALE
+//        
+//        add_sale_total = add_sale_price * add_sale_quantity;
+//        Sale_Gen_total_price.setText(""+add_sale_total); 
+//        System.out.println("------------FOR ADD SALE---------------------------------------------");
+//        System.out.println(""+add_sale_quantity);
+//        System.out.println(""+add_sale_total);
+//        System.out.println();
+//        
+//        //----   FOR UPDATE SALE
+//        
+//        update_sale_quantity = Sale_quantity + add_sale_quantity;
+//        updated_Sale_total = update_sale_quantity * add_sale_price;
+//        System.out.println("------------FOR UPDATE SALE-------------------------------------------");
+//        System.out.println(""+update_sale_quantity);
+//        System.out.println(""+updated_Sale_total);
+//        System.out.println();
+//        
+//        //----   FOR UPDATE THE STOCK 
+//        
+//        updated_stock_quantity = Integer.parseInt(Sale_Gen_available_stock.getText()) - add_sale_quantity;
+//        updated_stock_total = updated_stock_quantity *add_sale_price ;
+//        
+//        int updated_stock_quantity1= Sale_quantity + add_sale_quantity;
+//        updated_stock_total1 =  updated_stock_quantity1 * add_sale_price;
+//        System.out.println("------------FOR UPDATE THE STOCK---------------------------------------");
+//        System.out.println(""+updated_stock_quantity);
+//        
+//        System.out.println("\n \n");
        }
        
     }//GEN-LAST:event_Sale_Parts_quantityKeyReleased
+
+    private void Sale_Parts_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Parts_quantityKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Sale_Parts_quantityKeyTyped
 
     /**
      * @param args the command line arguments
@@ -640,6 +881,7 @@ public class Sale_Parts extends javax.swing.JFrame {
     public static javax.swing.JTextField Sale_Parts_Brand;
     public static javax.swing.JTextField Sale_Parts_Category;
     public static javax.swing.JTextField Sale_Parts_Contact;
+    public static javax.swing.JLabel Sale_Parts_Display;
     public static javax.swing.JTextArea Sale_Parts_Supplier_Address;
     public static javax.swing.JTextField Sale_Parts_Type;
     public static javax.swing.JTextField Sale_Parts_available_quantity;
@@ -651,22 +893,21 @@ public class Sale_Parts extends javax.swing.JFrame {
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
-    private javax.swing.JLabel Stock_Genset_Update;
-    public static javax.swing.JLabel View_Parts_Display;
+    public static javax.swing.JLabel Stock_Genset_Update;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    public static javax.swing.JTextField jTextField2;
+    public static javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    public static javax.swing.JTextField jTextField5;
+    public static javax.swing.JTextField jTextField6;
+    public static javax.swing.JTextField jTextField7;
+    private static javax.swing.JTextField jTextField8;
+    public static javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

@@ -25,6 +25,12 @@ public class View_Office extends javax.swing.JFrame {
     String Office_id = null;
     public static byte[] images = null;
     
+//-----------------------------------------------------------------
+    int view_price;
+    int view_quantity;
+    int view_total;
+    
+    
     public View_Office() {
         initComponents();
         imgisNull();
@@ -195,10 +201,18 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Office_quantity.setBorder(null);
+        View_Office_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                View_Office_quantityKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                View_Office_quantityKeyTyped(evt);
+            }
+        });
         KG2_ADD_STOCK_GENSET.add(View_Office_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 210, 31));
 
         View_Office_Category.setEditable(false);
-        View_Office_Category.setBackground(new java.awt.Color(204, 204, 204));
+        View_Office_Category.setBackground(new java.awt.Color(220, 220, 200));
         View_Office_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Office_Category.setText("OFFICE");
@@ -216,6 +230,11 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_Price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 View_Office_PriceActionPerformed(evt);
+            }
+        });
+        View_Office_Price.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                View_Office_PriceKeyTyped(evt);
             }
         });
         KG2_ADD_STOCK_GENSET.add(View_Office_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 31));
@@ -321,6 +340,8 @@ public class View_Office extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 170, 45));
 
+        View_Office_total_price.setEditable(false);
+        View_Office_total_price.setBackground(new java.awt.Color(220, 220, 200));
         View_Office_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Office_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Office_total_price.setBorder(null);
@@ -412,7 +433,7 @@ public class View_Office extends javax.swing.JFrame {
  
     /// SUpplier info
  
-    if(brand.equals("") || type.equals("SELECT") || supplier_price.equals("") || seller_price.equals("") || quantity.equals("") || supplier.equals("") )
+    if(brand.equals("") || type.equals("SELECT") ||  seller_price.equals("") || quantity.equals("") )
     {
         JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
     }
@@ -451,7 +472,7 @@ public class View_Office extends javax.swing.JFrame {
 
     private void View_Office_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Office_DisplayAncestorAdded
     String Banner = View_Office_Display.getText();
-    String id = Webpage.Stock_Category_Id.getText();
+    String id = Webpage.stock_id;
     
     if(Banner.equals("VIEW OFFICE ITEM"))
     {
@@ -487,7 +508,7 @@ public class View_Office extends javax.swing.JFrame {
     }//GEN-LAST:event_View_Office_PriceActionPerformed
 
     private void Stock_Genset_DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseClicked
-        String sid = Webpage.Stock_Category_Id.getText();
+        String sid = Webpage.stock_id;
 
         if(sid.equals("")){
             JOptionPane.showMessageDialog(null, " PLEASE SELECT! ","",JOptionPane.ERROR_MESSAGE);
@@ -515,6 +536,37 @@ public class View_Office extends javax.swing.JFrame {
     private void View_Office_total_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Office_total_priceKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_View_Office_total_priceKeyReleased
+
+    private void View_Office_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Office_quantityKeyReleased
+     String q = View_Office_quantity.getText();
+     view_price = Integer.parseInt(View_Office_Price.getText());
+     if(q.isEmpty())
+     {
+        view_total  = view_price * 0;
+     
+        View_Office_total_price.setText(""+view_total);  
+     }
+     else{
+        view_quantity  = Integer.parseInt(View_Office_quantity.getText());
+        view_total  = view_price * view_quantity;    
+        View_Office_total_price.setText(""+view_total); 
+     }
+     
+    }//GEN-LAST:event_View_Office_quantityKeyReleased
+
+    private void View_Office_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Office_quantityKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_View_Office_quantityKeyTyped
+
+    private void View_Office_PriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Office_PriceKeyTyped
+       char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_View_Office_PriceKeyTyped
 
     /**
      * @param args the command line arguments

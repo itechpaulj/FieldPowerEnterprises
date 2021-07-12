@@ -22,6 +22,10 @@ public class Insert_Warehouse extends javax.swing.JFrame {
     String filename = null;
     public static byte[] images = null;
     String supplier_id = "";
+        //-------------------------------------------------
+    int insert_price;
+    int insert_quantity;
+    int insert_total;
     
     public Insert_Warehouse() {
         initComponents();
@@ -87,12 +91,12 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         Inventory_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Inventory_Display.setText("ADD WAREHOUSE STOCK");
         Inventory_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Inventory_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Inventory_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 380, 80));
@@ -112,6 +116,8 @@ public class Insert_Warehouse extends javax.swing.JFrame {
         Insert_Wh_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Wh_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, 30));
 
+        Insert_Wh_Category.setEditable(false);
+        Insert_Wh_Category.setBackground(new java.awt.Color(220, 220, 200));
         Insert_Wh_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Wh_Category.setText("WAREHOUSE");
@@ -289,6 +295,9 @@ public class Insert_Warehouse extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Insert_Wh_quantityKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Insert_Wh_quantityKeyTyped(evt);
+            }
         });
         KG2_ADD_STOCK_GENSET.add(Insert_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 210, 30));
 
@@ -303,9 +312,14 @@ public class Insert_Warehouse extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Insert_Wh_priceKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Insert_Wh_priceKeyTyped(evt);
+            }
         });
         KG2_ADD_STOCK_GENSET.add(Insert_Wh_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 30));
 
+        Insert_Wh_total_price.setEditable(false);
+        Insert_Wh_total_price.setBackground(new java.awt.Color(220, 220, 200));
         Insert_Wh_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Wh_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Wh_total_price.setBorder(null);
@@ -368,7 +382,7 @@ public class Insert_Warehouse extends javax.swing.JFrame {
     String type = Insert_Wh_Type.getSelectedItem().toString().toUpperCase();
     String seller_price = Insert_Wh_price.getText().toUpperCase();
     String supplier_price = "";
-    String quantity = Insert_Wh_total_price.getText();
+    String quantity = Insert_Wh_quantity.getText();
     int total_price = Integer.parseInt(Insert_Wh_total_price.getText());
     
     
@@ -432,23 +446,43 @@ public class Insert_Warehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_Insert_Wh_priceActionPerformed
 
     private void Insert_Wh_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Wh_priceKeyReleased
-        try{
-            String number  = Insert_Wh_price.getText() ;
-            int inputQuantity = Integer.parseInt(Insert_Wh_price.getText());
-            
-        }
-        catch(NumberFormatException  e){
-           Insert_Wh_price.setText("");
-        }
+       
     }//GEN-LAST:event_Insert_Wh_priceKeyReleased
 
     private void Insert_Wh_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Wh_quantityKeyReleased
-        // TODO add your handling code here:
+    String q = Insert_Wh_quantity.getText();
+    insert_price = Integer.parseInt(Insert_Wh_price.getText());
+    if(q.isEmpty())
+        {
+            insert_total = insert_price * 0 ; 
+            Insert_Wh_total_price.setText(""+insert_total);
+        }
+    else
+        {   
+            insert_price = Integer.parseInt(Insert_Wh_price.getText());
+            insert_quantity = Integer.parseInt(Insert_Wh_quantity.getText());
+            insert_total = insert_price * insert_quantity ;
+            Insert_Wh_total_price.setText(""+insert_total);
+        }
     }//GEN-LAST:event_Insert_Wh_quantityKeyReleased
 
     private void Insert_Wh_total_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Wh_total_priceKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_Insert_Wh_total_priceKeyReleased
+
+    private void Insert_Wh_priceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Wh_priceKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Insert_Wh_priceKeyTyped
+
+    private void Insert_Wh_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Wh_quantityKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Insert_Wh_quantityKeyTyped
 
     /**
      * @param args the command line arguments

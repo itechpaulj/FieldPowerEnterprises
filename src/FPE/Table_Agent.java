@@ -19,20 +19,23 @@ import javax.swing.table.TableRowSorter;
  *
  * @author ROBLES
  */
-public class Table_Customer extends javax.swing.JFrame {
-
-    public static String id = null;
-    String name = null;
-    String add = null;
-    String email = null;
-    String contact = null;
-    Class_tables ct = new Class_tables();
+public class Table_Agent extends javax.swing.JFrame {
+//
+    String id = "";
+    String name = "";
+    String add = "";
+    String contact = "";
     
-    public Table_Customer() {
-        initComponents();
+    public static String Path_Agent="";
+    public static String Agent_id= "";
+    
+    
+    
+    public Table_Agent() {
+    initComponents();
         
-        ct.Customer();
-      
+    
+     Webpage.ct.Agent();
        
     }
 
@@ -49,7 +52,7 @@ public class Table_Customer extends javax.swing.JFrame {
         displays = new javax.swing.JLabel();
         kGradientPanel1 = new keeptoo.KGradientPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Customer_Table = new javax.swing.JTable();
+        Agent_table = new javax.swing.JTable();
         add_panel_supplier = new javax.swing.JPanel();
         Add = new javax.swing.JLabel();
         update_panel_supplier = new javax.swing.JPanel();
@@ -58,24 +61,22 @@ public class Table_Customer extends javax.swing.JFrame {
         sup_del = new javax.swing.JLabel();
         back_panel_supplier = new javax.swing.JPanel();
         Back = new javax.swing.JLabel();
-        back_panel_supplier1 = new javax.swing.JPanel();
-        Back1 = new javax.swing.JLabel();
         Supplier_Search = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        id_cus = new javax.swing.JLabel();
-        Customer_path = new javax.swing.JLabel();
+        back_panel_supplier1 = new javax.swing.JPanel();
+        Back1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
+        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         displays.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         displays.setForeground(new java.awt.Color(255, 255, 255));
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        displays.setText("CUSTOMER LIST");
+        displays.setText("AGENT LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -85,7 +86,7 @@ public class Table_Customer extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 400, 110));
+        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 370, 100));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 130));
 
@@ -93,7 +94,7 @@ public class Table_Customer extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Customer_Table.setModel(new javax.swing.table.DefaultTableModel(
+        Agent_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -104,12 +105,12 @@ public class Table_Customer extends javax.swing.JFrame {
 
             }
         ));
-        Customer_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+        Agent_table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Customer_TableMouseClicked(evt);
+                Agent_tableMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(Customer_Table);
+        jScrollPane1.setViewportView(Agent_table);
 
         kGradientPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 78, 880, 350));
 
@@ -118,8 +119,8 @@ public class Table_Customer extends javax.swing.JFrame {
         Add.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Add.setForeground(new java.awt.Color(255, 255, 255));
         Add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Customer_Add.png"))); // NOI18N
-        Add.setText(" ADD NEW");
+        Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Add_Supplier_Btn.PNG"))); // NOI18N
+        Add.setText(" ADD");
         Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AddMouseClicked(evt);
@@ -150,7 +151,7 @@ public class Table_Customer extends javax.swing.JFrame {
         sup_listUpdate.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         sup_listUpdate.setForeground(new java.awt.Color(255, 255, 255));
         sup_listUpdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sup_listUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Customer_Update.png"))); // NOI18N
+        sup_listUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Edit_Supplier_Btn.png"))); // NOI18N
         sup_listUpdate.setText(" UPDATE ");
         sup_listUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -184,7 +185,7 @@ public class Table_Customer extends javax.swing.JFrame {
         sup_del.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         sup_del.setForeground(new java.awt.Color(255, 255, 255));
         sup_del.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        sup_del.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Customer_Remove.png"))); // NOI18N
+        sup_del.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Remove_Supplier_Btn.png"))); // NOI18N
         sup_del.setText(" DELETE");
         sup_del.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -215,7 +216,6 @@ public class Table_Customer extends javax.swing.JFrame {
 
         back_panel_supplier.setBackground(new java.awt.Color(185, 144, 149));
 
-        Back.setBackground(new java.awt.Color(255, 255, 255));
         Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Back.setForeground(new java.awt.Color(255, 255, 255));
         Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -237,9 +237,7 @@ public class Table_Customer extends javax.swing.JFrame {
         back_panel_supplier.setLayout(back_panel_supplierLayout);
         back_panel_supplierLayout.setHorizontalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(back_panel_supplierLayout.createSequentialGroup()
-                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         back_panel_supplierLayout.setVerticalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,12 +246,25 @@ public class Table_Customer extends javax.swing.JFrame {
 
         kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 470, 150, 50));
 
+        Supplier_Search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Supplier_Search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Supplier_Search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Supplier_SearchKeyPressed(evt);
+            }
+        });
+        kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
+
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
+        kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
+
         back_panel_supplier1.setBackground(new java.awt.Color(255, 102, 255));
 
         Back1.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Back1.setForeground(new java.awt.Color(255, 255, 255));
         Back1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Customer_Select.png"))); // NOI18N
+        Back1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Select_Btn.png"))); // NOI18N
         Back1.setText(" SELECT  ");
         Back1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -280,21 +291,6 @@ public class Table_Customer extends javax.swing.JFrame {
 
         kGradientPanel1.add(back_panel_supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 150, 50));
 
-        Supplier_Search.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Supplier_Search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Supplier_Search.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                Supplier_SearchKeyPressed(evt);
-            }
-        });
-        kGradientPanel1.add(Supplier_Search, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 220, 31));
-
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
-        kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
-        kGradientPanel1.add(id_cus, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 80, 30));
-        kGradientPanel1.add(Customer_path, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 34, 50, 30));
-
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 950, 570));
 
         pack();
@@ -302,59 +298,54 @@ public class Table_Customer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void displaysAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displaysAncestorAdded
-
+        
     }//GEN-LAST:event_displaysAncestorAdded
 
-    private void Customer_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Customer_TableMouseClicked
-        int i=Customer_Table.getSelectedRow();
-        TableModel model = Customer_Table.getModel();
-        id_cus.setText(model.getValueAt(i,0).toString());
+    private void Agent_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Agent_tableMouseClicked
+        int i=Agent_table.getSelectedRow();
+        TableModel model = Agent_table.getModel();  
+        Agent_id = model.getValueAt(i,0).toString();
         
-        id = model.getValueAt(i,0).toString();
-        name = model.getValueAt(i,1).toString();
-        add = model.getValueAt(i,2).toString();
-        email = model.getValueAt(i,3).toString();
-        contact = model.getValueAt(i,4).toString();
-
-    }//GEN-LAST:event_Customer_TableMouseClicked
+    }//GEN-LAST:event_Agent_tableMouseClicked
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
         
-        Insert_Customer ic = new Insert_Customer();
-        ic.setVisible(true);
-        Insert_Supplier.Insert_Supplier_Display.setText("ADD NEW CUSTOMER");
+        Insert_Agent ag = new Insert_Agent();
+        ag.setVisible(true);
+        
         
 
     }//GEN-LAST:event_AddMouseClicked
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
-        Customer_path.setText("");
-        id_cus.setText("");
+ 
         dispose();
         
     }//GEN-LAST:event_BackMouseClicked
 
     private void sup_listUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseClicked
-        if(id_cus.getText().isEmpty()){
-           JOptionPane.showMessageDialog(null, "PLEASE SELECT CUSTOMER !","",JOptionPane.ERROR_MESSAGE);
-           ct.Customer();
-       }else{
-           Insert_Customer ic = new Insert_Customer();
-           ic.setVisible(true);
-           Insert_Customer.Display_Customer.setText("UPDATE CUSTOMER");
-           ct.Customer();
+        if(Agent_id.equals(""))
+        {
+           JOptionPane.showMessageDialog(null, "SELECT AGENT! ","",JOptionPane.ERROR_MESSAGE);
+        }else
+        {
+            Insert_Agent is = new Insert_Agent();
+           is.setVisible(true);
+           Insert_Agent.Agent_Display.setText("UPDATE AGENT");
         }
-
+           
+     
     }//GEN-LAST:event_sup_listUpdateMouseClicked
 
     private void sup_delMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseClicked
-      String id1 = id_cus.getText();
-           int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS CUSTOMER ? ","",JOptionPane.YES_NO_OPTION);
+      String id1 = Agent_id;
+      
+           int opt = JOptionPane.showConfirmDialog(null, "YOU WANT TO DELETE THIS SUPPLIER ? ","",JOptionPane.YES_NO_OPTION); 
             if(opt==0){
                 if(JOptionPane.YES_NO_OPTION == JOptionPane.YES_OPTION ){
-                    if(!Class_Customers.DeleteCustomer(id1)){        
+                    if(!Class_Agent.DeleteAgent(id1)){        
                     JOptionPane.showMessageDialog(null, "DELETE SUCCESSFULLY","",JOptionPane.INFORMATION_MESSAGE);
-                    ct.Customer();
+                    Webpage.ct.Agent();
                     }
                 } 
             }
@@ -362,26 +353,26 @@ public class Table_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_sup_delMouseClicked
 
     private void Supplier_SearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Supplier_SearchKeyPressed
-        DefaultTableModel tm = (DefaultTableModel)Customer_Table.getModel();
+        DefaultTableModel tm = (DefaultTableModel)Agent_table.getModel();
         String find = Supplier_Search.getText().toUpperCase();
         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(tm);
-        Customer_Table.setRowSorter(tr);
+        Agent_table.setRowSorter(tr);
         tr.setRowFilter(RowFilter.regexFilter(find));
     }//GEN-LAST:event_Supplier_SearchKeyPressed
 
     private void AddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseEntered
-        Add.setForeground(new Color(51,51,51));
         add_panel_supplier.setBackground(new Color(163, 235, 177));
+        Add.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_AddMouseEntered
 
     private void sup_listUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseEntered
-        sup_listUpdate.setForeground(new Color(51,51,51));
         update_panel_supplier.setBackground(new Color(163, 235, 177));
+        sup_listUpdate.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_sup_listUpdateMouseEntered
 
     private void sup_delMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseEntered
+       delete_panel_supplier.setBackground(new Color(163, 235, 177));
        sup_del.setForeground(new Color(51,51,51));
-        delete_panel_supplier.setBackground(new Color(163, 235, 177));
     }//GEN-LAST:event_sup_delMouseEntered
 
     private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
@@ -392,6 +383,7 @@ public class Table_Customer extends javax.swing.JFrame {
     private void AddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseExited
       add_panel_supplier.setBackground(new Color(35,215,176));
       Add.setForeground(new Color(255,255,255));
+
     }//GEN-LAST:event_AddMouseExited
 
     private void sup_listUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseExited
@@ -405,29 +397,25 @@ public class Table_Customer extends javax.swing.JFrame {
     }//GEN-LAST:event_sup_delMouseExited
 
     private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
+       back_panel_supplier.setBackground(new Color(185,144,149));
        Back.setForeground(new Color(255,255,255));
-        back_panel_supplier.setBackground(new Color(185,144,149));
     }//GEN-LAST:event_BackMouseExited
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
-       //String path = Customer_path.getText();
-       dispose();
-       AddCart.c_name.setText(name);
-       AddCart.c_address.setText(add);
-       AddCart.c_contact.setText(contact);
-       AddCart.cus_id = id;
-       
-       
+
     }//GEN-LAST:event_Back1MouseClicked
 
     private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered
-        Back1.setForeground(new Color(51,51,51));
+        // TODO add your handling code here:
         back_panel_supplier1.setBackground(new Color(163, 235, 177));
+        Back1.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_Back1MouseEntered
 
     private void Back1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseExited
+        // TODO add your handling code here:255, 102, 255
+        
+        back_panel_supplier1.setBackground(new Color(255,102,255));
         Back1.setForeground(new Color(255,255,255));
-        back_panel_supplier1.setBackground(new Color(255, 102, 255));
     }//GEN-LAST:event_Back1MouseExited
 
     /**
@@ -447,38 +435,38 @@ public class Table_Customer extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Agent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Agent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Agent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Table_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Table_Agent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Table_Supplier().setVisible(true);
+                new Table_Agent().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel Add;
+    public static javax.swing.JTable Agent_table;
     public static javax.swing.JLabel Back;
     public static javax.swing.JLabel Back1;
-    public static javax.swing.JTable Customer_Table;
-    public static javax.swing.JLabel Customer_path;
     private javax.swing.JTextField Supplier_Search;
     public static javax.swing.JPanel add_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier;
     public static javax.swing.JPanel back_panel_supplier1;
     public static javax.swing.JPanel delete_panel_supplier;
     public static javax.swing.JLabel displays;
-    public static javax.swing.JLabel id_cus;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;

@@ -12,6 +12,7 @@ import static FPE.Webpage.History_Table;
 
 import static FPE.Table_Supplier.Supplier_table;
 import static FPE.Table_Customer.Customer_Table;
+import static FPE.Table_Agent.Agent_table;
 
 
 public class Class_tables {
@@ -596,6 +597,19 @@ public class Class_tables {
             }
         return false;
     }
+    
+    public boolean Agent(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `NAME`, `ADDRESS`,`CONTACT` FROM `agent_table` ORDER BY `ID` DESC");
+        ResultSet rs = ps.executeQuery();
+        Agent_table.setModel(DbUtils.resultSetToTableModel(rs));
+        Agent_table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+            }
+        return false;
+    }
+    
     
        public boolean Customer(){
         try{

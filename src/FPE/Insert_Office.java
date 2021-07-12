@@ -23,6 +23,10 @@ public class Insert_Office extends javax.swing.JFrame {
     public static byte[] images = null;
     public static String supplier_id="";
     
+        //-------------------------------------------------
+    int insert_price;
+    int insert_quantity;
+    int insert_total;
     
     public Insert_Office() {
         initComponents();
@@ -196,11 +200,14 @@ public class Insert_Office extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Insert_Office_quantityKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Insert_Office_quantityKeyTyped(evt);
+            }
         });
         KG2_ADD_STOCK_GENSET.add(Insert_Office_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 210, 31));
 
         Insert_Office_Category.setEditable(false);
-        Insert_Office_Category.setBackground(new java.awt.Color(204, 204, 204));
+        Insert_Office_Category.setBackground(new java.awt.Color(220, 220, 200));
         Insert_Office_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Office_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Office_Category.setText("OFFICE");
@@ -224,6 +231,9 @@ public class Insert_Office extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Insert_Office_PriceKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Insert_Office_PriceKeyTyped(evt);
+            }
         });
         KG2_ADD_STOCK_GENSET.add(Insert_Office_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 31));
 
@@ -231,7 +241,7 @@ public class Insert_Office extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(Insert_Office_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 210, 31));
 
         Insert_Office_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "GADGET", "ACCESSORIES" }));
+        Insert_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "LAPTOP", "INK", "PRINT", "PAPER", "BALLPEN", "ERASER" }));
         Insert_Office_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Office_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, 31));
 
@@ -309,6 +319,8 @@ public class Insert_Office extends javax.swing.JFrame {
         perTxt.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(perTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 160, 31));
 
+        Insert_Office_total_price.setEditable(false);
+        Insert_Office_total_price.setBackground(new java.awt.Color(220, 220, 200));
         Insert_Office_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Office_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Office_total_price.setBorder(null);
@@ -442,18 +454,40 @@ public class Insert_Office extends javax.swing.JFrame {
     }//GEN-LAST:event_Insert_Office_PriceKeyReleased
 
     private void Insert_Office_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Office_quantityKeyReleased
-        try{
-            String number  = Insert_Office_quantity.getText() ;
-            int inputQuantity = Integer.parseInt(Insert_Office_quantity.getText());
+    insert_price = Integer.parseInt(Insert_Office_Price.getText());
+    String q = Insert_Office_quantity.getText();
+    if(q.isEmpty())
+        {
+            insert_total = insert_price * 0 ; 
+            Insert_Office_total_price.setText(""+insert_total);
         }
-        catch(NumberFormatException  e){
-           Insert_Office_quantity.setText("");
+    else
+        {        
+            insert_price = Integer.parseInt(Insert_Office_Price.getText());
+            insert_quantity = Integer.parseInt(Insert_Office_quantity.getText());
+            insert_total = insert_price * insert_quantity ;
+            Insert_Office_total_price.setText(""+insert_total);
         }
+        
     }//GEN-LAST:event_Insert_Office_quantityKeyReleased
 
     private void Insert_Office_total_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Office_total_priceKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_Insert_Office_total_priceKeyReleased
+
+    private void Insert_Office_PriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Office_PriceKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Insert_Office_PriceKeyTyped
+
+    private void Insert_Office_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Office_quantityKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Insert_Office_quantityKeyTyped
 
     /**
      * @param args the command line arguments

@@ -20,6 +20,11 @@ public class View_Warehouse extends javax.swing.JFrame {
     String filename = null;
     public static byte[] images = null;
     String Warehouse_id =null;
+//-----------------------------------------------------------------
+    int view_price;
+    int view_quantity;
+    int view_total;
+    
     
     public View_Warehouse() {
         initComponents();
@@ -88,12 +93,12 @@ public class View_Warehouse extends javax.swing.JFrame {
         View_WH_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_WH_Display.setText("VIEW WAREHOUSE ITEM");
         View_WH_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_WH_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_WH_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 340, 100));
@@ -109,17 +114,25 @@ public class View_Warehouse extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(View_Wh_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 210, 30));
 
         View_Wh_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Wh_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
+        View_Wh_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "TOOLS" }));
         View_Wh_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Wh_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, 31));
 
         View_Wh_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Wh_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_quantity.setBorder(null);
+        View_Wh_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                View_Wh_quantityKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                View_Wh_quantityKeyTyped(evt);
+            }
+        });
         KG2_ADD_STOCK_GENSET.add(View_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 210, 31));
 
         View_Wh_Category.setEditable(false);
-        View_Wh_Category.setBackground(new java.awt.Color(204, 204, 204));
+        View_Wh_Category.setBackground(new java.awt.Color(220, 220, 200));
         View_Wh_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Wh_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_Category.setText("WAREHOUSE");
@@ -137,6 +150,11 @@ public class View_Warehouse extends javax.swing.JFrame {
         View_Wh_price.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 View_Wh_priceActionPerformed(evt);
+            }
+        });
+        View_Wh_price.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                View_Wh_priceKeyTyped(evt);
             }
         });
         KG2_ADD_STOCK_GENSET.add(View_Wh_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 31));
@@ -311,6 +329,8 @@ public class View_Warehouse extends javax.swing.JFrame {
 
         KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 170, 45));
 
+        View_Wh_total_price.setEditable(false);
+        View_Wh_total_price.setBackground(new java.awt.Color(220, 220, 200));
         View_Wh_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Wh_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Wh_total_price.setBorder(null);
@@ -407,7 +427,7 @@ public class View_Warehouse extends javax.swing.JFrame {
  
     /// SUpplier info
  
-    if(brand.equals("") || type.equals("SELECT") || supplier_price.equals("") || seller_price.equals("") || quantity.equals("") || supplier.equals("") )
+    if(brand.equals("") || type.equals("SELECT") || seller_price.equals("") || quantity.equals("")  )
     {
         JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
     }
@@ -446,7 +466,7 @@ public class View_Warehouse extends javax.swing.JFrame {
 
     private void View_WH_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_WH_DisplayAncestorAdded
     String Banner = View_WH_Display.getText();
-    String id = Webpage.Stock_Category_Id.getText();
+    String id = Webpage.stock_id;
     
     if(Banner.equals("VIEW WAREHOUSE ITEM"))
     {
@@ -480,7 +500,7 @@ public class View_Warehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_View_Wh_priceActionPerformed
 
     private void Stock_Genset_DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseClicked
-        String sid = Webpage.Stock_Category_Id.getText();
+        String sid = Webpage.stock_id;
 
         if(sid.equals("")){
             JOptionPane.showMessageDialog(null, " PLEASE SELECT! ","",JOptionPane.ERROR_MESSAGE);
@@ -512,6 +532,36 @@ public class View_Warehouse extends javax.swing.JFrame {
     private void View_Wh_inchargeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Wh_inchargeKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_View_Wh_inchargeKeyReleased
+
+    private void View_Wh_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Wh_quantityKeyReleased
+     String q = View_Wh_quantity.getText();
+     view_price = Integer.parseInt(View_Wh_price.getText());
+     if(q.isEmpty())
+     {
+        view_total  = view_price * 0;
+     
+        View_Wh_total_price.setText(""+view_total);  
+     }
+     else{
+        view_quantity  = Integer.parseInt(View_Wh_quantity.getText());
+        view_total  = view_price * view_quantity;    
+        View_Wh_total_price.setText(""+view_total); 
+     }
+    }//GEN-LAST:event_View_Wh_quantityKeyReleased
+
+    private void View_Wh_priceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Wh_priceKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_View_Wh_priceKeyTyped
+
+    private void View_Wh_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Wh_quantityKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_View_Wh_quantityKeyTyped
 
     /**
      * @param args the command line arguments

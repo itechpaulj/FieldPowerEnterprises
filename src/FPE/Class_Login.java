@@ -66,9 +66,9 @@ public class Class_Login {
         boolean status = false;
         try{
        
-        ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `login` WHERE `USERNAME` = ? ");
+        ps = FPE_DB.getConnection().prepareStatement("SELECT `USERNAME` FROM `login`  ");
         ps.setString(1,user);
-        
+        ps.setString(2,user);
         ResultSet rs = ps.executeQuery();
         
         while(rs.next()){

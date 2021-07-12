@@ -141,6 +141,11 @@ public class Sale_warehouse extends javax.swing.JFrame {
         Sale_Wh_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Sale_Wh_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Sale_Wh_quantity.setBorder(null);
+        Sale_Wh_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Sale_Wh_quantityKeyTyped(evt);
+            }
+        });
         KG2_ADD_STOCK_GENSET.add(Sale_Wh_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 210, 31));
 
         jTextField1.setEditable(false);
@@ -423,7 +428,7 @@ public class Sale_warehouse extends javax.swing.JFrame {
 
     private void View_WH_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_WH_DisplayAncestorAdded
     String Banner = View_WH_Display.getText();
-    String id = Webpage.Stock_Category_Id.getText();
+    String id = Webpage.stock_id;
     
     if(Banner.equals("VIEW WAREHOUSE ITEM"))
     {
@@ -467,6 +472,13 @@ public class Sale_warehouse extends javax.swing.JFrame {
     private void Sale_Wh_inbound_dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sale_Wh_inbound_dateActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Sale_Wh_inbound_dateActionPerformed
+
+    private void Sale_Wh_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Wh_quantityKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Sale_Wh_quantityKeyTyped
 
     /**
      * @param args the command line arguments

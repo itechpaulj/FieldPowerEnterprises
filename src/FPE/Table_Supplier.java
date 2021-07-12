@@ -77,12 +77,12 @@ public class Table_Supplier extends javax.swing.JFrame {
         displays.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         displays.setText("SUPPLIER LIST");
         displays.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 displaysAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 370, 100));
@@ -119,7 +119,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         Add.setForeground(new java.awt.Color(255, 255, 255));
         Add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Add_Supplier_Btn.PNG"))); // NOI18N
-        Add.setText(" ADD NEW");
+        Add.setText(" ADD");
         Add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AddMouseClicked(evt);
@@ -203,8 +203,8 @@ public class Table_Supplier extends javax.swing.JFrame {
         delete_panel_supplierLayout.setHorizontalGroup(
             delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(delete_panel_supplierLayout.createSequentialGroup()
-                .addComponent(sup_del, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(sup_del, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
         );
         delete_panel_supplierLayout.setVerticalGroup(
             delete_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,8 +237,8 @@ public class Table_Supplier extends javax.swing.JFrame {
         back_panel_supplierLayout.setHorizontalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(back_panel_supplierLayout.createSequentialGroup()
-                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 29, Short.MAX_VALUE))
         );
         back_panel_supplierLayout.setVerticalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,7 +260,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Search.png"))); // NOI18N
         kGradientPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 35, 31));
 
-        back_panel_supplier1.setBackground(new java.awt.Color(255, 173, 51));
+        back_panel_supplier1.setBackground(new java.awt.Color(255, 102, 255));
 
         Back1.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Back1.setForeground(new java.awt.Color(255, 255, 255));
@@ -283,9 +283,7 @@ public class Table_Supplier extends javax.swing.JFrame {
         back_panel_supplier1.setLayout(back_panel_supplier1Layout);
         back_panel_supplier1Layout.setHorizontalGroup(
             back_panel_supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(back_panel_supplier1Layout.createSequentialGroup()
-                .addComponent(Back1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Back1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         back_panel_supplier1Layout.setVerticalGroup(
             back_panel_supplier1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -371,36 +369,44 @@ public class Table_Supplier extends javax.swing.JFrame {
     }//GEN-LAST:event_Supplier_SearchKeyPressed
 
     private void AddMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseEntered
-        add_panel_supplier.setBackground(new Color(0,173,71));
+        add_panel_supplier.setBackground(new Color(163, 235, 177));
+        Add.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_AddMouseEntered
 
     private void sup_listUpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseEntered
-        update_panel_supplier.setBackground(new Color(51,207,255));
+        update_panel_supplier.setBackground(new Color(163, 235, 177));
+        sup_listUpdate.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_sup_listUpdateMouseEntered
 
     private void sup_delMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseEntered
-       delete_panel_supplier.setBackground(new Color(255,97,97));
+       delete_panel_supplier.setBackground(new Color(163, 235, 177));
+       sup_del.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_sup_delMouseEntered
 
     private void BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseEntered
-       back_panel_supplier.setBackground(new Color(255,193,71));
+       back_panel_supplier.setBackground(new Color(163, 235, 177));
+       Back.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_BackMouseEntered
 
     private void AddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseExited
-      add_panel_supplier.setBackground(new Color(0,153,51));
+      add_panel_supplier.setBackground(new Color(35,215,176));
+      Add.setForeground(new Color(255,255,255));
 
     }//GEN-LAST:event_AddMouseExited
 
     private void sup_listUpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_listUpdateMouseExited
       update_panel_supplier.setBackground(new Color(51,187,255));
+      sup_listUpdate.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_sup_listUpdateMouseExited
 
     private void sup_delMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sup_delMouseExited
        delete_panel_supplier.setBackground(new Color(255,77,77));
+       sup_del.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_sup_delMouseExited
 
     private void BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseExited
-       back_panel_supplier.setBackground(new Color(255,173,51));
+       back_panel_supplier.setBackground(new Color(185,144,149));
+       Back.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_BackMouseExited
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
@@ -439,11 +445,15 @@ public class Table_Supplier extends javax.swing.JFrame {
     }//GEN-LAST:event_Back1MouseClicked
 
     private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered
-        // TODO add your handling code here:
+        // TODO add your handling code here:163, 235, 177
+        Back1.setForeground(new Color(51,51,51));
+         back_panel_supplier1.setBackground(new Color(163, 235, 177));
     }//GEN-LAST:event_Back1MouseEntered
 
     private void Back1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseExited
         // TODO add your handling code here:
+        Back1.setForeground(new Color(255,255,255));
+        back_panel_supplier1.setBackground(new Color(255, 102, 255));
     }//GEN-LAST:event_Back1MouseExited
 
     /**

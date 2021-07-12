@@ -24,6 +24,11 @@ public class Insert_Parts extends javax.swing.JFrame {
     
     public static String supplier_id=null;
     
+        //-------------------------------------------------
+    int insert_price;
+    int insert_quantity;
+    int insert_total;
+    
     public Insert_Parts() {
         initComponents();
         imgisNull();
@@ -99,12 +104,12 @@ public class Insert_Parts extends javax.swing.JFrame {
         Inventory_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Inventory_Display.setText("ADD NEW PARTS STOCK");
         Inventory_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Inventory_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Inventory_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 110));
@@ -130,14 +135,14 @@ public class Insert_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(Insert_Parts_Pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 300, 200));
 
         Insert_Parts_Supplier_Contact.setEditable(false);
-        Insert_Parts_Supplier_Contact.setBackground(new java.awt.Color(204, 204, 204));
+        Insert_Parts_Supplier_Contact.setBackground(new java.awt.Color(220, 220, 200));
         Insert_Parts_Supplier_Contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Supplier_Contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Parts_Supplier_Contact.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Parts_Supplier_Contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 230, 30));
 
         Insert_Parts_Supplier_name.setEditable(false);
-        Insert_Parts_Supplier_name.setBackground(new java.awt.Color(204, 204, 204));
+        Insert_Parts_Supplier_name.setBackground(new java.awt.Color(220, 220, 200));
         Insert_Parts_Supplier_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Supplier_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Parts_Supplier_name.setBorder(null);
@@ -147,7 +152,7 @@ public class Insert_Parts extends javax.swing.JFrame {
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
         Insert_Parts_Supplier_Address.setEditable(false);
-        Insert_Parts_Supplier_Address.setBackground(new java.awt.Color(204, 204, 204));
+        Insert_Parts_Supplier_Address.setBackground(new java.awt.Color(220, 220, 200));
         Insert_Parts_Supplier_Address.setColumns(10);
         Insert_Parts_Supplier_Address.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Supplier_Address.setRows(5);
@@ -260,10 +265,14 @@ public class Insert_Parts extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Insert_Parts_QuantityKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Insert_Parts_QuantityKeyTyped(evt);
+            }
         });
         KG2_ADD_STOCK_GENSET.add(Insert_Parts_Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 210, 30));
 
         Insert_Parts_Category.setEditable(false);
+        Insert_Parts_Category.setBackground(new java.awt.Color(220, 220, 200));
         Insert_Parts_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Parts_Category.setText("PARTS");
@@ -286,6 +295,9 @@ public class Insert_Parts extends javax.swing.JFrame {
         Insert_Parts_Price.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Insert_Parts_PriceKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Insert_Parts_PriceKeyTyped(evt);
             }
         });
         KG2_ADD_STOCK_GENSET.add(Insert_Parts_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 210, 30));
@@ -383,6 +395,8 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField15.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 220, 130, 30));
 
+        Insert_Parts_total_price.setEditable(false);
+        Insert_Parts_total_price.setBackground(new java.awt.Color(220, 220, 200));
         Insert_Parts_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Parts_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Parts_total_price.setBorder(null);
@@ -401,11 +415,11 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField6.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 130, 30));
 
-        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "PARTS INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " PARTS ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 710, 440));
 
-        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 20, 410, 430));
+        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 410, 440));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1200, 550));
 
@@ -520,28 +534,43 @@ public class Insert_Parts extends javax.swing.JFrame {
     }//GEN-LAST:event_Insert_Parts_PriceActionPerformed
 
     private void Insert_Parts_PriceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Parts_PriceKeyReleased
-        try{
-            String number  = Insert_Parts_Price.getText() ;
-            int inputQuantity = Integer.parseInt(Insert_Parts_Price.getText());
-        }
-        catch(NumberFormatException  e){
-           Insert_Parts_Price.setText("");
-        }
+
     }//GEN-LAST:event_Insert_Parts_PriceKeyReleased
 
     private void Insert_Parts_QuantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Parts_QuantityKeyReleased
-        try{
-            String number  = Insert_Parts_Quantity.getText() ;
-            
+    String q = Insert_Parts_Quantity.getText();
+    insert_price = Integer.parseInt(Insert_Parts_Price.getText());
+    if(q.isEmpty())
+        {
+            insert_total = insert_price * 0 ; 
+            Insert_Parts_total_price.setText(""+insert_total);
         }
-        catch(NumberFormatException  e){
-           Insert_Parts_Quantity.setText("");
+    else
+        {   
+            insert_price = Integer.parseInt(Insert_Parts_Price.getText());
+            insert_quantity = Integer.parseInt(Insert_Parts_Quantity.getText());
+            insert_total = insert_price * insert_quantity ;
+            Insert_Parts_total_price.setText(""+insert_total);
         }
     }//GEN-LAST:event_Insert_Parts_QuantityKeyReleased
 
     private void Insert_Parts_total_priceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Parts_total_priceKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_Insert_Parts_total_priceKeyReleased
+
+    private void Insert_Parts_PriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Parts_PriceKeyTyped
+       char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Insert_Parts_PriceKeyTyped
+
+    private void Insert_Parts_QuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Insert_Parts_QuantityKeyTyped
+       char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Insert_Parts_QuantityKeyTyped
 
     /**
      * @param args the command line arguments

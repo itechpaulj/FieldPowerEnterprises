@@ -27,6 +27,27 @@ public class Sale_Office extends javax.swing.JFrame {
     
     String incharge="";
     String remarks="";
+ 
+    //----FOR UPDATE----------------------------------------
+    int Update_Sale_quantity ;
+    int Update_Sale_total_price;
+    
+    // ----FOR STOCK----------------------------------------
+    int Update_Stock_quantity ;
+    int Update_Stock_total_price;
+    
+    // ----FOR STOCK RETURN----------------------------------------
+    int Update_Stock_quantity_return;
+    int Update_Stock_total_price_return;
+    
+    int Sale_price;
+    int Sale_quantity ;
+    int Sale_total;
+    
+   //----------------------------------------------------------------------------
+    int sale_ids ;
+    int stock_ids;
+    int parts_quant ;
     
     public Sale_Office() {
         initComponents();
@@ -55,7 +76,7 @@ public class Sale_Office extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
-        View_Office_Display = new javax.swing.JLabel();
+        Sale_Office_Display = new javax.swing.JLabel();
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
         Sale_Office_pic = new javax.swing.JLabel();
         Stock_Genset_Panel_Update = new javax.swing.JPanel();
@@ -87,20 +108,20 @@ public class Sale_Office extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        View_Office_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        View_Office_Display.setForeground(new java.awt.Color(255, 255, 255));
-        View_Office_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Office_Display.setText("SALE OFFICE");
-        View_Office_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+        Sale_Office_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Sale_Office_Display.setForeground(new java.awt.Color(255, 255, 255));
+        Sale_Office_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Sale_Office_Display.setText("SALE OFFICE");
+        Sale_Office_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                View_Office_DisplayAncestorAdded(evt);
+                Sale_Office_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel4.add(View_Office_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 320, 110));
+        jPanel4.add(Sale_Office_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 320, 110));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 130));
 
@@ -128,7 +149,7 @@ public class Sale_Office extends javax.swing.JFrame {
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
-        Stock_Genset_Update.setText(" CHECKOUT");
+        Stock_Genset_Update.setText(" CHECK OUT");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_UpdateMouseClicked(evt);
@@ -296,6 +317,9 @@ public class Sale_Office extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Sale_Office_quantityKeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Sale_Office_quantityKeyTyped(evt);
+            }
         });
         KG2_ADD_STOCK_GENSET.add(Sale_Office_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 210, 31));
 
@@ -354,7 +378,7 @@ public class Sale_Office extends javax.swing.JFrame {
     }//GEN-LAST:event_Sale_Office_picMouseClicked
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
-
+    String btn = Stock_Genset_Update.getText();
     String category = Sale_Office_category.getText().toUpperCase();
     String brand = Sale_Office_brand.getText();
     String model= "";
@@ -370,7 +394,8 @@ public class Sale_Office extends javax.swing.JFrame {
     String engine_sn = "";
     String alternator_sn = "";
     
-    // String supplier_id ;
+    String supplier_id ="";
+    String customer_id="";
     String date_inbound = Sale_Office_inbound_date.getText().toUpperCase();
     // image
     //String incharge = "";
@@ -386,10 +411,48 @@ public class Sale_Office extends javax.swing.JFrame {
     {
         JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
     }
-     else if (!Class_Cart.InsertCart(Office_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Office_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier, supplier, date_inbound, date_outbound, images, incharge, remarks, process, verify, project))
-     {
-         JOptionPane.showMessageDialog(null, "CHECKOUT SUCCESS !"); Webpage.Refresh(); dispose();
-     }
+     
+    else if(btn.equals(" CHECK OUT"))
+    {
+
+        if(stock_ids == sale_ids )
+
+        {
+
+            if(!Class_Amount.CartUpdateQuantityAndTotal(Update_Sale_quantity, Update_Sale_total_price, Office_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+Update_Sale_quantity, Update_Sale_total_price, Office_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Office_id))
+                {
+                    System.out.println(""+Update_Sale_quantity);
+                    System.out.println(Update_Sale_total_price);
+                    JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
+                }
+
+        }
+       else if(!Class_Cart.InsertCart(Office_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+ Update_Sale_quantity, Update_Sale_total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Office_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Office_id))
+                {
+                    JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
+                }
+
+    }  
+    
+    
+                  else if(btn.equals(" REMOVE"))
+        {
+        
+        
+                if(!Class_Amount.CartUpdateQuantityAndTotal(Update_Stock_quantity, Update_Stock_total_price, Office_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Office_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity_return, Update_Stock_total_price_return, Office_id))
+                    {
+                        System.out.println(""+Update_Stock_quantity);
+                        System.out.println(Update_Stock_total_price);
+                        JOptionPane.showMessageDialog(null, " SUCCESSFULY REMOVE !");Webpage.Refresh();  dispose();
+                    }
+                if(Update_Stock_quantity == 0)
+                    {
+                        if(!Class_Amount.HistoryDelete(Office_id) &&  !Class_Amount.CartDelete(Office_id )){
+                            Webpage.Refresh();  dispose();
+                        }
+                    }
+            
+        }
         
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
@@ -420,17 +483,20 @@ public class Sale_Office extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setBackground(new Color(255,194,102));
     }//GEN-LAST:event_Stock_Genset_BackMouseExited
 
-    private void View_Office_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Office_DisplayAncestorAdded
-    String Banner = View_Office_Display.getText();
-    String id = Webpage.sales_id;
+    private void Sale_Office_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Sale_Office_DisplayAncestorAdded
+    String Banner = Sale_Office_Display.getText();
+    
     
     if(Banner.equals("SALE OFFICE"))
     {
+        String id = Webpage.sales_id;
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `stock_table` WHERE `STOCK ID` = '"+id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             Office_id = rs.getString("STOCK ID");
+            stock_ids = Integer.parseInt(Office_id);
+            
             Sale_Office_inbound_date.setText(rs.getString("DATE INBOUND"));
             Sale_Office_category.setText(rs.getString("CATEGORY"));
             Sale_Office_brand.setText(rs.getString("BRAND"));
@@ -449,9 +515,70 @@ public class Sale_Office extends javax.swing.JFrame {
             e.printStackTrace();
         }
         
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `cart_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+          
+            sale_ids = rs.getInt("STOCK ID");
+            parts_quant = rs.getInt("QUANTITY");
+            System.out.println(""+sale_ids);
+            System.out.println(""+parts_quant);
+            
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    if(Banner.equals("REMOVE OFFICE"))
+    {
+        String id = Webpage.cart_id;
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `cart_table` WHERE `STOCK ID` = '"+id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            Office_id = rs.getString("STOCK ID");
+            stock_ids = Integer.parseInt(Office_id);
+            
+            Sale_Office_inbound_date.setText(rs.getString("DATE INBOUND"));
+            Sale_Office_category.setText(rs.getString("CATEGORY"));
+            Sale_Office_brand.setText(rs.getString("BRAND"));
+            Sale_Office_type.setText(rs.getString("TYPE"));
+            Sale_Office_price.setText(rs.getString("SELLER PRICE"));
+            jTextField5.setText(" ORDER QUANTITY");
+            Sale_Office_available_stock.setText(rs.getString("QUANTITY"));
+            Sale_Office_total_price.setText(rs.getString("TOTAL PRICE"));
+            incharge = rs.getString("INCHARGE");
+            remarks = rs.getString("REMARKS");
+            
+            images = rs.getBytes("IMAGE");
+            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Office_pic.getWidth(), Sale_Office_pic.getHeight(),Image.SCALE_SMOOTH) );
+            Sale_Office_pic.setIcon(imageicon);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+          
+            sale_ids = rs.getInt("STOCK ID");
+            parts_quant = rs.getInt("QUANTITY");
+            System.out.println(""+sale_ids);
+            System.out.println(""+parts_quant);
+            
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
 
     }
-    }//GEN-LAST:event_View_Office_DisplayAncestorAdded
+    }//GEN-LAST:event_Sale_Office_DisplayAncestorAdded
 
     private void Sale_Office_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sale_Office_priceActionPerformed
         // TODO add your handling code here:
@@ -467,18 +594,36 @@ public class Sale_Office extends javax.swing.JFrame {
        
        String q = Sale_Office_quantity.getText();
        if(q.equals(""))
-       {
-       total = price * 0;      
-       Sale_Office_total_price.setText(""+total);
-       }
+            {
+             total = price * 0;      
+             Sale_Office_total_price.setText(""+total);
+            }
        else
-       {
-       quantity = Integer.parseInt(Sale_Office_quantity.getText());
-       total = price * quantity;      
-       Sale_Office_total_price.setText(""+total);  
-       }
+            {
+                Sale_price = Integer.parseInt(Sale_Office_price.getText());
+                Sale_quantity = Integer.parseInt(Sale_Office_quantity.getText());
+                Sale_total = Sale_price * Sale_quantity;
+                Sale_Office_total_price.setText(""+Sale_total);
+                int Sale_avail = Integer.parseInt(Sale_Office_available_stock.getText());
+                Update_Sale_quantity = parts_quant + Sale_quantity;
+                Update_Sale_total_price = Update_Sale_quantity * Sale_price;
+                
+                Update_Stock_quantity = Sale_avail - Sale_quantity;
+                Update_Stock_total_price = Update_Stock_quantity * Sale_price;
+                
+                Update_Stock_quantity_return = parts_quant + Sale_quantity;
+                Update_Stock_total_price_return = Update_Stock_quantity_return * Sale_price ;
+                
+            }
        
     }//GEN-LAST:event_Sale_Office_quantityKeyReleased
+
+    private void Sale_Office_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Office_quantityKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Sale_Office_quantityKeyTyped
 
     /**
      * @param args the command line arguments
@@ -519,6 +664,7 @@ public class Sale_Office extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     public static javax.swing.JLabel Path;
+    public static javax.swing.JLabel Sale_Office_Display;
     public static javax.swing.JTextField Sale_Office_available_stock;
     public static javax.swing.JTextField Sale_Office_brand;
     public static javax.swing.JTextField Sale_Office_category;
@@ -531,8 +677,7 @@ public class Sale_Office extends javax.swing.JFrame {
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
-    private javax.swing.JLabel Stock_Genset_Update;
-    public static javax.swing.JLabel View_Office_Display;
+    public static javax.swing.JLabel Stock_Genset_Update;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField15;

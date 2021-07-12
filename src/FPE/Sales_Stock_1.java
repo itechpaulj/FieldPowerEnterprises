@@ -25,18 +25,51 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     public static String supplier_id = null;
     public static String customer_id = "";
     
-    String remarks="";
-    
-    String filename = null;
     public static File resoucesDirectory ;
   
     public static byte[] images = null;
     String DateTime;
-
+    //-----DECLARED STING VARIABLE-----------------------------------------
+    String remarks="";
+    String filename = null;
+   
+    
+    //-----FOR COMPUTATION-----------------------------------------------------------------------
+    int add_sale_quantity = 0,add_sale_price = 0,add_sale_total = 0;
+    
+    int get_stock_quantity = 0,updated_stock_price=0 ;
+    
+    int updated_stock_quantity,updated_stock_total,updated_stock_total1;
+    
+    int update_sale_quantity=0,updated_Sale_total=0;
+    
+    int get_sale_quantity=0;
+    
+    
+    //----FOR RETURN----------------------------------------
+    int Avail_quantity ;
+    int Avail_total_price;
+    
+    // ----FOR STOCK----------------------------------------
+    int Update_quantity ;
+    int Update_total_price;
+    
+    //----FOR SALE------------------------------------------
+    int Sale_quantity ;
+    int Sale_total_price;
+    //int ads;
+    int stock_ids;
+    int sale_ids;
+    
     public Sales_Stock_1() {
         initComponents();
         imgisNull();
-
+        Class_Amount a = new Class_Amount();
+        a.Amount();
+    
+       
+        
+       
     }
 //        void showDate(){
 //       Date today = new Date();
@@ -68,7 +101,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
 
         Insert_Invetory_Supplier_id = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        Sale_Display = new javax.swing.JLabel();
+        Sale_Generator_Display = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         KG2_ADD_STOCK_GENSET = new keeptoo.KGradientPanel();
         Sale_Gen_Pic = new javax.swing.JLabel();
@@ -84,7 +117,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Sale_Gen_Supplier_Address = new javax.swing.JTextArea();
         Panel_View_Btn = new javax.swing.JPanel();
-        View_Btn = new javax.swing.JLabel();
+        Sale_Btn = new javax.swing.JLabel();
         Panel_Back_Btn = new javax.swing.JPanel();
         Back_Btn = new javax.swing.JLabel();
         other = new javax.swing.JLabel();
@@ -104,7 +137,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         jTextField15 = new javax.swing.JTextField();
         jTextField16 = new javax.swing.JTextField();
         jTextField17 = new javax.swing.JTextField();
-        Sale_Gen_quantitty = new javax.swing.JTextField();
+        Sale_Gen_quantity = new javax.swing.JTextField();
         jTextField18 = new javax.swing.JTextField();
         Sale_Gen_total_price = new javax.swing.JTextField();
         Sale_Gen_available_stock = new javax.swing.JTextField();
@@ -126,20 +159,20 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Sale_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        Sale_Display.setForeground(new java.awt.Color(255, 255, 255));
-        Sale_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Sale_Display.setText("SALE GENERATOR");
-        Sale_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
+        Sale_Generator_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        Sale_Generator_Display.setForeground(new java.awt.Color(255, 255, 255));
+        Sale_Generator_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Sale_Generator_Display.setText("SALE GENERATOR");
+        Sale_Generator_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                Sale_DisplayAncestorAdded(evt);
+                Sale_Generator_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel4.add(Sale_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 540, 110));
+        jPanel4.add(Sale_Generator_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 540, 110));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Logo/Logo.png"))); // NOI18N
@@ -259,20 +292,20 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
 
         Panel_View_Btn.setBackground(new java.awt.Color(255, 133, 51));
 
-        View_Btn.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        View_Btn.setForeground(new java.awt.Color(255, 255, 255));
-        View_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        View_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
-        View_Btn.setText(" CHECK OUT");
-        View_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
+        Sale_Btn.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Sale_Btn.setForeground(new java.awt.Color(255, 255, 255));
+        Sale_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Sale_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
+        Sale_Btn.setText(" CHECK OUT");
+        Sale_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                View_BtnMouseClicked(evt);
+                Sale_BtnMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                View_BtnMouseEntered(evt);
+                Sale_BtnMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                View_BtnMouseExited(evt);
+                Sale_BtnMouseExited(evt);
             }
         });
 
@@ -280,14 +313,14 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         Panel_View_Btn.setLayout(Panel_View_BtnLayout);
         Panel_View_BtnLayout.setHorizontalGroup(
             Panel_View_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(View_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(Sale_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
         );
         Panel_View_BtnLayout.setVerticalGroup(
             Panel_View_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(View_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+            .addComponent(Sale_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Panel_View_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Panel_View_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 170, 45));
 
         Panel_Back_Btn.setBackground(new java.awt.Color(185, 144, 149));
 
@@ -465,15 +498,18 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         jTextField17.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 140, 31));
 
-        Sale_Gen_quantitty.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Sale_Gen_quantitty.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Sale_Gen_quantitty.setBorder(null);
-        Sale_Gen_quantitty.addKeyListener(new java.awt.event.KeyAdapter() {
+        Sale_Gen_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        Sale_Gen_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sale_Gen_quantity.setBorder(null);
+        Sale_Gen_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                Sale_Gen_quantittyKeyReleased(evt);
+                Sale_Gen_quantityKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Sale_Gen_quantityKeyTyped(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Sale_Gen_quantitty, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 220, 31));
+        KG2_ADD_STOCK_GENSET.add(Sale_Gen_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 220, 31));
 
         jTextField18.setEditable(false);
         jTextField18.setBackground(new java.awt.Color(255, 128, 128));
@@ -545,10 +581,10 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         });
         KG2_ADD_STOCK_GENSET.add(Sale_Gen_Phasing, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 220, 30));
 
-        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " GENERATOR INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " GENERATOR INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 790, 490));
 
-        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, 410, 490));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1280, 590));
@@ -586,8 +622,9 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Sale_Gen_PicMouseClicked
 
-    private void View_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_BtnMouseClicked
+    private void Sale_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sale_BtnMouseClicked
     int total_price =0;
+    String btn = Sale_Btn.getText();
     String category = Sale_Gen_category.getText().toUpperCase();
     String brand = Sale_Gen_Brand.getText().toUpperCase();
     String model= Sale_Gen_Model.getText().toUpperCase();
@@ -597,10 +634,14 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     String type = Sale_Gen_Type.getText().toUpperCase();
     String supplier_price = Sale_Gen_supplier_Price.getText().toUpperCase();
     String seller_price = Sale_Gen_Seller_Price.getText().toUpperCase();
-    String quantity = Sale_Gen_quantitty.getText();
+    String avail = Sale_Gen_available_stock.getText();
+    String quantity = Sale_Gen_quantity.getText(); 
     total_price = Integer.parseInt(Sale_Gen_total_price.getText());
-    
-    
+    int aq = Integer.parseInt(avail);
+    int q = Integer.parseInt(quantity);
+//    int avai11 = Integer.parseInt(""+avail);
+//    int quantity1 = Integer.parseInt(""+quantity);
+            
     String engine_sn = Sale_Gen_Engine.getText().toUpperCase();
     String alternator_sn = Sale_Gen_Alternator.getText().toUpperCase();
     
@@ -617,25 +658,97 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     
     String project = "";
     
-    if(quantity.equals("") && total_price == 0)
-    {
-        JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
-    }//
-    else if(!Class_Cart.InsertCart(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify)  && !Class_History.InsertHistory(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project))
-    {
-        JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
-    }
-    }//GEN-LAST:event_View_BtnMouseClicked
-
-    private void View_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_BtnMouseEntered
-    
-        Panel_View_Btn.setBackground(new Color(0, 179, 60));
-    }//GEN-LAST:event_View_BtnMouseEntered
-
-    private void View_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View_BtnMouseExited
+//     int add_sale_quantity = 0,add_sale_price = 0,add_sale_total = 0;
+//    
+//    int get_stock_quantity = 0,updated_stock_price=0 ;
+//    
+//    int updated_stock_quantity=0,updated_stock_total= 0;
+//    
+//    int update_sale_quantity=0,updated_Sale_total=0;
+//    
+//    int get_sale_quantity=0;
   
-        Panel_View_Btn.setBackground(new Color(51, 187, 255));
-    }//GEN-LAST:event_View_BtnMouseExited
+    if(quantity.equals("") && total_price == 0)
+        {
+            JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
+        }
+    else if(aq < q)
+        {
+             JOptionPane.showMessageDialog(null, "THE QUANTITY ENTERED IS TO MUCH!!","",JOptionPane.ERROR_MESSAGE);
+        }
+    else if(btn.equals(" CHECK OUT"))
+        {
+      
+        
+        if(stock_ids == sale_ids)
+        {
+            
+            if(!Class_Amount.CartUpdateQuantityAndTotal(update_sale_quantity, updated_Sale_total, Generator_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+update_sale_quantity, updated_Sale_total, Generator_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_total, Generator_id))
+            {
+//                System.out.print(""+updated_stock_quantity);
+//                System.out.print(updated_stock_total);
+                JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
+            }
+            
+        }
+         else if(!Class_Cart.InsertCart(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+update_sale_quantity, updated_Sale_total, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_total, Generator_id))
+            {
+                JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
+            }
+//        // && !Class_Amount.StockUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_total, Generator_id)
+//        //!Class_Cart.InsertCart(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, ""+add_sale_quantity, add_sale_total, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify)  && !Class_History.InsertHistory(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && 
+//       
+//        
+//        System.out.println(stock_ids);
+//        System.out.println(sale_ids);
+        }
+    
+        else if(btn.equals(" REMOVE"))
+        {
+        
+           
+            if(!Class_Amount.CartUpdateQuantityAndTotal(updated_stock_quantity, updated_stock_total, Generator_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_quantity, Generator_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+update_sale_quantity, updated_stock_total1, Generator_id))
+                {
+                    System.out.print(""+updated_stock_quantity);
+                    System.out.print(updated_Sale_total);
+                    JOptionPane.showMessageDialog(null, " SUCCESSFULY REMOVE !");Webpage.Refresh();  dispose();
+                }
+            if(updated_stock_quantity == 0)
+                {
+                    if(!Class_Amount.HistoryDelete(Generator_id) &&  !Class_Amount.CartDelete(Generator_id )){
+                        Webpage.Refresh();  dispose();
+                    }
+                }
+            
+        }
+ 
+    }//GEN-LAST:event_Sale_BtnMouseClicked
+
+    private void Sale_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sale_BtnMouseEntered
+        String btn = Sale_Btn.getText();
+        if(btn.equals(" CHECK OUT")){
+      
+           Panel_View_Btn.setBackground(new Color(163, 235, 177));
+           Sale_Btn.setForeground(new Color(33, 21, 34));
+        }else if(btn.equals(" REMOVE")){
+           Panel_View_Btn.setBackground(new Color(163, 235, 177));
+           Sale_Btn.setForeground(new Color(33, 21, 34)); 
+        }
+        
+    }//GEN-LAST:event_Sale_BtnMouseEntered
+
+    private void Sale_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Sale_BtnMouseExited
+  
+        String btn = Sale_Btn.getText();
+        if(btn.equals(" CHECK OUT")){
+      
+           Panel_View_Btn.setBackground(new Color(255,133,51));
+            Sale_Btn.setForeground(new Color(255,255,255));
+        }else if(btn.equals(" REMOVE")){
+           Panel_View_Btn.setBackground(new Color(255,128,128));
+           Sale_Btn.setForeground(new Color(255,255,255)); 
+        }
+    }//GEN-LAST:event_Sale_BtnMouseExited
 
     private void Back_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back_BtnMouseClicked
     Class_tables ct = new Class_tables();
@@ -645,35 +758,35 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_Back_BtnMouseClicked
 
     private void Back_BtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back_BtnMouseEntered
-      
-        Panel_Back_Btn.setBackground(new Color(0, 179, 60));
+      Panel_Back_Btn.setBackground(new Color(163, 235, 177));
+      Back_Btn.setForeground(new Color(33, 21, 34));
+        
     }//GEN-LAST:event_Back_BtnMouseEntered
 
     private void Back_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back_BtnMouseExited
-     
-        Panel_Back_Btn.setBackground(new Color(255,214,122));
+     Panel_Back_Btn.setBackground(new Color(185,144,149));
+     Back_Btn.setForeground(new Color(255,255,255)); 
+        
     }//GEN-LAST:event_Back_BtnMouseExited
 
-    private void Sale_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Sale_DisplayAncestorAdded
-    String Banner = Sale_Display.getText();
-    String ids = Webpage.sales_id;
+    private void Sale_Generator_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Sale_Generator_DisplayAncestorAdded
+    String Banner = Sale_Generator_Display.getText();
+    
     
     if(Banner.equals("SALE GENERATOR"))
     {
+        String ids = Webpage.sales_id;
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `stock_table` WHERE `STOCK ID` = '"+ids+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-            Generator_id = rs.getString("STOCK ID");   
+            Generator_id = rs.getString("STOCK ID");        
+            stock_ids = Integer.parseInt(Generator_id);
             
-           
-           
             Sale_Gen_date_inbound.setText(rs.getString("DATE INBOUND"));
-            Sale_Gen_category.setText(rs.getString("CATEGORY"));
-            
+            Sale_Gen_category.setText(rs.getString("CATEGORY"));          
             Sale_Gen_Brand.setText(rs.getString("BRAND"));
-           
-            
+    
             Sale_Gen_Model.setText(rs.getString("MODEL"));
             Sale_Gen_kva.setText(rs.getString("KVA"));
             Sale_Gen_Phasing.setText(rs.getString("PHASING"));
@@ -684,19 +797,25 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
             Sale_Gen_Alternator.setText(rs.getString("ALTERNATOR S.N"));
             Sale_Gen_available_stock.setText(rs.getString("QUANTITY"));
             remarks = rs.getString("REMARKS");
-            
+                       
             //Sale_Gen_total_price.setText(""+rs.getInt("TOTAL PRICE"));
             
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Gen_Pic.getWidth(), Sale_Gen_Pic.getHeight(),Image.SCALE_SMOOTH) );
             Sale_Gen_Pic.setIcon(imageicon);
             supplier_id = rs.getString("SUPPLIER ID");
+
             }
+            
+            //-- 
+            
         }
+        
         catch(Exception e){
             e.printStackTrace();
         }
-        
+
+    
          try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = '"+supplier_id+"'");
             ResultSet rs = ps.executeQuery();
@@ -713,12 +832,120 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         catch(Exception e){
             e.printStackTrace();
         }
+         
         
-       
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `cart_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+          
+            sale_ids = rs.getInt("STOCK ID");
+            Sale_quantity = rs.getInt("QUANTITY");
+            System.out.println(""+sale_ids);
+            System.out.println(""+Sale_quantity);
+            
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    
+    
+    else if(Banner.equals("REMOVE GENERATOR"))
+    {
+        try{
+            
+            String ids = Webpage.cart_id;
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `cart_table` WHERE `STOCK ID` = '"+ids+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            Generator_id = rs.getString("STOCK ID");   
+            stock_ids = Integer.parseInt(Generator_id);
+            
+            Sale_Gen_date_inbound.setText(rs.getString("DATE INBOUND"));
+            Sale_Gen_category.setText(rs.getString("CATEGORY"));
+            
+            Sale_Gen_Brand.setText(rs.getString("BRAND"));
+           
+            
+            Sale_Gen_Model.setText(rs.getString("MODEL"));
+            Sale_Gen_kva.setText(rs.getString("KVA"));
+            Sale_Gen_Phasing.setText(rs.getString("PHASING"));
+            Sale_Gen_Type.setText(rs.getString("TYPE"));
+            Sale_Gen_supplier_Price.setText(rs.getString("SUPPLIER PRICE"));
+            Sale_Gen_Seller_Price.setText(rs.getString("SELLER PRICE"));
+            Sale_Gen_Engine.setText(rs.getString("ENGINE S.N"));
+            Sale_Gen_Alternator.setText(rs.getString("ALTERNATOR S.N"));
+            jTextField16.setText(" ORDER QUANTITY");
+            Sale_Gen_available_stock.setText(rs.getString("QUANTITY"));
+            
+            Sale_Gen_total_price.setText(rs.getString("TOTAL PRICE"));
+            remarks = rs.getString("REMARKS");
+            
+            
+            //Sale_Gen_total_price.setText(""+rs.getInt("TOTAL PRICE"));
+            
+            images = rs.getBytes("IMAGE");
+            ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Gen_Pic.getWidth(), Sale_Gen_Pic.getHeight(),Image.SCALE_SMOOTH) );
+            Sale_Gen_Pic.setIcon(imageicon);
+            supplier_id = rs.getString("SUPPLIER ID");
+            }
+            
+            try{
+            ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+ids +"' ");
+            
+            rs = ps.executeQuery();
+            while(rs.next()){
+            Avail_quantity = rs.getInt("QUANTITY");       
+            //System.out.print(""+Avail_qiantity);
+            }
+            }catch (Exception e){
+            
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+         try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = '"+supplier_id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+          
+            Sale_Gen_Supplier_Name.setText(rs.getString("NAME"));
+            Sale_Gen_Supplier_Address.setText(rs.getString("ADDRESS"));   
+            Sale_Gen_Supplier_Contact.setText(rs.getString("CONTACT"));                     
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+         
+         try{
+             //sale_ids = Integer.parseInt(Webpage.sales_id);
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            
+            sale_ids = rs.getInt("STOCK ID");
+            Sale_quantity = rs.getInt("QUANTITY");
+            System.out.println(""+sale_ids);
+            System.out.println(""+Sale_quantity);
+            
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
     }
     
         
-    }//GEN-LAST:event_Sale_DisplayAncestorAdded
+    }//GEN-LAST:event_Sale_Generator_DisplayAncestorAdded
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
@@ -756,23 +983,66 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Sale_Gen_PhasingActionPerformed
 
-    private void Sale_Gen_quantittyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Gen_quantittyKeyReleased
-       int quantity = 0,price = 0,total = 0;
-       price = Integer.parseInt(Sale_Gen_Seller_Price.getText());
-      
-       String q = Sale_Gen_quantitty.getText();
+    private void Sale_Gen_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Gen_quantityKeyReleased
+
+    add_sale_price = Integer.parseInt(Sale_Gen_Seller_Price.getText());
+    
+
+       String q = Sale_Gen_quantity.getText();
+
        if(q.equals(""))
        {
-        total = price * 0;      
-        Sale_Gen_total_price.setText(""+total); 
+        add_sale_total = add_sale_price * 0;    
+        Sale_Gen_total_price.setText(""+add_sale_total); 
        }else
        {
-         quantity = Integer.parseInt(Sale_Gen_quantitty.getText());
-        total = price * quantity;      
-        Sale_Gen_total_price.setText(""+total);   
-       }
+           add_sale_quantity = Integer.parseInt(Sale_Gen_quantity.getText());
+           int aq = Integer.parseInt(Sale_Gen_available_stock.getText());
+           if(aq >= add_sale_quantity){
+               
+           
+        //----   FOR ADD SALE
+        
+        add_sale_total = add_sale_price * add_sale_quantity;
+        Sale_Gen_total_price.setText(""+add_sale_total); 
+        System.out.println("------------FOR ADD SALE---------------------------------------------");
+        System.out.println(""+add_sale_quantity);
+        System.out.println(""+add_sale_total);
+        System.out.println();
+        
+        //----   FOR UPDATE SALE
+        
+        update_sale_quantity = Sale_quantity + add_sale_quantity;
+        updated_Sale_total = update_sale_quantity * add_sale_price;
+        System.out.println("------------FOR UPDATE SALE-------------------------------------------");
+        System.out.println(""+update_sale_quantity);
+        System.out.println(""+updated_Sale_total);
+        System.out.println();
+        
+        //----   FOR UPDATE THE STOCK 
+        
+        updated_stock_quantity = Integer.parseInt(Sale_Gen_available_stock.getText()) - add_sale_quantity;
+        updated_stock_total = updated_stock_quantity *add_sale_price ;
+        
+        int updated_stock_quantity1= Sale_quantity + add_sale_quantity;
+        updated_stock_total1 =  updated_stock_quantity1 * add_sale_price;
+        System.out.println("------------FOR UPDATE THE STOCK---------------------------------------");
+        System.out.println(""+updated_stock_quantity);
+        
+        System.out.println("\n \n");
+            }
+         
+        }
+ 
        
-    }//GEN-LAST:event_Sale_Gen_quantittyKeyReleased
+    }//GEN-LAST:event_Sale_Gen_quantityKeyReleased
+
+    private void Sale_Gen_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Gen_quantityKeyTyped
+       char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_Sale_Gen_quantityKeyTyped
 
     /**
      * @param args the command line arguments
@@ -816,7 +1086,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     public static javax.swing.JPanel Panel_Back_Btn;
     public static javax.swing.JPanel Panel_View_Btn;
-    public static javax.swing.JLabel Sale_Display;
+    public static javax.swing.JLabel Sale_Btn;
     public static javax.swing.JTextField Sale_Gen_Alternator;
     public static javax.swing.JTextField Sale_Gen_Brand;
     public static javax.swing.JTextField Sale_Gen_Engine;
@@ -832,10 +1102,10 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     public static javax.swing.JTextField Sale_Gen_category;
     public static javax.swing.JTextField Sale_Gen_date_inbound;
     public static javax.swing.JTextField Sale_Gen_kva;
-    public static javax.swing.JTextField Sale_Gen_quantitty;
+    public static javax.swing.JTextField Sale_Gen_quantity;
     public static javax.swing.JTextField Sale_Gen_supplier_Price;
     private javax.swing.JTextField Sale_Gen_total_price;
-    private javax.swing.JLabel View_Btn;
+    public static javax.swing.JLabel Sale_Generator_Display;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

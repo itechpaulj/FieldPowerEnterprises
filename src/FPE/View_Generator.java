@@ -30,7 +30,12 @@ public class View_Generator extends javax.swing.JFrame {
   
     public static byte[] images = null;
     String DateTime;
-
+//-----------------------------------------------------------------
+    int view_price;
+    int view_quantity;
+    int view_total;
+    
+    
     public View_Generator() {
         initComponents();
         imgisNull();
@@ -87,7 +92,6 @@ public class View_Generator extends javax.swing.JFrame {
         View_Btn = new javax.swing.JLabel();
         Panel_Back_Btn = new javax.swing.JPanel();
         Back_Btn = new javax.swing.JLabel();
-        Path = new javax.swing.JLabel();
         other = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -181,7 +185,7 @@ public class View_Generator extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(View_Gen_Model, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 220, 31));
 
         View_Gen_Category.setEditable(false);
-        View_Gen_Category.setBackground(new java.awt.Color(204, 204, 204));
+        View_Gen_Category.setBackground(new java.awt.Color(220, 220, 200));
         View_Gen_Category.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Gen_Category.setText("GENERATOR");
@@ -206,6 +210,11 @@ public class View_Generator extends javax.swing.JFrame {
                 View_Gen_Seller_PriceActionPerformed(evt);
             }
         });
+        View_Gen_Seller_Price.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                View_Gen_Seller_PriceKeyTyped(evt);
+            }
+        });
         KG2_ADD_STOCK_GENSET.add(View_Gen_Seller_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 220, 31));
 
         View_Gen__Engine.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -218,14 +227,14 @@ public class View_Generator extends javax.swing.JFrame {
         View_Gen_kva.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Gen_kva, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 450, 220, 31));
 
-        View_Gen_Supplier_Contact.setBackground(new java.awt.Color(204, 204, 204));
+        View_Gen_Supplier_Contact.setBackground(new java.awt.Color(220, 220, 200));
         View_Gen_Supplier_Contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Supplier_Contact.setForeground(new java.awt.Color(51, 51, 51));
         View_Gen_Supplier_Contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Gen_Supplier_Contact.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Gen_Supplier_Contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 220, 220, 31));
 
-        View_Gen_Supplier_Name.setBackground(new java.awt.Color(204, 204, 204));
+        View_Gen_Supplier_Name.setBackground(new java.awt.Color(220, 220, 200));
         View_Gen_Supplier_Name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Supplier_Name.setForeground(new java.awt.Color(51, 51, 51));
         View_Gen_Supplier_Name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -261,7 +270,7 @@ public class View_Generator extends javax.swing.JFrame {
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        View_Gen_Supplier_Address.setBackground(new java.awt.Color(204, 204, 204));
+        View_Gen_Supplier_Address.setBackground(new java.awt.Color(220, 220, 200));
         View_Gen_Supplier_Address.setColumns(10);
         View_Gen_Supplier_Address.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_Supplier_Address.setForeground(new java.awt.Color(51, 51, 51));
@@ -342,9 +351,6 @@ public class View_Generator extends javax.swing.JFrame {
         );
 
         KG2_ADD_STOCK_GENSET.add(Panel_Back_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 520, 160, 45));
-
-        Path.setText("1");
-        KG2_ADD_STOCK_GENSET.add(Path, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 100, 40));
         KG2_ADD_STOCK_GENSET.add(other, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 110, 20));
 
         jTextField1.setEditable(false);
@@ -529,6 +535,14 @@ public class View_Generator extends javax.swing.JFrame {
         View_Gen_quantitty.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_quantitty.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Gen_quantitty.setBorder(null);
+        View_Gen_quantitty.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                View_Gen_quantittyKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                View_Gen_quantittyKeyTyped(evt);
+            }
+        });
         KG2_ADD_STOCK_GENSET.add(View_Gen_quantitty, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, 220, 31));
 
         Stock_Genset_Panel_View1.setBackground(new java.awt.Color(255, 86, 83));
@@ -588,15 +602,17 @@ public class View_Generator extends javax.swing.JFrame {
         jTextField18.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 140, 31));
 
+        View_Gen_total_price.setEditable(false);
+        View_Gen_total_price.setBackground(new java.awt.Color(220, 220, 200));
         View_Gen_total_price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         View_Gen_total_price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         View_Gen_total_price.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Gen_total_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 220, 31));
 
-        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " GENERATOR INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " GENERATOR INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 790, 490));
 
-        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+        jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER INFO ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, 410, 490));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1280, 590));
@@ -696,7 +712,7 @@ public class View_Generator extends javax.swing.JFrame {
 
     private void View_Generator_BannerAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_View_Generator_BannerAncestorAdded
     String Banner = View_Generator_Banner.getText();
-    String ids = Webpage.Stock_Category_Id.getText();
+    String ids = Webpage.stock_id;
     
     if(Banner.equals("VIEW GENERATOR ITEM"))
     {
@@ -807,7 +823,7 @@ public class View_Generator extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField15ActionPerformed
 
     private void Stock_Genset_DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseClicked
-        String sid = Webpage.Stock_Category_Id.getText();
+        String sid = Webpage.stock_id;
 
         if(sid.equals("")){
             JOptionPane.showMessageDialog(null, " PLEASE SELECT! ","",JOptionPane.ERROR_MESSAGE);
@@ -832,6 +848,36 @@ public class View_Generator extends javax.swing.JFrame {
     private void Stock_Genset_DeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_DeleteMouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_Stock_Genset_DeleteMouseExited
+
+    private void View_Gen_quantittyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Gen_quantittyKeyReleased
+          String q = View_Gen_quantitty.getText();
+     view_price = Integer.parseInt(View_Gen_Seller_Price.getText());
+     if(q.isEmpty())
+     {
+        view_total  = view_price * 0;
+     
+        View_Gen_total_price.setText(""+view_total);  
+     }
+     else{
+        view_quantity  = Integer.parseInt(View_Gen_quantitty.getText());
+        view_total  = view_price * view_quantity;    
+        View_Gen_total_price.setText(""+view_total); 
+     }
+    }//GEN-LAST:event_View_Gen_quantittyKeyReleased
+
+    private void View_Gen_Seller_PriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Gen_Seller_PriceKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_View_Gen_Seller_PriceKeyTyped
+
+    private void View_Gen_quantittyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_View_Gen_quantittyKeyTyped
+        char enter = evt.getKeyChar();
+        if(!(Character.isDigit(enter))){
+            evt.consume();
+        }
+    }//GEN-LAST:event_View_Gen_quantittyKeyTyped
 
     /**
      * @param args the command line arguments
@@ -875,7 +921,6 @@ public class View_Generator extends javax.swing.JFrame {
     public static keeptoo.KGradientPanel KG2_ADD_STOCK_GENSET;
     public static javax.swing.JPanel Panel_Back_Btn;
     public static javax.swing.JPanel Panel_View_Btn;
-    public static javax.swing.JLabel Path;
     public static javax.swing.JLabel Stock_Genset_Delete;
     public static javax.swing.JPanel Stock_Genset_Panel_View1;
     private javax.swing.JLabel Supplier_List_Btn;
