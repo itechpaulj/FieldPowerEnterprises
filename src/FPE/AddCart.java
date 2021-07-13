@@ -107,7 +107,7 @@ public class AddCart extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         dp_orNo = new javax.swing.JTextField();
         dp_bank = new javax.swing.JTextField();
-        dp_amount = new javax.swing.JTextField();
+        tot_amount = new javax.swing.JTextField();
         c_name = new javax.swing.JTextField();
         c_contact = new javax.swing.JTextField();
         dp_date = new datechooser.beans.DateChooserCombo();
@@ -125,7 +125,7 @@ public class AddCart extends javax.swing.JFrame {
         c_agentName = new javax.swing.JTextField();
         jTextField29 = new javax.swing.JTextField();
         c_agentContact = new javax.swing.JTextField();
-        dp_amount1 = new javax.swing.JTextField();
+        dp_amount = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
         c_remarks1 = new javax.swing.JTextField();
         jTextField30 = new javax.swing.JTextField();
@@ -137,10 +137,8 @@ public class AddCart extends javax.swing.JFrame {
         jTextField32 = new javax.swing.JTextField();
         jTextField31 = new javax.swing.JTextField();
         c_project_number = new javax.swing.JTextField();
-        dp_amount2 = new javax.swing.JTextField();
+        bal_amount = new javax.swing.JTextField();
         jTextField17 = new javax.swing.JTextField();
-        dp_amount3 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -343,13 +341,13 @@ public class AddCart extends javax.swing.JFrame {
         dp_bank.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         kGradientPanel1.add(dp_bank, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 290, 32));
 
-        dp_amount.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
+        tot_amount.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tot_amount.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                dp_amountKeyReleased(evt);
+                tot_amountKeyReleased(evt);
             }
         });
-        kGradientPanel1.add(dp_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 280, 32));
+        kGradientPanel1.add(tot_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 280, 32));
 
         c_name.setEditable(false);
         c_name.setBackground(new java.awt.Color(204, 204, 204));
@@ -517,13 +515,13 @@ kGradientPanel1.add(jTextField29, new org.netbeans.lib.awtextra.AbsoluteConstrai
 c_agentContact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 kGradientPanel1.add(c_agentContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 460, 280, 32));
 
-dp_amount1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
+dp_amount.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     public void keyReleased(java.awt.event.KeyEvent evt) {
-        dp_amount1KeyReleased(evt);
+        dp_amountKeyReleased(evt);
     }
     });
-    kGradientPanel1.add(dp_amount1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 290, 32));
+    kGradientPanel1.add(dp_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 290, 32));
 
     jTextField14.setEditable(false);
     jTextField14.setBackground(new java.awt.Color(255, 255, 153));
@@ -596,13 +594,13 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
     c_project_number.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
     kGradientPanel1.add(c_project_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 280, 32));
 
-    dp_amount2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-    dp_amount2.addKeyListener(new java.awt.event.KeyAdapter() {
+    bal_amount.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+    bal_amount.addKeyListener(new java.awt.event.KeyAdapter() {
         public void keyReleased(java.awt.event.KeyEvent evt) {
-            dp_amount2KeyReleased(evt);
+            bal_amountKeyReleased(evt);
         }
     });
-    kGradientPanel1.add(dp_amount2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 280, 32));
+    kGradientPanel1.add(bal_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 280, 32));
 
     jTextField17.setEditable(false);
     jTextField17.setBackground(new java.awt.Color(255, 255, 153));
@@ -616,31 +614,11 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
     });
     kGradientPanel1.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 91, 31));
 
-    dp_amount3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-    dp_amount3.addKeyListener(new java.awt.event.KeyAdapter() {
-        public void keyReleased(java.awt.event.KeyEvent evt) {
-            dp_amount3KeyReleased(evt);
-        }
-    });
-    kGradientPanel1.add(dp_amount3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 280, 32));
-
-    jTextField18.setEditable(false);
-    jTextField18.setBackground(new java.awt.Color(255, 255, 153));
-    jTextField18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-    jTextField18.setText(" REMARKS :");
-    jTextField18.setBorder(null);
-    jTextField18.addActionListener(new java.awt.event.ActionListener() {
-        public void actionPerformed(java.awt.event.ActionEvent evt) {
-            jTextField18ActionPerformed(evt);
-        }
-    });
-    kGradientPanel1.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 91, 31));
-
     jLabel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " CUSTOMER INFORMATION / AGENT", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
     kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 450, 590));
 
-    jLabel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "TOTAL AMOUNT", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
-    kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 420, 120));
+    jLabel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "BALANCE", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+    kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 420, 100));
 
     getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 930, 620));
 
@@ -651,10 +629,10 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
     private void displaysAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displaysAncestorAdded
         String Banner = displays.getText();
     
-            if(Banner.equals("PAYMENT METHOD"))
+            if(Banner.equals("PAYMENT"))
             {
                 try{
-                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `add_cart` ORDER BY `PROCESS` DESC LIMIT 1");
+                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `cart_table` ORDER BY `PROCESS` DESC LIMIT 1");
                     ResultSet rs = ps.executeQuery();
                     if(rs.next()){
                         getCart = rs.getString("PROCESS");
@@ -672,72 +650,142 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        //Downpayment
-        String selectedDp = getSelectedOptionDownPayment();        
-        if (selectedDp == null) {
-            JOptionPane.showMessageDialog(null, "CHOOSE CASH OR CHECKED");
-            return;
+       String banner = displays.getText();
+       
+       if(banner.equals("PAYMENT")){
+
+            //Downpayment
+            String selectedDp = getSelectedOptionDownPayment();        
+            if (selectedDp == null) {
+                JOptionPane.showMessageDialog(null, "CHOOSE CASH OR CHECKED");
+                return;
+            }
+
+            switch (selectedDp.toUpperCase()) {
+                case "CASH":
+                    getCashCheckedDownpayment = "CASH";
+                    break;
+                case "CHECKED":
+                    getCashCheckedDownpayment = "CHECKED";
+                    break;
+            }
+
+
+        // TOTAL AMOUNT
+        String total_amount = tot_amount.getText();
+        //DOWNPAYMENT
+        String d_amount = dp_amount.getText();
+        String d_bank = dp_bank.getText();
+        String d_date = dp_date.getText();
+        String d_orno = dp_orNo.getText();
+
+        //BALANCED
+       String b_amount = bal_amount.getText();
+
+
+        //CUSTOMER
+    //    String cus_name = c_name.getText();
+    //    String cus_add = c_address.getText();
+    //    String cus_contact = c_contact.getText();
+        String cus_po = c_po.getText();
+        String cus_poDate = c_poDate.getText();
+        String cus_quotation = c_quot.getText();
+        String cus_quotationDate = c_quotDate.getText();
+        String cus_remarks = c_remarks.getText();
+        String agent_name = c_agentName.getText();
+        String agent_contact = c_agentContact.getText();
+
+
+        //debug code
+        String process = Integer.toString(cc.process);
+        //debug code
+
+        String proj_no = c_project_number.getText();
+
+        if(proj_no.equals("")){
+            JOptionPane.showMessageDialog(null, "ENTER PROJECT NO!","",JOptionPane.INFORMATION_MESSAGE);
         }
+        else if(cus_id == null){
+            JOptionPane.showMessageDialog(null, "ENTER CUSTOMER!","",JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            
+            //GENERATOR PRINT
+            try{
+                PreparedStatement ps = null;
+                ResultSet rs = null;
+                ps=FPE_DB.getConnection().prepareStatement("SELECT `CATEGORY` FROM `history_table` WHERE `PROCESS`='"+getCart+"' AND `CATEGORY` LIKE 'GENERATOR%' ORDER BY `ID` DESC LIMIT 1 ");
+                rs = ps.executeQuery();
+                if(rs.next()){
+                    String compatedWithCategoryReport = rs.getString("CATEGORY");
+                    if(compatedWithCategoryReport.equals("GENERATOR")){
+                        JOptionPane.showMessageDialog(null, "GENERATOR");
+//                                 JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/quotation_genset.jrxml");
+                                 //String sql = "SELECT `ID`, `DATE RELEASE`, `CATEGORY`,`MODEL`, `KVA`,CONCAT('QUOATION FOR BRAND ',`KVA`,' ',`BRAND`,' ',`MODEL`) AS `SUBJECT`, `PHASING`, `TYPE`, FORMAT((`QUANTITY`*`SELLER PRICE`), '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, (SELECT `NAME` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER NAME`,(SELECT `ADDRESS` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER ADDRESS` ,CONCAT(`KVA`,' ',`BRAND`,' ',`MODEL`) AS `TITLE`,`IMAGE`, `QUOTATION`, `OR NO`, `STATUS`, `PROCESS` FROM `sale_summary_stock` WHERE `PROCESS`='"+getCart+"' AND `CATEGORY`='GENERATOR' ORDER BY `ID` DESC LIMIT 1";
+//                                 String sql = "SELECT `STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N`, `SUPPLIER ID`, `DATE INBOUND`, `DATE OUTBOUND`, `IMAGE`, `INCHARGE`, `REMARKS`, `PROCESS`, `VERIFY` FROM `cart_table` WHERE `CATEGORY` LIKE 'GENERATOR%'";
+//                                 JRDesignQuery jrdesignquery = new JRDesignQuery();
+//                                 jrdesignquery.setText(sql);
+//                                 jasperdesign.setQuery(jrdesignquery);
+//                                 JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+//
+//                                 HashMap<String, Object> params = new HashMap<String, Object>();
+//                                 BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+//                                 params.put("logo", image );
+//                                 params.put("cus_id", cus_id );
+//                                 params.put("agent_name", agent_name );
+//                                 params.put("agent_contact", agent_contact);
+//                                 params.put("quot", cus_quotation);
+//                                 params.put("counted_process", getCart);
+//                                 JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+//                                 JasperViewer.viewReport(jasperprint, false);
+                    }
+                }
 
-        switch (selectedDp.toUpperCase()) {
-            case "CASH":
-                getCashCheckedDownpayment = "CASH";
-                break;
-            case "CHECKED":
-                getCashCheckedDownpayment = "CHECKED";
-
-                break;
+            }catch(Exception e){
+                e.printStackTrace();
+            }        
         }
         
-        //Balanced
-//        String selectedB = getSelectedOptionBalance();        
-//        if (selectedB == null) {
-//            JOptionPane.showMessageDialog(null, "CHOOSE CASH OR CHECKED");
-//            return;
-//        }
-//
-//        switch (selectedB.toUpperCase()) {
-//            case "CASH":
-//                getCashCheckedBalanced = "CASH";
-//
-//                break;
-//            case "CHECKED":
-//                getCashCheckedBalanced = "CHECKED";               
-//                break;
-//        }
-        //Code Below
         
-    //DOWNPAYMENT
-    String d_amount = dp_amount.getText();
-//    String d_cashChecked = dp_cashChecked.getText();
-    String d_bank = dp_bank.getText();
-    String d_date = dp_date.getText();
-    String d_orno = dp_orNo.getText();
+        //PARTS AND MATERIAL
+        // ================== PARTS AND MATERIAL PRINT
+        try{
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            ps=FPE_DB.getConnection().prepareStatement("SELECT `CATEGORY` FROM `history_table` WHERE `CATEGORY` LIKE 'PARTS%' AND `CATEGORY` LIKE 'OFFICE%' AND `PROCESS`='"+getCart+"' ORDER BY `PROCESS` DESC LIMIT 1  ");
+            rs = ps.executeQuery();
+            if(rs.next()){
+                String compatedWithCategoryReport = rs.getString("CATEGORY");
+                if(compatedWithCategoryReport.equals("PARTS") && compatedWithCategoryReport.equals("OFFICE") ){
+                    JOptionPane.showMessageDialog(null, "PARTS AND OFFICE");
+//                            JasperDesign jasperdesign =JRXmlLoader.load("C:/Users/"+Webpage.located+"/Documents/NetBeansProjects/FieldPowerEnterprises/src/FPE/quotation_parts.jrxml");
+//                            String sql = "SELECT `ID`,`CATEGORY`,CONCAT(`BRAND`,' ',`MODEL`, ' ',`KVA`, ' ',`PHASING`) AS `DESCRIPTION`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `QUANTITY`,`TOTAL PRICE`, `QUOTATION`, `OR NO`,(SELECT `NAME` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER NAME`,(SELECT `ADDRESS` FROM `customer_table` WHERE `sale_summary_stock`.`CUSTOMER ID`=`customer_table`.`ID`) AS `CUSTOMER ADDRESS` FROM `sale_summary_stock` WHERE `PROCESS`='"+getCart+"' AND `CATEGORY`='PARTS'";
+//                            JRDesignQuery jrdesignquery = new JRDesignQuery();
+//                            jrdesignquery.setText(sql);
+//                            jasperdesign.setQuery(jrdesignquery);
+//                            JasperReport jaspereport = JasperCompileManager.compileReport(jasperdesign);
+//
+//                            HashMap<String, Object> params = new HashMap<String, Object>();
+//                            BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
+//                            params.put("logo", image );
+//                            params.put("agent_name", agent_name );
+//                            params.put("agent_contact", agent_contact);
+//                            params.put("subject", "PARTS / FILTER");
+//                            params.put("quot", cus_quotation);
+//                            params.put("counted_process", getCart);
+//                            JasperPrint jasperprint = JasperFillManager.fillReport(jaspereport, params,con);
+//                            JasperViewer.viewReport(jasperprint, false);
+                }             
 
-    //BALANCED
-//    String b_amount = bal_amount.getText();
-//    String b_cashChecked = bal_cashChecked.getText();
-//    String b_bank = bal_bank.getText();
-//    String b_date = bal_date.getText();
-//    String b_orno = bal_orNo.getText();
+            }
 
-    //CUSTOMER
-    String cus_name = c_name.getText();
-    String cus_add = c_address.getText();
-    String cus_contact = c_contact.getText();
-    String cus_po = c_po.getText();
-    String cus_poDate = c_poDate.getText();
-    String cus_quotation = c_quot.getText();
-    String cus_quotationDate = c_quotDate.getText();
-    String cus_remarks = c_remarks.getText();
-    String agent_name = c_agentName.getText();
-    String agent_contact = c_agentContact.getText();
-    
-    
-    //debug code
-    String process = Integer.toString(cc.process);
-    JOptionPane.showMessageDialog(null, process);
-    //debug code
+        }catch(Exception e){
+            e.printStackTrace();
+        }        
+           
+       }
+        
+
     
 //    String getStatus = status.getSelectedItem().toString().toUpperCase();
 //
@@ -851,20 +899,20 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
         dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void dp_amountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dp_amountKeyReleased
+    private void tot_amountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tot_amountKeyReleased
         try{
-            String number  = dp_amount.getText() ;
-            int inputQuantity = Integer.parseInt(dp_amount.getText());
+            String number  = tot_amount.getText() ;
+            int inputQuantity = Integer.parseInt(tot_amount.getText());
            
         }
         catch(NumberFormatException  e){
-           dp_amount.setText("");
+           tot_amount.setText("");
         }
-    }//GEN-LAST:event_dp_amountKeyReleased
+    }//GEN-LAST:event_tot_amountKeyReleased
 
-    private void dp_amount1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dp_amount1KeyReleased
+    private void dp_amountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dp_amountKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_dp_amount1KeyReleased
+    }//GEN-LAST:event_dp_amountKeyReleased
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
@@ -882,21 +930,13 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField12ActionPerformed
 
-    private void dp_amount2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dp_amount2KeyReleased
+    private void bal_amountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bal_amountKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_dp_amount2KeyReleased
+    }//GEN-LAST:event_bal_amountKeyReleased
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField17ActionPerformed
-
-    private void dp_amount3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dp_amount3KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dp_amount3KeyReleased
-
-    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField18ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -936,6 +976,7 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JPanel Stock_Genset_Panel_Add6;
     public static javax.swing.JPanel Stock_Genset_Panel_Add7;
+    public static javax.swing.JTextField bal_amount;
     private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JTextArea c_address;
     private javax.swing.JTextField c_agentContact;
@@ -953,10 +994,7 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
     private javax.swing.JTextField c_remarks2;
     private javax.swing.ButtonGroup cash_checked;
     public static javax.swing.JLabel displays;
-    public static javax.swing.JTextField dp_amount;
-    private javax.swing.JTextField dp_amount1;
-    public static javax.swing.JTextField dp_amount2;
-    public static javax.swing.JTextField dp_amount3;
+    private javax.swing.JTextField dp_amount;
     private javax.swing.JTextField dp_bank;
     public static datechooser.beans.DateChooserCombo dp_date;
     private javax.swing.JTextField dp_orNo;
@@ -981,7 +1019,6 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
@@ -994,5 +1031,6 @@ dp_amount1.addKeyListener(new java.awt.event.KeyAdapter() {
     private javax.swing.JTextField jTextField31;
     private javax.swing.JTextField jTextField32;
     private keeptoo.KGradientPanel kGradientPanel1;
+    public static javax.swing.JTextField tot_amount;
     // End of variables declaration//GEN-END:variables
 }

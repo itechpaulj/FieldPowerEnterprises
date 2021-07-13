@@ -313,8 +313,8 @@ public class Table_Customer extends javax.swing.JFrame {
         id = model.getValueAt(i,0).toString();
         name = model.getValueAt(i,1).toString();
         add = model.getValueAt(i,2).toString();
-        email = model.getValueAt(i,3).toString();
-        contact = model.getValueAt(i,4).toString();
+//        email = model.getValueAt(i,3).toString();
+        contact = model.getValueAt(i,3).toString();
 
     }//GEN-LAST:event_Customer_TableMouseClicked
 
@@ -411,12 +411,12 @@ public class Table_Customer extends javax.swing.JFrame {
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
        //String path = Customer_path.getText();
-       dispose();
+       
        AddCart.c_name.setText(name);
        AddCart.c_address.setText(add);
        AddCart.c_contact.setText(contact);
        AddCart.cus_id = id;
-       
+       dispose();
        
     }//GEN-LAST:event_Back1MouseClicked
 

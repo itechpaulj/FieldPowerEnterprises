@@ -1571,7 +1571,7 @@ public class Webpage extends javax.swing.JFrame {
         if(rs.next()){
             AddCart ac = new AddCart();
             ac.setVisible(true);
-            AddCart.dp_amount.setText(total_amount.getText());
+            AddCart.tot_amount.setText(total_amount.getText());
         }else{
            JOptionPane.showMessageDialog(null, "EMPTY CART!","",JOptionPane.ERROR_MESSAGE);
         }
