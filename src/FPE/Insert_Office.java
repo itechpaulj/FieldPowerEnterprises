@@ -375,7 +375,7 @@ public class Insert_Office extends javax.swing.JFrame {
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
     String category = Insert_Office_Category.getText().toUpperCase();
-    String brand = Insert_Office_Brand.getText();
+    String brand = Insert_Office_Brand.getText().toUpperCase();
     String model= "";
     String kva = "";
     String phasing = "";

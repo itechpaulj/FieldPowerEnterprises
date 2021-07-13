@@ -8,8 +8,10 @@ import net.proteanit.sql.DbUtils;
 import static FPE.Webpage.Stock_Table;
 import static FPE.Webpage.Sales_Table;
 import static FPE.Webpage.Cart_Table;
-import static FPE.Webpage.History_Table;
-
+import static FPE.Webpage.FullOut_Table;
+import static FPE.Webpage.History_Table; 
+import static FPE.Setting.admin_table;
+        
 import static FPE.Table_Supplier.Supplier_table;
 import static FPE.Table_Customer.Customer_Table;
 import static FPE.Table_Agent.Agent_table;
@@ -181,6 +183,59 @@ public class Class_tables {
         return false;
     }
     
+    
+//--------------------------------------------------------- FOR FULLOUT TABLE ONLY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+        public boolean Fullout(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`, `CATEGORY`, `BRAND`,`TYPE`,`SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `SUPPLIER ID`, `DATE INBOUND`, `REMARKS` FROM `fullout`");
+        ResultSet rs = ps.executeQuery();
+        FullOut_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        FullOut_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+            }
+        return false;
+    }
+        
+        public boolean Fullout_Parts(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`, `CATEGORY`, `BRAND`,`TYPE`,`SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `SUPPLIER ID`, `DATE INBOUND`, `REMARKS` FROM `fullout` WHERE `STOCK ID`= 'PARTS' ");
+        ResultSet rs = ps.executeQuery();
+        FullOut_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        FullOut_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+            }
+        return false;
+    }
+        
+        public boolean Fullout_Office(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`, `CATEGORY`, `BRAND`,`TYPE`,`SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `SUPPLIER ID`, `DATE INBOUND`, `REMARKS` FROM `fullout`WHERE `STOCK ID`= 'OFFICE'");
+        ResultSet rs = ps.executeQuery();
+        FullOut_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        FullOut_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+            }
+        return false;
+    }
+        
+        public boolean FulloutWarehouse(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`, `CATEGORY`, `BRAND`,`TYPE`,`SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `SUPPLIER ID`, `DATE INBOUND`, `REMARKS` FROM `fullout`WHERE `STOCK ID`= 'WAREHOUSE'");
+        ResultSet rs = ps.executeQuery();
+        FullOut_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        FullOut_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+            }
+        return false;
+    }
+    
+    
+    
 //--------------------------------------------------------- FOR HISTORY TABLE ONLY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
     
     public boolean History(){
@@ -246,40 +301,7 @@ public class Class_tables {
 
 //--------------------------------------------------------- FOR HISTORY TABLE ONLY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
     
-//    public boolean StockedGenerator(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`DATE RECEIVED`,`CATEGORY`,`BRAND`,`MODEL`,`KVA`,`PHASING`,`TYPE`,FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`,`ENGINE S N`,`ALTERNATOR S N`, `QUANTITY`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='GENERATOR'");
-//        ResultSet rs = ps.executeQuery();
-//        All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//
-//    public boolean StockedParts(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`DATE RECEIVED`,`CATEGORY`,`BRAND`,`MODEL`,`KVA`,`PHASING`,`TYPE`,FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`,`ENGINE S N`,`ALTERNATOR S N`, `QUANTITY`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY` = 'PARTS'");
-//        ResultSet rs = ps.executeQuery();
-//        All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    public boolean StockedOffice(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`,`TYPE`, `SELLER PRICE`, `QUANTITY`, `REMARKS` FROM `summary_stock` WHERE `CATEGORY` = 'OFFICE'");
-//        ResultSet rs = ps.executeQuery();
-//        All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
+
 //
 //    public boolean StockedWareHouse(){
 //        try{
@@ -617,6 +639,17 @@ public class Class_tables {
         ResultSet rs = ps.executeQuery();
         Customer_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Customer_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+             // System.out.println(e);
+            }
+        return false;
+    }
+       public boolean Admin(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `login_table`");
+        ResultSet rs = ps.executeQuery();
+        admin_table.setModel(DbUtils.resultSetToTableModel(rs));
+        admin_table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
              // System.out.println(e);
             }

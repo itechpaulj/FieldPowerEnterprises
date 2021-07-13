@@ -568,9 +568,7 @@ public class View_Generator extends javax.swing.JFrame {
         Stock_Genset_Panel_View1.setLayout(Stock_Genset_Panel_View1Layout);
         Stock_Genset_Panel_View1Layout.setHorizontalGroup(
             Stock_Genset_Panel_View1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Stock_Genset_Panel_View1Layout.createSequentialGroup()
-                .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 36, Short.MAX_VALUE))
+            .addComponent(Stock_Genset_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_View1Layout.setVerticalGroup(
             Stock_Genset_Panel_View1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

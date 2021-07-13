@@ -404,7 +404,7 @@ public class View_Warehouse extends javax.swing.JFrame {
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
     
     String category = View_Wh_Category.getText().toUpperCase();
-    String brand = View_Wh_Brand.getText();
+    String brand = View_Wh_Brand.getText().toUpperCase();
     String model= "";
     String kva = "";
     String phasing = "";

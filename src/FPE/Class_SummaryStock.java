@@ -96,7 +96,7 @@ public class Class_SummaryStock {
     public static boolean DeleteGenset(String sid){
     PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `summary_stock` WHERE `ID`=?");
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `stock_table` WHERE `STOCK ID`=?");
         ps.setString(1,sid);
         ps.execute();
         

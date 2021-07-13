@@ -1045,10 +1045,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="Stock_Genset_Delete" min="-2" pref="134" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="Stock_Genset_Delete" alignment="0" pref="170" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">

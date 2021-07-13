@@ -38,31 +38,7 @@ public class Class_Amount {
      return false;
     }
        
-    
-    // --GET THE QUANTITY OF STOCK ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-//    
-//        public static boolean Stock_Look(String stock_id){
-//        PreparedStatement ps = null;
-//    
-//        int total = 0;
-//        try{
-//        ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID` FROM `cart_table` WHERE `STOCK ID` = ?");
-//        ps.setString(1,stock_id); // 1
-//         ps.setString(2,stock_id);
-//        ResultSet rs = ps.executeQuery();
-//
-//        while(rs.next()){
-//        look = rs.getInt("STOCK ID");
-//       
-//        }
-//                                                                                                                                                    //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`
-//        }catch(Exception e){
-//           e.printStackTrace();
-//        }
-//    
-//    return false;
-//    }
-//       
+ 
    // --UPDATE THE QUANTITY AND TOTAL PRICE OF THE STOCK ----------------------------------------------------------------------------------------------------------------------------------------------------------------
         
      public static boolean StockUpdateQuantityAndTotal(String quantity,int total_price,String stock_id){
