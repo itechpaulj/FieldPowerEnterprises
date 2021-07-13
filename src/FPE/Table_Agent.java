@@ -21,15 +21,15 @@ import javax.swing.table.TableRowSorter;
  */
 public class Table_Agent extends javax.swing.JFrame {
 //
-    String id = "";
-    String name = "";
+    public static String id = null;
+    //String name = "";
     String add = "";
-    String contact = "";
+   //String contact = "";
     
     public static String Path_Agent="";
     public static String Agent_id= "";
-    
-    
+    public static String name = "";
+    public static String contact = "";
     
     public Table_Agent() {
     initComponents();
@@ -305,6 +305,8 @@ public class Table_Agent extends javax.swing.JFrame {
         int i=Agent_table.getSelectedRow();
         TableModel model = Agent_table.getModel();  
         Agent_id = model.getValueAt(i,0).toString();
+        name = model.getValueAt(i,1).toString();
+        contact = model.getValueAt(i,3).toString();
         
     }//GEN-LAST:event_Agent_tableMouseClicked
 
@@ -402,7 +404,10 @@ public class Table_Agent extends javax.swing.JFrame {
     }//GEN-LAST:event_BackMouseExited
 
     private void Back1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseClicked
-
+       AddCart.c_agentName.setText(name);
+       AddCart.c_agentContact.setText(contact);
+       AddCart.agent_id = Agent_id;
+       dispose();
     }//GEN-LAST:event_Back1MouseClicked
 
     private void Back1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back1MouseEntered

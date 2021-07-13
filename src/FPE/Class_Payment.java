@@ -5,24 +5,93 @@
  */
 package FPE;
 
-
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import net.proteanit.sql.DbUtils;
+
+
+
 
 /**
  *
  * @author Javinez
  */
-public class Class_Process {
+public class Class_Payment {
     
     // Insert payment
-    public boolean payment(String total_amount,String d_amount,String d_bank,String d_date,String d_orno,String b_amount,String cus_id){
+    /*
+        proj_no
+        total_amount
+        cus_quotation
+        d_amount
+        d_remarks
+        d_bank
+        d_date
+        cus_po
+        cus_poDate
+        cus_quotationDate
+        cus_remarks
+        b_amount
+        total_amount
+        getCashCheckedDownpayment
+        cus_id
+        agent_id
+        status    
+    */
+    public boolean payment(String proj_no, String cus_quotation, String d_amount, String d_remarks, String d_bank, String d_date, String cus_po, String cus_poDate, String cus_quotationDate, String cus_remarks, String b_amount, String total_amount, String getCashCheckedDownpayment, String cus_id, String agent_id, String status){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `payment`(`PROJECT NO`, `QUOTATION NO`, `DOWNPAYMENT AMOUNT`, `DOWNPAYMENT REMARKS`, `BANK`, `DATE DOWNPAYMENT`, `CUSTOMER P.O`, `DATE CUSTOMER P.O`, `DATE QUOTATION`, `ADDITIONAL ITEMS`, `BALANCE AMOUNT`, `TOTAL AMOUNT`, `CASH CHECKED`, `CUSTOMER ID`, `AGENT ID`, `STATUS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps.setString(1,proj_no);
+        ps.setString(2,cus_quotation);
+        ps.setString(3,d_amount);
+        ps.setString(4,d_remarks);
+        ps.setString(5,d_bank);
+        ps.setString(6,d_date);
+        ps.setString(7,cus_po);
+        ps.setString(8,cus_poDate);
+        ps.setString(9,cus_quotationDate);
+        ps.setString(10,cus_remarks);
+        ps.setString(11, b_amount);
+        ps.setString(12, total_amount);
+        ps.setString(13, getCashCheckedDownpayment);
+        ps.setString(14, cus_id);
+        ps.setString(15, agent_id);
+        ps.setString(16, status);
+
+        ps.execute();
         
+        }catch(Exception e){
+           e.printStackTrace();
+        }        
         return false;
     }
     
-    
+    public boolean payment_update_historyTable(String cus_id,String proj_no,String process){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `history_table` SET `CUSTOMER ID`=?,`VERIFY`=?, `PROJECT NO`=? WHERE `PROCESS`=?");
+        ps.setString(1,cus_id);
+        ps.setString(2,"DONE");
+        ps.setString(3,proj_no);
+        ps.setString(4,process);
+
+        ps.execute();
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        return false;
+    } 
+
+    public boolean payment_cartDelete(){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `cart_table`");
+        ps.execute();
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        return false;
+    }     
     
     
 //    public boolean process_genset_summaryStock(String customer_id, String quotation,String orno,String remarks,String status,String process){
