@@ -6,6 +6,8 @@
 package FPE;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -13,7 +15,7 @@ import java.awt.Color;
  */
 public class Setting extends javax.swing.JFrame {
 
-    
+   public static String id = ""; 
     public Setting() {
         initComponents();
         Webpage.ct.Admin();
@@ -35,24 +37,27 @@ public class Setting extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         admin_table = new javax.swing.JTable();
-        add1 = new javax.swing.JPanel();
-        edit = new javax.swing.JLabel();
-        edit1 = new javax.swing.JPanel();
+        updates = new javax.swing.JPanel();
+        update = new javax.swing.JLabel();
+        backs = new javax.swing.JPanel();
         back = new javax.swing.JLabel();
-        back1 = new javax.swing.JPanel();
+        adds = new javax.swing.JPanel();
         add = new javax.swing.JLabel();
         fn = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        pass = new javax.swing.JTextField();
         user = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
-        cpass = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
         type = new javax.swing.JComboBox<>();
+        delete = new javax.swing.JPanel();
+        deletes = new javax.swing.JLabel();
+        cpass = new javax.swing.JPasswordField();
+        pass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(2, 51, 74));
@@ -62,7 +67,7 @@ public class Setting extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Logo/Logo.png"))); // NOI18N
-        jLabel5.setText(" Field Power Enterprises");
+        jLabel5.setText("  Field Power Enterprises ");
         jLabel5.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -72,9 +77,9 @@ public class Setting extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 690, 90));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 770, 90));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 120));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 120));
 
         jPanel4.setBackground(new java.awt.Color(42, 142, 142));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -85,10 +90,15 @@ public class Setting extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Drawer_Btn/administrator_male_127px.png"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
         jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 210, 190));
 
-        admin_table.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        admin_table.setForeground(new java.awt.Color(2, 51, 74));
+        admin_table.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        admin_table.setForeground(new java.awt.Color(51, 51, 51));
         admin_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
@@ -100,73 +110,112 @@ public class Setting extends javax.swing.JFrame {
 
             }
         ));
+        admin_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                admin_tableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(admin_table);
 
-        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 680, 220));
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 700, 220));
 
-        add1.setBackground(new java.awt.Color(25, 189, 230));
+        updates.setBackground(new java.awt.Color(25, 189, 230));
 
-        edit.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        edit.setForeground(new java.awt.Color(255, 255, 255));
-        edit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        edit.setText("UPDATE");
+        update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        update.setForeground(new java.awt.Color(255, 255, 255));
+        update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        update.setText("UPDATE");
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                updateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                updateMouseExited(evt);
+            }
+        });
 
-        javax.swing.GroupLayout add1Layout = new javax.swing.GroupLayout(add1);
-        add1.setLayout(add1Layout);
-        add1Layout.setHorizontalGroup(
-            add1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(edit, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+        javax.swing.GroupLayout updatesLayout = new javax.swing.GroupLayout(updates);
+        updates.setLayout(updatesLayout);
+        updatesLayout.setHorizontalGroup(
+            updatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(update, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
         );
-        add1Layout.setVerticalGroup(
-            add1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(edit, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+        updatesLayout.setVerticalGroup(
+            updatesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(update, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        jPanel4.add(add1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, 160, 45));
+        jPanel4.add(updates, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 156, 45));
 
-        edit1.setBackground(new java.awt.Color(185, 144, 149));
+        backs.setBackground(new java.awt.Color(185, 144, 149));
 
         back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         back.setForeground(new java.awt.Color(255, 255, 255));
         back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         back.setText("BACK");
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backMouseExited(evt);
+            }
+        });
 
-        javax.swing.GroupLayout edit1Layout = new javax.swing.GroupLayout(edit1);
-        edit1.setLayout(edit1Layout);
-        edit1Layout.setHorizontalGroup(
-            edit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+        javax.swing.GroupLayout backsLayout = new javax.swing.GroupLayout(backs);
+        backs.setLayout(backsLayout);
+        backsLayout.setHorizontalGroup(
+            backsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
         );
-        edit1Layout.setVerticalGroup(
-            edit1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        backsLayout.setVerticalGroup(
+            backsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        jPanel4.add(edit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 460, 160, 45));
+        jPanel4.add(backs, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 460, 156, 45));
 
-        back1.setBackground(new java.awt.Color(24, 165, 88));
+        adds.setBackground(new java.awt.Color(24, 165, 88));
 
         add.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         add.setForeground(new java.awt.Color(255, 255, 255));
         add.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         add.setText(" ADD");
+        add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addMouseExited(evt);
+            }
+        });
 
-        javax.swing.GroupLayout back1Layout = new javax.swing.GroupLayout(back1);
-        back1.setLayout(back1Layout);
-        back1Layout.setHorizontalGroup(
-            back1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(add, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+        javax.swing.GroupLayout addsLayout = new javax.swing.GroupLayout(adds);
+        adds.setLayout(addsLayout);
+        addsLayout.setHorizontalGroup(
+            addsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(add, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
         );
-        back1Layout.setVerticalGroup(
-            back1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        addsLayout.setVerticalGroup(
+            addsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(add, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        jPanel4.add(back1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 460, 160, 45));
+        jPanel4.add(adds, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 156, 45));
 
-        fn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        fn.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        fn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         fn.setBorder(null);
-        jPanel4.add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 270, 30));
+        jPanel4.add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 20, 290, 30));
 
         jTextField2.setBackground(new java.awt.Color(57, 170, 198));
         jTextField2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -189,13 +238,10 @@ public class Setting extends javax.swing.JFrame {
         jTextField5.setBorder(null);
         jPanel4.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 180, 30));
 
-        pass.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        pass.setBorder(null);
-        jPanel4.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 270, 30));
-
-        user.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        user.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        user.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         user.setBorder(null);
-        jPanel4.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 270, 30));
+        jPanel4.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 290, 30));
 
         jTextField8.setBackground(new java.awt.Color(57, 170, 198));
         jTextField8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -204,10 +250,6 @@ public class Setting extends javax.swing.JFrame {
         jTextField8.setBorder(null);
         jPanel4.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 180, 30));
 
-        cpass.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        cpass.setBorder(null);
-        jPanel4.add(cpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 270, 30));
-
         jTextField10.setBackground(new java.awt.Color(57, 170, 198));
         jTextField10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jTextField10.setForeground(new java.awt.Color(255, 255, 255));
@@ -215,23 +257,195 @@ public class Setting extends javax.swing.JFrame {
         jTextField10.setBorder(null);
         jPanel4.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 180, 30));
 
-        type.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ADMIN", "STAFF" }));
         type.setBorder(null);
-        jPanel4.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 270, 30));
+        jPanel4.add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 290, 30));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 770, 530));
+        delete.setBackground(new java.awt.Color(255, 102, 102));
+
+        deletes.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        deletes.setForeground(new java.awt.Color(255, 255, 255));
+        deletes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        deletes.setText("DELETE");
+        deletes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deletesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deletesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deletesMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout deleteLayout = new javax.swing.GroupLayout(delete);
+        delete.setLayout(deleteLayout);
+        deleteLayout.setHorizontalGroup(
+            deleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(deletes, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+        );
+        deleteLayout.setVerticalGroup(
+            deleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(deletes, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+        );
+
+        jPanel4.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 460, 156, 45));
+
+        cpass.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        cpass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        cpass.setBorder(null);
+        jPanel4.add(cpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 290, 30));
+
+        pass.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        pass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pass.setBorder(null);
+        jPanel4.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 290, 30));
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 780, 530));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel5AncestorAdded
-       String b = jLabel5.getText();
-       if(b.equals(" Field Power Enterprises"))
-       {
-           Webpage.ct.Admin();
-       }
+
     }//GEN-LAST:event_jLabel5AncestorAdded
+
+    private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
+        String fn1 = fn.getText().toUpperCase();
+        String types = type.getSelectedItem().toString();
+        String users = user.getText().toUpperCase();
+        String pas = pass.getText().toUpperCase();
+        String cpas = cpass.getText().toUpperCase();
+        
+         if(fn1.equals("") || types.equals("SELECT") || users.equals("") || pass.equals("") || cpass.equals(""))
+       {
+           JOptionPane.showMessageDialog(null, " BLANK FIELDS !!","ACTION REQUIRED !!",JOptionPane.UNDEFINED_CONDITION);
+       }
+         else if(!pas.equals(cpas))
+        {
+            JOptionPane.showMessageDialog(null, " PASSWORD DOES NOT MAATCH !!","ACTION REQUIRED",JOptionPane.ERROR_MESSAGE);
+        }
+        else
+        {
+            if(!Class_Login.InsertAdmin(fn1, types, users, pas, cpas))
+            {
+               JOptionPane.showMessageDialog(null, " SUCCESSFULY ADDED"); Webpage.ct.Admin();
+                fn.setText(null);
+                type.setSelectedIndex(0);
+                pass.setText(null);
+                cpass.setText(null); id=""; user.setText(null);
+            }
+        }
+    }//GEN-LAST:event_addMouseClicked
+
+    private void admin_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_admin_tableMouseClicked
+       int i=admin_table.getSelectedRow();
+        TableModel model = admin_table.getModel();
+        id = model.getValueAt(i,0).toString();
+        
+        fn.setText(model.getValueAt(i,1).toString()); 
+        type.setSelectedItem(model.getValueAt(i,2).toString()); 
+        user.setText(model.getValueAt(i,3).toString()); 
+        pass.setText(model.getValueAt(i,4).toString()); 
+        cpass.setText(model.getValueAt(i,5).toString()); 
+    }//GEN-LAST:event_admin_tableMouseClicked
+
+    private void deletesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletesMouseClicked
+       if(id.equals(""))
+       {
+           JOptionPane.showMessageDialog(null, " SELECT USER TO DELETE !!","ACTION REQUIRED",JOptionPane.UNDEFINED_CONDITION);
+       }
+       else
+       {
+           if(!Class_Login.Delete(id))
+           {
+               JOptionPane.showMessageDialog(null, " SUCCESSFULY DELETE  !!"); Webpage.ct.Admin();
+                fn.setText(null);
+                type.setSelectedIndex(0);
+                pass.setText(null);
+                cpass.setText(null); user.setText(null);
+               id="";
+           }
+       }
+    }//GEN-LAST:event_deletesMouseClicked
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+        String fn1 = fn.getText().toUpperCase();
+        String types = type.getSelectedItem().toString();
+        String users = user.getText().toUpperCase();
+        String pas = pass.getText().toUpperCase();
+        String cpas = cpass.getText().toUpperCase();
+        
+        if(fn1.equals("") || types.equals("SELECT") || users.equals("") || pass.equals("") || cpass.equals(""))
+       {
+           JOptionPane.showMessageDialog(null, " SELECT USER TO UPDATE !!","ACTION REQUIRED",JOptionPane.UNDEFINED_CONDITION);
+       }
+        else if(!Class_Login.UpadatetAdmin(id, fn1, types, users, pas, cpas))
+        {
+            JOptionPane.showMessageDialog(null, " SUCCESSFULY UPDATED  !!"); Webpage.ct.Admin();
+                id="";
+                fn.setText(null);
+                type.setSelectedIndex(0);
+                user.setText(null);
+                pass.setText(null);
+                cpass.setText(null);
+        }
+    }//GEN-LAST:event_updateMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+                id="";
+                fn.setText(null);
+                type.setSelectedIndex(0);
+                pass.setText(null);
+                cpass.setText(null); user.setText(null);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
+        dispose();
+    }//GEN-LAST:event_backMouseClicked
+
+    private void addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseEntered
+        adds.setBackground(new Color(163, 235, 177));
+        add.setForeground(new Color(51,51,51));
+    }//GEN-LAST:event_addMouseEntered
+
+    private void updateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseEntered
+        updates.setBackground(new Color(163, 235, 177));
+        update.setForeground(new Color(51,51,51));
+    }//GEN-LAST:event_updateMouseEntered
+
+    private void deletesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletesMouseEntered
+        delete.setBackground(new Color(163, 235, 177));
+        deletes.setForeground(new Color(51,51,51));
+    }//GEN-LAST:event_deletesMouseEntered
+
+    private void backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseEntered
+       backs.setBackground(new Color(163, 235,177));
+        back.setForeground(new Color(51,51,51));
+    }//GEN-LAST:event_backMouseEntered
+
+    private void addMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseExited
+       adds.setBackground(new Color(24,165,88));
+        add.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_addMouseExited
+
+    private void updateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseExited
+        updates.setBackground(new Color(25,189,230));
+        update.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_updateMouseExited
+
+    private void deletesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletesMouseExited
+        delete.setBackground(new Color(255,102,102));
+        deletes.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_deletesMouseExited
+
+    private void backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseExited
+       backs.setBackground(new Color(185,144,149));
+        back.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_backMouseExited
 
     /**
      * @param args the command line arguments
@@ -270,13 +484,13 @@ public class Setting extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel add;
-    public static javax.swing.JPanel add1;
+    public static javax.swing.JPanel adds;
     public static javax.swing.JTable admin_table;
     private javax.swing.JLabel back;
-    public static javax.swing.JPanel back1;
-    private javax.swing.JTextField cpass;
-    private javax.swing.JLabel edit;
-    public static javax.swing.JPanel edit1;
+    public static javax.swing.JPanel backs;
+    private javax.swing.JPasswordField cpass;
+    public static javax.swing.JPanel delete;
+    private javax.swing.JLabel deletes;
     private javax.swing.JTextField fn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
@@ -289,8 +503,10 @@ public class Setting extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField pass;
+    private javax.swing.JPasswordField pass;
     private javax.swing.JComboBox<String> type;
+    private javax.swing.JLabel update;
+    public static javax.swing.JPanel updates;
     private javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }

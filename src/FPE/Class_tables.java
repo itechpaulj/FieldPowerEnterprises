@@ -646,7 +646,7 @@ public class Class_tables {
     }
        public boolean Admin(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `login_table`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `login`");
         ResultSet rs = ps.executeQuery();
         admin_table.setModel(DbUtils.resultSetToTableModel(rs));
         admin_table.getColumnModel().getColumn(0).setMaxWidth(100);

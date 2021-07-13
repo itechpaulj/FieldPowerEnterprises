@@ -37,7 +37,7 @@ public class Class_fullout {
    public static boolean InsertFullout(String stock_id,String category,String brand,String type,String supplier_price,String seller_price,String quantity,int total_price,String supplier_id,String date_inbound,String date_outbound,byte [] image,String incharge,String remarks,String process,String verify){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `cart_table`(`STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N`, `SUPPLIER ID`, `DATE INBOUND`, `DATE OUTBOUND`, `IMAGE`, `INCHARGE`, `REMARKS`, `PROCESS`, `VERIFY`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `fullout`(`STOCK ID`, `CATEGORY`, `BRAND`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `SUPPLIER ID`, `DATE INBOUND`, `DATE OUTBOUND`, `IMAGE`, `INCHARGE`, `REMARKS`, `PROCESS`, `VERIFY`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         
         ps.setString(1,stock_id); // 1
         ps.setString(2,category);

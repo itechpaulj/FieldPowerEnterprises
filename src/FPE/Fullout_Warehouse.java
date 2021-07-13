@@ -23,15 +23,29 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
     
     String remarks = "";
     String incharge = "";
-        //----FOR SALE------------------------------------------
-    int parts_quant ;
-    //--------
-    int fullout_price;
-    int fullout_quantity ;
-    int fullout_total;
-   
+
+     
+    //----FOR UPDATE----------------------------------------
+    int Update_Sale_quantity ;
+    int Update_Sale_total_price;
+    
+    // ----FOR STOCK----------------------------------------
+    int Update_Stock_quantity ;
+    int Update_Stock_total_price;
+    
+    // ----FOR STOCK RETURN----------------------------------------
+    int Update_Stock_quantity_return;
+    int Update_Stock_total_price_return;
+    
+    int Sale_price;
+    int Sale_quantity ;
+    int Sale_total;
+    
+   //----------------------------------------------------------------------------
+    int fullout_id ;
     int stock_ids;
-    int fullout_ids; 
+    int parts_quant ;
+    
     public Fullout_Warehouse() {
         initComponents();
         imgisNull();
@@ -150,6 +164,9 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
         Sale_Wh_quantity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Sale_Wh_quantity.setBorder(null);
         Sale_Wh_quantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Sale_Wh_quantityKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 Sale_Wh_quantityKeyTyped(evt);
             }
@@ -224,7 +241,7 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
-        Stock_Genset_Update.setText("UPDATE");
+        Stock_Genset_Update.setText(" FULL OUT");
         Stock_Genset_Update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Stock_Genset_UpdateMouseClicked(evt);
@@ -375,7 +392,7 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
     }//GEN-LAST:event_Sale_Wh_picMouseClicked
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
-    
+    String btn = Stock_Genset_Update.getText();
     String category = Sale_Wh_category.getText().toUpperCase();
     String brand = Sale_Wh_brand.getText();
     String model= "";
@@ -390,8 +407,8 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
     
     String engine_sn = "";
     String alternator_sn = "";
-    
-    // String supplier_id ;
+    String customer_id ="";
+     String supplier_id ="";
     String date_inbound = Sale_Wh_inbound_date.getText().toUpperCase();
     // image
     //String incharge = "";
@@ -403,14 +420,26 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
     String process = ""; 
     String project = "";
     
-     if(brand.equals("") || type.equals("SELECT") || supplier_price.equals("") || seller_price.equals("") || quantity.equals("") || supplier.equals("") )
+ if(quantity.equals("") && total_price == 0)
     {
         JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
+    }     
+    else if(btn.equals(" FULL OUT"))
+    {
+        if(stock_ids == fullout_id )
+        {
+            if(!Class_Amount.CartUpdateQuantityAndTotal(Update_Sale_quantity, Update_Sale_total_price, Warehouse_id) )
+                {
+                    System.out.println(""+Update_Sale_quantity);
+                    System.out.println(Update_Sale_total_price);
+                    JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
+                }
+        }
+       else if(!Class_fullout.InsertFullout(Warehouse_id, category, brand, type, supplier_price, seller_price, ""+Sale_quantity, Sale_quantity, Warehouse_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Warehouse_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Warehouse_id))
+                {
+                    JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
+                }
     }
-     else if (!Class_Cart.InsertCart(Warehouse_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Warehouse_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier, supplier, date_inbound, date_outbound, images, incharge, remarks, process, verify, project))
-     {
-         JOptionPane.showMessageDialog(null, "CHECKOUT SUCCESS ! "); Webpage.Refresh(); dispose();
-     }
         
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
@@ -445,13 +474,14 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
     String Banner = fullout_display.getText();
     String id = Webpage.stock_id;
     
-    if(Banner.equals("FULLOUT WAREHOUSE"))
+    if(Banner.equals("FULL OUT WAREHOUSE"))
     {
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `stock_table` WHERE `STOCK ID` ='"+id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             Warehouse_id = rs.getString("STOCK ID");
+            stock_ids = Integer.parseInt(""+Warehouse_id);
             Sale_Wh_inbound_date.setText(rs.getString("DATE INBOUND"));
             Sale_Wh_category.setText(rs.getString("CATEGORY"));
             Sale_Wh_brand.setText(rs.getString("BRAND"));
@@ -470,14 +500,14 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
             e.printStackTrace();
         }
         
-                 try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `fullout` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+         try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `fullout` WHERE `STOCK ID`='"+Webpage.stock_id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
           
-            fullout_ids = rs.getInt("STOCK ID");
+            fullout_id = rs.getInt("STOCK ID");
             parts_quant = rs.getInt("QUANTITY");
-            System.out.println(""+fullout_ids);
+            System.out.println(""+fullout_id);
             System.out.println(""+parts_quant);
             
             }
@@ -488,7 +518,7 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
                  
     }
     
-    else if(Banner.equals("FULL OUT REMOVE"))
+    else if(Banner.equals(" REMOVE"))
     {
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `stock_table` WHERE `STOCK ID` ='"+id+"'");
@@ -519,9 +549,9 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
           
-            fullout_ids = rs.getInt("STOCK ID");
+            fullout_id = rs.getInt("STOCK ID");
             parts_quant = rs.getInt("QUANTITY");
-            System.out.println(""+fullout_ids);
+            System.out.println(""+fullout_id);
             System.out.println(""+parts_quant);
             
             }
@@ -556,6 +586,36 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Sale_Wh_quantityKeyTyped
 
+    private void Sale_Wh_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Wh_quantityKeyReleased
+       int price = 0,total = 0;
+       price = Integer.parseInt(Sale_Wh_price.getText());
+       
+       String q = Sale_Wh_quantity.getText();
+       if(q.equals(""))
+            {
+             total = price * 0;      
+             Sale_Wh_total_price.setText(""+total);
+            }   
+       else
+            {
+                Sale_price = Integer.parseInt(Sale_Wh_price.getText());
+                Sale_quantity = Integer.parseInt(Sale_Wh_quantity.getText());
+                Sale_total = Sale_price * Sale_quantity;
+                Sale_Wh_total_price.setText(""+Sale_total);
+                int Sale_avail = Integer.parseInt(Sale_Wh_available_stock.getText());
+                Update_Sale_quantity = parts_quant + Sale_quantity;
+                Update_Sale_total_price = Update_Sale_quantity * Sale_price;
+                
+                Update_Stock_quantity = Sale_avail - Sale_quantity;
+                Update_Stock_total_price = Update_Stock_quantity * Sale_price;
+                
+                Update_Stock_quantity_return = parts_quant + Sale_quantity;
+                Update_Stock_total_price_return = Update_Stock_quantity_return * Sale_price ;
+                
+         
+            }
+    }//GEN-LAST:event_Sale_Wh_quantityKeyReleased
+
     /**
      * @param args the command line arguments
      */
@@ -582,133 +642,9 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Fullout_Warehouse.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
+    
+      
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

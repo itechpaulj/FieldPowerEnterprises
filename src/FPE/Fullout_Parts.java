@@ -522,7 +522,7 @@ public class Fullout_Parts extends javax.swing.JFrame {
                     }
                 
             }
-           else if(!Class_Cart.InsertCart(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+ Update_Sale_quantity, Update_Sale_total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id))
+           else if(!Class_fullout.InsertFullout(Parts_id, category, brand, type, supplier_price, seller_price, ""+Update_Sale_quantity, Update_Sale_total_price, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id))
                     {
                         JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
                     }

@@ -73,7 +73,7 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
     }//GEN-LAST:event_add_userMouseEntered
 
     private void add_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_userMouseClicked
-        Register l = new Register();
+        Setting l = new Setting();
         l.setVisible(true);
         add_user_panel.setBackground(new Color(0,117,128));
         dispose();

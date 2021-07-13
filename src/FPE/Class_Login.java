@@ -15,18 +15,18 @@ public class Class_Login {
    public static String admin_name = "";
    public static String admin_id = "";
    public static String password = "";
-   public static String register_user = "";
+   public static String User = "";
    
-     public static boolean InsertAdmin(String em_id,String fn,String email,String user,String pass){
+     public static boolean InsertAdmin(String fn,String level,String user,String pass,String cpass){
         PreparedStatement ps = null;
         try{
        
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `login`(`EMPLOYER ID`, `NAME`, `EMAIL`, `USERNAME`, `PASSWORD`) VALUES (?,?,?,?,?)");
-        ps.setString(1,em_id);
-        ps.setString(2,fn);
-        ps.setString(3,email);
-        ps.setString(4,user);
-        ps.setString(5,pass);
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `login`(`NAME`, `USER LEVEL`, `USERNAME`, `PASSWORD`, `CONFIRM PASSWORD`) VALUES (?,?,?,?,?)");
+        ps.setString(1,fn);
+        ps.setString(2,level);
+        ps.setString(3,user);
+        ps.setString(4,pass);
+        ps.setString(5,cpass);
 
         ps.execute();
         
@@ -50,8 +50,8 @@ public class Class_Login {
         
         while(rs.next()){
        
-        admin_id = rs.getString("ID");  
-        admin_name = rs.getString("USERNAME");
+         admin_id = rs.getString("ID");  
+         admin_name = rs.getString("USERNAME");
          password = rs.getString("PASSWORD");       
          }
         status = rs.next();
@@ -66,7 +66,7 @@ public class Class_Login {
         boolean status = false;
         try{
        
-        ps = FPE_DB.getConnection().prepareStatement("SELECT `USERNAME` FROM `login`  ");
+        ps = FPE_DB.getConnection().prepareStatement("SELECT `USERNAME` FROM `login` `WHERE `USERNAME`=? ");
         ps.setString(1,user);
         ps.setString(2,user);
         ResultSet rs = ps.executeQuery();
@@ -74,7 +74,7 @@ public class Class_Login {
         while(rs.next()){
        
          
-       register_user = rs.getString("USERNAME");
+       User= rs.getString("USERNAME");
              
          }
         status = rs.next();
@@ -84,16 +84,34 @@ public class Class_Login {
      return false;
     }
      
-     public static boolean Register(String fn,String level,String user,String pass,String c_pass){
+     public static boolean Delete(String id){
         PreparedStatement ps = null;
         try{
        
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `login`(`NAME`, `USER LEVEL`, `USERNAME`, `PASSWORD`, `CONFIRM PASSWORD`) VALUES (?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `login` WHERE `ID` = ?");
+        ps.setString(1,id);
+        
+
+        ps.execute();
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        
+     return false;
+    }
+     
+     public static boolean UpadatetAdmin(String id,String fn,String level,String user,String pass,String cpass){
+        PreparedStatement ps = null;
+        try{
+       
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `login` SET `NAME`=?,`USER LEVEL`=?,`USERNAME`=?,`PASSWORD`=?,`CONFIRM PASSWORD`=? WHERE `ID`=?");
         ps.setString(1,fn);
         ps.setString(2,level);
         ps.setString(3,user);
         ps.setString(4,pass);
-        ps.setString(5,c_pass);
+        ps.setString(5,cpass);
+        ps.setString(6,id);
 
         ps.execute();
         

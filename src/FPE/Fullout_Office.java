@@ -417,31 +417,23 @@ public class Fullout_Office extends javax.swing.JFrame {
      if(quantity.equals("") && total_price == 0)
     {
         JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
-    }
-     
+    }     
     else if(btn.equals(" FULL OUT"))
     {
-
         if(stock_ids == sale_ids )
-
         {
-
             if(!Class_Amount.CartUpdateQuantityAndTotal(Update_Sale_quantity, Update_Sale_total_price, Office_id) )
                 {
                     System.out.println(""+Update_Sale_quantity);
                     System.out.println(Update_Sale_total_price);
                     JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
                 }
-
         }
-       else if(!Class_fullout.InsertFullout(customer_id, category, brand, type, supplier_price, seller_price, ""+Sale_quantity, Sale_quantity, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Office_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Office_id))
+       else if(!Class_fullout.InsertFullout(Office_id, category, brand, type, supplier_price, seller_price, ""+Sale_quantity, Sale_quantity, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Office_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Office_id))
                 {
                     JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
                 }
-
     }  
-    
-    
                   else if(btn.equals(" REMOVE"))
         {
         
