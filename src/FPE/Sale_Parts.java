@@ -56,7 +56,7 @@ public class Sale_Parts extends javax.swing.JFrame {
     public Sale_Parts() {
         initComponents();
         imgisNull();
-        
+        Webpage.cc.addCart();
     }
  public void imgisNull(){
         try{
@@ -483,7 +483,7 @@ public class Sale_Parts extends javax.swing.JFrame {
     
     String date_outbound = "";
     String verify = "";
-    String process = "";
+    String process = Integer.toString(Webpage.cc.process);
     String project = "";
     
             

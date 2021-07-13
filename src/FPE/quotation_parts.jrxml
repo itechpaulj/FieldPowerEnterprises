@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1ac19b96-57da-49e4-a69c-fbe76251eb73">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.1289478601075547"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="141"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="counted_process" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -59,39 +59,11 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="224" y="25" width="161" height="10" uuid="bd08f00d-dda8-4b31-84ed-5f9c66143b7c"/>
-				<textElement>
-					<font fontName="Arial" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[1467 , ABAD SANTOS, METRO MANILA]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="224" y="5" width="290" height="20" uuid="1b79a49e-c34a-4b65-9828-f3dba8593e35"/>
 				<textElement>
 					<font fontName="Arial" size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FIELD POWER ENTERPRISES]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="224" y="35" width="161" height="11" uuid="fbc98392-7665-4afe-82c0-ba5999169168"/>
-				<textElement>
-					<font fontName="Arial" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[T : 02-734-4318, 0956-1845577]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="224" y="46" width="161" height="11" uuid="625d947d-bdd2-4a5e-a3e8-ebef6c3fb2d7"/>
-				<textElement>
-					<font fontName="Arial" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[E : fieldpowergen@gmail.com]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="224" y="57" width="161" height="11" uuid="c4d78992-5d85-4fb3-a455-a84999429f9f"/>
-				<textElement>
-					<font fontName="Arial" size="8" isBold="true"/>
-				</textElement>
-				<text><![CDATA[www.fieldpowerenterprises.com]]></text>
 			</staticText>
 			<image>
 				<reportElement x="107" y="7" width="117" height="61" uuid="79ce7836-85dc-493f-9573-d83c140c3a3d"/>

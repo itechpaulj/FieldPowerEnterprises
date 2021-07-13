@@ -53,7 +53,7 @@ public class Sale_Office extends javax.swing.JFrame {
         initComponents();
         imgisNull();
         Path.setVisible(false);
-        
+        Webpage.cc.addCart();
     }
  public void imgisNull(){
         try{
@@ -404,7 +404,7 @@ public class Sale_Office extends javax.swing.JFrame {
     
     String date_outbound = "";
     String verify = "";
-    String process = ""; 
+    String process = Integer.toString(Webpage.cc.process);
     String project = "";
     
      if(quantity.equals("") && total_price == 0)

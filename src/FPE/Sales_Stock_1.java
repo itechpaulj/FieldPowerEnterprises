@@ -66,9 +66,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         imgisNull();
         Class_Amount a = new Class_Amount();
         a.Amount();
-    
-       
-        
+        Webpage.cc.addCart();
        
     }
 //        void showDate(){
@@ -654,19 +652,9 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     
     String date_outbound = "";
     String verify = "";
-    String process = "";
+    String process = Integer.toString(Webpage.cc.process);
     
     String project = "";
-    
-//     int add_sale_quantity = 0,add_sale_price = 0,add_sale_total = 0;
-//    
-//    int get_stock_quantity = 0,updated_stock_price=0 ;
-//    
-//    int updated_stock_quantity=0,updated_stock_total= 0;
-//    
-//    int update_sale_quantity=0,updated_Sale_total=0;
-//    
-//    int get_sale_quantity=0;
   
     if(quantity.equals("") && total_price == 0)
         {
@@ -685,8 +673,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
             
             if(!Class_Amount.CartUpdateQuantityAndTotal(update_sale_quantity, updated_Sale_total, Generator_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+update_sale_quantity, updated_Sale_total, Generator_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_total, Generator_id))
             {
-//                System.out.print(""+updated_stock_quantity);
-//                System.out.print(updated_stock_total);
+
                 JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
             }
             
@@ -695,18 +682,11 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
             }
-//        // && !Class_Amount.StockUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_total, Generator_id)
-//        //!Class_Cart.InsertCart(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, ""+add_sale_quantity, add_sale_total, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify)  && !Class_History.InsertHistory(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && 
-//       
-//        
-//        System.out.println(stock_ids);
-//        System.out.println(sale_ids);
+
         }
     
         else if(btn.equals(" REMOVE"))
         {
-        
-           
             if(!Class_Amount.CartUpdateQuantityAndTotal(updated_stock_quantity, updated_stock_total, Generator_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_quantity, Generator_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+update_sale_quantity, updated_stock_total1, Generator_id))
                 {
                     System.out.print(""+updated_stock_quantity);

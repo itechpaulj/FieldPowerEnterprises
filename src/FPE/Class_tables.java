@@ -23,7 +23,7 @@ public class Class_tables {
     
     public boolean Stock(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`,`SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`,(SELECT `NAME` FROM `supplier_table` WHERE `ID`= `SUPPLIER ID`) AS `SUPPLIER`,`REMARKS` FROM `stock_table` ");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N` ,(SELECT `NAME` FROM `supplier_table` WHERE `stock_table`.`SUPPLIER ID`= `supplier_table`.`ID`) AS `SUPPLIER`,`DATE INBOUND`, `INCHARGE`, `REMARKS` FROM `stock_table` ");
         ResultSet rs = ps.executeQuery();
         Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);

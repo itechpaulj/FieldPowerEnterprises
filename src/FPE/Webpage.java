@@ -36,7 +36,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 public class Webpage extends javax.swing.JFrame {
     
-    public static String located = "Robles"; // report or print default location path
+    public static String located = "Javinez"; // report or print default location path
     public static SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
     public static SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
     
@@ -83,7 +83,7 @@ public class Webpage extends javax.swing.JFrame {
     public static Class_tables ct = new Class_tables();
     public static Class_Amount a = new Class_Amount();
     public static Class_fullout f = new Class_fullout();
-    
+    public static Class_Cart cc = new Class_Cart();
    
     
 
@@ -1407,8 +1407,8 @@ public class Webpage extends javax.swing.JFrame {
           BufferedImage image = ImageIO.read(getClass().getResource("logo.png"));
           params.put("logo", image );
           //JasperPrint jasperPrint = null;
-          JasperCompileManager.compileReportToFile("C:\\Users\\"+located+"\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\summary_stock.jrxml");
-          JasperPrint jasperPrint = JasperFillManager.fillReport("C:\\Users\\"+located+"\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\summary_stock.jasper", params, new JRTableModelDataSource(tablemodel));
+          JasperCompileManager.compileReportToFile("C:\\Users\\"+located+"\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\stock_table.jrxml");
+          JasperPrint jasperPrint = JasperFillManager.fillReport("C:\\Users\\"+located+"\\Documents\\NetBeansProjects\\FieldPowerEnterprises\\src\\FPE\\stock_table.jasper", params, new JRTableModelDataSource(tablemodel));
           JasperViewer.viewReport(jasperPrint, false);
         }
         catch(Exception e){
@@ -1566,11 +1566,12 @@ public class Webpage extends javax.swing.JFrame {
     private void Shop_Add2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add2MouseClicked
        
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`,`QUANTITY` FROM `add_cart`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N`, `SUPPLIER ID`, `DATE INBOUND`, `DATE OUTBOUND`, `IMAGE`, `INCHARGE`, `REMARKS`, `PROCESS`, `VERIFY` FROM `cart_table`");
         ResultSet rs = ps.executeQuery();
         if(rs.next()){
             AddCart ac = new AddCart();
             ac.setVisible(true);
+            AddCart.dp_amount.setText(total_amount.getText());
         }else{
            JOptionPane.showMessageDialog(null, "EMPTY CART!","",JOptionPane.ERROR_MESSAGE);
         }
@@ -1680,7 +1681,8 @@ int i=Cart_Table.getSelectedRow();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try{
-        String sql = "SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE  `ID` LIKE '%"+searched_all_stock.getText()+"%' OR `DATE RECEIVED` LIKE '%"+searched_all_stock.getText()+"%' OR `CATEGORY` LIKE '%"+searched_all_stock.getText()+"%' OR `BRAND` LIKE '%"+searched_all_stock.getText()+"%' OR `MODEL` LIKE '%"+searched_all_stock.getText()+"%' OR `KVA` LIKE '%"+searched_all_stock.getText()+"%' OR `PHASING` LIKE '%"+searched_all_stock.getText()+"%' OR `TYPE` LIKE '%"+searched_all_stock.getText()+"%' OR `SUPPLIER PRICE` LIKE '%"+searched_all_stock.getText()+"%' OR `SELLER PRICE` LIKE '%"+searched_all_stock.getText()+"%' OR `ENGINE S N` LIKE '%"+searched_all_stock.getText()+"%' OR `ALTERNATOR S N` LIKE '%"+searched_all_stock.getText()+"%' OR `QUANTITY` LIKE '%"+searched_all_stock.getText()+"%' OR `REMARKS` LIKE '%"+searched_all_stock.getText()+"%' OR `SUPPLIER` LIKE '%"+searched_all_stock.getText()+"%'";
+        //String sql = "SELECT `STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N`, `DATE INBOUND`, `INCHARGE`, `REMARKS` FROM `stock_table` WHERE `STOCK ID` LIKE '%"+searched_all_stock.getText()+"%' OR `CATEGORY` LIKE '%"+searched_all_stock.getText()+"%' OR `BRAND` LIKE '%"+searched_all_stock.getText()+"%' OR `MODEL` LIKE '%"+searched_all_stock.getText()+"%' OR  `KVA` LIKE '%"+searched_all_stock.getText()+"%' OR `PHASING` LIKE '%"+searched_all_stock.getText()+"%' OR `TYPE` LIKE '%"+searched_all_stock.getText()+"%' OR `SELLER PRICE` LIKE '%"+searched_all_stock.getText()+"%' OR `QUANTITY` LIKE '%"+searched_all_stock.getText()+"%' OR `TOTAL PRICE` LIKE '%"+searched_all_stock.getText()+"%' OR `ENGINE S.N` LIKE '%"+searched_all_stock.getText()+"%' OR `ALTERNATOR S.N` OR `DATE INBOUND` LIKE '%"+searched_all_stock.getText()+"%' OR `INCHARGE` LIKE '%"+searched_all_stock.getText()+"%' OR `REMARKS` LIKE '%"+searched_all_stock.getText()+"%' ";
+        String sql = "SELECT `STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N` ,(SELECT `NAME` FROM `supplier_table` WHERE `stock_table`.`SUPPLIER ID`= `supplier_table`.`ID`) AS `SUPPLIER`,`DATE INBOUND`, `INCHARGE`, `REMARKS` FROM `stock_table` WHERE `STOCK ID` LIKE '"+searched_all_stock.getText()+"%' OR `CATEGORY` LIKE '"+searched_all_stock.getText()+"%' OR `BRAND` LIKE '"+searched_all_stock.getText()+"%' OR `MODEL` LIKE '"+searched_all_stock.getText()+"%' OR `KVA` LIKE '"+searched_all_stock.getText()+"%' OR `PHASING`LIKE '"+searched_all_stock.getText()+"%' OR `TYPE` LIKE '"+searched_all_stock.getText()+"%' OR `SELLER PRICE` LIKE '"+searched_all_stock.getText()+"%' OR `QUANTITY` LIKE '"+searched_all_stock.getText()+"%' OR `TOTAL PRICE` LIKE '"+searched_all_stock.getText()+"%' OR `ENGINE S.N` LIKE '"+searched_all_stock.getText()+"%' OR `ALTERNATOR S.N` LIKE '"+searched_all_stock.getText()+"%' OR `DATE INBOUND` LIKE '"+searched_all_stock.getText()+"%' OR `INCHARGE` LIKE '"+searched_all_stock.getText()+"%' OR `REMARKS` LIKE '"+searched_all_stock.getText()+"%' ";
         ps = FPE_DB.getConnection().prepareStatement(sql);
         rs = ps.executeQuery();
         Stock_Table.setModel(net.proteanit.sql.DbUtils.resultSetToTableModel(rs));
