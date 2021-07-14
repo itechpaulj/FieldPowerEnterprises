@@ -36,7 +36,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 
 public class Webpage extends javax.swing.JFrame {
     
-    public static String located = "Robles"; // report or print default location path
+    public static String located = "Javinez"; // report or print default location path
     public static SimpleDateFormat time = new SimpleDateFormat("hh:mm:ss a");
     public static SimpleDateFormat date = new SimpleDateFormat("MM dd yyyy");
     

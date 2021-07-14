@@ -133,12 +133,14 @@ public class AddCart extends javax.swing.JFrame {
         jTextField30 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jTextField31 = new javax.swing.JTextField();
         c_project_number = new javax.swing.JTextField();
-        bal_amount = new javax.swing.JTextField();
+        exhange = new javax.swing.JTextField();
         jTextField17 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
+        t_balance = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -181,7 +183,7 @@ public class AddCart extends javax.swing.JFrame {
                 jTextField11ActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 91, 31));
+        kGradientPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 140, 31));
 
         jTextField12.setEditable(false);
         jTextField12.setBackground(new java.awt.Color(255, 255, 153));
@@ -193,21 +195,21 @@ public class AddCart extends javax.swing.JFrame {
                 jTextField12ActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 60, 32));
+        kGradientPanel1.add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 60, 32));
 
         jTextField15.setEditable(false);
         jTextField15.setBackground(new java.awt.Color(255, 255, 153));
         jTextField15.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField15.setText(" BANK  :");
         jTextField15.setBorder(null);
-        kGradientPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 81, 31));
+        kGradientPanel1.add(jTextField15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 140, 31));
 
         jTextField16.setEditable(false);
         jTextField16.setBackground(new java.awt.Color(255, 255, 153));
         jTextField16.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField16.setText("  DATE");
         jTextField16.setBorder(null);
-        kGradientPanel1.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 81, 31));
+        kGradientPanel1.add(jTextField16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 81, 31));
 
         jTextField21.setEditable(false);
         jTextField21.setBackground(new java.awt.Color(255, 255, 153));
@@ -344,10 +346,10 @@ public class AddCart extends javax.swing.JFrame {
         kGradientPanel1.add(backs, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 530, 160, -1));
 
         dp_orNo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(dp_orNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 130, 32));
+        kGradientPanel1.add(dp_orNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 130, 32));
 
         dp_bank.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        kGradientPanel1.add(dp_bank, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, 290, 32));
+        kGradientPanel1.add(dp_bank, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 230, 32));
 
         tot_amount.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         tot_amount.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -355,7 +357,7 @@ public class AddCart extends javax.swing.JFrame {
                 tot_amountKeyReleased(evt);
             }
         });
-        kGradientPanel1.add(tot_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, 280, 32));
+        kGradientPanel1.add(tot_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 230, 32));
 
         c_name.setEditable(false);
         c_name.setBackground(new java.awt.Color(204, 204, 204));
@@ -412,7 +414,7 @@ public class AddCart extends javax.swing.JFrame {
     dp_date.setFieldFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 14));
     dp_date.setNavigateFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
     dp_date.setCurrentNavigateIndex(0);
-    kGradientPanel1.add(dp_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 100, 32));
+    kGradientPanel1.add(dp_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 100, 32));
 
     c_quot.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
     kGradientPanel1.add(c_quot, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 280, 32));
@@ -474,12 +476,12 @@ kGradientPanel1.add(c_poDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(
 cash_checked.add(jRadioButton1);
 jRadioButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 jRadioButton1.setText("CASH");
-kGradientPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 70, 30));
+kGradientPanel1.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 70, 30));
 
 cash_checked.add(jRadioButton2);
 jRadioButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 jRadioButton2.setText("CHECKED");
-kGradientPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 110, 30));
+kGradientPanel1.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 110, 30));
 
 jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
@@ -532,24 +534,25 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
         dp_amountKeyReleased(evt);
     }
     });
-    kGradientPanel1.add(dp_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 290, 32));
+    kGradientPanel1.add(dp_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, 230, 32));
 
     jTextField14.setEditable(false);
     jTextField14.setBackground(new java.awt.Color(255, 255, 153));
     jTextField14.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
     jTextField14.setText(" AMOUNT :");
     jTextField14.setBorder(null);
-    kGradientPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 81, 31));
+    kGradientPanel1.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 140, 31));
 
     c_remarks1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-    kGradientPanel1.add(c_remarks1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 290, 32));
+    c_remarks1.setBorder(null);
+    kGradientPanel1.add(c_remarks1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 230, 32));
 
     jTextField30.setEditable(false);
     jTextField30.setBackground(new java.awt.Color(255, 255, 153));
     jTextField30.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
     jTextField30.setText("  REMARKS");
     jTextField30.setBorder(null);
-    kGradientPanel1.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 81, 31));
+    kGradientPanel1.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 140, 31));
 
     jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
     jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -574,12 +577,6 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
 
     kGradientPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 180, 30));
 
-    jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " DOWNPAYMENT ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
-    kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 420, 250));
-
-    jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "TOTAL AMOUNT", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
-    kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 420, 90));
-
     jTextField31.setEditable(false);
     jTextField31.setBackground(new java.awt.Color(255, 255, 153));
     jTextField31.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -595,33 +592,61 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     c_project_number.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
     kGradientPanel1.add(c_project_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, 280, 32));
 
-    bal_amount.setEditable(false);
-    bal_amount.setBackground(new java.awt.Color(204, 204, 204));
-    bal_amount.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-    bal_amount.addKeyListener(new java.awt.event.KeyAdapter() {
+    exhange.setEditable(false);
+    exhange.setBackground(new java.awt.Color(204, 204, 204));
+    exhange.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+    exhange.addKeyListener(new java.awt.event.KeyAdapter() {
         public void keyReleased(java.awt.event.KeyEvent evt) {
-            bal_amountKeyReleased(evt);
+            exhangeKeyReleased(evt);
         }
     });
-    kGradientPanel1.add(bal_amount, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, 280, 32));
+    kGradientPanel1.add(exhange, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 230, 32));
 
     jTextField17.setEditable(false);
     jTextField17.setBackground(new java.awt.Color(255, 255, 153));
     jTextField17.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-    jTextField17.setText(" AMOUNT :");
+    jTextField17.setText(" EXCHANGE :");
     jTextField17.setBorder(null);
     jTextField17.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             jTextField17ActionPerformed(evt);
         }
     });
-    kGradientPanel1.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 91, 31));
+    kGradientPanel1.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 140, 31));
+
+    jTextField18.setEditable(false);
+    jTextField18.setBackground(new java.awt.Color(255, 255, 153));
+    jTextField18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+    jTextField18.setText(" TOTAL BALANCE");
+    jTextField18.setBorder(null);
+    jTextField18.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jTextField18ActionPerformed(evt);
+        }
+    });
+    kGradientPanel1.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 140, 31));
+
+    t_balance.setEditable(false);
+    t_balance.setBackground(new java.awt.Color(204, 204, 204));
+    t_balance.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+    t_balance.addKeyListener(new java.awt.event.KeyAdapter() {
+        public void keyReleased(java.awt.event.KeyEvent evt) {
+            t_balanceKeyReleased(evt);
+        }
+    });
+    kGradientPanel1.add(t_balance, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 230, 32));
+
+    jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " DOWNPAYMENT ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+    kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 420, 280));
+
+    jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "TOTAL AMOUNT", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
+    kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 420, 90));
 
     jLabel6.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " CUSTOMER INFORMATION / AGENT", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
     kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 450, 590));
 
     jLabel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), "BALANCE", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 0, 20), new java.awt.Color(51, 51, 51))); // NOI18N
-    kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 420, 100));
+    kGradientPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 420, 80));
 
     getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 930, 620));
 
@@ -684,7 +709,7 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
         String d_remarks = c_remarks1.getText();
 
         //BALANCED
-       String b_amount = bal_amount.getText();
+       String b_amount = t_balance.getText();
 
 
         //CUSTOMER
@@ -998,25 +1023,59 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     }//GEN-LAST:event_tot_amountKeyReleased
 
     private void dp_amountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dp_amountKeyReleased
-       int dp = Integer.parseInt(dp_amount.getText());
-       int ta = Integer.parseInt(tot_amount.getText());
+       int exchange = 0;
+       int downpayment = 0;
+       int balance = 0;
+       int amount = 0;
+       int total = 0;
        
-       if(dp>ta)
-       {
-           bal_amount.setText("0");
-       }
-       else if (dp<ta)
-       {
-           try{
-            String number  = dp_amount.getText() ;
-            String total_amount  = tot_amount.getText() ;
-            int inputQuantity = Integer.parseInt(total_amount) - Integer.parseInt(number);
-            bal_amount.setText(""+inputQuantity);
+        amount = Integer.parseInt(tot_amount.getText());
+        downpayment = Integer.parseInt(dp_amount.getText());
+        String total_amount  = tot_amount.getText() ;
+        if(total_amount.equals(""))
+            
+        {
+            amount = 0;
         }
-        catch(NumberFormatException  e){
-           dp_amount.setText("");
+        
+        else if(downpayment <= amount)
+        {
+             balance = amount - downpayment;
+             
+             
+             exhange.setText(""+0);
+             t_balance.setText(""+balance);
+             
+//                 if(Integer.toString(downpayment).equals("")){
+//               exhange.setText("0");
+//           }
+//           else{
+//            try{
+//             String number  = dp_amount.getText() ;
+//             String total_amount  = tot_amount.getText() ;
+//             int inputQuantity = Integer.parseInt(total_amount) - Integer.parseInt(number);
+//             bal_amount.setText(""+inputQuantity);
+//             }
+//             catch(NumberFormatException  e){
+//                dp_amount.setText("");
+//             }
+//          }
+             
+             
+        }     
+        
+        else if(downpayment >= amount)
+        {
+             
+             exchange = downpayment - amount;
+             exhange.setText(""+exchange);
+             t_balance.setText(""+0);
         }
-       }
+
+       
+  
+       
+       
         
     }//GEN-LAST:event_dp_amountKeyReleased
 
@@ -1037,9 +1096,9 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField12ActionPerformed
 
-    private void bal_amountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_bal_amountKeyReleased
+    private void exhangeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_exhangeKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_bal_amountKeyReleased
+    }//GEN-LAST:event_exhangeKeyReleased
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
         // TODO add your handling code here:
@@ -1064,6 +1123,14 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
         process.setForeground(new Color(51,51,51));
         processs.setBackground(new Color(163, 235, 177));
     }//GEN-LAST:event_processMouseEntered
+
+    private void jTextField18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField18ActionPerformed
+
+    private void t_balanceKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_t_balanceKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t_balanceKeyReleased
 
     /**
      * @param args the command line arguments
@@ -1103,7 +1170,6 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel back;
     public static javax.swing.JPanel backs;
-    public static javax.swing.JTextField bal_amount;
     private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JTextArea c_address;
     public static javax.swing.JTextField c_agentContact;
@@ -1124,6 +1190,7 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     private javax.swing.JTextField dp_bank;
     public static datechooser.beans.DateChooserCombo dp_date;
     private javax.swing.JTextField dp_orNo;
+    public static javax.swing.JTextField exhange;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1143,6 +1210,7 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
+    private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField22;
     private javax.swing.JTextField jTextField23;
@@ -1156,6 +1224,7 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     private keeptoo.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel process;
     public static javax.swing.JPanel processs;
+    public static javax.swing.JTextField t_balance;
     public static javax.swing.JTextField tot_amount;
     // End of variables declaration//GEN-END:variables
 }
