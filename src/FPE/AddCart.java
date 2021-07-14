@@ -103,10 +103,10 @@ public class AddCart extends javax.swing.JFrame {
         jTextField26 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        Stock_Genset_Panel_Add7 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        Stock_Genset_Panel_Add6 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        processs = new javax.swing.JPanel();
+        process = new javax.swing.JLabel();
+        backs = new javax.swing.JPanel();
+        back = new javax.swing.JLabel();
         dp_orNo = new javax.swing.JTextField();
         dp_bank = new javax.swing.JTextField();
         tot_amount = new javax.swing.JTextField();
@@ -281,59 +281,67 @@ public class AddCart extends javax.swing.JFrame {
 
         kGradientPanel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 380, 180, 30));
 
-        Stock_Genset_Panel_Add7.setBackground(new java.awt.Color(102, 255, 102));
+        processs.setBackground(new java.awt.Color(0, 153, 204));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("PROCESS");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        process.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        process.setForeground(new java.awt.Color(255, 255, 255));
+        process.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        process.setText("PROCESS");
+        process.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                processMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                processMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                processMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout Stock_Genset_Panel_Add7Layout = new javax.swing.GroupLayout(Stock_Genset_Panel_Add7);
-        Stock_Genset_Panel_Add7.setLayout(Stock_Genset_Panel_Add7Layout);
-        Stock_Genset_Panel_Add7Layout.setHorizontalGroup(
-            Stock_Genset_Panel_Add7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Stock_Genset_Panel_Add7Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 25, Short.MAX_VALUE))
+        javax.swing.GroupLayout processsLayout = new javax.swing.GroupLayout(processs);
+        processs.setLayout(processsLayout);
+        processsLayout.setHorizontalGroup(
+            processsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(process, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
-        Stock_Genset_Panel_Add7Layout.setVerticalGroup(
-            Stock_Genset_Panel_Add7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+        processsLayout.setVerticalGroup(
+            processsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(process, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Add7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 190, -1));
+        kGradientPanel1.add(processs, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 180, -1));
 
-        Stock_Genset_Panel_Add6.setBackground(new java.awt.Color(204, 204, 255));
+        backs.setBackground(new java.awt.Color(185, 144, 149));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("BACK");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        back.setFont(new java.awt.Font("Arial", 0, 20)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 255, 255));
+        back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        back.setText("BACK");
+        back.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                backMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout Stock_Genset_Panel_Add6Layout = new javax.swing.GroupLayout(Stock_Genset_Panel_Add6);
-        Stock_Genset_Panel_Add6.setLayout(Stock_Genset_Panel_Add6Layout);
-        Stock_Genset_Panel_Add6Layout.setHorizontalGroup(
-            Stock_Genset_Panel_Add6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Stock_Genset_Panel_Add6Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 39, Short.MAX_VALUE))
+        javax.swing.GroupLayout backsLayout = new javax.swing.GroupLayout(backs);
+        backs.setLayout(backsLayout);
+        backsLayout.setHorizontalGroup(
+            backsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
-        Stock_Genset_Panel_Add6Layout.setVerticalGroup(
-            Stock_Genset_Panel_Add6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+        backsLayout.setVerticalGroup(
+            backsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Add6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 530, 160, -1));
+        kGradientPanel1.add(backs, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 530, 160, -1));
 
         dp_orNo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         kGradientPanel1.add(dp_orNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 130, 32));
@@ -644,7 +652,7 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
         tc.setVisible(true);
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void processMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseClicked
        String banner = displays.getText();
        
        if(banner.equals("PAYMENT")){
@@ -967,11 +975,11 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
 //    }
 //
 //    
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_processMouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
         dispose();
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }//GEN-LAST:event_backMouseClicked
 
     private void tot_amountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tot_amountKeyReleased
         try{
@@ -1021,6 +1029,26 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField17ActionPerformed
 
+    private void processMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseExited
+       process.setForeground(new Color(255,255,255));
+       processs.setBackground(new Color(0,153,204));
+    }//GEN-LAST:event_processMouseExited
+
+    private void backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseEntered
+       back.setForeground(new Color(51,51,51));
+       backs.setBackground(new Color(163, 235, 177));
+    }//GEN-LAST:event_backMouseEntered
+
+    private void backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseExited
+        back.setForeground(new Color(255,255,255));
+        backs.setBackground(new Color(185,144,149));
+    }//GEN-LAST:event_backMouseExited
+
+    private void processMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseEntered
+        process.setForeground(new Color(51,51,51));
+        processs.setBackground(new Color(163, 235, 177));
+    }//GEN-LAST:event_processMouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -1057,8 +1085,8 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JPanel Stock_Genset_Panel_Add6;
-    public static javax.swing.JPanel Stock_Genset_Panel_Add7;
+    private javax.swing.JLabel back;
+    public static javax.swing.JPanel backs;
     public static javax.swing.JTextField bal_amount;
     private javax.swing.ButtonGroup buttonGroup1;
     public static javax.swing.JTextArea c_address;
@@ -1081,8 +1109,6 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     public static datechooser.beans.DateChooserCombo dp_date;
     private javax.swing.JTextField dp_orNo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1112,6 +1138,8 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     private javax.swing.JTextField jTextField30;
     private javax.swing.JTextField jTextField31;
     private keeptoo.KGradientPanel kGradientPanel1;
+    private javax.swing.JLabel process;
+    public static javax.swing.JPanel processs;
     public static javax.swing.JTextField tot_amount;
     // End of variables declaration//GEN-END:variables
 }

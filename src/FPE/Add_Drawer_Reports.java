@@ -57,7 +57,7 @@ public class Add_Drawer_Reports extends javax.swing.JFrame {
                 jLabel2MouseExited(evt);
             }
         });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 60));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 60));
 
@@ -80,7 +80,7 @@ public class Add_Drawer_Reports extends javax.swing.JFrame {
                 jLabel1MouseExited(evt);
             }
         });
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 60));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
 
@@ -108,11 +108,11 @@ public class Add_Drawer_Reports extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel2MouseEntered
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        Webpage.JTab.setSelectedIndex(4);
+        Webpage.JTab.setSelectedIndex(5);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Webpage.JTab.setSelectedIndex(5);
+        Webpage.JTab.setSelectedIndex(6);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     /**

@@ -472,10 +472,11 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
 
     private void fullout_displayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_fullout_displayAncestorAdded
     String Banner = fullout_display.getText();
-    String id = Webpage.stock_id;
+    
     
     if(Banner.equals("FULL OUT WAREHOUSE"))
     {
+        String id = Webpage.stock_id;
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `stock_table` WHERE `STOCK ID` ='"+id+"'");
             ResultSet rs = ps.executeQuery();
@@ -488,6 +489,7 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
             Sale_Wh_type.setText("TYPE");
             Sale_Wh_price.setText(rs.getString("SELLER PRICE"));
             Sale_Wh_available_stock.setText(rs.getString("QUANTITY"));
+            
             remarks =rs.getString("REMARKS");
             incharge = rs.getString("INCHARGE");
             
@@ -518,8 +520,9 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
                  
     }
     
-    else if(Banner.equals(" REMOVE"))
+    else if(Banner.equals(" REMOVE WAREHOUSE"))
     {
+        String id = Webpage.fullout_id;
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `stock_table` WHERE `STOCK ID` ='"+id+"'");
             ResultSet rs = ps.executeQuery();
@@ -532,6 +535,7 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
             Sale_Wh_type.setText("TYPE");
             Sale_Wh_price.setText(rs.getString("SELLER PRICE"));
             Sale_Wh_available_stock.setText(rs.getString("QUANTITY"));
+            Sale_Wh_total_price.setText(rs.getString("TOTAL PRICE"));
             remarks =rs.getString("REMARKS");
             incharge = rs.getString("INCHARGE");
             
@@ -668,7 +672,7 @@ public class Fullout_Warehouse extends javax.swing.JFrame {
     private javax.swing.JLabel Stock_Genset_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
-    private javax.swing.JLabel Stock_Genset_Update;
+    public static javax.swing.JLabel Stock_Genset_Update;
     public static javax.swing.JLabel fullout_display;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;

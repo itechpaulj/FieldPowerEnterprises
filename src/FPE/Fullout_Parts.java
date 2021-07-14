@@ -599,7 +599,7 @@ public class Fullout_Parts extends javax.swing.JFrame {
             Sale_Parts_Type.setText(rs.getString("TYPE"));
             Sale_Parts_price.setText(rs.getString("SELLER PRICE"));
             Sale_Parts_available_quantity.setText(rs.getString("QUANTITY"));
-            
+            Sale_Parts_total_price.setText(rs.getString("TOTAL PRICE"));
             remarks = rs.getString("REMARKS");
             
             supplier_id = rs.getString("SUPPLIER ID");
@@ -655,10 +655,10 @@ public class Fullout_Parts extends javax.swing.JFrame {
     
     
     
-    else if(Banner.equals("REMOVE PARTS"))
+    else if(Banner.equals(" REMOVE PARTS"))
         
     {
-        String idss = Webpage.cart_id;
+        String idss = Webpage.fullout_id;
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `fullout` WHERE `STOCK ID`= '"+idss+"'");
             ResultSet rs = ps.executeQuery();

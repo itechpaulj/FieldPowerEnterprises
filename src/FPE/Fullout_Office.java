@@ -502,6 +502,7 @@ public class Fullout_Office extends javax.swing.JFrame {
             Sale_Office_type.setText(rs.getString("TYPE"));
             Sale_Office_price.setText(rs.getString("SELLER PRICE"));
             Sale_Office_available_stock.setText(rs.getString("QUANTITY"));
+            
             incharge = rs.getString("INCHARGE");
             remarks = rs.getString("REMARKS");
             
@@ -530,9 +531,10 @@ public class Fullout_Office extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    if(Banner.equals("REMOVE OFFICE"))
+    if(Banner.equals(" REMOVE OFFICE"))
     {
-        String id = Webpage.cart_id;
+        
+        String id = Webpage.fullout_id;
         try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `fullout` WHERE `STOCK ID` = '"+id+"'");
             ResultSet rs = ps.executeQuery();
@@ -548,6 +550,7 @@ public class Fullout_Office extends javax.swing.JFrame {
             jTextField5.setText(" ORDER QUANTITY");
             Sale_Office_available_stock.setText(rs.getString("QUANTITY"));
             Sale_Office_total_price.setText(rs.getString("TOTAL PRICE"));
+           
             incharge = rs.getString("INCHARGE");
             remarks = rs.getString("REMARKS");
             
