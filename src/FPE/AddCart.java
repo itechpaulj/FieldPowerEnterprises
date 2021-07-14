@@ -748,10 +748,11 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
         }
         else{
             Class_Payment cp = new Class_Payment();
-            if(Integer.parseInt(bal_amount.getText()) < 0){
-            JOptionPane.showMessageDialog(null,"Negative Balance","",JOptionPane.WARNING_MESSAGE);
-            }
-            else if(!cp.payment(proj_no, cus_quotation, d_amount, d_remarks, d_bank, d_date, cus_po, cus_poDate, cus_quotationDate, cus_remarks, b_amount, total_amount, getCashCheckedDownpayment, cus_id, agent_id, status) && !cp.payment_update_historyTable(cus_id, proj_no,process) & !cp.payment_cartDelete())
+//            if(Integer.parseInt(bal_amount.getText()) >= 0){
+//            JOptionPane.showMessageDialog(null,"Negative Balance","",JOptionPane.WARNING_MESSAGE);
+//            }
+//            else 
+                if(!cp.payment(proj_no, cus_quotation, d_amount, d_remarks, d_bank, d_date, cus_po, cus_poDate, cus_quotationDate, cus_remarks, b_amount, total_amount, getCashCheckedDownpayment, cus_id, agent_id, status) && !cp.payment_update_historyTable(cus_id, proj_no,process) & !cp.payment_cartDelete())
             {
                 Webpage.Refresh();
                 JOptionPane.showMessageDialog(null, "PAYMENT HAS BEEN PROCESSED!","",JOptionPane.INFORMATION_MESSAGE);
@@ -804,10 +805,9 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
 
                 }catch(Exception e){
                     e.printStackTrace();
-                }                
-            }
-  
-        //PARTS AND MATERIAL
+                } 
+                
+             //PARTS AND MATERIAL
         // ================== PARTS AND MATERIAL PRINT
         try{
             PreparedStatement ps = null;
@@ -858,7 +858,12 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
 
         }catch(Exception e){
             e.printStackTrace();
-        }            
+        }         
+                
+                
+            }
+  
+              
             
        }
         
@@ -993,7 +998,16 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
     }//GEN-LAST:event_tot_amountKeyReleased
 
     private void dp_amountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dp_amountKeyReleased
-        try{
+       int dp = Integer.parseInt(dp_amount.getText());
+       int ta = Integer.parseInt(tot_amount.getText());
+       
+       if(dp>ta)
+       {
+           bal_amount.setText("0");
+       }
+       else if (dp<ta)
+       {
+           try{
             String number  = dp_amount.getText() ;
             String total_amount  = tot_amount.getText() ;
             int inputQuantity = Integer.parseInt(total_amount) - Integer.parseInt(number);
@@ -1002,6 +1016,8 @@ dp_amount.addKeyListener(new java.awt.event.KeyAdapter() {
         catch(NumberFormatException  e){
            dp_amount.setText("");
         }
+       }
+        
     }//GEN-LAST:event_dp_amountKeyReleased
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
