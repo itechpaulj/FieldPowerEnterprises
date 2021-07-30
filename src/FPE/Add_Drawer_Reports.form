@@ -55,7 +55,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Picture/Drawer_Btn/Drawer_Chart.png"/>
+              <Image iconType="3" name="/Picture/Select/pie_chart_33px.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value=" STATUS    "/>
           </Properties>
@@ -98,7 +98,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Picture/Drawer_Btn/Drawer_History.png"/>
+              <Image iconType="3" name="/Picture/Select/order_history_33px.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value=" HISTORY   "/>
           </Properties>

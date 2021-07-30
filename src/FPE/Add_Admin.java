@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author ROBLES
  */
-public class Login extends javax.swing.JFrame {
+public class Add_Admin extends javax.swing.JFrame {
 
     public static String admin_name = Class_Login.admin_name;
     public static String admin_id = Class_Login.admin_id;
     
-    public Login() {
+    public Add_Admin() {
         initComponents();
     }
 
@@ -38,9 +38,15 @@ public class Login extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         Cancel_btn = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
-        username = new javax.swing.JTextField();
+        fn = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        c_password = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        userlevel = new javax.swing.JComboBox<>();
+        username = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -53,8 +59,8 @@ public class Login extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Logo/Logo.png"))); // NOI18N
-        jLabel5.setText(" Field Power Enterprises");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 600, 100));
+        jLabel5.setText(" Add Member");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 500, 100));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 120));
 
@@ -67,8 +73,8 @@ public class Login extends javax.swing.JFrame {
         Login_Btn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Login_Btn.setForeground(new java.awt.Color(255, 255, 255));
         Login_Btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Login_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Key.png"))); // NOI18N
-        Login_Btn.setText(" LOGIN  ");
+        Login_Btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/save_33px.png"))); // NOI18N
+        Login_Btn.setText(" SAVE");
         Login_Btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Login_BtnMouseClicked(evt);
@@ -92,16 +98,16 @@ public class Login extends javax.swing.JFrame {
             .addComponent(Login_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 180, 50));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 180, 50));
 
-        jPanel2.setBackground(new java.awt.Color(255, 163, 102));
+        jPanel2.setBackground(new java.awt.Color(185, 144, 149));
 
         Cancel_btn.setBackground(new java.awt.Color(255, 255, 255));
         Cancel_btn.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Cancel_btn.setForeground(new java.awt.Color(255, 255, 255));
         Cancel_btn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Cancel_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Cancel.png"))); // NOI18N
-        Cancel_btn.setText(" CANCEL");
+        Cancel_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/left_35px.png"))); // NOI18N
+        Cancel_btn.setText(" BACK");
         Cancel_btn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Cancel_btnMouseClicked(evt);
@@ -125,52 +131,90 @@ public class Login extends javax.swing.JFrame {
             .addComponent(Cancel_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 180, 50));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 180, 50));
 
         password.setBackground(new java.awt.Color(230, 230, 230));
-        password.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
-        password.setForeground(new java.awt.Color(2, 51, 74));
+        password.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        password.setForeground(new java.awt.Color(51, 51, 51));
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 330, 40));
+        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 290, 40));
 
-        username.setBackground(new java.awt.Color(230, 230, 230));
-        username.setFont(new java.awt.Font("Arial", 0, 17)); // NOI18N
-        username.setForeground(new java.awt.Color(2, 51, 74));
-        username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 330, 40));
+        fn.setBackground(new java.awt.Color(230, 230, 230));
+        fn.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        fn.setForeground(new java.awt.Color(51, 51, 51));
+        fn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 290, 40));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Password.png"))); // NOI18N
         jLabel2.setText(" PASSWORD");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, 160, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 180, 40));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Admin.png"))); // NOI18N
-        jLabel3.setText(" USERNAME");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, 160, 40));
+        jLabel3.setText(" NAME");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 180, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 660, 320));
+        c_password.setBackground(new java.awt.Color(230, 230, 230));
+        c_password.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        c_password.setForeground(new java.awt.Color(51, 51, 51));
+        c_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(c_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 290, 40));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Password.png"))); // NOI18N
+        jLabel4.setText(" CONFIRM PASSWORD");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 220, 40));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Admin.png"))); // NOI18N
+        jLabel6.setText(" USER LEVEL");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 180, 40));
+
+        userlevel.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        userlevel.setForeground(new java.awt.Color(51, 51, 51));
+        userlevel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "ADMIN", "STAFF" }));
+        jPanel1.add(userlevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 290, 40));
+
+        username.setBackground(new java.awt.Color(230, 230, 230));
+        username.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
+        username.setForeground(new java.awt.Color(51, 51, 51));
+        username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 290, 40));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Admin.png"))); // NOI18N
+        jLabel7.setText(" USERNAME");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 180, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 660, 430));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Cancel_btnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseExited
-        jPanel2.setBackground(new Color(255,163,102));
+        jPanel2.setBackground(new Color(185,144,149));
          Cancel_btn.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_Cancel_btnMouseExited
 
     private void Cancel_btnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseEntered
         jPanel2.setBackground(new Color(163, 235, 177));
-         Cancel_btn.setForeground(new Color(51,51,51));
+        Cancel_btn.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_Cancel_btnMouseEntered
 
     private void Cancel_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cancel_btnMouseClicked
-        System.exit(0);
+        dispose();
     }//GEN-LAST:event_Cancel_btnMouseClicked
 
     private void Login_BtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseExited
@@ -184,22 +228,29 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_Login_BtnMouseEntered
 
     private void Login_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseClicked
+        String name = fn.getText().toUpperCase();
+        String level = userlevel.getSelectedItem().toString();
         String user = username.getText();
+        
         String pass = password.getText();
-
-        if(!Class_Login.LoginAdmin(user, pass))
+        String cpass = c_password.getText();
+        
+        if(name.isEmpty() || level.equals("SELECT") || user.isEmpty() || pass.isEmpty() || cpass.isEmpty())
         {
-            if(Class_Login.admin_name.equals(user) && Class_Login.password.equals(pass)){
-                JOptionPane.showMessageDialog(null, "WELCOME "+Class_Login.admin_name+"","",JOptionPane.INFORMATION_MESSAGE);
-                            Webpage w = new Webpage();
-                            w.setVisible(true);
-                //            Mainpage.admin_id = Class_Login.admin_id;
-                dispose();
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "INCORRECT PASSWORD","",JOptionPane.INFORMATION_MESSAGE);
-            }
+            JOptionPane.showMessageDialog(null, "FIELD IS EMPTY !!","",JOptionPane.ERROR_MESSAGE);
         }
+        else if(!pass.equals(cpass))
+        {
+            JOptionPane.showMessageDialog(null, "PASSSWORD DOES NOT MATCH !!","",JOptionPane.ERROR_MESSAGE); 
+        }
+        else
+        {
+            if(!Class_Login.InsertAdmin(pass, level, user, pass, cpass))
+            {
+             JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED !"); 
+             dispose(); Webpage.ct.Admin();            }
+        }
+ 
     }//GEN-LAST:event_Login_BtnMouseClicked
 
     /**
@@ -219,21 +270,23 @@ public class Login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Add_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Add_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Add_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Add_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                new Add_Admin().setVisible(true);
             }
         });
     }
@@ -241,14 +294,20 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cancel_btn;
     private javax.swing.JLabel Login_Btn;
+    private javax.swing.JPasswordField c_password;
+    private javax.swing.JTextField fn;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPasswordField password;
+    private javax.swing.JComboBox<String> userlevel;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

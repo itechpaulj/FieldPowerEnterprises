@@ -311,14 +311,14 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         Panel_View_Btn.setLayout(Panel_View_BtnLayout);
         Panel_View_BtnLayout.setHorizontalGroup(
             Panel_View_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Sale_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+            .addComponent(Sale_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         Panel_View_BtnLayout.setVerticalGroup(
             Panel_View_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Sale_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Panel_View_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 170, 45));
+        KG2_ADD_STOCK_GENSET.add(Panel_View_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 180, 45));
 
         Panel_Back_Btn.setBackground(new java.awt.Color(185, 144, 149));
 
@@ -343,14 +343,14 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         Panel_Back_Btn.setLayout(Panel_Back_BtnLayout);
         Panel_Back_BtnLayout.setHorizontalGroup(
             Panel_Back_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(Back_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
         Panel_Back_BtnLayout.setVerticalGroup(
             Panel_Back_BtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Back_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Panel_Back_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Panel_Back_Btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 140, 45));
         KG2_ADD_STOCK_GENSET.add(other, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 110, 20));
 
         jTextField1.setEditable(false);

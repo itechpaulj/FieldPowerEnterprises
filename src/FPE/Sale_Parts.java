@@ -187,7 +187,7 @@ public class Sale_Parts extends javax.swing.JFrame {
 
         Stock_Genset_Panel_Update.setBackground(new java.awt.Color(255, 133, 51));
 
-        Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Stock_Genset_Update.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Update.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Stock_Genset_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Save.png"))); // NOI18N
@@ -208,18 +208,18 @@ public class Sale_Parts extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, 180, 45));
 
         Stock_Genset_Panel_Back.setBackground(new java.awt.Color(185, 144, 149));
 
-        Stock_Genset_Back.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Stock_Genset_Back.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         Stock_Genset_Back.setForeground(new java.awt.Color(255, 255, 255));
         Stock_Genset_Back.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Stock_Genset_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/arrow_35px.png"))); // NOI18N
@@ -240,14 +240,16 @@ public class Sale_Parts extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Stock_Genset_Panel_BackLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, 160, 45));
+        KG2_ADD_STOCK_GENSET.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 140, 45));
 
         Sale_Parts_available_quantity.setBackground(new java.awt.Color(220, 220, 200));
         Sale_Parts_available_quantity.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -487,7 +489,7 @@ public class Sale_Parts extends javax.swing.JFrame {
     String project = "";
     
             
-     if(quantity.equals("") || total_price == 0)
+    if(quantity.equals("") || total_price == 0)
         {
             JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
         }
@@ -743,20 +745,20 @@ public class Sale_Parts extends javax.swing.JFrame {
           Sale_quantity = Integer.parseInt(Sale_Parts_quantity.getText());
           Sale_total = Sale_quantity * Sale_price;
           Sale_Parts_total_price.setText(""+Sale_total);
-          System.out.println(" FOR ADD");
+          System.out.println("FOR ADD");
           System.out.println(""+Sale_quantity);
           System.out.println(""+Sale_total);
           System.out.println("\n \n");
           int Sale_avail = Integer.parseInt(Sale_Parts_available_quantity.getText());
 
-           System.out.println(" FOR ADD CHECKOUT");
+          System.out.println("FOR ADD CHECKOUT");
           Update_Sale_quantity = parts_quant + Sale_quantity;
           Update_Sale_total_price = Update_Sale_quantity * Sale_price;
           System.out.println(""+Update_Sale_quantity);
           System.out.println(""+Update_Sale_total_price);
           System.out.println("\n \n");
           
-          System.out.println(" FOR UPDATE STOCK");
+          System.out.println("FOR UPDATE STOCK");
           Update_Stock_quantity = Sale_avail - Sale_quantity;
           Update_Stock_total_price = Update_Stock_quantity * Sale_price;
           System.out.println(""+Update_Stock_quantity);
@@ -769,51 +771,6 @@ public class Sale_Parts extends javax.swing.JFrame {
           System.out.println(""+Update_Stock_total_price_return);
           System.out.println("\n \n");System.out.println("\n \n");
   
-   
-    
-    // ----FOR STOCK----------------------------------------
-    int Update_Stock_quantity ;
-    int Update_Stock_total_price;
-    
-    //----FOR SALE------------------------------------------
-    int Sale_total_price;
-    int Sale_quantity ;
-    
-        
-//              add_sale_quantity = Integer.parseInt(Sale_Gen_quantity.getText());
-//           int aq = Integer.parseInt(Sale_Gen_available_stock.getText());
-//           if(aq >= add_sale_quantity){
-               
-           
-        //----   FOR ADD SALE
-//        
-//        add_sale_total = add_sale_price * add_sale_quantity;
-//        Sale_Gen_total_price.setText(""+add_sale_total); 
-//        System.out.println("------------FOR ADD SALE---------------------------------------------");
-//        System.out.println(""+add_sale_quantity);
-//        System.out.println(""+add_sale_total);
-//        System.out.println();
-//        
-//        //----   FOR UPDATE SALE
-//        
-//        update_sale_quantity = Sale_quantity + add_sale_quantity;
-//        updated_Sale_total = update_sale_quantity * add_sale_price;
-//        System.out.println("------------FOR UPDATE SALE-------------------------------------------");
-//        System.out.println(""+update_sale_quantity);
-//        System.out.println(""+updated_Sale_total);
-//        System.out.println();
-//        
-//        //----   FOR UPDATE THE STOCK 
-//        
-//        updated_stock_quantity = Integer.parseInt(Sale_Gen_available_stock.getText()) - add_sale_quantity;
-//        updated_stock_total = updated_stock_quantity *add_sale_price ;
-//        
-//        int updated_stock_quantity1= Sale_quantity + add_sale_quantity;
-//        updated_stock_total1 =  updated_stock_quantity1 * add_sale_price;
-//        System.out.println("------------FOR UPDATE THE STOCK---------------------------------------");
-//        System.out.println(""+updated_stock_quantity);
-//        
-//        System.out.println("\n \n");
        }
        
     }//GEN-LAST:event_Sale_Parts_quantityKeyReleased

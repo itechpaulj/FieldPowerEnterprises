@@ -58,6 +58,25 @@ public class Class_Amount {
     return false;
     }
      
+     // --UPDATE THE QUANTITY AND TOTAL PRICE OF THE STOCK ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+     public static boolean FulloutUpdateQuantityAndTotal(String quantity,int total_price,String stock_id){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `fullout` SET `QUANTITY`=?,`TOTAL PRICE`=? WHERE `STOCK ID`=?");
+        ps.setString(1,quantity);
+        ps.setInt(2,total_price);
+        ps.setString(3,stock_id);
+        
+        ps.execute();
+                                                                                                                                                                   //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+    
+    return false;
+    }
+     
      
 // -- UPDATE THE QUANTITY AND TOTAL PRICE OF THE CART ----------------------------------------------------------------------------------------------------------------------------------------------------------------
      
@@ -130,10 +149,10 @@ public class Class_Amount {
     return false;
     }
     
-    public static boolean CartsssssDelete(String stock_id){
+    public static boolean FulloutDelete(String stock_id){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("SELECT * FROM `history_table` WHERE `STOCK ID` = ?");
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `fullout` WHERE `STOCK ID` = ?");
         ps.setString(1,stock_id);
         
         

@@ -108,7 +108,7 @@ public class Add_Selection extends javax.swing.JFrame {
         Office.setForeground(new java.awt.Color(255, 255, 255));
         Office.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Office.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/department.png"))); // NOI18N
-        Office.setText(" OFFICE       ");
+        Office.setText(" OFFICE        ");
         Office.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OfficeMouseClicked(evt);
@@ -132,7 +132,8 @@ public class Add_Selection extends javax.swing.JFrame {
         WH.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         WH.setForeground(new java.awt.Color(255, 255, 255));
         WH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        WH.setText("  WAREHOUSE");
+        WH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/warehouse_30px.png"))); // NOI18N
+        WH.setText(" WAREHOUSE");
         WH.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 WHMouseClicked(evt);
