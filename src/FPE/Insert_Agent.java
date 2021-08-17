@@ -32,20 +32,20 @@ public class Insert_Agent extends javax.swing.JFrame {
         Stock_Genset_Back = new javax.swing.JLabel();
         Stock_Genset_Panel_Update = new javax.swing.JPanel();
         Stock_Genset_Update = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
         agent_address = new javax.swing.JTextField();
         agent_contact = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         agent_name = new javax.swing.JTextField();
         agent_company = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
+        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Agent_Display.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -61,9 +61,9 @@ public class Insert_Agent extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel4.add(Agent_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 410, 100));
+        jPanel4.add(Agent_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 590, 80));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 130));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 120));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(42, 142, 142));
         kGradientPanel1.setkStartColor(new java.awt.Color(42, 142, 142));
@@ -92,16 +92,16 @@ public class Insert_Agent extends javax.swing.JFrame {
         Stock_Genset_Panel_Back.setLayout(Stock_Genset_Panel_BackLayout);
         Stock_Genset_Panel_BackLayout.setHorizontalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_BackLayout.setVerticalGroup(
             Stock_Genset_Panel_BackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Back, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 170, -1));
+        kGradientPanel1.add(Stock_Genset_Panel_Back, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 170, -1));
 
-        Stock_Genset_Panel_Update.setBackground(new java.awt.Color(51, 187, 255));
+        Stock_Genset_Panel_Update.setBackground(new java.awt.Color(0, 163, 204));
 
         Stock_Genset_Update.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Update.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,69 +124,70 @@ public class Insert_Agent extends javax.swing.JFrame {
         Stock_Genset_Panel_Update.setLayout(Stock_Genset_Panel_UpdateLayout);
         Stock_Genset_Panel_UpdateLayout.setHorizontalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+            .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
         );
         Stock_Genset_Panel_UpdateLayout.setVerticalGroup(
             Stock_Genset_Panel_UpdateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Stock_Genset_Update, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 170, -1));
+        kGradientPanel1.add(Stock_Genset_Panel_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 170, -1));
 
-        jTextField2.setEditable(false);
-        jTextField2.setBackground(new java.awt.Color(255, 204, 204));
-        jTextField2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField2.setText(" AGENT NAME");
-        jTextField2.setBorder(null);
-        kGradientPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 130, 31));
-        jTextField2.getAccessibleContext().setAccessibleDescription("");
-
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(255, 204, 204));
-        jTextField1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField1.setText(" ADDRESS");
-        jTextField1.setBorder(null);
-        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 130, 31));
-        jTextField1.getAccessibleContext().setAccessibleDescription("");
-
+        agent_address.setBackground(new java.awt.Color(230, 230, 230));
         agent_address.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         agent_address.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         agent_address.setBorder(null);
-        kGradientPanel1.add(agent_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 260, 31));
+        kGradientPanel1.add(agent_address, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 290, 40));
         agent_address.getAccessibleContext().setAccessibleDescription("");
 
+        agent_contact.setBackground(new java.awt.Color(230, 230, 230));
         agent_contact.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         agent_contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         agent_contact.setBorder(null);
-        kGradientPanel1.add(agent_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 260, 31));
+        kGradientPanel1.add(agent_contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, 290, 40));
         agent_contact.getAccessibleContext().setAccessibleDescription("");
 
-        jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(255, 204, 204));
-        jTextField3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField3.setText(" CONTACT NO");
-        jTextField3.setBorder(null);
-        kGradientPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 130, 31));
-        jTextField3.getAccessibleContext().setAccessibleDescription("");
-
+        agent_name.setBackground(new java.awt.Color(230, 230, 230));
         agent_name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         agent_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         agent_name.setBorder(null);
-        kGradientPanel1.add(agent_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 260, 31));
+        kGradientPanel1.add(agent_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 290, 40));
 
+        agent_company.setBackground(new java.awt.Color(230, 230, 230));
         agent_company.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         agent_company.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         agent_company.setBorder(null);
-        kGradientPanel1.add(agent_company, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 260, 31));
+        kGradientPanel1.add(agent_company, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, 290, 40));
 
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(255, 204, 204));
-        jTextField4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField4.setText(" COMPANY NAME");
-        jTextField4.setBorder(null);
-        kGradientPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 130, 31));
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Password.png"))); // NOI18N
+        jLabel2.setText(" COMPANY");
+        kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 180, 40));
 
-        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 470, 450));
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Admin.png"))); // NOI18N
+        jLabel3.setText(" AGENT NAME");
+        kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 200, 40));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/New/marker_25px.png"))); // NOI18N
+        jLabel6.setText(" ADDRESS");
+        kGradientPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 200, 40));
+
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/phone_25px.png"))); // NOI18N
+        jLabel7.setText(" CONTACT");
+        kGradientPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 180, 40));
+
+        getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 660, 380));
 
         pack();
         setLocationRelativeTo(null);
@@ -194,7 +195,7 @@ public class Insert_Agent extends javax.swing.JFrame {
 
     private void Agent_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Agent_DisplayAncestorAdded
         String Banner = Agent_Display.getText();
-       id = Table_Agent.Agent_id;
+        id = Table_Agent.Agent_id;
         if(Banner.equals("UPDATE AGENT")){
                 try{
                 PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `NAME`, `ADDRESS`, `CONTACT`, `COMPANY` FROM `agent_table` WHERE `ID`= '"+id+"'");
@@ -219,16 +220,17 @@ public class Insert_Agent extends javax.swing.JFrame {
     private void Stock_Genset_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseClicked
         dispose();
         ct.Customer();
-        Table_Customer.id_cus = null;
+        Table_Customer.cus_id = "";
     }//GEN-LAST:event_Stock_Genset_BackMouseClicked
 
     private void Stock_Genset_BackMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseEntered
-        Stock_Genset_Panel_Back.setBackground(new Color(255,193,71));
-       
+        Stock_Genset_Panel_Back.setBackground(new Color(163, 235, 177));
+        Stock_Genset_Back.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_Stock_Genset_BackMouseEntered
 
     private void Stock_Genset_BackMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_BackMouseExited
-        Stock_Genset_Panel_Back.setBackground(new Color(255,173,51));
+        Stock_Genset_Panel_Back.setBackground(new Color(185,144,149));
+        Stock_Genset_Back.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_Stock_Genset_BackMouseExited
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
@@ -239,32 +241,36 @@ public class Insert_Agent extends javax.swing.JFrame {
     String contact = agent_contact.getText();
     String company = agent_company.getText();
     
+     
+            if(banner.equals("ADD AGENT"))
+            {
+                if(!Class_Agent.AddAgent(name, add, contact,company))
+                {
+                 JOptionPane.showMessageDialog(null, "AGENT ADDED");   Webpage.ct.Agent(); dispose();
+                }
+            }
+            else if (banner.equals("UPDATE AGENT"))
+            {
+                if(!Class_Agent.UpdateAgent(name, add, contact,company,id))
+                {
+                 JOptionPane.showMessageDialog(null, "AGENT UPDATED");  Webpage.ct.Agent(); dispose();
+                }
+            }
+      
     
-    if(banner.equals("ADD AGENT"))
-    {
-        if(!Class_Agent.AddAgent(name, add, contact,company))
-        {
-         JOptionPane.showMessageDialog(null, "AGENT ADDED");   Webpage.ct.Agent(); dispose();
-        }
-    }
-    else if (banner.equals("UPDATE AGENT"))
-    {
-        if(!Class_Agent.UpdateAgent(name, add, contact,company,id))
-        {
-         JOptionPane.showMessageDialog(null, "AGENT UPDATED");  Webpage.ct.Agent(); dispose();
-        }
-    }
 
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
     private void Stock_Genset_UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseEntered
         
-        Stock_Genset_Panel_Update.setBackground(new Color(51,207,255));
+        Stock_Genset_Panel_Update.setBackground(new Color(163, 235, 177));
+        Stock_Genset_Update.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_Stock_Genset_UpdateMouseEntered
 
     private void Stock_Genset_UpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseExited
         
-        Stock_Genset_Panel_Update.setBackground(new Color(51, 187, 255));
+        Stock_Genset_Panel_Update.setBackground(new Color(0,163,204));
+        Stock_Genset_Update.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_Stock_Genset_UpdateMouseExited
 
     /**
@@ -315,11 +321,11 @@ public class Insert_Agent extends javax.swing.JFrame {
     public static javax.swing.JTextField agent_company;
     public static javax.swing.JTextField agent_contact;
     public static javax.swing.JTextField agent_name;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private keeptoo.KGradientPanel kGradientPanel1;
     // End of variables declaration//GEN-END:variables
 }

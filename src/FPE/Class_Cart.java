@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class Class_Cart {
         
         public static int process = 0;
+        public static int process_fullout = 0;
 
         public static boolean InsertCart(String stock_id,String category,String brand,String model,String kva,String phasing,String type,String supplier_price,String seller_price,String quantity,int total_price,String engine,String alternator,String supplier_id,String date_inbound,String date_outbound,byte [] image,String incharge,String remarks,String process,String verify){
         PreparedStatement ps = null;
@@ -54,33 +55,59 @@ public class Class_Cart {
         PreparedStatement ps;
         ResultSet rs;
         try{
-        ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS`, `VERIFY` FROM `history_table` ORDER BY `ID` DESC LIMIT 1");
+        ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS`, `VERIFY` FROM `history_table` WHERE `ACTION`= 'SALE' ORDER BY `ID` DESC LIMIT 1");
         rs = ps.executeQuery();
-            if(rs.next()){
-                // Database is not empty
-                String process_count = rs.getString("PROCESS");
-                String convert = Integer.toString(process);
-                convert = process_count;
-                int counted = Integer.parseInt(convert) + Integer.parseInt(process_count) - 1; // database
+            if(rs.next())
+            {
                 
-                if(rs.getString("VERIFY").equals("")){
-                    process = Integer.parseInt(convert);
+                String process_count = rs.getString("PROCESS");
+             
+                if(rs.getString("VERIFY").equals(""))
+                {
+                    process = Integer.parseInt(process_count);
                 }
-                else{
-                    //process.setText(""+counted);
-                    if(rs.getString("VERIFY").equals("DONE")){ //its only update tapos na yung cart
-                        int statusCart = Integer.parseInt(convert) + 1; // database
-                        process = statusCart;
+                else if(rs.getString("VERIFY").equals("DONE"))
+                    { 
+                        process = Integer.parseInt(process_count) + 1; // database
+                       
                     }
-                    else{
-                        process = counted; //eto hindi pa tapos yung cart process
-                    }
-                }
-            }
-            else{
-                //empty database
+            }           
+            else{       
                 process = 1;
             }
+            
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        } 
+        return false;
+    }        
+    
+    public static boolean ProcessFulloutt(){
+        PreparedStatement ps;
+        ResultSet rs;
+        try{
+        ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS`, `VERIFY` FROM `history_table` WHERE `ACTION`= 'FULLOUT' ORDER BY `ID` DESC LIMIT 1");
+        rs = ps.executeQuery();
+            if(rs.next())
+            {
+                
+                String process_count = rs.getString("PROCESS");
+             
+                if(rs.getString("VERIFY").equals(""))
+                {
+                    process_fullout = Integer.parseInt(process_count);
+                }
+                else if(rs.getString("VERIFY").equals("DONE"))
+                    { 
+                        process_fullout = Integer.parseInt(process_count) + 1; // database
+                       
+                    }
+            }           
+            else{       
+                process_fullout = 1;
+            }
+            
         }
         catch(Exception e){
             e.printStackTrace();

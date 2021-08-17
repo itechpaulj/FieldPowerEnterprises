@@ -16,10 +16,10 @@ public class Class_History {
 
 
 
-public static boolean InsertHistory(String stock_id,String category,String brand,String model,String kva,String phasing,String type,String supplier_price,String seller_price,String quantity,int total_price,String engine,String alternator,String supplier_id,String customer_id,String date_inbound,String date_outbound,byte [] image,String incharge,String remarks,String process,String verify,String project){
+public static boolean InsertHistory(String stock_id,String category,String brand,String model,String kva,String phasing,String type,String supplier_price,String seller_price,String quantity,int total_price,String engine,String alternator,String supplier_id,String customer_id,String date_inbound,String date_outbound,byte [] image,String incharge,String remarks,String process,String verify,String project,String action){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `history_table`(`STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N`, `SUPPLIER ID`, `CUSTOMER ID`, `DATE INBOUND`, `DATE OUTBOUND`, `IMAGE`, `INCHARGE`, `REMARKS`, `PROCESS`, `VERIFY`, `PROJECT NO`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `history_table`(`STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SUPPLIER PRICE`, `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N`, `SUPPLIER ID`, `CUSTOMER ID`, `DATE INBOUND`, `DATE OUTBOUND`, `IMAGE`, `INCHARGE`, `REMARKS`, `PROCESS`, `VERIFY`, `PROJECT NO`,`ACTION`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         
        
         ps.setString(1,stock_id); // 1
@@ -45,6 +45,7 @@ public static boolean InsertHistory(String stock_id,String category,String brand
         ps.setString(21,process); // 4
         ps.setString(22,verify);  // 5
         ps.setString(23, project); // 6
+        ps.setString(24,action);
         ps.execute();
                                                                                                                                                                    //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`
         }catch(Exception e){

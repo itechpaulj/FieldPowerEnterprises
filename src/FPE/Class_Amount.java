@@ -98,15 +98,18 @@ public class Class_Amount {
     }
  
     
-// -- UPDATE THE QUANTITY AND TOTAL PRICE OF THE HISTORY ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+// -- UPDATE THE QUANTITY AND TOTAL PRICE OF THE HISTORY FOR SALE ----------------------------------------------------------------------------------------------------------------------------------------------------------------
      
-     public static boolean HistoryUpdateQuantityAndTotal(String quantity,int total_price,String stock_id){
+     public static boolean HistoryUpdateforSale(String quantity,int total_price,String stock_id,int process,String verify){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `history_table` SET `QUANTITY`=?,`TOTAL PRICE`=? WHERE `STOCK ID`=?");
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `history_table` SET `QUANTITY`=?,`TOTAL PRICE`=? WHERE `STOCK ID`=? AND `PROCESS`=? AND `ACTION`=? AND`VERIFY`=?");
         ps.setString(1,quantity);
         ps.setInt(2,total_price);
         ps.setString(3,stock_id);
+        ps.setInt(4,process);
+        ps.setString(5,"SALE");
+        ps.setString(6,verify);
         
         ps.execute();
                                                                                                                                                                    //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`
@@ -116,6 +119,30 @@ public class Class_Amount {
     
     return false;
     }
+     
+     
+// -- UPDATE THE QUANTITY AND TOTAL PRICE OF THE HISTORY FOR FULLOUT----------------------------------------------------------------------------------------------------------------------------------------------------------------
+     
+     public static boolean HistoryUpdateforFullout(String quantity,int total_price,String stock_id,int process,String verify){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `history_table` SET `QUANTITY`=?,`TOTAL PRICE`=? WHERE `STOCK ID`=? AND `PROCESS`=? AND `ACTION`=? AND`VERIFY`=?");
+        ps.setString(1,quantity);
+        ps.setInt(2,total_price);
+        ps.setString(3,stock_id);
+        ps.setInt(4,process);
+        ps.setString(5,"FULLOUT");
+        ps.setString(6,verify);
+        
+        ps.execute();
+                                                                                                                                                                   //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+    
+    return false;
+    }
+     
      
     public static boolean CartDelete(String stock_id){
         PreparedStatement ps = null;
@@ -133,12 +160,13 @@ public class Class_Amount {
     return false;
     }
     
-    public static boolean HistoryDelete(String stock_id){
+    public static boolean HistoryDelete(String stock_id,int process,String verify){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `history_table` WHERE `STOCK ID`= ?");
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `history_table` WHERE `STOCK ID`= ?  AND `PROCESS` = ? AND `VERIFY`=?");
         ps.setString(1,stock_id);
-        
+        ps.setInt(2,process);
+        ps.setString(3,verify);
         
         ps.execute();
                                                                                                                                                                    //`ENERGIZED DATE`, `TANK CAPACITY`, `OIL USAGE`, `TECHNICIAN`, `UPDATED AT`, `QUOTATION`, `CUSTOMER_NAME`, `CUSTOMER_ADDRESS`, `CUSTOMER_EMAIL`, `CUSTOMER_CONTACT`, `AGENT_NAME`, `AGENT_CONTACT`

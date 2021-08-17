@@ -81,6 +81,10 @@ public class Insert_Office extends javax.swing.JFrame {
         perTxt = new javax.swing.JTextField();
         Insert_Office_total_price = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -94,12 +98,12 @@ public class Insert_Office extends javax.swing.JFrame {
         Inventory_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Inventory_Display.setText("ADD NEW OFFICE STOCK");
         Inventory_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Inventory_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Inventory_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 470, 110));
@@ -204,7 +208,7 @@ public class Insert_Office extends javax.swing.JFrame {
                 Insert_Office_quantityKeyTyped(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Office_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Office_quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 200, 31));
 
         Insert_Office_Category.setEditable(false);
         Insert_Office_Category.setBackground(new java.awt.Color(220, 220, 200));
@@ -212,12 +216,12 @@ public class Insert_Office extends javax.swing.JFrame {
         Insert_Office_Category.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Office_Category.setText("OFFICE");
         Insert_Office_Category.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Office_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Office_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 200, 31));
 
         Insert_Office_Brand.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Office_Brand.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Office_Brand.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Office_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Office_Brand, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 200, 31));
 
         Insert_Office_Price.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Office_Price.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -235,15 +239,15 @@ public class Insert_Office extends javax.swing.JFrame {
                 Insert_Office_PriceKeyTyped(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Office_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Office_Price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 200, 31));
 
         Insert_Office_date.setFieldFont(new java.awt.Font("Arial", java.awt.Font.PLAIN, 14));
-        KG2_ADD_STOCK_GENSET.add(Insert_Office_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Office_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 200, 31));
 
         Insert_Office_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "LAPTOP", "INK", "PRINT", "PAPER", "BALLPEN", "ERASER" }));
+        Insert_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "LAPTOP", "INK", "PRINT", "PAPER", "BALLPEN", "ERASER", "OTHER" }));
         Insert_Office_Type.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Office_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Office_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 200, 31));
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(102, 255, 102));
@@ -304,12 +308,12 @@ public class Insert_Office extends javax.swing.JFrame {
         Insert_Office_Remarks.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Office_Remarks.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Office_Remarks.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Office_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Office_Remarks, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 200, 31));
 
         Insert_Office_Incharges.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         Insert_Office_Incharges.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Insert_Office_Incharges.setBorder(null);
-        KG2_ADD_STOCK_GENSET.add(Insert_Office_Incharges, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Office_Incharges, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 200, 31));
 
         perTxt.setEditable(false);
         perTxt.setBackground(new java.awt.Color(102, 255, 102));
@@ -329,7 +333,7 @@ public class Insert_Office extends javax.swing.JFrame {
                 Insert_Office_total_priceKeyReleased(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Office_total_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 210, 31));
+        KG2_ADD_STOCK_GENSET.add(Insert_Office_total_price, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 200, 31));
 
         jTextField6.setEditable(false);
         jTextField6.setBackground(new java.awt.Color(102, 255, 102));
@@ -338,6 +342,30 @@ public class Insert_Office extends javax.swing.JFrame {
         jTextField6.setText(" TOTAL PRICE");
         jTextField6.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 160, 31));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 20, 20));
+
+        jLabel23.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 20, 20));
+
+        jLabel24.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 20, 20));
+
+        jLabel25.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 20, 20));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 750, 550));
 
@@ -557,6 +585,10 @@ public class Insert_Office extends javax.swing.JFrame {
     public static javax.swing.JPanel Stock_Genset_Panel_Back;
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
     private javax.swing.JLabel Stock_Genset_Update;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

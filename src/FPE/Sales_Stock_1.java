@@ -34,32 +34,46 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     String filename = null;
    
     
-    //-----FOR COMPUTATION-----------------------------------------------------------------------
-    int add_sale_quantity = 0,add_sale_price = 0,add_sale_total = 0;
+   // ADDING QUANTITY FOR SALE CART
     
-    int get_stock_quantity = 0,updated_stock_price=0 ;
+   int price;
+   int quantity;
+   int avail;
+   
+   int chectout_quantity,chectout_total_price;  
+   // UPDATE THE QUANTITY OG STOCK 
+   
+   int update_stock_quantity,update_stock_total_price;
     
-    int updated_stock_quantity,updated_stock_total,updated_stock_total1;
-    
-    int update_sale_quantity=0,updated_Sale_total=0;
-    
-    int get_sale_quantity=0;
-    
-    
-    //----FOR RETURN----------------------------------------
-    int Avail_quantity ;
-    int Avail_total_price;
-    
-    // ----FOR STOCK----------------------------------------
-    int Update_quantity ;
-    int Update_total_price;
+
+   
+
+   
+   
+//    
+//    // ----FOR STOCK----------------------------------------
+//    int Update_Stock_quantity ;
+//    int Update_Stock_total_price;
+//    
+//     //----FOR UPDATE----------------------------------------
+//    int Update_Sale_quantity ;
+//    int Update_Sale_total_price;
+//    
+//    // ----FOR STOCK RETURN----------------------------------------
+//    int Update_Stock_quantity_return;
+//    int Update_Stock_total_price_return;
     
     //----FOR SALE------------------------------------------
+    int parts_quant ;
+    //--------
+    int Sale_price;
     int Sale_quantity ;
-    int Sale_total_price;
-    //int ads;
+    int Sale_total;
+   
     int stock_ids;
-    int sale_ids;
+    int sale_ids; 
+    
+    int process_no;
     
     public Sales_Stock_1() {
         initComponents();
@@ -634,7 +648,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     String seller_price = Sale_Gen_Seller_Price.getText().toUpperCase();
     String avail = Sale_Gen_available_stock.getText();
     String quantity = Sale_Gen_quantity.getText(); 
-    total_price = Integer.parseInt(Sale_Gen_total_price.getText());
+    //total_price = Integer.parseInt(Sale_Gen_total_price.getText());
     int aq = Integer.parseInt(avail);
     int q = Integer.parseInt(quantity);
 //    int avai11 = Integer.parseInt(""+avail);
@@ -652,50 +666,48 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     
     String date_outbound = "";
     String verify = "";
-    String process = Integer.toString(Webpage.cc.process);
+    String proces = Integer.toString(Webpage.cc.process);
     
     String project = "";
-  
-    if(quantity.equals("") && total_price == 0)
+    String action = "SALE";
+    
+    if(quantity.equals(""))
         {
             JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
         }
-    else if(aq < q)
+     else if(aq < q)
         {
-             JOptionPane.showMessageDialog(null, "THE QUANTITY ENTERED IS TO MUCH!!","",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "THE QUANTITY ENTERED IS TO MUCH!!","",JOptionPane.ERROR_MESSAGE);
         }
+     
     else if(btn.equals(" CHECK OUT"))
         {
-      
-        
-        if(stock_ids == sale_ids)
-        {
-            
-            if(!Class_Amount.CartUpdateQuantityAndTotal(update_sale_quantity, updated_Sale_total, Generator_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+update_sale_quantity, updated_Sale_total, Generator_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_total, Generator_id))
+            if(stock_ids == sale_ids )
             {
-
-                JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
-            }
-            
-        }
-         else if(!Class_Cart.InsertCart(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+update_sale_quantity, updated_Sale_total, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_total, Generator_id))
-            {
-                JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
-            }
-
-        }
-    
-        else if(btn.equals(" REMOVE"))
-        {
-            if(!Class_Amount.CartUpdateQuantityAndTotal(updated_stock_quantity, updated_stock_total, Generator_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+updated_stock_quantity, updated_stock_quantity, Generator_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+update_sale_quantity, updated_stock_total1, Generator_id))
+     
+              if(!Class_Amount.CartUpdateQuantityAndTotal(chectout_quantity, update_stock_total_price, Generator_id) && !Class_Amount.HistoryUpdateforSale(""+chectout_quantity, chectout_total_price, Generator_id,process_no,verify) && !Class_Amount.StockUpdateQuantityAndTotal(""+update_stock_quantity, update_stock_total_price, Generator_id))
                 {
-                    System.out.print(""+updated_stock_quantity);
-                    System.out.print(updated_Sale_total);
+                    JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
+                }
+              
+            }
+            
+            else if(!Class_Cart.InsertCart(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+ chectout_quantity, chectout_total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, proces, verify) && !Class_History.InsertHistory(Generator_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+chectout_quantity, chectout_total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, proces, verify, project,action) && !Class_Amount.StockUpdateQuantityAndTotal(""+update_stock_quantity, update_stock_total_price, Generator_id))
+                {
+                    JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
+                }
+        }         
+    
+    else if(btn.equals(" REMOVE"))
+        {
+        
+            if(!Class_Amount.CartUpdateQuantityAndTotal(update_stock_quantity, update_stock_total_price, Generator_id) && !Class_Amount.HistoryUpdateforSale(""+update_stock_quantity, update_stock_total_price, Generator_id,process_no,verify) && !Class_Amount.StockUpdateQuantityAndTotal(""+chectout_quantity, chectout_total_price, Generator_id))
+                {
                     JOptionPane.showMessageDialog(null, " SUCCESSFULY REMOVE !");Webpage.Refresh();  dispose();
                 }
-            if(updated_stock_quantity == 0)
+            if(chectout_quantity == 0)
                 {
-                    if(!Class_Amount.HistoryDelete(Generator_id) &&  !Class_Amount.CartDelete(Generator_id )){
+                    if(!Class_Amount.HistoryDelete(Generator_id,process_no,verify) &&  !Class_Amount.CartDelete(Generator_id )){
                         Webpage.Refresh();  dispose();
                     }
                 }
@@ -751,8 +763,7 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
 
     private void Sale_Generator_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Sale_Generator_DisplayAncestorAdded
     String Banner = Sale_Generator_Display.getText();
-    
-    
+      
     if(Banner.equals("SALE GENERATOR"))
     {
         String ids = Webpage.sales_id;
@@ -762,11 +773,9 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
             while(rs.next()){
             Generator_id = rs.getString("STOCK ID");        
             stock_ids = Integer.parseInt(Generator_id);
-            
             Sale_Gen_date_inbound.setText(rs.getString("DATE INBOUND"));
             Sale_Gen_category.setText(rs.getString("CATEGORY"));          
             Sale_Gen_Brand.setText(rs.getString("BRAND"));
-    
             Sale_Gen_Model.setText(rs.getString("MODEL"));
             Sale_Gen_kva.setText(rs.getString("KVA"));
             Sale_Gen_Phasing.setText(rs.getString("PHASING"));
@@ -778,24 +787,16 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
             Sale_Gen_available_stock.setText(rs.getString("QUANTITY"));
             remarks = rs.getString("REMARKS");
                        
-            //Sale_Gen_total_price.setText(""+rs.getInt("TOTAL PRICE"));
-            
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Gen_Pic.getWidth(), Sale_Gen_Pic.getHeight(),Image.SCALE_SMOOTH) );
             Sale_Gen_Pic.setIcon(imageicon);
             supplier_id = rs.getString("SUPPLIER ID");
-
             }
-            
-            //-- 
-            
         }
-        
-        catch(Exception e){
+            catch(Exception e){
             e.printStackTrace();
         }
-
-    
+  
          try{
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = '"+supplier_id+"'");
             ResultSet rs = ps.executeQuery();
@@ -803,32 +804,39 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
           
             Sale_Gen_Supplier_Name.setText(rs.getString("NAME"));
             Sale_Gen_Supplier_Address.setText(rs.getString("ADDRESS"));
-      
             Sale_Gen_Supplier_Contact.setText(rs.getString("CONTACT"));
-            
-            
             }
         }
         catch(Exception e){
             e.printStackTrace();
         }
          
-        
         try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `cart_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `cart_table` WHERE `STOCK ID`='"+ids+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
           
             sale_ids = rs.getInt("STOCK ID");
             Sale_quantity = rs.getInt("QUANTITY");
-            System.out.println(""+sale_ids);
-            System.out.println(""+Sale_quantity);
-            
+            System.out.println(" STOCK ID "+sale_ids);
+            System.out.println(" STOCK QUANTITY "+Sale_quantity);
             }
         }
         catch(Exception e){
             e.printStackTrace();
         }
+        
+       try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `cart_table` WHERE`STOCK ID`= "+ids+" ");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            process_no = rs.getInt("PROCESS");          
+            System.out.println("PROCESS ID "+process_no);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        } 
     }
     
     
@@ -837,21 +845,16 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
     
     else if(Banner.equals("REMOVE GENERATOR"))
     {
+        String ids = Webpage.cart_id;
         try{
-            
-            String ids = Webpage.cart_id;
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `cart_table` WHERE `STOCK ID` = '"+ids+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             Generator_id = rs.getString("STOCK ID");   
             stock_ids = Integer.parseInt(Generator_id);
-            
             Sale_Gen_date_inbound.setText(rs.getString("DATE INBOUND"));
             Sale_Gen_category.setText(rs.getString("CATEGORY"));
-            
             Sale_Gen_Brand.setText(rs.getString("BRAND"));
-           
-            
             Sale_Gen_Model.setText(rs.getString("MODEL"));
             Sale_Gen_kva.setText(rs.getString("KVA"));
             Sale_Gen_Phasing.setText(rs.getString("PHASING"));
@@ -862,13 +865,8 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
             Sale_Gen_Alternator.setText(rs.getString("ALTERNATOR S.N"));
             jTextField16.setText(" ORDER QUANTITY");
             Sale_Gen_available_stock.setText(rs.getString("QUANTITY"));
-            
             Sale_Gen_total_price.setText(rs.getString("TOTAL PRICE"));
             remarks = rs.getString("REMARKS");
-            
-            
-            //Sale_Gen_total_price.setText(""+rs.getInt("TOTAL PRICE"));
-            
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Gen_Pic.getWidth(), Sale_Gen_Pic.getHeight(),Image.SCALE_SMOOTH) );
             Sale_Gen_Pic.setIcon(imageicon);
@@ -876,15 +874,13 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
             }
             
             try{
-            ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+ids +"' ");
-            
+            ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+ids+"' ");
             rs = ps.executeQuery();
             while(rs.next()){
-            Avail_quantity = rs.getInt("QUANTITY");       
-            //System.out.print(""+Avail_qiantity);
+            parts_quant = rs.getInt("QUANTITY");       
+            System.out.print(""+parts_quant);
             }
             }catch (Exception e){
-            
             }
         }
         catch(Exception e){
@@ -895,7 +891,6 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = '"+supplier_id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-          
             Sale_Gen_Supplier_Name.setText(rs.getString("NAME"));
             Sale_Gen_Supplier_Address.setText(rs.getString("ADDRESS"));   
             Sale_Gen_Supplier_Contact.setText(rs.getString("CONTACT"));                     
@@ -906,16 +901,26 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
         }
          
          try{
-             //sale_ids = Integer.parseInt(Webpage.sales_id);
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+ids+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-            
             sale_ids = rs.getInt("STOCK ID");
             Sale_quantity = rs.getInt("QUANTITY");
-            System.out.println(""+sale_ids);
-            System.out.println(""+Sale_quantity);
+            System.out.println(" STOCK ID "+sale_ids);
+            System.out.println(" STOCK QUANTITY "+Sale_quantity);
             
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+         
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `cart_table` WHERE`STOCK ID`= "+ids+" ");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            process_no = rs.getInt("PROCESS");          
+            System.out.println("PROCESS ID "+process_no);
             }
         }
         catch(Exception e){
@@ -965,56 +970,38 @@ public class Sales_Stock_1 extends javax.swing.JFrame {
 
     private void Sale_Gen_quantityKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Gen_quantityKeyReleased
 
-    add_sale_price = Integer.parseInt(Sale_Gen_Seller_Price.getText());
-    
-
+       
        String q = Sale_Gen_quantity.getText();
-
        if(q.equals(""))
        {
-        add_sale_total = add_sale_price * 0;    
-        Sale_Gen_total_price.setText(""+add_sale_total); 
-       }else
+           int total = price * 0;      
+           Sale_Gen_total_price.setText(""+total);
+       }
+       else   
        {
-           add_sale_quantity = Integer.parseInt(Sale_Gen_quantity.getText());
-           int aq = Integer.parseInt(Sale_Gen_available_stock.getText());
-           if(aq >= add_sale_quantity){
-               
-           
-        //----   FOR ADD SALE
-        
-        add_sale_total = add_sale_price * add_sale_quantity;
-        Sale_Gen_total_price.setText(""+add_sale_total); 
-        System.out.println("------------FOR ADD SALE---------------------------------------------");
-        System.out.println(""+add_sale_quantity);
-        System.out.println(""+add_sale_total);
-        System.out.println();
-        
-        //----   FOR UPDATE SALE
-        
-        update_sale_quantity = Sale_quantity + add_sale_quantity;
-        updated_Sale_total = update_sale_quantity * add_sale_price;
-        System.out.println("------------FOR UPDATE SALE-------------------------------------------");
-        System.out.println(""+update_sale_quantity);
-        System.out.println(""+updated_Sale_total);
-        System.out.println();
-        
-        //----   FOR UPDATE THE STOCK 
-        
-        updated_stock_quantity = Integer.parseInt(Sale_Gen_available_stock.getText()) - add_sale_quantity;
-        updated_stock_total = updated_stock_quantity *add_sale_price ;
-        
-        int updated_stock_quantity1= Sale_quantity + add_sale_quantity;
-        updated_stock_total1 =  updated_stock_quantity1 * add_sale_price;
-        System.out.println("------------FOR UPDATE THE STOCK---------------------------------------");
-        System.out.println(""+updated_stock_quantity);
-        
-        System.out.println("\n \n");
-            }
-         
-        }
+
+        price =  Integer.parseInt(Sale_Gen_Seller_Price.getText());
+        quantity = Integer.parseInt(Sale_Gen_quantity.getText());
+        avail = Integer.parseInt(Sale_Gen_available_stock.getText());
  
-       
+        // ADDING QUANTITY FOR SALE CART
+        chectout_quantity = Sale_quantity + quantity ;
+        chectout_total_price = price * chectout_quantity;
+        Sale_Gen_total_price.setText(""+chectout_total_price);
+        System.out.println("TOTAL CHECK OUT ITEM ");
+        System.out.println(""+chectout_quantity);
+        System.out.println(""+chectout_total_price);
+        System.out.println("\n");
+        
+        // UPDATE THE QUANTITY OF STOCK 
+        update_stock_quantity = avail - quantity;
+        update_stock_total_price = price * update_stock_quantity;
+        System.out.println("UPDATE THE QUANTITY OF STOCK ");
+        System.out.println(""+update_stock_quantity);
+        System.out.println(""+update_stock_total_price);
+        System.out.println("\n");
+  
+       }
     }//GEN-LAST:event_Sale_Gen_quantityKeyReleased
 
     private void Sale_Gen_quantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sale_Gen_quantityKeyTyped

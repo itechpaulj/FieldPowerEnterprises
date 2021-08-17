@@ -7,8 +7,8 @@ package FPE;
 
 /**
  *
- * @author Javinez
+ * @author Robles
  */
-class BarChartExample {
+public class Class_Validation {
     
 }

@@ -1030,7 +1030,7 @@
         <Container class="javax.swing.JPanel" name="Stock_Genset_Panel_View1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="53" green="56" red="ff" type="rgb"/>
+              <Color blue="66" green="66" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <AuxValues>

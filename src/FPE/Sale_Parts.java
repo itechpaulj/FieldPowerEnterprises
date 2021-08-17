@@ -31,19 +31,15 @@ public class Sale_Parts extends javax.swing.JFrame {
     String remarks="";
     //-----------------------------------------------------------------
        
-    //----FOR UPDATE----------------------------------------
-    int Update_Sale_quantity ;
-    int Update_Sale_total_price;
-    
-    // ----FOR STOCK----------------------------------------
-    int Update_Stock_quantity ;
-    int Update_Stock_total_price;
-    
-    // ----FOR STOCK RETURN----------------------------------------
-    int Update_Stock_quantity_return;
-    int Update_Stock_total_price_return;
-    
-    //----FOR SALE------------------------------------------
+   int price;
+   int quantity;
+   int avail;
+   
+   int chectout_quantity,chectout_total_price;  
+   // UPDATE THE QUANTITY OG STOCK 
+   
+   int update_stock_quantity,update_stock_total_price;
+   
     int parts_quant ;
     //--------
     int Sale_price;
@@ -52,6 +48,8 @@ public class Sale_Parts extends javax.swing.JFrame {
    
     int stock_ids;
     int sale_ids; 
+    
+    int process_no;
     
     public Sale_Parts() {
         initComponents();
@@ -485,11 +483,13 @@ public class Sale_Parts extends javax.swing.JFrame {
     
     String date_outbound = "";
     String verify = "";
-    String process = Integer.toString(Webpage.cc.process);
+    String proces = Integer.toString(Webpage.cc.process);
     String project = "";
-    
+    String action = "SALE";
             
-    if(quantity.equals("") || total_price == 0)
+   
+    
+    if(quantity.equals(""))
         {
             JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
         }
@@ -500,46 +500,37 @@ public class Sale_Parts extends javax.swing.JFrame {
      
     else if(btn.equals(" CHECK OUT"))
         {
-          
             if(stock_ids == sale_ids )
-               
             {
      
-                if(!Class_Amount.CartUpdateQuantityAndTotal(Update_Sale_quantity, Update_Sale_total_price, Parts_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+Update_Sale_quantity, Update_Sale_total_price, Parts_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id))
-                    {
-                        System.out.print(""+Update_Sale_quantity);
-                        System.out.print(Update_Sale_total_price);
-                        JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
-                    }
-                
+              if(!Class_Amount.CartUpdateQuantityAndTotal(chectout_quantity, chectout_total_price, Parts_id) && !Class_Amount.HistoryUpdateforSale(""+chectout_quantity, chectout_total_price, Parts_id,process_no,verify) && !Class_Amount.StockUpdateQuantityAndTotal(""+update_stock_quantity, update_stock_total_price, Parts_id))
+                {
+                    JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
+                }
+              
             }
-           else if(!Class_Cart.InsertCart(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+ Update_Sale_quantity, Update_Sale_total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id))
-                    {
-                        JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
-                    }
-    
+            
+            else if(!Class_Cart.InsertCart(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+ chectout_quantity, chectout_total_price, engine_sn, alternator_sn, supplier_id, date_inbound, date_outbound, images, incharge, remarks, proces, verify)  && !Class_History.InsertHistory(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+chectout_quantity, chectout_total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, proces, verify, project,action) && !Class_Amount.StockUpdateQuantityAndTotal(""+update_stock_quantity, update_stock_total_price, Parts_id))
+                {
+                    JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
+                }
         }         
-
-             else if(btn.equals(" REMOVE"))
+    
+    else if(btn.equals(" REMOVE"))
         {
         
-        
-                if(!Class_Amount.CartUpdateQuantityAndTotal(Update_Stock_quantity, Update_Stock_total_price, Parts_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity_return, Update_Stock_total_price_return, Parts_id))
-                    {
-                        System.out.print(""+Update_Stock_quantity);
-                        System.out.print(Update_Stock_total_price);
-                        JOptionPane.showMessageDialog(null, " SUCCESSFULY REMOVE !");Webpage.Refresh();  dispose();
+            if(!Class_Amount.CartUpdateQuantityAndTotal(update_stock_quantity, update_stock_total_price, Parts_id) && !Class_Amount.HistoryUpdateforSale(""+update_stock_quantity, update_stock_total_price, Parts_id,process_no,verify) && !Class_Amount.StockUpdateQuantityAndTotal(""+chectout_quantity, chectout_total_price, Parts_id))
+                {
+                    JOptionPane.showMessageDialog(null, " SUCCESSFULY REMOVE !");Webpage.Refresh();  dispose();
+                }
+            if(chectout_quantity == 0)
+                {
+                    if(!Class_Amount.HistoryDelete(Parts_id,process_no,verify) &&  !Class_Amount.CartDelete(Parts_id )){
+                        Webpage.Refresh();  dispose();
                     }
-                if(Update_Stock_quantity == 0)
-                    {
-                        if(!Class_Amount.HistoryDelete(Parts_id) &&  !Class_Amount.CartDelete(Parts_id )){
-                            Webpage.Refresh();  dispose();
-                        }
-                    }
+                }
             
         }
-    
-
      
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
@@ -572,9 +563,7 @@ public class Sale_Parts extends javax.swing.JFrame {
 
     private void Sale_Parts_DisplayAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_Sale_Parts_DisplayAncestorAdded
     String Banner = Sale_Parts_Display.getText();
-    
-    
-    
+
     if(Banner.equals("SALE PARTS"))
     {
         String ids = Webpage.sales_id;
@@ -590,9 +579,7 @@ public class Sale_Parts extends javax.swing.JFrame {
             Sale_Parts_Type.setText(rs.getString("TYPE"));
             Sale_Parts_price.setText(rs.getString("SELLER PRICE"));
             Sale_Parts_available_quantity.setText(rs.getString("QUANTITY"));
-            
             remarks = rs.getString("REMARKS");
-            
             supplier_id = rs.getString("SUPPLIER ID");
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Parts_pic.getWidth(), Sale_Parts_pic.getHeight(),Image.SCALE_SMOOTH) );
@@ -607,13 +594,9 @@ public class Sale_Parts extends javax.swing.JFrame {
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = '"+supplier_id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-            
             Sale_PartsSupplier_name.setText(rs.getString("NAME"));
             Sale_Parts_Supplier_Address.setText(rs.getString("ADDRESS"));
-    
             Sale_Parts_Contact.setText(rs.getString("CONTACT"));
-            
-            
             }
         }
         catch(Exception e){
@@ -621,15 +604,25 @@ public class Sale_Parts extends javax.swing.JFrame {
         }
          
          try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `cart_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `cart_table` WHERE `STOCK ID`='"+ids+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-          
             sale_ids = rs.getInt("STOCK ID");
-            parts_quant = rs.getInt("QUANTITY");
-            System.out.println(""+sale_ids);
-            System.out.println(""+parts_quant);
-            
+            Sale_quantity = rs.getInt("QUANTITY");
+            System.out.println(" STOCK ID "+sale_ids);
+            System.out.println(" STOCK QUANTITY "+Sale_quantity);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+         
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `cart_table` WHERE`STOCK ID`= "+ids+" ");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            process_no = rs.getInt("PROCESS");          
+            System.out.println("PROCESS ID "+process_no);
             }
         }
         catch(Exception e){
@@ -639,23 +632,15 @@ public class Sale_Parts extends javax.swing.JFrame {
     
     
     
-    
-    
-    
-    
-    
-    
-    
     else if(Banner.equals("REMOVE PARTS"))
         
     {
-        String idss = Webpage.cart_id;
+        String ids = Webpage.cart_id;
         try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `cart_table` WHERE `STOCK ID`= '"+idss+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `cart_table` WHERE `STOCK ID`= '"+ids+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
             Parts_id = rs.getString("STOCK ID");
-           
             Sale_Parts_inbound_date.setText(rs.getString("DATE INBOUND"));
             Sale_Parts_Category.setText(rs.getString("CATEGORY"));
             Sale_Parts_Brand.setText(rs.getString("BRAND"));
@@ -664,9 +649,7 @@ public class Sale_Parts extends javax.swing.JFrame {
             jTextField8.setText(" ORDER QUANTITY");
             Sale_Parts_available_quantity.setText(rs.getString("QUANTITY"));
             Sale_Parts_total_price.setText(""+rs.getInt("TOTAL PRICE"));
-            
             remarks = rs.getString("REMARKS");
-            
             supplier_id = rs.getString("SUPPLIER ID");
             images = rs.getBytes("IMAGE");
             ImageIcon imageicon = new ImageIcon (new ImageIcon(images).getImage().getScaledInstance(Sale_Parts_pic.getWidth(), Sale_Parts_pic.getHeight(),Image.SCALE_SMOOTH) );
@@ -681,13 +664,9 @@ public class Sale_Parts extends javax.swing.JFrame {
             PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT * FROM `supplier_table` WHERE `ID` = '"+supplier_id+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-            
             Sale_PartsSupplier_name.setText(rs.getString("NAME"));
             Sale_Parts_Supplier_Address.setText(rs.getString("ADDRESS"));
-    
             Sale_Parts_Contact.setText(rs.getString("CONTACT"));
-            
-            
             }
         }
         catch(Exception e){
@@ -695,21 +674,30 @@ public class Sale_Parts extends javax.swing.JFrame {
         }
          
          try{
-            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+Webpage.sales_id+"'");
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`,`QUANTITY` FROM `stock_table` WHERE `STOCK ID`='"+ids+"'");
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-          
             sale_ids = rs.getInt("STOCK ID");
             parts_quant = rs.getInt("QUANTITY");
             System.out.println(""+sale_ids);
             System.out.println(""+parts_quant);
-            
             }
         }
         catch(Exception e){
             e.printStackTrace();
         }
           
+        try{
+            PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `cart_table` WHERE`STOCK ID`= "+ids+" ");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            process_no = rs.getInt("PROCESS");          
+            System.out.println("PROCESS ID "+process_no);
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
     }//GEN-LAST:event_Sale_Parts_DisplayAncestorAdded
 
@@ -741,35 +729,26 @@ public class Sale_Parts extends javax.swing.JFrame {
        }
        else
        {
-          Sale_price =  Integer.parseInt(Sale_Parts_price.getText());
-          Sale_quantity = Integer.parseInt(Sale_Parts_quantity.getText());
-          Sale_total = Sale_quantity * Sale_price;
-          Sale_Parts_total_price.setText(""+Sale_total);
-          System.out.println("FOR ADD");
-          System.out.println(""+Sale_quantity);
-          System.out.println(""+Sale_total);
-          System.out.println("\n \n");
-          int Sale_avail = Integer.parseInt(Sale_Parts_available_quantity.getText());
-
-          System.out.println("FOR ADD CHECKOUT");
-          Update_Sale_quantity = parts_quant + Sale_quantity;
-          Update_Sale_total_price = Update_Sale_quantity * Sale_price;
-          System.out.println(""+Update_Sale_quantity);
-          System.out.println(""+Update_Sale_total_price);
-          System.out.println("\n \n");
-          
-          System.out.println("FOR UPDATE STOCK");
-          Update_Stock_quantity = Sale_avail - Sale_quantity;
-          Update_Stock_total_price = Update_Stock_quantity * Sale_price;
-          System.out.println(""+Update_Stock_quantity);
-          System.out.println(""+Update_Stock_total_price);
-          System.out.println("\n \n");
-          
-          Update_Stock_quantity_return = parts_quant + Sale_quantity;
-          Update_Stock_total_price_return = Update_Stock_quantity_return * Sale_price;
-          System.out.println(""+Update_Stock_quantity_return);
-          System.out.println(""+Update_Stock_total_price_return);
-          System.out.println("\n \n");System.out.println("\n \n");
+        price =  Integer.parseInt(Sale_Parts_price.getText());
+        quantity = Integer.parseInt(Sale_Parts_quantity.getText());
+        avail = Integer.parseInt(Sale_Parts_available_quantity.getText());
+        
+        // ADDING QUANTITY FOR SALE CART
+        chectout_quantity = Sale_quantity + quantity ;
+        chectout_total_price = price * chectout_quantity;
+        Sale_Parts_total_price.setText(""+chectout_total_price);
+        System.out.println("TOTAL CHECK OUT ITEM ");
+        System.out.println(""+chectout_quantity);
+        System.out.println(""+chectout_total_price);
+        System.out.println("\n");
+        
+        // UPDATE THE QUANTITY OF STOCK 
+        update_stock_quantity = avail - quantity;
+        update_stock_total_price = price * update_stock_quantity;
+        System.out.println("UPDATE THE QUANTITY OF STOCK ");
+        System.out.println(""+update_stock_quantity);
+        System.out.println(""+update_stock_total_price);
+        System.out.println("\n");
   
        }
        

@@ -15,7 +15,7 @@ import javax.swing.table.TableModel;
  */
 public class Setting extends javax.swing.JFrame {
 
-   public static String id = ""; 
+    public static String id = ""; 
     public Setting() {
         initComponents();
         Webpage.ct.Admin();
@@ -40,8 +40,6 @@ public class Setting extends javax.swing.JFrame {
         back = new javax.swing.JLabel();
         adds = new javax.swing.JPanel();
         add = new javax.swing.JLabel();
-        delete = new javax.swing.JPanel();
-        deletes = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -64,7 +62,7 @@ public class Setting extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 440, 90));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 440, 80));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 120));
 
@@ -126,7 +124,7 @@ public class Setting extends javax.swing.JFrame {
             .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        jPanel4.add(backs, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 180, 45));
+        jPanel4.add(backs, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, 180, 45));
 
         adds.setBackground(new java.awt.Color(24, 165, 88));
 
@@ -158,39 +156,7 @@ public class Setting extends javax.swing.JFrame {
             .addComponent(add, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        jPanel4.add(adds, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 180, 45));
-
-        delete.setBackground(new java.awt.Color(255, 102, 102));
-
-        deletes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        deletes.setForeground(new java.awt.Color(255, 255, 255));
-        deletes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        deletes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/delete_35px.png"))); // NOI18N
-        deletes.setText("DELETE");
-        deletes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                deletesMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                deletesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                deletesMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout deleteLayout = new javax.swing.GroupLayout(delete);
-        delete.setLayout(deleteLayout);
-        deleteLayout.setHorizontalGroup(
-            deleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(deletes, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-        );
-        deleteLayout.setVerticalGroup(
-            deleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(deletes, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-        );
-
-        jPanel4.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 180, 45));
+        jPanel4.add(adds, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 180, 45));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 680, 450));
 
@@ -213,25 +179,46 @@ public class Setting extends javax.swing.JFrame {
        int i=admin_table.getSelectedRow();
         TableModel model = admin_table.getModel();
         id = model.getValueAt(i,0).toString();
-
-    }//GEN-LAST:event_admin_tableMouseClicked
-
-    private void deletesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletesMouseClicked
-       if(id.equals(""))
-       {
-           JOptionPane.showMessageDialog(null, " SELECT USER TO DELETE !!","ACTION REQUIRED",JOptionPane.UNDEFINED_CONDITION);
-       }
-       else
-       {
-           if(!Class_Login.Delete(id))
-           {
-               JOptionPane.showMessageDialog(null, " SUCCESSFULY DELETE  !!"); Webpage.ct.Admin();
+         String[] options = new String[2];
+        
+        options[0] = (" UPDATE  ");
+        options[1] = (" DELETE  ");
+        
+        int opt = JOptionPane.showOptionDialog(null," DO YOU WANT TO ", null,0,JOptionPane.UNDEFINED_CONDITION,null,options,null);
+        
+        if(opt == 0)
+        {
+            Add_Admin ic = new Add_Admin();
+            ic.setVisible(true);
+            Add_Admin.add_admin.setText(" UPDATE MEMBER ");  
             
-         
-               id="";
+        }
+        else if(opt == 1)
+        {
+           if(id.equals(""))
+           {
+               JOptionPane.showMessageDialog(null, "PLEASE SELECT !",null,JOptionPane.UNDEFINED_CONDITION);
            }
-       }
-    }//GEN-LAST:event_deletesMouseClicked
+           else
+           {
+               String[] deleteoptions = new String[2];
+               deleteoptions[0] = (" YES ");
+               deleteoptions[1] = (" NO  ");
+
+               int opts = JOptionPane.showOptionDialog(null," DO YOU WANT TO DELETE ?",null, 0,JOptionPane.UNDEFINED_CONDITION,null,deleteoptions,null);
+
+               if(opts == 0)
+               {
+                    if(!Class_Login.Delete(id))
+                    {
+                        JOptionPane.showMessageDialog(null, " SUCCESSFULY DELETED  !",null,JOptionPane.UNDEFINED_CONDITION); Webpage.ct.Admin();
+                         id=""; 
+                    }
+               }
+
+            }
+           }
+    }//GEN-LAST:event_admin_tableMouseClicked
 
     private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
         dispose();
@@ -242,11 +229,6 @@ public class Setting extends javax.swing.JFrame {
         add.setForeground(new Color(51,51,51));
     }//GEN-LAST:event_addMouseEntered
 
-    private void deletesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletesMouseEntered
-        delete.setBackground(new Color(163, 235, 177));
-        deletes.setForeground(new Color(51,51,51));
-    }//GEN-LAST:event_deletesMouseEntered
-
     private void backMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseEntered
        backs.setBackground(new Color(163, 235,177));
         back.setForeground(new Color(51,51,51));
@@ -256,11 +238,6 @@ public class Setting extends javax.swing.JFrame {
        adds.setBackground(new Color(24,165,88));
         add.setForeground(new Color(255,255,255));
     }//GEN-LAST:event_addMouseExited
-
-    private void deletesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletesMouseExited
-        delete.setBackground(new Color(255,102,102));
-        deletes.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_deletesMouseExited
 
     private void backMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseExited
        backs.setBackground(new Color(185,144,149));
@@ -308,8 +285,6 @@ public class Setting extends javax.swing.JFrame {
     public static javax.swing.JTable admin_table;
     private javax.swing.JLabel back;
     public static javax.swing.JPanel backs;
-    public static javax.swing.JPanel delete;
-    private javax.swing.JLabel deletes;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

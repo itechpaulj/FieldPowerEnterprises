@@ -6,6 +6,8 @@
 package FPE;
 
 import java.awt.Color;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,6 +18,14 @@ public class Add_Admin extends javax.swing.JFrame {
 
     public static String admin_name = Class_Login.admin_name;
     public static String admin_id = Class_Login.admin_id;
+    
+    //public static String admin_ids = "";
+    public static String name = "";
+    public static String level = "";
+    public static String user = "";
+        
+    public static String pass = "";
+    public static String cpass = "";
     
     public Add_Admin() {
         initComponents();
@@ -31,7 +41,7 @@ public class Add_Admin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        add_admin = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         Login_Btn = new javax.swing.JLabel();
@@ -52,15 +62,24 @@ public class Add_Admin extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(2, 51, 74));
+        jPanel4.setBackground(new java.awt.Color(2, 71, 94));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 34)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Logo/Logo.png"))); // NOI18N
-        jLabel5.setText(" Add Member");
-        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 500, 100));
+        add_admin.setFont(new java.awt.Font("Arial", 1, 34)); // NOI18N
+        add_admin.setForeground(new java.awt.Color(255, 255, 255));
+        add_admin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add_admin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Logo/Logo.png"))); // NOI18N
+        add_admin.setText(" Add Member");
+        add_admin.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                add_adminAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jPanel4.add(add_admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 500, 100));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 120));
 
@@ -175,7 +194,7 @@ public class Add_Admin extends javax.swing.JFrame {
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Arial", 1, 17)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Btn/Btn_Admin.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/star_half_empty_25px.png"))); // NOI18N
         jLabel6.setText(" USER LEVEL");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 180, 40));
 
@@ -228,12 +247,12 @@ public class Add_Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_Login_BtnMouseEntered
 
     private void Login_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseClicked
-        String name = fn.getText().toUpperCase();
-        String level = userlevel.getSelectedItem().toString();
-        String user = username.getText();
+         name = fn.getText().toUpperCase();
+         level = userlevel.getSelectedItem().toString();
+         user = username.getText().toUpperCase();
         
-        String pass = password.getText();
-        String cpass = c_password.getText();
+         pass = password.getText().toUpperCase();
+         cpass = c_password.getText().toUpperCase();
         
         if(name.isEmpty() || level.equals("SELECT") || user.isEmpty() || pass.isEmpty() || cpass.isEmpty())
         {
@@ -243,15 +262,47 @@ public class Add_Admin extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "PASSSWORD DOES NOT MATCH !!","",JOptionPane.ERROR_MESSAGE); 
         }
-        else
+        else if (Login_Btn.getText().equals(" SAVE"))
         {
-            if(!Class_Login.InsertAdmin(pass, level, user, pass, cpass))
+            if(!Class_Login.InsertAdmin(name, level, user, pass))
             {
              JOptionPane.showMessageDialog(null, "SUCCESSFULY ADDED !"); 
-             dispose(); Webpage.ct.Admin();            }
+             dispose(); Webpage.ct.Admin();            
+            }
+        }
+        else if (Login_Btn.getText().equals(" UPDATE "))
+        {
+            if(!Class_Login.UpadatetAdmin( name, level, user, pass,admin_id))
+            {
+             JOptionPane.showMessageDialog(null, "SUCCESSFULY UPDATE !"); 
+             dispose(); Webpage.ct.Admin();            
+            }
         }
  
     }//GEN-LAST:event_Login_BtnMouseClicked
+
+    private void add_adminAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_add_adminAncestorAdded
+        String Banner = add_admin.getText();
+        String id = Setting.id;
+        if(Banner.equals(" UPDATE MEMBER ")){
+                try{
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `ID`, `NAME`, `USER LEVEL`, `USERNAME`,`PASSWORD` FROM `login` WHERE  `ID` = '"+id+"' ");
+                ResultSet rs = ps.executeQuery();
+                while(rs.next()){
+                 admin_id = rs.getString("ID");
+                 fn.setText(rs.getString("NAME"));
+                 userlevel.setSelectedItem(rs.getString("USER LEVEL"));
+                 username.setText(rs.getString("USERNAME"));
+                 password.setText(rs.getString("PASSWORD"));
+                 c_password.setText(rs.getString("PASSWORD"));
+                 Login_Btn.setText(" UPDATE ");
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+       }
+    }//GEN-LAST:event_add_adminAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -294,12 +345,12 @@ public class Add_Admin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cancel_btn;
     private javax.swing.JLabel Login_Btn;
+    public static javax.swing.JLabel add_admin;
     private javax.swing.JPasswordField c_password;
     private javax.swing.JTextField fn;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;

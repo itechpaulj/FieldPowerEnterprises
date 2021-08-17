@@ -545,7 +545,7 @@ public class View_Generator extends javax.swing.JFrame {
         });
         KG2_ADD_STOCK_GENSET.add(View_Gen_quantitty, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 250, 220, 31));
 
-        Stock_Genset_Panel_View1.setBackground(new java.awt.Color(255, 86, 83));
+        Stock_Genset_Panel_View1.setBackground(new java.awt.Color(255, 102, 102));
 
         Stock_Genset_Delete.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Stock_Genset_Delete.setForeground(new java.awt.Color(255, 255, 255));

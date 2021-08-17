@@ -1,3 +1,4 @@
+
 package FPE;
 
 import java.sql.PreparedStatement;
@@ -9,7 +10,9 @@ import static FPE.Webpage.Stock_Table;
 import static FPE.Webpage.Sales_Table;
 import static FPE.Webpage.Cart_Table;
 import static FPE.Webpage.FullOut_Table;
+import static FPE.Webpage.project_table;
 import static FPE.Webpage.History_Table; 
+
 import static FPE.Setting.admin_table;
         
 import static FPE.Table_Supplier.Supplier_table;
@@ -299,311 +302,23 @@ public class Class_tables {
     }
     
 
-//--------------------------------------------------------- FOR HISTORY TABLE ONLY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+//--------------------------------------------------------- FOR PROJECT TABLE ONLY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
     
 
-//
-//    public boolean StockedWareHouse(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`,`TYPE`, `SELLER PRICE`, `QUANTITY`, `REMARKS` FROM `summary_stock` WHERE `CATEGORY` = 'WAREHOUSE'");
-//        ResultSet rs = ps.executeQuery();
-//        All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean SalesStock(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ',`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE` `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY` FROM `summary_stock` WHERE `CATEGORY`='GENERATOR' OR `CATEGORY`='PARTS'");
-//        ResultSet rs = ps.executeQuery();
-//        Sales_Table_Generator.setModel(DbUtils.resultSetToTableModel(rs));
-//        Sales_Table_Generator.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//        }        
-//        return false;
-//    }
-//    //================
-//    
-//    public boolean Generator(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`DATE RECEIVED`,`CATEGORY`,`BRAND`,`MODEL`,`KVA`,`PHASING`,`TYPE`,FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`,`ENGINE S N`,`ALTERNATOR S N`, `QUANTITY`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='GENERATOR'");
-//        ResultSet rs = ps.executeQuery();
-//        Sales_Table_Generator.setModel(DbUtils.resultSetToTableModel(rs));
-//        Sales_Table_Generator.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean Parts(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`DATE RECEIVED`,`CATEGORY`,`BRAND`,`MODEL`,`KVA`,`PHASING`,`TYPE`,FORMAT(`SUPPLIER PRICE`, '#,##0.00') AS `SUPPLIER PRICE`,`ENGINE S N`,`ALTERNATOR S N`, `QUANTITY`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY` = 'PARTS'");
-//        ResultSet rs = ps.executeQuery();
-//        Sales_Table_Generator.setModel(DbUtils.resultSetToTableModel(rs));
-//        Sales_Table_Generator.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean Office(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`,`TYPE`, `SELLER PRICE`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS` FROM `summary_stock` WHERE `CATEGORY` = 'OFFICE'");
-//        ResultSet rs = ps.executeQuery();
-//        All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean WareHouse(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`,`TYPE`, `SELLER PRICE`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS` FROM `summary_stock` WHERE `CATEGORY` = 'WAREHOUSE'");
-//        ResultSet rs = ps.executeQuery();
-//        All_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        All_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    
-//    // SALE -----------------------------------------------------------------------------------------------------------------
-//       
-//    
-//    public boolean Sales_Stocks(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`DATE RECEIVED`,`CATEGORY`,`BRAND`,`MODEL`,`KVA`,`PHASING`,`TYPE`,FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`,`ENGINE S N`,`ALTERNATOR S N`,`SUPPLIER` FROM `summary_stock`");
-//        ResultSet rs = ps.executeQuery();
-//        Sales_Table_Generator.setModel(DbUtils.resultSetToTableModel(rs));
-//        Sales_Table_Generator.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//      public boolean Sales_Generator(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`,`DATE RECEIVED`,`CATEGORY`,`BRAND`,`MODEL`,`KVA`,`PHASING`,`TYPE`,FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`,`ENGINE S N`,`ALTERNATOR S N`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='GENERATOR'");
-//        ResultSet rs = ps.executeQuery();
-//        Sales_Table_Generator.setModel(DbUtils.resultSetToTableModel(rs));
-//        Sales_Table_Generator.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean Sales_Parts(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, `BRAND`,`TYPE`, `SELLER PRICE`, `QUANTITY`, `REMARKS`,`SUPPLIER` FROM `summary_stock` WHERE `CATEGORY` = 'PARTS'");
-//        ResultSet rs = ps.executeQuery();
-//        Sales_Table_Generator.setModel(DbUtils.resultSetToTableModel(rs));
-//        Sales_Table_Generator.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//   
-//    
-//    // WAREHOPUSE AMD STOCK  -----------------------------------------------------------------------------------------------------------------
-//    
-//    
-//    
-//    public boolean Sales_OW(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='WAREHOUSE' OR `CATEGORY`='OFFICE' OR `CATEGORY`='PARTS'  ");
-//        ResultSet rs = ps.executeQuery();
-//        Request_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Request_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    
-//    public boolean Sales_PW(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='PARTS'  ");
-//        ResultSet rs = ps.executeQuery();
-//        Request_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Request_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean Sales_Office(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY` = 'OFFICE'");
-//        ResultSet rs = ps.executeQuery();
-//        Request_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Request_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean Sales_WareHouse(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY` = 'WAREHOUSE'");
-//        ResultSet rs = ps.executeQuery();
-//        Request_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Request_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }  
-//    
-////   --- REQUEST SELECTION ---------------------------------------------------------------------------------------------------------------------------------
-//     
-//    public boolean Request_Cart(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT (`STOCK ID`) AS`ID`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY` FROM `request_cart` WHERE `CATEGORY`='WAREHOUSE' OR `CATEGORY`='OFFICE' OR `CATEGORY`='PARTS'  ");
-//        ResultSet rs = ps.executeQuery();
-//        Req_Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Req_Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    
-//    public boolean Request_Cart_Parts(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='PARTS'  ");
-//        ResultSet rs = ps.executeQuery();
-//        Req_Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Req_Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean Request_Cart_Office(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY` = 'OFFICE'");
-//        ResultSet rs = ps.executeQuery();
-//        Req_Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Req_Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean Request_Cart_WareHouse(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY` = 'WAREHOUSE'");
-//        ResultSet rs = ps.executeQuery();
-//        Req_Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Req_Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }  
-//    
-//    
-//    
-//    
-//    
-//    
-//   // CART  -----------------------------------------------------------------------------------------------------------------
-//    
-//    
-//       public boolean Cart(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT (`STOCK ID`) AS `ID`,`CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`,`QUANTITY` FROM `add_cart`");
-//        ResultSet rs = ps.executeQuery();
-//        Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean Cart_Generator(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT (`STOCK ID`) AS `ID`,`CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N` FROM `add_cart` WHERE `CATEGORY`= 'GENERATOR'");
-//        ResultSet rs = ps.executeQuery();
-//        Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//    public boolean Cart_Parts(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT (`STOCK ID`) AS `ID`,`CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N` FROM `add_cart` WHERE `CATEGORY`= 'PARTS'");
-//        ResultSet rs = ps.executeQuery();
-//        Cart_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Cart_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//            }
-//        return false;
-//    }
-//    
-//
-//    
-////  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//   
-//    
-//    public boolean request(){
-//         try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RECEIVED`, `CATEGORY`, CONCAT(`BRAND`,' ',`MODEL`, ' ' ,`KVA`,' ' ,`PHASING`) AS `DESCRIPTION`, `TYPE`, `QUANTITY`, `PERSON IN CHARGE`, `REMARKS`, `SUPPLIER` FROM `summary_stock` WHERE `CATEGORY`='PARTS' OR `CATEGORY`='OFFICE' OR `CATEGORY`='WAREHOUSE'");
-//        ResultSet rs = ps.executeQuery();
-//        Request_Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        Request_Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              //System.out.println(e);
-//        } 
-//        return false;
-//    }
-//    
-//    
-//    
-//  
-//    
-//     
-//
-//       
-//           
-//    public boolean History(){
-//        try{
-//        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `ID`, `DATE RELEASE`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, `SELLER PRICE`, `ENGINE S N`, `ALTERNATOR S N`, `QUANTITY`, `TOTAL PRICE`, `PERSON IN CHARGE`, `QUOTATION`, `OR NO` FROM `sale_summary_stock`");
-//        ResultSet rs = ps.executeQuery();
-//        History_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//        History_Table.getColumnModel().getColumn(0).setMaxWidth(100);
-//        }catch(Exception e){
-//              System.out.println(e);
-//            }
-//        return false;
-//    }
-//       
+
+    public boolean project(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT  `PROJECT NO`, `QUOTATION NO`, `DATE QUOTATION`,`TOTAL AMOUNT`,`BALANCE AMOUNT`,(SELECT `NAME` FROM `customer_table` WHERE `payment`.`CUSTOMER ID`= `customer_table`.`ID`) AS `CUSTOMER NAME`,(SELECT `NAME` FROM `agent_table` WHERE `payment`.`AGENT ID`= `agent_table`.`ID`) AS `AGENT NAME`, `STATUS` FROM `payment` GROUP BY `PROJECT NO` ");
+        ResultSet rs = ps.executeQuery();
+        project_table.setModel(DbUtils.resultSetToTableModel(rs));
+        project_table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+            }
+        return false;
+    }
+    
+    
 //       
 //    
 ////   ------- SUPPLIER  /  COSTOMER  /  STAFF  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
@@ -654,5 +369,5 @@ public class Class_tables {
              // System.out.println(e);
             }
         return false;
-    }
+       }
   }

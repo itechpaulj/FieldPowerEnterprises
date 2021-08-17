@@ -8,17 +8,21 @@ package FPE;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author ROBLES
- */
+
 public class Login extends javax.swing.JFrame {
 
     public static String admin_name = Class_Login.admin_name;
     public static String admin_id = Class_Login.admin_id;
     
+    public static String user ;
+    public static String pass ;
+      // ----------- ADMIN  ----------------------------------------------
+  
+    Class_Login l = new Class_Login();
     public Login() {
+  
         initComponents();
+       
     }
 
     /**
@@ -184,20 +188,23 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_Login_BtnMouseEntered
 
     private void Login_BtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_BtnMouseClicked
-        String user = username.getText();
-        String pass = password.getText();
+       user = username.getText().toUpperCase();
+       pass = password.getText().toUpperCase();
 
         if(!Class_Login.LoginAdmin(user, pass))
         {
-            if(Class_Login.admin_name.equals(user) && Class_Login.password.equals(pass)){
-                JOptionPane.showMessageDialog(null, "WELCOME "+Class_Login.admin_name+"","",JOptionPane.INFORMATION_MESSAGE);
-                            Webpage w = new Webpage();
+            if(Class_Login.username.equals(user) && Class_Login.password.equals(pass)){
+                JOptionPane.showMessageDialog(null, " NAME            "+Class_Login.admin_name+"\n POSITION     "+Class_Login.level+" ","  WELCOME",JOptionPane.UNDEFINED_CONDITION);
+                          
+                Webpage w = new Webpage();
+              
                             w.setVisible(true);
-                //            Mainpage.admin_id = Class_Login.admin_id;
+                            Webpage.log.setText(Class_Login.level);
+                
                 dispose();
             }
             else{
-                JOptionPane.showMessageDialog(null, "INCORRECT PASSWORD","",JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "INCORRECT PASSWORD","  INVALID CREDENTIALS",JOptionPane.UNDEFINED_CONDITION);
             }
         }
     }//GEN-LAST:event_Login_BtnMouseClicked

@@ -99,12 +99,12 @@ public class View_Office extends javax.swing.JFrame {
         View_Office_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Office_Display.setText("VIEW OFFICE ITEM");
         View_Office_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_Office_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_Office_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 320, 110));
@@ -243,7 +243,7 @@ public class View_Office extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(View_Office_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 210, 31));
 
         View_Office_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "LAPTOP", "INK", "PRINT", "PAPER", "BALLPEN", "ERASER" }));
+        View_Office_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "LAPTOP", "INK", "PRINT", "PAPER", "BALLPEN", "ERASER", "OTHER" }));
         View_Office_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Office_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, 31));
 

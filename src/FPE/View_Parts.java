@@ -107,12 +107,12 @@ public class View_Parts extends javax.swing.JFrame {
         View_Parts_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         View_Parts_Display.setText("VIEW PARTS ITEM");
         View_Parts_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 View_Parts_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(View_Parts_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 110));
@@ -305,7 +305,7 @@ public class View_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(View_Parts_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 210, 31));
 
         View_Parts_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        View_Parts_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
+        View_Parts_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS", "AVR", "OTHER" }));
         View_Parts_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(View_Parts_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 210, 31));
 

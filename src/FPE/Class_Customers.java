@@ -30,7 +30,7 @@ public class Class_Customers {
     public static boolean EditCustomer(String name,String address,String contact, String id ){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("UPDATE `customer_table` SET `NAME`=?,`ADDRESS`=?,CONTACT`=? WHERE `ID`=?");
+        ps = FPE_DB.getConnection().prepareStatement("UPDATE `customer_table` SET `NAME`=?,`ADDRESS`=?,`CONTACT`=? WHERE `ID`=?");
         ps.setString(1, name);
         ps.setString(2, address);
         ps.setString(3, contact);

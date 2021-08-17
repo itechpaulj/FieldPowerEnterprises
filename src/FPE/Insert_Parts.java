@@ -91,6 +91,10 @@ public class Insert_Parts extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -104,12 +108,12 @@ public class Insert_Parts extends javax.swing.JFrame {
         Inventory_Display.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Inventory_Display.setText("ADD NEW PARTS STOCK");
         Inventory_Display.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 Inventory_DisplayAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jPanel4.add(Inventory_Display, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 470, 110));
@@ -132,7 +136,7 @@ public class Insert_Parts extends javax.swing.JFrame {
                 Insert_Parts_PicMouseClicked(evt);
             }
         });
-        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 300, 200));
+        KG2_ADD_STOCK_GENSET.add(Insert_Parts_Pic, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 300, 200));
 
         Insert_Parts_Supplier_Contact.setEditable(false);
         Insert_Parts_Supplier_Contact.setBackground(new java.awt.Color(220, 220, 200));
@@ -306,7 +310,7 @@ public class Insert_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(Insert_Parts_Date, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, 210, 30));
 
         Insert_Parts_Type.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        Insert_Parts_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS" }));
+        Insert_Parts_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "FILTER", "PARTS", "AVR", "OTHER" }));
         Insert_Parts_Type.setBorder(null);
         KG2_ADD_STOCK_GENSET.add(Insert_Parts_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 200, 210, 30));
 
@@ -416,10 +420,34 @@ public class Insert_Parts extends javax.swing.JFrame {
         KG2_ADD_STOCK_GENSET.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 130, 30));
 
         jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " PARTS ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
-        KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 710, 440));
+        KG2_ADD_STOCK_GENSET.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 720, 440));
 
         jLabel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " SUPPLIER ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         KG2_ADD_STOCK_GENSET.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 410, 440));
+
+        jLabel20.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 20, 20));
+
+        jLabel24.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 20, 20));
+
+        jLabel25.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 210, 20, 20));
+
+        jLabel23.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
+        KG2_ADD_STOCK_GENSET.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 20, 20));
 
         getContentPane().add(KG2_ADD_STOCK_GENSET, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1200, 550));
 
@@ -631,6 +659,10 @@ public class Insert_Parts extends javax.swing.JFrame {
     public static javax.swing.JPanel Stock_Genset_Panel_Update;
     private javax.swing.JLabel Stock_Genset_Update;
     private javax.swing.JLabel Supplier_List_Btn;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;

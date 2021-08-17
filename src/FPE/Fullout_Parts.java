@@ -31,20 +31,16 @@ public class Fullout_Parts extends javax.swing.JFrame {
     String remarks="";
     //-----------------------------------------------------------------
        
-    //----FOR UPDATE----------------------------------------
-    int Update_Sale_quantity ;
-    int Update_Sale_total_price;
-    
-    // ----FOR STOCK----------------------------------------
-    int Update_Stock_quantity ;
-    int Update_Stock_total_price;
-    
-    // ----FOR STOCK RETURN----------------------------------------
-    int Update_Stock_quantity_return;
-    int Update_Stock_total_price_return;
-    
-    //----FOR SALE------------------------------------------
-    int parts_quant ;
+    int process_no;
+   int price;
+   int quantity;
+   int avail;
+   
+   int chectout_quantity,chectout_total_price;  
+   
+   // UPDATE THE QUANTITY Of STOCK 
+   
+   int update_stock_quantity,update_stock_total_price;
     //--------
     int Sale_price;
     int Sale_quantity ;
@@ -56,7 +52,7 @@ public class Fullout_Parts extends javax.swing.JFrame {
     public Fullout_Parts() {
         initComponents();
         imgisNull();
-        
+        Webpage.cc.ProcessFulloutt();
     }
  public void imgisNull(){
         try{
@@ -494,54 +490,54 @@ public class Fullout_Parts extends javax.swing.JFrame {
     
     String date_outbound = "";
     String verify = "";
-    String process = "";
+    String proces = Integer.toString(Webpage.cc.process_fullout);
     String project = "";
+    String action = "FULLOUT";
+
     
-    if(quantity.equals("") && total_price == 0)
-    {
-        JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
-    }     
+    if(quantity.equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "FILL SOME BLANCK","",JOptionPane.ERROR_MESSAGE);
+        }
+     else if(aq < q)
+        {
+            JOptionPane.showMessageDialog(null, "THE QUANTITY ENTERED IS TO MUCH!!","",JOptionPane.ERROR_MESSAGE);
+        }
+     
     else if(btn.equals(" FULL OUT"))
         {
-          
             if(stock_ids == sale_ids )
-               
             {
      
-                if(!Class_Amount.FulloutUpdateQuantityAndTotal(""+Update_Sale_quantity, Update_Sale_total_price, Parts_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+Update_Sale_quantity, Update_Sale_total_price, Parts_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id))
-                    {
-                        System.out.print(""+Update_Sale_quantity);
-                        System.out.print(Update_Sale_total_price);
-                        JOptionPane.showMessageDialog(null, " CHECK OUT ADDED !");Webpage.Refresh();  dispose();
-                    }
-                
+              if(!Class_Amount.FulloutUpdateQuantityAndTotal(""+chectout_quantity, chectout_total_price, Parts_id) && !Class_Amount.HistoryUpdateforFullout(""+chectout_quantity, chectout_total_price, Parts_id,process_no,verify) && !Class_Amount.StockUpdateQuantityAndTotal(""+update_stock_quantity, update_stock_total_price, Parts_id))
+                {
+                    JOptionPane.showMessageDialog(null, " FULL OUT ADDED !");Webpage.Refresh();  dispose();
+                }
+              
             }
-           else if(!Class_fullout.InsertFullout(Parts_id, category, brand, type, supplier_price, seller_price,""+ Update_Sale_quantity, Update_Sale_total_price, supplier_id, date_inbound, date_outbound, images, incharge, remarks, process, verify) && !Class_History.InsertHistory(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price, quantity, total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, process, verify, project) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id))
-                    {
-                        JOptionPane.showMessageDialog(null, " CHECK OUT SUCCESS !");Webpage.Refresh();  dispose();
-                    }
-    
+            
+            else if(!Class_fullout.InsertFullout(Parts_id, category, brand, type, supplier_price, seller_price, ""+chectout_quantity, chectout_total_price, supplier_id, date_inbound, date_outbound, images, incharge, remarks, proces, verify) && !Class_History.InsertHistory(Parts_id, category, brand, model, kva, phasing, type, supplier_price, seller_price,""+chectout_quantity, chectout_total_price, engine_sn, alternator_sn, supplier_id, customer_id, date_inbound, date_outbound, images, incharge, remarks, proces, verify, project,action) && !Class_Amount.StockUpdateQuantityAndTotal(""+update_stock_quantity, update_stock_total_price, Parts_id))
+                {
+                    JOptionPane.showMessageDialog(null, " FULL OUT SUCCESS !");Webpage.Refresh();  dispose();
+                }
         }         
-
-             else if(btn.equals(" REMOVE"))
+    
+    
+    else if(btn.equals(" REMOVE"))
         {
         
-        
-                if(!Class_Amount.FulloutUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id) && !Class_Amount.HistoryUpdateQuantityAndTotal(""+Update_Stock_quantity, Update_Stock_total_price, Parts_id) && !Class_Amount.StockUpdateQuantityAndTotal(""+Update_Stock_quantity_return, Update_Stock_total_price_return, Parts_id))
-                    {
-                        System.out.print(""+Update_Stock_quantity);
-                        System.out.print(Update_Stock_total_price);
-                        JOptionPane.showMessageDialog(null, " SUCCESSFULY REMOVE !");Webpage.Refresh();  dispose();
-                    
-                if(Update_Stock_quantity == 0)
-                    {
-                        if(!Class_Amount.HistoryDelete(Parts_id) &&  !Class_Amount.FulloutDelete(Parts_id )){
-                            Webpage.Refresh();  dispose();
-                        }
+            if(!Class_Amount.FulloutUpdateQuantityAndTotal(""+update_stock_quantity, update_stock_total_price, Parts_id) && !Class_Amount.HistoryUpdateforFullout(""+update_stock_quantity, update_stock_total_price, Parts_id,process_no,verify) && !Class_Amount.StockUpdateQuantityAndTotal(""+chectout_quantity, chectout_total_price, Parts_id))
+                {
+                    JOptionPane.showMessageDialog(null, " SUCCESSFULY REMOVE !");Webpage.Refresh();  dispose();
+                }
+            if(update_stock_quantity == 0)
+                {
+                    if(!Class_Amount.HistoryDelete(Parts_id,process_no,verify) &&  !Class_Amount.FulloutDelete(Parts_id )){
+                        Webpage.Refresh();  dispose();
                     }
-                    }
+                }
+            
         }
-
      
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
 
@@ -629,9 +625,8 @@ public class Fullout_Parts extends javax.swing.JFrame {
             while(rs.next()){
           
             sale_ids = rs.getInt("STOCK ID");
-            parts_quant = rs.getInt("QUANTITY");
-            System.out.println(""+sale_ids);
-            System.out.println(""+parts_quant);
+            Sale_quantity = rs.getInt("QUANTITY");
+            
             
             }
         }
@@ -703,9 +698,8 @@ public class Fullout_Parts extends javax.swing.JFrame {
             while(rs.next()){
           
             sale_ids = rs.getInt("STOCK ID");
-            parts_quant = rs.getInt("QUANTITY");
-            System.out.println(""+sale_ids);
-            System.out.println(""+parts_quant);
+            Sale_quantity = rs.getInt("QUANTITY");
+           
             
             }
         }
@@ -744,35 +738,26 @@ public class Fullout_Parts extends javax.swing.JFrame {
        }
       else
        {
-          Sale_price =  Integer.parseInt(Sale_Parts_price.getText());
-          Sale_quantity = Integer.parseInt(Sale_Parts_quantity.getText());
-          Sale_total = Sale_quantity * Sale_price;
-          Sale_Parts_total_price.setText(""+Sale_total);
-          System.out.println("FOR ADD");
-          System.out.println(""+Sale_quantity);
-          System.out.println(""+Sale_total);
-          System.out.println("\n \n");
-          int Sale_avail = Integer.parseInt(Sale_Parts_available_quantity.getText());
-
-          System.out.println("FOR ADD CHECKOUT");
-          Update_Sale_quantity = parts_quant + Sale_quantity;
-          Update_Sale_total_price = Update_Sale_quantity * Sale_price;
-          System.out.println(""+Update_Sale_quantity);
-          System.out.println(""+Update_Sale_total_price);
-          System.out.println("\n \n");
-          
-          System.out.println("FOR UPDATE STOCK");
-          Update_Stock_quantity = Sale_avail - Sale_quantity;
-          Update_Stock_total_price = Update_Stock_quantity * Sale_price;
-          System.out.println(""+Update_Stock_quantity);
-          System.out.println(""+Update_Stock_total_price);
-          System.out.println("\n \n");
-          
-          Update_Stock_quantity_return = parts_quant + Sale_quantity;
-          Update_Stock_total_price_return = Update_Stock_quantity_return * Sale_price;
-          System.out.println(""+Update_Stock_quantity_return);
-          System.out.println(""+Update_Stock_total_price_return);
-          System.out.println("\n \n");System.out.println("\n \n");
+           price =  Integer.parseInt(Sale_Parts_price.getText());
+        quantity = Integer.parseInt(Sale_Parts_quantity.getText());
+        avail = Integer.parseInt(Sale_Parts_available_quantity.getText());
+        
+        // ADDING QUANTITY FOR SALE CART
+        chectout_quantity = Sale_quantity + quantity ;
+        chectout_total_price = price * chectout_quantity;
+        Sale_Parts_total_price.setText(""+chectout_total_price);
+        System.out.println("TOTAL CHECK OUT ITEM ");
+        System.out.println(""+chectout_quantity);
+        System.out.println(""+chectout_total_price);
+        System.out.println("\n");
+        
+        // UPDATE THE QUANTITY OF STOCK 
+        update_stock_quantity = avail - quantity;
+        update_stock_total_price = price * update_stock_quantity;
+        System.out.println("UPDATE THE QUANTITY OF STOCK ");
+        System.out.println(""+update_stock_quantity);
+        System.out.println(""+update_stock_total_price);
+        System.out.println("\n");
   
        }
        
