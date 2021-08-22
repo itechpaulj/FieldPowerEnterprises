@@ -16,10 +16,10 @@ import java.sql.PreparedStatement;
  */
 public class Class_Payment {
 
-        public static boolean Payment(String project_no, String customer_id,String customer_p_os,String po_dates,String qoutation_no,String qoutation_date,String loc,String agent_id,String total_amounts,String downpayment_amounts,String downpayment_cash_or_check, String downpayment_bank,String downpayment_date,String downpayment_or_no,String downpayment_remark,String balance_amounts, String balance_remark,String status){
+        public static boolean Payment(String project_no, String customer_id,String customer_p_os,String po_dates,String qoutation_no,String qoutation_date,String loc,String agent_id,String total_amounts,String downpayment_amounts,String downpayment_cash_or_check, String downpayment_bank,String downpayment_date,String downpayment_or_no,String downpayment_remark,String balance_amounts, String balance_remark,String pro,String status){
         PreparedStatement ps = null;
         try{
-        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `payment_menthod`(`PROJECT NO`, `CUSTOMER ID`, `CUSTOMER P O NO`, `P O DATE`, `QUOTATION NO`, `QUOTATION DATE`, `LOCATION`,`AGENT ID`, `TOTAL AMOUNT`, `DOWNPAYMENT`, `CASH / CHECK`, `BANK`, `DOWNPAYMENT DATE`, `O R NO`, `DOWNPAYMENT REMARKS`, `BALANCE`, `BALANCE REMARKS`, `STATUS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        ps = FPE_DB.getConnection().prepareStatement("INSERT INTO `payment_menthod`(`PROJECT NO`, `CUSTOMER ID`, `CUSTOMER P O NO`, `P O DATE`, `QUOTATION NO`, `QUOTATION DATE`, `LOCATION`,`AGENT ID`, `TOTAL AMOUNT`, `DOWNPAYMENT`, `CASH / CHECK`, `BANK`, `DOWNPAYMENT DATE`, `O R NO`, `DOWNPAYMENT REMARKS`, `BALANCE`, `BALANCE REMARKS`,`PROCESS`,`STATUS`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1,project_no);
         ps.setString(2,customer_id);
         ps.setString(3,customer_p_os);
@@ -37,7 +37,8 @@ public class Class_Payment {
         ps.setString(15,downpayment_remark);
         ps.setString(16,balance_amounts);
         ps.setString(17,balance_remark);
-        ps.setString(18,status);
+        ps.setString(18,pro);
+        ps.setString(19,status);
 
         ps.execute();
         

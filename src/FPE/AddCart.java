@@ -12,8 +12,6 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Enumeration;
-import javax.swing.AbstractButton;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,19 +21,27 @@ import javax.swing.JOptionPane;
 public class AddCart extends javax.swing.JFrame {
    Class_tables ct = new Class_tables();
    
-   String process_no ;
-   String Status ;
-   
+    int process_no ;
+    int process_no1 ;
+    String Status ;
+    int amount = 0;
+    int downpayment = 0;
+    int tot_amount=0;
+    int balance = 0;
+    String downpayment_cash_or_check="";
 //   String getCashCheckedDownpayment = null;
 //   String getCashCheckedBalanced = null;
 //   
 //   public static String getCategory = null;
    
-   public static String customer_id = "";
-   public static String agent_id = "";
-   String unipue = "";
+    public static String customer_id = "";
+    public static String agent_id = "";
+    String unipue = "";
+    int process_balance;
+
+    Class_Cart cc = new Class_Cart();
+    Class_Balance cb = new Class_Balance();
    
-   Class_Cart cc = new Class_Cart();
     /**
      * Creates new form AddCart
      */
@@ -44,31 +50,13 @@ public class AddCart extends javax.swing.JFrame {
         initComponents();
      con = FPE_DB.getConnection();
      cc.addCart();
+     
     }
 
 
     
     
-    public String getSelectedOptionDownPayment() {
-            Enumeration<AbstractButton> radioButtons = cash_checked.getElements();
-            while (radioButtons.hasMoreElements()) {
-                AbstractButton currentRadioButton = radioButtons.nextElement();
-                if (currentRadioButton.isSelected()) {
-                    return currentRadioButton.getText();
-                }
-            }
-            return null;
-        }
-    public String getSelectedOptionBalance() {
-            Enumeration<AbstractButton> radioButtons = buttonGroup1.getElements();
-            while (radioButtons.hasMoreElements()) {
-                AbstractButton currentRadioButton = radioButtons.nextElement();
-                if (currentRadioButton.isSelected()) {
-                    return currentRadioButton.getText();
-                }
-            }
-            return null;
-    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -133,15 +121,6 @@ public class AddCart extends javax.swing.JFrame {
         downpayment_check = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
         downpayment_cash = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         location = new javax.swing.JTextField();
         jTextField33 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -795,60 +774,6 @@ jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
 
     kGradientPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 119, -1));
 
-    jLabel2.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-    jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-    jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
-    kGradientPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 50, 20, 20));
-
-    jLabel19.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-    jLabel19.setForeground(new java.awt.Color(255, 0, 0));
-    jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
-    kGradientPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 20, 20));
-
-    jLabel25.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-    jLabel25.setForeground(new java.awt.Color(255, 0, 0));
-    jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
-    kGradientPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 210, 20, 20));
-
-    jLabel23.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-    jLabel23.setForeground(new java.awt.Color(255, 0, 0));
-    jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
-    kGradientPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 200, 20, 20));
-
-    jLabel24.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-    jLabel24.setForeground(new java.awt.Color(255, 0, 0));
-    jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
-    kGradientPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 20, 20));
-
-    jLabel3.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-    jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-    jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
-    kGradientPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 540, 20, 20));
-
-    jLabel10.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-    jLabel10.setForeground(new java.awt.Color(255, 0, 0));
-    jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
-    kGradientPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 350, 20, 20));
-
-    jLabel11.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-    jLabel11.setForeground(new java.awt.Color(255, 0, 0));
-    jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
-    kGradientPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 310, 20, 20));
-
-    jLabel12.setFont(new java.awt.Font("Arial", 0, 30)); // NOI18N
-    jLabel12.setForeground(new java.awt.Color(255, 0, 0));
-    jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-    jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/asterisk_15px.png"))); // NOI18N
-    kGradientPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 270, 20, 20));
-
     location.setFont(new java.awt.Font("Arial", 0, 15)); // NOI18N
     location.setHorizontalAlignment(javax.swing.JTextField.CENTER);
     kGradientPanel1.add(location, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 200, 31));
@@ -887,32 +812,87 @@ jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void displaysAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_displaysAncestorAdded
-        String Banner = displays.getText();
-    
-            if(Banner.equals("PAYMENT"))
+    PreparedStatement ps;
+    ResultSet rs;
+    String Banner = displays.getText();
+
+    if(Banner.equals("PAYMENT"))
+    {
+        try
+        {
+            ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `cart_table` ORDER BY `PROCESS` DESC LIMIT 1");
+            rs = ps.executeQuery();
+            if(rs.next())
             {
-                try{
-                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `cart_table` ORDER BY `PROCESS` DESC LIMIT 1");
-                    ResultSet rs = ps.executeQuery();
-                    if(rs.next()){
-                        process_no = rs.getString("PROCESS");
-                    }
-                }
-                catch(Exception e){
-                    e.printStackTrace();
-                }
-                
-                try{
-                    PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS` FROM `cart_table` ORDER BY `PROCESS` ");
-                    ResultSet rs = ps.executeQuery();
-                    if(rs.next()){
-                        process_no = rs.getString("PROCESS");
-                    }
-                }
-                catch(Exception e){
-                    e.printStackTrace();
-                }
+                process_no = rs.getInt("PROCESS"); 
             }
+        }
+        catch(Exception e)
+            {
+                e.printStackTrace();
+            }
+    }
+
+    else if(Banner.equals("ADD PAYMENT"))
+    {
+        jPanel2.setVisible(false);
+        jPanel1.setVisible(false);
+        try
+        {
+            ps=FPE_DB.getConnection().prepareStatement("SELECT `PROCESS`, `STATUS` FROM `payment_menthod` WHERE `PROJECT NO` = "+Webpage.project_no+"  ORDER BY `PROCESS` DESC LIMIT 1");
+            rs = ps.executeQuery();
+            if(rs.next())
+            {
+                int po = rs.getInt("PROCESS");
+                process_no = po +1;
+                System.out.println(""+process_no);
+                
+            }           
+        }
+        catch(Exception e)
+            {
+                e.printStackTrace();
+            } 
+
+        try
+        {
+            ps=FPE_DB.getConnection().prepareStatement("SELECT `PROJECT NO`, `CUSTOMER ID`,  `AGENT ID`,`TOTAL AMOUNT`, (SELECT `NAME` FROM `customer_table` WHERE `customer_table`.`ID` =`payment_menthod`.`CUSTOMER ID`) AS  `C_NAME`,(SELECT `ADDRESS` FROM `customer_table` WHERE `customer_table`.`ID` =  `payment_menthod`.`CUSTOMER ID`) AS `C_ADDRESS`,(SELECT `CONTACT` FROM `customer_table` WHERE `customer_table`.`ID` =  `payment_menthod`.`CUSTOMER ID`) AS `C_CONTACT`,(SELECT `NAME` FROM `agent_table` WHERE `agent_table`.`ID` =  `payment_menthod`.`AGENT ID`) AS `A_NAME`,(SELECT `ADDRESS` FROM `agent_table` WHERE `agent_table`.`ID` =  `payment_menthod`.`AGENT ID`) AS `A_ADDRESS`,(SELECT `CONTACT` FROM `agent_table` WHERE `agent_table`.`ID` =  `payment_menthod`.`AGENT ID`) AS `A_CONTACT`,`CUSTOMER P O NO`, `P O DATE`, `QUOTATION NO`, `QUOTATION DATE`, `LOCATION`, `O R NO`, `BALANCE`,`PROCESS`, `STATUS` FROM `payment_menthod` WHERE `PROJECT NO` = "+Webpage.project_no+"  ORDER BY `PROCESS` DESC LIMIT 1 ");
+            rs = ps.executeQuery();
+            if(rs.next())
+            {
+                
+                project_no.setEditable(false);
+                jTextField11.setText("BALANCE");
+                customer_p_o.setEditable(false);
+                qoutation_no.setEditable(false);
+                po_date.setEnabled(false);
+                qoutation_date.setEnabled(false);
+                location.setEditable(false);
+                total_amount.setEditable(false);
+                
+                project_no.setText(rs.getString("PROJECT NO"));
+                customer_id = rs.getString("CUSTOMER ID");
+                customer_name.setText(rs.getString("C_NAME"));
+                address.setText(rs.getString("C_ADDRESS"));
+                customer_contact.setText(rs.getString("C_CONTACT"));
+                agent_id = rs.getString("AGENT ID");
+                agent_name.setText(rs.getString("A_NAME"));
+                agent_contact.setText(rs.getString("A_CONTACT"));
+                customer_p_o.setText(rs.getString("CUSTOMER P O NO"));
+                po_date.setText(rs.getString("P O DATE"));
+                qoutation_no.setText(rs.getString("QUOTATION NO"));
+                qoutation_date.setText(rs.getString("QUOTATION DATE"));
+                location.setText(rs.getString("LOCATION"));
+                total_amount.setText(rs.getString("BALANCE"));
+                tot_amount = rs.getInt("TOTAL AMOUNT");
+                process_no1 = rs.getInt("PROCESS");
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
     }//GEN-LAST:event_displaysAncestorAdded
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -921,7 +901,8 @@ jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void processMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processMouseClicked
-    // PROJECT
+    String banner = displays.getText();
+// PROJECT
     String project_noS = project_no.getText();
     // customer_id
     String customer_p_os = customer_p_o.getText();
@@ -940,38 +921,36 @@ jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
     String date_rel = date_release.getText();
     
     
-    if(downpayment_cash.isSelected())
-    {
-       String downpayment_cash_or_check = "CASH";
-    }
-    else if (downpayment_check.isSelected())
-    {
-        String downpayment_cash_or_check = "CHECK";
-    }
+
     
     String downpayment_banks = downpayment_bank.getText();
     String downpayment_dates = downpayment_date.getText();
     String downpayment_or_nos = downpayment_or_no.getText();
     String downpayment_remark = downpayment_remarks.getText();
     
-    
     // BALANCE
     String balance_amounts = balance_amount.getText();
     String balance_remark = balance_remarks.getText();
     
-   
+   String pro ="1";
     
-    
-    // String project_no, String customer_id,String customer_p_os,String po_dates,String qoutation_no,String qoutation_date,String agent_id,String total_amounts,String downpayment_cash_or_check, String downpayment_bank,String downpayment_date,String downpayment_or_no,String downpayment_remark,,String balance_amounts, String balance_remark,String status
 
-    
-   if(downpayment_amount.equals("") || downpayment_or_no.equals("") || project_no.equals("") || customer_name.equals("") || customer_p_o.equals("") || po_date.equals("") || qoutation_no.equals("") || qoutation_date.equals("") || agent_name.equals("") )
+   if(downpayment_amounts.equals("") || downpayment_or_nos.equals("") || project_noS.equals("") || customer_name.equals("") || customer_p_os.equals("") || po_dates.equals("") || qoutation_nos.equals("") || qoutation_dates.equals("") || agent_name.equals("") )
     {
-       JOptionPane.showMessageDialog(null, " FIELD SOME BLANKS ","",JOptionPane.UNDEFINED_CONDITION);
+       JOptionPane.showMessageDialog(null, " FIELD SOME BLANKS ","",JOptionPane.UNDEFINED_CONDITION);  Webpage.Refresh();
     }
-   else{
+   else if(banner.equals("ADD PAYMENT"))
+   {
+       if(!Class_Balance.BalancePayment(project_noS, customer_id, customer_p_os, po_dates, qoutation_nos, qoutation_dates, loc, agent_id, ""+tot_amount, ""+downpayment, downpayment_cash_or_check, downpayment_banks, downpayment_dates, downpayment_or_nos, downpayment_remark, ""+balance, balance_remark,""+process_no, Status))
+       {
+           JOptionPane.showMessageDialog(null, " SUCCESSFULLY UPDATE AND INSERT !! ","",JOptionPane.UNDEFINED_CONDITION);  Webpage.Refresh();  Table_Balance.bal(); dispose();
+       }
+   }
+   else if(banner.equals("PAYMENT"))
+   
+   {
        
-       if(!Class_Payment.Payment(project_noS, customer_id, customer_p_os, po_dates, qoutation_nos, qoutation_dates,loc, agent_id, total_amounts, downpayment_amounts, downpayment_or_nos, downpayment_banks, downpayment_dates, downpayment_or_nos, downpayment_remark, balance_amounts, balance_remark, Status) && !Class_Payment.Payment_Update_History(customer_id,date_rel, project_noS, process_no) && !Class_Payment.Cart_Delete()){
+       if(!Class_Payment.Payment(project_noS, customer_id, customer_p_os, po_dates, qoutation_nos, qoutation_dates,loc, agent_id, total_amounts, downpayment_amounts, downpayment_cash_or_check, downpayment_banks, downpayment_dates, downpayment_or_nos, downpayment_remark, balance_amounts, balance_remark,pro, Status) && !Class_Payment.Payment_Update_History(customer_id,date_rel, project_noS, ""+process_no) && !Class_Payment.Cart_Delete()){
           JOptionPane.showMessageDialog(null, " SUCCESSFULLY TRANSACTION !! ","",JOptionPane.UNDEFINED_CONDITION); Webpage.Refresh();
           
           Print_Reciept_Parts prp = new Print_Reciept_Parts();
@@ -1002,34 +981,24 @@ jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
     }//GEN-LAST:event_total_amountKeyReleased
 
     private void downpayment_amountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_downpayment_amountKeyReleased
-       int amount = 0;
-       int downpayment = 0;
        
-       int balance = 0;
-      
         amount = Integer.parseInt(total_amount.getText());
         downpayment = Integer.parseInt(downpayment_amount.getText());
         
         balance = amount - downpayment;
         
-         if(balance >= amount)
-       {
-           balance_amount.setText(""+balance);
-            Status = "WITH BALANCE";
-       }else if(balance <= amount)
-        {
-            balance_amount.setText("0");
-            Status = "PAID";
-        }
+  
          
-        if(downpayment <= amount)
+        if(downpayment < amount)
        {
            balance_amount.setText(""+balance);
             Status = "WITH BALANCE";
+            System.out.println(Status);
        }else if(downpayment >= amount)
         {
             balance_amount.setText("0");
             Status = "PAID";
+            System.out.println(Status);
         }
           
         
@@ -1089,7 +1058,7 @@ jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
         {
             downpayment_bank.setBackground(new Color(204,204,204));
             downpayment_bank.setEditable(false);
-            
+            downpayment_cash_or_check = "CASH";
         }
         
         
@@ -1100,6 +1069,7 @@ jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
         {
             downpayment_bank.setEditable(true);
             downpayment_bank.setBackground(new Color(255,255,255));
+            downpayment_cash_or_check = "CHECK";
         }
     }//GEN-LAST:event_downpayment_checkActionPerformed
 
@@ -1173,15 +1143,6 @@ jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
     private javax.swing.JTextField downpayment_or_no;
     private javax.swing.JTextField downpayment_remarks;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

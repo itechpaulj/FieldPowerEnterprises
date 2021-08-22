@@ -19,6 +19,7 @@ import static FPE.Table_Supplier.Supplier_table;
 import static FPE.Table_Customer.Customer_Table;
 import static FPE.Table_Agent.Agent_table;
 
+import static FPE.Table_Balance.Balance_Table;
 
 public class Class_tables {
 
@@ -26,7 +27,7 @@ public class Class_tables {
     
     public boolean Stock(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N` ,(SELECT `NAME` FROM `supplier_table` WHERE `stock_table`.`SUPPLIER ID`= `supplier_table`.`ID`) AS `SUPPLIER`,`DATE INBOUND`, `INCHARGE`, `REMARKS` FROM `stock_table` ");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `STOCK ID`, `CATEGORY`, `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`, FORMAT(`SELLER PRICE`, '#,##0.00') AS `SELLER PRICE`, `QUANTITY`, `TOTAL PRICE`, `ENGINE S.N`, `ALTERNATOR S.N` ,(SELECT `NAME` FROM `supplier_table` WHERE `stock_table`.`SUPPLIER ID`= `supplier_table`.`ID`) AS `SUPPLIER`,`DATE INBOUND`, `REMARKS` FROM `stock_table` ");
         ResultSet rs = ps.executeQuery();
         Stock_Table.setModel(DbUtils.resultSetToTableModel(rs));
         Stock_Table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -308,16 +309,32 @@ public class Class_tables {
 
     public boolean project(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT  `PROJECT NO`, `QUOTATION NO`, `DATE QUOTATION`,`TOTAL AMOUNT`,`BALANCE AMOUNT`,(SELECT `NAME` FROM `customer_table` WHERE `payment`.`CUSTOMER ID`= `customer_table`.`ID`) AS `CUSTOMER NAME`,(SELECT `NAME` FROM `agent_table` WHERE `payment`.`AGENT ID`= `agent_table`.`ID`) AS `AGENT NAME`, `STATUS` FROM `payment` GROUP BY `PROJECT NO` ");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT  `PROJECT NO`,(SELECT `NAME` FROM `customer_table` WHERE `customer_table`.`ID`= `payment_menthod`.`CUSTOMER ID`) AS `CUSTOMER`,(SELECT `ADDRESS` FROM `customer_table` WHERE `customer_table`.`ID`=`payment_menthod`.`CUSTOMER ID`) AS `ADDRESS`,`CUSTOMER P O NO` AS `P.O NO`, `P O DATE` AS `P.O DATE`, `QUOTATION NO` AS `QOUT. NO`,`QUOTATION DATE` AS `QOUT. DATE`,`TOTAL AMOUNT`, `BALANCE`,`STATUS` FROM `payment_menthod` GROUP BY `PROJECT NO`");
         ResultSet rs = ps.executeQuery();
         project_table.setModel(DbUtils.resultSetToTableModel(rs));
-        project_table.getColumnModel().getColumn(0).setMaxWidth(100);
+        //project_table.getColumnModel().getColumn(0).setMaxWidth(100);
         }catch(Exception e){
               //System.out.println(e);
             }
         return false;
     }
     
+    
+//--------------------------------------------------------- FOR PROJECT TABLE ONLY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+    
+
+
+    public boolean Balance(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT  `PROJECT NO`,(SELECT `NAME` FROM `customer_table` WHERE `customer_table`.`ID`= `payment_menthod`.`CUSTOMER ID`) AS `CUSTOMER NAME`,(SELECT `ADDRESS` FROM `customer_table` WHERE `customer_table`.`ID`=`payment_menthod`.`CUSTOMER ID`) AS `ADDRESS`,`CUSTOMER P O NO`, `P O DATE`, `QUOTATION NO`, `QUOTATION DATE`,`TOTAL AMOUNT`,`DOWNPAYMENT AMOUNT`, `BALANCE`, `BALANCE REMARKS`, `STATUS` FROM `payment_menthod` WHERE `PROCESS` = `"+Webpage.project_no+"` ORDER BY `P O DATE` DESC");
+        ResultSet rs = ps.executeQuery();
+        Balance_Table.setModel(DbUtils.resultSetToTableModel(rs));
+        Balance_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+            }
+        return false;
+    }
     
 //       
 //    
