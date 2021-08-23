@@ -11,6 +11,7 @@ import static FPE.Webpage.Sales_Table;
 import static FPE.Webpage.Cart_Table;
 import static FPE.Webpage.FullOut_Table;
 import static FPE.Webpage.project_table;
+import static FPE.Webpage.request_table;
 import static FPE.Webpage.History_Table; 
 
 import static FPE.Setting.admin_table;
@@ -309,7 +310,7 @@ public class Class_tables {
 
     public boolean project(){
         try{
-        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT  `PROJECT NO`,(SELECT `NAME` FROM `customer_table` WHERE `customer_table`.`ID`= `payment_menthod`.`CUSTOMER ID`) AS `CUSTOMER`,(SELECT `ADDRESS` FROM `customer_table` WHERE `customer_table`.`ID`=`payment_menthod`.`CUSTOMER ID`) AS `ADDRESS`,`CUSTOMER P O NO` AS `P.O NO`, `P O DATE` AS `P.O DATE`, `QUOTATION NO` AS `QOUT. NO`,`QUOTATION DATE` AS `QOUT. DATE`,`TOTAL AMOUNT`, `BALANCE`,`STATUS` FROM `payment_menthod` GROUP BY `PROJECT NO`");
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT  `PROJECT NO`,(SELECT `NAME` FROM `customer_table` WHERE `customer_table`.`ID`= `payment_menthod`.`CUSTOMER ID`) AS `CUSTOMER`,(SELECT `ADDRESS` FROM `customer_table` WHERE `customer_table`.`ID`=`payment_menthod`.`CUSTOMER ID`) AS `ADDRESS`,`CUSTOMER P O NO` AS `P.O NO`, `P O DATE` AS `P.O DATE`, `QUOTATION NO` AS `QOUT. NO`,`QUOTATION DATE` AS `QOUT. DATE`,`TOTAL AMOUNT`, `BALANCE` FROM `payment_menthod` GROUP BY `PROJECT NO`");
         ResultSet rs = ps.executeQuery();
         project_table.setModel(DbUtils.resultSetToTableModel(rs));
         //project_table.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -318,9 +319,27 @@ public class Class_tables {
             }
         return false;
     }
+ 
     
     
 //--------------------------------------------------------- FOR PROJECT TABLE ONLY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+    
+
+
+    public boolean request(){
+        try{
+        PreparedStatement ps = FPE_DB.getConnection().prepareStatement("SELECT `SRS NO`, `NAME`, `DATE`, `STORE KEEPER`, `PURPOSE`, `APPROVE BY`, `ENCODE BY`, `ACCOUNT CHARGE` FROM `request_table` ");
+        ResultSet rs = ps.executeQuery();
+        request_table.setModel(DbUtils.resultSetToTableModel(rs));
+        //project_table.getColumnModel().getColumn(0).setMaxWidth(100);
+        }catch(Exception e){
+              //System.out.println(e);
+            }
+        return false;
+    }
+    
+    
+//--------------------------------------------------------- FOR BALANCE TABLE ONLY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
     
 
 

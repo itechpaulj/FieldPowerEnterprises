@@ -63,4 +63,19 @@ public class Class_fullout {
     
     return false;
     }
+   
+    public static boolean Fullout_Delete(){
+        PreparedStatement ps = null;
+        try{
+        ps = FPE_DB.getConnection().prepareStatement("DELETE FROM `fullout`");
+        ps.execute();
+        
+        }catch(Exception e){
+           e.printStackTrace();
+        }
+        return false;
+    }
 }
+   
+   
+

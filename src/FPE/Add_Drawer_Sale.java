@@ -42,8 +42,8 @@ public class Add_Drawer_Sale extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 22)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Select/list_stock.png"))); // NOI18N
-        jLabel3.setText(" SALE LIST");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/product.png"))); // NOI18N
+        jLabel3.setText("  PRODUCT");
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);

@@ -113,7 +113,7 @@ public class Print_Reciept_Parts extends javax.swing.JFrame {
         fpe.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         fpe.setForeground(new java.awt.Color(51, 51, 51));
         fpe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        fpe.setText("Parts and Materials");
+        fpe.setText(" PARTS AND MATERIALS");
         fpe.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -123,7 +123,7 @@ public class Print_Reciept_Parts extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        print_gensets.add(fpe, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 90, 200, 40));
+        print_gensets.add(fpe, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 270, 40));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel3.setText(" Address :");
@@ -328,18 +328,22 @@ public class Print_Reciept_Parts extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        print_gensets.add(fpe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 320, 50));
+        print_gensets.add(fpe1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 320, 50));
 
         jScrollPane1.setViewportView(print_gensets);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 630));
 
-        jPanel3.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(2, 51, 74));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(255, 107, 107));
+
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("CLOSE");
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/delete_30px.png"))); // NOI18N
+        jLabel5.setText("  CLOSE");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -354,11 +358,13 @@ public class Print_Reciept_Parts extends javax.swing.JFrame {
 
         jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 10, 220, 50));
 
-        jPanel2.setBackground(new java.awt.Color(0, 255, 85));
+        jPanel2.setBackground(new java.awt.Color(102, 153, 153));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("PRINT");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/print_30px.png"))); // NOI18N
+        jLabel4.setText("  PRINT");
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -380,7 +386,8 @@ public class Print_Reciept_Parts extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 630, 920, 70));
 
-        setBounds(440, 13, 916, 698);
+        pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked

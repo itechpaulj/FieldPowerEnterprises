@@ -51,7 +51,7 @@ public class Class_Payment {
     
  
     
-    public static boolean Payment_Update_History(String cus_id,String date_rel,String proj_no,String process_no){
+     public static boolean Payment_Update_History(String cus_id,String date_rel,String proj_no,String process_no){
         PreparedStatement ps = null;
         try{
         ps = FPE_DB.getConnection().prepareStatement("UPDATE `history_table` SET `CUSTOMER ID`=?,`DATE OUTBOUND`=?,`VERIFY`=?, `PROJECT NO`=? WHERE `ACTION`='SALE' AND `PROCESS`=?");

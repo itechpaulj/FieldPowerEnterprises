@@ -25,7 +25,7 @@ import net.proteanit.sql.DbUtils;
 public class Table_Balance extends javax.swing.JFrame {
 //
     public static String process_no = null;
-    
+    public static String status = "";
     //String name = "";
     
     public static String project = Webpage.project_no; 
@@ -37,14 +37,31 @@ public class Table_Balance extends javax.swing.JFrame {
        bal();
     }
     public static void  bal(){
+       ResultSet rs;
         try{
-            ps = FPE_DB.getConnection().prepareStatement("SELECT  `PROJECT NO`,(SELECT `NAME` FROM `customer_table` WHERE `customer_table`.`ID`= `payment_menthod`.`CUSTOMER ID`) AS `CUSTOMER`,(SELECT `ADDRESS` FROM `customer_table` WHERE `customer_table`.`ID`=`payment_menthod`.`CUSTOMER ID`) AS `ADDRESS`,`CUSTOMER P O NO` AS `P.O NO.`, `P O DATE` AS `P.O DATE`, `QUOTATION NO` AS `QUOT. NO`, `QUOTATION DATE` AS `QUOT. DATE`,`TOTAL AMOUNT`,`DOWNPAYMENT`, `BALANCE`,`STATUS` FROM `payment_menthod` WHERE `PROJECT NO`="+project+" ORDER BY `P O DATE` DESC");
-            ResultSet rs = ps.executeQuery();
+            ps = FPE_DB.getConnection().prepareStatement("SELECT  `PROJECT NO`,(SELECT `NAME` FROM `customer_table` WHERE `customer_table`.`ID`= `payment_menthod`.`CUSTOMER ID`) AS `CUSTOMER`,(SELECT `ADDRESS` FROM `customer_table` WHERE `customer_table`.`ID`=`payment_menthod`.`CUSTOMER ID`) AS `ADDRESS`,`CUSTOMER P O NO` AS `P.O NO.`, `P O DATE` AS `P.O DATE`, `QUOTATION NO` AS `QUOT. NO`, `QUOTATION DATE` AS `QUOT. DATE`,`TOTAL AMOUNT`,`DOWNPAYMENT`, `BALANCE`,`STATUS` FROM `payment_menthod` WHERE `PROJECT NO`="+Webpage.project_no+" ORDER BY `P O DATE` DESC");
+             rs = ps.executeQuery();
             Balance_Table.setModel(DbUtils.resultSetToTableModel(rs));
-//            Balance_Table.getColumnModel().getColumn(0).setMaxWidth(100);
+            
+            
             }catch(Exception e){
               //System.out.println(e);
             }
+        
+        try
+        {
+            ps = FPE_DB.getConnection().prepareStatement("SELECT `STATUS` FROM `payment_menthod` WHERE `PROJECT NO`="+Webpage.project_no+" ORDER BY `PROCESS` DESC LIMIT 1");
+            rs = ps.executeQuery();
+            if(rs.next())
+            {
+               status = rs.getString("STATUS");
+               System.out.println(status);
+            }           
+        }
+        catch(Exception e)
+            {
+                e.printStackTrace();
+            } 
     }
     
     @SuppressWarnings("unchecked")
@@ -81,7 +98,7 @@ public class Table_Balance extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 370, 80));
+        jPanel4.add(displays, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 440, 80));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1210, 120));
 
@@ -139,7 +156,7 @@ public class Table_Balance extends javax.swing.JFrame {
             .addComponent(Add, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(add_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, 210, 45));
+        kGradientPanel1.add(add_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 210, 45));
 
         back_panel_supplier.setBackground(new java.awt.Color(185, 144, 149));
 
@@ -164,14 +181,14 @@ public class Table_Balance extends javax.swing.JFrame {
         back_panel_supplier.setLayout(back_panel_supplierLayout);
         back_panel_supplierLayout.setHorizontalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
         );
         back_panel_supplierLayout.setVerticalGroup(
             back_panel_supplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 380, 210, 45));
+        kGradientPanel1.add(back_panel_supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 160, 45));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 1210, 450));
 
@@ -186,6 +203,7 @@ public class Table_Balance extends javax.swing.JFrame {
     if(banner.equals("BALANCE TABLE"))
     {
         bal(); 
+        System.out.println(status);
     }
     }//GEN-LAST:event_displaysAncestorAdded
 
@@ -195,7 +213,7 @@ public class Table_Balance extends javax.swing.JFrame {
     }//GEN-LAST:event_Balance_TableMouseClicked
 
     private void AddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddMouseClicked
-    if(Webpage.status.equals("PAID"))
+    if(status.equals("PAID"))
     {
         JOptionPane.showMessageDialog(null," THIS CUSTOMER IS ALREADY PAID ! ","",JOptionPane.INFORMATION_MESSAGE);
     }
@@ -211,7 +229,7 @@ public class Table_Balance extends javax.swing.JFrame {
     }//GEN-LAST:event_AddMouseClicked
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
- 
+        Webpage.project_no = "";
         dispose();
         
     }//GEN-LAST:event_BackMouseClicked
