@@ -25,11 +25,11 @@ import net.proteanit.sql.DbUtils;
 public class Print_Reciept_Generator extends javax.swing.JFrame {
 
     Class_Print cp = new Class_Print();
-    public static String p_no;
+    public static String id ="";
     
     public Print_Reciept_Generator() {
         initComponents();
-        cp.PrintGensetReciept();
+    
         
     }
 
@@ -344,6 +344,11 @@ public class Print_Reciept_Generator extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/delete_30px.png"))); // NOI18N
         jLabel5.setText("  CLOSE");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -425,7 +430,13 @@ public class Print_Reciept_Generator extends javax.swing.JFrame {
 
     private void fpeAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_fpeAncestorAdded
        String Banner = fpe1.getText();
-       String id = AddCart.project_no.getText();
+       
+        if(Webpage.project_no.equals(""))
+       {
+          id = AddCart.project_no.getText();
+       }
+        else
+       
         if(Banner.equals(" Field Power Enterprises")){
                 try{
                 PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `PROJECT NO`,(SELECT `NAME` FROM `customer_table` WHERE `customer_table`.`ID`= `payment_menthod`.`CUSTOMER ID`) AS `CUSTOMER NAME`,(SELECT `ADDRESS` FROM `customer_table` WHERE `customer_table`.`ID`= `payment_menthod`.`CUSTOMER ID`) AS `ADDRESS`,(SELECT `CONTACT` FROM `customer_table` WHERE `customer_table`.`ID`= `payment_menthod`.`CUSTOMER ID`) AS `CONTACT`, `CUSTOMER P O NO`, `P O DATE`, `QUOTATION NO`, `QUOTATION DATE`,`LOCATION`,(SELECT `NAME` FROM `agent_table` WHERE `agent_table`.`ID`= `payment_menthod`.`AGENT ID`) AS `AGENT NAME`,`TOTAL AMOUNT`, `DOWNPAYMENT`, `CASH / CHECK`, `BANK`, `DOWNPAYMENT DATE`, `O R NO`, `DOWNPAYMENT REMARKS`, `BALANCE`, `BALANCE REMARKS` FROM `payment_menthod` WHERE `PROJECT NO`='"+id+"'");
@@ -433,7 +444,7 @@ public class Print_Reciept_Generator extends javax.swing.JFrame {
                 while(rs.next()){
                     
                     projrct_no.setText(rs.getString("PROJECT NO"));
-                    p_no = rs.getString("PROJECT NO");
+                    //p_no = rs.getString("PROJECT NO");
                     customer_name.setText(rs.getString("CUSTOMER NAME"));
                     address.setText(rs.getString("ADDRESS"));
                     loc_genset.setText(rs.getString("LOCATION"));
@@ -457,7 +468,7 @@ public class Print_Reciept_Generator extends javax.swing.JFrame {
                     agent_name.setText(rs.getString("AGENT NAME"));
                     
                     try{
-                     ps = FPE_DB.getConnection().prepareStatement("SELECT   `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`,  `SELLER PRICE` AS `PRICE`, `QUANTITY`, `TOTAL PRICE` FROM `history_table` WHERE `CATEGORY` ='GENERATOR' AND `PROJECT NO`= "+p_no+"");
+                     ps = FPE_DB.getConnection().prepareStatement("SELECT   `BRAND`, `MODEL`, `KVA`, `PHASING`, `TYPE`,  `SELLER PRICE` AS `PRICE`, `QUANTITY`, `TOTAL PRICE` FROM `history_table` WHERE `CATEGORY` ='GENERATOR' AND `PROJECT NO`= "+id+"");
                      rs = ps.executeQuery();
                      print_genset.setModel(DbUtils.resultSetToTableModel(rs));
                      print_genset.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -476,6 +487,10 @@ public class Print_Reciept_Generator extends javax.swing.JFrame {
     private void fpe1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_fpe1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_fpe1AncestorAdded
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        dispose();
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments

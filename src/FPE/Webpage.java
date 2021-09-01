@@ -71,10 +71,10 @@ public class Webpage extends javax.swing.JFrame {
     public static String fullout_cat = null; 
     
     // ----------- PROJECT ID --------------------------------------------
-    public static String project_no = null; 
+    public static String project_no = ""; 
    
     // ----------- PROJECT ID --------------------------------------------
-    public static String request = null;
+    public static String request = "";
     
     // ----------- HISTORY ID --------------------------------------------
     
@@ -151,12 +151,12 @@ public class Webpage extends javax.swing.JFrame {
         
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-        dataset.addValue(cg.isuzu, "JANUARY", "ISUZU"); 
-        dataset.addValue(cg.yandong, "FEBRUARY", "YANDONG");
-        dataset.addValue(cg.perkins, "MARCH", "PERKINS");
-        dataset.addValue(cg.yamada, "APRIL", "YAMADA");
-        dataset.addValue(cg.weifang, "MAY", "WEIFANG");
-        dataset.addValue(cg.cummins, "JUNE", "CUMMINS");
+        dataset.addValue(cg.isuzu, "ISUZU", "ISUZU"); 
+        dataset.addValue(cg.yandong, "YANDONG", "YANDONG");
+        dataset.addValue(cg.perkins, "PERKINS", "PERKINS");
+        dataset.addValue(cg.yamada, "YAMADA", "YAMADA");
+        dataset.addValue(cg.weifang, "WEIFANG", "WEIFANG");
+        dataset.addValue(cg.cummins, "CUMMINS", "CUMMINS");
        
         JFreeChart chart = ChartFactory.createBarChart("GRAPH","BRAND","QUANTITY",dataset, PlotOrientation.VERTICAL, true,true,true);
         
@@ -506,7 +506,6 @@ public class Webpage extends javax.swing.JFrame {
 
         log.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         log.setForeground(new java.awt.Color(2, 51, 74));
-        log.setText("ADMIN");
         log.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -1565,7 +1564,7 @@ public class Webpage extends javax.swing.JFrame {
         jTextField14.setBorder(null);
         HISTORY.add(jTextField14, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 130, 31));
 
-        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " PURCHASE HISTORY ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 26), new java.awt.Color(240, 240, 240))); // NOI18N
+        jLabel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 153)), " HISTORY ", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Calibri", 1, 26), new java.awt.Color(240, 240, 240))); // NOI18N
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel4MouseEntered(evt);
@@ -2578,7 +2577,22 @@ int i=Cart_Table.getSelectedRow();
     }//GEN-LAST:event_Stock_Genset_Supplier3MouseExited
 
     private void Shop_Add7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add7MouseClicked
-        // TODO add your handling code here:
+        if(path.equals("PROJECT"))
+        {
+        Print_Reciept_Generator prg = new Print_Reciept_Generator();
+        Print_Reciept_Parts prp = new Print_Reciept_Parts();
+        prg.setVisible(true);
+        prp.setVisible(true);
+        Print_Reciept_Generator.id = project_no;
+        Print_Reciept_Parts.id= project_no;
+          
+        }else if(path.equals("REQUEST"))
+        {
+        Print_Reciept_Request ppr = new Print_Reciept_Request();
+        ppr.setVisible(true);
+        Print_Reciept_Request.id = request; 
+        
+        }
     }//GEN-LAST:event_Shop_Add7MouseClicked
 
     private void Shop_Add7MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add7MouseEntered

@@ -25,11 +25,11 @@ import net.proteanit.sql.DbUtils;
 public class Print_Reciept_Request extends javax.swing.JFrame {
 
     Class_Print cp = new Class_Print();
-    public static String p_no;
+    public static String id ="";
     
     public Print_Reciept_Request() {
         initComponents();
-        cp.PrintGensetReciept();
+        
         
     }
 
@@ -53,19 +53,20 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        po_date = new javax.swing.JLabel();
+        date = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        bank = new javax.swing.JLabel();
-        downpayment = new javax.swing.JLabel();
+        aprrove_by = new javax.swing.JLabel();
+        purpose = new javax.swing.JLabel();
         fpe1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        bank1 = new javax.swing.JLabel();
+        requesition_by = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        bank2 = new javax.swing.JLabel();
+        issue_by = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        bank3 = new javax.swing.JLabel();
+        encode_by = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -103,7 +104,7 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
 
         srs_no.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         srs_no.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        print_gensets.add(srs_no, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, 130, 30));
+        print_gensets.add(srs_no, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 160, 30));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel11.setText(" Date :");
@@ -122,11 +123,11 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(print_request);
 
-        print_gensets.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 810, 420));
+        print_gensets.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 810, 370));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel14.setText(" Issue By");
-        print_gensets.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 780, 130, 30));
+        jLabel14.setText("Total Amount");
+        print_gensets.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 630, 220, 30));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel16.setText(" Purpose :");
@@ -134,25 +135,25 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel18.setText("Name :");
-        print_gensets.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 820, 70, 30));
+        print_gensets.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 810, 70, 30));
 
-        po_date.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        po_date.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        print_gensets.add(po_date, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 180, 130, 30));
+        date.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        date.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        print_gensets.add(date, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, 160, 30));
 
         jLabel33.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel33.setText(" SRS No.");
         print_gensets.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 140, 80, 30));
 
-        bank.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        bank.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bank.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        print_gensets.add(bank, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 820, 290, 30));
+        aprrove_by.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        aprrove_by.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        aprrove_by.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        print_gensets.add(aprrove_by, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 810, 290, 30));
 
-        downpayment.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        downpayment.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        downpayment.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        print_gensets.add(downpayment, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 700, 720, 30));
+        purpose.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        purpose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        purpose.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        print_gensets.add(purpose, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 700, 720, 30));
 
         fpe1.setFont(new java.awt.Font("Calibri", 1, 28)); // NOI18N
         fpe1.setForeground(new java.awt.Color(51, 51, 51));
@@ -171,38 +172,42 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel19.setText(" Requisition By");
-        print_gensets.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 770, 90, 30));
+        print_gensets.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 780, 90, 30));
 
-        bank1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        bank1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bank1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        print_gensets.add(bank1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 960, 290, 30));
+        requesition_by.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        requesition_by.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        requesition_by.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        print_gensets.add(requesition_by, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 940, 290, 30));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel26.setText("Name :");
-        print_gensets.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 960, 70, 30));
+        print_gensets.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 940, 70, 30));
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel27.setText(" Requisition By");
         print_gensets.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 910, 130, 30));
 
-        bank2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        bank2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bank2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        print_gensets.add(bank2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 820, 300, 30));
+        issue_by.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        issue_by.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        issue_by.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        print_gensets.add(issue_by, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 810, 300, 30));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel28.setText("Name :");
-        print_gensets.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 830, 60, 30));
+        print_gensets.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 810, 60, 30));
 
-        bank3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        bank3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        bank3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        print_gensets.add(bank3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 960, 300, 30));
+        encode_by.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        encode_by.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        encode_by.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+        print_gensets.add(encode_by, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 940, 300, 30));
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel29.setText("Encode By");
         print_gensets.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 910, 60, 30));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        jLabel15.setText(" Issue By");
+        print_gensets.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 780, 130, 30));
 
         jScrollPane1.setViewportView(print_gensets);
 
@@ -218,6 +223,11 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/delete_30px.png"))); // NOI18N
         jLabel5.setText("  CLOSE");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -299,30 +309,39 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
 
     private void fpeAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_fpeAncestorAdded
        String Banner = fpe1.getText();
-       String id = AddCart.project_no.getText();
+       if(id.equals(""))
+       {
+          id = AddFullout.srs_nos; 
+       }
+      
+       
+       
         if(Banner.equals(" Field Power Enterprises")){
                 try{
-                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("");
+                PreparedStatement ps=FPE_DB.getConnection().prepareStatement("SELECT `SRS NO`, `NAME`, `DATE`, `STORE KEEPER`, `PURPOSE`, `APPROVE BY`, `ENCODE BY`, `ACCOUNT CHARGE` FROM `request_table` WHERE `SRS NO` = "+id+"");
                 ResultSet rs = ps.executeQuery();
                 while(rs.next()){
                     
-                    srs_no.setText(rs.getString("PROJECT NO"));
-                    p_no = rs.getString("PROJECT NO");
-                    customer_name.setText(rs.getString("CUSTOMER NAME"));
-                    address.setText(rs.getString("ADDRESS"));
-                    loc_genset.setText(rs.getString("LOCATION"));
-                    contact.setText(rs.getString("CONTACT"));
-                    customer_po.setText(rs.getString("CUSTOMER P O NO"));
-                    po_date.setText(rs.getString("P O DATE"));
-                    qoutation_no.setText(rs.getString("QUOTATION NO"));
-                    qoutation_date.setText(rs.getString("QUOTATION DATE"));
+                    srs_no.setText(rs.getString("SRS NO"));
+                    //p_no = rs.getString("SRS NO");
+                    date.setText(rs.getString("DATE"));
+                    
+                    purpose.setText(rs.getString("PURPOSE"));
+                    
+                    aprrove_by.setText(rs.getString("APPROVE BY"));
+                    issue_by.setText(rs.getString("STORE KEEPER"));
+                    
+                    requesition_by.setText(rs.getString("NAME"));
+                    encode_by.setText(rs.getString("ENCODE BY"));
+                    
+                    
                     
                     
                     
                     
                     
                     try{
-                     ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY`AS `QTY`, `SELLER PRICE` AS `UNIT PRICE`, CONCAT(`BRAND`,`KVA`) AS `DESCRIPTION`, `TOTAL PRICE`, (SELECT `ACCOUNT CHARGE`FROM `request_table` WHERE `history_table`.`PROJECT NO` = `request_table`.`SRS NO`) AS `ACCOUNT CHARGE` FROM `history_table` WHERE `SRS NO`="+id+"");
+                     ps = FPE_DB.getConnection().prepareStatement("SELECT `QUANTITY`AS `QTY`, `SELLER PRICE` AS `UNIT PRICE`, CONCAT(`BRAND`, `KVA`) AS `DESCRIPTION`, `TOTAL PRICE`AS`TOTAL AMOUNT`,(SELECT `ACCOUNT CHARGE` FROM `request_table` WHERE  `history_table`.`PROJECT NO` = `request_table`.`SRS NO`) AS `ACCOUNT CHARGE` FROM `history_table`  WHERE `ACTION` = 'FULLOUT' AND `PROJECT NO`= "+id+"");
                      rs = ps.executeQuery();
                      print_request.setModel(DbUtils.resultSetToTableModel(rs));
                      print_request.getColumnModel().getColumn(0).setMaxWidth(100);
@@ -341,6 +360,10 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
     private void fpe1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_fpe1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_fpe1AncestorAdded
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+       dispose();
+    }//GEN-LAST:event_jLabel5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -385,16 +408,16 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bank;
-    private javax.swing.JLabel bank1;
-    private javax.swing.JLabel bank2;
-    private javax.swing.JLabel bank3;
-    private javax.swing.JLabel downpayment;
+    private javax.swing.JLabel aprrove_by;
+    private javax.swing.JLabel date;
+    private javax.swing.JLabel encode_by;
     private javax.swing.JLabel fpe;
     private javax.swing.JLabel fpe1;
+    private javax.swing.JLabel issue_by;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -410,9 +433,10 @@ public class Print_Reciept_Request extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel po_date;
     private javax.swing.JPanel print_gensets;
     public static javax.swing.JTable print_request;
+    private javax.swing.JLabel purpose;
+    private javax.swing.JLabel requesition_by;
     private javax.swing.JLabel srs_no;
     // End of variables declaration//GEN-END:variables
 

@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class AddFullout extends javax.swing.JFrame {
 
     int process = 1;
-    
+    public static String srs_nos = "";
     public AddFullout() {
         initComponents();
     }
@@ -349,7 +349,7 @@ public class AddFullout extends javax.swing.JFrame {
 
     private void Stock_Genset_UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_UpdateMouseClicked
  
-        String srs_nos = srs_no.getText();
+        srs_nos = srs_no.getText();
         String names = name.getText(); 
         String dates = date.getText();
         String store_keepers = store_keeper.getText();
@@ -362,6 +362,8 @@ public class AddFullout extends javax.swing.JFrame {
         if(!Class_Request.Request(srs_nos, names, dates, store_keepers, purposes, approves, encodes, account_charges)  && !Class_Request.Request_Update_History(dates, srs_nos,""+process) && !Class_fullout.Fullout_Delete())
         {
             JOptionPane.showMessageDialog(null, " TRANSACTION SUCCESS !! ","",JOptionPane.UNDEFINED_CONDITION); Webpage.ct.request(); Webpage.ct.Fullout(); Webpage.ct.History();
+            Print_Reciept_Request prr = new Print_Reciept_Request();
+            prr.setVisible(true);
         }
 
     }//GEN-LAST:event_Stock_Genset_UpdateMouseClicked
