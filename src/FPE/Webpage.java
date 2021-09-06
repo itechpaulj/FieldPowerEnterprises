@@ -51,7 +51,7 @@ public class Webpage extends javax.swing.JFrame {
     public static Add_Selection as = new Add_Selection(); 
     public static Add_Drawer_Sale ads = new Add_Drawer_Sale();
     public static Add_Drawer_Reports adr = new Add_Drawer_Reports();
-    public static Add_Drawer_Account ada = new Add_Drawer_Account();
+    Add_Drawer_Account ada = new Add_Drawer_Account();
     
     // ----------- STOCK ID ----------------------------------------------
     public static String stock_id = null;
@@ -217,8 +217,6 @@ public class Webpage extends javax.swing.JFrame {
         STOCKS_1 = new keeptoo.KGradientPanel();
         Stock_Genset_Panel_Add = new javax.swing.JPanel();
         Stock_Genset_Add = new javax.swing.JLabel();
-        Stock_Genset_Panel_Supplier = new javax.swing.JPanel();
-        Stock_Genset_Supplier = new javax.swing.JLabel();
         Stock_Genset_Panel_Supplier1 = new javax.swing.JPanel();
         Stock_Genset_AllPrint = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -239,10 +237,6 @@ public class Webpage extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         Stock_Genset_Panel_Add5 = new javax.swing.JPanel();
         Shop_Add3 = new javax.swing.JLabel();
-        Stock_Genset_Panel_Supplier2 = new javax.swing.JPanel();
-        Stock_Genset_Customer = new javax.swing.JLabel();
-        Stock_Genset_Panel_Add13 = new javax.swing.JPanel();
-        Shop_Add11 = new javax.swing.JLabel();
         jTextField18 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         CART_3 = new keeptoo.KGradientPanel();
@@ -478,7 +472,7 @@ public class Webpage extends javax.swing.JFrame {
         ACCOUNT.setForeground(new java.awt.Color(255, 255, 255));
         ACCOUNT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ACCOUNT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/settings.png"))); // NOI18N
-        ACCOUNT.setText(" SETTING ›  ");
+        ACCOUNT.setText(" MANAGE    ");
         ACCOUNT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ACCOUNTMouseClicked(evt);
@@ -560,9 +554,9 @@ public class Webpage extends javax.swing.JFrame {
         });
 
         HOME_0.setBackground(new java.awt.Color(0, 79, 153));
-        HOME_0.setkEndColor(new java.awt.Color(42, 117, 117));
+        HOME_0.setkEndColor(new java.awt.Color(42, 117, 107));
         HOME_0.setkGradientFocus(700);
-        HOME_0.setkStartColor(new java.awt.Color(42, 117, 117));
+        HOME_0.setkStartColor(new java.awt.Color(42, 117, 107));
         HOME_0.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 HOME_0MouseEntered(evt);
@@ -582,9 +576,9 @@ public class Webpage extends javax.swing.JFrame {
 
         JTab.addTab("", HOME_0);
 
-        STOCKS_1.setkEndColor(new java.awt.Color(42, 117, 117));
+        STOCKS_1.setkEndColor(new java.awt.Color(42, 117, 107));
         STOCKS_1.setkGradientFocus(700);
-        STOCKS_1.setkStartColor(new java.awt.Color(42, 117, 117));
+        STOCKS_1.setkStartColor(new java.awt.Color(42, 117, 107));
         STOCKS_1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 STOCKS_1MouseEntered(evt);
@@ -624,38 +618,6 @@ public class Webpage extends javax.swing.JFrame {
 
         STOCKS_1.add(Stock_Genset_Panel_Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 180, 45));
 
-        Stock_Genset_Panel_Supplier.setBackground(new java.awt.Color(153, 153, 102));
-
-        Stock_Genset_Supplier.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Stock_Genset_Supplier.setForeground(new java.awt.Color(255, 255, 255));
-        Stock_Genset_Supplier.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Supplier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/supplier.png"))); // NOI18N
-        Stock_Genset_Supplier.setText(" SUPPLIER");
-        Stock_Genset_Supplier.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Stock_Genset_SupplierMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Stock_Genset_SupplierMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Stock_Genset_SupplierMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Stock_Genset_Panel_SupplierLayout = new javax.swing.GroupLayout(Stock_Genset_Panel_Supplier);
-        Stock_Genset_Panel_Supplier.setLayout(Stock_Genset_Panel_SupplierLayout);
-        Stock_Genset_Panel_SupplierLayout.setHorizontalGroup(
-            Stock_Genset_Panel_SupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        Stock_Genset_Panel_SupplierLayout.setVerticalGroup(
-            Stock_Genset_Panel_SupplierLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Supplier, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-        );
-
-        STOCKS_1.add(Stock_Genset_Panel_Supplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 520, 160, 45));
-
         Stock_Genset_Panel_Supplier1.setBackground(new java.awt.Color(102, 153, 153));
 
         Stock_Genset_AllPrint.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -686,7 +648,7 @@ public class Webpage extends javax.swing.JFrame {
             .addComponent(Stock_Genset_AllPrint, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
         );
 
-        STOCKS_1.add(Stock_Genset_Panel_Supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, 160, 45));
+        STOCKS_1.add(Stock_Genset_Panel_Supplier1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 160, 45));
 
         Stock_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -787,9 +749,9 @@ public class Webpage extends javax.swing.JFrame {
 
         JTab.addTab("", STOCKS_1);
 
-        SALES_2.setkEndColor(new java.awt.Color(42, 117, 117));
+        SALES_2.setkEndColor(new java.awt.Color(42, 117, 107));
         SALES_2.setkGradientFocus(700);
-        SALES_2.setkStartColor(new java.awt.Color(42, 117, 117));
+        SALES_2.setkStartColor(new java.awt.Color(42, 117, 107));
         SALES_2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 SALES_2MouseEntered(evt);
@@ -880,71 +842,6 @@ public class Webpage extends javax.swing.JFrame {
 
         SALES_2.add(Stock_Genset_Panel_Add5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 520, 200, 45));
 
-        Stock_Genset_Panel_Supplier2.setBackground(new java.awt.Color(223, 94, 94));
-
-        Stock_Genset_Customer.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Stock_Genset_Customer.setForeground(new java.awt.Color(255, 255, 255));
-        Stock_Genset_Customer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Stock_Genset_Customer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/customer.png"))); // NOI18N
-        Stock_Genset_Customer.setText("CUSTOMER");
-        Stock_Genset_Customer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Stock_Genset_CustomerMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Stock_Genset_CustomerMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Stock_Genset_CustomerMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Stock_Genset_Panel_Supplier2Layout = new javax.swing.GroupLayout(Stock_Genset_Panel_Supplier2);
-        Stock_Genset_Panel_Supplier2.setLayout(Stock_Genset_Panel_Supplier2Layout);
-        Stock_Genset_Panel_Supplier2Layout.setHorizontalGroup(
-            Stock_Genset_Panel_Supplier2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Customer, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        Stock_Genset_Panel_Supplier2Layout.setVerticalGroup(
-            Stock_Genset_Panel_Supplier2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Stock_Genset_Customer, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-        );
-
-        SALES_2.add(Stock_Genset_Panel_Supplier2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, 160, 45));
-
-        Stock_Genset_Panel_Add13.setBackground(new java.awt.Color(176, 91, 59));
-
-        Shop_Add11.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Shop_Add11.setForeground(new java.awt.Color(255, 255, 255));
-        Shop_Add11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Shop_Add11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/agent.png"))); // NOI18N
-        Shop_Add11.setText(" AGENT  ");
-        Shop_Add11.setToolTipText("");
-        Shop_Add11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Shop_Add11MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Shop_Add11MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Shop_Add11MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout Stock_Genset_Panel_Add13Layout = new javax.swing.GroupLayout(Stock_Genset_Panel_Add13);
-        Stock_Genset_Panel_Add13.setLayout(Stock_Genset_Panel_Add13Layout);
-        Stock_Genset_Panel_Add13Layout.setHorizontalGroup(
-            Stock_Genset_Panel_Add13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Add11, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-        );
-        Stock_Genset_Panel_Add13Layout.setVerticalGroup(
-            Stock_Genset_Panel_Add13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Shop_Add11, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-        );
-
-        SALES_2.add(Stock_Genset_Panel_Add13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 520, 160, 45));
-
         jTextField18.setEditable(false);
         jTextField18.setBackground(new java.awt.Color(148, 184, 184));
         jTextField18.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -963,9 +860,9 @@ public class Webpage extends javax.swing.JFrame {
 
         JTab.addTab("", SALES_2);
 
-        CART_3.setkEndColor(new java.awt.Color(42, 117, 117));
+        CART_3.setkEndColor(new java.awt.Color(42, 117, 107));
         CART_3.setkGradientFocus(700);
-        CART_3.setkStartColor(new java.awt.Color(42, 117, 117));
+        CART_3.setkStartColor(new java.awt.Color(42, 117, 107));
         CART_3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 CART_3MouseEntered(evt);
@@ -1137,9 +1034,9 @@ public class Webpage extends javax.swing.JFrame {
 
         JTab.addTab("", CART_3);
 
-        FULLOUT_4.setkEndColor(new java.awt.Color(42, 117, 117));
+        FULLOUT_4.setkEndColor(new java.awt.Color(42, 117, 107));
         FULLOUT_4.setkGradientFocus(700);
-        FULLOUT_4.setkStartColor(new java.awt.Color(42, 117, 117));
+        FULLOUT_4.setkStartColor(new java.awt.Color(42, 117, 107));
         FULLOUT_4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 FULLOUT_4MouseEntered(evt);
@@ -1313,9 +1210,9 @@ public class Webpage extends javax.swing.JFrame {
         JTab.addTab("", FULLOUT_4);
 
         PROJECT.setBackground(new java.awt.Color(0, 79, 153));
-        PROJECT.setkEndColor(new java.awt.Color(42, 117, 117));
+        PROJECT.setkEndColor(new java.awt.Color(42, 117, 107));
         PROJECT.setkGradientFocus(700);
-        PROJECT.setkStartColor(new java.awt.Color(42, 117, 117));
+        PROJECT.setkStartColor(new java.awt.Color(42, 117, 107));
         PROJECT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 PROJECTMouseEntered(evt);
@@ -1405,9 +1302,9 @@ public class Webpage extends javax.swing.JFrame {
         JTab.addTab("", PROJECT);
 
         REQUEST.setBackground(new java.awt.Color(0, 79, 153));
-        REQUEST.setkEndColor(new java.awt.Color(42, 117, 117));
+        REQUEST.setkEndColor(new java.awt.Color(42, 117, 107));
         REQUEST.setkGradientFocus(700);
-        REQUEST.setkStartColor(new java.awt.Color(42, 117, 117));
+        REQUEST.setkStartColor(new java.awt.Color(42, 117, 107));
         REQUEST.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 REQUESTMouseEntered(evt);
@@ -1497,9 +1394,9 @@ public class Webpage extends javax.swing.JFrame {
         JTab.addTab("", REQUEST);
 
         HISTORY.setBackground(new java.awt.Color(0, 79, 153));
-        HISTORY.setkEndColor(new java.awt.Color(42, 117, 117));
+        HISTORY.setkEndColor(new java.awt.Color(42, 117, 107));
         HISTORY.setkGradientFocus(700);
-        HISTORY.setkStartColor(new java.awt.Color(42, 117, 117));
+        HISTORY.setkStartColor(new java.awt.Color(42, 117, 107));
         HISTORY.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 HISTORYMouseEntered(evt);
@@ -1671,9 +1568,9 @@ public class Webpage extends javax.swing.JFrame {
         JTab.addTab("", HISTORY);
 
         STATUS.setBackground(new java.awt.Color(0, 79, 153));
-        STATUS.setkEndColor(new java.awt.Color(42, 117, 117));
+        STATUS.setkEndColor(new java.awt.Color(42, 117, 107));
         STATUS.setkGradientFocus(700);
-        STATUS.setkStartColor(new java.awt.Color(42, 117, 117));
+        STATUS.setkStartColor(new java.awt.Color(42, 117, 107));
         STATUS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 STATUSMouseEntered(evt);
@@ -1798,28 +1695,6 @@ public class Webpage extends javax.swing.JFrame {
     }
          
     }//GEN-LAST:event_Stock_TableMouseClicked
-
-    private void Stock_Genset_SupplierMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseExited
-        Stock_Genset_Panel_Supplier.setBackground(new Color(153,153,102));
-        Stock_Genset_Supplier.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Stock_Genset_SupplierMouseExited
-
-    private void Stock_Genset_SupplierMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseEntered
-        Stock_Genset_Panel_Supplier.setBackground(new Color(163, 235, 177));
-        Stock_Genset_Supplier.setForeground(new Color(51,51,51));
-    }//GEN-LAST:event_Stock_Genset_SupplierMouseEntered
-
-    private void Stock_Genset_SupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_SupplierMouseClicked
-        if(log.getText().equals("ADMIN"))
-        {
-        Table_Supplier tbs = new Table_Supplier();
-        tbs.setVisible(true);
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,null," ONLY ADMIN CAN ACCESS THIS ",JOptionPane.UNDEFINED_CONDITION);
-        }
-    }//GEN-LAST:event_Stock_Genset_SupplierMouseClicked
 
     private void Stock_Genset_AddMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_AddMouseExited
         Stock_Genset_Panel_Add.setBackground(new Color(24,165,88));
@@ -2170,28 +2045,6 @@ int i=Cart_Table.getSelectedRow();
         
     }//GEN-LAST:event_Search_StockKeyReleased
 
-    private void Stock_Genset_CustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_CustomerMouseClicked
-        if(log.getText().equals("ADMIN"))
-        {
-            Table_Customer tcs = new Table_Customer();
-            tcs.setVisible(true);
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,null," ONLY ADMIN CAN ACCESS THIS ",JOptionPane.UNDEFINED_CONDITION);
-        }
-    }//GEN-LAST:event_Stock_Genset_CustomerMouseClicked
-
-    private void Stock_Genset_CustomerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_CustomerMouseEntered
-        Stock_Genset_Panel_Supplier2.setBackground(new Color(163, 235, 177));
-        Stock_Genset_Customer.setForeground(new Color(51,51,51));
-    }//GEN-LAST:event_Stock_Genset_CustomerMouseEntered
-
-    private void Stock_Genset_CustomerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stock_Genset_CustomerMouseExited
-        Stock_Genset_Panel_Supplier2.setBackground(new Color(223,94,94));
-        Stock_Genset_Customer.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Stock_Genset_CustomerMouseExited
-
     private void Stock_CategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stock_CategoryActionPerformed
         String Stock = Stock_Category.getSelectedItem().toString();
         
@@ -2249,29 +2102,6 @@ int i=Cart_Table.getSelectedRow();
     private void STATUSMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_STATUSMouseEntered
        Dispose();
     }//GEN-LAST:event_STATUSMouseEntered
-
-    private void Shop_Add11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add11MouseClicked
-       
-       if(log.getText().equals("ADMIN"))
-        {
-            Table_Agent ta = new Table_Agent();
-            ta.setVisible(true);
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null,null," ONLY ADMIN CAN ACCESS THIS ",JOptionPane.UNDEFINED_CONDITION);
-        }
-    }//GEN-LAST:event_Shop_Add11MouseClicked
-
-    private void Shop_Add11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add11MouseEntered
-        Stock_Genset_Panel_Add13.setBackground(new Color(163, 235, 177));
-        Shop_Add11.setForeground(new Color(51,51,51));
-    }//GEN-LAST:event_Shop_Add11MouseEntered
-
-    private void Shop_Add11MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Shop_Add11MouseExited
-        Stock_Genset_Panel_Add13.setBackground(new Color(176,91,59));
-        Shop_Add11.setForeground(new Color(255,255,255));
-    }//GEN-LAST:event_Shop_Add11MouseExited
 
     private void History_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_History_TableMouseClicked
        
@@ -2809,7 +2639,6 @@ int i=Cart_Table.getSelectedRow();
     private javax.swing.JTextField Search_Request;
     private javax.swing.JTextField Search_Sale;
     private javax.swing.JTextField Search_Stock;
-    public static javax.swing.JLabel Shop_Add11;
     public static javax.swing.JLabel Shop_Add12;
     public static javax.swing.JLabel Shop_Add2;
     public static javax.swing.JLabel Shop_Add3;
@@ -2822,11 +2651,9 @@ int i=Cart_Table.getSelectedRow();
     private javax.swing.JComboBox<String> Stock_Category;
     public static javax.swing.JLabel Stock_Genset_Add;
     public static javax.swing.JLabel Stock_Genset_AllPrint;
-    public static javax.swing.JLabel Stock_Genset_Customer;
     public static javax.swing.JPanel Stock_Genset_Panel_Add;
     public static javax.swing.JPanel Stock_Genset_Panel_Add10;
     public static javax.swing.JPanel Stock_Genset_Panel_Add11;
-    public static javax.swing.JPanel Stock_Genset_Panel_Add13;
     public static javax.swing.JPanel Stock_Genset_Panel_Add14;
     public static javax.swing.JPanel Stock_Genset_Panel_Add4;
     public static javax.swing.JPanel Stock_Genset_Panel_Add5;
@@ -2834,12 +2661,9 @@ int i=Cart_Table.getSelectedRow();
     public static javax.swing.JPanel Stock_Genset_Panel_Add7;
     public static javax.swing.JPanel Stock_Genset_Panel_Add8;
     public static javax.swing.JPanel Stock_Genset_Panel_Add9;
-    public static javax.swing.JPanel Stock_Genset_Panel_Supplier;
     public static javax.swing.JPanel Stock_Genset_Panel_Supplier1;
-    public static javax.swing.JPanel Stock_Genset_Panel_Supplier2;
     public static javax.swing.JPanel Stock_Genset_Panel_Supplier3;
     public static javax.swing.JPanel Stock_Genset_Panel_Supplier5;
-    public static javax.swing.JLabel Stock_Genset_Supplier;
     public static javax.swing.JLabel Stock_Genset_Supplier1;
     public static javax.swing.JLabel Stock_Genset_Supplier3;
     public static javax.swing.JTable Stock_Table;

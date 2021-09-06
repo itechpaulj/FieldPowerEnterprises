@@ -336,7 +336,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/Picture/BAGO/settings.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" SETTING &#x203a;  "/>
+                <Property name="text" type="java.lang.String" value=" MANAGE    "/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ACCOUNTMouseClicked"/>
@@ -445,11 +445,11 @@
               <Color blue="99" green="4f" red="0" type="rgb"/>
             </Property>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
             <Property name="kGradientFocus" type="int" value="700"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -491,11 +491,11 @@
         <Container class="keeptoo.KGradientPanel" name="STOCKS_1">
           <Properties>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
             <Property name="kGradientFocus" type="int" value="700"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -566,59 +566,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Stock_Genset_Panel_Supplier">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="99" red="99" type="rgb"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-              </AuxValues>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="500" y="520" width="160" height="45"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Stock_Genset_Supplier" alignment="0" pref="160" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Stock_Genset_Supplier" alignment="0" pref="45" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="Stock_Genset_Supplier">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="18" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Picture/BAGO/supplier.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value=" SUPPLIER"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_SupplierMouseClicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_SupplierMouseEntered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_SupplierMouseExited"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
             <Container class="javax.swing.JPanel" name="Stock_Genset_Panel_Supplier1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -630,7 +577,7 @@
               </AuxValues>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="700" y="520" width="160" height="45"/>
+                  <AbsoluteConstraints x="510" y="520" width="160" height="45"/>
                 </Constraint>
               </Constraints>
 
@@ -867,11 +814,11 @@
         <Container class="keeptoo.KGradientPanel" name="SALES_2">
           <Properties>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
             <Property name="kGradientFocus" type="int" value="700"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -1046,113 +993,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="Stock_Genset_Panel_Supplier2">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="5e" green="5e" red="df" type="rgb"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-              </AuxValues>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="280" y="520" width="160" height="45"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Stock_Genset_Customer" alignment="0" pref="160" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Stock_Genset_Customer" alignment="0" pref="45" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="Stock_Genset_Customer">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="18" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Picture/BAGO/customer.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="CUSTOMER"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_CustomerMouseClicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_CustomerMouseEntered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Stock_Genset_CustomerMouseExited"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
-            <Container class="javax.swing.JPanel" name="Stock_Genset_Panel_Add13">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="3b" green="5b" red="b0" type="rgb"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-              </AuxValues>
-              <Constraints>
-                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="480" y="520" width="160" height="45"/>
-                </Constraint>
-              </Constraints>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Shop_Add11" alignment="0" pref="160" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Shop_Add11" alignment="0" pref="45" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="Shop_Add11">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="18" style="0"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Picture/BAGO/agent.png"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value=" AGENT  "/>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Shop_Add11MouseClicked"/>
-                    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Shop_Add11MouseEntered"/>
-                    <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Shop_Add11MouseExited"/>
-                  </Events>
-                  <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
-                  </AuxValues>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JTextField" name="jTextField18">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
@@ -1204,11 +1044,11 @@
         <Container class="keeptoo.KGradientPanel" name="CART_3">
           <Properties>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
             <Property name="kGradientFocus" type="int" value="700"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -1537,11 +1377,11 @@
         <Container class="keeptoo.KGradientPanel" name="FULLOUT_4">
           <Properties>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
             <Property name="kGradientFocus" type="int" value="700"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -1873,11 +1713,11 @@
               <Color blue="99" green="4f" red="0" type="rgb"/>
             </Property>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
             <Property name="kGradientFocus" type="int" value="700"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -2042,11 +1882,11 @@
               <Color blue="99" green="4f" red="0" type="rgb"/>
             </Property>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
             <Property name="kGradientFocus" type="int" value="700"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -2214,11 +2054,11 @@
               <Color blue="99" green="4f" red="0" type="rgb"/>
             </Property>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
             <Property name="kGradientFocus" type="int" value="700"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -2538,11 +2378,11 @@
               <Color blue="99" green="4f" red="0" type="rgb"/>
             </Property>
             <Property name="kEndColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
             <Property name="kGradientFocus" type="int" value="700"/>
             <Property name="kStartColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="75" green="75" red="2a" type="rgb"/>
+              <Color blue="6b" green="75" red="2a" type="rgb"/>
             </Property>
           </Properties>
           <Events>

@@ -7,6 +7,7 @@ package FPE;
 
 import java.awt.Color;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,7 +15,13 @@ import javax.swing.JFrame;
  */
 public class Add_Drawer_Account extends javax.swing.JFrame {
 
-    ;
+    public static Setting l = new Setting();
+    public static Table_Supplier tbs = new Table_Supplier();
+    public static Table_Customer tcs = new Table_Customer();
+    public static Table_Agent ta = new Table_Agent();       
+    
+    
+    
     public Add_Drawer_Account() {
         initComponents();
     }
@@ -31,6 +38,12 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
 
         add_user_panel = new javax.swing.JPanel();
         add_user = new javax.swing.JLabel();
+        add_user_panel1 = new javax.swing.JPanel();
+        add_user1 = new javax.swing.JLabel();
+        add_user_panel2 = new javax.swing.JPanel();
+        add_user2 = new javax.swing.JLabel();
+        add_user_panel3 = new javax.swing.JPanel();
+        add_user3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -43,7 +56,7 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
         add_user.setForeground(new java.awt.Color(255, 255, 255));
         add_user.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         add_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/manager_30px.png"))); // NOI18N
-        add_user.setText("  MANAGE  ");
+        add_user.setText(" STAFF          ");
         add_user.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 add_userMouseClicked(evt);
@@ -59,7 +72,76 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
 
         getContentPane().add(add_user_panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
 
-        setBounds(1063, 102, 180, 60);
+        add_user_panel1.setBackground(new java.awt.Color(0, 117, 128));
+        add_user_panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        add_user1.setFont(new java.awt.Font("Calibri", 1, 22)); // NOI18N
+        add_user1.setForeground(new java.awt.Color(255, 255, 255));
+        add_user1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add_user1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/supplier.png"))); // NOI18N
+        add_user1.setText(" SUPPLIER    ");
+        add_user1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                add_user1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_user1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_user1MouseExited(evt);
+            }
+        });
+        add_user_panel1.add(add_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
+
+        getContentPane().add(add_user_panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 180, 60));
+
+        add_user_panel2.setBackground(new java.awt.Color(0, 117, 128));
+        add_user_panel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        add_user2.setFont(new java.awt.Font("Calibri", 1, 22)); // NOI18N
+        add_user2.setForeground(new java.awt.Color(255, 255, 255));
+        add_user2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add_user2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/agents.png"))); // NOI18N
+        add_user2.setText(" AGENT        ");
+        add_user2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                add_user2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_user2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_user2MouseExited(evt);
+            }
+        });
+        add_user_panel2.add(add_user2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
+
+        getContentPane().add(add_user_panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 180, 60));
+
+        add_user_panel3.setBackground(new java.awt.Color(0, 117, 128));
+        add_user_panel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        add_user3.setFont(new java.awt.Font("Calibri", 1, 22)); // NOI18N
+        add_user3.setForeground(new java.awt.Color(255, 255, 255));
+        add_user3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        add_user3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/BAGO/customer.png"))); // NOI18N
+        add_user3.setText(" CUSTOMER");
+        add_user3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                add_user3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_user3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_user3MouseExited(evt);
+            }
+        });
+        add_user_panel3.add(add_user3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 60));
+
+        getContentPane().add(add_user_panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 180, 60));
+
+        setBounds(1063, 102, 180, 240);
     }// </editor-fold>//GEN-END:initComponents
 
     private void add_userMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_userMouseExited
@@ -73,12 +155,114 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
     }//GEN-LAST:event_add_userMouseEntered
 
     private void add_userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_userMouseClicked
-        Setting l = new Setting();
         l.setVisible(true);
-        add_user.setForeground(new Color(255,255,255));
-        add_user_panel.setBackground(new Color(0,117,128));
-        dispose();
+        
+       if(l.isVisible())
+        {
+
+            tbs.dispose();
+            tcs.dispose();
+            ta.dispose();
+            add_user.setForeground(new Color(255,255,255));
+            add_user_panel.setBackground(new Color(0,117,128));
+
+        }
+       
+        
     }//GEN-LAST:event_add_userMouseClicked
+
+    private void add_user2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_user2MouseClicked
+        if(Webpage.log.getText().equals("ADMIN"))
+        {
+            
+            ta.setVisible(true);
+            
+            if(ta.isVisible())
+            {
+                l.dispose();
+                tbs.dispose();
+                tcs.dispose();
+            
+            }
+            
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,null," ONLY ADMIN CAN ACCESS THIS ",JOptionPane.UNDEFINED_CONDITION);
+        }
+    }//GEN-LAST:event_add_user2MouseClicked
+
+    private void add_user2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_user2MouseEntered
+       
+        
+        add_user_panel2.setBackground(new Color(163, 235, 177));
+        add_user2.setForeground(new Color(33, 21, 34));
+    }//GEN-LAST:event_add_user2MouseEntered
+
+    private void add_user2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_user2MouseExited
+          add_user_panel2.setBackground(new Color(0,117,128));
+        add_user2.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_add_user2MouseExited
+
+    private void add_user3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_user3MouseClicked
+          if(Webpage.log.getText().equals("ADMIN"))
+        {
+            
+            tcs.setVisible(true);
+            if(tcs.isVisible())
+            {
+                l.dispose();
+                tbs.dispose();
+               
+                ta.dispose();
+            }
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,null," ONLY ADMIN CAN ACCESS THIS ",JOptionPane.UNDEFINED_CONDITION);
+        }
+    }//GEN-LAST:event_add_user3MouseClicked
+
+    private void add_user3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_user3MouseEntered
+        add_user_panel3.setBackground(new Color(163, 235, 177));
+        add_user3.setForeground(new Color(33, 21, 34));
+    }//GEN-LAST:event_add_user3MouseEntered
+
+    private void add_user3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_user3MouseExited
+        add_user_panel3.setBackground(new Color(0,117,128));
+        add_user3.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_add_user3MouseExited
+
+    private void add_user1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_user1MouseExited
+        add_user_panel1.setBackground(new Color(0,117,128));
+        add_user1.setForeground(new Color(255,255,255));
+    }//GEN-LAST:event_add_user1MouseExited
+
+    private void add_user1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_user1MouseEntered
+        add_user_panel1.setBackground(new Color(163, 235, 177));
+        add_user1.setForeground(new Color(33, 21, 34));
+    }//GEN-LAST:event_add_user1MouseEntered
+
+    private void add_user1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_user1MouseClicked
+        if(Webpage.log.getText().equals("ADMIN"))
+        {
+        
+        tbs.setVisible(true);
+                   
+            if(tbs.isVisible())
+            {
+                l.dispose();
+               
+                tcs.dispose();
+                ta.dispose();
+            }
+        
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,null," ONLY ADMIN CAN ACCESS THIS ",JOptionPane.UNDEFINED_CONDITION);
+        }
+    }//GEN-LAST:event_add_user1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -118,6 +302,12 @@ public class Add_Drawer_Account extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel add_user;
+    private javax.swing.JLabel add_user1;
+    private javax.swing.JLabel add_user2;
+    private javax.swing.JLabel add_user3;
     private javax.swing.JPanel add_user_panel;
+    private javax.swing.JPanel add_user_panel1;
+    private javax.swing.JPanel add_user_panel2;
+    private javax.swing.JPanel add_user_panel3;
     // End of variables declaration//GEN-END:variables
 }
